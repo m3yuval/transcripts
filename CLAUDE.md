@@ -53,7 +53,9 @@ Run at the end of each writing skill, with only the files that skill owns (table
    raced on `index.json`): stop, leave the PR open, and report its link — do not resolve
    it by hand. Everything the PR holds is re-fetched or re-analyzed by the next run.
 5. `scripts/state.sh finish <branch>` — puts the checkout back on the updated `main` and
-   deletes the branch. It refuses to delete a branch whose content is not on `main`.
+   deletes the local branch. It refuses if the branch's content is not on `main`. Cloud
+   sessions cannot delete remote branches (403 from the git proxy); the repo setting
+   "Automatically delete head branches" removes merged `data/*` branches on GitHub.
 
 The work counts as saved only after step 5. A failure at any step is a failed run:
 report the step, the branch and the PR link if there is one; never claim the data is
