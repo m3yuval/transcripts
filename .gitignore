@@ -1,0 +1,4 @@
+# scratch from sync runs never belongs in the evidence record
+scratch/
+*.raw.json
+__pycache__/

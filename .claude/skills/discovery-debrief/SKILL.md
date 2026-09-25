@@ -1,6 +1,6 @@
 ---
 name: "discovery-debrief"
-description: "Analyze customer discovery call transcripts in ~/transcripts as a skeptic — separate unprompted evidence from led evidence, test each claim in thesis.md against verbatim quotes, critique the founder's interview technique, and update ~/transcripts/ledger.md. Use this whenever the user asks to debrief, review, analyze or process discovery calls, customer interviews, CISO/advisor/investor conversations, or new transcripts, or asks what recent calls prove about their thesis."
+description: "Analyze customer discovery call transcripts in the transcripts repository as a skeptic — separate unprompted evidence from led evidence, test each claim in thesis.md against verbatim quotes, critique the founder's interview technique, and update ledger.md (published to main through a merged PR). Use this whenever the user asks to debrief, review, analyze or process discovery calls, customer interviews, CISO/advisor/investor conversations, or new transcripts, or asks what recent calls prove about their thesis."
 ---
 
 # Discovery Debrief
@@ -16,7 +16,8 @@ failed. Getting the thesis killed early is a good outcome, not a bad one.
 
 ## Setup
 
-Transcripts live in `~/transcripts`. Another skill puts them there — never fetch, sync
+Transcripts live at the root of this repository (see `CLAUDE.md`; older notes call it
+`~/transcripts`). Another skill puts them there — never fetch, sync
 or download anything.
 
 They are text files, but **do not filter by extension.** The sync skill writes whatever
@@ -25,13 +26,18 @@ skipped because of its suffix is a call that silently never gets analyzed and ne
 up as missing. Identify transcripts by exclusion instead (step 3).
 
 **Never write to or modify a transcript file.** They are the evidence record. The only
-file this skill writes is `~/transcripts/ledger.md`.
+file this skill writes is `ledger.md`.
+
+**State is in git.** Before step 1, run `scripts/state.sh pull`: another session may
+have added transcripts or updated the ledger since this container was cloned, and a
+stale ledger means re-analyzing calls or double-counting them. If it fails, stop. The
+ledger only counts as updated once its PR is merged into `main` (step 6).
 
 ## Workflow
 
 ### 1. Read the thesis
 
-Read `~/transcripts/thesis.md` in full. This is what is on trial.
+Read `thesis.md` in full. This is what is on trial.
 
 Break it into discrete testable claims and give each a stable label (C1, C2, C3…). If
 the thesis file already enumerates claims, use its numbering. If not, derive the claims
@@ -47,7 +53,7 @@ follow-up work" is a claim.
 
 ### 2. Read the ledger
 
-Read `~/transcripts/ledger.md`. If it does not exist, create it using the format in
+Read `ledger.md`. If it does not exist, create it using the format in
 **Ledger format** below, with empty claim sections and an empty processed list.
 
 The list of processed filenames at the bottom is the source of truth for what has
@@ -55,10 +61,12 @@ already been analyzed.
 
 ### 3. Find new transcripts
 
-List every regular file in `~/transcripts` — no suffix glob. Then subtract:
+List every regular file at the repo root — no suffix glob. Then subtract:
 
 - filenames already in the processed list
 - `thesis.md` and `ledger.md`
+- repository files: `CLAUDE.md`, `README*`, `.gitignore`, and anything under `.git/`,
+  `.claude/` or `scripts/`
 - index and bookkeeping files the sync skill leaves behind: `index.json`, `.*.bak`,
   and any dotfile
 - subfolders, including holding folders such as `_to_delete/`
@@ -148,6 +156,20 @@ Outputs go in the chat. Sections A, B and C every run, in that order.
 
 On a large run, do not pad: give a full block to every call that carries evidence, and
 collapse the rest into a compact table with one line each saying what they proved.
+
+### 6. Publish the ledger
+
+Once the ledger is written, publish it — and only it — following **Publishing data** in
+`CLAUDE.md` (branch → PR → squash-merge → finish):
+
+```
+scripts/state.sh publish debrief "debrief: <N> calls (<names>); <claims weakened, or 'no claim changes'>" ledger.md
+```
+
+Never include transcripts, `thesis.md` or any other file from this skill. If nothing was
+new and the ledger did not change, `publish` prints `NOTHING`: no PR. If any publishing
+step fails, say so at the top of the output with the PR link: the analysis stands, but
+the next run will not know these files were processed.
 
 ## Evidence standard
 
@@ -265,7 +287,7 @@ About the founder's interviewing, drawn from his own questions in the transcript
 
 ## Ledger format
 
-`~/transcripts/ledger.md` — one section per thesis claim, one line per piece of
+`ledger.md` — one section per thesis claim, one line per piece of
 evidence, plus the processed-file list at the bottom.
 
 ```markdown
@@ -305,7 +327,8 @@ filenames exactly as they are on disk, extension or not.
 
 ## Rules
 
-- Never write to or modify transcript files. Only `ledger.md` gets written.
+- Never write to or modify transcript files. Only `ledger.md` gets written, and it is
+  published through a PR merged into `main`.
 - Never filter transcripts by file extension. Find them by exclusion (step 3).
 - Never invent a quote, a name, a company or a number. If it is not in the transcript,
   it does not exist. An invented quote in a ledger is poison — it will be trusted months

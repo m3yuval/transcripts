@@ -1,0 +1,17 @@
+{
+  "env": {
+    "MAX_MCP_OUTPUT_TOKENS": "4000"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/session_start.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

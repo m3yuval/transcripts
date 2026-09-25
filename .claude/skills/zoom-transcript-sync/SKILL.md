@@ -1,13 +1,15 @@
 ---
 name: "zoom-transcript-sync"
-description: "Sync meeting transcripts from Zoom and from a shared Google Drive folder of PDFs and text files into one local folder, incrementally, so only items not already saved get fetched. Use whenever the user wants to download, sync or update meeting transcripts, or wants to analyze a body of past calls."
+description: "Sync meeting transcripts from Zoom and from a shared Google Drive folder of PDFs and text files into the transcripts repository, incrementally, so only items not already saved get fetched, then publish them to main through a merged PR. Use whenever the user wants to download, sync or update meeting transcripts, or wants to analyze a body of past calls."
 ---
 
 # Transcript sync (Zoom + Google Drive)
 
-Pull meeting transcripts from two sources and land them as plain text files in a single folder, so they can be grepped, diffed, fed to other tools, or read by a human. Both sources share one `index.json`, one naming convention and one file format, so the folder reads as a single archive rather than two piles.
+Pull meeting transcripts from two sources and land them as plain text files at the root of this repository, so they can be grepped, diffed, fed to other tools, or read by a human. Both sources share one `index.json`, one naming convention and one file format, so the folder reads as a single archive rather than two piles.
 
 Runs are incremental: the index records what has been fetched and what was attempted and failed, so a second run costs almost nothing.
+
+This runs in a cloud container on a git repository (see `CLAUDE.md`). The destination is always the repo root — never ask. Nothing counts as saved until it is merged into `main` through a PR (step 7); the container and everything not on `main` are gone when the session ends.
 
 - **Source A — Zoom**: fetched through the Zoom MCP tools (steps 2–4).
 - **Source B — Google Drive**: a shared folder holding PDF and plain-text transcripts (step 5).
@@ -20,13 +22,17 @@ Five things here mislead, and each produces a confidently wrong answer rather th
 2. **Transcripts are enormous.** A 30-minute call is roughly 10k tokens. Pulling dozens through a single context will exhaust it long before the job is done.
 3. **Most failures are expected, not bugs.** A 403 on someone else's recording, and an empty result for a call Zoom never transcribed, are both normal. Retrying them burns time; hiding them loses information the user needs.
 4. **Zoom closed captions are visible but unreachable.** `recordings_list` advertises CC/VTT files with download URLs, which makes them look like an easy fallback. They are not: `get_recording_resource` accepts only `transcript`, `summary`, `nextStep`, `playUrl` — there is no `cc` type — and the download URLs fail from both a sandboxed container and the user's machine, because Zoom's download host is outside the egress allowlist. Don't rediscover this.
-5. **Drive files need opposite handling by type, and getting it backwards is what wastes the most time.** For a **PDF**, the text relay drifts at the character level — markdown escapes appear (`Wow\!` where the source has `Wow!`), combining characters vanish — so a PDF must come across as bytes. For a **plain-text file** the reverse holds: `download_file_content` returns base64 *inline in the tool result* for anything under the result-size limit, and inline base64 can't reach a file without being retyped, which corrupts it. Step 5 has the rule; follow it rather than picking one method for everything.
+5. **Tool results must reach disk without being retyped.** The Drive text relay (`read_file_content`) drifts at the character level — markdown escapes appear (`Wow\!` where the source has `Wow!`), combining characters vanish. And any JSON or base64 that comes back *inline* in a tool result can only reach a file by being retyped, which corrupts it. The repo's `.claude/settings.json` sets `MAX_MCP_OUTPUT_TOKENS=4000`, so every Zoom transcript and nearly every Drive download is saved by the harness to a file whose path is printed in the result (`Output has been saved to <path>`). Work from that file with the `scripts/` helpers. Steps 4 and 5 have the details.
 
-## Step 1 — Establish the destination and read the index
+## Step 1 — Pull the latest state and read the index
 
-Ask the user where transcripts should go if they haven't said. If this session is linked to their computer, a folder on their machine is usually what they want; check `mcp__remote-devices__get_device_info` for connected folders and request access with `device_request_folder_access` if needed.
+Run `scripts/state.sh pull` from the repo root first. Another session may have synced since this container was cloned; reading a stale index re-fetches files that already exist and can land the same call twice. If it fails, stop and report — do not sync against stale state.
 
-Read `index.json` at the root of that folder. It keys on the source's own identifier — a Zoom meeting UUID or a Drive file ID:
+Confirm the tools are available: the Zoom connector (`mcp__Zoom_for_Claude__*`), the Google Drive connector (`mcp__Google_Drive__*`) and `python3 -c "import pypdf"` (the SessionStart hook installs it; if it is missing, run `pip install -q pypdf cffi`). A connector that is missing or unauthenticated is a real failure: say which one and stop, rather than syncing only half the sources and recording the other half as empty.
+
+Scratch files (raw results you copy, extracted PDF text) go in the session scratchpad or `/tmp`, never in the repo.
+
+Read `index.json` at the repo root. It keys on the source's own identifier — a Zoom meeting UUID or a Drive file ID:
 
 ```json
 {
@@ -81,30 +87,14 @@ Call `get_recording_resource` with `meetingId=<dashed UUID>` and `types="transcr
 - Empty → retry once with `types="summary"`. Zoom's AI summary is much thinner but occasionally exists when the transcript doesn't; save it with `Source: summary` so nobody mistakes it for verbatim. Otherwise record `no_transcript`.
 - 403 → record `no_permission`, move on.
 
-Save the raw response to a file and run it through this formatter rather than hand-formatting. Workers left to their own devices all write this same function, and not identically — which is how one batch of files ends up with different timestamp precision than another. Write it once to `format_transcript.py` and have every worker call it:
+The result is large, so the harness saves it to a file and prints the path (`Output has been saved to …/tool-results/mcp-Zoom_for_Claude-get_recording_resource-<n>.txt`, JSON `{transcripts: [{timeline: […]}]}`). Pass that path straight to the repo's formatter; never hand-format or retype the JSON. Workers left to their own devices all write their own formatter, and not identically — which is how one batch of files ends up with different timestamp precision than another. The committed one reproduces the existing archive byte for byte:
 
-```python
-import json, sys
-raw, out, date, topic, uuid, source = sys.argv[1:7]
-p = json.load(open(raw, encoding="utf-8"))
-entries = []
-for key in ("transcripts", "summaries", "recordings"):
-    for rec in p.get(key) or []:
-        entries += rec.get("timeline") or []
-if not entries:
-    sys.exit(2)                      # fall back to summary, or record no_transcript
-lines = [f"Date: {date}", f"Topic: {topic}", f"Meeting UUID: {uuid}",
-         f"Source: {source}", ""]
-for e in entries:
-    body = (e.get("text") or "").strip()
-    if body:                          # Zoom emits blank entries for pauses
-        ts = str(e.get("ts") or "00:00:00").split(".")[0]   # whole seconds
-        lines.append(f"[{ts}] {e.get('display_name') or 'Unknown'}: {body}")
-open(out, "w", encoding="utf-8").write("\n".join(lines) + "\n")
-print(f"{out}: {len(lines) - 5} entries")
+```
+python3 scripts/format_zoom_transcript.py <saved-result-path> 2026-09-16_security-leadership-discussion_thomas-sinnott.txt \
+    2026-09-16 "Security leadership discussion" 93D2AC0C-EF26-4303-BDCA-B1327C32EF7C transcript
 ```
 
-Call it as `python3 format_transcript.py raw.json out.txt 2026-09-16 "Security leadership discussion" 93D2AC0C-... transcript`. Exit 2 means the response held nothing.
+Exit 2 means the response held no timeline entries. A 403 or empty result is small and comes back inline — that is fine, there is nothing to save. If a result that *does* hold a transcript comes back inline (the output-token limit was not applied), do not retype it: report that `MAX_MCP_OUTPUT_TOKENS` is not in effect and record the meeting as not attempted, so the next run picks it up.
 
 ## Step 5 — Google Drive: fetch the shared folder
 
@@ -116,11 +106,19 @@ List contents with `search_files`, `query: "parentId = '<folder id>'"`, and keep
 
 | Drive file | Method | Why |
 |---|---|---|
-| `.pdf` | `download_file_content` → decode base64 → `pypdf` | the text relay drifts on PDFs |
-| `.txt`, `.vtt`, `.md` | `read_file_content`, **one call** | small files come back as inline base64 from `download_file_content`, which cannot be written to a file |
+| `.pdf` | `download_file_content` → `scripts/drive_download.py` | exact bytes; the text relay drifts on PDFs |
+| `.txt`, `.vtt`, `.md` | `download_file_content` → `scripts/drive_download.py` | exact bytes; no markdown escaping to undo |
 | `.m4a` and other audio | skip, record `audio_no_text` | no text to extract; say so rather than ignoring silently |
 
-For a text file one read is enough — resist adding double reads and hash comparisons, which multiply the time for no gain. To confirm nothing was lost, compare against the `fileSize` from the listing: the relay adds markdown escaping (`\-`, `\*`, `\!`), so the read's length minus the added backslashes should equal `fileSize` exactly. That check is free and conclusive.
+`download_file_content` returns `{content: <base64>, mimeType, title}`; it is large, so the harness saves it to a file and prints the path. Decode it with:
+
+```
+python3 scripts/drive_download.py <saved-result-path> <scratch>/<name> <fileSize from the listing>
+```
+
+It writes the exact bytes, exits 3 if the byte count does not equal `fileSize` (that check is free and conclusive — do not add double reads or hash comparisons), and for a PDF also writes `<name>.txt` with the extracted text, pages separated by form feeds. Parse that text into turns (below), then write the transcript file at the repo root.
+
+A text file small enough (under ~10 KB) for the result to come back inline is the one exception: use `read_file_content` once, strip the relay's added markdown escapes (`\-`, `\*`, `\!`), check that the length equals `fileSize`, and note `Extraction: read_file_content (text relay)` in the header.
 
 Also watch for **near-duplicates**: some titles repeat with a leading `?` (`?2026-09-10 Topic.pdf`) and an identical file size. Prefer the unprefixed one, record the other as `skipped_duplicate` with `duplicate_of`, and don't write a second file.
 
@@ -173,18 +171,26 @@ When you do fan out, every worker gets the same contract: do the work, write the
 - **Give each worker its own scratch subdirectory.** Parallel workers default to the same paths and overwrite each other's `raw.json` mid-run, producing files with another meeting's content.
 - **Hand out explicit filenames**, or workers name similar meetings inconsistently.
 
-Write files to their destination with `device_commit_files`, staging under `/mnt/user-data/outputs/`. Avoid `device_bash` heredocs: the device shell can't read container files, and heredocs break unpredictably once a transcript gets large. A commit can take up to a minute to become visible — re-read before concluding it failed.
+Workers write finished transcript files directly to the repo root. They never commit, push or open PRs; the orchestrator publishes once, in step 7, so a run produces one PR. Tool-result paths are per session, so a worker must make its own tool calls rather than be handed a path from the orchestrator's results.
 
-If context gets tight, stop, write the index with everything done so far, and say the run was partial. A partial sync with an accurate index is a good outcome; a run that dies having recorded nothing is the bad one.
+If context gets tight, stop, write the index with everything done so far, publish it (step 7), and say the run was partial. A partial sync with an accurate index is a good outcome; a run that dies having recorded nothing is the bad one.
 
-## Step 7 — Update the index and report
+## Step 7 — Update the index, publish (PR → merge), report
 
 Rewrite `index.json` with an entry for every item seen, **including failures**. Recording failures is what lets the next run tell "never tried" apart from "tried, nothing there" — without it, every rerun re-attempts every 403.
 
-Report briefly: how many files are in the folder, how many were added, and what couldn't be fetched, grouped by reason rather than one line per item. The distinction the user can act on is "permission-blocked, and the host re-sharing would unblock them" versus "never transcribed, and a later rerun might pick them up."
+Then publish exactly what this skill owns — `index.json` and the transcript files it wrote this run, nothing else — following **Publishing data** in `CLAUDE.md` (branch → PR → squash-merge → finish):
+
+```
+scripts/state.sh publish sync "sync: +<N> transcripts, <date>" index.json <new files…>
+```
+
+Publish even when nothing new arrived: the index still records this run's attempts. The title says what changed (`sync: +2 transcripts (jane-doe, a16z), 2026-09-26` or `sync: no new transcripts, 17 retries unchanged, 2026-09-26`). If any publishing step fails, the run failed: say at which step, give the branch and PR link, and do not report the files as saved.
+
+Report briefly: the PR that was merged, how many files are in the folder, how many were added, and what couldn't be fetched, grouped by reason rather than one line per item. The distinction the user can act on is "permission-blocked, and the host re-sharing would unblock them" versus "never transcribed, and a later rerun might pick them up."
 
 Flag, but never silently fix, errors that are in the source: a mislabelled speaker, two turns merged under one name. Say which file and which turn, and let the user decide.
 
 ## Scope notes
 
-Transcripts are meeting content involving other people. Write them where the user asked and nowhere else, and don't quote call content back into the conversation beyond a header line to confirm a file looks right.
+Transcripts are meeting content involving other people. Write them to this repository and nowhere else, and don't quote call content back into the conversation beyond a header line to confirm a file looks right.

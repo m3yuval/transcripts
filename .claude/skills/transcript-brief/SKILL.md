@@ -1,6 +1,6 @@
 ---
 name: "transcript-brief"
-description: "Write a short, notification-sized summary of the transcripts that were newly added to ~/transcripts: who the call was with, what it was about, and the one or two things worth remembering. Use when the user asks what came in, what the new calls were about, for a brief or recap of new transcripts, or as the final step of the transcript pipeline (sync → debrief → brief → notify)."
+description: "Write a short, notification-sized summary of the transcripts that were newly added to the transcripts repository: who the call was with, what it was about, and the one or two things worth remembering. Use when the user asks what came in, what the new calls were about, for a brief or recap of new transcripts, or as the final step of the transcript pipeline (sync → debrief → brief → notify)."
 ---
 
 # Transcript Brief
@@ -11,13 +11,18 @@ skeptical evidence work belongs to `discovery-debrief`; do not repeat it here.
 
 ## Setup
 
-Transcripts live in `~/transcripts`. Never fetch, sync or download anything, and never
-modify a transcript file. The only file this skill writes is
-`~/transcripts/.brief-state.json`.
+Transcripts live at the root of this repository (see `CLAUDE.md`; older notes call it
+`~/transcripts`). Never fetch, sync or download anything, and never modify a transcript
+file. The only file this skill writes is `.brief-state.json`, which it publishes to
+`main` through a merged PR (step 5).
+
+Before step 1, run `scripts/state.sh pull` so `.brief-state.json` reflects every earlier
+run — a stale copy re-briefs calls that already reached a notification. If it fails,
+stop.
 
 ## 1. Decide which transcripts are new
 
-"New" means: not yet briefed. The source of truth is `~/transcripts/.brief-state.json`:
+"New" means: not yet briefed. The source of truth is `.brief-state.json` at the repo root:
 
 ```json
 { "updated": "2026-09-25T10:30:00Z", "briefed": ["2026-09-24_vulnerability-remediation-process-discussion.txt"] }
@@ -26,9 +31,9 @@ modify a transcript file. The only file this skill writes is
 - If the caller passed an explicit list of files (for example the pipeline handing over
   what the sync just added), brief those — minus any already in `briefed`, so the same
   call never reaches a notification twice. Say which were skipped as already briefed.
-- Otherwise list every regular file in `~/transcripts` — no extension filter — and
-  subtract: names in `briefed`, `thesis.md`, `ledger.md`, `index.json`, any dotfile,
-  and subfolders such as `_to_delete/`.
+- Otherwise list every regular file at the repo root — no extension filter — and
+  subtract: names in `briefed`, `thesis.md`, `ledger.md`, `index.json`, `CLAUDE.md`,
+  `README*`, any dotfile, and subfolders such as `_to_delete/`, `scripts/`, `.claude/`.
 - **First run, state file missing:** do not brief the whole archive. Write the state
   file with every current transcript marked as briefed, say "Brief baseline set: N
   existing transcripts marked as seen", and stop.
@@ -41,7 +46,7 @@ If nothing is new, output exactly `No new transcripts.` and stop.
 
 ## 2. Read the thesis
 
-Read `~/transcripts/thesis.md` in full. Use the numbered beliefs under "What we
+Read `thesis.md` in full. Use the numbered beliefs under "What we
 believe" (#1, #2, …) as the claims to check, plus the wedge options (A, B, …) if the
 thesis lists them. Refer to them by those labels so the notification matches the file.
 Also note anything under "Not claiming" — a call that argues for one of those is not
@@ -107,4 +112,13 @@ Rules:
 
 After the brief is produced, add every briefed filename (exactly as on disk) to
 `briefed` in `.brief-state.json` and set `updated`. Do this last, so a run that fails
-halfway does not hide calls from the next run.
+halfway does not hide calls from the next run. Then publish it — only it — following
+**Publishing data** in `CLAUDE.md` (branch → PR → squash-merge → finish):
+
+```
+scripts/state.sh publish brief "brief: <N> calls briefed" .brief-state.json
+```
+
+The first-run baseline in step 1 is published the same way (`"brief: baseline, N marked
+seen"`). If any publishing step fails, say so after the brief with the PR link: the next
+run will brief these calls again.
