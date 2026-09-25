@@ -1,0 +1,852 @@
+{
+  "updated": "2026-09-25T08:46:47Z",
+  "sources": {
+    "zoom": {
+      "type": "zoom-mcp",
+      "last_enumerated": "2026-09-25",
+      "meetings_enumerated": 39
+    },
+    "google_drive": {
+      "type": "drive-folder",
+      "folder_id": "18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "folder_name_as_shared": "Redordings",
+      "note": "name is misspelled in Drive; always match on folder_id. Folder holds PDF transcripts, occasional plain-text transcripts, and raw .m4a audio.",
+      "last_listed": "2026-09-25",
+      "files_listed": 24
+    }
+  },
+  "meetings": {
+    "839E26A1-5967-4E7C-9779-B276E69E42DB": {
+      "date": "2026-08-17",
+      "topic": "RajeshKumar <> Shoval & Yuval",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Rajesh Kumar Thangavelu"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "A7FA97CC-EC97-48FF-BFF3-7346BB1638BC": {
+      "date": "2026-08-21",
+      "topic": "Security leadership discussion",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Neil Gaudreau"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "8A5C264B-05F0-429E-A925-651021EC4940": {
+      "date": "2026-08-21",
+      "topic": "Security leadership discussion",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Edward Newman",
+        "Yuval Mermer"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "25272505-F3DE-4409-9030-6575CB9BD64B": {
+      "date": "2026-08-24",
+      "topic": "Mark <> Shoval & Yuval",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "markbowling_old"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "048E1287-EB0A-4571-8395-74C41A102010": {
+      "date": "2026-08-24",
+      "topic": "Security Leadership Discussion",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Jeff"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "74DDC862-5442-4BCA-870A-728C2D78A3AB": {
+      "date": "2026-08-25",
+      "topic": "Security leadership - Discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Jacques Lucas",
+        "yuvalmermer"
+      ],
+      "file": "2026-08-25_security-leadership-discovery_jacques-lucas.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "0BB12261-7C13-49D4-8766-5F1201C13C85": {
+      "date": "2026-08-26",
+      "topic": "Yuval Mermer and Illya Goncharov",
+      "host": "Illya Goncharov",
+      "attendees": [
+        "Illya Goncharov",
+        "yuvalmermer"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "8EA9D985-0C69-4935-AC64-C2529C2EF237": {
+      "date": "2026-08-28",
+      "topic": "Security leadership - discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "yuvalmermer",
+        "Андрей Ловчий"
+      ],
+      "file": "2026-08-28_security-leadership-discovery_andrey-lovchiy.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "F0DCCFB9-4F6C-4EFF-9154-5C379F6CE562": {
+      "date": "2026-08-28",
+      "topic": "Security leadership conversation",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "ABasu",
+        "yuvalmermer"
+      ],
+      "file": "2026-08-28_security-leadership-conversation_abasu.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "A35BB9E6-9229-4ACD-B699-0FF25892C64E": {
+      "date": "2026-08-28",
+      "topic": "Rajesh <> Shoval & Yuval",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "yuvalmermer",
+        "Rajesh Kumar Thangavelu"
+      ],
+      "file": "2026-08-28_rajesh-shoval-yuval.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "A6260201-454A-4A4B-9D2E-BC5FB6A3961A": {
+      "date": "2026-08-31",
+      "topic": "Network Security Discussion",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Leda Muller"
+      ],
+      "file": "2026-08-31_network-security-discussion_leda-muller.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "C36748D7-5B2C-468E-930A-AFF82C048FF7": {
+      "date": "2026-08-31",
+      "topic": "Security leadership - discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Israel Bryski"
+      ],
+      "file": "2026-08-31_security-leadership-discovery_israel-bryski.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "FEC9A59F-746C-4D09-AD96-146F845FCC4B": {
+      "date": "2026-09-01",
+      "topic": "Security leadership discussion",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Andrew Dutton - Sumitomo Chemical America"
+      ],
+      "file": "2026-09-01_security-leadership-discussion_andrew-dutton.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "92700F6C-B309-4288-B89A-8479339BC544": {
+      "date": "2026-09-01",
+      "topic": "Security leadership - discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Igor Spektor"
+      ],
+      "file": "2026-09-01_security-leadership-discovery_igor-spektor.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "E233F483-0FD7-49D3-B5E3-BE413DB85EBB": {
+      "date": "2026-09-01",
+      "topic": "Asaf <> Shoval & Yuval",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Asaf Perlman"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
+      "attempts": 4,
+      "source": "zoom",
+      "covered_by": "1s4TXyTamYvG1yEuFp7Te8mXr6P3OAPHO"
+    },
+    "C5627903-C334-42F3-8B96-0F7B50527B5B": {
+      "date": "2026-09-02",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Eli Edelkind"
+      ],
+      "file": "2026-09-02_security-leadership-discussion_eli-edelkind.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "34333D84-D7AB-4E98-9DDC-B5D90DAF4872": {
+      "date": "2026-09-04",
+      "topic": "Security leadership - discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Heather",
+        "Shoval Abudraham"
+      ],
+      "file": "2026-09-04_security-leadership-discovery_heather.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "947BAE9A-6394-457A-94EC-7BC07171A348": {
+      "date": "2026-09-04",
+      "topic": "Security leadership - discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Ariel Litvin"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
+      "attempts": 4,
+      "source": "zoom",
+      "covered_by": "1-s8Tmy0SMqh2_2aom8sk0KjofTe5XSbq"
+    },
+    "318ED79C-B9A2-4D03-92B5-7B5AFB47804C": {
+      "date": "2026-09-07",
+      "topic": "Security leadership - follow up",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Jason Lawrence"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
+      "attempts": 4,
+      "source": "zoom",
+      "covered_by": "1isvwyDnE2YtnDg5MpdI07R8FfF4DHXuG"
+    },
+    "117B1961-F087-4337-AE4E-D2DEB458EF33": {
+      "date": "2026-09-07",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Jason Manar",
+        "Yuval Mermer"
+      ],
+      "file": "2026-09-07_security-leadership-discussion_jason-manar.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "8B20404F-F85F-41D8-87AE-00FC90BCBC9F": {
+      "date": "2026-09-08",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "Al"
+      ],
+      "file": "2026-09-08_security-leadership-discussion_al.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "63ED31FC-72A1-4509-951E-806AE53AA1F3": {
+      "date": "2026-09-09",
+      "topic": "Network security - Discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Adam"
+      ],
+      "file": "2026-09-09_network-security-discovery_adam.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "F87EAC7B-59B2-4B09-8485-C985C0D27149": {
+      "date": "2026-09-09",
+      "topic": "Security leadership - Discovery call",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Andrew Dutton - Sumitomo Chemical America"
+      ],
+      "file": "2026-09-09_security-leadership-discovery_andrew-dutton.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "AF9DB694-1BC8-44B5-89B3-A77B67688BD4": {
+      "date": "2026-09-11",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Ray Lewis"
+      ],
+      "file": "2026-09-11_security-leadership-discussion_ray-lewis.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "BA0CBA17-F418-494E-B879-A270BAE18954": {
+      "date": "2026-09-14",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Joshua Copeland",
+        "Yuval Mermer"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "CEAB7717-FE5C-4348-A851-69E82C665D6C": {
+      "date": "2026-09-14",
+      "topic": "Yuval Mermer's Zoom Meeting",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Zoom search reports topic 'Yuval Mermer's Zoom Meeting'; recordings_list for 2026-09-14 shows a 124-min recording titled 'Personal stories - Zoom Meeting'. Identity unconfirmed; no file written. Flagged for the user, not corrected.",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "F00E3CC2-2FB3-49A3-943E-84DC68B8B1AF": {
+      "date": "2026-09-15",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Bryan Brown"
+      ],
+      "file": "2026-09-15_security-leadership-discussion_bryan-brown.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "7754F37E-50E2-42A2-AB77-483CCECA09C1": {
+      "date": "2026-09-15",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "jmanar"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "E21772E4-FB74-41A9-B0E6-31F7373DBCFA": {
+      "date": "2026-09-15",
+      "topic": "Yuval Mermer's Zoom Meeting",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "4634E4FF-C998-4F28-BCAF-26603A5052DD": {
+      "date": "2026-09-16",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Matthew Matturro"
+      ],
+      "file": "2026-09-16_security-leadership-discovery_matthew-matturro.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "EDA16CE7-8C89-4C09-BA8A-94B526B69518": {
+      "date": "2026-09-16",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "harris schwartz"
+      ],
+      "file": "2026-09-16_security-leadership-discovery_harris-schwartz.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "93D2AC0C-EF26-4303-BDCA-B1327C32EF7C": {
+      "date": "2026-09-16",
+      "topic": "Security leadership discussion",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Thomas Sinnott"
+      ],
+      "file": "2026-09-16_security-leadership-discussion_thomas-sinnott.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "30F1E756-BC05-45D4-BA06-3A601AAD9BF7": {
+      "date": "2026-09-18",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "John Murphy"
+      ],
+      "file": "2026-09-18_security-leadership-discovery_john-murphy.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "1E35ED64-AFB7-4455-B1C4-8F668689091F": {
+      "date": "2026-09-18",
+      "topic": "Security leadership - discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Jerry Carlson"
+      ],
+      "file": "2026-09-18_security-leadership-discovery_jerry-carlson.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "0E6C17F8-4E62-47B5-BEF2-EF31110B7371": {
+      "date": "2026-09-19",
+      "topic": "Yuval / Shoval",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "AEA63C3C-69CC-4AD5-8C5B-C06DBECA2EEF": {
+      "date": "2026-09-20",
+      "topic": "Yuval Mermer's Zoom Meeting",
+      "host": "Yuval Mermer",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham"
+      ],
+      "status": "no_transcript",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "AAB6646A-16D7-4741-9ABD-46A4B4C43455": {
+      "date": "2026-09-21",
+      "topic": "Google Calendar Meeting (not synced)",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer",
+        "TalDeutch"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "3A9EF4F7-7C55-46AF-8A66-C29E17D5A722": {
+      "date": "2026-09-21",
+      "topic": "Google Calendar Meeting (not synced)",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Yuval Mermer"
+      ],
+      "status": "no_permission",
+      "fetched_at": "2026-09-24T00:41:24Z",
+      "last_attempt": "2026-09-25T08:46:47Z",
+      "attempts": 4,
+      "source": "zoom"
+    },
+    "B38FCFAC-66E3-413D-94CC-107B803FFC82": {
+      "date": "2026-09-22",
+      "topic": "Security leadership - Discovery",
+      "host": "Shoval Abudraham",
+      "attendees": [
+        "Shoval Abudraham",
+        "Shawn Anderson"
+      ],
+      "file": "2026-09-22_security-leadership-discovery_shawn-anderson.txt",
+      "source": "transcript",
+      "status": "ok",
+      "fetched_at": "2026-09-23T13:14:50Z"
+    },
+    "1n7ER7qjv-WPpQ5Cm6iv6zecfgFrMunjI": {
+      "date": "2026-08-31",
+      "topic": "CISO Strategy and Network Security",
+      "file": "2026-08-31_ciso-strategy-and-network-security.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1J0dB_zEfm17YEg_OhUQ5LdiNWZQ2VBPS": {
+      "date": "2026-08-31",
+      "topic": "Enterprise Network Security Consultation",
+      "file": "2026-08-31_enterprise-network-security-consultation.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1TpHo0ZqhLtph507rquyqImeCbcntW3Nf": {
+      "date": "2026-09-01",
+      "topic": "CISO Network Security Discovery Discussion",
+      "file": "2026-09-01_ciso-network-security-discovery-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1OHunyf6yixh_XvE48gHaxsXwlqg5uh0i": {
+      "date": "2026-09-02",
+      "topic": "Network Security Management Discussion",
+      "file": "2026-09-02_network-security-management-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1px5ZxrfAyb9CimwhxpfMmaPtGZsE9E1G": {
+      "date": "2026-09-03",
+      "topic": "Network Security Discovery Interview",
+      "file": "2026-09-03_network-security-discovery-interview.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1Cf1QuyPQ9CHbyfJeJeAVciZlX44O77lp": {
+      "date": "2026-09-08",
+      "topic": "AI Agent Network Security Discussion",
+      "file": "2026-09-08_ai-agent-network-security-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1Qu-FlD_HMIbREaLgKuv-A-9m_fEzGnFT": {
+      "date": "2026-09-08",
+      "topic": "AI Agent Security Product Validation",
+      "file": "2026-09-08_ai-agent-security-product-validation.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1dIL3mcZK5ylo-grqddezyG3bgTYziX9g": {
+      "date": "2026-09-08",
+      "topic": "Cybersecurity Strategy and AI Trends",
+      "file": "2026-09-08_cybersecurity-strategy-and-ai-trends.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "11Qy35yG3cYDgDmMb8lYH_2xjHYen-zId": {
+      "date": "2026-09-08",
+      "topic": "Elastic CISO Security Discussion",
+      "file": "2026-09-08_elastic-ciso-security-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1paa_55f4tBih7hpLm6RxZUzBbliemqGr": {
+      "date": "2026-09-10",
+      "topic": "AI Cybersecurity Product Discovery Discussion",
+      "file": "2026-09-10_ai-cybersecurity-product-discovery-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1mX0zI3du4aI5DcxEzeLncqGSYek1tnYg": {
+      "date": "2026-09-10",
+      "topic": "AI Threats and Defense Strategies",
+      "file": "2026-09-10_ai-threats-and-defense-strategies.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1jd2RxGhqTRB08ayqEWzSEmvXspusITZc": {
+      "date": "2026-09-10",
+      "topic": "Cybersecurity Startup Advisory Discussion",
+      "file": "2026-09-10_cybersecurity-startup-advisory-discussion.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1wGZF4R65sAzsg7RrrWSk2mzbM6_kWfYe": {
+      "date": "2026-09-14",
+      "topic": "Stanford Cybersecurity and AI Strategy",
+      "file": "2026-09-14_stanford-cybersecurity-and-ai-strategy.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1vfgw6viYHs34kpzuCCQbarGSxELj9NJT": {
+      "date": "2026-09-15",
+      "topic": "SkyLayer Product Strategy Advisory",
+      "file": "2026-09-15_skylayer-product-strategy-advisory.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1HX9A0hpQZ_js7Nam60N8nskrdzw7AKpk": {
+      "date": "2026-09-18",
+      "topic": "Network Security Startup Advisory",
+      "file": "2026-09-18_network-security-startup-advisory.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1WvMk8aQpAP3BegQRL2b_ELP_hi5BOuPR": {
+      "date": "2026-09-22",
+      "topic": "Cybersecurity Startup Ideation Meeting",
+      "file": "2026-09-22_cybersecurity-startup-ideation-meeting.txt",
+      "source": "google-drive-pdf",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "status": "ok"
+    },
+    "1yLVoLC8d_-06TsktUILZ8F6ccs3CexOd": {
+      "date": "2026-09-22",
+      "date_inferred": true,
+      "topic": "a16z intro call (Asaf Ezra, Owen Colby)",
+      "drive_title": "asaf.txt",
+      "bytes": 22483,
+      "file": "2026-09-22_a16z-intro-call.txt",
+      "source": "google-drive-txt",
+      "status": "ok",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "last_attempt": "2026-09-24",
+      "note": "date confirmed against calendar; Drive modified-time had implied 09-23",
+      "calendar_event_id": "81elqvqdg1iof1r4m82eocdlks"
+    },
+    "1CruzyG6Oaa0E9o34yTdh6xF64RS3X4UX": {
+      "date": "2026-09-22",
+      "date_inferred": true,
+      "topic": "Eliya Elon (Generalize.vc) - intro call",
+      "drive_title": "elyia1.txt",
+      "bytes": 32810,
+      "file": null,
+      "source": "google-drive-txt",
+      "status": "skipped_duplicate",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "last_attempt": "2026-09-24",
+      "attempts": 3,
+      "note": "Drive copy of a call already loaded from a direct upload; see duplicate_of",
+      "duplicate_of": "_dp9mmdb5cpqkqi3e8p6mad37f9k4ara6a9440gr1dgn66rrd"
+    },
+    "1a-lV8bsik4SMvZG4Ns8j-p-CLSu26Dpj": {
+      "date": "2026-09-10",
+      "topic": "AI Cybersecurity Product Discovery Discussion",
+      "file": null,
+      "source": "google-drive-pdf",
+      "status": "skipped_duplicate",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "drive_title": "?2026-09-10 AI Cybersecurity Product Discovery Discussion.pdf",
+      "duplicate_of": "1paa_55f4tBih7hpLm6RxZUzBbliemqGr",
+      "note": "'?'-prefixed twin, identical file size; unprefixed copy already saved.",
+      "last_attempt": "2026-09-24"
+    },
+    "1iPzJaeusrIt7gNH5SI6XdZ8VPYTmnnE1": {
+      "date": "2026-09-10",
+      "topic": "Cybersecurity Startup Advisory Discussion",
+      "file": null,
+      "source": "google-drive-pdf",
+      "status": "skipped_duplicate",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "drive_title": "?2026-09-10 Cybersecurity Startup Advisory Discussion.pdf",
+      "duplicate_of": "1jd2RxGhqTRB08ayqEWzSEmvXspusITZc",
+      "note": "'?'-prefixed twin, identical file size; unprefixed copy already saved.",
+      "last_attempt": "2026-09-24"
+    },
+    "_dp9mmdb5cpqkqi3e8p6mad37f9k4ara6a9440gr1dgn66rrd": {
+      "date": "2026-09-22",
+      "topic": "Eliya Elon (Generalize.vc) - intro call",
+      "attendees": [
+        "Yuval Mermer",
+        "Shoval Abudraham",
+        "Eliya Elon"
+      ],
+      "file": "2026-09-22_eliya-elon-generalize-vc.txt",
+      "source": "manual-upload",
+      "origin": "google-calendar-event",
+      "status": "ok",
+      "note": "Hebrew; no timestamps in source. INCOMPLETE: body is 32628 bytes against the 32810-byte Drive source elyia1.txt it appears to come from - 182 bytes lost in transfer, with no visible damage (still valid UTF-8). Usable but not verbatim; re-fetch from Drive when a direct byte-stream download is available.",
+      "bytes_body": 32628,
+      "likely_drive_file_id": "1CruzyG6Oaa0E9o34yTdh6xF64RS3X4UX"
+    },
+    "1l2AT-uSrLftLLFg6CLtxFBGtLRmv7jLd": {
+      "date": "2026-09-22",
+      "topic": "AUDIO-2026-09-22-23-05-52.m4a",
+      "drive_title": "AUDIO-2026-09-22-23-05-52.m4a",
+      "file": null,
+      "source": "google-drive-audio",
+      "status": "audio_no_text",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "last_attempt": "2026-09-24",
+      "note": "raw recording, no text to extract; intentionally skipped"
+    },
+    "1akdvUQD8YYvrYfxtxh7cyGjxJWV9yugg": {
+      "date": "2026-09-18",
+      "topic": "[2026-09-18] Network Security Startup Advis.m4a",
+      "drive_title": "[2026-09-18] Network Security Startup Advis.m4a",
+      "file": null,
+      "source": "google-drive-audio",
+      "status": "audio_no_text",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "last_attempt": "2026-09-24",
+      "note": "raw recording, no text to extract; intentionally skipped"
+    },
+    "1w-LB0GZm9iv1Cwt0ATqTq7B5gFsxovgS": {
+      "date": "2026-09-24",
+      "topic": "Vulnerability Remediation Process Discussion",
+      "file": "2026-09-24_vulnerability-remediation-process-discussion.txt",
+      "source": "google-drive-pdf",
+      "status": "ok",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6"
+    },
+    "1s4TXyTamYvG1yEuFp7Te8mXr6P3OAPHO": {
+      "date": "2026-09-01",
+      "topic": "Asaf <> Shoval & Yuval",
+      "file": "2026-09-01_asaf-shoval-yuval.txt",
+      "source": "google-drive-txt",
+      "status": "ok",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "drive_title": "asaf-2026-09-01.txt",
+      "zoom_meeting_uuid": "E233F483-0FD7-49D3-B5E3-BE413DB85EBB",
+      "note": "text supplied via Drive; Zoom itself never produced a transcript for this meeting"
+    },
+    "1-s8Tmy0SMqh2_2aom8sk0KjofTe5XSbq": {
+      "date": "2026-09-04",
+      "topic": "Security leadership - discovery call - Ariel Litvin",
+      "file": "2026-09-04_security-leadership-discovery_ariel-litvin.txt",
+      "source": "google-drive-txt",
+      "status": "ok",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "drive_title": "ariel-2026-09-04.txt",
+      "zoom_meeting_uuid": "947BAE9A-6394-457A-94EC-7BC07171A348",
+      "note": "text supplied via Drive; Zoom itself never produced a transcript for this meeting"
+    },
+    "1isvwyDnE2YtnDg5MpdI07R8FfF4DHXuG": {
+      "date": "2026-09-07",
+      "topic": "Security leadership - follow up - Jason Lawrence",
+      "file": "2026-09-07_security-leadership-followup_jason-lawrence.txt",
+      "source": "google-drive-txt",
+      "status": "ok",
+      "origin": "drive-folder:18uDV4DN-uJnTMnhfC2plrLbToJIk1Sx6",
+      "drive_title": "jason-2026-09-07.txt",
+      "zoom_meeting_uuid": "318ED79C-B9A2-4D03-92B5-7B5AFB47804C",
+      "note": "text supplied via Drive; Zoom itself never produced a transcript for this meeting"
+    }
+  },
+  "last_run": {
+    "at": "2026-09-25T08:46:47Z",
+    "added": 0,
+    "zoom_enumerated": 39,
+    "drive_files_listed": 24,
+    "retried_no_transcript": 7,
+    "retried_no_permission": 10,
+    "newly_fetched": 0,
+    "note": "No new Zoom meetings and no new Drive files. All 17 retries returned the same result as before; no status changes. Zoom auth healthy (403s, not 401)."
+  }
+}

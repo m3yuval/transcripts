@@ -1,0 +1,293 @@
+Date: 2026-09-16
+Topic: Security Leadership Discovery - Matthew Matturro
+Meeting UUID: 4634E4FF-C998-4F28-BCAF-26603A5052DD
+Source: transcript
+Entries: 287
+
+[00:00:02] Shoval Abudraham: Amazing. Cool, so I'll start by, telling you about us a little bit.
+[00:00:08] Shoval Abudraham: So, I'm in cybersecurity in the past 10 years. I actually started in the Unit 8200, which I assume you heard about.
+[00:00:16] Matthew Matturro: Very familiar with 8200 and the people there, yep.
+[00:00:19] Shoval Abudraham: Exactly.
+[00:00:21] Matthew Matturro: cousin from Tel Aviv was, part of one of the units within there.
+[00:00:25] Shoval Abudraham: Cool, do you know where?
+[00:00:26] Yuval Mermer: Where a witch.
+[00:00:27] Matthew Matturro: I don't. I don't, and I don't think that even if I did, I'd be at liberty.
+[00:00:31] Shoval Abudraham: Knowing.
+[00:00:32] Matthew Matturro: Yep.
+[00:00:33] Shoval Abudraham: Yeah, that's a reasonable.
+[00:00:36] Shoval Abudraham: So, we started there, we actually met there. Do you hear me well? I think, like.
+[00:00:43] Matthew Matturro: I can hear you perfectly fine.
+[00:00:44] Shoval Abudraham: Okay, perfect. So there Yuval and I actually met. We both served in a department that was responsible for the infrastructure for the cyber operations, so basically all the role of a DevOps engineer together with a security engineer, we had to build and maintain those infrastructure.
+[00:01:05] Shoval Abudraham: But in a very secure way, because there was super sensitive cyber operations.
+[00:01:10] Matthew Matturro: For actual… for actual operations, ongoing with whatever was going on. So this was not, like, in terms of, like, testing and things of that nature, this was in terms of, like, actual operations that were ongoing. You would build and manage the infrastructure, for the operators.
+[00:01:26] Yuval Mermer: Both.
+[00:01:27] Matthew Matturro: Oh, cool, okay. So my cousin was on the research side, and is now with a vulnerability research company as a senior researcher, so…
+[00:01:35] Shoval Abudraham: Nice.
+[00:01:37] Yuval Mermer: the company?
+[00:01:38] Matthew Matturro: No US-based company.
+[00:01:40] Shoval Abudraham: Oh, so he came back to the U.S?
+[00:01:43] Matthew Matturro: He works from… from remote. We can, after recording, we can… we can chat more on that.
+[00:01:47] Yuval Mermer: No problem, no problem.
+[00:01:49] Shoval Abudraham: Sure. So, served a five and a half year, released as a captain, and after that, I actually did a shift to a product management role, because I always, was curious about
+[00:02:03] Shoval Abudraham: solving problem, creating real value, and I want to be more close to customers, so…
+[00:02:09] Shoval Abudraham: I started as a products manager in a…
+[00:02:12] Shoval Abudraham: cybersecurity company called Perception Point. I led there all the detection capabilities that were based on machine learning, AI, built agent before I knew to call them that way. So it was very cool, and that was… that company was acquired by Fortinet.
+[00:02:31] Shoval Abudraham: After that.
+[00:02:32] Matthew Matturro: I was on, like, an incident response SOC kind of,
+[00:02:35] Matthew Matturro: play, or in what capacity? No, it's when he's running?
+[00:02:39] Shoval Abudraham: Purity Product is, like, on… wasn't the endpoint workspace.
+[00:02:43] Matthew Matturro: Oh, okay.
+[00:02:43] Shoval Abudraham: Basically build all the detection capabilities to help an organization to better detect attacks, over their workspace and endpoint.
+[00:02:55] Matthew Matturro: Oh, very cool.
+[00:02:57] Shoval Abudraham: Yeah.
+[00:02:59] Shoval Abudraham: So after the company was acquired, I did a very similar journey, with another cybersecurity company, also a product company, called Koi Security. Also.
+[00:03:13] Shoval Abudraham: great customers, great product, very innovative in terms of how we use the AI, also on the endpoint space. And this company was acquired by Palo Alto.
+[00:03:26] Matthew Matturro: Nice.
+[00:03:27] Shoval Abudraham: Yeah, but that basically was my sign, you know? After this, the second that the company I worked for was acquired, I called Yuval and told him, okay, now we need to do it together, and build our own company.
+[00:03:43] Shoval Abudraham: Yeah, so we both started on the same department, but did, like… we wrote the diff… the same story from different perspective. Yeah, so I let Yuval share about,
+[00:03:54] Yuval Mermer: You know, it's an old dream we have to build together the startup company we always talk about, and yesterday we just found a WhatsApp conversation about it from 2020 or 2021. That's great. Yeah, that's great.
+[00:04:09] Matthew Matturro: That's actually very good for you guys to have from, like, a protections perspective for yourselves, right? You had the idea from a long time ago, so that's actually very good to keep that escrowed for you guys, just for your own protection, in case someone ever comes after you.
+[00:04:23] Matthew Matturro: Definitely.
+[00:04:24] Yuval Mermer: And, okay, I'll tell you about me. I started also in the 200 unit. I started as a developer in Shoval's
+[00:04:37] Yuval Mermer: team, and together we developed great platforms. Shoval was the commander and the product manager in the project.
+[00:04:47] Yuval Mermer: And I was the developer, and we did… one of the platforms was for managing, mapping, and securing the complex networks we have in place, and…
+[00:04:58] Yuval Mermer: The other one was for auto-remediating incidents, and after this challenging, developing journey, actually Shoval promoted me to be a team lead.
+[00:05:10] Yuval Mermer: Yeah, it was really nice, and it was one of.
+[00:05:15] Shoval Abudraham: Very believed in him.
+[00:05:17] Matthew Matturro: That's good. No, that's good. That's good.
+[00:05:20] Yuval Mermer: And then, after a couple of years as a team lead, they promoted again to be a head of DevOps and Infrastructure Department, the same department that we served together.
+[00:05:33] Yuval Mermer: there I led… it was really challenging, actually. I led 40 engineers across 5 teams, and we ran, built, and were responsible, actually, for all the networks of the unit.
+[00:05:44] Yuval Mermer: And it was networks for operations rooms, networks for thousands of users and hundreds of applications. We ran production environments and petabytes of data, and
+[00:05:56] Yuval Mermer: After this great journey, I finished the military service, and I searched for the next challenge for me, and I decided to search a place that I can learn how to manage and lead a big organization like I did in the army.
+[00:06:13] Yuval Mermer: And I started as a director of DevOps and SRE at Paragon, which is an Israeli cyber company.
+[00:06:20] Yuval Mermer: And there, I led 25 engineers.
+[00:06:24] Yuval Mermer: across 3 teams, and we took our abilities in development, and our infrastructure and network abilities, and combined them into tailor-made solutions for the Paragon's customers, and specifically for Paragon's product.
+[00:06:43] Yuval Mermer: around the network and how we secure it better. This is how… this is all I can elaborate about it, so sorry.
+[00:06:52] Matthew Matturro: Yeah, yeah, yeah.
+[00:06:52] Yuval Mermer: said to…
+[00:06:53] Matthew Matturro: No, no, it's the… it's the special sauce.
+[00:06:55] Yuval Mermer: Yeah, and then I got the phone call from Shoval, And I told her.
+[00:07:01] Yuval Mermer: I'm gonna quit Paragon. I noticed them, and 3 months later, we started this great journey, and we would love to hear about you.
+[00:07:11] Yuval Mermer: Sure.
+[00:07:11] Matthew Matturro: Yeah, so I'm, I'm Matt Matturro. I am, on my 9-to-5, a CISO for Trinetics. We're a healthcare technology company based out of Cambridge, Massachusetts.
+[00:07:22] Matthew Matturro: We operate the world's largest federated research network, so what that means is, for example,
+[00:07:30] Matthew Matturro: Oh, what's the… the Israeli hospital?
+[00:07:33] Yuval Mermer: Ich Wolfsen.
+[00:07:35] Matthew Matturro: I'm forgetting the name of it. We have a few Israeli hospitals, but there was one that I had in my head, and I always forget it.
+[00:07:42] Matthew Matturro: for example, we'll take all of the different, we'll take all the healthcare data from all these hospitals, and it allows us to do, like, federated research, and we have,
+[00:07:55] Matthew Matturro: We have the ability to take an appliance, a physical, like, 2U server, or virtual, and we can, do analytics, we can… we manage the entire box, so they're all kind of a distributed database kind of model.
+[00:08:10] Matthew Matturro: For, for federated learning. And…
+[00:08:13] Matthew Matturro: Really something that's impactful from the clinical trial space, research, real-world data, and evidence collection, so…
+[00:08:20] Matthew Matturro: We've been helping out a lot with pharmaceutical companies, and contact research organizations, and helping organizations themselves, like, understand their data better, and how to, you know, maybe unlock, you know, paths when it comes to doing a trial, or things of that nature.
+[00:08:36] Matthew Matturro: I do also operate, as I mentioned earlier, I operate a,
+[00:08:42] Matthew Matturro: kind of, VCISO, VCIO kind of organization for funded startups, working both with VCs, you know, kind of CISO in residence, port call, CISO kind of thing, as needed. You know, they… a lot of times they ask questions, sometimes investment teams ask questions like.
+[00:08:56] Matthew Matturro: Can I invest in this type of area, and what's the risk for that? And then, I also work with, funded startups, as well. And then I love calls like this, you know, to be able to talk through
+[00:09:08] Matthew Matturro: You know, an idea, and, you know, where this fits into a market, and…
+[00:09:12] Matthew Matturro: you know, if it's something that we need, you know, maybe there's a design partnership option, things of that nature. I don't, you know, right now, my dance card's full when it comes to design partnerships, but, you know, if it's not me, maybe I know someone else, so I'm also all about the networking thing. You know, if nothing else comes out of it, the networking piece.
+[00:09:29] Matthew Matturro: for other people, I think is, is a big benefit that I can bring.
+[00:09:34] Shoval Abudraham: Amazing. Wow, that's,
+[00:09:36] Shoval Abudraham: that's, like, super, diverse. Not super, but, you know, I love the fact that you're also, like, managing an organization security strategy and all of that, and so it keeps you, like.
+[00:09:49] Shoval Abudraham: updated in what are the real methodology and, like, what happened in real organization, and also, like, use this information to help others and, you know, share your knowledge. Love it.
+[00:10:04] Matthew Matturro: Yeah, I find a lot of organizations just starting up necessarily don't know where to start in terms of pitching to the market. So yeah, please, you guys tell me about what you guys have, and yeah.
+[00:10:17] Shoval Abudraham: Amazing, so…
+[00:10:18] Yuval Mermer: We take a different approach. We're not gonna show you any product or solution. Our approach is about documenting.
+[00:10:24] Matthew Matturro: Whatever…
+[00:10:25] Yuval Mermer: Yeah, you know.
+[00:10:26] Matthew Matturro: Yeah, yeah, let's talk through it, 100%.
+[00:10:28] Shoval Abudraham: Amazing. So…
+[00:10:30] Shoval Abudraham: Basically, the main thing we're looking at is how AI changed the attacker side. Basically, we understand that
+[00:10:39] Shoval Abudraham: attackers are now… can leverage AI to, auto-match much more attack processes, to do more actions, to,
+[00:10:51] Shoval Abudraham: To perform attacks in, a faster speed. And we're exploring…
+[00:10:58] Shoval Abudraham: Our organization are handling this new situation, like, how they bothered by that at all? And if they do, what they do, to address that?
+[00:11:13] Matthew Matturro: Sure.
+[00:11:15] Matthew Matturro: So let me unpack AI as a large topic as a whole. For what it's worth, I was recently on a podcast with Cyberlinks and Matt Connor. I would suggest take a look at that, because I definitely have a section that does talk about, you know, AI and what it's doing to the world. I'm a big proponent in both
+[00:11:34] Matthew Matturro: AI for security and securing AI, so there's a double-edged sword to it. Where we're at right now.
+[00:11:41] Matthew Matturro: I see a couple of things. One is…
+[00:11:44] Matthew Matturro: the speed. The speed is 100%. The speed and the accuracy has leveled up.
+[00:11:50] Matthew Matturro: But at the same time, none of the attacks that are coming in are novel, right?
+[00:11:55] Matthew Matturro: For the most part.
+[00:11:56] Matthew Matturro: The one that I started to see that's a little bit different
+[00:11:59] Matthew Matturro: where you look at something like, I'm gonna go with an old school, you take Splunk as their concept of, like, UBEA for detection and response, right? You know, user behavior and analytics and things like that. And…
+[00:12:11] Matthew Matturro: You take a look at the… OpenAI Hugging Face Breach.
+[00:12:16] Matthew Matturro: You guys familiar with that? Okay, so I'm getting shaking of heads, so I'm guessing yes. So, the attack there was not solely predicated on standard operator methods. There's a lot of more nuanced and,
+[00:12:29] Matthew Matturro: circuitous routes they took. So, like, a lot of randomness that they took to continue finding their path forward.
+[00:12:37] Matthew Matturro: Where I think we're gonna see in the future is we're gonna see a lot more lower-chained exploits.
+[00:12:42] Matthew Matturro: Getting them to see Sakev?
+[00:12:44] Matthew Matturro: So, chain all the exploits, and then it'll end up being known exploited, right? You see a lot more of that. You can see a lot more…
+[00:12:51] Matthew Matturro: attacks, because it's A able to scale out from an agent's perspective, and B, just in terms of generative AI, you're going to be able to generate exploits a lot faster, and, you know, lower bar… lower barrier to entry, so a lot more
+[00:13:06] Matthew Matturro: you know, not even ScriptKitty, right? It's even, like, a level before that.
+[00:13:11] Matthew Matturro: You can vibe code exploits, you know, overnight. Gone are the days of needing to understand and be super, like, experienced in Metasploit, for example.
+[00:13:21] Matthew Matturro: To craft good packages and things like that.
+[00:13:23] Matthew Matturro: I think at the same time, you're seeing people in the,
+[00:13:29] Matthew Matturro: The, like, user analytics and user behavior, like, social engineering-type things coming out more.
+[00:13:35] Matthew Matturro: There's a lot of push on, like, passkey security and, and, security of, like, you know, tokens, not like, like, AI tokens, but, like, JWT and those kinds of things, where it's a lot easier to steal those things, and, you know, AI in a browser is making it a lot easier to steal some of those things, because it's just more connected. We're just so hyper-connected at every level.
+[00:13:58] Matthew Matturro: And it's not always easy to secure. You know, there… you go… you think like, you know, the OSI model, and…
+[00:14:05] Matthew Matturro: the attacks keep going higher and higher and higher so frequently, you know, hitting that application layer, like, on a day-by-day, in an every, you know, everyman-type scenario. So, that's kind of what I'm seeing.
+[00:14:20] Shoval Abudraham: Amazing.
+[00:14:20] Yuval Mermer: Listen.
+[00:14:21] Shoval Abudraham: a super, detailed overview, and I must be honest that we… we share, like, similar perspective. We understand that it's changed the security, operations, stock, ecosystem dramatically. So, first.
+[00:14:41] Shoval Abudraham: it's a great signal for us, you're agreeing with this change, and I'm… I'm curious to hear, like, how you, change your
+[00:14:52] Shoval Abudraham: All security strategy to address all those changes and all those new types of, attacks.
+[00:14:59] Matthew Matturro: So, my entire strategy is focused on the fundamentals.
+[00:15:03] Matthew Matturro: If you focus on the fundamentals, the… look at, like, CIS controls 1 and 2, hardware visibility, software visibility, you're gonna cut down so much.
+[00:15:14] Matthew Matturro: good patch management… patch management hygiene. You're gonna cut down on so much, so many of the easy, you know, infiltrating areas, and areas for, you know, north, south, east, west type traffic. So, the better you do it, you're…
+[00:15:28] Matthew Matturro: basics, and this is, like, pre-Zero Trust. This is, like, 1980s, 1990s, 2000s type security. The better you button up all of that with the newer tools, the better you're gonna be. And that's my firm line.
+[00:15:41] Matthew Matturro: focus on the fundamentals, and that's the best thing you can do. Now, focusing on the fundamentals is a different thing now.
+[00:15:49] Matthew Matturro: Because there's browser security to consider, right? Good hygiene from that. There's a lot of different hygiene to consider now than there used to be. But focusing on the fundamentals, I don't need a sexy product always to solve every problem. I need something that's going to give me good, actionable results that, meets the business need.
+[00:16:08] Matthew Matturro: And at the same time, allows me to understand, so for you guys developing a product, Shoval for you, from a product management and working with the business.
+[00:16:16] Matthew Matturro: Should definitely understand how you can take the insights that you generate for whatever you're building.
+[00:16:22] Matthew Matturro: And get it to a board-ready response. What is the… what are you spending, and what are you… what risk are you buying down? So I'm spending… let's say I'm spending $100,000 a year with you to buy down a million dollars of risk. That's a 10 to 1 ratio. That's a very…
+[00:16:37] Matthew Matturro: good, like.
+[00:16:39] Matthew Matturro: statement to be able to make to a board, right? You know, we can quantify that there is X dollars of risk here, based on these characteristics. And cyber risk quantification is very difficult to deal with, it's not really adopted.
+[00:16:52] Matthew Matturro: In the, you know, outside of security as much, but if you're able to come up with, you know, understandings of how much an incident would cost, so using a similar, like, incident response example, how much an incident would cost, and what it would take to secure based on your product.
+[00:17:07] Matthew Matturro: As long as you are spending less for your product as what the risk you're buying down is, it should at least get you halfway in the door.
+[00:17:17] Matthew Matturro: So it's not just about fixing the thing for, like, the tech people.
+[00:17:20] Matthew Matturro: Yeah. It's also about what it means to the board, what it means to the executive teams.
+[00:17:25] Shoval Abudraham: Yeah, actually, that's a great feedback. We hear it a lot from CISOs, because actually, it's, it's very common when we're talking about not, securing AI,
+[00:17:39] Shoval Abudraham: like, securing AI as it tells you, but securing the fundamentals, layers, and stuff like that that are not, related to an… to AI… I forgot how to say this word, but, directly, directly.
+[00:17:53] Matthew Matturro: Yep.
+[00:17:54] Shoval Abudraham: that's… you need to explain, like, which risk you reduce, so I loved it. I have a question. You mentioned that those insights need to be actionable. Can you give me an example? What does it mean?
+[00:18:11] Matthew Matturro: Sure, so I'll use instant response as a great example, right? It could be that you, when you're detecting, I'm gonna pick on your, like, Fortinet, or, sorry, Forta kind of days, you know, the sale for that, right? You know, endpoint detection kind of area.
+[00:18:29] Matthew Matturro: You should be able to either say, hey, we blocked this because…
+[00:18:33] Matthew Matturro: Or, we recommend you take this action because…
+[00:18:37] Matthew Matturro: So why is it impactful to you, right? So it needs to… you need to understand not just
+[00:18:43] Matthew Matturro: block, you know, block port 80 because it's insecure, right? What could actually happen if you leave it open?
+[00:18:52] Shoval Abudraham: So not… you don't,
+[00:18:55] Matthew Matturro: clean it as if there was no tech team there, and and someone was flying blind, right? Let's say the entire security team is hit by a bus, how are they going to take an insight that you have
+[00:19:07] Matthew Matturro: And apply it.
+[00:19:09] Matthew Matturro: Or take the insight you have taken, right, the action maybe in an Agentic fashion, you've taken, and bubble up what has happened and all the good benefit that's happened. Frankly, in the case of agents.
+[00:19:20] Matthew Matturro: how is it saving you from needing additional FTE, right? Not reducing FTE, but what is it giving you in capacity back to do in other areas?
+[00:19:30] Shoval Abudraham: Cool. So, I want to go back to the question we started with, like, how you are addressing these new types of attacks. So, sounds like, if I understand correctly, that
+[00:19:42] Shoval Abudraham: You, believe that you… you as an organization did a massive and great work on the fundamental layer, so you're not, bothered by those new type of attack, because you are securing those fundamental layers.
+[00:20:01] Matthew Matturro: I think we're doing a continuously better job. Would I say we're doing great? Yeah. No? I don't think… I don't think we'll ever hit great. I don't think any company will ever hit great.
+[00:20:12] Matthew Matturro: But what we're doing is getting better visibility, better understanding where there's holes, and getting down to those fundamentals, right? There's no public S3 buckets that are just exposed with, you know, client confidential information, right?
+[00:20:25] Matthew Matturro: That kind of a thing. That's a basic, right?
+[00:20:29] Matthew Matturro: focusing on things like, for AWS, the foundational security best practice is a great spot to start for securing your cloud to the fundamentals.
+[00:20:37] Shoval Abudraham: Yeah.
+[00:20:38] Matthew Matturro: That's the… that's how we're… that's how we're doing it. Now, we've got some other higher-order things that are fun, and more, unique in that way, but that's the crux of how we secure a good foundation.
+[00:20:50] Shoval Abudraham: What are the unique stuff you do?
+[00:20:53] Matthew Matturro: So we're working on some stuff around, use of, like,
+[00:20:59] Matthew Matturro: Agentic, like, insights for an incident response, right? Chaining more intelligence together. We're looking at it, so…
+[00:21:09] Matthew Matturro: I'm taking a strategy for the organization where I've got my execution layer, which is AI and automation focused around, you know, whether it's… and I sit in three pillars. I have GRC, security operations, and product security. Product security is application security, product security, and the like, you know, kind of more generally rolled together.
+[00:21:28] Matthew Matturro: And AI and automation in those different layers, right? Anything I can do to automate other things that I need to know, insights that I need to know, things that are quick and easy that a human just doesn't need to interact with.
+[00:21:41] Matthew Matturro: Then I move up to the, judgment layer, and the judgment layer is around making sure that the things that are coming out of the automation layer, the execution layer, taking those insights and doing further things. So, right, if you came up with something to me.
+[00:21:55] Matthew Matturro: My judgment layer, my people in my judgment layer, would take the insights and be able to take action based on them, or would be able to use them in regards to the strategy that's coming from the leadership and the outcomes layer, which is that third layer.
+[00:22:08] Shoval Abudraham: Yeah.
+[00:22:08] Matthew Matturro: We're talking about the strategy and the way we're driving.
+[00:22:11] Yuval Mermer: And it's those layers that you talked about, it's layers that you already developed inside?
+[00:22:18] Matthew Matturro: So, yeah, this is just organizational structure and types.
+[00:22:21] Yuval Mermer: Stop.
+[00:22:21] Matthew Matturro: So, I am, in full transparency, because it's not my IP, I borrow this heavily from… Microsoft has a model, and then, do you know Torque, the SOAR platform?
+[00:22:32] Matthew Matturro: Cork has models their organization, their SIM SOC around that, or their SOC around that kind of stuff, and I love it, and I'm stealing from it.
+[00:22:43] Shoval Abudraham: Cool. So, we have 2 more minutes. I have the last question.
+[00:22:49] Matthew Matturro: And I can go a couple minutes over if you need.
+[00:22:51] Shoval Abudraham: Amazing.
+[00:22:52] Yuval Mermer: Amazing.
+[00:22:52] Shoval Abudraham: So I'm curious to hear, like, what are the process you started with? Like, what was the most urgent process to automate and make more efficient?
+[00:23:06] Matthew Matturro: So I have all of my team members, so next year is going to be a transformational year for us in regards to moving to that model. I have every team member going through, identifying what they're doing. So, for example, my GRC analyst spends a lot of time doing sales support, right? Answering questionnaires, like I'm sure you guys will with customers is like, you know.
+[00:23:23] Matthew Matturro: Do you have SOC 2? Do you have this? Do you have that? How do you handle it? Answering all those questions. So we do that for our, you know, our customers. She spends a lot of time doing that.
+[00:23:32] Matthew Matturro: So we're gonna work on ways to automate that better. And a lot of that doesn't come down to necessarily, like, use AI to automate the answers. A lot of it comes down to, like, the fundamentals. Is your data correct?
+[00:23:43] Matthew Matturro: old, you know, developer adage, garbage in, garbage out, and we still live in that capacity. And so focusing on that, and initiatives around that to make that execution layer, that AI automation layer, better.
+[00:23:57] Shoval Abudraham: Well, when.
+[00:23:58] Matthew Matturro: So that's an example, and that's in GRC, that's not really… that's more of a non-technical area.
+[00:24:03] Shoval Abudraham: No, that's… that's a great example. I'm curious to hear, like, you… the… the example you gave about what, what is the big part of this process is to understand, like, what is the… from the data is correct, if you have all the data,
+[00:24:19] Shoval Abudraham: Do you build this?
+[00:24:21] Shoval Abudraham: mechanism, this, part of…
+[00:24:24] Matthew Matturro: Yeah, so we've answered a lot of these over the years, right? A lot of these questionnaires over the years. What we're gonna do is we're gonna take that data, and we're gonna validate that data, we're gonna put it into an ontology, right? We have multiple products that we support, we have multiple customers for each product, multiple, like, different, customer archetypes or personas.
+[00:24:42] Matthew Matturro: And so we're going to classify things in that kind of ontology to know that if I need to answer this question… if I need to answer a question around, let's say, encryption at rest, right?
+[00:24:53] Matthew Matturro: What is my answer for encryption arrest for customer type A in product type
+[00:24:58] Matthew Matturro: O, and what does that answer look like? And I should be able to answer that.
+[00:25:03] Shoval Abudraham: Cool.
+[00:25:03] Matthew Matturro: because the data will be tagged appropriately. And this is just a very simple example that I can then take and put Claude or Databricks or some AI on top of to just answer the questionnaire.
+[00:25:13] Shoval Abudraham: Yeah, and can I ask, like, why…
+[00:25:16] Shoval Abudraham: Did you start it from the execution, parts of, of the process.
+[00:25:24] Matthew Matturro: Oh, that's just… that's focusing on getting time back for my team. So what I have my team doing is going through and expressing what are the things they do in a 40-hour week. How much time are they spending? Yeah. What could they solve with some level of automation or AI? And what time would they get back?
+[00:25:40] Matthew Matturro: From that, from doing that automation. So it's the idea of efficiency.
+[00:25:44] Shoval Abudraham: Yeah, exactly what I wanted to say, like, to be more efficient, to…
+[00:25:49] Matthew Matturro: Correct.
+[00:25:49] Shoval Abudraham: Cool.
+[00:25:51] Matthew Matturro: In risk land, I'm actually… we're looking to build some headless risk analysts where it's an MCP that we can connect to.
+[00:25:59] Matthew Matturro: and, you know, answer questions and understand risk and do inherent risk assessment, and so a human doesn't have to sit and, like, kind of guess at probability and impact and things like that. It should be substantiated in something and give us, like, a grounding and a foundation that we can either agree with, deny, or, you know, fine-tune.
+[00:26:16] Matthew Matturro: So, there's a lot of things that we're doing in, you know, from that capacity.
+[00:26:21] Shoval Abudraham: Yeah, I love it. Those are very good examples, and there's a very, cool direction to…
+[00:26:30] Shoval Abudraham: like, as… as I mentioned before, we are very, aligned on the way we're seeing the… the… the new attacks, and how they change the… the security…
+[00:26:43] Shoval Abudraham: perspective of the organization, and I love to hear that
+[00:26:48] Shoval Abudraham: You went to the direction to make your team more efficient and help them do their work,
+[00:26:55] Shoval Abudraham: That's very good insight.
+[00:26:56] Matthew Matturro: Yeah.
+[00:26:57] Shoval Abudraham: Yuval, do you have more questions?
+[00:27:00] Yuval Mermer: I have only last question, because it was very helpful, and I really… I really… it sounds like you have an excellent team, that they can develop whatever they want, and ultimately.
+[00:27:10] Matthew Matturro: I have a very good.
+[00:27:10] Yuval Mermer: 15.
+[00:27:12] Matthew Matturro: Yeah, I have a very good team. I really like it.
+[00:27:14] Yuval Mermer: And what I wanted to ask you is, like, I want to zoom out a bit and ask you what are the top 3 things that are on top of your mind for looking forward to 2027, besides what we talked about.
+[00:27:27] Matthew Matturro: Great question. Hold on, I'm gonna pull up. We were just doing some planning last week, and I'm gonna pull up an image. I can't show you the image, but I can at least, you know, steal from it.
+[00:27:38] Shoval Abudraham: I love when we're asking a question, and then the person.
+[00:27:43] Matthew Matturro: Yeah.
+[00:27:43] Shoval Abudraham: I have a slide for that, I'll explain you what I presented to the board yesterday.
+[00:27:48] Yuval Mermer: Yes.
+[00:27:49] Matthew Matturro: So… so my top 3… I'll start with my top 3 risks.
+[00:27:53] Matthew Matturro: Cool. For the business… for security in the business. So it's identity, right? I think identity is the…
+[00:27:59] Matthew Matturro: the next iteration of the edge, right? It used to be you'd have a Tootsie Pop strategy, you'd secure the outside. You then move to, you know, like, a secure service edge model with workstations. Now it's the identity with the level of mobility and the level of,
+[00:28:15] Matthew Matturro: even just, like, how AI operates, it's, you know, technology… it's machines that operate like humans, right? So getting that identity layer wrapped around your head and better understanding that is key.
+[00:28:25] Matthew Matturro: That's number one. Number two is new compliance and certs, right? So we sit in a regulated industry, making sure we can keep up with the regulations and pivot to adopt the regulations quickly, if needed.
+[00:28:38] Matthew Matturro: Aw, and then…
+[00:28:39] Yuval Mermer: New regulations that you're… you're going to work to adapt for?
+[00:28:44] Matthew Matturro: We do, I can't share them at the moment, just because it's, impactful to the strategy, but… but there are, and, so for… I'll give you an example, though, because we're certified in this now. We work with Spain and some Spanish government entities, and we had to get ENS certified. It's one of their Spanish certifications, and we had to get, the high-level certification, like, very quickly.
+[00:29:09] Matthew Matturro: We were able to do it leveraging the fact that we were ISO 27001 already. If we had been SOC 2 certified, it would have been a lot more difficult because it didn't align in the same capacity.
+[00:29:19] Matthew Matturro: So, making sure we pick the right
+[00:29:21] Matthew Matturro: frameworks for what we're doing, right? U.S.-based versus OUS, you know, outside the U.S.
+[00:29:27] Matthew Matturro: It's Hadassa Medical, by the way. It just popped into my head.
+[00:29:30] Yuval Mermer: And that's,
+[00:29:31] Matthew Matturro: That's the one. Yeah, yeah, in Jerusalem. Sorry, don't know why it just popped into my head, but it just popped into my head.
+[00:29:38] Matthew Matturro: And, so yeah, it's part of the strategy, and that's how, honestly, that's how security and the business have a heavy overlap, right? We are maintaining trust and assurance with our customers, you know, they have to understand that what we're doing with this stuff, they have to trust what we're doing with it. So yeah.
+[00:29:56] Matthew Matturro: The third one is… yeah, the third one, we're lovingly listing it as AI and security stuff.
+[00:30:04] Matthew Matturro: it's… we focus on the fundamentals to really cut down on the heavy needs. There are still things that are unique in AI land.
+[00:30:14] Matthew Matturro: Making sure that we have the appropriate… all of the good compliance information, and that we're, detecting and responding appropriately.
+[00:30:23] Matthew Matturro: And all that kind of stuff.
+[00:30:26] Matthew Matturro: how we're managing, you know, agent identities, you know, not like NHI, you know, falls into that. So, like, there is overlap in some of those things, but it's just a bucket of concern, you know?
+[00:30:39] Matthew Matturro: I'd be lying if I didn't tell you I was concerned about Hugging Face finding, you know, our, you know, public endpoints, and…
+[00:30:45] Yuval Mermer: Yeah.
+[00:30:46] Matthew Matturro: attacking against it, right? Not gonna say, sorry, OpenAI, or Anthropic, right? Anthropic had similar, you know, problems. Yeah.
+[00:30:54] Matthew Matturro: Yeah.
+[00:30:57] Yuval Mermer: Thanks for the detailed answer. Yeah, we really appreciate it.
+[00:31:02] Shoval Abudraham: You know, for…
+[00:31:03] Yuval Mermer: Yeah, you're dying.
+[00:31:04] Shoval Abudraham: Yeah.
+[00:31:05] Yuval Mermer: All the conversation, it was very helpful and valuable for us.
+[00:31:09] Yuval Mermer: Brief.
+[00:31:10] Shoval Abudraham: It's fun to meet a person, you know, that's familiar with the.
+[00:31:13] Yuval Mermer: Good person.
+[00:31:13] Shoval Abudraham: culture, and you know, we had… I feel free to say it in the name of both of us, so that we have a very good conversation, and not only the value, it was great talking to you, so thank you so much.
+[00:31:28] Matthew Matturro: Pleasure.
+[00:31:29] Shoval Abudraham: And we would love, you know, to keep in touch and share with you more as our journey ever evolving. Yeah.
+[00:31:38] Yuval Mermer: And Bengus.
+[00:31:38] Matthew Matturro: Are you guys kind of at the stages? Oh, sorry.
+[00:31:41] Yuval Mermer: Yes.
+[00:31:41] Matthew Matturro: If I get… if I get, I will let you know. I think I need to spend 2 or 3 days going through different people that I know in Tel Aviv alone. I will let you know.
+[00:31:50] Matthew Matturro: That we're looking at.
+[00:31:51] Shoval Abudraham: That's nice.
+[00:31:52] Matthew Matturro: Yes, in regards to, to this process, are you guys kind of trying to get ideas, or… and try and figure out how to solve problems for a CISO, or do you have an idea that you're going with? You don't need to tell me about the idea, but I'm just curious, like, where you're at in your ideation process.
+[00:32:09] Yuval Mermer: Yeah, so we actually have a direction that we're still validating.
+[00:32:17] Yuval Mermer: And so we can't say that the official direction we're going in, but…
+[00:32:22] Yuval Mermer: This conversation was part of the validation of this direction, so you can assume what is it from the conversation we had.
+[00:32:29] Matthew Matturro: Yeah. What I would love to say is, if you want to talk
+[00:32:32] Matthew Matturro: and you want to just remove the, like, concerning layer, right, of, like, you know, confidentiality, I'm happy to sign a confidentiality agreement and get in-depth if you want to, if you think it's helpful.
+[00:32:43] Shoval Abudraham: Cool.
+[00:32:44] Matthew Matturro: I really believe in what is coming out of the Israeli market from a cybersecurity perspective, so I want to dedicate whatever time I've got to helping get that forward.
+[00:32:55] Shoval Abudraham: We really, really, really, really appreciate it.
+[00:32:58] Yuval Mermer: Would you be interested in being a design partner in our journey?
+[00:33:03] Matthew Matturro: At some point, I don't know when, so I will say yes, but I don't know when. I would need to hear more about where you're looking to go, but it's not unheard of, I'll say that much. Much to my team's chagrin of, like, they have to set up a whole new stack on things, so yes.
+[00:33:18] Matthew Matturro: Yeah, I mean, listen, I… as it continues, yes, let's… let's chat.
+[00:33:24] Matthew Matturro: And if not… so, like I said, from a networking perspective, if not me, if I know someone else that's looking for that, I can help.
+[00:33:30] Yuval Mermer: Amazing.
+[00:33:31] Matthew Matturro: You know, bring that to my networks.
+[00:33:33] Shoval Abudraham: Amazing. We really, really appreciate it, aren't you?
+[00:33:37] Matthew Matturro: No problem.
+[00:33:38] Matthew Matturro: Thank you very much, and I guess I belated show a lot.
+[00:33:41] Yuval Mermer: It's another…
+[00:33:42] Shoval Abudraham: Yes! Thank you, bye.
+[00:33:46] Matthew Matturro: Have a good one.
+[00:33:47] Yuval Mermer: No way.
+[00:33:47] Shoval Abudraham: You, bye!
+[00:33:48] Matthew Matturro: Bye-bye.

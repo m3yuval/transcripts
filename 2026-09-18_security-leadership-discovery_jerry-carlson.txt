@@ -1,0 +1,267 @@
+Date: 2026-09-18
+Topic: Security Leadership Discovery - Jerry Carlson
+Meeting UUID: 1E35ED64-AFB7-4455-B1C4-8F668689091F
+Source: transcript
+Entries: 261
+
+[00:00:00] Shoval Abudraham: introduce ourselves a bit.
+[00:00:04] Shoval Abudraham: So, I'm Shoval. I'm in cybersecurity for the past 10 years. Basically, I started in the unit 8200. I think we talked about it a little bit on LinkedIn, but I will elaborate. Basically, this is the intelligence unit.
+[00:00:20] Shoval Abudraham: of the Israeli army. Basically, you know, we need to defend ourselves also from a cyber perspective,
+[00:00:28] Shoval Abudraham: So, we both served there, Yuval and I, there we actually met, so we know for many, many years already. We served there at the department that was responsible for the infrastructure.
+[00:00:41] Shoval Abudraham: So, basically, hold the role of a DevOps engineer, but combined with a security engineer, because we had to build and maintain those infrastructure, but
+[00:00:51] Shoval Abudraham: To do it very securely, because those were super, sensitive infrastructures.
+[00:00:57] Shoval Abudraham: I'm specifically served for five and a half years, I released as a captain, and after that, I did a shift to a product management role. Basically, I love technology, and to be hands-on was great, but already during my service, I realized that I love
+[00:01:16] Shoval Abudraham: I love to solve problems, to understand pain, and then solve it, so…
+[00:01:24] Shoval Abudraham: I re… like, researched about, roles in… in tech, and product manager sounds like the best, the
+[00:01:33] Shoval Abudraham: best fit. I love this, role. So basically, I am product manager in the past, 5 or 6 years, something like that. I started in a company called Perception Point, which is, on the workspace security area. I leather all the detection capabilities.
+[00:01:51] Shoval Abudraham: that were based mostly on… we started with machine learning, then we went to LLM and AI, built agent before we knew to call them that way, because the…
+[00:02:02] Shoval Abudraham: It wasn't a thing yet.
+[00:02:04] Shoval Abudraham: This company was a great journey. She was acquired by Fortinet at the end.
+[00:02:10] Shoval Abudraham: Later on, I moved to another cybersecurity company called Koi Security. Also great company, amazing customers, very innovative in terms of how we use the AI. And this company was acquired, also by, Palo Alto.
+[00:02:26] Shoval Abudraham: Basically, that was my sign, to call Yuvalu, which, as I mentioned, is a very, very good and old friend, because we always want to build something together. And yeah, right now we are…
+[00:02:41] Shoval Abudraham: on the ideation stage in our company, and, like, you know, we started on the same place, Yuval and I, the same department. I did the shift to product manager, and Yuval doubled down on the technology, so I let him share his journey.
+[00:02:58] Yuval Mermer: Yeah, you know, actually, Ansarcha was fun when she decided to, to…
+[00:03:04] Yuval Mermer: to be acquired herself, with herself company, and I told her, yeah, I'll quit, I'm coming with you, and this is our… Previous status. Yeah, previous debt. Actually, it was an old dream that we had together since the days in the unit.
+[00:03:19] Yuval Mermer: But, I'll tell you about me. I started as a Shoval Soldier, actually, in this department.
+[00:03:24] Yuval Mermer: And together, we did great platforms for the unit. You know it's an intelligence unit, so we have very complex and large networks, and in very restricted conditions.
+[00:03:37] Yuval Mermer: And there we developed one platform for managing, securing, and operating all those multi-zone networks, and another platform for auto-remediating those networks and all the infrastructure we had, and
+[00:03:53] Yuval Mermer: After this great journey together, when Shoval was the commander and the product manager, and I was the developer, I promoted to be a team lead.
+[00:04:02] Yuval Mermer: My next challenge was to lead people and to develop them, and after this,
+[00:04:11] Yuval Mermer: a couple of years that I was a team leader, I promoted again to be the head of the DevOps and the infrastructure department, the same department that Shoval told you about. It was a real challenging, because it was a leading
+[00:04:23] Yuval Mermer: 40 engineers across 5 teams.
+[00:04:26] Yuval Mermer: The teams that are building, running, and securing those networks and production environments and petabytes of data
+[00:04:34] Yuval Mermer: It was networks for operations rooms, networks for hundreds of applications, thousands of users. It was really challenging, and after this long journey, I finished the military service. In the search for the next challenge, for me, it was to manage and lead
+[00:04:53] Yuval Mermer: this scale of group, but outside the army.
+[00:04:57] Yuval Mermer: with the competitive world and with much more resources, so I joined Paragon, which is an Israeli cyber company. There I was the director of DevOps and SRE. I led 25 engineers, and together we developed
+[00:05:13] Yuval Mermer: Tailor-made solutions for the product's network, and we actually had to secure it very good, because our customers were governments and agencies around the world.
+[00:05:28] Yuval Mermer: And, we had to do it in a very secured way. And, then I got Shoval's phone.
+[00:05:34] Yuval Mermer: And I told the Paragon,
+[00:05:37] Yuval Mermer: that I'm going to quit, and 3 months later, we started this journey.
+[00:05:41] Yuval Mermer: This is about us, we would love to hear about you.
+[00:05:46] Jerry Carlson: I work at Commvault today. We are in the IT side of the house, like, the data.
+[00:05:53] Jerry Carlson: So, we're protecting data, we're also cyber resilient, so we're helping the people recover after the attack happens.
+[00:06:01] Jerry Carlson: We purchased a couple of companies recently that are more security than IT, Satori being one of them.
+[00:06:08] Jerry Carlson: We're able to identify, classify data, gate access to data, redact data.
+[00:06:14] Jerry Carlson: So, we're kind of putting our toe in security a little bit. I know nothing about IT infrastructure, so if you're talking about, like.
+[00:06:22] Jerry Carlson: RPO, RTO, disaster recovery, it's not my area, I'm just a security person, but I was hired here one year ago.
+[00:06:30] Jerry Carlson: My friend said, come over and help run the field CTO organization.
+[00:06:35] Jerry Carlson: Today I'm our field CISO working with our customer CISOs. And so, prior to that, I worked for two MSSPs, Critical Star and Bulletproof. Both were SOC for hire, kind of a deal.
+[00:06:49] Jerry Carlson: And then I worked 25 years for Microsoft prior to that in security, so I know where you come from, because I spent a lot of time in Israel, because we had purchased
+[00:06:59] Jerry Carlson: 5 companies in the time that I worked at Microsoft, and we have a…
+[00:07:03] Jerry Carlson: Big research center, there as well, if you guys know that.
+[00:07:08] Shoval Abudraham: Perfect.
+[00:07:08] Jerry Carlson: the Defender product grew up out of Israel, so…
+[00:07:13] Jerry Carlson: You know, I'm familiar with that, and the two of you, you're like, every time I turn around, someone's starting a company in Israel, because I'm like, I want to start one. We made a joke at Microsoft, say, hey, let's just start a company, and then Microsoft will buy us back, it's okay, you know, so it was kind of a running joke, so…
+[00:07:30] Jerry Carlson: I worked for Novell prior to that. Novell is a networking company, so I would say my strongest for me is identity. I've been in identity for 30 years. That's just where I come from.
+[00:07:41] Jerry Carlson: So yeah, that's kind of the highest level, of where I'm at, and so now my job today is to advise CISOs on strategy.
+[00:07:51] Jerry Carlson: That would be where I sit.
+[00:07:53] Jerry Carlson: Yep.
+[00:07:54] Shoval Abudraham: You know, actually, when we started our research, a month ago, I think? It's not a long time, but for us, it felt like a year. One of the areas that we research, we are not researching it yet.
+[00:08:10] Shoval Abudraham: Still, but, we research resilience, so, of course, we know Commvault is a big company, a leading company in this area, so, be familiar with your product.
+[00:08:23] Shoval Abudraham: So that's cool, you know? We, like, when we realized we have this conversation, it was super exciting, but… because we felt we know, like, the product.
+[00:08:34] Jerry Carlson: Yeah, I mean, resilience is just a word, so I… I often say, well, what does… what does that even mean? I mean, as…
+[00:08:44] Jerry Carlson: as humans, I guess, there's only two ways that you're resilient. One is that you get
+[00:08:50] Jerry Carlson: hurt, knocked down, something happens, and you get back up, and you do better. That's what resilience means, that you're able to do that. The other is, a lot of athletes will train under stress.
+[00:09:01] Jerry Carlson: Which makes them resilient, and that's the thing that I stress for our customers, is that resilience is a word, but it's about defining
+[00:09:11] Jerry Carlson: for me, it's minimum viable operations or minimum viable company. Like, what in your company
+[00:09:18] Jerry Carlson: has to get back before you get a heartbeat, before you can do anything. Like, what are those things? You know, identity's one of them. That's just, for me, it's a no-brainer.
+[00:09:28] Jerry Carlson: But for a hospital, it could be the EMR system, you know, for a manufacturer, it could be their production line, I don't know, it's different. But what I'm helping is to say, here's the minimum viable company that you've designed, and how often are you testing it?
+[00:09:45] Jerry Carlson: Because I say a plan not tested, it doesn't work.
+[00:09:50] Jerry Carlson: didn't care how good the plan is. And so, when I talk about resilience, when I define resilience as that, it's basically testing your plan under stress.
+[00:09:59] Jerry Carlson: to have confidence that you can recover in… least to your minimum viable company in the shortest time possible, and cleanly, right? Because you get reinfected all the time, so…
+[00:10:09] Jerry Carlson: That's how I define resilient.
+[00:10:12] Shoval Abudraham: I love it, yeah.
+[00:10:13] Shoval Abudraham: as we research it, we… we struggle, like, because, as you said, resiliency is a word. The meaning is what's important, and I feel like, different companies, there are also new companies around us right now.
+[00:10:29] Shoval Abudraham: try to define it in their way, so I love this definition.
+[00:10:35] Jerry Carlson: Well, there's a better definition. I'm gonna share stuff with you guys, and then I'm gonna hear what you're doing, but I'm a big storyteller. That's what I do, I tell stories, so…
+[00:10:45] Shoval Abudraham: We love to hear!
+[00:10:47] Jerry Carlson: Love story, yeah.
+[00:10:48] Jerry Carlson: It's gonna be a little bit of a Commvault commercial, but I wanna… I wanna, skip the commercial part. Look.
+[00:10:54] Jerry Carlson: when people say, what is cyber resilience, I'm gonna use a NIST definition. So, there it is, you can see it, you know, and so…
+[00:11:02] Jerry Carlson: When I talk about Commvault, I just basically say, we're a resilient company and AI, and I'll tell you why that is, but, you know, ransomware, human error, blah, blah. But that's what NIST says.
+[00:11:12] Jerry Carlson: But for me, I always say, well, whose job is that at a company? Like, if you said, my job is cyber resilience, whose job is that? It's no one's and it's everyone's. That's the problem today, is there's not, like, a…
+[00:11:24] Jerry Carlson: chief in charge of that, you know? Each of these areas operate independently, so…
+[00:11:29] Jerry Carlson: If you look at everybody in the market, everybody's going to resilience instead of prevention. They don't even use those words anymore. So you say prevention, we're not even using those words anymore. And then all the CIOs in the world, number one thing this year, 2026, was, resilience and data privacy. That's the number one thing on their agenda.
+[00:11:49] Jerry Carlson: For us, we look at it, you know, we don't have to tell you everything, but this is so important to me, because I talk to people, I say, well, there are 3 kinds of recoveries, like, everybody understands disaster recovery, but cyber recovery requires something different, you know, and so I make sure I tell them that.
+[00:12:04] Jerry Carlson: I don't want to get to that, I want to get to… this is really interesting to me, and this is where I'm going to ask you questions in a minute, is like…
+[00:12:11] Jerry Carlson: If I went out and said, look, all the cybersecurity controls, about 4,000 rough controls, where do they land? What box do they land in?
+[00:12:21] Jerry Carlson: And this is roughly around prevention, detection, and recovery, but as you can see, recovery doesn't have that many tools and controls. Like, predominantly as a… as a world, we're investing in these first two.
+[00:12:36] Jerry Carlson: more, and I think prevention is going to get more money as AI comes around as well. But I like analogies for a second, and this is where, again, where I want to see where you fit. I lived in Detroit, so I love cars for a lot.
+[00:12:51] Jerry Carlson: Well, we try to build this car, like, in our mind. We say, hey, we're gonna build a security system, we end up with this car, this one. That's what we end up with.
+[00:13:01] Jerry Carlson: And we think it's working, but this is a model that, for the past 25 years, everybody operated on. They said, I need the best email security tool, so they got the email security tool, I need the best network security tool, they got a network security tool.
+[00:13:14] Jerry Carlson: And then, you know, 78% of all of these CISOs out there, they have, like, tools 16+, and so what that looks like, I obviously know what NIST is, but this is shocking to me.
+[00:13:25] Jerry Carlson: that…
+[00:13:27] Jerry Carlson: if I just look at this NIST framework and I plotted out the security controls, doesn't something jump out at you? For me, it does. It says, for me, we operate here, obviously, but I tell them, you can't become resilient without these two. Yeah. And for me, I think opportunity is here because there's not a lot of players. This is crowded.
+[00:13:46] Jerry Carlson: So, I won't keep going on this, but I'm gonna ask you your question, which I have no idea where you fit. Like, what are you guys making? What problem are you solving? And where in this mess are you trying to…
+[00:13:59] Jerry Carlson: fit into.
+[00:14:00] Yuval Mermer: I like it so much, it's brilliant.
+[00:14:04] Shoval Abudraham: And I have, I have, I have a question before you will, we will answer you. What… can you, share with me how you define respond and how you define recover?
+[00:14:16] Jerry Carlson: It's the NIST here, so these are the definitions here, so you can read them. You should become familiar with this model if you're not, because 80% of the CISOs use this as a base model.
+[00:14:27] Shoval Abudraham: Yeah.
+[00:14:28] Shoval Abudraham: respond, you can see it, Yuval?
+[00:14:31] Yuval Mermer: Yeah, I can see. They respond? Yeah, I can see. Take action regarding a detected.
+[00:14:35] Jerry Carlson: Recover, restore assets, operations, yeah. Yep.
+[00:14:38] Shoval Abudraham: Amazing. Well, okay, so let's, let's, share with you a bit about our research. I think that, like, you, you did, like, the, the great,
+[00:14:49] Yuval Mermer: Whoa.
+[00:14:49] Shoval Abudraham: Starting for our,
+[00:14:52] Yuval Mermer: That's amazing.
+[00:14:52] Shoval Abudraham: point. It sounds like we talked, like, on the same thing, basically.
+[00:14:59] Shoval Abudraham: Okay, so…
+[00:15:02] Shoval Abudraham: as we started from our end three-point was AI changing the whole ecosystem. You know, post MITOS era, we understand that attacks will look
+[00:15:14] Shoval Abudraham: Totally different. They will be with much larger scale, much faster, even sometimes unpredictable, because agents are super innovative and creative in the way they act.
+[00:15:28] Shoval Abudraham: And… We started to look on all those, areas you also shared with us on the last slide.
+[00:15:40] Shoval Abudraham: where we think that will, affect mostly. So basically, we think it will affect all of them. We saw a lot of new products around AI security, on the prevention, posture, management. We saw…
+[00:15:55] Yuval Mermer: The usage side. The internal usage side.
+[00:15:58] Jerry Carlson: Yeah.
+[00:16:00] Shoval Abudraham: We saw there are new products around identity, and we started to…
+[00:16:09] Shoval Abudraham: looked on two areas, detection and response, basically. Remediation, you can call it, also.
+[00:16:19] Shoval Abudraham: As we saw from your slide, there are a lot of products on detection. We can talk about if they do a good job, or good enough.
+[00:16:30] Shoval Abudraham: But a signal that we got, like, we do a lot of conversation like that with CISOs and security leaders, the feedback that we got is that they're probably good enough for now, but what they
+[00:16:45] Shoval Abudraham: care about the most at the moment is the response part, because as attacks became machine speed.
+[00:16:53] Shoval Abudraham: This… the response part must be on the same speed, at least, if not faster.
+[00:17:01] Shoval Abudraham: So… First, I usually ask, like.
+[00:17:06] Shoval Abudraham: do you agree with this statement? Do you feel it in your organization, or your customer's organization?
+[00:17:17] Shoval Abudraham: You know, when a person shares a slide after I'm asking a question, that's the best response.
+[00:17:24] Yuval Mermer: I can't get.
+[00:17:25] Jerry Carlson: This is the fundamental problem, and I don't know if you're saying you're answering this, to be honest. So, the fundamental problem is the conversation about, should humans be in the loop, and how much in the loop? And you see that the first thing that's happening is vulnerabilities are being
+[00:17:43] Jerry Carlson: Discovered and actually used against us at a faster pace than we can actually fix them.
+[00:17:50] Jerry Carlson: fundamentally, this is nothing new, it's just the time window is shrunk. So, we've always had vulnerability patch management, always, and, you know, you would find one, and you said, I've got a month or two to patch that thing, now you have an hour.
+[00:18:06] Jerry Carlson: And so, what's happening is that, you know, AI is finding these and accelerating it, which is also just exasperating the problem, right? Because you're saying that they were already overwhelmed, and now they have to decide
+[00:18:22] Jerry Carlson: I'm going to just try to look at the ones that are the worst. Again, this is a bad posture, because, you know, some of the ones that aren't the worst are still the ones that compromise, and now AI is getting smart, so it's chaining together a bunch of low-level signals into
+[00:18:38] Jerry Carlson: a bad signal, so it's hard to really… to do that as well. So the point is, is that, we're not fixing anything here, which is exasperating. If I were going to create a company, ideally, this is what I would create.
+[00:18:51] Jerry Carlson: I would create, you know, provocatively, no human in the loop, and you say CISOs would never have that. You say, okay, I understand what you're saying, that they don't trust… they don't trust an AI
+[00:19:03] Jerry Carlson: to do these things yet, but I'm saying, what… what's the…
+[00:19:07] Jerry Carlson: risk, or the unintended consequences, so I say it like this. I say, let's say you had a fully automated discovery of vulnerabilities, you had a fully automated… it would test the patch of this vulnerability. If you didn't have a patch, it would test isolation of that.
+[00:19:24] Jerry Carlson: Then it would actually implement the fix, make sure that, you know, the holes were closed, all at machine speed, the same way that it was being attacked. And let's say it got it wrong.
+[00:19:34] Jerry Carlson: let's say it got it wrong, and it, what, shut down one of your production servers, and you couldn't make a car, or whatever you do, I said, what's the alternative, is that if you have a human in a loop, and they get it wrong, and you get full-blown compromise of malware, or whatever, I said, that's worse for me than doing that. So, maybe you're not…
+[00:19:54] Jerry Carlson: telling me you're working in this area, but I'm telling you what is needed today. There is nothing out there today at machine speed that is pulling these together. The closest I've seen is Microsoft in M-Dash. They have a hundred.
+[00:20:08] Jerry Carlson: AI agents that go out, discover, they test the patch, they apply the patch, they look at the code, they look at the… make sure the code is good. So, I'll stop sharing with you, but you said, you know, prevention, or detection, you said, you said detection, so…
+[00:20:25] Jerry Carlson: I don't think it's a strong business case for detection, because there's so many people in that space, and I'll tell you right now, it fails 100% of the time. It's a failing thing, and you have to know that it fails 100% of the time, so just a detection alone
+[00:20:42] Jerry Carlson: isn't good enough. It has to be strung together with a whole ecosystem
+[00:20:46] Jerry Carlson: of automation, let's say, that helps you in layers of security, not just one thing. I like prevention better. If I had money.
+[00:20:57] Jerry Carlson: I would move it over to prevention and say, you're really bad.
+[00:21:02] Jerry Carlson: at finding vulnerabilities, you're really bad at writing code and make sure it's good. You're really bad at, you know, how fast can you patch these when you get it? How fast can you isolate them if not? And those timeframes are way big, like, I say that's where you need to start, because
+[00:21:19] Jerry Carlson: doing that, you'll have less detection anyways. You'll just be better posture. So, I'll stop for a minute, because
+[00:21:25] Jerry Carlson: I just want to show you where my mind is in that ecosystem, and where I think there's missing things. Just from another detection tool, I don't know if that's a great business model.
+[00:21:37] Yuval Mermer: Yeah, actually, we totally agree with you, and this is all our research, and this is what we got from the indications from the CISOs.
+[00:21:48] Yuval Mermer: we talked with. So, yeah, actually, the car that the industry should build should be the car that will patch faster without human in the loop, which is a great vision to the future, but now CISOs are afraid from patching autonomously, right?
+[00:22:06] Jerry Carlson: Yep, yep.
+[00:22:06] Yuval Mermer: I want to ask you, if…
+[00:22:10] Yuval Mermer: If it's… it's how you see the world, or it's how…
+[00:22:13] Yuval Mermer: Commvault believed that the company should do internally.
+[00:22:19] Jerry Carlson: Oh, I don't…
+[00:22:20] Yuval Mermer: Before I own… I don't have anything to do internally.
+[00:22:23] Jerry Carlson: I don't… I don't dictate anything internally, I'm external focused, so I'm not… I'm not internal focused on how we…
+[00:22:31] Jerry Carlson: how we do anything, so, you know…
+[00:22:33] Yuval Mermer: I'm not talking about Commvault providing this solution, I'm talking about the internal infrastructure of Commvault.
+[00:22:42] Yuval Mermer: if, Commvault planned to… to, build
+[00:22:48] Yuval Mermer: And develop, inside, a solution for their use.
+[00:22:53] Yuval Mermer: Not for selling.
+[00:22:55] Jerry Carlson: For the use of what? Prevention, detection, response? Like, what, what use are you talking about?
+[00:23:01] Yuval Mermer: Autonomous Patch Management.
+[00:23:03] Jerry Carlson: Yeah, I'm not… our product manager, I'm not sure if we are, but even if we are or are not, we should.
+[00:23:11] Jerry Carlson: this is my stance, is that I'm not, like, telling customers they should build autonomous, you know, like, Any…
+[00:23:23] Jerry Carlson: There is no company I know that does autonomous…
+[00:23:26] Jerry Carlson: discovery of vulnerabilities, and autonomous patching, and autonomous detection, and autonomous alert remediation, and autonomous response of isolation, and all the stuff you do for security operations. There's no one… there's no company I know that does this, so each are still pieces.
+[00:23:45] Jerry Carlson: In the front part, I know that… I know some of my CISO friends, like.
+[00:23:53] Jerry Carlson: from the Security Operations Center, they claim, like, 80% of their…
+[00:24:00] Jerry Carlson: Tier 1, Level 1 triage is autonomous. So, I think that's where a lot of CISOs are going today. It's like, they're trying to look at where they can start.
+[00:24:13] Jerry Carlson: And the noise is a lot of noise in Level 1 SOC, so they're trying to automate that to begin with. They still have a human in the loop for
+[00:24:22] Jerry Carlson: Okay, we're gonna look and see if it becomes Level 2 or level 3 kind of a issue, but that still disconnects a vulnerability prevention.
+[00:24:33] Shoval Abudraham: Yeah.
+[00:24:33] Jerry Carlson: Like, they're separated. There is no company doing that. Like, if there were a company that did that reliably, I think they would make a billion dollars, because that… companies today have to buy four companies
+[00:24:46] Jerry Carlson: to do that same thing, and then AI is coming around, and I'm not talking, like.
+[00:24:52] Jerry Carlson: AI as the attack vector. I'm talking, like.
+[00:24:55] Jerry Carlson: AI as in… it's a productivity thing for us, it's mission critical, we're making money.
+[00:25:01] Jerry Carlson: Yeah. And it's… it's 10 AI agents strung together in a business process.
+[00:25:07] Jerry Carlson: So now it's just not one AI, you know, and you have to secure it as a CISO, so you're like, what am I securing?
+[00:25:13] Jerry Carlson: what am I resilient recovering? Like, if you say I want to recover an agent, like, that's not an application.
+[00:25:21] Jerry Carlson: It's the agent's memory, it's its state, it's what access data it had, what rights did it have from an identity, where else was it talking? That is all complex, you know, because now adversaries can poison the memory, they can poison whatever. So you have to be able to do that. Now, if 10 of them are strung together, you have to do that 10 times, so there's a…
+[00:25:44] Jerry Carlson: There's a security and recovery in AI agents that is very vague today, and no one's doing that well.
+[00:25:51] Jerry Carlson: At all. So, those are two areas you didn't ask, but that's why I think…
+[00:25:56] Shoval Abudraham: Yeah, I just thought to myself, oh my god, that's super…
+[00:26:00] Shoval Abudraham: cool area. I love the recovery for agents, like, as it's… you know, when we talked about the resilience back then, we thought about it on, like, we thought about the current assets, but agents… it's a new type of asset, you need to recover, be able to recover. I have a question about what you mentioned about your,
+[00:26:22] Shoval Abudraham: fellow CISOs, you mentioned they do the triage, like, Tier 1 triage autonomously. Do you know if they, remediate or act, respond autonomously as well?
+[00:26:37] Jerry Carlson: No, not usually. That's where they're still scared.
+[00:26:40] Jerry Carlson: And that's the human out of the loop for me, and I'm all for it. I'd say I'd rather take a risk that the agent messed up.
+[00:26:49] Shoval Abudraham: Yeah.
+[00:26:50] Jerry Carlson: Then a human missed it.
+[00:26:52] Jerry Carlson: I think, you know, I like analogies, so I'll use them, like,
+[00:26:59] Jerry Carlson: We have these self-driving cars called Waymo. I don't know if you guys heard about it or seen it, but we have a lot of them. In San Francisco, I got in this car. It's an app. I ordered the car, it pulled up, I got in, no driver.
+[00:27:14] Jerry Carlson: Drives… drove me around.
+[00:27:15] Shoval Abudraham: I saw only videos of that.
+[00:27:18] Jerry Carlson: I did it, so what I'm getting at is that I tell people that, they're like.
+[00:27:23] Jerry Carlson: no way, I'm scared, I'd never, never do that. But statistically, it's safer than a human driver.
+[00:27:32] Jerry Carlson: So, so in general, us human drivers, we're like…
+[00:27:39] Shoval Abudraham: Right.
+[00:27:40] Jerry Carlson: You know, like, we're just, like, not paying attention sometimes. This is the same analogy I'll use here, is that we feel like if we give control to the AI, that it's scary, right?
+[00:27:52] Shoval Abudraham: like…
+[00:27:53] Jerry Carlson: premise is it's… it'll be better. I don't think it'll be perfect, but it'll be better than the human, no matter how good they were.
+[00:27:59] Shoval Abudraham: Oh my god.
+[00:28:01] Shoval Abudraham: That's perfect, like, analogy, that's a good call.
+[00:28:06] Jerry Carlson: Yeah. Analogy.
+[00:28:07] Shoval Abudraham: That's a perfect one, you know? And it took… it's taken me to, you know, planes. There are already… it's not… I don't know if it's AI, but already it's auto mode, the pilot's not doing much.
+[00:28:19] Shoval Abudraham: But we don't, like, in our mind, it's not super, you don't super remember it and handle it, but we know that planes are safe. But in cars, because we see there is no, men.
+[00:28:33] Shoval Abudraham: There, we… it's… it creates a trust issue. And I love this analogy, because you're absolutely right. There… this reduces the… the, accidents.
+[00:28:45] Jerry Carlson: Yeah.
+[00:28:45] Shoval Abudraham: A lot, so I know it's statistically, it's tested. That's… I love it. I love it.
+[00:28:51] Jerry Carlson: the same…
+[00:28:52] Yuval Mermer: Amazing.
+[00:28:52] Jerry Carlson: use it, same for our automated SOC, whatever, so… but you're not creating a… are you creating a…
+[00:29:00] Jerry Carlson: security operation tool? Are you creating a detection tool, a prevention tool? Like, what are you creating?
+[00:29:07] Shoval Abudraham: So, first I want…
+[00:29:08] Jerry Carlson: Sam, you have a picture?
+[00:29:10] Shoval Abudraham: I want to just mention that we are on time, because I want to make sure you're okay with your.
+[00:29:15] Jerry Carlson: Just kidding That's my fault, I talk a lot, sorry, I apologize.
+[00:29:19] Shoval Abudraham: Oh, we love it!
+[00:29:20] Yuval Mermer: It was really interesting.
+[00:29:21] Shoval Abudraham: Weird, yeah.
+[00:29:22] Jerry Carlson: I have a few more minutes.
+[00:29:24] Shoval Abudraham: I mean…
+[00:29:25] Jerry Carlson: Yeah.
+[00:29:25] Shoval Abudraham: I'll share that basically, as we discussed, like, we are on the ex…
+[00:29:31] Shoval Abudraham: we are trying to find a real pain on the customer side, and to… then we will find the solution, but now we are just validating that the area we are researching, which is a kind of Agentic respond, will… a agent employee that will do all those things, all those operations for you. We feel that technology is,
+[00:29:56] Shoval Abudraham: is already…
+[00:29:58] Shoval Abudraham: capable to those tasks in a very good way. So this is the area we're exploring. Honestly, we're getting,
+[00:30:08] Shoval Abudraham: Great signals till now, so we might start to build it soon, but right now we are focusing on the validation stage of this problem to make sure we are solving the right problem.
+[00:30:21] Jerry Carlson: An agent responding to what?
+[00:30:23] Shoval Abudraham: To any, security signal you get.
+[00:30:30] Jerry Carlson: So, okay, this would live in a security operations center then, right? They would, like, their signals come from everywhere.
+[00:30:39] Jerry Carlson: Could be the endpoint, could be a SIM, could be the FBI, could be national, whatever, like, signals come from everywhere. Yeah.
+[00:30:47] Jerry Carlson: And you're saying your agent's gonna respond to that?
+[00:30:51] Shoval Abudraham: Yeah.
+[00:30:51] Jerry Carlson: I think it's a very crowded space. I think that I get an email like yours.
+[00:30:57] Jerry Carlson: every single day, like, what do you do with AI response? What do you do with AI governance? I think that every SOC on the planet claims they already have that. In Arctic Wolf, or you go to Sentinel-1, you go to…
+[00:31:12] Jerry Carlson: Blue Voyant, you go to Critical Start, I mean, there's, like, 50 security operations centers, MSSPs that are for sale. Every one of them I sit in say, oh, we have Agentic.
+[00:31:23] Jerry Carlson: we have Agentic that will respond and triage for you, and it's not quite true yet. Like, they still have a human looking at that thing. I said it's not truly Agentic if you…
+[00:31:36] Jerry Carlson: have a human in that, but I'm telling you, it's crowded, as I hear what you're saying, if someone didn't tell you that.
+[00:31:42] Shoval Abudraham: This… actually, the signals we got, but those tools are replacing, humans today.
+[00:31:52] Shoval Abudraham: I'm asking, I don't know.
+[00:31:54] Jerry Carlson: No, they're augmenting humans today.
+[00:31:57] Shoval Abudraham: So that's exactly what we think that will differentiate us.
+[00:32:03] Shoval Abudraham: We will make those people much more time for other and more complex missions. We will…
+[00:32:10] Shoval Abudraham: organization will be able to do the same work with much larger, theme. We want it to be, like, an Agentic employee, like, fully Agentic employee, digital employee.
+[00:32:26] Jerry Carlson: I hear you. I'm telling you that it's not novel.
+[00:32:31] Jerry Carlson: In my world, I see the exact same proposition that you're telling me everywhere.
+[00:32:38] Shoval Abudraham: Can you give me examples for names of companies?
+[00:32:41] Jerry Carlson: Arctic Wolf, Blue Voyant, Critical Start, look for all the MSSPs, because their model is to go out and outsource your security operations center.
+[00:32:52] Jerry Carlson: if you get into, like, a General Motors, or really big, they're actually doing it, themselves, and so they will either be the programming in itself, or they'll hire a third party. I get…
+[00:33:06] Jerry Carlson: every day, what are you guys doing for Agentic SOC and Agentic
+[00:33:12] Jerry Carlson: remediation and discovery, whatever the conversation is, it's to have an Agentic employee. It's a good analogy of yours. Whether that employee is fully autonomous or has some human in a loop now, irrelevant, because.
+[00:33:27] Shoval Abudraham: Yes.
+[00:33:28] Jerry Carlson: At some point, everybody's going towards, we don't need to have as much humans in the loop. And your proposition is an old one, but a good one, is that
+[00:33:37] Jerry Carlson: if I eliminate all the noise and the time, what would your existing employees go and do? They would do deeper forensics, they would do more hunting and finding stuff, they would do more high-level intellectual things instead of the noise.
+[00:33:52] Jerry Carlson: So, I get what you're… I get what you're saying, I'm just saying, I would do… when you're doing your research, go out to look at your competition, because they're saying
+[00:34:01] Jerry Carlson: a similar thing?
+[00:34:03] Jerry Carlson: And if I misunderstood you, then you need to start working on your elevator pitch that says, here's exactly what we do, why we're different, and why we think no one else is doing it. For me, because I heard a similar story.
+[00:34:18] Shoval Abudraham: Yeah, no, that's the…
+[00:34:19] Yuval Mermer: Thank you.
+[00:34:20] Shoval Abudraham: feedback we… we can get. Seriously, Jeff.
+[00:34:23] Shoval Abudraham: That was a great, amazing conversation for us. We get, first, a lot of directions to think about, and then very specific, like, action items that we will take and do. So, thank you so much for the time, and, you know, we are super appreciate you part of our journey, and of course, would love to, you know, keep you in the loop and share with you more thoughts as we are moving.
+[00:34:47] Jerry Carlson: I think you two are doing an awesome job, and if ever I'm telling anybody to say, what do I want to do with my life? I'm like, don't go to college. I said, find a problem in the world and solve it with AI.
+[00:34:59] Jerry Carlson: I think that's an amazing opportunity for businesses to start, and I think you guys are doing an awesome job, so I'd love to track how you guys are doing, and I'm voting for you, I'll be cheering for you on the sidelines, and you know, for sure.
+[00:35:13] Shoval Abudraham: Thank you.
+[00:35:14] Yuval Mermer: Thanks so much, Jay.
+[00:35:15] Shoval Abudraham: Have a great day!
+[00:35:16] Jerry Carlson: You too, have a good weekend. We'll see ya.
+[00:35:19] Shoval Abudraham: Right.

@@ -1,0 +1,258 @@
+Date: 2026-09-09
+Topic: Network Security Discovery - Adam
+Meeting UUID: 63ED31FC-72A1-4509-951E-806AE53AA1F3
+Source: transcript
+
+[00:00:00] Shoval Abudraham: We'll start with a…
+[00:00:02] Shoval Abudraham: we start with the introduction, I'll start. So I'm Shoval, I've been in cyber for the past 10 years. Basically started in the Unit 8200, which is the cyber operations unit of the Israeli Army. I served there with Yuval, actually, so there we met.
+[00:00:22] Shoval Abudraham: We served in a department that were… was responsible for all the DevOps and ID infrastructure there. So basically all the roles of…
+[00:00:30] Shoval Abudraham: both security engineer, but DevOps engineer combined, so it was super challenging and, you know, did some very cool and complex stuff around, like, secure infrastructure. I served for five and a half years, and released as a captain, and then
+[00:00:50] Shoval Abudraham: I, I did a bit of a shift, because, I always was curious about creating value, customers, creating real business, so I did a shift into a product management role.
+[00:01:03] Shoval Abudraham: And in the past, five and a half, I think sixth year, I'm a product manager. I started in a company called Perception Point.
+[00:01:11] Shoval Abudraham: which was, on the endpoint security area, led there all the cybersecurity capabilities, all the detection that were based on a machine learning AI agent before we even know to call them that way.
+[00:01:29] Shoval Abudraham: was super exciting. Basically, this journey ended as the company… because the company was acquired by Ferdinet.
+[00:01:38] Shoval Abudraham: And afterwards, I moved to another cybersecurity company called Coy Security. Also, great, amazing security product, very innovative in terms of how we use AI, amazing customers, amazing people.
+[00:01:52] Shoval Abudraham: And that journey also ended by an acquisition, quite acquired by Palo Alto?
+[00:02:00] Shoval Abudraham: And basically, that's what my sign, to pick up my phone and call Yuval, my old friend from the military service, and tell him, like, Yuval, we need… we always had this dream to build something together, let's do it now.
+[00:02:15] Adam: Bye.
+[00:02:16] Shoval Abudraham: Again, some of.
+[00:02:17] Yuval Mermer: And I was like, yeah, I will tell my job that I'm gonna quit. Let's start.
+[00:02:22] Adam: Yep.
+[00:02:23] Shoval Abudraham: Basically, something like that. Yeah, you know.
+[00:02:28] Shoval Abudraham: Sorry, we did… I think we don't hear you well.
+[00:02:32] Adam: No, I just laugh.
+[00:02:33] Shoval Abudraham: Oh, yeah. Well, yeah, it's a funny story. So, basically, we started on the same department, and I did a bit of a shift for the product management, or more of a business side, and Yuval doubled down on the technology and infrastructure, so I let him share, like, his, his journey.
+[00:02:51] Shoval Abudraham: And I always combine with mine.
+[00:02:54] Yuval Mermer: Yeah, it really combined together. I started my career at the 8200 unit, as a Shoval soldier.
+[00:03:02] Yuval Mermer: And there, we developed together great platforms. One of them was the platform for managing the complex and the secured networks we have in place inside the unit, which is still working until today.
+[00:03:19] Yuval Mermer: And very great value for the unit.
+[00:03:23] Yuval Mermer: It's, like, around 6 or 7 years ago that we started it, and it's still giving its value. And after I finished the journey in developing by myself, I promoted to be a team lead.
+[00:03:38] Yuval Mermer: And a couple years ago, I promoted again to be the head of the DevOps and Infrastructure Department inside AD200.
+[00:03:44] Yuval Mermer: There, I led 40 engineers across 5 teams. We ran large-scale networks, very complex networks for operations rooms, for thousands of users, for hundreds of applications. We ran petabytes of data.
+[00:03:59] Yuval Mermer: and production environments, and after I finished in 8200,
+[00:04:05] Yuval Mermer: I started at Paragon, which is an Israeli cyber company.
+[00:04:09] Yuval Mermer: I started there as a director of DevOps and SRE, And, they… they…
+[00:04:16] Yuval Mermer: The 25 people I led there, they developed custom-made solutions for the networking security.
+[00:04:24] Yuval Mermer: of our customers.
+[00:04:26] Yuval Mermer: on their site, which were customers… our customers were governments and agencies. We were a B2G company, so we had to develop a very secured
+[00:04:40] Yuval Mermer: Tailor-made solutions, which was nice, because we combined the developing abilities and the network knowledge we have, and together we did a great
+[00:04:52] Yuval Mermer: project, and then I quitted Paragon after Shoval called me.
+[00:04:57] Yuval Mermer: And we started this journey together. We would love to hear about you.
+[00:05:04] Adam: Definitely didn't do anything like that. I started out, as a kid on the internet back in 96, and I went deep on the internet back then.
+[00:05:16] Adam: decided to, try animation, CG animation, made a movie, started working on video games in about 05 to 07, worked at some big companies, Call of Duty, I'm sure you heard of it, activision, THQ,
+[00:05:36] Adam: Then I got, you know, I put my IT hat on, because I was already… already live in that world anyway, so, got a job at, a library, a local library, just kind of standing things up there, getting my feet wet in AD, and more learning cyber back then, more of the new stuff back then, and then,
+[00:05:59] Adam: I've worked at a bank for about 9 years, 8 months, and I just left that job about a week and a half ago, and I am moving to work for a bigger bank. And,
+[00:06:13] Adam: that's kind of what I do. I mean, in that role, I can go and talk about capacity, but I essentially started at the bank I was at. It was a small program for security there, and just took that over because it was a disaster. But, you know.
+[00:06:32] Adam: you know, brought everything in from EDR to NextGen AV, actually started off with Cyber Reason, I'm sure you've heard of it. Brought in, Morphosec, I don't know if you guys heard of that. Brought in, a variety of solutions, Microsoft solutions, and,
+[00:06:49] Adam: Just basically built out this program that was non-existent from about, oh, 2018 to… last week. Nice. So…
+[00:06:59] Adam: Yeah, but in that time span, you know, I, you know, I did the whole certificate thing, and, you know…
+[00:07:08] Adam: all that, but, you know, ended up with getting my CISP, and the auditor ended up being my, sponsor for that, so I was kind of happy about that. As he saw me take the program from, basically, you know.
+[00:07:21] Adam: not very well managed to where it was, so… he was cool with that.
+[00:07:27] Adam: But other than that, yeah, I mean, the AI side of things, I mean, I dove in when it came out.
+[00:07:34] Adam: Bought my own, AI workstation for local development, local tinkering.
+[00:07:40] Adam: Found that, you know, it's a little slower, but at least you can kind of privatize your data in that sense.
+[00:07:46] Adam: In that process, and in that time span, I followed some security researchers, and that kind of helped me with my own path in that process. So, you know, I see these posts, and particularly the one you saw and responded to, or liked, which was, you know, you can't guardrail AI.
+[00:08:05] Adam: So everyone's trying to sell all these solutions out there, saying, oh, buy my guardrail. You know, they see it as they're gonna be the Cloudflare firewall of AI, and
+[00:08:18] Adam: You know, it's just kind of,
+[00:08:20] Adam: you know, it's just… it's just a sales tactic, in my opinion. So, then there's a lot of people who just don't know about it yet, right? Like, or don't understand.
+[00:08:28] Shoval Abudraham: Yeah.
+[00:08:28] Adam: That's the best frame.
+[00:08:30] Adam: It's not that they don't know about it, it's that they don't understand how complex that… the attack surface is, you know? And I'm not an expert in that space, I've just played with it enough to know that, you know, the whole damn model is the attack surface, it's not…
+[00:08:48] Adam: it's not like, oh, you can talk this way, or you can use, bytes and bits and throw some encoded, decoded, you know, data at it. It's a lot more complex than that, so…
+[00:09:00] Adam: Yeah, I've, been playing around a little bit, so that's why I said what I said.
+[00:09:06] Shoval Abudraham: Cool, I love it. Sounds like you have, like.
+[00:09:08] Shoval Abudraham: you did basically everything in the security side, so that's cool, and I super love your perspective about, like, I'll change the ecosystem. I think you will have very interesting thoughts about what we're exploring.
+[00:09:24] Shoval Abudraham: So I… I did share a little bit on the message, but I want to recap, because, like, you know, in this ideation, process, and, like, in today era, that everything
+[00:09:39] Shoval Abudraham: change every minute. There are a lot of changes in our thoughts.
+[00:09:45] Shoval Abudraham: So basically, I shared with you that we are exploring the network area. Basically, what we started to think is just because, you know, AI is adopted very quickly from the organization side, of course, and you need to secure AI from that.
+[00:10:02] Shoval Abudraham: used inside an organization, but attackers are also, adopting AI, and that's…
+[00:10:09] Shoval Abudraham: create attacks that are, faster, with larger scale, and we started to think, like.
+[00:10:17] Shoval Abudraham: do the current security stock will handle with those types of attack, new types of attack. And because we are infrastructure people and we love infrastructure, it's made us think to…
+[00:10:30] Shoval Abudraham: that you really need to secure the building blocks, the fundamental layer of your organization, and we started to think about, like, how your fragmented, super complex network will handle the new attack, and we started from there.
+[00:10:47] Shoval Abudraham: Basically, I'll be honest and say that after we shared with few, yeah, CISOs, we got the impression that
+[00:10:56] Shoval Abudraham: net… like, understanding the risk inside their network is not top priority, even though the things are changing, and in our opinion, it's become more critical. And then, it made us real…
+[00:11:12] Shoval Abudraham: return to the main question, like, why it became so risky, and I think the main conclusion we…
+[00:11:19] Shoval Abudraham: get to is that it's not only because the attacks are getting, with bigger scale or faster, it's just because you can't predict them anymore. Like, a lot of the security products are based on the known.
+[00:11:34] Adam: Go check it.
+[00:11:36] Shoval Abudraham: Sorry.
+[00:11:37] Adam: The kill chain.
+[00:11:39] Shoval Abudraham: Yeah, and like, basically, most of those skills chains, we know them, we know the technique, they're used pretty much
+[00:11:47] Shoval Abudraham: the same, with a bit of a difference, but right now, AICreate, like.
+[00:11:53] Shoval Abudraham: different flow, different sequence, and the agent became…
+[00:11:58] Shoval Abudraham: Yeah, yeah. Like, I… feel free to, you know, to stop me and,
+[00:12:03] Adam: No, no, I'm with you, I'm with you, I get it. It just pivots, it's not predictable, it's unpredictable. Exactly. This is how AI works. It's unpredictable. It almost works like the way it generates tokens, you know?
+[00:12:15] Shoval Abudraham: Again, sorry.
+[00:12:15] Adam: I didn't.
+[00:12:16] Shoval Abudraham: If you will.
+[00:12:17] Adam: No, just the way they work with tokens, right? Like, the unpredictable manner, right? It's in the semantic space of AI thought process, which people don't even fully understand still. The math's there, right? But it's, like, actually understanding what's gonna come next is not predictable, you know? Yeah.
+[00:12:36] Adam: Exactly.
+[00:12:40] Adam: So I'm with you.
+[00:12:40] Yuval Mermer: We could also see it on the Aging Face incident.
+[00:12:44] Yuval Mermer: Agingface and OpenAI, do you know this incident?
+[00:12:47] Adam: Oh, yeah.
+[00:12:49] Adam: Yep.
+[00:12:50] Yuval Mermer: The agent is just… just made, out of the blue, a zero day on artifactory.
+[00:12:57] Shoval Abudraham: And use the storage on the servers as the message board, like, all those things that are super new.
+[00:13:05] Shoval Abudraham: Yep. So basically what we continue to
+[00:13:09] Shoval Abudraham: First, sounds like you agree with us, that it's…
+[00:13:12] Adam: Yeah, no, I agree with you.
+[00:13:14] Adam: Yeah, no, I agree with you. I'm curious to learn a little more about the network side as to how you guys think you're gonna… I mean, you don't have to go deep into it, but so, I've been thinking on my own space, in my own… in my own world on all of this as well, you know?
+[00:13:31] Adam: And, you know, network is a good layer to go after, for sure.
+[00:13:36] Adam: Where I'm at mentally is more of runtime, and I think runtime is where you're actually gonna stop a lot of this, but…
+[00:13:44] Adam: You're not gonna have runtime on… you'd have to secure every endpoint with runtime protections.
+[00:13:51] Adam: To even be able to do this. But then it also brings in, like, if you're getting external model calls that aren't going through your, you know, your runtime API, for example, you know, what… how do you intercept that? So that's where network would come in, in my thought process here.
+[00:14:07] Adam: But, yeah, like, you know, there's gonna be a… there's gonna be a lot of ways to skin this cat, and I think they're gonna have to be, like, an OSI model behind skinning the cat, you know?
+[00:14:17] Adam: And it's not the OSI model specifically, it's just the new AI OSI model type of deal, right? Whatever you want to call that.
+[00:14:26] Adam: But, there's definitely, I think,
+[00:14:30] Adam: You know, runtime is a big component here, that…
+[00:14:34] Adam: You know, it's starting to be talked about, it's starting to be explored.
+[00:14:38] Adam: And I've been there for about a year now, so I'm happy to see that people are starting to… talk about it. But I'm kind of like the crazy guy in his basement who hasn't said anything yet, you know? You know, I've been working on this little thing, and I, you know, I'm really excited to finally share it, but I've just been trying to get things right with it, and have a good…
+[00:14:57] Adam: you know, demo in place for it before I open my big mouth. But yeah, that's kind of where I'm at with it, but I'm excited to keep hearing more, so…
+[00:15:06] Shoval Abudraham: So, that's super cool. Basically,
+[00:15:10] Shoval Abudraham: as, like, those thoughts that we have, like, you basically read our mind. We have a lot, a lot of thoughts from this, from this area, but…
+[00:15:22] Shoval Abudraham: I'll be honest and say that we feel like… I… I heard, like, from you talking about your experience that you are a very innovative, guy, that you think…
+[00:15:33] Adam: Oh.
+[00:15:34] Shoval Abudraham: the future risk and stuff like that, but we don't feel like,
+[00:15:40] Shoval Abudraham: rest of the CISOs or security leaders are concerned by those, risks. So, runtime, we feel also that it's a big, component, and that's related to networking, as well, but we don't feel the urgency there, and that made us think about, like, why
+[00:16:01] Shoval Abudraham: This is not… so urgent,
+[00:16:06] Shoval Abudraham: I'm curious, maybe, like, do you have any, like, gas?
+[00:16:13] Adam: I don't think it's understood by many.
+[00:16:16] Adam: I, I, I mean, that's my opinion. You know, everybody has one of those. But,
+[00:16:25] Adam: The… the understanding isn't in…
+[00:16:29] Adam: in place for, you know, runtime over network. I mean, with the network side, what are you going to be specifically, like, looking for at that point, right? Are you just looking for packets, you're gonna inspect packets, now you're tearing apart the packets, now you're gonna decrypt everything, see every payload, try to figure out the path.
+[00:16:46] Adam: And now at that point, you're still playing the predictive analysis, right?
+[00:16:50] Adam: Like, whereas in runtime, you're saying you can do X, you can do Y, you can't do Z.
+[00:16:58] Adam: And that's just where I'm thinking with that, right? Because, you know, that's the thing with AI, right? The predictability.
+[00:17:03] Adam: If you don't have that pattern, if you can't… if your system can't understand that pattern, then…
+[00:17:09] Shoval Abudraham: Auto.
+[00:17:10] Adam: You're not gonna ever be able to…
+[00:17:12] Adam: Capture what needs to be stopped, necessarily, unless you have
+[00:17:16] Adam: Certain building blocks, as you put it, in place to actually prevent that next…
+[00:17:21] Adam: like, choke points, right? Like, you gotta hit this gate, you can hit this gate, you know? But you can't get hit that gate, kind of deal.
+[00:17:31] Adam: So yeah, it's just my perspective, and I'm just kind of mind mapping here with you,
+[00:17:36] Shoval Abudraham: Yeah, yeah, we are totally, like, understand it, and I want to give… take it even more farther, and give you, like, to talk about a bit, like, again, the predictability. That… we think all those things, but we really don't think, like, the market or CISO are really,
+[00:17:55] Shoval Abudraham: Understand it, yeah, ready for it. They're not. And it made us think, like, yeah…
+[00:18:02] Shoval Abudraham: Well, I'm happy that, you know, you're validating our feelings.
+[00:18:09] Shoval Abudraham: It really, it's a good sign for us that we're not.
+[00:18:12] Adam: That's great.
+[00:18:14] Adam: No. Well, I'm kinda crazy, so you never know.
+[00:18:17] Adam: I'm kidding, I'm kidding.
+[00:18:18] Shoval Abudraham: But basically, like, when we talked about it, we started to think about maybe the predictability for the other side, like, we're… as…
+[00:18:27] Shoval Abudraham: as we… I mentioned before, like, security products are built on the known pattern, known, kill chain.
+[00:18:36] Shoval Abudraham: there are, like, we have, like, a cool, nice analogic of securing a bank. Like, basically, do you have your guards team, and they have their shift, and they have the crown jewel they need to secure, and basically, the security routine is the same
+[00:18:56] Shoval Abudraham: every day, every… like, it looks the same, and we feel the security product at the moment holds, like, the same states, and basically, what we…
+[00:19:09] Shoval Abudraham: Thing is that… This was okay, when there was only to… that… the cost for robbing was…
+[00:19:18] Shoval Abudraham: high. Like, you had to do your, to check the time of the change of the shift.
+[00:19:25] Shoval Abudraham: And you have to understand where are the crown jewels, and where are the gaps, but now with AI, you basically create a lot of robbers that will check all those things all the time, and will try it multiple ways, and we'll try ways that are not super obvious way.
+[00:19:42] Adam: Nope.
+[00:19:42] Shoval Abudraham: And your security…
+[00:19:45] Shoval Abudraham: stop… stuck, and your guards are doing the same thing. They're staying at the same place, they're not changing their routine, they're not adjusting to the new reality, and, like, without, like, how we can help organizations maybe shake their routine a little bit, and create, like.
+[00:20:04] Shoval Abudraham: to fight with the unpredictability? Inpredictability?
+[00:20:12] Adam: But I'm with you, you're good.
+[00:20:14] Shoval Abudraham: Yeah, unpredictability with… and unpredictability from the…
+[00:20:18] Shoval Abudraham: security side, from the, like, from the organization side. We will be, like, the guard that go to the older rooms, go to the unimported rooms, open the doors, we'll open the windows, we'll open the closet, everything, check all the time what's happened, change the time of the shift change, and…
+[00:20:37] Shoval Abudraham: That's basic, maybe it's crazy, like, when I'm talking about right now, it sounds a little bit crazy, but that's what we thought.
+[00:20:45] Adam: And that's where the challenge is, because you can't understand the intent behind the AI, either. You can slowly try to gauge what it's doing, but you're not gonna instantly know the intent of what that next…
+[00:20:57] Adam: capability or maneuver's gonna be, right? Like…
+[00:21:01] Yuval Mermer: Totally right.
+[00:21:03] Adam: What's that?
+[00:21:04] Yuval Mermer: You're totally right.
+[00:21:05] Adam: Yeah. So it's like, you gotta… there's almost like you, you know, that's where this, like…
+[00:21:11] Adam: the challenges. That's where the challenge is, and that's where I think a lot of people are trying to spend time right now, particularly some researchers, and they're trying to find the… figure out the next token in a moment, you know? They're trying to find these audit trails and audit paths that these models are gonna try to do next.
+[00:21:29] Adam: And, you know, I'm seeing a bit of that happening, too. And I don't think it's wrong, but, you know, where I come from in regulated banking space, or anything regulated, they want an audit trail.
+[00:21:40] Adam: So, you know, this should be already an underlayment for the models, but obviously it's not, the technology's out there, but they're not auditing everything the damn thing's doing. It's literally like we're just getting the black box answer and jumping off the bridge from there, you know?
+[00:21:56] Adam: You know, that's probably not the best metaphor, but, you know,
+[00:22:02] Adam: So, yeah. And then on top of that, too, just the, like, the… the latent, like, not latent, the semantic space with AI in the models.
+[00:22:13] Adam: it's, you know, I've seen, I've heard… not all I've seen and heard, but, you know, like, from a dimensional graph standpoint, or, like, vector math world, it's like, they're talking about, like, 20-dimensional space of semantic space for models, so it's like trying to figure out that next word is just, like…
+[00:22:33] Adam: Something the human mind can't even necessarily wrap their head around, you know?
+[00:22:38] Adam: Yeah, we totally…
+[00:22:41] Shoval Abudraham: break, like.
+[00:22:42] Adam: Yeah.
+[00:22:42] Shoval Abudraham: Feels like it's a, endless race.
+[00:22:46] Adam: It is.
+[00:22:46] Shoval Abudraham: It…
+[00:22:47] Adam: To wear.
+[00:22:49] Shoval Abudraham: So we, we lost, we lost!
+[00:22:53] Shoval Abudraham: We want to help organizations to win this race, but
+[00:22:56] Adam: No, it's kind of a black hole, you know? You know, and I'm not saying it's not possible, I'm not saying you're wrong on any of it, it's a challenge, and it's not gonna be necessarily easy.
+[00:23:10] Yuval Mermer: The… the cost for… for succeeding this challenge is lower.
+[00:23:17] Yuval Mermer: Like, maybe today with the new AI abilities, and the new frontier models, and…
+[00:23:25] Yuval Mermer: the first way that everything is proceeding in the industry. Maybe today we can chase those problems, and we can chase those attackers inside the network?
+[00:23:38] Adam: Right.
+[00:23:39] Yuval Mermer: with… with enough… Guards?
+[00:23:44] Adam: Yeah, I mean, if you… I'm not sure what you mean by guards, I guess, like, controls? Like, preventative controls? Like, things that are gonna allow certain activity on the network, is that what you mean?
+[00:23:53] Shoval Abudraham: of, like, proactive controls, like, that are always scanning your environment, finding the gaps, finding the places that can use
+[00:24:06] Shoval Abudraham: by attackers, use the illegitimate behavior, new illegitimate behavior, new patterns, new anomalies. Right.
+[00:24:14] Yuval Mermer: Think of it as the guard in the bank that Shoval said.
+[00:24:18] Adam: No, I'm with you now. Okay. So, like, you're gonna almost have, like, machine-learned capability looking out for irregularity?
+[00:24:27] Shoval Abudraham: Yeah.
+[00:24:27] Yuval Mermer: basic.
+[00:24:28] Adam: Or pattern, machine-learned pattern that the pre-existing, allowed activity to then use the guards to say, hey, this is irregular, this doesn't match a regulated pattern.
+[00:24:40] Shoval Abudraham: Yeah.
+[00:24:41] Adam: Yeah.
+[00:24:41] Adam: Cool. Yeah, I mean, yeah, that makes sense.
+[00:24:47] Adam: It'd definitely require a little bit of training on your part, but yeah. That'd be cool. Because, I mean, every environment's different, right? So that's the challenge, is it's like, not every… I mean, depending on what you're looking for, I suppose, but, you know, the… the… you know, every environment's different, is where I'm coming from on that, that's all.
+[00:25:05] Shoval Abudraham: Yeah, but do you think, like, there are a lot of challenges in building the solution. We're not there yet, but, do you think, like, this kind of, because it's kind of a new…
+[00:25:18] Shoval Abudraham: way to think about this problem that's not really a thing that exists at the moment, for, like, securing your organization from outside attacks, but do you think, like, for you as a CISO, you… it was…
+[00:25:34] Shoval Abudraham: You will… you will be interesting inside such a thing, or it's, like.
+[00:25:39] Adam: I mean, I think it would be, I mean, you know, I think…
+[00:25:42] Shoval Abudraham: Don't be nice with us, you know? Just tell us all the.
+[00:25:46] Adam: No, I think it's gonna have to prove, like, it's gonna have to prove that it's actually doing something that's actually a problem.
+[00:25:52] Adam: Like, you know, and I'm not saying that what we're talking about isn't a problem, right? But who's to say that, you know, the identity, you know, got elevated, and now it has… doesn't matter what it does on the network side, the identity can go hit all these resources that we didn't want it to hit.
+[00:26:09] Adam: But what's it gonna do on the network side to control that? I don't know. You know, and that's just how I'm thinking about it. I mean, you know, a lot of this is becoming, like, they're trying to make an identity, but at the same time, like, these things are gonna end up spoofing identity. So, it's like, you know, things are just gonna get wacky with it.
+[00:26:29] Adam: But, yeah, I mean, did you ever see the movie Terminator? If not, you should go on.
+[00:26:35] Yuval Mermer: Yeah, Arnold Schwartzene again?
+[00:26:37] Adam: Yeah!
+[00:26:39] Yuval Mermer: Of course Of course.
+[00:26:41] Adam: But, you know, I think it kind of feels like that for some people right now, right? Like, Terminator 2, right? Everyone's kind of just… and, like, even the Frontier models, it's like this giant race towards, like, AGI and SGI and all this stuff, and it's like, nobody's even really, like.
+[00:26:59] Adam: putting on brakes to say, well, how… like, cause, like, you gotta… so, doing the CISP and getting all these certifications, everyone treats all this stuff like, you know, the CIA triad, confidentiality, integrity, availability, it's all this serious stuff.
+[00:27:13] Adam: But the AI companies, it doesn't matter for them. Like, they just have free-for-all right now. They can do whatever they want. They can hack each other, hack themselves, nobody's getting in trouble.
+[00:27:22] Shoval Abudraham: Yeah.
+[00:27:23] Adam: It's the Wild West right now, and it's like…
+[00:27:26] Adam: We're kind of… I'm kind of drifting away from the conversation a little bit, I apologize, but, like, you know, there's no… there's no…
+[00:27:32] Shoval Abudraham: There's no way out.
+[00:27:33] Adam: It's free-for-all, you know?
+[00:27:35] Yuval Mermer: You know, it's interesting that you talked about identities, because we have friends from, that they are researching incidents
+[00:27:45] Yuval Mermer: Yep. As the services.
+[00:27:47] Yuval Mermer: And, one of them incidents, of the incidents, the, research, it was about, stealing, at the same time.
+[00:27:57] Yuval Mermer: More than 60 identities.
+[00:28:01] Yuval Mermer: And using them in the same time.
+[00:28:03] Adam: Yep. Yeah, that's what I'm saying, like, that, like, you know, they're gonna use identity as the, conditional access rule, right? And then at the same time, this thing's stealing them and spoofing them, and then what are you gonna do? Like, what are you doing now?
+[00:28:15] Yuval Mermer: That's why we call it guards, and we look at the network as part of it.
+[00:28:21] Yuval Mermer: Because it's a fundamental part, but the fundamentals are more than the network, Like, the environment…
+[00:28:30] Yuval Mermer: all the environments are built from a lot of fundamentals, like, it can be networking, it can be identity, it can be your servers and pods and Kubernetes and everything.
+[00:28:41] Adam: Yep.
+[00:28:42] Yuval Mermer: And the guards should know how to protect the lobby, and should know how to patrol and see what's going on in the toilets.
+[00:28:51] Yuval Mermer: Right. Right?
+[00:28:53] Adam: Yep. No, no, I mean, yeah, exactly. And,
+[00:28:57] Adam: And that's the thing, right? And then you're bringing the ML aspect, and you're learning all that, and then the guards know what, hey, this is allowed, this is allowed, this is normal, you know, and then, oh, shit, it's a regular, you know, stop that, don't, you know,
+[00:29:10] Shoval Abudraham: Out of in runtime.
+[00:29:12] Shoval Abudraham: As you… we talked at the beginning.
+[00:29:15] Adam: What'd you say?
+[00:29:16] Shoval Abudraham: And, like, they can do it in runtime as well.
+[00:29:19] Adam: Oh, yeah, oh yeah, exactly, and that's where you're gonna… that's where… that's where it has to happen, because if it's after the fact, you're already lost. Like…
+[00:29:27] Shoval Abudraham: Exactly, exactly. Adam, we have just one more minute, and I know you… you have a busy schedule, so we will finish on time. We got some very good,
+[00:29:41] Shoval Abudraham: Like, insights from the conversation.
+[00:29:44] Shoval Abudraham: I'll be honest and say that I use my Israel chutzpah and say that I'm not sure we convinced you is the right direction. So, if you have any thoughts after that, bad ones, good ones, you know, we would love to hear. Like, if you think it's, like, a bad idea, just tell us. We need these signals as soon as possible.
+[00:30:03] Shoval Abudraham: And we would love, you know, to continue chatting with you. I think we… you had, like, a very good, notes that we can use after.
+[00:30:11] Yuval Mermer: It was a really interesting conversation, and we will thank you for that.
+[00:30:16] Adam: Yeah, no problem. Thank you.
+[00:30:18] Adam: I wish you guys the best of luck with your project. Is it the, is it the SkySomething.io group? Yeah, basically, we just…
+[00:30:28] Shoval Abudraham: For the domain, you know, for the…
+[00:30:30] Adam: Okay, for your research.
+[00:30:33] Shoval Abudraham: It's not the official name yet, maybe yes.
+[00:30:35] Adam: Okay.
+[00:30:36] Shoval Abudraham: No, I don't know. Depends on the product.
+[00:30:39] Adam: Well, good luck to you guys. I mean, I'm sure I'll see your updates on LinkedIn, so… but I will, you know, if anything does stop…
+[00:30:46] Adam: What's that?
+[00:30:47] Shoval Abudraham: We will share with you before we will post it on LinkedIn.
+[00:30:50] Adam: Alright, huh.
+[00:30:51] Shoval Abudraham: our journey right now.
+[00:30:52] Adam: Alright, yeah, I mean, I, I, you know, I've been in this space, like I said, for almost a year in my own world, in my own head, in my own research, reading all the stuff I've been doing, and…
+[00:31:03] Adam: You know, it's definitely runtime, and it's just gonna be how people…
+[00:31:08] Adam: Come up with their solution for preventing, you know, that from…
+[00:31:13] Adam: Basically, stopping it in the present, not in the future, you know, in the past, so it's like, you know, oh, this happened, whoops, you know, that world's not gonna work, so…
+[00:31:25] Adam: But, yeah, alright, good luck to you. Take care.
+[00:31:28] Yuval Mermer: Thank you very much.
+[00:31:30] Shoval Abudraham: Adam, have a great day, and good luck in your new.
+[00:31:34] Adam: Yeah, you too. Thank you. Take care. Bye-bye.

@@ -1,0 +1,420 @@
+Date: 2026-09-09
+Topic: Security Leadership Discovery - Andrew Dutton
+Meeting UUID: F87EAC7B-59B2-4B09-8485-C985C0D27149
+Source: transcript
+
+[00:00:00] Yuval Mermer: It's so important what you think.
+[00:00:02] Shoval Abudraham: Yeah, sorry.
+[00:00:03] Andrew Dutton - Sumitomo Chemical America: So, just this morning, I follow a gentleman called Gary Marcus on… he has a substack, and…
+[00:00:12] Andrew Dutton - Sumitomo Chemical America: And he's a… he's written books on AI, and he was just discussing this morning where, Jacob Coxon, he was with Entropic, but he's also with OpenAI, he just left, and he started posting about why he's resigning, and, you know,
+[00:00:29] Andrew Dutton - Sumitomo Chemical America: You know, the idea is that all these companies are sort of…
+[00:00:35] Andrew Dutton - Sumitomo Chemical America: Going so fast that they're not really thinking about
+[00:00:41] Andrew Dutton - Sumitomo Chemical America: should they, right? And I think that that kind of goes back to what you were saying, is…
+[00:00:47] Andrew Dutton - Sumitomo Chemical America: It's… it's completely different and unexpected, because we're creating these
+[00:00:55] Andrew Dutton - Sumitomo Chemical America: these abilities for these, you know, AI LLMs and stuff to do things that we didn't think that they might have done before, right? So yeah, I do think that that is a very, very,
+[00:01:11] Andrew Dutton - Sumitomo Chemical America: good, you know, observation, right? And a good marketing thing is not… everyone's talking today about
+[00:01:20] Andrew Dutton - Sumitomo Chemical America: how fast is this, right? Yeah. You know, it's faster, attackers are faster because they're using AI, so you need to use AI to be faster. Well.
+[00:01:29] Andrew Dutton - Sumitomo Chemical America: I think maybe the other flip side, as you were saying that, is it's not just about speed, it's about predictability or unpredictability, because you're gonna come up with… they're gonna come up with new ways to attack you faster than your behavior analytics can keep up, okay? Yeah.
+[00:01:48] Andrew Dutton - Sumitomo Chemical America: And when you were talking about CISOs not really thinking in the space, let me… let me…
+[00:01:57] Andrew Dutton - Sumitomo Chemical America: let me think about why that is, right? Okay, so…
+[00:02:03] Andrew Dutton - Sumitomo Chemical America: In… so, in the space, if I'm a CISO of a big company.
+[00:02:08] Andrew Dutton - Sumitomo Chemical America: Right? The… right now, one of the big things for me is probably AI, right? Yeah. AI security, you know, Agentic security, right? And when I… when you… when you say network security.
+[00:02:25] Andrew Dutton - Sumitomo Chemical America: We have had products in the network security space for a while, and they're very mature.
+[00:02:32] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:02:34] Andrew Dutton - Sumitomo Chemical America: So… so I would probably guess that's why you're being told, you know, I'm not really worried about the network security. Now, I think that they're a little bit…
+[00:02:46] Andrew Dutton - Sumitomo Chemical America: They're a little bit,
+[00:02:51] Andrew Dutton - Sumitomo Chemical America: I would say, you know.
+[00:02:56] Andrew Dutton - Sumitomo Chemical America: I think that they're thinking a little bit inside the box, and not outside the box. So, I think that I am worried about network security.
+[00:03:06] Andrew Dutton - Sumitomo Chemical America: Okay, and I do need… but it comes back to…
+[00:03:11] Andrew Dutton - Sumitomo Chemical America: you know, am I worried about… think about this. Do I have… I mentioned to you I have an NDR solution now, right?
+[00:03:19] Shoval Abudraham: Yeah.
+[00:03:20] Andrew Dutton - Sumitomo Chemical America: We have firewalls, right? So, we have things gathering data about the network.
+[00:03:27] Andrew Dutton - Sumitomo Chemical America: Okay? So I think the maturity of gathering data, right, like a span board, a tap board, you know, those kind of things are very mature. I mean, how better can you get, right? You may be…
+[00:03:42] Andrew Dutton - Sumitomo Chemical America: can get to the point where you're, deduping stuff, and you're not, you know, you don't have to send as much stuff to the cloud, or to your SIM, or what are your backend, and there's some things around there. But in general.
+[00:03:57] Andrew Dutton - Sumitomo Chemical America: Packets are packets, right? Now, what do you do with the packets, right? What do you do with network security, or what do you do with, you know, this data?
+[00:04:07] Andrew Dutton - Sumitomo Chemical America: being able to… to look at the data differently with, you know, a lens of an AI machine learning backend is the key.
+[00:04:19] Shoval Abudraham: So, that's exactly the thing that we ask ourselves, and like, you know, after we land on predictability, pain, and problem, in our opinion, that made us to think
+[00:04:33] Shoval Abudraham: from the question, we… like, we thought about the question, how do we get better visibility into the network risk? And after we understood the predictability, problem.
+[00:04:46] Shoval Abudraham: it's… make us think it's, like, much of a broader problem. It's not like what happened inside my network, it's, like, what happened inside my environment, and what is legitimate behavior in my environment, and what is not legitimate behavior, and it's not.
+[00:05:04] Andrew Dutton - Sumitomo Chemical America: Absolutely.
+[00:05:05] Shoval Abudraham: It's not network, only network. It's a network, like, involved, but we feel like this shift our thoughts to, like, a broader problem and broader pain.
+[00:05:21] Andrew Dutton - Sumitomo Chemical America: Yes, but that's where we're coming to, and I don't know how much I… we talked about this, is the AI Operations Center.
+[00:05:30] Andrew Dutton - Sumitomo Chemical America: Right? You're basically working on next-gen.
+[00:05:34] Andrew Dutton - Sumitomo Chemical America: Right? That's really… you know, in the past, you know, this… when we sent all our things to a SIM, that SIM was supposed to tell us that, right? Supposed to look for analytics and behavior and tell us, you know, but then it was very much pattern-driven.
+[00:05:51] Andrew Dutton - Sumitomo Chemical America: Right? But now, we're bringing out… what I call…
+[00:05:56] Andrew Dutton - Sumitomo Chemical America: the AI operational landscape, okay? And it's… and that AI brain is going to be looking at all my tools.
+[00:06:06] Andrew Dutton - Sumitomo Chemical America: Right? So I don't want to necessarily replace my SIM, or my logging component yet, right? Because I have all these things logging somewhere. I don't necessarily have to replace my NDR. I don't have to replace my EDR. I don't have to replace my firewalls. I just need to get all that data.
+[00:06:25] Andrew Dutton - Sumitomo Chemical America: into a single brain, so that that brain is correlating all this data together, and working at a much faster thing to kind of see everything from a standpoint. I don't know… I know you guys are out of Israel, right?
+[00:06:44] Shoval Abudraham: Yeah.
+[00:06:44] Yuval Mermer: Right.
+[00:06:45] Andrew Dutton - Sumitomo Chemical America: There's a co- like, one of the companies I was just making in, you know, we're working on an NDA for is June, J-O-O-N.
+[00:06:54] Shoval Abudraham: Yeah.
+[00:06:54] Andrew Dutton - Sumitomo Chemical America: I don't know if you know these guys,
+[00:06:57] Andrew Dutton - Sumitomo Chemical America: what was the guy's name? Oh, Elon…
+[00:07:01] Shoval Abudraham: Yeah, the guy, the, the, the guy from, Simply, Simply, Simply… Simply? I…
+[00:07:07] Andrew Dutton - Sumitomo Chemical America: Yeah, I guess they used to work at Google, these guys.
+[00:07:10] Shoval Abudraham: Like, his company, the CEO of companies, acquired by Google, Simply, I think, that was her name.
+[00:07:18] Andrew Dutton - Sumitomo Chemical America: I, that one, I think, is what became Google SOAR?
+[00:07:23] Shoval Abudraham: Yeah, exactly.
+[00:07:24] Andrew Dutton - Sumitomo Chemical America: Simplify or something like that? Simplify. Yeah, so these guys are making a new company as well, June.
+[00:07:31] Shoval Abudraham: Yeah.
+[00:07:31] Andrew Dutton - Sumitomo Chemical America: J-O-O-N. Of course, they're Israeli as well, right? Of course. And there, yeah, that's where I mostly see it coming. And the idea there is, like, kind of what I'm talking about, is this AI-enabled
+[00:07:46] Andrew Dutton - Sumitomo Chemical America: You know, some people say AIC, but that's not really… it's more than AIC, right? Next-gen sim, it's more than that. It's being able to get all your operational… it's like being a CISO in a box.
+[00:08:01] Andrew Dutton - Sumitomo Chemical America: Right? So… so let's go back to…
+[00:08:05] Andrew Dutton - Sumitomo Chemical America: and I can talk more about that as well, but let's go back to, like, if I'm starting a company, and if you came to me and said, you know, we have this AI brain.
+[00:08:18] Andrew Dutton - Sumitomo Chemical America: right, for your firewalls, for your NDR, you know, EDRs, and we're working on the network security part, I would probably say to you.
+[00:08:28] Andrew Dutton - Sumitomo Chemical America: Well, that's not enough.
+[00:08:30] Andrew Dutton - Sumitomo Chemical America: Right? I want more, right? I… because I'm telling that to everybody in the AI SOC space, or CTIM space, or CMesh space. It's like, dude, you guys are all talking about the same thing, right? You're just… you're just looking at it from different angles, right?
+[00:08:49] Andrew Dutton - Sumitomo Chemical America: That's, that's it.
+[00:08:50] Shoval Abudraham: I… I want to double down on that thought, because that's exactly where our mind went. Like, we also thought, okay, but
+[00:09:00] Shoval Abudraham: organizations have seen, like, they have all the logs in one place, coordinate all the signals, and understand what's happened inside their environment. But…
+[00:09:11] Shoval Abudraham: We, you know, stayed with this thought for a little bit, and we had, like, a very nice analogy, of, like, kind of securing a bank.
+[00:09:21] Shoval Abudraham: Like, for a bank, do you have a security team?
+[00:09:27] Shoval Abudraham: guards, that they have shifts, and, like, they have the security routine, you know? They change shifts in the same time, they're securing the most sensitive, rooms, like, the most sensitive paths into the vault, for example.
+[00:09:45] Shoval Abudraham: And for organization, they have, like, this security routine, because you have to do it efficient, and you have to do it,
+[00:09:54] Shoval Abudraham: kind of, strict in cost-wise. You can't have, like.
+[00:10:00] Shoval Abudraham: thousands of guards going around the bank all the time and, like, checking if there is an illegitimate behavior or a suspicious person. You have, like, limited resources, and you need to play the best with them, and this security routine
+[00:10:18] Shoval Abudraham: make the… The option to, indeed.
+[00:10:25] Yuval Mermer: Anticipate.
+[00:10:26] Shoval Abudraham: and dissipate the bank, yeah?
+[00:10:29] Shoval Abudraham: kind of easier for the attacker, because, you know, as an attacker, I can watch the guards, see when they shift… change shifts, and then to…
+[00:10:38] Shoval Abudraham: just…
+[00:10:39] Shoval Abudraham: go into the bank in this exact time, when they don't notice, when the guard is, you know, doing his tour around the bank, I don't know, because I know the routine, I know where are the gaps. But if you will have, like, thousands of robbers.
+[00:10:55] Shoval Abudraham: like, thousands of agents that always trying, like, to find those little gaps, they will find
+[00:11:02] Shoval Abudraham: they will find a gap, and to this kind of routine… security routine, she… it's, it kind of makes you less secure. And we thought about the fact that it's not only
+[00:11:17] Shoval Abudraham: after the log created, it's like, in the time of the event, you want to detect this robber as a, I don't know, watched the bank.
+[00:11:27] Shoval Abudraham: in the, late at night, or, observe when are the, shifts change. And basically, to kind of, shake the routine.
+[00:11:38] Shoval Abudraham: So, the attackers won't feel comfortable. You basically want A lot of…
+[00:11:45] Shoval Abudraham: Guards going everywhere, checking everywhere, and making sure there is no unlegitimate
+[00:11:54] Shoval Abudraham: Behavior on your organization, not only after the law created, but at the time of the event.
+[00:12:04] Andrew Dutton - Sumitomo Chemical America: Yeah, I like that analogy. Let me add to it, okay? Not only that, but… so today, we are human guards, right?
+[00:12:12] Shoval Abudraham: Yeah.
+[00:12:12] Andrew Dutton - Sumitomo Chemical America: Okay? And you mentioned anticipating when the shift changes, right? Yeah. But there's other things, too, you haven't thought about, like, hey, I gotta really go to the bathroom, right? Or, hey, I'm sick today, right? So there's all these human errors, right?
+[00:12:28] Shoval Abudraham: Yeah.
+[00:12:29] Andrew Dutton - Sumitomo Chemical America: that will allow… you know, you're supposed to be at this, you know, you're supposed to be in the… watching the back, but, you know, I'm having a smoke break, right? So…
+[00:12:38] Andrew Dutton - Sumitomo Chemical America: So we want to not only… so… so we're now talking about, you know, replace… have you ever… you… you guys are too young. There's this old movie called RoboCop, right, where the guy becomes a robot.
+[00:12:51] Yuval Mermer: Bonsai no RoboCar.
+[00:12:53] Andrew Dutton - Sumitomo Chemical America: I know.
+[00:12:54] Shoval Abudraham: Of course we know, yeah, I want to see.
+[00:12:57] Andrew Dutton - Sumitomo Chemical America: But the, but, but now we're talking about getting RoboGuards, right?
+[00:13:03] Shoval Abudraham: Okay.
+[00:13:04] Andrew Dutton - Sumitomo Chemical America: So, what are the hurdles for us, right? Number one,
+[00:13:11] Andrew Dutton - Sumitomo Chemical America: do we trust the RoboGuards yet? In the case of LLMs today, we know that there's hallucinations, right?
+[00:13:19] Andrew Dutton - Sumitomo Chemical America: But we also know that, the way to get better at that is…
+[00:13:25] Andrew Dutton - Sumitomo Chemical America: to have multiple models, to have multiple agents looking at the same data, right? And you can get better. So the first issue for this new style, right, is just trust, okay? Because one of the things I've told the vendors is.
+[00:13:41] Andrew Dutton - Sumitomo Chemical America: even when I deploy something, it's only gonna be read-only. I'm not gonna trust
+[00:13:47] Andrew Dutton - Sumitomo Chemical America: to shoot a gun. So, I buy these guards, right?
+[00:13:52] Shoval Abudraham: Yeah?
+[00:13:52] Andrew Dutton - Sumitomo Chemical America: And they don't have guns yet, but they're watching all the time.
+[00:13:56] Andrew Dutton - Sumitomo Chemical America: Right? And then they're going to tell me that a bank robber's coming in, and I can shoot them, right? Or something like that. Or, you know, different things like that. So I think there's that piece. The second piece is, you know, we just don't understand what's going on under the hood.
+[00:14:16] Andrew Dutton - Sumitomo Chemical America: Right? So, we don't necessarily, trust…
+[00:14:22] Andrew Dutton - Sumitomo Chemical America: trust just the value given. So even though it's not a hallucination.
+[00:14:28] Shoval Abudraham: By we, you mean, like, organizations, security teams, like…
+[00:14:33] Andrew Dutton - Sumitomo Chemical America: Yeah, I think, in general, you know, security teams… we have this term, trust but verify.
+[00:14:40] Andrew Dutton - Sumitomo Chemical America: Right? So, security teams have been using a SIM for, you know, 5 years, right? They've got the same SIM, usually lasts 5 to 7 years. You know, they're pretty comfortable with what it's telling them. Now.
+[00:14:54] Andrew Dutton - Sumitomo Chemical America: what you don't know is what it's not telling you, right?
+[00:14:59] Yuval Mermer: I think…
+[00:15:00] Andrew Dutton - Sumitomo Chemical America: Yeah, but they didn'.
+[00:15:01] Shoval Abudraham: No.
+[00:15:02] Andrew Dutton - Sumitomo Chemical America: Right, but they get to the point where they're okay with that, because in the back of their brain, they don't want to know sometimes when there's more roaches around, right? It's like, I don't see any roaches.
+[00:15:15] Andrew Dutton - Sumitomo Chemical America: my company's okay. You know, at the same time, you know, the data's being exfiltrated, and you have no idea, but then nobody knows, so what's the big harm for it, right? You know, they just don't always want to know the real
+[00:15:29] Andrew Dutton - Sumitomo Chemical America: really what's going on, to tell you the truth. They get a little bit lackadaisical, right? They've done the SIM, they've done these firewalls, and the pen tests come back real okay, and they just don't…
+[00:15:44] Andrew Dutton - Sumitomo Chemical America: Feel that it's enough to… to warrant
+[00:15:49] Andrew Dutton - Sumitomo Chemical America: additional things. Now, I think that that is just laziness, right? But you have a lot of people in the cybersecurity business that are lazy, to be honest with you.
+[00:16:01] Shoval Abudraham: Yeah, Do you think that this new era and new, like…
+[00:16:06] Shoval Abudraham: That they would not… they could not be lazy anymore, because it's not up to them, like, the attacks became, like…
+[00:16:16] Shoval Abudraham: That's… Massive amount of attacks, it's speeding fast, the unpredictability is, like, super scary.
+[00:16:25] Andrew Dutton - Sumitomo Chemical America: I think that they're still gonna be able to be lazy, to be honest with you, because if you're in a… just… I will tell you right now, Sumitomo, which I work, right? Has data been exfiltrated somewhere? Probably. That we have no idea about.
+[00:16:42] Andrew Dutton - Sumitomo Chemical America: Absolutely, okay? Was it enough data to the attackers that they tried to monetize it, or that they even know that they have it, or that, you know, so…
+[00:16:54] Andrew Dutton - Sumitomo Chemical America: So I think in the past, even if you do get attacked and exfiltrated, doesn't mean that the attackers value your data.
+[00:17:02] Andrew Dutton - Sumitomo Chemical America: Right? So I think that there are still some organizations that can be lazy.
+[00:17:08] Andrew Dutton - Sumitomo Chemical America: Right? If they've never had something bad happen.
+[00:17:13] Andrew Dutton - Sumitomo Chemical America: Okay? Unfortunately, once something really bad happens, then all hell broke loose, and people throw money at you, and you wind up wasting more money than you should have spent in the bad time, so…
+[00:17:27] Andrew Dutton - Sumitomo Chemical America: So…
+[00:17:28] Andrew Dutton - Sumitomo Chemical America: the… so I think that that is… is a case that, you will have people that are still going to be lazy. The other side of the flip coin is
+[00:17:39] Andrew Dutton - Sumitomo Chemical America: You're gonna have professionals that don't under… that cannot communicate well to executives.
+[00:17:46] Andrew Dutton - Sumitomo Chemical America: Okay? If you don't communicate well to your executives, the executives aren't going to see the same issue, right? Or the same need. Yeah. Which equals
+[00:17:58] Andrew Dutton - Sumitomo Chemical America: we're not going to get the same funding, because no matter what, you're… this area is an additional spend, right? At the first, you shouldn't be replacing anything.
+[00:18:09] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:18:12] Andrew Dutton - Sumitomo Chemical America: Because then you're gonna be a product of some sort, right? But this top AI-driven operational center, I see as…
+[00:18:20] Andrew Dutton - Sumitomo Chemical America: an agnostic vision into your tools, right? Let firewalls continue to be firewalls. You don't need to make a firewall, right? Let NDRs collect data, right?
+[00:18:33] Shoval Abudraham: you know.
+[00:18:33] Andrew Dutton - Sumitomo Chemical America: Let SIMS, you know, log data. Let… let everybody do their basic functionality.
+[00:18:40] Andrew Dutton - Sumitomo Chemical America: you're just riding on top of these, but because of that, you're asking for additional funds. So, if I'm not a very good security…
+[00:18:52] Andrew Dutton - Sumitomo Chemical America: person that can communicate, and we do have this issue in security, okay? Because we're usually technologists. Similar to developers, okay? Developers, in general, have problems communicating
+[00:19:05] Andrew Dutton - Sumitomo Chemical America: what their thing's gonna do sometime, right? Or how great it's gonna be, or, you know, how to get funding, right? But you have… but you can develop anything in the world.
+[00:19:14] Andrew Dutton - Sumitomo Chemical America: Same thing in security. You tend to be a technologist, right? And you want to
+[00:19:20] Andrew Dutton - Sumitomo Chemical America: But you don't understand that you always… you have to be an executive, you have to be a technician, you have to be a… you have to talk to middle management, you have to… you have to make sure that your business… that you're aligning yourself to business so the CFO knows
+[00:19:37] Andrew Dutton - Sumitomo Chemical America: and can give you money, right? There's multiple pieces to the thing just to get into the AI…
+[00:19:47] Andrew Dutton - Sumitomo Chemical America: Yeah. capabilities. Now, For me, specifically.
+[00:19:53] Shoval Abudraham: Yeah?
+[00:19:53] Andrew Dutton - Sumitomo Chemical America: I will tell you that…
+[00:19:55] Andrew Dutton - Sumitomo Chemical America: One of the things that I think Sumitomo Chemical would really value from this type of technology
+[00:20:03] Andrew Dutton - Sumitomo Chemical America: is because we want to bring power to the technicians, okay? Because we have 200 companies around the world.
+[00:20:13] Andrew Dutton - Sumitomo Chemical America: Okay? In those companies, there might be, like, 1 or 2 IT people.
+[00:20:17] Andrew Dutton - Sumitomo Chemical America: there's not, like, a security team in each company, right? You know, that doesn't exist, right? You're a plant in the middle of Arizona, right? And you've got two people, their desktop server, right?
+[00:20:31] Andrew Dutton - Sumitomo Chemical America: But being able to use… to bring the power of cybersecurity to them in a natural language format
+[00:20:39] Andrew Dutton - Sumitomo Chemical America: is significantly important. And then also, because right now, if you… and this happens a lot of times, right?
+[00:20:51] Andrew Dutton - Sumitomo Chemical America: I'm a security guy, and I go, hey, you have, you know, you've got 15,000 vulnerabilities, you better fix your stuff now. That means nothing.
+[00:21:03] Andrew Dutton - Sumitomo Chemical America: Right? People will turn you off, like, anything, right? But if you say to them, like, hey, we're seeing, this type of thing, here's some information about it, this is how we fix it, but when you go to that person.
+[00:21:20] Andrew Dutton - Sumitomo Chemical America: you should be able to have all this data around this actionable data around what's happening, you know?
+[00:21:29] Shoval Abudraham: found in his environment.
+[00:21:31] Andrew Dutton - Sumitomo Chemical America: Yeah, exactly, and this is what we could do. It's like a working together kind of thing, and then they can use the tool as well to ask additional questions.
+[00:21:40] Andrew Dutton - Sumitomo Chemical America: Like, what does this mean to me? What is it, you know, have I seen this before? You know,
+[00:21:48] Shoval Abudraham: Kind of get more data and investigate together with the soul.
+[00:21:52] Andrew Dutton - Sumitomo Chemical America: Yes, yes, right. But they don't need to know how to extract a memory dump from a… you know, you should… the tool, you might have a tool.
+[00:22:01] Andrew Dutton - Sumitomo Chemical America: to do that, right? And it goes, hey, can I get a memory dump from this system? Sure! But it goes out to the other tool, gets it. You're like, oh, can you tell me what… you know, all those types of things, but also…
+[00:22:15] Andrew Dutton - Sumitomo Chemical America: To next level is then when we go into the legal team's office, right?
+[00:22:22] Andrew Dutton - Sumitomo Chemical America: We start giving the legal team different kinds of data.
+[00:22:26] Andrew Dutton - Sumitomo Chemical America: Right? We found this, this is what we… you know, that… that… the AI thingy is going to be able to communicate in a… when we sit in the legal's office, or when we sit in the CEO's office.
+[00:22:39] Shoval Abudraham: Wait, wait, I'm not sure I understand, like, why do you need…
+[00:22:43] Shoval Abudraham: The legal to know this data?
+[00:22:48] Andrew Dutton - Sumitomo Chemical America: So, so when you do an incident, Okay?
+[00:22:53] Andrew Dutton - Sumitomo Chemical America: The imp… so the way it works in the U.S, we have a lot of, like, sort of…
+[00:23:00] Andrew Dutton - Sumitomo Chemical America: Laws around things…
+[00:23:02] Shoval Abudraham: Closed the incident.
+[00:23:03] Andrew Dutton - Sumitomo Chemical America: Yes, yes, yes, so…
+[00:23:05] Shoval Abudraham: Got it.
+[00:23:06] Andrew Dutton - Sumitomo Chemical America: So the first thing that happens is, when you have an incident.
+[00:23:09] Andrew Dutton - Sumitomo Chemical America: Okay? You… you work an incident, okay? Then you, in general, you, you know, is it low, medium, high, critical, right? Then if it's a… it's a critical incident, then you bring on, like, a bigger team.
+[00:23:24] Andrew Dutton - Sumitomo Chemical America: Okay? And that'll include executives, and legal, and SMEs, and depending on what it is you're working on, right? So eventually, for example.
+[00:23:34] Andrew Dutton - Sumitomo Chemical America: The term breach.
+[00:23:36] Andrew Dutton - Sumitomo Chemical America: Is a legal term.
+[00:23:38] Andrew Dutton - Sumitomo Chemical America: IT teams should never use the term breach.
+[00:23:42] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:23:43] Andrew Dutton - Sumitomo Chemical America: Because… because it's a… because it's a legal term in the United States.
+[00:23:49] Andrew Dutton - Sumitomo Chemical America: If you use the word breach.
+[00:23:51] Andrew Dutton - Sumitomo Chemical America: And you have, you know, let's say 48 hours to disclose it to the government. But you… but your IT team used that in the email two weeks ago.
+[00:24:02] Andrew Dutton - Sumitomo Chemical America: You can find liable.
+[00:24:04] Andrew Dutton - Sumitomo Chemical America: and fined, because you knew there was a breach before. So we always say, you're never allowed to use breach, it's only a legal term. You know, we can say data was exfiltrated.
+[00:24:16] Andrew Dutton - Sumitomo Chemical America: Right? So, I'll give you… so… so, as we're working an incident, right?
+[00:24:24] Andrew Dutton - Sumitomo Chemical America: you, as a technical team, you will look at the incident, you'll start to piece things together, right? And then you'll see where, okay, some data was exfiltrated. So that's when you'll get the bigger teams together, you'll get legal involved, right? Because there, like I said, there are definite
+[00:24:44] Andrew Dutton - Sumitomo Chemical America: requirements, of how you have to report incidents, you know, and especially if it involves PII. But again, IT just knows, think about this, IT says.
+[00:24:58] Andrew Dutton - Sumitomo Chemical America: Oh, we saw, you know, 100 gigs of data go from this server to this external IP address, okay?
+[00:25:08] Andrew Dutton - Sumitomo Chemical America: So we know 100 gigs of data was exfiltrated, but what does that mean?
+[00:25:12] Andrew Dutton - Sumitomo Chemical America: I don't know yet, right? I'm not the person that owned that server, right? So then you have to dig into it, like, okay, then there's this server, right? Whose server is this? Oh, this server belongs to…
+[00:25:23] Andrew Dutton - Sumitomo Chemical America: finance. Okay, shit, that's not good. Okay, now, where did the stuff come from in the server, right? What did the stuff look like? And then you find out it was from
+[00:25:35] Andrew Dutton - Sumitomo Chemical America: maybe, I don't know, HR, and there's PII in it, and that's a whole different, complete legal spectrum.
+[00:25:42] Andrew Dutton - Sumitomo Chemical America: of once you start digging into. So it's really a… it's not a security problem. It's not a security… security is part of this Tiger team.
+[00:25:53] Andrew Dutton - Sumitomo Chemical America: Once an incident rolls out, that everyone has to work together to answer these questions. So, when you talk to legal teams, you're going to be saying.
+[00:26:03] Andrew Dutton - Sumitomo Chemical America: We saw exfiltration, it's from the system, this is the system, this is what they say was in that directory, this is the type of data, okay?
+[00:26:11] Shoval Abudraham: Yeah. But Andrew, I wanna, I wanna, like, take… a step…
+[00:26:17] Shoval Abudraham: back, because I'm not sure I understand, like.
+[00:26:20] Shoval Abudraham: I totally understand, like, how when you detect the breach, this product can give you, like, should give you the full cycle and help you to…
+[00:26:30] Shoval Abudraham: navigate and investigate and manage the reach. But I'm wondering, since not, a lot of organizations are,
+[00:26:44] Shoval Abudraham: Have breaches, like, commonly?
+[00:26:50] Andrew Dutton - Sumitomo Chemical America: Commonly, yeah.
+[00:26:50] Shoval Abudraham: So this…
+[00:26:53] Shoval Abudraham: Visibility into your environment, the… kind of the legitimate baseline of your environment, and the anomaly detection above that.
+[00:27:07] Shoval Abudraham: does it, create a value that you need inside of your organization, as is? Like, even if there is no, breach often? Bridges often?
+[00:27:18] Andrew Dutton - Sumitomo Chemical America: I think what you're saying is, wouldn't it be better if we just stopped the exfiltration of data to begin with?
+[00:27:24] Andrew Dutton - Sumitomo Chemical America: And it was just not allowed to be taken, right? So we saw this behavior, and we said, whoa, whoa, whoa, whoa. This data should not be going out to this external
+[00:27:36] Andrew Dutton - Sumitomo Chemical America: IP address, because we have no idea what it is.
+[00:27:40] Andrew Dutton - Sumitomo Chemical America: Right? Yeah. Yes, I think that that goes back to what you were talking about, is we should have AI behavior, right, say, this is the first time this happened.
+[00:27:54] Andrew Dutton - Sumitomo Chemical America: This… is this allowed or not?
+[00:27:58] Andrew Dutton - Sumitomo Chemical America: Okay.
+[00:27:59] Shoval Abudraham: Do you have some…
+[00:27:59] Andrew Dutton - Sumitomo Chemical America: Wow.
+[00:28:00] Shoval Abudraham: At the moment?
+[00:28:01] Andrew Dutton - Sumitomo Chemical America: No, no. Think of… let's think through it. Okay, number one… Number one, most organizations,
+[00:28:11] Andrew Dutton - Sumitomo Chemical America: You don't want to be a hindrance to the organization.
+[00:28:14] Andrew Dutton - Sumitomo Chemical America: Okay? So, how will the… let's say it's a legitimate thing happening.
+[00:28:21] Andrew Dutton - Sumitomo Chemical America: How do we know?
+[00:28:23] Andrew Dutton - Sumitomo Chemical America: Right? Does that user get a pop-up that they're trying to do something that's not allowed, and they need to ask for permission?
+[00:28:34] Shoval Abudraham: So, that's, like, I feel that this is the part, or Yuval,
+[00:28:39] Yuval Mermer: No problem.
+[00:28:40] Shoval Abudraham: I just wanted to say that I feel this is the part of the solution, and I'm not sure I understand if this visibility creates any value for the organization.
+[00:28:53] Andrew Dutton - Sumitomo Chemical America: The visibility or the, the ability to…
+[00:28:59] Andrew Dutton - Sumitomo Chemical America: So, visibility is just knowing it happened.
+[00:29:02] Andrew Dutton - Sumitomo Chemical America: Right? Yeah.
+[00:29:04] Shoval Abudraham: And, like, every…
+[00:29:05] Shoval Abudraham: Baseline, having the, like, visibility of how you're, having the baseline of the behavior, like, knowing what your organization, works like, what is the normal behavior, what is unexpected, what is illegitimate, the baseline that you can
+[00:29:24] Shoval Abudraham: Compared to in any of legitimate… illegitimate, event, this baseline create any value for organizations?
+[00:29:37] Andrew Dutton - Sumitomo Chemical America: Okay, this is a really good ask. I mean, we're talking about some cool things. Let me tell you some real-world things today.
+[00:29:46] Shoval Abudraham: Okay.
+[00:29:46] Andrew Dutton - Sumitomo Chemical America: Okay, so, I get an alert.
+[00:29:52] Andrew Dutton - Sumitomo Chemical America: right? I can go in, and I can see where a user,
+[00:29:59] Andrew Dutton - Sumitomo Chemical America: downloaded data out of their OneDrive, and it's way more data than they normally download.
+[00:30:06] Andrew Dutton - Sumitomo Chemical America: Okay?
+[00:30:07] Andrew Dutton - Sumitomo Chemical America: Okay?
+[00:30:08] Shoval Abudraham: So… Sweet.
+[00:30:11] Andrew Dutton - Sumitomo Chemical America: do you know how hard it would be for me to… so that user may be in Malaysia, right? Do you know how hard it would be for me to try to contact that user, figure out, did that user really do this? Do I send an email? Do I… I don't know their phone number?
+[00:30:28] Andrew Dutton - Sumitomo Chemical America: It's very difficult to… to figure out if that's a false positive, or if that's regular… regular,
+[00:30:37] Andrew Dutton - Sumitomo Chemical America: behavior, right? We know it's not normal behavior, right? But how do we know that that user didn't just get a new…
+[00:30:45] Andrew Dutton - Sumitomo Chemical America: laptop? Or, how do we know…
+[00:30:49] Andrew Dutton - Sumitomo Chemical America: that… that user, I don't know, was backing up their files or something.
+[00:30:55] Yuval Mermer: You know, Andrew?
+[00:30:56] Yuval Mermer: It's, it's… you're just talking about things that, that, occurred in the first time, like…
+[00:31:01] Yuval Mermer: If the user downloaded data.
+[00:31:05] Yuval Mermer: big… a lot of data for the first time. If an event came up, popped up in the SIM for the first time, like.
+[00:31:14] Yuval Mermer: Today, if server A tries to send UDP packets to server B, which can be a very typical and can make sense.
+[00:31:25] Yuval Mermer: it also can be a CNC of… in the middle of the attack.
+[00:31:31] Andrew Dutton - Sumitomo Chemical America: Right.
+[00:31:32] Yuval Mermer: Right, and it's not the first time that it's… that it's happening. Like, it could be the second or the third time, or something that is typical. So…
+[00:31:40] Andrew Dutton - Sumitomo Chemical America: Yeah.
+[00:31:41] Yuval Mermer: We're addressing the… not the traditional Risks that we already know.
+[00:31:47] Yuval Mermer: Like, we're addressing their risks that we know that they are going to come.
+[00:31:52] Yuval Mermer: like this, like… like how AI use the… the…
+[00:31:57] Yuval Mermer: the behavior… the behavior we already know, and use it to hide himself, use it to CNC, use it to lateral move.
+[00:32:08] Yuval Mermer: And to understand that something is happening.
+[00:32:12] Yuval Mermer: And I can't see it, actually.
+[00:32:16] Andrew Dutton - Sumitomo Chemical America: Oh, I… so… I think… so what I'm saying to you is, I would love that.
+[00:32:22] Andrew Dutton - Sumitomo Chemical America: I just don't see… so people say they do things like that, but when you get down into it, it's just the same behaviors that we cannot operationalize, okay? I'll give you an example. I had this talk with this other guy the other day, and
+[00:32:43] Andrew Dutton - Sumitomo Chemical America: get an alert that a, user, and I know it's an admin account, right? This administrator ran the script.
+[00:32:51] Andrew Dutton - Sumitomo Chemical America: Right? Now… Okay, the U… so…
+[00:32:56] Andrew Dutton - Sumitomo Chemical America: So the… so I talked to the guy, and he goes, yeah, that was me running the script. Okay, well, do I…
+[00:33:02] Andrew Dutton - Sumitomo Chemical America: So I just wasted 15 minutes, okay?
+[00:33:06] Andrew Dutton - Sumitomo Chemical America: what do I do with that data? Do I… do I then just allow no more alerts on that administrator for running scripts? Because if that administrator gets taken over, then… you know what I mean? So, I think that the tooling that I have now
+[00:33:23] Andrew Dutton - Sumitomo Chemical America: Does not do a good job of really
+[00:33:29] Andrew Dutton - Sumitomo Chemical America: really being able to operationalize those, things, okay? And then being able for me to get to the bottom of those things. So, again, if you give me something that this server
+[00:33:46] Andrew Dutton - Sumitomo Chemical America: is now doing things that we think that there's an, you know, like, some C2C going on, or whatever, right? That,
+[00:33:55] Andrew Dutton - Sumitomo Chemical America: how do I get to the point… because I'm the security team, I'm not the server team. I have no idea what the server is, you know, or that somebody didn't just code this thing in, right? You gotta think about, how do I then dig into that piece?
+[00:34:13] Andrew Dutton - Sumitomo Chemical America: And, whether… you know, you've got to get all this other data, right?
+[00:34:20] Andrew Dutton - Sumitomo Chemical America: Who's the owner of the circle?
+[00:34:22] Andrew Dutton - Sumitomo Chemical America: You know, who's the… who's been logging into the server? Who's, you know, how do I figure out and then be able to, like, Slack them, or Teams them, or, you know, or how can I stop it?
+[00:34:32] Andrew Dutton - Sumitomo Chemical America: Right? Like, how can I stop this? Do you put a hook into, you know, the EDR, or the firewalls, and… but then the firewalls can… did you get all the firewalls connected? You know, there's all these kind of things,
+[00:34:45] Andrew Dutton - Sumitomo Chemical America: I will give you… another example of… we do run this endpoint tool called ThreatLocker.
+[00:34:55] Andrew Dutton - Sumitomo Chemical America: Have you ever heard of them before?
+[00:34:58] Yuval Mermer: No, actually enough.
+[00:34:59] Andrew Dutton - Sumitomo Chemical America: Okay, there… so, in the 90s, we came up with this idea of allowing things, right? Allow this, right? When you think about it, the most secure you could be
+[00:35:11] Andrew Dutton - Sumitomo Chemical America: Is to say, these are the only things that can run, and just don't allow anything else to run.
+[00:35:17] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:35:18] Andrew Dutton - Sumitomo Chemical America: The problem is, That's hard to do.
+[00:35:21] Andrew Dutton - Sumitomo Chemical America: Okay, because things change all the time. So what they've done is they've, created this, they actually use humans and AI in the back end, right, that are constantly looking, so I wanted to download the latest, well,
+[00:35:38] Andrew Dutton - Sumitomo Chemical America: ChatGPT just came up with their desktop.
+[00:35:41] Andrew Dutton - Sumitomo Chemical America: They're, you know, it's called, like.
+[00:35:43] Andrew Dutton - Sumitomo Chemical America: GPT, desktop, or whatever, right? Try to load it, get it, you know, it gets a prompt that says, you know, you're not allowed to run this.
+[00:35:51] Andrew Dutton - Sumitomo Chemical America: But it also prompts up, to me as a user.
+[00:35:55] Andrew Dutton - Sumitomo Chemical America: and I can put something in there that says, like, oh, I'm just trying to download ChatGPT, and all that stuff goes to the back-end people that aren't me, right? They're the… they're the threat locker kind of people.
+[00:36:07] Andrew Dutton - Sumitomo Chemical America: And then they analyze that data, and they make a decision whether to allow it or not, right? And those decisions, like, the AI has already decided, like, how many times people have downloaded this, and what's the reputation, and stuff like that.
+[00:36:22] Shoval Abudraham: Yeah, I understand what you're saying, and I feel like it's again the point that as a security leader in your organization, you have to make sure that your other team will have the ability not only to see the incident and to
+[00:36:40] Shoval Abudraham: Illegitimate behavior, but also to understand it, to fix it, and to understand, like, what are the action items after, this event pop-up.
+[00:36:52] Andrew Dutton - Sumitomo Chemical America: Yes, and easily figure it out.
+[00:36:55] Shoval Abudraham: Yeah, yeah, and I want to go back to the bank analogy, because you mentioned earlier the fact that there can be, multiple types of guards, or it can be a junior guard…
+[00:37:09] Andrew Dutton - Sumitomo Chemical America: outwept.
+[00:37:10] Shoval Abudraham: fans, and…
+[00:37:12] Shoval Abudraham: We have… we can have, like, senior guards with weapons, and, like, it can be depend on the organization, kind of risk appetite, like, which guard they want to use, but they… they want to only see what's happening in their environment, or only to enable enforcement, or investigation, or having all the details, but
+[00:37:34] Shoval Abudraham: I want to go back for what those, junior guards will do. Like, basically, as
+[00:37:42] Shoval Abudraham: like, we're thinking about it as, you know, you… now with AI can multiple your guards,
+[00:37:51] Shoval Abudraham: dramatically. So, if you had, like, 10 guards still now, because that's what you can afford, now you can have
+[00:37:59] Shoval Abudraham: thousand, and they will look and scroll your bank, your every room, also, I don't know, the toilet and not important room… rooms without the crown jewels, to… to make sure they're finding all
+[00:38:14] Shoval Abudraham: Oh, what's happening, and…
+[00:38:17] Shoval Abudraham: They will have, like, basically a hierarchy that they need to report to, so in the… in the… in…
+[00:38:25] Shoval Abudraham: cross this hierarchy, the… all the irrelevant and not urgent and not, severe event will drop. Like, if, I don't know, new people, you, you see,
+[00:38:40] Shoval Abudraham: a new people in the employee toilet, for example. That's a very stupid example, but it might be a person that the, I don't know.
+[00:38:51] Shoval Abudraham: a family of the other employees, and he let him use the toilet. So you have to… all this context.
+[00:38:59] Shoval Abudraham: To make sure where… which illegitimate events are actually illegitimate and severe.
+[00:39:08] Andrew Dutton - Sumitomo Chemical America: Yeah, that word comes through…
+[00:39:11] Andrew Dutton - Sumitomo Chemical America: that's why you need to have access to all the systems. Like, you even need HR data to figure out who employees are, right? You gotta have all these data, and you're right, you would have these little…
+[00:39:21] Andrew Dutton - Sumitomo Chemical America: like, like these worker bots, right? They're the ones gathering information, and they might see somebody putting on a mask in their car, right? Yeah. Like, oh, that's not normal, but it is Halloween, so maybe it's… you know what I mean? Exactly!
+[00:39:37] Shoval Abudraham: Chocolate!
+[00:39:38] Andrew Dutton - Sumitomo Chemical America: Yeah.
+[00:39:39] Shoval Abudraham: You know, I feel like now in the AI era, it's all about context. And when you hold the context, and create the context layer for your security, all the,
+[00:39:51] Shoval Abudraham: false positive or false negative, and all the understanding of what happened in your environment, will be smarter. And until now, we don't have the resources to do it. But now we can hold all this context, and
+[00:40:06] Shoval Abudraham: in parallel, to have multiple guards that run all the time, all over the environment, and, you know, check, check every room, every window, every door, every key, to make sure that everything is okay. And based on the context, like, to…
+[00:40:21] Shoval Abudraham: Have a great picture of what exactly you should fix, and where are the risks.
+[00:40:28] Andrew Dutton - Sumitomo Chemical America: Yes, I totally agree with you. There are,
+[00:40:32] Andrew Dutton - Sumitomo Chemical America: And by the way, I think a lot of people are going… that's the bad thing for you guys, right? There's a lot of people thinking the same exact thing, right? You know what I mean? Like, it's not gonna be easy to get into… you know… if you went to… you didn't go to Black Hat, did you guys, USA?
+[00:40:52] Shoval Abudraham: No, we didn't. No, we didn't.
+[00:40:53] Andrew Dutton - Sumitomo Chemical America: Okay. But if you did, it was all about the very similar types of things, right?
+[00:40:58] Shoval Abudraham: Yeah.
+[00:40:59] Andrew Dutton - Sumitomo Chemical America: So, and not to, you know, not to crush your dreams, right? But, would it be better… would you rather be working with another team that's similar, but maybe they're thinking more…
+[00:41:13] Andrew Dutton - Sumitomo Chemical America: something else? Or do you want to come up with your own thing? You know what I mean? That's probably where you're kind of thinking next, is like, you know, do we… do we… is this enough for us to push it? Or do we want maybe…
+[00:41:29] Andrew Dutton - Sumitomo Chemical America: to find a niche there, right? Like, a niche in the spot, or, you know, I don't know.
+[00:41:35] Shoval Abudraham: So that's exactly our question, like, basically to you. If… I'll say it like that. Like, if there are other teams that do similar stuff, it's not necessarily bad, because it means that…
+[00:41:46] Shoval Abudraham: the need is there, but I be honest and say that I'm not sure the need is there, so I know… I…
+[00:41:54] Shoval Abudraham: I'm curious to hear your thoughts about, like, this kind of value will be valuable for you, and you know what? Not even valuable, because sometimes things are valuable for us, but we are not priority.
+[00:42:08] Shoval Abudraham: And I'm trying to make sense… to make, to understand if this kind of value is a priority for you.
+[00:42:15] Andrew Dutton - Sumitomo Chemical America: Well, the other thing is, what's value mean? Like, it's valuable to me, but I only want to spend $1,000 a year. You would go broke, right? You know, because you… you know, that's one other problem here. So, I do think the way you're thinking and what we're talking about is the future, okay?
+[00:42:34] Andrew Dutton - Sumitomo Chemical America: It's the future, I'm telling you. You know, it's going to be the main… this AI operational layer that I talk about, is going to our, you know, it's just going to be the next-gen
+[00:42:46] Andrew Dutton - Sumitomo Chemical America: like SIM, you know what I mean? It's like the next… it's what SIM and SOAR and everything should have been already, looking at all this analytics. There's a couple problems now why it's not…
+[00:42:57] Andrew Dutton - Sumitomo Chemical America: and I kind of told you this, that not everyone's doing kind of pieces of it, but no one's doing, like, all of it yet, right? And there's a couple reasons for that. Number one.
+[00:43:08] Andrew Dutton - Sumitomo Chemical America: AI's getting cheaper, but it's still expensive.
+[00:43:12] Andrew Dutton - Sumitomo Chemical America: Right? So, you can create… you can vibe code anything you want, but to create something that's repeatable and, and uses less, you know, the cheaper tokens for certain things, and is… and is…
+[00:43:31] Andrew Dutton - Sumitomo Chemical America: you know, affordable to companies is not easy, right? Anyone could just use AI, right? And then, oh, I'm gonna use Fable 6, or whatever, and you will be blown out of the water how much money you spend.
+[00:43:43] Andrew Dutton - Sumitomo Chemical America: Right? And you'll be using it for the… you'll be using tokens for shit you shouldn't even use it for, right? So I think that there's… there's a…
+[00:43:52] Andrew Dutton - Sumitomo Chemical America: Back-end thing for people to really understand how to code the backend so it's not… so it's more affordable.
+[00:44:01] Andrew Dutton - Sumitomo Chemical America: Right? And then, the second thing is, that,
+[00:44:07] Andrew Dutton - Sumitomo Chemical America: That other piece, you have to be…
+[00:44:11] Andrew Dutton - Sumitomo Chemical America: people have to trust you, right? So when you put your security bots out, you know, at first, we're going to be watching them very closely.
+[00:44:18] Andrew Dutton - Sumitomo Chemical America: Right? So, making sure that they don't go crazy, right? And starting, you know, attacking customers, you know. So, you as a company have that brand reputation thing. As soon as something like that happens, you won't be able to recover, right? Like, something bad.
+[00:44:37] Shoval Abudraham: You know, those things, like, I totally understand, I totally agree with you, those are things that are important, like, but,
+[00:44:47] Shoval Abudraham: Cause it's, you know, I,
+[00:44:50] Shoval Abudraham: I didn't mention it, but in the past, like, 4 years, I'm creating, agents for production and cost, like, it's a… it's a big pain there, like, you know, now it's even less of a pain. Like, before a year or two, it was massive amount of cash, it was, like.
+[00:45:08] Shoval Abudraham: we were burning cash, basically. So I feel… That in this…
+[00:45:16] Shoval Abudraham: The term, like, things will be cheaper and cheaper, and also we can use small, medium, model.
+[00:45:25] Andrew Dutton - Sumitomo Chemical America: Absolutely.
+[00:45:25] Shoval Abudraham: like that.
+[00:45:27] Andrew Dutton - Sumitomo Chemical America: Absolutely.
+[00:45:28] Shoval Abudraham: And in the terms of trust, I totally understand what you're saying. I think that in… for this specific concern, we can, of course, leverage our knowledge from our service.
+[00:45:42] Shoval Abudraham: Because basically, what we did there, we had to monitor the infrastructure.
+[00:45:48] Shoval Abudraham: And that was super sensitive infrastructure. We had to make sure that everything stayed on place.
+[00:45:56] Andrew Dutton - Sumitomo Chemical America: Yep, yep.
+[00:45:56] Shoval Abudraham: We…
+[00:45:57] Andrew Dutton - Sumitomo Chemical America: I feel like we have, like, the expertise.
+[00:45:59] Shoval Abudraham: for that.
+[00:46:00] Andrew Dutton - Sumitomo Chemical America: Yeah, yeah, totally, I agree. And I think that, in general, Israeli companies have a… Head Start.
+[00:46:09] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:46:10] Shoval Abudraham: Yeah.
+[00:46:10] Andrew Dutton - Sumitomo Chemical America: In that type of thing, right?
+[00:46:14] Andrew Dutton - Sumitomo Chemical America: I will also say that I think…
+[00:46:17] Andrew Dutton - Sumitomo Chemical America: We're already starting to see more and more companies bring AI back into the data center, right? And not buying the SaaS, so…
+[00:46:25] Andrew Dutton - Sumitomo Chemical America: I would also think that eventually, you will have a SaaS offering, but you will also offer an on-prem offering, right? Because, again, you know, we're bringing things back into the data center and running it ourselves for a lot cheaper than we could pay, you know, those foundational models, or even Bedrock, and…
+[00:46:45] Andrew Dutton - Sumitomo Chemical America: you know, Azure AI.
+[00:46:47] Andrew Dutton - Sumitomo Chemical America: And I think… I think you're totally right. Honestly, in 5 years, data centers are going to be going away anyways, these big AI data centers, because
+[00:46:56] Andrew Dutton - Sumitomo Chemical America: AI is getting so much more,
+[00:47:00] Andrew Dutton - Sumitomo Chemical America: what do you call, you know, good at itself, it's smaller, you know what I mean? You're pretty… you're pretty soon going to be running models right on your cell phone. It's not… you're not going to need all these big GPUs, right? It's going to get there, especially within… yeah, but anyway.
+[00:47:16] Andrew Dutton - Sumitomo Chemical America: And this… this is going to be…
+[00:47:22] Andrew Dutton - Sumitomo Chemical America: really important, this is the next… what I think is the next level big thing. Like, EDR was when they replaced antivirus, right? Think about when antivirus is a thing. EDR was basically behavioral,
+[00:47:38] Andrew Dutton - Sumitomo Chemical America: Analysis of that data, and we said… we said, hey, you don't need to have all these
+[00:47:44] Andrew Dutton - Sumitomo Chemical America: things, you know, these, strings, right? Shaw values updating you every day, right? No. We're gonna say if it looks like a duck, quacks like a duck, it's probably a duck, we're gonna stop, right?
+[00:47:56] Andrew Dutton - Sumitomo Chemical America: Yeah. Same sort of thing. This is no… this new thing is just, like, the next level. Like, I say it's the next…
+[00:48:03] Andrew Dutton - Sumitomo Chemical America: next-gen SIM, it really kind of is, is you're not probably gonna need a SIM
+[00:48:10] Andrew Dutton - Sumitomo Chemical America: Right? You might still need a logging solution, right? Depends on…
+[00:48:15] Andrew Dutton - Sumitomo Chemical America: what kind of industry you are, you know, some people have to keep logs for 7 years, or whatever. You, as a product, necessarily doesn't need to be a logging solution, but you probably will be the one doing all the work of the SIMs today, and the higher level EDRs. You might get
+[00:48:35] Andrew Dutton - Sumitomo Chemical America: you know, you might get an alert from CrowdStrike, but then that's nothing compared to what you're getting from all your other products, and how you're putting those together.
+[00:48:43] Shoval Abudraham: Yeah.
+[00:48:44] Shoval Abudraham: Yeah, I understand what you're saying.
+[00:48:47] Andrew Dutton - Sumitomo Chemical America: But it's definitely tough. I don't know how… first of all, I've never started a company, right? You guys know, right? I don't know how you get money. Right now, people are asking me,
+[00:48:57] Andrew Dutton - Sumitomo Chemical America: you know, do design work for them, and they're not even gonna charge me, right? But that's gotta cost you money, too, in the back end. Like, how do you get…
+[00:49:05] Andrew Dutton - Sumitomo Chemical America: rolling on a product, even, I was mentioning the June, right? And they were basically showing me what they want to do, and they admitted, like, we don't actually do it today. We don't have it yet, you know what I mean? But this is the thing. Another one was, like, Mars, they're out in Israel as well, and they actually do
+[00:49:23] Andrew Dutton - Sumitomo Chemical America: thing, you know? So everybody, I think, is going to the same… I think everybody's doing the same
+[00:49:30] Andrew Dutton - Sumitomo Chemical America: Thing, or at least thinking the same… They think in the same…
+[00:49:36] Shoval Abudraham: Ideas, yeah.
+[00:49:37] Andrew Dutton - Sumitomo Chemical America: General ideas, yeah.
+[00:49:39] Shoval Abudraham: Yeah, I totally agree, and I totally, like, I think you give us some great armworks to go and think about.
+[00:49:52] Shoval Abudraham: Yeah, yeah, that's super, like, cool. I totally… like, we got a lot of insights and a lot of points to think about, and would love, you know, to… we basically, after every call, like that, which is, with a lot of information, doing, like, a bit of,
+[00:50:12] Shoval Abudraham: brainstorming the day after and think about it with a fresh eye, so I would love to share with you the notes.
+[00:50:17] Andrew Dutton - Sumitomo Chemical America: Sure. Absolutely.
+[00:50:18] Shoval Abudraham: Mario.
+[00:50:20] Andrew Dutton - Sumitomo Chemical America: Yeah, and you know, I was talking to another company yesterday about… we're talking about Agentic AI security, right, and securing our agents. One of the things they are able to do
+[00:50:31] Andrew Dutton - Sumitomo Chemical America: is they also talk… they also calculate cost. They can tell you, hey, you've all spent this much money in this tokens, and you know, when you… when you… when you do some of that things and add it to your product, I've told them, like, that's a really good story for the CFO, right? And by the way, finance CFO guy, we're gonna save you money.
+[00:50:53] Andrew Dutton - Sumitomo Chemical America: It's not just a security tool, but it's saving you money. So think about that, too, like.
+[00:50:59] Andrew Dutton - Sumitomo Chemical America: How can you say, like,
+[00:51:01] Andrew Dutton - Sumitomo Chemical America: you know, we're going to… if you, you know, if you, pay for, ingestion in your SIM, you know, these are ways we… we'll save you money there, so it almost pays for itself, right? Yeah. That's always a great kind of idea, is when you operationalize a product, to bring in some kind of, financial thing.
+[00:51:23] Andrew Dutton - Sumitomo Chemical America: Right?
+[00:51:24] Andrew Dutton - Sumitomo Chemical America: Whether that's, that you're looking at, maybe you're, you're putting some financial data around some of your, risks, or some of your,
+[00:51:35] Andrew Dutton - Sumitomo Chemical America: you know, exfiltration stuff, or something along that, right? But those are always good things to have. Anything for executives, when you go ask for money.
+[00:51:46] Andrew Dutton - Sumitomo Chemical America: Yeah. That you can show… yeah, but we'll save this over here.
+[00:51:50] Shoval Abudraham: Like, to show this rate of, like, when we are reducing.
+[00:51:54] Shoval Abudraham: Yeah, of course.
+[00:51:55] Yuval Mermer: Thank you.
+[00:51:56] Shoval Abudraham: Cool.
+[00:51:57] Shoval Abudraham: That's a very good point.
+[00:51:59] Andrew Dutton - Sumitomo Chemical America: Yeah, so yeah, shoot up a… hit me up, for another meeting when you guys are ready, I'm good.
+[00:52:04] Shoval Abudraham: Amazing, amazing. So we will share, like, we will take it internally and think about that, like, all the great insights you gave us, and of course, we will share more, as we, you know.
+[00:52:18] Shoval Abudraham: Organize our thoughts.
+[00:52:20] Andrew Dutton - Sumitomo Chemical America: Yeah, awesome. And by the way, I really like you guys. You guys got a really good attitude, so I hope you… whatever you decide to do, that you make it well. You know what I mean?
+[00:52:29] Shoval Abudraham: Thank you so much, we really appreciate it. Thank you.
+[00:52:31] Andrew Dutton - Sumitomo Chemical America: You'll be… yeah, no worries.
+[00:52:34] Shoval Abudraham: Yeah, we really appreciate it. You know, you do… you meet people before you meet, like, before you do business. It's… it's a people.
+[00:52:43] Shoval Abudraham: And we're doing?
+[00:52:44] Andrew Dutton - Sumitomo Chemical America: Exactly.
+[00:52:46] Andrew Dutton - Sumitomo Chemical America: Alright, cool! Peace out, guys!
+[00:52:48] Shoval Abudraham: Thank you so much, have a great day, Andrew.
+[00:52:50] Yuval Mermer: Thank you.
+[00:52:51] Andrew Dutton - Sumitomo Chemical America: Later, or a great night for you guys.
+[00:52:54] Yuval Mermer: Thank you.
+[00:52:56] Andrew Dutton - Sumitomo Chemical America: Alright, peace.
+[00:52:57] Yuval Mermer: Yay.
+[00:52:58] Shoval Abudraham: Bye.

@@ -1,0 +1,284 @@
+Date: 2026-09-15
+Topic: Security Leadership Discussion - Bryan Brown
+Meeting UUID: F00E3CC2-2FB3-49A3-943E-84DC68B8B1AF
+Source: transcript
+
+[00:00:00] Shoval Abudraham: Hey, Brian!
+[00:00:04] Shoval Abudraham: Do you hear us?
+[00:00:10] Shoval Abudraham: It's the Notet Note, AI Notetaker.
+[00:00:15] Shoval Abudraham: Oh, I think he wa- he did not… Rakuten.
+[00:00:24] Shoval Abudraham: Cool.
+[00:00:26] Shoval Abudraham: Numpting.
+[00:01:00] Yuval Mermer: Hey, Brian.
+[00:01:07] Yuval Mermer: Can you hear us?
+[00:01:09] Bryan Brown: Sorry, it brought me in on mute for some reason. I started talking and had to go click the buttons, so… Good morning! Time zone appropriate greetings.
+[00:01:18] Yuval Mermer: How are you?
+[00:01:19] Bryan Brown: Doing well. How are y'all doing today?
+[00:01:21] Yuval Mermer: We're good, we're good. Here it's evening. What is the time on your side?
+[00:01:26] Bryan Brown: 10.30 a.m.
+[00:01:28] Yuval Mermer: Yeah, we're both based in Israel. Where are you based?
+[00:01:32] Bryan Brown: I'm in Central Texas, a little town called Georgetown, just north of Austin.
+[00:01:37] Shoval Abudraham: I know, I heard about this, Georgetown.
+[00:01:40] Shoval Abudraham: I think I see it in the TV show.
+[00:01:44] Bryan Brown: Yes, it has been in several TV shows, mostly crime-related, but
+[00:01:50] Shoval Abudraham: Nice, nice. So…
+[00:01:54] Shoval Abudraham: Bryan, thank you so much for the time, we super appreciate it. Like, as Yuval mentioned, when we reach out to you, we are currently building our own cybersecurity company, so I think, we will share a bit about our goal from this conversation. So…
+[00:02:11] Shoval Abudraham: We are building our company, we are currently on the ideation stage, that means that we are basically exploring the cyber field and learning from CISO and security leaders.
+[00:02:23] Shoval Abudraham: About what are the big gaps there, so… and we are sharing with them, like,
+[00:02:31] Shoval Abudraham: our research and get their feedback. So our goal is to do a mutual introduction and, you know, tell you about us a little bit, and then to talk about our research and, you know, hear your feedback and your thoughts, because we're sure we can learn a lot from your experience.
+[00:02:47] Bryan Brown: Okay.
+[00:02:49] Shoval Abudraham: Cool. So start with… we'll start with the introduction. Do you want to start, yourself, or we will start?
+[00:02:57] Bryan Brown: Sure. I'm Bryan Brown. I've got 45 plus years experience in information security and privacy. I'm the former cloud security officer for IBM. I created IBM's current cloud division from acquisitions.
+[00:03:13] Bryan Brown: Amazing. They… I joined IBM in 2004 through the Venetica acquisition, complained so much about their onboarding process, they made me run it for the next 12 years. So I took 247 companies through acquisition and 116 through divestiture, and created IBM's cloud from that.
+[00:03:34] Shoval Abudraham: Wow, that's insane. Like, that's, I can't imagine, like, how effort, you know, you should put in those old processes. So many companies like to combine together under the same cloud, so that's, super impressive.
+[00:03:50] Bryan Brown: Thank you, thank you. It was a lot of fun.
+[00:03:53] Shoval Abudraham: Yeah, it sounds like fun. And I think we will have, like, a mutual,
+[00:04:00] Shoval Abudraham: connection or baseline, because we are both, like, I started to introduce ourselves. We are both, like, Yuval and I also are kind of, infrastructure people, you know, cloud and infrastructure. We are on cybersecurity in the past more than 10 years. Like, I started in the unit 8200, which is the cyber operations unit of the Israeli army. Basically, there we met
+[00:04:24] Shoval Abudraham: Yuval and I. We both served in the,
+[00:04:28] Shoval Abudraham: DevOps infrastructure department, basically hold the role of both DevOps engineer with a security engineer, because we have to build and maintain those infrastructure, but in a very secure way, because they hold
+[00:04:43] Shoval Abudraham: mission-critical and very sensitive, operations. Basically, I served there for five and a half years, and after five and a half years, I did a bit of a shift to a product management roles, because I was always curious about understanding pains and solving problems.
+[00:05:02] Shoval Abudraham: So I started my product management,
+[00:05:06] Shoval Abudraham: career in the civil life. I started in a company called Perception Point. I led their… all the detection capabilities that were based mostly on machine learning and AI, built agent before I knew to call them Agent.
+[00:05:23] Shoval Abudraham: So that was a great, adventure. This company was acquired by Fultinet. After that, I moved to another cybersecurity company called Koi Security. Also, great company, great customers, very innovative in terms of how we use the AI.
+[00:05:39] Shoval Abudraham: And this company was acquired as well by Palo Alto. Basically, that was my sign. I called my phone to my old friend from the military service, Yuval, and told him, okay, that's our queue, we need to build our company right now.
+[00:05:55] Shoval Abudraham: Yeah, so we started on the same place, and I let Yuval share a bit about what he did since we served together.
+[00:06:02] Yuval Mermer: Yeah, before I will continue with the introduction, I can't remember if you told us about what you did after IBM.
+[00:06:13] Bryan Brown: I was going to, but we kind of stopped there. I've worked at a variety of smaller companies. I like… discovered I liked helping companies grow.
+[00:06:23] Bryan Brown: from that small-medium business to the enterprise and build those structures. Let's see, since IBM, I've been the Director of Security and Privacy for Lifesize, which was a telecommunications company.
+[00:06:35] Bryan Brown: Worked for James Avery Jewelry, their first ever information security person, and helped them, harden their environment. COVID, they had to retract, got laid off there.
+[00:06:47] Bryan Brown: Worked for First Advantage, which is the world's largest background check company.
+[00:06:54] Bryan Brown: Worked there for a couple of years, and then at BioChrist as their first ever information security and privacy role, and built their program from nothing.
+[00:07:05] Yuval Mermer: I can see you love building programs over security from scratch.
+[00:07:10] Bryan Brown: It's a lot of fun. It lets me do good every day.
+[00:07:13] Yuval Mermer: Me? This is us the building.
+[00:07:15] Shoval Abudraham: Sorry for stopping you and just, blurbing about myself.
+[00:07:19] Bryan Brown: Yeah, you're fine. I'm prior service myself, I'm U.S. Army, and I actually did serve and train with the IDF.
+[00:07:26] Bryan Brown: Back.
+[00:07:27] Shoval Abudraham: Really?
+[00:07:28] Yuval Mermer: Pretty good.
+[00:07:29] Bryan Brown: Amusingly enough, I didn't know I was talking to you guys, but the t-shirt I stuck on under my work shirt.
+[00:07:36] Shoval Abudraham: Oh my god, I can't believe it! That's a great coincidence, I love it!
+[00:07:42] Bryan Brown: My wife is Jewish, so…
+[00:07:44] Yuval Mermer: Oh my god!
+[00:07:45] Shoval Abudraham: Wow, that's such a small word, you know?
+[00:07:47] Yuval Mermer: also mine.
+[00:07:51] Bryan Brown: That's more common there than it is here in Central Texas, but yeah.
+[00:07:57] Shoval Abudraham: Yeah, totally.
+[00:07:59] Yuval Mermer: Okay, so I'll tell you about me.
+[00:08:02] Bryan Brown: Yes, please.
+[00:08:03] Yuval Mermer: I started at Agent 200 also, at Shoval's team. I started as a developer and DevOps engineer.
+[00:08:10] Yuval Mermer: We developed together great platforms for the unit. One of them was for operating, managing the security of our complex networks, and another one was about auto-remediating incidents we had.
+[00:08:26] Yuval Mermer: And after a couple of years in this position, I promoted the… actually, Shoval promoted me to be team lead, and then…
+[00:08:36] Yuval Mermer: After, I think, 2 or 3 years, I promoted again to be the head of the DevOps and Infrastructure Department inside Eddie 100. I led their 40 engineers across 5 teams. We ran large-scale networks with thousands of users, hundreds of applications.
+[00:08:54] Yuval Mermer: Very complex and secure net… networks because of the unit.
+[00:09:00] Yuval Mermer: And we ran petabytes of data and production environments, and really cool stuff.
+[00:09:07] Yuval Mermer: And after this long journey in 8200, I finished the military service, and I started as a director of DevOps and SRE at Paragon, which is an Israeli cyber company.
+[00:09:22] Yuval Mermer: And there I led 25 DevOps and SRE engineers, and across 3 teams, and we developed tailor-made networking solutions for Paragon's customers.
+[00:09:35] Yuval Mermer: And then I quit Paragon. I answered Shoval's phone, and I told her, yeah, I'm with you, I'll quit Paragon, and I quit Paragon, and we started the journey together, and
+[00:09:47] Yuval Mermer: And now we're here talking with the CISOs and security leaders to understand how the market looks and what are the real gaps and problems that they have in their jobs and in their companies. And we will start and share with you the direction we have
+[00:10:08] Yuval Mermer: Go ahead, Shoval.
+[00:10:10] Shoval Abudraham: Perfect. So basically, you probably noticed, like all of us, that AI changed the whole ecosystem and all the cyber market.
+[00:10:20] Shoval Abudraham: And, you know, we saw a lot of, friends building companies for securing AI, like, the AI inside the organization and how you use it. And that made us…
+[00:10:32] Shoval Abudraham: realize… and think, like, okay, the organization is using AI, and you need to use AI safely, and security is used.
+[00:10:41] Shoval Abudraham: But…
+[00:10:41] Shoval Abudraham: not also organizations will use AI, but also an attacker… attackers. And we started to… to talk with, incident… senior incident response people that see a lot of incident from the marketing.
+[00:10:55] Shoval Abudraham: And they shared with us that the real differentiation between human, attacks and AI attacks, that they're starting to see that attacks are much faster, with bigger scale, like, it's kind of, like everyone says, machine speed attacks. And we…
+[00:11:15] Shoval Abudraham: Started to dig into the question, like, our organization, our,
+[00:11:22] Shoval Abudraham: addressing this new threat? Like, how the current security
+[00:11:27] Shoval Abudraham: Stuck is adjusting to this new type of attacks that are much faster, bigger scale, often unpredictable and very innovative and creative attacks.
+[00:11:40] Shoval Abudraham: I think, like, the, you probably heard about the, OpenAI Hugging Face incident.
+[00:11:48] Shoval Abudraham: things that for… I think I can say for myself, that was a new sequence, other, and we assume that it will keep and keep, happening. So basically, that's our first question. We would love to hear your take about that.
+[00:12:09] Bryan Brown: Well, I mean, honestly, AI is just gee-go faster.
+[00:12:14] Bryan Brown: Garbage in, garbage out.
+[00:12:16] Bryan Brown: It… all AI does is highlight what you've already done wrong.
+[00:12:24] Bryan Brown: biggest problem with AI internally is making sure that you have a good understanding of what your staff
+[00:12:33] Bryan Brown: Are trying to do.
+[00:12:35] Bryan Brown: Ai is a space where you're gonna get a lot of shadow IT.
+[00:12:39] Bryan Brown: Honestly, I'm more worried about the internal shadow IT than I am about external attackers.
+[00:12:45] Bryan Brown: Because their biggest vector is simply to swarm you.
+[00:12:51] Bryan Brown: And if you've got the internal controls stood up correctly to protect your data, to protect your intellectual property, and to track it, you can already catch the bad guys who managed to get in with an external attack.
+[00:13:07] Bryan Brown: Right? If I'm looking at the battle of armor versus bullet, it's easier for them to make
+[00:13:16] Bryan Brown: A better bullet.
+[00:13:17] Bryan Brown: If I make multiple layers of armor, I'm gonna stand up better than just having one big wall.
+[00:13:26] Bryan Brown: So, I'm going to look at my internal controls, and that's what I've done.
+[00:13:31] Bryan Brown: Using that as an opportunity to say, hey, we really need to harden some of these information
+[00:13:37] Bryan Brown: these roles, and some of these security guidelines, and some of these file and folder access. Just giving everybody access to everything, because it's easy.
+[00:13:48] Bryan Brown: Isn't a good idea in this world.
+[00:13:51] Bryan Brown: Making sure that you have VLAN segmentation to logically protect environments that don't need to cross-communicate.
+[00:14:00] Bryan Brown: Making sure that you have tagging to identify sensitive data when it goes into the wild, and that you have tools to look for that sort of stuff turning up on the dark web.
+[00:14:14] Bryan Brown: And on the public internet, for that matter.
+[00:14:16] Shoval Abudraham: Cool, and did you add… And did you… did you add more controls recently because of new AI attacks?
+[00:14:25] Bryan Brown: Yeah, I mean, some of the stuff we did with AI is… BioChrist is a research pharma company.
+[00:14:31] Bryan Brown: So, some of the tools they need are very, very specialized.
+[00:14:36] Bryan Brown: So what we did was stand up a core AI service to help us identify opportunities in our infrastructure, in our security controls, and help us come up with a path to solve some of those and to scale some of that faster. We were able to set up a much more mature tagging
+[00:14:56] Bryan Brown: Which is something I had spent 3 years talking about, but could never get the resources to do.
+[00:15:02] Bryan Brown: But with AI, we were able to stand those rules up in a more automated fashion.
+[00:15:08] Bryan Brown: And tune them faster.
+[00:15:11] Bryan Brown: So that we were better able to track data, intellectual property.
+[00:15:15] Bryan Brown: We had to stand up tools so we could see
+[00:15:20] Bryan Brown: What third-party tools our staff were using.
+[00:15:24] Bryan Brown: So I used a tool called ZenSam.
+[00:15:27] Bryan Brown: Which let… you've probably never heard of it, spelled with an X, they're out of Sweden, they're weird, but it's a fun little… it's actually an asset and software licensing management tool.
+[00:15:38] Bryan Brown: But doing that, it's very good at looking at web applications that people are using through their browser, and giving you an inventory of what they're doing, and how it's connected.
+[00:15:50] Bryan Brown: By looking at that, I was able to reduce
+[00:15:54] Bryan Brown: Our exposure profile by saying, okay.
+[00:15:58] Bryan Brown: you need product X. We don't have it stood up yet, but we've set it, we based it off of Microsoft Copilot. We built a core that we can then tie that tool that you want
+[00:16:10] Bryan Brown: into our information security roles, permissions, tagging through SSO integration, through Copilot, so you can use it. But we had a way of knowing what was being used.
+[00:16:23] Bryan Brown: We also did that, with that, find out that some of our people were trying to use DeepSeek at one point, the Chinese-hosted tool. Yeah. And you may or may not be aware that China, as some other countries, believe that any data that enters their legal jurisdiction is theirs.
+[00:16:41] Bryan Brown: and any data that connects to it. Well, that's a big risk for your intellectual property.
+[00:16:45] Bryan Brown: So we then blocked that, At both a network and endpoint firewall level.
+[00:16:52] Bryan Brown: But where we identified what the people were trying to do, because we're pharma, so they needed to do very good 3D modeling AI. They needed to do very good
+[00:17:02] Bryan Brown: chemical and biological conflict modeling in AI. That's something that normally takes months in a laboratory environment, but with some of the AI tools, they can do it in hours.
+[00:17:14] Bryan Brown: So, but getting the tools that could do that, and then tying them into our structure, was important.
+[00:17:20] Bryan Brown: And by hardening that and creating that segmentation.
+[00:17:24] Bryan Brown: To say, okay, finance doesn't need access to the repositories where research has the intellectual property.
+[00:17:31] Bryan Brown: And those researchers don't need access to finance, as we were able to start breaking those things down and demonstrating them with AI, because for some reason leadership wouldn't believe us when we showed it to them, but when the AI found it, it became important.
+[00:17:44] Bryan Brown: So you sometimes have to play that game.
+[00:17:48] Bryan Brown: It's the consultant model. Something's not important unless somebody from 30 miles away or more tells you it's important. Local people don't know what they're doing.
+[00:17:56] Bryan Brown: That's been the space here for a long time.
+[00:17:59] Bryan Brown: But making sure that you understand what you're doing. If you're only trying to build a bigger wall, you will fail.
+[00:18:07] Shoval Abudraham: Yeah.
+[00:18:07] Bryan Brown: There's no ifs, no ands, no buts. You will fail.
+[00:18:10] Bryan Brown: If you make sure you're properly testing your wall.
+[00:18:15] Bryan Brown: I mean, once upon a time, when I was doing some boots-on-the-ground work, I was doing a presentation for NIST,
+[00:18:22] Bryan Brown: In Toronto, and I had one of my management consoles up.
+[00:18:28] Bryan Brown: And one of our websites was being attacked.
+[00:18:32] Bryan Brown: 80,000 times a minute.
+[00:18:37] Bryan Brown: And one of my leaders saw that and freaked out.
+[00:18:40] Bryan Brown: oh my god, we're under a major attack. I'm like, no, dude, that's Tuesday.
+[00:18:46] Bryan Brown: That is all day, every day, that is script kitties attacking the profile.
+[00:18:52] Bryan Brown: And we just have to make sure we can handle that. Getting freaked out about more, faster, bad attacks?
+[00:19:01] Bryan Brown: So what? You're a bug on the windshield.
+[00:19:04] Bryan Brown: If you've got somebody who's critical and who is actually focused on getting you and writing code to exploit your weaknesses and using AI to specifically attack you, rather than fire hosing an entire IP range.
+[00:19:19] Bryan Brown: Yeah, they're gonna get in, but that's where those secondary lines of defense become more important, so you can catch them.
+[00:19:27] Bryan Brown: And see what they've touched.
+[00:19:30] Bryan Brown: So for me, it's making sure you have that defense in depth, is the critical thing that AI is giving me. And I use AI to pen test myself.
+[00:19:39] Bryan Brown: And I use other people using AI to attack me, to take a look at it as well. For the most part, we don't find a lot of stuff on the public internet that we desperately want to change.
+[00:19:52] Yuval Mermer: You can test only from the public internet, or also internally?
+[00:19:56] Bryan Brown: Oh, no. I pen test from everywhere.
+[00:20:00] Bryan Brown: Including picking my own locks.
+[00:20:03] Bryan Brown: To get into spaces.
+[00:20:05] Bryan Brown: I mean, I…
+[00:20:06] Shoval Abudraham: United.
+[00:20:10] Shoval Abudraham: I act…
+[00:20:13] Bryan Brown: It was one of my lockpick kits.
+[00:20:17] Shoval Abudraham: I love it.
+[00:20:19] Shoval Abudraham: I actually… Something that you said that I super loved is the fact that you, combine, like.
+[00:20:27] Shoval Abudraham: the business context, and, like, what are the crown jewels on the business, and what the user needs to do, and, like, understand their goals to better protect their organization. And if I understand correctly, you build this AI core service.
+[00:20:45] Shoval Abudraham: To give those insights above all the security signals you get.
+[00:20:51] Bryan Brown: Yeah, so we can, we can distill it.
+[00:20:54] Bryan Brown: Yeah. What we're doing there is…
+[00:20:57] Bryan Brown: I believe in an organic model of information protection. Yeah. Okay? And the organic model is you protect the most important stuff first.
+[00:21:07] Bryan Brown: Working for BioChrist, our most important thing is our intellectual property.
+[00:21:14] Shoval Abudraham: Yeah.
+[00:21:15] Bryan Brown: At James Avery, our most important thing was our financials, and our money. At BioChrist, the money's number two.
+[00:21:23] Bryan Brown: But saying, okay, what is the most important thing? We protect that first, and then we ring out from there.
+[00:21:30] Bryan Brown: Yeah. But then we also have to be very careful that we're leveraging these tools
+[00:21:35] Bryan Brown: I'm a bit of a nut about a concept called the three layers of Reporting.
+[00:21:40] Bryan Brown: And the three layers of reporting means that your tooling has to provide information.
+[00:21:45] Bryan Brown: At the doer level.
+[00:21:48] Bryan Brown: So that the individuals solving the problem are armed with the information and tools he or she needs to work the problem.
+[00:21:55] Bryan Brown: Most tools are halfway decent at that.
+[00:21:58] Shoval Abudraham: Yeah.
+[00:21:58] Bryan Brown: The manager level, so that we're providing an overview of the conflicting risks and other demands on the environment, so that the manager, he or she, can allocate resources against conflicting needs.
+[00:22:13] Bryan Brown: Because half of my time is people having projects that are 180 degrees opposed to each other, and figuring out how to get both of them happy.
+[00:22:22] Bryan Brown: And then the most important level, and where we historically suck.
+[00:22:26] Bryan Brown: as IT and information security professionals, is the executive level.
+[00:22:32] Bryan Brown: We need to be able to give the executive a distilled version of what's going on that, in a perfect world, communicates
+[00:22:42] Bryan Brown: Wins, needs, and gaps In 10 seconds or less, with no words.
+[00:22:50] Shoval Abudraham: Okay.
+[00:22:51] Yuval Mermer: So…
+[00:22:52] Bryan Brown: A lot of times that comes down to, like, a red, yellow, green report, but something that we can show them in their terms. So, like, when I'm talking to executive leadership.
+[00:23:02] Bryan Brown: I have to frame risk in terms of dollars, In terms of resource consumption.
+[00:23:10] Bryan Brown: Or, in terms of physical damage.
+[00:23:15] Shoval Abudraham: And this…
+[00:23:16] Bryan Brown: Those are the three things they think in.
+[00:23:19] Shoval Abudraham: And those… these AI core service give you the, like, the connection to those things, so you… it'd be easier for you to explain it to the executives.
+[00:23:30] Bryan Brown: Yeah, so I use the AI to help build dashboards.
+[00:23:34] Bryan Brown: That are typically red, yellow, green. You want to say a red, yellow, green dashboard?
+[00:23:39] Shoval Abudraham: Yeah, yeah, like, I'm not professional.
+[00:23:42] Bryan Brown: This is…
+[00:23:43] Shoval Abudraham: That's the thing on the road.
+[00:23:44] Bryan Brown: Like a stock.
+[00:23:44] Shoval Abudraham: Great, yeah. Stoplying. I guess stoplight. Yeah, stop line.
+[00:23:47] Bryan Brown: So, if it's red, it's a problem. If it's yellow, it might be a problem. If it's green, it's good.
+[00:23:52] Shoval Abudraham: Yeah, but how do you connect, like, the… for example, you mentioned the, like, the need of the people in your company on a specific AI model that help them in 3D,
+[00:24:08] Shoval Abudraham: work. So, how do you give this context?
+[00:24:13] Shoval Abudraham: to the…
+[00:24:13] Bryan Brown: Well, for that, we talk about, how many hours of research and development are being consumed by the scientists.
+[00:24:21] Bryan Brown: To finish a research cycle.
+[00:24:24] Bryan Brown: Right? Because research cycles are how the executive management in that division measures stuff.
+[00:24:31] Bryan Brown: When I was looking at building the core AI, I looked at using the AI to build reports that showed, hey, look at how many people are touching
+[00:24:42] Bryan Brown: the data in the intellectual property folders, in the finance folders. Hey, look at how many of these things look like they're going out via email.
+[00:24:52] Bryan Brown: Look at how many of these things are being shared randomly.
+[00:24:55] Bryan Brown: is this appropriate or not? Right now, we don't know, and, you know, I pulled a couple of samples that
+[00:25:02] Bryan Brown: They weren't legit, they weren't a good use of sharing that data.
+[00:25:07] Bryan Brown: We need to get our arms around this, because in that case, the one email put $21 million at risk.
+[00:25:14] Shoval Abudraham: Whoa.
+[00:25:16] Shoval Abudraham: So, yeah.
+[00:25:17] Bryan Brown: Show them the bigger picture, but then bring it down to their language.
+[00:25:23] Bryan Brown: In German, we have an idiom.sta. Everyone has their own window.
+[00:25:30] Bryan Brown: You have to communicate with someone from their viewpoint, from their window.
+[00:25:38] Shoval Abudraham: Yeah, I can relate to this perspective, because, you know, as a product manager, usually I had to work with multiple stakeholders in the organization and customers, and I had to change my language and the way I'm telling the story based on the people I talk to, so I totally agree with that.
+[00:25:57] Shoval Abudraham: And then…
+[00:25:59] Bryan Brown: using the AI to help build some templates to communicate with those focused groups.
+[00:26:04] Bryan Brown: means I didn't have to do so much manual.
+[00:26:07] Shoval Abudraham: yeah, that I can be more efficient. And I love… Yes, or Yuval, go ahead.
+[00:26:12] Yuval Mermer: We have only a few minutes remaining, so I want to ask you just a question. Do you have anything else to ask before we end, Shoval?
+[00:26:20] Shoval Abudraham: I actually do, but I don't want to, you know, take more of, Bryan's time, so… but you can go, and…
+[00:26:28] Yuval Mermer: Okay, so it's a general question. I'm doing a little zoom-out, and I want to ask you about your 2027 strategy, and what are the three things that are on top of your mind, and you're going to put your focus and attention on
+[00:26:44] Yuval Mermer: When looking forward to 2027, around the security.
+[00:26:50] Yuval Mermer: In the company you work for.
+[00:26:55] Bryan Brown: Well, the answer is not going to be what you think, and it's not going to be what you expect.
+[00:27:00] Bryan Brown: We had a major change in leadership in January.
+[00:27:03] Bryan Brown: The old CEO who was building the next great pharma company? Retired.
+[00:27:09] Bryan Brown: The new CEO wants to be acquired.
+[00:27:12] Bryan Brown: He's laid off 70% of the company since January.
+[00:27:16] Bryan Brown: So… My plan for 2027 is to be somewhere else, because he is gutting everything.
+[00:27:25] Bryan Brown: And is going to… Quite frankly, get breached rather badly.
+[00:27:32] Bryan Brown: So, I have documented my warnings, and I'm job hunting.
+[00:27:37] Yuval Mermer: To be honest.
+[00:27:40] Bryan Brown: So my plan is to get the frack out.
+[00:27:44] Shoval Abudraham: So, thank you for sharing this with us.
+[00:27:47] Yuval Mermer: Yeah, I really like dishonest deer.
+[00:27:49] Shoval Abudraham: Yeah.
+[00:27:50] Bryan Brown: So, hopefully that's helpful, and don't bother chasing BioChrist to spend money, because They're, they're cutting everything?
+[00:27:59] Bryan Brown: And looking at ripping out most of the security controls that I stood up, because they're slowing things down.
+[00:28:08] Bryan Brown: And they're not, but they cost money, because they leverage external tools.
+[00:28:12] Shoval Abudraham: Yeah.
+[00:28:14] Shoval Abudraham: Yeah, this, tension between, like, cost and security is something that we keep hearing from, from security leaders, that…
+[00:28:24] Shoval Abudraham: I feel like people like us that understand the importance of security and how it will cost to the organization if it won't be properly made.
+[00:28:36] Shoval Abudraham: yeah, we understand, like, the risk. So, that I understand what you're saying.
+[00:28:43] Bryan Brown: If you're gonna try and play in that field, I would look at
+[00:28:47] Bryan Brown: how you could leverage your tools to do the best or do more within a Microsoft E5 license.
+[00:28:54] Shoval Abudraham: cool, we will look in this type of, like, this specific SKU, like, combo.
+[00:29:00] Bryan Brown: I mean, take a look at the Microsoft licensing structure, and E5 is the lowest of the enterprise level.
+[00:29:07] Bryan Brown: bundles.
+[00:29:08] Bryan Brown: And what a lot of companies are doing, and what the current leadership wants to do, is to get rid of every other tool
+[00:29:16] Bryan Brown: That there's something similar in E5, whether it does it as well or not, and only use those tools
+[00:29:23] Bryan Brown: And make them better with AI.
+[00:29:27] Bryan Brown: That's a common path with a lot of companies.
+[00:29:32] Bryan Brown: I think it's an exceedingly stupid one to bet everything on one pony, but
+[00:29:39] Bryan Brown: They… they make their choices, they taste their chances.
+[00:29:44] Shoval Abudraham: Yeah.
+[00:29:45] Bryan Brown: So, that, from your perspective, trying to find a market share to target?
+[00:29:52] Bryan Brown: I know of a number of companies and a number of consultants that are right now pitching that model.
+[00:29:58] Bryan Brown: Really? But if you can actually put traction to it, and have a framework that, hey, if you do this AI Agentic template.
+[00:30:06] Bryan Brown: This'll help you a lot.
+[00:30:09] Bryan Brown: That could be something you could sell.
+[00:30:12] Shoval Abudraham: Cool, we will totally look for it.
+[00:30:14] Yuval Mermer: Yeah, look at it, yeah.
+[00:30:15] Shoval Abudraham: That's very interesting, insight.
+[00:30:19] Shoval Abudraham: And Bryan, thank you so much for the time, for sharing your knowledge with us. We really appreciate it. We learned a lot, and, you know, we will be happy to share more of our journey with you, and of course, like, if we can help in any way in your journey, we would love to do that.
+[00:30:39] Shoval Abudraham: And we wish you a great day!
+[00:30:43] Bryan Brown: Wish you all a great day. Thank you all for investing some time with me. Hopefully some of this was useful, and not just me, spewing, old man stuff, but,
+[00:30:52] Shoval Abudraham: It was very useful.
+[00:30:53] Yuval Mermer: It was really useful.
+[00:30:54] Shoval Abudraham: I really appreciate it.
+[00:30:55] Yuval Mermer: Yeah.
+[00:30:56] Bryan Brown: Y'all have a great day. We're getting… actually over the time you had booked, so you may have another meeting to get to, but feel free to reach out if I can help.
+[00:31:05] Yuval Mermer: Thank you so much, Bryan.
+[00:31:06] Shoval Abudraham: Thank you so much, Bryan.
+[00:31:07] Bryan Brown: Thank you. Y'all have a great day.
+[00:31:09] Yuval Mermer: Bye-bye.
+[00:31:09] Shoval Abudraham: Great day.

@@ -1,0 +1,355 @@
+Date: 2026-09-04
+Topic: Security Leadership Discovery - Heather
+Meeting UUID: 34333D84-D7AB-4E98-9DDC-B5D90DAF4872
+Source: transcript
+Entries: 349
+
+[00:00:00] Shoval Abudraham: Okay, perfect.
+[00:00:01] Shoval Abudraham: Whoop, so I start…
+[00:00:03] Heather: And you also look like a supermodel with the wind blowing in your hair.
+[00:00:09] Shoval Abudraham: Yeah, I'm sorry, I'm actually not at all, like, I'm not in the country, in Garaville Lake, so I just tried to manage a workplace, so I'm sorry.
+[00:00:21] Heather: No, no, no!
+[00:00:22] Shoval Abudraham: Oh, honey.
+[00:00:22] Heather: No, it's perfect. Yeah, go ahead.
+[00:00:24] Shoval Abudraham: Okay, so I'm Shoval. I've been in cybersecurity for the past 10 years. I started in the unit 8,200. There, I actually met Yuval. We friends from… from there.
+[00:00:39] Shoval Abudraham: So we both, served at the Cyber Operations Center of the unit. We served in the department that were responsible for the DevOps and IT infrastructure. Basically, all the position of a DevOps engineer combined with a security engineer need to hold those infrastructure from both perspectives.
+[00:00:59] Shoval Abudraham: That was an amazing journey. Met amazing people, worked with amazing people like Yuval. And after five and a half years, I released as a captain.
+[00:01:10] Shoval Abudraham: And, you know, during my service, I was always fascinated by how to create a value, how to, create an impact. So after my service, I did a shift into a product management role.
+[00:01:24] Shoval Abudraham: Because I want to work with customers and understand how to create a business. So I started in cybersecurity company called Perception Point. I led all the detection capabilities, all the cyber capabilities, let's call it like that, that were based… basically most of ML and AI and agent before people
+[00:01:45] Shoval Abudraham: knew there is such a thing, agent and JGPT,
+[00:01:50] Shoval Abudraham: That was, like, amazing adventure. I… I was there for 3 years, and then the company was acquired by Fault in it. After that…
+[00:02:01] Heather: Good!
+[00:02:02] Shoval Abudraham: Yeah.
+[00:02:03] Yuval Mermer: Really good, and you know that Joval, she… at the first product role she did, they gave her the core detection engine they have, because she's a real talented product manager.
+[00:02:17] Yuval Mermer: It's not common here.
+[00:02:18] Heather: Amazing.
+[00:02:18] Yuval Mermer: That in the first product manager role you're doing, you get the main thing of your product.
+[00:02:25] Heather: Right, right. No, that's really cool.
+[00:02:27] Shoval Abudraham: Yeah.
+[00:02:28] Heather: And that you sold… you sold to Fortune. That's amazing, too.
+[00:02:32] Shoval Abudraham: Yeah, wait till you start the new year, that's the second company I worked for, Koi Security, also great company, amazing products, very innovative in terms of how we use the AI, also was acquired by Palo Alto.
+[00:02:49] Shoval Abudraham: Recently. And, you know, after that, that was my sign. I stopped, and I called Yuval and told him, Yuval, we need to go back and work together, we need to build something together, and that's what basically we're doing now.
+[00:03:05] Yuval Mermer: I was like, I mean, let's go.
+[00:03:08] Yuval Mermer: I did my job. Yeah.
+[00:03:11] Heather: There you go.
+[00:03:11] Shoval Abudraham: Oh, okay. So, I'll let Yuvala, you know, share his side of the journey.
+[00:03:19] Yuval Mermer: Yeah, I will do it short. I started in 8200, Shoval was my commander.
+[00:03:25] Yuval Mermer: We developed together two big platforms.
+[00:03:29] Yuval Mermer: she took the side of the product management, even there, and I took the side of the development, and one of… one interesting platform we developed together is a platform for… for management
+[00:03:43] Yuval Mermer: and operating… and the operations of the network we have in AD200. We have their multiple complex networks.
+[00:03:54] Yuval Mermer: Production networks.
+[00:03:56] Yuval Mermer: staging, dev, and for another usage that I can't detail about them more. And we developed a platform that helped mapping and operating those networks, and it's still working until today, which is really, really great.
+[00:04:14] Yuval Mermer: And after I finished the engineering part, I promoted to be a team lead.
+[00:04:20] Yuval Mermer: And then I promoted again to be the head of the DevOps and Infrastructure Department of AD200. I led 40 engineers across 5 teams. We ran large-scale networks, complex networks for operations rooms.
+[00:04:35] Yuval Mermer: for production, for thousands of users, hundreds of applications. We managed petabytes of data, petabytes of data.
+[00:04:47] Yuval Mermer: and production environments. And then I finished the army after around 10 years in AD200, and started as a director of DevOps and SRE in Paragon, which is an Israeli cyber company.
+[00:05:05] Yuval Mermer: There, I led 25 engineers. We developed tailor-made solutions for the product's network. We had a… we were a B2G. Paragon is B2G company.
+[00:05:17] Yuval Mermer: So they sell it to governments and agencies, and we had to provide specific solutions for the specific customers around the network OPSEC they need. And then I quitted Paragon.
+[00:05:33] Yuval Mermer: to start the journey with Shoval, and to go after our old dream.
+[00:05:40] Yuval Mermer: And then…
+[00:05:41] Heather: Okay, so…
+[00:05:41] Yuval Mermer: We would love to hear about you.
+[00:05:43] Heather: That's very cool. Well, let's see,
+[00:05:47] Heather: I have had a very interesting career path. I'm… I'm an old woman now, so I've had a… I've had a long, long career. But most recently, I…
+[00:06:04] Heather: worked for Nestle Purina Pet Care, which is, you know, the Nestle umbrella I'm sure you're aware of, and Purina is the pet care division. And so, I was heading cybersecurity for North America.
+[00:06:17] Heather: And, for Purina.
+[00:06:20] Heather: And… prior to that, I was with Purina still, but I was in marketing. And so… I…
+[00:06:29] Heather: had had a marketing career up until, I became very interested. We had a bad audit, honestly, in, in marketing, and so they said, you know.
+[00:06:42] Heather: We kind of need somebody to…
+[00:06:44] Heather: fix all of this. And so we created a marketing technology compliance role, and…
+[00:06:52] Shoval Abudraham: Power.
+[00:06:53] Heather: So I did that, and I…
+[00:06:56] Heather: you know, help them create user management systems for all of their social media platforms, and I, when the,
+[00:07:05] Heather: data privacy… the Consumer Data Privacy Act from California came out, and GDPR was coming out.
+[00:07:14] Shoval Abudraham: Yeah.
+[00:07:14] Heather: had to address that, and I was on the committee for that, and… When this…
+[00:07:20] Heather: this role opened. I also helped everybody in marketing get the technology that they needed, so I wrote all of their business cases for them, and I pitched them to the global organization, and this is what we need, this is the technology that you're not providing for us, and
+[00:07:36] Heather: we're trying to move at light speed, and how can we get this? And so I… I did that, and through that, I built relationships with
+[00:07:43] Heather: The cloud team, and with legal, and with, procurement, and all of these facets.
+[00:07:50] Heather: And when this head of cybersecurity role opened, the guy who was leaving it said, I think you'd be great, you should apply, and I applied, and I got it, and it was a complete culture shock, honestly, moving from marketing to IT.
+[00:08:04] Shoval Abudraham: Oh my god. Amazing.
+[00:08:06] Heather: I used all of my marketing skills throughout my… my time with Nestle and, you know, within, cybersecurity.
+[00:08:17] Heather: it was a really good match, and I think it is actually a good move. I wish more people would do that, because
+[00:08:25] Heather: I have a real understanding of the business.
+[00:08:28] Shoval Abudraham: Yeah.
+[00:08:29] Heather: So that was… it was just super helpful. I was able to make things happen that other IT leaders had not been able to break through, because they just didn't speak the language, and so that was really fantastic.
+[00:08:41] Heather: And then recently, you know, I had been doing a lot of startup advisory work on the side, and…
+[00:08:50] Heather: I had… was on a… an advisory board with NS Advisory, and I recently left Nestle to be a full-time advisor. So, so that's what I'm doing now.
+[00:09:06] Shoval Abudraham: Yeah, that's exactly…
+[00:09:07] Yuval Mermer: Good evening!
+[00:09:07] Heather: Yeah.
+[00:09:08] Shoval Abudraham: Journey!
+[00:09:09] Heather: It's just crazy, thank you, thank you. So, when you reached out…
+[00:09:16] Heather: I was there for 18 years.
+[00:09:17] Yuval Mermer: Wow.
+[00:09:18] Shoval Abudraham: Whoa, so it's a big change!
+[00:09:21] Heather: Yeah, yeah, it's a big change, and I was with Anheuser-Busch for 10 years before that, so…
+[00:09:27] Shoval Abudraham: Wow. Yeah.
+[00:09:29] Shoval Abudraham: Well…
+[00:09:30] Heather: Yeah.
+[00:09:30] Shoval Abudraham: good luck in your new… new road. It's, like, super exciting. I love… you know, it's… I… I feel like we're in a kind of a…
+[00:09:39] Shoval Abudraham: have a lot of things in common, like, you know, the love for music, and, like, also we are both, like, starting…
+[00:09:49] Shoval Abudraham: New journey and new thing, and, you know, kind of, bet on ourself and our,
+[00:09:55] Shoval Abudraham: Capabilities and their passion,
+[00:09:58] Heather: Yes.
+[00:09:59] Shoval Abudraham: to do the things we love, so, congratulations, like, I wish.
+[00:10:04] Heather: Oh, thank you.
+[00:10:05] Shoval Abudraham: Best of luck. Thank you.
+[00:10:07] Heather: Yeah, I have a feeling that we… we might be able to help each other out here. I'm gonna say goodbye to my mom real quick, she's going to a funeral. Sure, sure, sure.
+[00:10:14] Yuval Mermer: No, it's okay, it's okay.
+[00:10:15] Shoval Abudraham: Oh.
+[00:10:17] Heather: Just one second.
+[00:10:18] Yuval Mermer: No problem.
+[00:10:19] Shoval Abudraham: That's okay.
+[00:10:54] Heather: Okay.
+[00:10:57] Heather: Thank you. My mom is, she is 80, and she's still working, and, a man at her office asked her on a date yesterday, and… Oh, God!
+[00:11:11] Shoval Abudraham: Exciting!
+[00:11:13] Yuval Mermer: Wow.
+[00:11:13] Heather: She's…
+[00:11:14] Yuval Mermer: That's exciting.
+[00:11:14] Heather: I haven't dated in a while, and she's going to this funeral this morning, and then meeting him for drinks after that, so…
+[00:11:21] Heather: She looks really cute.
+[00:11:25] Shoval Abudraham: Oh my god, that's so cute!
+[00:11:29] Heather: Yeah I've been really happy for her.
+[00:11:32] Heather: So anyway, yeah, so tell me more about your new venture, and then I'll tell you what I'm doing.
+[00:11:41] Shoval Abudraham: Amazing. So, basically, we are at the beginning of the road. Right now, we are doing an ideation. We are on the ideation stage, we are exploring the cyber field, talking with a lot of security leaders, CISOs, to, you know, find a real
+[00:11:59] Shoval Abudraham: pain. Like, you know, when you share that you…
+[00:12:04] Shoval Abudraham: did, like, the technical side inside marketing and helped them to solve real problems.
+[00:12:13] Shoval Abudraham: that's exactly what we love to do. Like, I did the shift into product management role because
+[00:12:19] Shoval Abudraham: In our service, Yuval and I,
+[00:12:21] Shoval Abudraham: we're, like, obsessive about problem solver and creating impact and value, and that's what we are doing now. We are trying to figure out when we can create value, and which pain we can address and help to solve.
+[00:12:36] Shoval Abudraham: Specifically, we are exploring the network security field, because, you know, we are infrastructure people, we…
+[00:12:44] Shoval Abudraham: That's the thing that we are doing best, and also, you know, AI changed the ecosystem, like.
+[00:12:52] Shoval Abudraham: not only in terms of organization are using AI now, and you need to use AI safely and to secure it. Also, attackers use AI right now, and the attacks look completely different, like, the scale is higher, the speed is faster, and we understand that
+[00:13:12] Shoval Abudraham: First, the current security stack of organization, it's probably not built for this kind of attacks.
+[00:13:22] Shoval Abudraham: So, that's… We believe that those new types of attacks
+[00:13:28] Shoval Abudraham: will make or… will… organization will have to go to the foundations, to the infrastructure, and make it secure as possible. So that's the reason we are securing… we are exploring network security, and…
+[00:13:42] Shoval Abudraham: you know, we are specifically trying to figure out how CISOs manage the risk inside their, inside our network, organization network, because, you know, for big companies, they usually have multiple sites, multiple security tools, like they have firewall, they have SASE, they have from a different cloud provider, different vendors.
+[00:14:06] Shoval Abudraham: And…
+[00:14:07] Heather: to…
+[00:14:07] Shoval Abudraham: manage all of this, to manage the risk, above all of this can be challenging, so we…
+[00:14:15] Shoval Abudraham: trying… we feel there is a pain there, and we're trying to hear from security leaders, and CISOs, like you.
+[00:14:25] Shoval Abudraham: are they feeling this pain? This pain is urgent for them. What they think about it. So, basically, we would love, you know, to hear your opinion about what I just shared.
+[00:14:40] Heather: Yeah, so, okay, I'm gonna be, really honest with you. I don't have a lot of, the technical
+[00:14:51] Heather: know-how, because I didn't come from IT.
+[00:14:56] Heather: And a lot of the,
+[00:15:00] Heather: the security came from our global team, and I had a… I was at the market level. So, but I can tell you that what I dealt with at the market level.
+[00:15:10] Heather: was a lot… it was a pain. It was… we had, I think our biggest…
+[00:15:21] Heather: our biggest challenges were trying to meet all of these metrics that the global team would send us. You know, every day we have these dashboards, and we're looking, and we're seeing where we're falling short on patching, and we're falling short on…
+[00:15:36] Heather: User management issues, and, you know, all of these things, and people needing to, reset
+[00:15:44] Heather: Their passwords on the development side, and,
+[00:15:49] Heather: those people aren't actually using their Nestle email, so emailing them is just, you know, they have these automated systems where they're telling people what they need to do, but it's sending them an email, and they're never seeing it. And so,
+[00:16:03] Heather: And also, it's just such a large organization, and I think you'll see this, too, a lot,
+[00:16:09] Heather: When a person gets an email from somebody they don't know, even within the organization, they just ignore it.
+[00:16:17] Heather: And so, if there's a way to automate
+[00:16:23] Heather: a lot of the security practices without disrupting the business. That is… that would be the… the crown jewel that you could come up with.
+[00:16:36] Shoval Abudraham: Yeah.
+[00:16:36] Heather: Because right now, there are things that you can do to automate some of these things, but nobody trusts it.
+[00:16:42] Heather: So nobody wants a machine to fix something,
+[00:16:47] Heather: Because if it fixes it and it causes a line to go down, that's…
+[00:16:53] Heather: hundreds of thousands of dollars a minute that we could be losing. And so, I think that…
+[00:17:00] Heather: That's the biggest pain, is like, how do we… how do we make things more secure
+[00:17:08] Heather: And quicker in a way that we can trust.
+[00:17:13] Yuval Mermer: Yeah, you know, that's…
+[00:17:16] Shoval Abudraham: Go ahead, Yuval.
+[00:17:17] Yuval Mermer: Yeah, it's okay. You mentioned that the global team showed you metrics and dashboards of security risks you managed.
+[00:17:28] Yuval Mermer: Do you… do you… did they show you dashboards of network security risks? Is it… was it to one of your processes?
+[00:17:40] Yuval Mermer: Inside the company?
+[00:17:42] Heather: It was, but I had people on my team looking at that, so…
+[00:17:45] Yuval Mermer: Yeah, yeah.
+[00:17:46] Heather: You know, I feel… sometimes, and I used to think this, too, when I was in that role, people always want to talk to,
+[00:17:55] Heather: The boss, and the boss is not always the person who has the information that you need.
+[00:18:01] Shoval Abudraham: No, but you know.
+[00:18:02] Yuval Mermer: Thanks.
+[00:18:02] Shoval Abudraham: Exactly, like, I love it that you had the business, you know, the business context. You hold it in your head, and you don't necessarily have to, you know, know all the technical details, because you hold the business context and how to
+[00:18:21] Shoval Abudraham: at…
+[00:18:22] Shoval Abudraham: To, enable continuously and, and, like, that the business will still run, and to manage the risk in a way that makes the business run, and…
+[00:18:35] Shoval Abudraham: That's actually exactly what we are…
+[00:18:38] Shoval Abudraham: debating when we are talking about network security legacy, because, you know, a lot of times, there are, engineers, that work on that. There are not always, even in the CISO department or team, like, there are… those are sometimes part of the technology side, the R&D, and they're responsible for the network infrastructure, but.
+[00:19:01] Heather: Yeah.
+[00:19:01] Shoval Abudraham: we don't, like, we are trying to understand if the CISOs still need to hold the risk.
+[00:19:11] Shoval Abudraham: Of the network, or it's… It's just part of the engineering work and, you know, their responsibility.
+[00:19:19] Heather: the way Nestle is structured, and I think this is pretty true for other very large organizations.
+[00:19:27] Heather: the… the risks are owned by the markets. So, you know, I had.
+[00:19:33] Shoval Abudraham: What do you mean by the markets?
+[00:19:35] Heather: So, in Nestle, it's a big umbrella company. There are multiple operating companies under that. So, in the U.S, for instance, in North America, we had.
+[00:19:47] Shoval Abudraham: Yeah.
+[00:19:47] Heather: were operating companies. We had Nestle USA, which is human food.
+[00:19:52] Heather: We had Nestle Canada, which is human food.
+[00:19:56] Heather: we had Purina, North America, and that was my division, and I had Canada and the U.S. for Purina, and then we had Nestle Health Science, which is, like, supplements and,
+[00:20:09] Heather: Stuff like that. And, so there's a person like me in charge of each one of those units.
+[00:20:17] Heather: If that makes sense. And so those are called markets. So my market was, the pet food division of North America, and I was responsible for the network security for,
+[00:20:28] Heather: for making sure that I was doing… making sure that everything was, being patched, being implemented the way that this… the global security team wanted it to be, making sure that users were adopting, the security tools that were being put
+[00:20:43] Heather: And so that was a big deal for me. I had 23 factories, 27 outside, locations, so factories, distribution centers, machine shops where they fixed parts or made custom parts for our factories.
+[00:21:00] Shoval Abudraham: And…
+[00:21:01] Heather: And so that's… I had 13,000 employees, 5,000 corporate employees, and 8,000, factory employees, and I was responsible for all of their behavior.
+[00:21:13] Shoval Abudraham: Yeah.
+[00:21:14] Heather: And what was getting patched, and what wasn't getting patched, and the… the laptop.
+[00:21:24] Heather: Situation, whatever that was, whether it was the… the inventory of it, and who has what, and why do we have things that are,
+[00:21:34] Heather: not assigned, and where are they, and why do we have data assigned to more than one person? Like, all of that fell on my lap.
+[00:21:43] Heather: So… Yeah.
+[00:21:44] Heather: So, when you ask about the market, like…
+[00:21:49] Heather: Each of us were responsible for making sure that the metrics were being met for our own unit.
+[00:21:55] Shoval Abudraham: Yeah, and I'll… I'll dig…
+[00:21:58] Heather: I never even met our CISO. He was in Switzerland or Barcelona, and I never even met him.
+[00:22:06] Shoval Abudraham: Like, and how did you get all those, directions to what to do, and which security practices you need to maintain from the global team?
+[00:22:17] Heather: So, mostly, I, learned from our… what was required by our ISMS, and that ISO 27001 is the standard that we used, so that was a big part of it, but then these,
+[00:22:31] Heather: All the security metrics that we had to meet were put
+[00:22:37] Heather: out by the global team, and those are the dashboards that I was talking about. So that's where I knew what I needed to address. I could see what was red, what was green, what was yellow, and and where we had problems, and I would get phone calls sometimes from the global team, or a ping on teams saying, hey.
+[00:22:55] Shoval Abudraham: Yeah.
+[00:22:56] Heather: Oh, why are you red today? And…
+[00:23:00] Heather: Sometimes it was a glitch in there.
+[00:23:03] Heather: Side, and sometimes it was because…
+[00:23:06] Heather: we hadn't performed a thing that needed to happen. And our factories were running at 115% capacity all the time.
+[00:23:16] Heather: Wow. All year long, and so…
+[00:23:19] Heather: When I left, they were in the process of building two new factories just to accommodate that…
+[00:23:26] Heather: Consumer demand, and it's very hard for them to take time out of… their busy schedules,
+[00:23:38] Shoval Abudraham: Yeah.
+[00:23:39] Heather: To, to manage things like this.
+[00:23:43] Shoval Abudraham: Yeah, like, you can't, you can't reduce the productivity for security.
+[00:23:48] Heather: Yeah.
+[00:23:50] Shoval Abudraham: Wow, you know, that's super impressive. I'm just, like, trying to… To realize how…
+[00:23:59] Shoval Abudraham: like, yes, I guess a lot of metrics you need to… those are your goal, and just before I continue, I just want to make sure, because we are almost in time, and I want to be mindful with your time. Do you have a few more minutes? I do.
+[00:24:16] Shoval Abudraham: I do. Do you? Yeah, we have.
+[00:24:22] Shoval Abudraham: So, like, I'm… I'm curious, and I'm trying to think about, like, how it's to manage all those metrics, and how to… to know exactly what to do, and exactly how to… you need to, like, take those metrics and
+[00:24:40] Shoval Abudraham: do with them something so it will be green, because I guess there was a lot in different areas, you know, on their network, on their data, endpoint, like the computer itself, everything is… it's kind of a different area, but all the same areas under security, like… Yeah.
+[00:24:59] Shoval Abudraham: How do you take those metrics and understand what you need to establish.
+[00:25:05] Heather: So, every metric had its own playbook, so you could…
+[00:25:11] Heather: open the metric, you could click on the playbook, and try to figure out what they meant, first of all. They were…
+[00:25:17] Shoval Abudraham: Yeah.
+[00:25:18] Heather: not easy to understand, but at least there was an owner of the playbook listed for everything, so I always knew who to go to to ask questions if I didn't understand what needed to happen.
+[00:25:29] Shoval Abudraham: Yeah.
+[00:25:30] Heather: But… it… It's a very complicated system.
+[00:25:35] Heather: And I imagine that it's complicated for every large company. I mean, this is…
+[00:25:40] Heather: security is multifaceted. When I came on, there were, 12 measures. When I left, there were 112.
+[00:25:50] Shoval Abudraham: Well, managers.
+[00:25:51] Heather: That we were responsible for maintaining. In 5 years.
+[00:25:55] Shoval Abudraham: Yeah.
+[00:25:55] Heather: The change that it… that happens.
+[00:25:59] Shoval Abudraham: Whoa, whoa. Yeah, yeah, that sounds, you know, complex. Super.
+[00:26:05] Heather: Yeah, and I could probably connect you with someone from Nestle on the more technical side, if you'd like me to do that.
+[00:26:13] Shoval Abudraham: I would love to, that would be amazing.
+[00:26:16] Heather: I just need to figure out who that would be, yeah.
+[00:26:19] Heather: Okay, let me…
+[00:26:22] Heather: Let me see who I can get you in touch with there. And they're probably… where are you?
+[00:26:29] Shoval Abudraham: Like, in the world?
+[00:26:30] Heather: beef.
+[00:26:31] Yuval Mermer: In Telavia.
+[00:26:34] Heather: Yeah.
+[00:26:35] Heather: Okay, so they're gonna be closer to your time zone, too, so that… that'll be easier.
+[00:26:42] Heather: Okay.
+[00:26:43] Yuval Mermer: It's okay if they are from the US.
+[00:26:46] Yuval Mermer: We're okay with it.
+[00:26:49] Heather: Yeah, but they won't be.
+[00:26:51] Yuval Mermer: Okay.
+[00:26:51] Heather: the… the global… I mean, Nestle is a Swiss company, and yeah.
+[00:26:58] Heather: And the IT Hub is in Barcelona, so…
+[00:27:01] Shoval Abudraham: Yeah.
+[00:27:03] Heather: I'll connect… I'll connect you with somebody from the global team who…
+[00:27:07] Shoval Abudraham: Amazing, that will be super…
+[00:27:10] Yuval Mermer: Super valuable for us.
+[00:27:13] Heather: Cool.
+[00:27:14] Heather: Yeah, give me a few days to work on that, and Monday is a holiday in the US, so…
+[00:27:19] Heather: Nope.
+[00:27:20] Shoval Abudraham: No, no rush at all. You know, we are, we are, totally appreciate the…
+[00:27:26] Shoval Abudraham: the willingness to help, and, you know, we… we don't want to take you more time than we already took, but we would love to, you know, keep talking about it, because I'm super curious
+[00:27:39] Shoval Abudraham: That's super impressive, and I want to better understand, like, how…
+[00:27:45] Shoval Abudraham: You manage all of those things in the business from the security side.
+[00:27:51] Shoval Abudraham: like, you had a lot under your responsibilities, and that's impressive that you… you didn't… like, your journey wasn't, like, I feel, the classic journey. You didn't… you did not start at the IT or the technical side, so you had to take your, business context
+[00:28:10] Shoval Abudraham: that you have, the thing that you were, you know, best in, and to connect it to the security side, I feel like it's super complex, and that there are a lot of organizations that work same way, because basically the security is for the business, and to,
+[00:28:30] Shoval Abudraham: Business continu… continuity? Continuity?
+[00:28:34] Heather: Continuity, yeah.
+[00:28:36] Shoval Abudraham: Yeah, that's one. So I… I would love, you know, to… to… to do a follow-up, maybe, and talk about it a bit more.
+[00:28:48] Heather: Yeah, I'm happy to help.
+[00:28:52] Heather: I'm happy to help. So you have a… you're just… when you say you're at the ideation stage of your… of your journey here.
+[00:29:00] Heather: You're just trying to figure out what you're… what you're going to do, right?
+[00:29:04] Heather: You don't have a…
+[00:29:05] Shoval Abudraham: Exactly. Exactly. Like, we are, as I mentioned, we are…
+[00:29:09] Shoval Abudraham: at the super, super beginning, like, we left our job, a month ago, just started, and as I mentioned, we are… we love to solve problems and
+[00:29:22] Shoval Abudraham: create a real impact, a real value. We don't want to create another company that do the same thing. We want to solve a real pain, and that's the reason that we are trying, you know, to learn
+[00:29:35] Shoval Abudraham: Generously learn from leaders.
+[00:29:39] Shoval Abudraham: What the problem's there, because we are sure we can create a great solution, but we don't want to create a solution nobody uses.
+[00:29:48] Heather: Nobody wants. Okay, I want you to look on, let me send you this link on the NS Advisory page.
+[00:29:58] Heather: One second.
+[00:30:21] Heather: I'm putting a link in here to the Council.
+[00:30:25] Shoval Abudraham: Meaning, I will copy it.
+[00:30:28] Shoval Abudraham: Alright… Perfect.
+[00:30:33] Heather: There are people on this board who I…
+[00:30:38] Heather: highly recommend you reaching out to, and I don't mind reaching out to them for you. Devin Bryan, is amazing, and he's the global CISO for, you know, Bookings.com, when.
+[00:30:52] Shoval Abudraham: Yeah.
+[00:30:52] Heather: you… So… So he's the Bookings.com guy. He would be a great person to talk to.
+[00:31:02] Heather: Looking through here… Another one that…
+[00:31:13] Heather: I really like is… Sean Mullins.
+[00:31:20] Heather: with CAAS Information Systems.
+[00:31:23] Heather: Sean is… Sean…
+[00:31:27] Heather: and Devin are just the most down-to-earth, sweet men that you can talk to about security, and they'll talk about it all day long. So,
+[00:31:38] Shoval Abudraham: I can.
+[00:31:39] Heather: Do a… an intro to them for you.
+[00:31:44] Heather: And… Send me…
+[00:31:52] Heather: Send me a little blurb that I can use.
+[00:31:56] Heather: Sure.
+[00:31:57] Shoval Abudraham: I'll send you. That will be, you know, that's amazing. I don't have a word.
+[00:32:05] Heather: I have a soft spot for the startup community. I,
+[00:32:10] Heather: I really learned a lot from this community, because I didn't come from tech. I just started getting very involved with the startups, because
+[00:32:24] Heather: I was learning about tech through them. I was learning about…
+[00:32:28] Heather: emerging threats that I wasn't even aware of through what the startups are working on. You guys are seeing things that we…
+[00:32:36] Heather: aren't even aware of yet, and I, am very grateful to the community for that.
+[00:32:42] Heather: So,
+[00:32:44] Heather: I'm happy to… to give back in this way, and then, you know, let's keep in touch as you move forward, then I'm sure that the NS Advisory Services will be good for you, too. We… we like you to be at seed stage, and then we, we're a kind of a go-to-market company.
+[00:33:04] Shoval Abudraham: Yeah.
+[00:33:05] Heather: So, when you're ready for that, we'll work together on that, but in the meantime, I'll just help you get connected with people who can help you build what you're building.
+[00:33:13] Shoval Abudraham: Wow, Heather, you know, we are big believers in a relationship.
+[00:33:19] Shoval Abudraham: And, you know, do good, and then the good come back, and, you know, help people, and collaborate with people, and, you know, create,
+[00:33:29] Shoval Abudraham: ways together. So, you know, that's exactly the reason why we believe in
+[00:33:35] Shoval Abudraham: such kind of, in relationships, and with people, you… in the end, you work with people.
+[00:33:41] Heather: Yeah, absolutely.
+[00:33:44] Heather: So… I'm always here, and if you're ever in the Midwest, let me know.
+[00:33:50] Shoval Abudraham: We will, we will, we totally will.
+[00:33:55] Shoval Abudraham: It's delicious.
+[00:33:55] Yuval Mermer: ghetto.
+[00:33:57] Heather: Now, are you… are you connected with the other… I guess, since you've had two startups already, you're connected with a lot of the other startups out of Tel Aviv?
+[00:34:08] Heather: Yeah, of course, we, we know…
+[00:34:11] Shoval Abudraham: it's… there's a lot, you know, most of them also friends from the unit, we know. It's like, it's a small… it's a small city and country, so we know…
+[00:34:20] Heather: I'm so… I'm trying to think of who's about your age. Do you know,
+[00:34:26] Heather: I'm bad with last names, so let me look up. Tal… Dory?
+[00:34:33] Yuval Mermer: Coldovia?
+[00:34:35] Heather: No? Do you know Noah Mawadish?
+[00:34:39] Shoval Abudraham: I'm not sure, I'm not sure I understand the last name, sorry.
+[00:34:44] Heather: Awadish?
+[00:34:46] Shoval Abudraham: Awad… Awadas?
+[00:34:48] Heather: A W-A-D-I-S-H?
+[00:34:52] Shoval Abudraham: A lot of us.
+[00:34:54] Shoval Abudraham: No? No, actually, no.
+[00:34:56] Yuval Mermer: with him.
+[00:34:56] Shoval Abudraham: And that's so weird, because anytime… every time that someone asks us about an.
+[00:35:01] Yuval Mermer: It's really funny.
+[00:35:01] Shoval Abudraham: Founder, we know.
+[00:35:02] Heather: Yeah, if you know them. Do you know or, Latowitz?
+[00:35:08] Heather: Am I saying that right?
+[00:35:10] Yuval Mermer: You're saying that right, but we don't know…
+[00:35:13] Heather: I don't know, okay.
+[00:35:15] Shoval Abudraham: But I will look for everyone.
+[00:35:17] Heather: Oh my gosh, and the woman who started Pluto, I can't remember her name right now,
+[00:35:26] Heather: Oh, I can't hear you.
+[00:35:30] Shoval Abudraham: so bad for Pluto.
+[00:35:32] Heather: Yeah, but I still can't hear you. I can see your mouth moving.
+[00:35:35] Heather: So I know you're saying the name. Yeah, yeah.
+[00:35:40] Yuval Mermer: Yeah.
+[00:35:40] Heather: Yeah, I just love her. I actually have one of her Pluto Pez dispensers upstairs.
+[00:35:45] Shoval Abudraham: Yeah!
+[00:35:46] Yuval Mermer: Yes!
+[00:35:46] Shoval Abudraham: That's so cute!
+[00:35:48] Heather: She, I bought… I bought…
+[00:35:52] Heather: She said, I can't find the Easter-themed Pez in Tel Aviv, so can you please look for those? And I got her all of the new released Easter ones this year for her collection of Pez. I don't know if you know, she has this Pez collection.
+[00:36:06] Shoval Abudraham: Yes, of course I know, of course I know!
+[00:36:10] Shoval Abudraham: Of course! Oh my god, that's amazing.
+[00:36:14] Shoval Abudraham: Yeah. Well, Adder, thanks again, like, we super appreciate it, and we will send you, like.
+[00:36:21] Shoval Abudraham: you know, a paragraph about ourself and our journey. And, you know, we will…
+[00:36:28] Shoval Abudraham: We would love to keep in touch… to stay in touch, and
+[00:36:33] Heather: Perfect.
+[00:36:33] Shoval Abudraham: Include you in our journey, yeah.
+[00:36:36] Heather: Yeah, no, that's great. I'm glad to help.
+[00:36:41] Shoval Abudraham: Amazing. Have a great week!
+[00:36:42] Yuval Mermer: Thank you so much.
+[00:36:43] Heather: You too. Thank you so much. Bye-bye.
+[00:36:47] Shoval Abudraham: Bye.

@@ -1,0 +1,220 @@
+Date: 2026-08-31
+Topic: Enterprise Network Security Consultation
+Drive File ID: 1J0dB_zEfm17YEg_OhUQ5LdiNWZQ2VBPS
+Source: google-drive-pdf
+
+[00:00:00] Speaker: I'm a coward. Stop! Don't make me do this!
+[00:02:24] Speaker 1: Hello.
+[00:02:25] Shoval: I'm writing to you because I saw that you two had a meeting on the second day of the year.
+[00:02:35] Speaker 1: Bye!
+[00:02:35] Speaker 2: That in total you are doing this...
+[00:02:42] Speaker 1: Yeah, I don't remember who it was, but it's not a problem. Oh, who is it? Oh, it's someone who's not a problem. Sorry. I have a match in the morning, I have a match in the morning and maybe 50 in the morning.
+[00:03:07] Speaker 3: Okay.
+[00:03:09] Shoval: Do you know what Yossi said today, that he really loved me?
+[00:03:12] Speaker 1: What?
+[00:03:17] Speaker 2: The money is an interesting thing. That's how they need to be. We build a community. And it's great that he's coming to the money. Because it's going to be so expensive, and you need money. And people want to go to the market. So it's great that he's coming to the money, and the people who can continue the business. But the money, if it starts with the money, if it starts with the money, you're working to create, like, there's a community. There's a community. Right -. -I'm going to open one. I want to work with you.
+[00:03:42] Speaker: Have fun.
+[00:03:42] Speaker 1: Yeah, there's a guy who opened one, I want to see it. Simon Hermetski.
+[00:03:47] Speaker: He
+[00:03:47] Shoval: Who - is he? -He's
+[00:03:49] Speaker 1: opened it in the spot, then went to the edge, then went back to the spot, then went to the pallow. And now he's got three new players in the team.
+[00:03:58] Speaker 2: And - he wants to work
+[00:03:59] Speaker 1: He said it's a shame, I wanted to get my tech lead and I'm not here to get it all. There are 80.
+[00:04:07] Speaker: I forgot.
+[00:04:07] Speaker 1: I'm not sure if I'm going to win, but it happened.
+[00:04:11] Speaker 2: You were going to say, "I want to go to
+[00:04:13] Speaker 1: No, I'm feeling like Sheto is the one I want to win, but not Simon. So, no, because I felt like it was a small success, it was like I was going to get a job and I wanted to go to a cafe.
+[00:04:25] Speaker 2: You -'re a big fan of movies. - I heard it from there. I heard it from a movie called "Yosirat Blat Baboker." " -Yosirat Blat Baboker." - I heard it from there. I don't know.
+[00:04:30] Speaker 1: So, what's the point of saying I'm not going to win? I'm just going to win.
+[00:04:33] Speaker 2: No -, but he knows we're partners.
+[00:04:38] Shoval: No, we can't read it.
+[00:04:39] Speaker 2: " -Yosirat Blat" is a kind of a strategy.
+[00:04:44] Shoval: For a movie that is a company that has a lot of friends. For cyber threats.
+[00:04:51] Speaker 1: It's a real start. We don't want the company to buy us yet, right?
+[00:04:55] Speaker 2: No, Patli? Is there someone who will buy us a product?
+[00:04:58] Speaker 1: No, what if the company now says to you, "Come on, I'm not going to buy you?" 50 million dollars now, 50 million dollars now, you're coming?
+[00:05:07] Shoval: No, but
+[00:05:09] Speaker 2: the amount of Azis in billions of dollars after 4 years is real.
+[00:05:14] Shoval: Like Weez, he's a friend.
+[00:05:15] Speaker 1: That's a great idea, yes. We are not sure if we can get the order to see the week. Baduk, baduk, baduk, yes.
+[00:05:25] Shoval: But you can't be the other people. I don't know who you are, but I know you might have a lot of money.
+[00:05:32] Speaker 2: Wait, the name of someone who is going now is Leda. Not Leda.
+[00:05:32] Speaker 1: Wait, someone's name is Leda, not Lida. You know I'm going to be in the shade. Hello.
+[00:05:44] Speaker 3: How are you? Can you hear me?
+[00:05:48] Speaker 1: Yeah, we can hear you.
+[00:05:50] Speaker 3: Hold on, I'm playing around with my computer's muted. Okay, my little Mac Iphone came up and showed that I was like my speaker. Okay, I can hear you. Good, how's it going?
+[00:06:08] Speaker 1: Good, Leda, it's great to see you. I heard about you from Shavala a lot.
+[00:06:12] Speaker 3: Yeah. Are you guys where you located again? Are you in
+[00:06:18] Shoval: In - Tel Aviv. -
+[00:06:20] Speaker 3: the orange house? So it's like seven o'clock at night or something like that?
+[00:06:23] Speaker 1: Yeah.
+[00:06:25] Speaker 3: I'm getting good at this.
+[00:06:28] Speaker 1: This is when we start the day.
+[00:06:30] Speaker: Yes -, exactly.
+[00:06:30] Speaker 3: Yes -.
+[00:06:31] Speaker: laughs
+[00:06:33] Shoval: Well, it's been a bit of a while since we last met. And I wanted, first you know my co-founder, Yuval,
+[00:06:38] Speaker 3: Yeah -.
+[00:06:41] Shoval: so I'll let you do a mutual introduction in a second. And then we will
+[00:06:46] Speaker: Okay -.
+[00:06:48] Shoval: go and talk about the new directions. I shared a bit in the email. Does it sound good to you?
+[00:06:55] Speaker 3: Yeah -. - Yeah, no, it'd be interesting. Yeah, it'd be good to hear.
+[00:07:00] Speaker 2: Little...
+[00:07:01] Shoval: Can - I record this call again?
+[00:07:04] Speaker 3: Sure, go ahead.
+[00:07:07] Shoval: Cool, so I remind you--
+[00:07:10] Speaker: Rec -ording in progress.
+[00:07:11] Shoval: That - I started in the unit 8200. And this is exactly the place I met Yuval. we were on the same unit. And I give you the stage you've all been teaching us.
+[00:07:22] Speaker 1: I don't know if Shavalt told you that she was my first commander there.
+[00:07:26] Shoval: Well, I didn't tell her
+[00:07:27] Speaker 3: Ah, okay.
+[00:07:28] Shoval: because it was not in the context of the story.
+[00:07:32] Speaker 1: She was my first commander. This is where we met at first. In this team I was an engineer. I was a DevOps and Development Engineer. We ran together two big projects. One of them is a network application that manages all the 8200 unit network. It's a really good one. It's still working until today. It was, I think, eight or nine years ago. And in this we like understood that this is the thing to add a team. We want to do this journey sometime and when we understood it, because Shoval took the product management side, and I took the developing side. And it was really fun for us. she told me what to do. I just search for it. solution and everything worked well. Yeah, I have good ideas, but I really trust Shoval about it. It's good with the customers and with the business side. And after I ended this engineering, I finished the engineering position. I promoted to team lead. Then after I promoted to DevOps and infrastructure director. And then I led 40 engineers across five teams. We ran large scale networks, very complex networks for operations rooms and petabytes of storage systems in a production firm. of all 8200, you know, it's a really highly secured environment. So we had to do a good job there from the security perspective.
+[00:09:25] Speaker 3: Oh, yeah, I met a lot of you. A
+[00:09:31] Speaker 1: lot of good guys there.
+[00:09:32] Speaker 3: Yeah, no, it's great. I've enjoyed the conversation. It's fantastic. Yeah.
+[00:09:38] Speaker 1: And then I finished the army. It was around the 10 years journey in the army.
+[00:09:45] Speaker 3: Yeah -.
+[00:09:45] Speaker 1: Then - I started as director of DevOps and SRE Paragon, which is a cyber company, it's an Israeli cyber company
+[00:09:55] Speaker 3: acquired by a private equity called Red Latis.
+[00:09:55] Speaker: Okay -. And - then I started the army.
+[00:09:56] Speaker 1: private equity called Red Latis.
+[00:09:58] Speaker 3: Oh - no, okay. Just FYI, when companies are bought by private equity, the prices go up to the operators, to us. Companies that we've dealt with that have bought that private equity, the increase in the next fees that we need to pay go up extremely high. Yes. -
+[00:10:22] Speaker 1: I did not.
+[00:10:22] Speaker: Just -
+[00:10:23] Speaker 3: wanted to share that with you, because there's a, yeah, Yeah -, but something we're dealing with right now that we've seen. And - then we've had for a few years and they got bought by Private Equity and actually there's two companies. And once that happens, they deal with our vendor management but they want to increase the price substantially. And the product hasn't changed that much. So.
+[00:10:42] Speaker 2: Yeah -, I can assume.
+[00:10:45] Speaker 3: So just like you know that,
+[00:10:46] Speaker 2: But yeah, that's what I'm talking about.
+[00:10:46] Speaker 3: Yeah, that's it. That -'s great that you're comfortable.
+[00:10:48] Speaker 1: Yeah -, yeah.
+[00:10:48] Speaker: Oh, that's a good insight. Thank you.
+[00:10:51] Speaker 1: And that I led 25 engineers across three teams. We developed the tailor-made solutions for the product security networks. And because it's a very restricted product and situation, the customers were governments and agencies. So we had to tailor made everything we did for each customer. And it was a really big challenge. And we ran the production environment inside, Paragon's infrastructure and the production at the customer site. after two reason half I quit it bar. and started the journey with you.
+[00:11:37] Speaker 3: Wow, well, thank you for sharing. That's awesome.
+[00:11:40] Speaker: That's great.
+[00:11:41] Speaker 1: I would love to hear about you.
+[00:11:44] Speaker 3: My journey is a lot longer. It started in the last century, but my background, just when I was in college or high school, one of my close friends that we would have visits and lab together and you know we'd blow something up we'd get the wrong number she gave me. she'd go under her calculator and figure it out. This is before computers. But she went to MIT. And I, Massachusetts Institute of Technology, very smart engineers go there, very, great school. But I thought all engineers were as smart as they were. her and I realized that was not the case. You know, it's kind of like what do you call a person who graduates last in their class from med school?
+[00:12:35] Shoval: Always cold.
+[00:12:37] Speaker 1: A
+[00:12:41] Speaker 3: doctor. Right? That's kind of scary.
+[00:12:45] Shoval: Yes, exactly.
+[00:12:48] Speaker 3: So I took the path I actually majored in sociology because I like working with people. The computer classes, when I was in school was based a computer program in Cobalt Pascal. So that's really telling you a lot about my background. I worked for Ruppel and when I graduated from college, I worked in the procurement for Ripple International. we were supporting the space shuttle and then we weren't building any more space shuttles so I moved up to the Bay Area from Southern California. I was actually born in New York and I don't like snow so that's what brought me to California. To go to California. Yeah, I'm not a big fan of that. So I moved up to the Bay Area. I moved to Mountain View before Google, before a lot of the Silicon Valley companies. but Silicon Valley was happening at the time. There was a lot of companies that aren't around anymore that got bought up to hand them computers and all computers, digital computers, Apple. This is right before they moved to Texas, part of Apple because you get your... people that were working there could get houses a lot cheaper than they were in California. So a lot of them moved to Austin, Texas and Austin, Texas, as you know, has a lot of technology as well now also. eBay was just a baby. So I worked for a nonprofit, Big Brothers Big Sisters, which helps meant for kids. And I was the one who knew a little about computers. So I set up our network. And this is with, you know, network, it was Novel network 3 which is a very old network. I'd try to remember who bought Novel, but it was a really good network. It was before the Microsoft, with their, before Active Directory, and I was going for an MCC, an MSE for 4.0, the Microsoft, because I was doing a lot of help desk within our organization, set up our email, because this is when email just was coming out. So I kind of saw it from the ground up of what was going on with technology. I left big brothers, big sisters, I went to this job fair at the Santa Clara Convention Center. Google was there, didn't know who they were, so I didn't give them a resume. so gave a couple of other companies resumes when I got home. had like five phone calls, went with the dot com, and I'm telling you this story, I'll tell you why, went with the dot com. They did have customers, it was called mediaflex.com, they dealt with printers. So way back in the day, you get a business card, but it would take like a week to get your business because you would be faxing back and forth. And so this, our company let you sit at your computer, cause ' there are computers by them, this is in the late '90, early 2000, you would type your name in and your phone number. The printer had the file, so they were able to just get your card so the next day you would have your business card. And no spelling errors, no font issues, no logo issues, right? But that company was dealing with printers who don't have money. Then they pivoted to like Coca-Cola working with them instead of working with Coca-Cola's printers, right? So doing a lot of that stuff. Force was just a baby. It was used by sales people. to reach out to their customers. It was not a platform at the time, right? So it's been very interesting to watch the evolution of Silicon Valley. I lived in Mountain View before Google was there. I live up in Washington state now and I go down to the Bay Area just 'cause my husband was from Palo Alto, never lived anywhere else and I didn't wanna go back East. And so we're outside of Seattle. Bellevue is like, I don't know if you've heard of Bellevue Washington. If like, when I was there the first time I felt like I was back in San Jose and San It was just like, oh wait, so, right? So I just kind of watched it and at Stanford, I got into, well, with cybersecurity now before it was called information security, right? I've managed help desk people, project, everything with project managers, system administrators, developers, I've managed all of that. And the department that I'm in at Stanford, we're like a business within Stanford, so. We have a hotel at the linear accelerator side PCI in my environment. We have cafes. So any type of role that you can think of of a person within a company we have, because we have software developers, technicians, everything facilities, plumbers, all that stuff. So I've seen a lot over the years. And where why I shared the calm and I'm excited for your company. I feel like we're in the dot com bubble right now. I've seen this before. Lots of money flowing. Some companies have products. Some don't. And the lessons learned, like my husband worked at the dot com. They built a building in San Jose. And they never really had a product. They had a great idea before YouTube. They were going gonna be pulling content and video from television all over the world and let people see that. So they kind of were going down that, they were called Geocast, but they spent a lot of money. So the burn rate of the money that they were getting in, they went through quickly and then they didn't have product and then there was just this like.com crash which you probably heard about or wrote about.
+[00:18:46] Shoval: dot com
+[00:18:49] Speaker 1: Did you work on this project with the Israeli guy?
+[00:18:52] Speaker 3: Huh?
+[00:18:52] Speaker 1: Did you work on Geocast with an Israeli guy?
+[00:18:56] Speaker 3: No, you know Geocast would probably still be on the 8200 or just getting into the 8200.
+[00:19:02] Speaker 1: Yeah, yeah, I know. We're just being born. I know these were.
+[00:19:05] Speaker 3: You know, it's... It was interesting to watch a lot of the ideas. I mean, San Hill Road, just there last week in the Stanford, I was driving down San Hill Road where all the venture capitalists are and whatnot. And it is really what sets your company apart, what makes it, because I'm seeing a lot, we're seeing a lot out there, but what sets you apart from the others, right? Because you can only get so many, you can. either fail, get bought out by somebody or thrive. That's the way that I see how these companies are. Like you mentioned, the one that got bought by private equity, it'll be interesting to see what happens with that product and how that private equity puts it into their portfolio to say, will this come to the top or is it just because they're getting the customers that you had and now they're developing this way. So they just bought for customers, right? And that's if the customer is going to afford it. So, yeah. but that's I just wanted to share that.
+[00:20:10] Shoval: Like I heard already your background, but again I again relate Relate with what you said about like now. It's similar to the Dotcom era like what is happening right now. It's super similar. This is actually
+[00:20:25] Speaker 3: Mm-hmm.
+[00:20:27] Shoval: Exactly what we want to share with you and what you said about that
+[00:20:31] Speaker 3: Yeah.
+[00:20:33] Shoval: what sets the successful companies from the arteries that a good product.
+[00:20:39] Speaker 3: Yeah.
+[00:20:39] Shoval: That's exactly what we are on the race for like right now.
+[00:20:44] Speaker 3: Yeah. Yeah.
+[00:20:49] Speaker 1: Yeah. Go ahead. Let's start. Yeah.
+[00:20:51] Speaker 3: Yeah. Yeah. I'm going for this.
+[00:20:53] Shoval: When we had our last talk, we talked, like we have a Mitchell introduction and then we talked a bit about resilience. We talked about the fact that now with AI you have to be sure your things are
+[00:21:02] Speaker 3: Well,
+[00:21:08] Shoval: properly backed and you can use those backups. And we started to explore this area. I'll be honest and say that we didn't felt a huge urgency around this area. And because we are network people, like the base of our work come from network, and actually
+[00:21:29] Speaker 3: Yeah.
+[00:21:31] Shoval: in your backup you have also a similar background
+[00:21:36] Speaker: at some
+[00:21:36] Speaker 3: Yeah.
+[00:21:36] Speaker 2: points.
+[00:21:37] Shoval: So we started to think about maybe operational pains, security pains.
+[00:21:47] Speaker: Mm hmm.
+[00:21:49] Shoval: feel that the market right now is overwhelmed from the AI thing, like the AI solution. the AI security startups and we are not really understand and find problems that are world-solving that are not in the AI. Now we don't want to do
+[00:22:12] Speaker 3: Mm hmm.
+[00:22:13] Shoval: AI security product we believe that the companies that place there are there are good companies and if even if they don't have the perfect solution right now they will have it in a short time. So now
+[00:22:25] Speaker 3: Yes.
+[00:22:27] Shoval: we are kind of we love the network area but we are not locked on it and we
+[00:22:35] Speaker 3: Well, we have.
+[00:22:37] Shoval: wanted to share this part of the journey with you because
+[00:22:42] Speaker 3: Yeah.
+[00:22:43] Shoval: like I shared your experience with you Val and like you had like significant experience over there you see a lot of transformation through the technology and
+[00:22:53] Speaker 3: Mhm.
+[00:22:54] Shoval: I don't like you will be the perfect person to talk with us a bit about like okay AI security we all know that this is an issue. What are the big issues for next
+[00:23:04] Speaker 3: Right.
+[00:23:07] Shoval: year like what are the big projects? What are the new budget line? I'll be honest and say that we don't have a clue at the moment and we want to put our
+[00:23:16] Speaker 3: Mhm.
+[00:23:16] Shoval: our resources, not in another product, like we can raise money and create another product
+[00:23:18] Speaker 3: Yeah.
+[00:23:21] Shoval: of AI security but we, I shared with you in our previous call that I did the switch to
+[00:23:24] Speaker 3: Right.
+[00:23:28] Shoval: product management because of those things because I love to solve pain
+[00:23:30] Speaker 3: Yeah. Yeah.
+[00:23:33] Shoval: and we want
+[00:23:34] Speaker 3: Yeah.
+[00:23:35] Shoval: to solve pain, a problem, a real problem.
+[00:23:40] Speaker 1: Actually, Chaval said that we love network and we're not locked on it because we want to focus on the real pain. We want to search for real pain. We want to put our efforts on the real another, but we want to start with the network because of our expertise.
+[00:24:10] Shoval: we're basically eager to learn.
+[00:24:13] Speaker 3: No, I think that's great. And I love the next phone call that we meet. My assistant, we're a small team, but mighty team, Daniel Silverman, who actually was born in California, but served in the Israeli Army as well. So Daniel could tell you his story. But right now, I'm seeing a lot of-- as you know, these are your peers. There's a lot of AI security on the endpoint, a lot of that. But we have a product right now and I'll be transparent with you. Dark trace. You probably know it and heard of it who got bought by a private equity firm. Dark trace was probably gosh. How long has it been? 2019 2018 kind of when we were looking at them when we got them they were talked They were talking about AI then right now. We know like machine learning like what's happening within the network and then seeing the behavioral change and And that's been a great product for us. They don't have a lot of competitors that we found that are probably in our price point. And they got bought by a private equity firm. So they're going to go, their prices. So we are looking. We're not going to be renewing with them. That's just-- it's just out of our budget. But it's interesting you're talking about work security because I just got pained by two other people that are doing network security in the last week. Oh, yeah.
+[00:25:42] Speaker: I -'m
+[00:25:44] Speaker 3: Like, you know, first it was the AI.
+[00:25:47] Shoval: we all in the same city and these words are
+[00:25:49] Speaker 3: I'll
+[00:25:50] Shoval: flying.
+[00:25:52] Speaker 1: do it. Maybe those are friends.
+[00:25:55] Speaker 3: They are your friends. I'll tell you they are. me a photo of when you were in the 8200 and show me who everybody is.
+[00:26:02] Speaker 2: You - can recognize all the people.
+[00:26:03] Speaker 3: Yes.
+[00:26:05] Speaker: Thank you.
+[00:26:07] Speaker 3: I want to see you all succeed and be successful. Um, yeah. So I mean, just from an operator, I'll tell you the pain. I mean, it's, and as I, why I mentioned, I have so many roles within my organization, right? Um, so many roles within my organization and they were all using technology. There are even our custodians, the people that clean, they're on iPhones, our facilities, people that they get work orders to go out and do work on the buildings, they're on iPads. The OS is important to us and I don't see a lot of OS focus on the OS also, but more more and more users is becoming more and more mobile. I traveled this week, I went down to Stanford, I didn't bring my Mac laptop, I brought my iPad to work 'cause it's lighter, it was easier, right? So that's one of the areas that we ask, when I talk even to the endpoint, we mentioned, oh, we have AI this, AI that, well, I can download quad for my AI, right? I can have things on my OS. So that's an important to us. But yeah, network security, really what the understanding, and I think with security of all the work that gets done is really having the CFO understand, I think we shared this before, having leadership understand, I can say I'm a Gen X, some of them are boomers, right? generational, it's really understanding, cause ' they're asking what's the cost benefit, that analysis when they're just looking at the numbers, and how does cybersecurity and how does, how does security and anything like, what's the cost benefit? Cause ' you don't see it, right? I like it to relate it when back in the day, that may still happen, I'm on a Mac now, but your PC goes blue screen, right? Everything's great till your PC goes blue screen. Then you call your help desk, then you're calling support services. When everything is up and running fine, people in all these different roles are not thinking about technology because they have things to do, right? I need to raise money, I need to be a marketing this, I'm doing this, everything's great. But when that computer fails on them, technology fails on them, then they're aware. They're not aware of all what's happening in the summer. cybersecurity world that we blocked this much malware, people had gone to these sites and then done this. They don't see that. That's a story that I tell once a month to my leadership, just so they're aware, like what's the cause and effect? But they don't see, you know, they only see the effect once in a while, right? And how does it affect them?
+[00:28:44] Shoval: Yeah. So like...
+[00:28:45] Speaker 1: And - do you think? Yeah, go ahead.
+[00:28:47] Speaker: Okay -.
+[00:28:49] Speaker 1: Do - you think the new AI era, with the new frontier models influenced it a bit?
+[00:28:56] Speaker 3: A bit, yes. I'll tell you a difference. I made sure of this story before. So back in the day, when games were coming out, I had my husband and I, I'm with my boyfriend, we had Apple computers. Apple didn't have a lot of games. It was the PCs. The PCs had the games. Again, we'd have a lot of internet at the time either. So. Yeah. So we bought, we built the PC. My husband and I built, went out, bought the stuff to build a PC so we could play games. And then you overclock your processor. You overclocked your Intel processor. You had a 386 or 486, right? To make the games go faster. But not everybody knew about that, right? Because they weren't in technology. They weren't building computers. When AI came out, Boom! Everybody heard about it. It was on the news. However they consumed their information was talking about AI. So every layer, again, all the roles of my organization, they all know AI. I have a tool, an endpoint protection tool, it's not CrowdStrike, that actually two months ago, lets me see, because it's an endpoint protection tool that could also let me see that somebody's running Word or Adobe Photoshop or whatever. In the last two months, it now says, Some "body has Anthropics, somebody has Grammarly, somebody has this," right? It started showing the different type of AI application tools that we usually are using. I was surprised at some of the people in the roles that they are in, had downloaded some of this AI because at Stanford, we only were playing in a sandbox per se with a whole bunch of AI tools. Just until two months ago, we signed contracts with Anthropic and OpenAI and Google for it. for Gemini. And then now we have a list of AI approved services. But up until two months ago, if you were to use AI at Stanford, you should have only been in the playground.
+[00:30:57] Speaker: use to create a new application.
+[00:30:58] Speaker 3: Were these people in the playground? No, because people have admin access to their computer. So that's still something that that's on my CIO and discussions of what incidental use you could do. Do we block things? Do we not? Because people, this may be their only computer, they may are working and they want to check their bank, they shouldn't, but anyway, they may check their bank account, but that's incidental use on their work computer. So yeah, so that was very interesting of the people that were using some AI tools that I didn't think would in the role that they are, but they had that on their computer. they were interacting. practically there.
+[00:31:36] Shoval: So, basically on the board meeting or when you are presenting, I guess they asked about how we are protecting from AI, but
+[00:31:45] Speaker 3: Right.
+[00:31:46] Shoval: those are those question are was only about like AI security tools or they were curious or borrowed by other elements of the infrastructure, the security.
+[00:32:01] Speaker 3: Well, so it's again the conversation of the presentation. And again, who you're, so we're talking to the CFO. This is a person who knows numbers and accounting hasn't changed that much. Right. That's what they do. Right. So when we showed him, hey, you know, we have this on point protection. We now see these applications are out there are being used. He was like, oh, great, because he thought, OK, now we're good. We're protect. Well, no, we're not. protected about what could happen. It's sharing the use cases for them to understand and relating it to their day to day of how could it potentially affect them and what were protected, right? And that's where I see the cost benefit, but it's having them understand, you know, I'm an accountant, okay, I'm the CFO, I'm dealing with financial data, I'm dealing with the financial applications that we can use, I'm dealing with Excel, Google Sheets, whatever. Where are those intersections that something bad potentially could happen and how the tools and solutions that we potentially can could be using how it's protecting them and saving them. You know, on this endpoint protection tool, we installed it in 2019, fall of 2019. Well, what happened in March of 2019, right? Pandemic.
+[00:33:23] Shoval: Yeah.
+[00:33:24] Speaker 3: What was very interesting to me is that the malicious websites, we were able to see where people were going, right? Before it was pretty, okay, chill, not a lot going on. malicious websites. It was like the COVID. In March of 2020, in April of 2020, The life cycle going up and down the waves right that's what it looked like I had an aha moment. I'm like, oh my gosh look at that. So it's also looking at what's going out in the world. And what's going out with the same type of companies years where that I was able to map the COVID wave to malicious websites. You know. Oh yeah, sorry.
+[00:34:06] Shoval: Do you have a time where you have a
+[00:34:07] Speaker 3: Yeah. Yes, I do. I have a few minutes that I can share if you can get over it. Yeah. Yeah.
+[00:34:17] Shoval: to enter a new product to your budget for next year.
+[00:34:23] Speaker 3: Yeah. Yes. The conversations there again, it's the, uh, the priorities, you know, there's always competing priorities in organizations. And how does this support the priorities, right? And that's the story that we have.
+[00:34:41] Shoval: and like what you entered?
+[00:34:44] Speaker 3: Yeah. I mean, right now, the, the AI, the endpoint, right? I'm also concerned about the human. And which I may have shared, you know, last time we spoke, the internet, the Wild West, it hasn't changed. It's still the Wild West. And we built all of this on top of the Wild West. The human behavior activity hasn't changed. Right. And now we're going to build AI agents off of human persona potentially, right? And that's the part that scares me because Because the, the whole onboarding and offboarding process is not good. And when I talk to other CSOs, I ask them like, so how are you managing your offboarding? And they all chuckle because there's many applications. It's not always about our back, right? It's because I may start with a question.
+[00:35:31] Speaker: Yeah -.
+[00:35:32] Speaker 3: So, if you're a CSO, you're not going to be able to get a job. company and because of my role, this is what I'm given access to. But in my life cycle, I start getting access to these other applications and some of them are third party applications and it not be SSO that I log in and then I'm using another username and password. And then I'm done on that project and they don't remove me. And then I leave and potentially, you know, I haven't been turned off. And even if I have, when it goes to an inactive state or retired state, to me, that doesn't mean anything because if I was a hacker, I would start activating all of these retired because they're not, they're still in the system.
+[00:36:10] Shoval: How do you manage those now? Like, do you have
+[00:36:17] Speaker 3: We have a lot, it all depends. The applications are managed very different. We're very decentralized and we have a lot of applications. Some of, if you're met with SSO, they'll turn off the ID. Okay, great. But if it's not part of a work group or if it's a third party, like our vendor management, for example, they log into other applications, third party applications that are not managed by our SSO. So it's more of going back to the people and process, you know, how do you Don't use it. Use this password, you know, use it. Don't use the one that you log in here, use something else, but then it's somebody has to tell that company, you know, lead is no longer here, please remove her, right? So it's that whole people and process part. So even though we have some of these great tools of being able to add or remove people quickly, there's all these other applications out there that they could be in. Yeah.
+[00:37:12] Speaker 1: Yeah,
+[00:37:13] Speaker 3: that scares me. Yes.
+[00:37:20] Speaker: Yes.
+[00:37:26] Shoval: Great, like a great insight to, And I don't want to take more than the time you have. you know, to keep exploring.
+[00:37:34] Speaker 3: Yeah. Yeah. Yeah.
+[00:37:42] Shoval: Evaluate, do you have any more questions?
+[00:37:45] Speaker 1: And now just to tell you a little bit about it there, it's very valuable for us. And thank you so much for showing us your perspective.
+[00:37:52] Speaker 3: Oh, yeah, no problem. No problem.
+[00:37:53] Shoval: And you know, I'm learning so much from you and from your experience. And we are still on the beginning stage and all that. We really want to find a real pain and to explore it. And you give us some really good leads.
+[00:38:09] Speaker 3: Yeah.
+[00:38:11] Shoval: And we would love to share with you what are we found around those areas.
+[00:38:11] Speaker 3: Yeah. Yeah, most definitely most definitely and definitely we'll have to bring Daniel into the next conversation because he, you know, he and I bounce a lot off of each other. And we're always like, because we always talk about we have not found a product that we're looking for. I'm like, ah, you know, because we just there's just, I think for me, you know what I just told you about the offboarding. I attended an event back in March, I think it was with other CISOs and two fortune, maybe 100 companies, both talked about the offboarding. So I knew I was on the right track because they're feeling the pain too. And just want to go to these dinners and meet other people. They just, you know, they kind of chuckle and it is. Yeah, I mean, we're-- We talk about identity that's a thing identity in our talking about AI identity but we haven't even solved the human identity side.
+[00:39:14] Shoval: Yeah, we just went down the line and we didn't solve the beginning. Yeah -. - No,
+[00:39:19] Speaker 3: No, and still building it. And so the foundation to me, being the internet, and while West, it's not stable. We haven't built a stable foundation. We need that stable foundation to go off. I would feel really good.
+[00:39:34] Shoval: Yeah -, I totally understand what you're saying. And if you were open to it, I will send a new slot and we can do a mutual conversation with Daniel.
+[00:39:45] Speaker 3: Yeah, let me look. I know we have a holiday next week. Do you think the, let me look at his, the week of September 14th, let me look at his calendar.
+[00:39:57] Speaker 1: September 14th, it's good.
+[00:39:59] Speaker 3: Yeah. Does this time, I mean work for you? It's time work okay.
+[00:40:06] Shoval: September - 14th, yeah, but which time?
+[00:40:08] Speaker 3: Yeah. You're my nine o'clock you're seven o'clock. Is that okay?
+[00:40:13] Speaker 1: Amazing.
+[00:40:15] Speaker 3: Perfect.
+[00:40:15] Shoval: I will send an invitation.
+[00:40:18] Speaker 3: And then I'll just forward it on to Daniel and I'll be speaking with him this afternoon too. So
+[00:40:23] Speaker 1: amazing.
+[00:40:24] Speaker 3: Yeah.
+[00:40:25] Speaker 2: Let -a, thank you so much.
+[00:40:26] Shoval: We really appreciate that you're part of our journey.
+[00:40:30] Speaker 3: Yeah. No, thank you. Thank you for including me and sharing me. I enjoy it. I'm at the point of my life. I want to give back and share my experiences because it's soft.
+[00:40:42] Shoval: And we are looking forward to more successful conversations.
+[00:40:47] Speaker 3: Sounds great. Thank you. Well, have a good evening.
+[00:40:50] Speaker 1: Thank you so much. Bye.

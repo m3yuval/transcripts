@@ -1,0 +1,197 @@
+Date: 2026-09-22
+Topic: Security Leadership Discovery - Shawn Anderson
+Meeting UUID: B38FCFAC-66E3-413D-94CC-107B803FFC82
+Source: transcript
+Entries: 191
+
+[00:00:00] Shoval & Yuval: with ourself.
+[00:00:04] Shoval & Yuval: Okay, so let's… let's talk about ourself a bit. So, as I wrote in the… on LinkedIn, we are currently building our company, we're on the ideation stage. I'm Shoval, I'm in cybersecurity for the past 10 years, basically started at 8,200 unit, which is the intelligence unit of the army here.
+[00:00:26] Shoval & Yuval: Basically served in the Department of the Cyber Defense Operation.
+[00:00:32] Shoval & Yuval: In the… in the infrastructure department.
+[00:00:36] Shoval & Yuval: There, I actually met Yuval, we worked together there. We served there and worked as a DevOps engineer and a security engineer, because we had to build and maintain those infrastructure, and also,
+[00:00:50] Shoval & Yuval: and also keep the security perspective, you know? We have to, to,
+[00:00:56] Shoval & Yuval: We have to, to keep the… you can use… Sorry, sorry. I wanted to know the, the, both names, because we're on the same Zoom. Yeah, sorry. I just renamed the… That's okay.
+[00:01:10] Shoval & Yuval: we have to build the security… we have to build those infrastructure, but also to secure them. So we kept… we kept those two roles.
+[00:01:23] Shoval & Yuval: basically, I served there for five and a half years, I released as a captain, and after that, I did a shift into a product manager, roles, because I was…
+[00:01:33] Shoval & Yuval: I love to, you know, to solve problems, to understand the pain of the customers, and be close to them. So I started as a product manager at a company called Perception Point, basically leather all, the detection capabilities, worked with AI and agent before we knew to call them that way.
+[00:01:52] Shoval & Yuval: basically, did a great job there, loved it. This company was acquired by Fortinet.
+[00:02:00] Shoval & Yuval: And after that, I moved to another cybersecurity company called Coyosecurity, also great company, very innovative in terms of how we use the AI, great and amazing customers, and this company was acquired as well by Palo Alto. Basically, you know, that was my sign, to raise my phone and call Yuval, my co-founder, which is an old friend.
+[00:02:24] Shoval & Yuval: And to start our, ideation process together. So we started, like, on the same department, but did some, different paths, so I let Yuval share his story. You know, Shoval made the phone call for me, and I answered her, and I told her, yeah, I'll quit my job, let's start.
+[00:02:42] Shawn Anderson: So wait, that works!
+[00:02:44] Shawn Anderson: I got called by a friend of mine, and she said, I want you to go lead global CISOs for this, and I'm like, okay.
+[00:02:51] Shoval & Yuval: Let's do it! Working with close friends, it's always the best. Yeah, actually, we met, like, I think 10 years ago in the military service, and it's an old dream, the journey we're doing together. I'll tell you about myself.
+[00:03:07] Shoval & Yuval: I started, also at, 80-100 unit, but a short time before I met, before I met, Shoval, I had,
+[00:03:16] Shoval & Yuval: time that I was… I wasn't in a technical position, I was in an administrative position, I was the personal assistant of the unit's commander.
+[00:03:25] Shoval & Yuval: And there, when I started this position, I realized that my main goal is to move to the cyber areas. So, for 2 years, I learned and I…
+[00:03:38] Shoval & Yuval: And I studied with the executives I worked with, and the colleagues around me, and after 2 years, I convinced my… the units commander to send me out to a course.
+[00:03:49] Shoval & Yuval: And there… and after I convinced him, I actually did this cruise for 6 months, and after this 6-month cruise, I joined Shoval's team.
+[00:03:57] Shoval & Yuval: And there we developed the two great platforms we already told him about? No. No, we developed platforms together. Yeah, we built a platform to operate secured networks, and another one to auto-remediate incidents. We did a lot of great stuff back then, and after this technical journey of mine.
+[00:04:18] Shoval & Yuval: I, became a team lead.
+[00:04:20] Shoval & Yuval: And a few years later, I became the head of the DevOps and the infrastructure department, which was a really challenging position. I led… there were 40 engineers across 5 teams. We ran large-scale networks, complex networks for operations rooms.
+[00:04:37] Shoval & Yuval: for hundreds of applications. We managed petabytes of data and production environments, and then I finished the military service and started as a director of DevOps and SRE at Paragon, which is an Israeli cyber company.
+[00:04:53] Shoval & Yuval: And there…
+[00:04:54] Shoval & Yuval: There, we developed tailor-made networking solutions for the product. We had two areas of responsibilities. One of them was to secure the infrastructure of Paragon's product. The product seats
+[00:05:07] Shoval & Yuval: at the customer site, and the site is, is the site of agencies and governments, environments, so we had to do it very securely, so I had a team that…
+[00:05:20] Shoval & Yuval: developed all the security solutions for that, and the other area of responsibilities was the Paragon's in-house infrastructure. There, we… I managed close to what I did
+[00:05:32] Shoval & Yuval: in the Army, I managed the networks, the production, and the AI infrastructure, and worked close with the security teams to
+[00:05:42] Shoval & Yuval: Apply all the best… all the security best practices on the infrastructure we had.
+[00:05:48] Shoval & Yuval: And, that is about me.
+[00:05:51] Shoval & Yuval: so…
+[00:05:52] Shawn Anderson: Okay, thank you. So, just to give a quick, overview, I'll… my background, I've been in cyber a long time. I don't even want to go over it. Three decades, at least.
+[00:06:03] Shawn Anderson: I was the CISO for Raytheon's intel business here in the US, and I also was a CISO for an energy company here in the U.S, down in,
+[00:06:13] Shoval & Yuval: Sorry for interrupting.
+[00:06:15] Shawn Anderson: I'm sorry?
+[00:06:16] Shoval & Yuval: You said that you order a CISO of Raytheon? It's the…
+[00:06:19] Shawn Anderson: For their Intel business, yes.
+[00:06:21] Shoval & Yuval: Brighton, it's the company that provides, like, missiles and rockets.
+[00:06:26] Shawn Anderson: Right, that's… that was another piece of the business. I strictly had the intelligence business, which at the time was a little over $2 billion in revenue for the company, and I had to work a lot with the three-letter agencies, and here in the U.S. and government. I came out of the military as well. In fact, I started working computer investigations when I was in the Marine Corps.
+[00:06:45] Shawn Anderson: And had to… like I said, lifetime ago.
+[00:06:49] Shawn Anderson: And one thing I appreciate about people who come out of the military with a cyber background, or they kind of understand how bad the problem is.
+[00:06:58] Shawn Anderson: You talk to some civilians, and they're like, oh, it's not that bad. It's pretty bad.
+[00:07:05] Shawn Anderson: But, having been a CISO a few times, I spent a lot of time in cloud also. I was a partner manager at AWS.
+[00:07:12] Shawn Anderson: Cool. And I also spent 5 years as a security advisor at Microsoft, working with the Fortune 500. So, I've seen a lot of good tech. The last 5 years, as I mentioned, I've been at an investment bank, which has been really helpful because
+[00:07:26] Shawn Anderson: when you're talking to CISOs and CIOs, a lot of them don't see a lot of the good tech, because startups have a tough time getting their foot in the door.
+[00:07:34] Shawn Anderson: So I'm always a big fan of evangelism and helping open doors for startups, because it's like, hey, let me… if you've got good tech, I'll make a few introductions, at least, and hopefully you can get some, maybe some advisors, or get some technical people that can help open other doors for you, so…
+[00:07:50] Shawn Anderson: whenever people reach out to me, I'm kind of like, okay, let me take a look, and then let's… let's get on a quick call, which I appreciate, Shoval, you reaching out, because that's the best way to get exposure and build your brand, is to really just… you gotta keep pounding on a lot of doors, and hopefully someone opens it. But you know that, you've done the startup thing, it's not easy.
+[00:08:09] Shoval & Yuval: Exactly. And again, we are super grateful for you to open the door and have this conversation with us.
+[00:08:17] Shawn Anderson: And you're both over based where? In Tel Aviv?
+[00:08:20] Shoval & Yuval: In Tel Aviv. Exactly, yeah, in Tel Aviv.
+[00:08:22] Shawn Anderson: I've only been over there once. I had about a week in Herzliya when, before Microsoft moved downtown, to Tel Aviv. Beautiful, beautiful country. I just,
+[00:08:32] Shawn Anderson: I did fall in love with the people, too. I mean, it's just, I have good friends that live over there, and I've talked to a ton of startups over the years. You guys put out some good stuff.
+[00:08:41] Shoval & Yuval: You're always welcome. Yeah.
+[00:08:43] Shawn Anderson: You know, I tried to get there with my last company, and they're all from the Northeast, and they're all like, you can't go, it's not safe. I'm like…
+[00:08:49] Shawn Anderson: You have to understand, it's safer over there than it probably is in downtown New York at night.
+[00:08:54] Shoval & Yuval: Totally.
+[00:08:57] Shawn Anderson: They can't even… but no, they're at war. I'm like, well…
+[00:09:00] Shoval & Yuval: Bh, bro.
+[00:09:01] Shawn Anderson: Forever.
+[00:09:02] Shoval & Yuval: Basically, forever.
+[00:09:04] Shawn Anderson: That's why… that's… it's just… it's… you just deal with it. It's like, they're… it's a very safe country. I wouldn't… I…
+[00:09:11] Shawn Anderson: I went to Jordan, I went downtown, I've been all over the place when I was there, but it's like, okay. But I couldn't get them. This company, though, I probably will be able to. Mastercard has… does business over there, so hopefully I'll get back.
+[00:09:23] Shoval & Yuval: You think they have, like, branches here also, so…
+[00:09:25] Shawn Anderson: Yeah.
+[00:09:26] Shoval & Yuval: you can visit, and then give us a call. We'd love to meet you.
+[00:09:30] Shawn Anderson: I will. So, how long have you been working on this capability now?
+[00:09:34] Shoval & Yuval: Okay, so basically, we are at the very beginning, we are on the ideation stage. I… we work on this a couple of months, but I would love, like, to share with you a bit of what we're exploring right now.
+[00:09:46] Shoval & Yuval: Basically, we're exploring what happened after a security signal is triggered in the organization. We understand, like, AI changed the whole… the economic of attacks and make them much faster, cheaper, easier to execute at scale.
+[00:10:04] Shoval & Yuval: And we are exploring ways to make, the investigation, decision-making, remediation processes much faster and agentic.
+[00:10:18] Shoval & Yuval: that's the stage we are at now. I will give you an eye-level recap of, like, the last episodes from our research, because we… at the start, we started from exploring, like, understanding how this new type of attacks, machine speed attacks,
+[00:10:38] Shoval & Yuval: change, like, the security stack of the organization. Our organization are a…
+[00:10:45] Shoval & Yuval: adjusting their security stack to, face those type of attacks. And us, infrastructure people realized that it will make
+[00:10:54] Shoval & Yuval: organization to look on the fundamental layer.
+[00:10:59] Shoval & Yuval: instinct, like, we… we went automatically into network, because we saw that the new attacks that, released and shared are going through the network. So, we talked with CISOs about how they are managing the risk and visibility.
+[00:11:18] Shoval & Yuval: in their network. Long story short, we realized there is no much urgency around those area, areas, but, you know, as we kept talking with CISO, the thing they kept mentioning is, like.
+[00:11:34] Shoval & Yuval: After we are getting a signal, any signal, not only a network signal, there are processes that are long, manual, sometimes going through multiple, teams, and we saw a lot of friction there, and we…
+[00:11:53] Shoval & Yuval: That might be an opportunity there to make those processes agentic, and faster, to help those teams to,
+[00:12:01] Shoval & Yuval: better handle with those new types of attack. So before we're diving into more of the… to the details, I want to hear, like, what you think about those statements until now.
+[00:12:14] Shawn Anderson: It's definitely a needed space. Are you, working with any design partners right now, or do you have, is your product, are you still working on raising funding, or do you have it out there and kicking the tires? What phase are you at?
+[00:12:28] Shoval & Yuval: So we've… before raising, basically right now we are working on shaping the use cases, and, you know, adding more, design partners to our,
+[00:12:40] Shoval & Yuval: Group.
+[00:12:42] Shawn Anderson: And are you targeting U.S. market, or…
+[00:12:45] Shoval & Yuval: Yeah.
+[00:12:45] Shawn Anderson: Where have you… who have you started talking to?
+[00:12:48] Shoval & Yuval: Only US companies, with 100 plus employees.
+[00:12:55] Shawn Anderson: Have you, have… you're probably too small, but have you had discussions with Gartner or Forrester yet on…
+[00:13:02] Shawn Anderson: Where you might fit.
+[00:13:04] Shawn Anderson: What are they, what are they telling you as far as competitors?
+[00:13:08] Shoval & Yuval: So, they don't talk about competitors… like, we know about competitors, because we are, knowing the market, and you know we did, very good intelligence work.
+[00:13:19] Shawn Anderson: Sure.
+[00:13:20] Shoval & Yuval: So they did tell us about competitor, I'll…
+[00:13:24] Shoval & Yuval: I say that we are not yet in the stage of creating the product. We're starting in validating the pain and the need in organization. And maybe, maybe do you want to share the vulnerabilities use case? Maybe it will make it… Yeah, you know, some CISOs shared with us that they have a problem
+[00:13:44] Shoval & Yuval: After, pen testing.
+[00:13:47] Shoval & Yuval: like, they have the pen tester they like the most, and… Right.
+[00:13:53] Shoval & Yuval: Pentester is coming, and it's, and the team of the pen testing gives them a list of 200 patches they need to do, and configurations they need to change.
+[00:14:06] Shawn Anderson: Right?
+[00:14:06] Shoval & Yuval: But most of CISOs told us that after the pen testing, they just email it to the CIO guys.
+[00:14:14] Shoval & Yuval: I don't know what is going on with all those patches and configurations.
+[00:14:18] Shoval & Yuval: So…
+[00:14:18] Shawn Anderson: Right?
+[00:14:19] Shoval & Yuval: So now, when attacks are at machine speed.
+[00:14:22] Shoval & Yuval: They became really afraid that if we don't remediate all this… the list of the 200 misconfigurations and vulnerabilities and patches we have to remediate, so we're not keeping the pace of the machine speed attacks.
+[00:14:39] Shoval & Yuval: Correct. For them, The way to protect your organization is to remediate faster.
+[00:14:48] Shoval & Yuval: Do you agree with this, with that, with this statement?
+[00:14:52] Shawn Anderson: Yes, no, it resonates, and you're… you're adding an AI automation piece to it?
+[00:14:58] Shawn Anderson: Are you still dependent on… are you depended on people for the pen testing kind of stuff, or both?
+[00:15:03] Shoval & Yuval: No, we're thinking about, like, an Agentic solution, not services,
+[00:15:09] Shoval & Yuval: It's not… we're not sure, like, what will be the… I want to share with him the vision we have. Sure, go ahead. I want to share with you the vision we have in our mind. I didn't want to do it before, because we don't like the conversations to be bypassed and, like…
+[00:15:25] Shoval & Yuval: like, that you know the solutions we have already? We don't have already, but we want to create. But the vision we have is, like, an Agentic digital employee.
+[00:15:38] Shoval & Yuval: Working as a security engineer inside your organization, but in a way.
+[00:15:42] Shawn Anderson: Okay.
+[00:15:43] Shoval & Yuval: you can trust it. But, you know, it's… it's the vision. It's not the first step, and not the second. It will be the…
+[00:15:50] Shawn Anderson: How are you looking to establish the guardrails?
+[00:15:53] Shoval & Yuval: You know, today, the cost barrier of implementing it is lower, very low. Actually, the problem that we had before the AI era was the cost of developing a system that can
+[00:16:10] Shoval & Yuval: That can,
+[00:16:11] Shoval & Yuval: go into all this data. And now, with AI, we can collect data from everywhere. We can get your business context, and we can understand your business workflows in your company.
+[00:16:27] Shoval & Yuval: And we can get your 200… a list of
+[00:16:32] Shoval & Yuval: Patches and misconfigurations, and together we can provide a remediation plan
+[00:16:39] Shoval & Yuval: with impact assessment. This is how we vision the product we have.
+[00:16:46] Shawn Anderson: Okay.
+[00:16:49] Shawn Anderson: So what is your, what are your next steps? You're, your…
+[00:16:52] Shoval & Yuval: Actually, the.
+[00:16:53] Shawn Anderson: What are your goals now, I guess, for the next 3 to 4 months as you come into the end of year, and you're going into… of course, we have RSA coming up into February, and I'm assuming you want to have something or something to do with that.
+[00:17:06] Shoval & Yuval: Actually, we're not looking at 3 and 4 months, forward, we're looking 3-4 weeks forward. Okay. Because we have, we want to move fast.
+[00:17:17] Shawn Anderson: Oh, absolutely.
+[00:17:19] Shoval & Yuval: The next goal we have is to collect design partners and use cases, specific use cases, that actually happened inside their organizations, that we can help remediate or plan to remediate.
+[00:17:33] Shoval & Yuval: in their organizations, and build with… around it, the product. Do you have any use case that you can think from the companies you worked for, or the place you work now, that you think that will be… A good start?
+[00:17:49] Shawn Anderson: Ask the question again, I'm sorry.
+[00:17:52] Shoval & Yuval: like, as we… right now, like, as Yuval mentioned, we are focusing 2-3 weeks, ahead, and we're.
+[00:17:59] Shawn Anderson: Right.
+[00:17:59] Shoval & Yuval: focusing on collecting design partners and use cases. Like, the vulnerability use case is only one use case that we heard from many CISOs. But basically, we want to,
+[00:18:11] Shoval & Yuval: to have design partners, and to understand what is the top-of-mind use case for them, and basically start working on it. Right. So do you, like, do you have in mind a good use case to start with, similar to what we shared?
+[00:18:28] Shawn Anderson: So, use cases, not necessarily, but the pieces…
+[00:18:33] Shawn Anderson: that a lot of the executives are looking for right now. Like, if you look at Wiz, which went from nobody to somebody huge, massive within 5 years, we obviously have very few unicorns of that size and ilk.
+[00:18:48] Shawn Anderson: But one of the things that I found out when I was talking to people… I talked to CISOs and CIOs, why do you like Wiz so much? And it wasn't necessarily their capability, it was the fact that it was so…
+[00:18:58] Shawn Anderson: in their mind, easy to use. The interface was not geared towards a command prompt, geeky Unix engineer working in a SOC. It was geared to being able to have an analyst get on the box, learn it quickly, and be able to implement and use the interface.
+[00:19:18] Shawn Anderson: The other thing that I think is important for anyone who's doing a pen testing or working in this type of environment where you're exposing their vulnerabilities is the remediation piece.
+[00:19:29] Shawn Anderson: being able to tie in and have all the connectors already built so that when you identify the recovery can be done quicker. A lot of… I've seen so many tools that try and
+[00:19:40] Shawn Anderson: They try and say, oh, we're doing this, but what they're doing is they're… they're telling me I have a problem. Well, okay, great. I can make an assumption, I already have a problem. There's no doubt I have a problem. In fact, I'd be willing to guess most networks are Swiss cheese anyway.
+[00:19:53] Shawn Anderson: It's trying to protect the data and the identity going across the environment, and you can only do that with AI. So I would even start the conversation with
+[00:20:05] Shawn Anderson: It's… it's AI augmentation, it's, the resil… we're working towards resiliency so that we don't… we don't… we're gonna come in, and this is just my… me talking.
+[00:20:15] Shawn Anderson: when you come in, you want to make sure you're explaining that I'm not going to shut things down as we do this, because that's what everybody has a fear of, too. You're pen testing my environment. Is the AI going to go rogue?
+[00:20:26] Shawn Anderson: and say, oh, I might as well fix this while I'm in here, and then it causes something else to go down, not… not inadvertently, but it causes a problem for the org.
+[00:20:35] Shawn Anderson: So I think those are key, key talking points that you need. And also, maybe, if you're familiar with the Harvey Balls kind of, picture where you have your capabilities and your core, like, 7, 8 features, and have those measured against some of your competitors.
+[00:20:54] Shawn Anderson: Just to show the areas, and it doesn't matter whether you're doing it or not yet, it's your focus on where you want to be, because your competitors aren't doing it.
+[00:21:04] Shoval & Yuval: Yeah.
+[00:21:04] Shawn Anderson: how that's going to provide value. And that also helps you with your technology roadmap, because you're going to get asked those by investors, those two things is, what's your roadmap, and where are you trying to go, and how many customers, and what's your revenue? And right now, whereas 5 years ago, right after COVID,
+[00:21:21] Shawn Anderson: people were throwing money at startups. I mean, you just had to have an idea, and you were getting money. Now, they actually want to see the design partners, have 2 or 3 design partners.
+[00:21:30] Shoval & Yuval: Yeah.
+[00:21:30] Shawn Anderson: Have a good roadmap of where you want to go, even if you're focused on where we're going to be in the next month.
+[00:21:35] Shawn Anderson: be able to show out where you want to go. I… there's a lot of companies that are trying to do it, but it's, they don't have necessarily the… the interface. Some of them are very clunky, or they've… or they all… like, take Agentic's, SOC automation.
+[00:21:52] Shawn Anderson: There are so many AI SOC automation companies right now. I mean, there's gotta be at least 100. They all look very similar. In fact, my joke is that I went to the same coffee shop and said, same interface, everybody has to use different colors. Yeah.
+[00:22:05] Shawn Anderson: But also, don't come in also and tell me that you're gonna… well, this will help you downsize your staff.
+[00:22:11] Shawn Anderson: That is… that is a non-starter. I need something that'll help my staff get smarter, faster, and be more responsive. So those are… those are just key talking points as you… as you work through your technology. Does that help answer the question, or did I answer a different question?
+[00:22:30] Shoval & Yuval: No, totally. Actually, it's, it's like, you kind of answered a different question, but it did help, because I think that we're saying, like, kind of similar stuff in different words, so it's a note for us, we need to sharp our, our, pitch, kind of call it?
+[00:22:48] Shawn Anderson: Right.
+[00:22:48] Shoval & Yuval: that way.
+[00:22:51] Shoval & Yuval: Cool, like, I see we are almost in time, so we don't want… like, we want to be mindful with your time.
+[00:22:57] Shawn Anderson: For sure.
+[00:22:58] Shoval & Yuval: But we will… totally would love, you know, to keep in touch as we're evolving and, you know, rethinking the idea and make progress.
+[00:23:06] Shawn Anderson: Absolutely, and I'm happy to make introductions to some folks here in the U.S. that are very technical, who can take a deeper look at your tech. I'm looking at it from
+[00:23:16] Shawn Anderson: what your strategy is, and how you're going to fit in from a business operations perspective. How are you going to help me with my business? And that's the technical piece. You don't want to just be stuck in that, we're a technical company, technical solution.
+[00:23:30] Shawn Anderson: and you don't want to fall into the, are you a feature, or are you a platform? I think you have a solid mindset that you want to be a pen testing platform that can help them remediate and recover
+[00:23:42] Shawn Anderson: And make sure that they're not getting taken out by all of this AI gunk that's out there right now, and it's just… it's a bombardment. People are getting… I mean, it's… it's…
+[00:23:51] Shawn Anderson: it's an absolute mess, right now. It's, companies cannot move fast enough, so…
+[00:23:57] Shawn Anderson: But I'm happy to have, we can schedule another call in a month, see where you're at, if you'd like to do that, keep in touch. Amazing. Absolutely. I'll be over in London, here in the middle of October. I don't know next time I'll make it down south to your area, though. Do you get into the U.S. at all?
+[00:24:15] Shoval & Yuval: Yeah, we'll be in the future, like,
+[00:24:17] Shawn Anderson: Okay.
+[00:24:18] Shoval & Yuval: We are kind.
+[00:24:18] Shawn Anderson: I usually, I know a lot of, a lot of your teams and whatnot usually pop into Boston or New York, so…
+[00:24:24] Shoval & Yuval: Yeah.
+[00:24:25] Shawn Anderson: If you know you're coming there, let me know, and I'll make a trip up from the DC area to meet you.
+[00:24:31] Shoval & Yuval: It's amazing.
+[00:24:32] Shawn Anderson: Yeah.
+[00:24:32] Shoval & Yuval: Thank you so much, that's, This is greatly appreciated.
+[00:24:38] Shawn Anderson: Yeah, just follow up with an email, and I'll do what I can to make a few introductions, and if you have any… if you have a PowerPoint or a deck that kind of gives a high-level overview, share it. I'm also happy to sign an NDA for you, so that we can keep the conversations as technical or as deep as you want to go, and then I… if… so it's, you don't have any…
+[00:24:57] Shawn Anderson: issues with talking to me, because I talk to startups every day, so… I'm… Amazing.
+[00:25:03] Shawn Anderson: to being able to help you, so…
+[00:25:04] Shoval & Yuval: Thank you so much.
+[00:25:06] Shawn Anderson: Not at all.
+[00:25:07] Shoval & Yuval: Appreciate it, really.
+[00:25:08] Shawn Anderson: Absolutely. Enjoy the rest of your evening. Thank you so much, and like I said, shoot me an email, and we'll go from there.
+[00:25:15] Shoval & Yuval: Amazing. Thanks. And good luck in your new role!
+[00:25:18] Shawn Anderson: Oh, thank you. Yes, fire hoses on full blast.
+[00:25:22] Shoval & Yuval: Yeah.
+[00:25:22] Shawn Anderson: Learning, learning, learning. You both take care.
+[00:25:25] Shoval & Yuval: Have a good day.
+[00:25:26] Shawn Anderson: You as well. Bye.
+[00:25:27] Shoval & Yuval: Bye.

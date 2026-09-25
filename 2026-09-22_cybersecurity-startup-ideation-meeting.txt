@@ -1,0 +1,309 @@
+Date: 2026-09-22
+Topic: Cybersecurity Startup Ideation Meeting
+Drive File ID: 1WvMk8aQpAP3BegQRL2b_ELP_hi5BOuPR
+Source: google-drive-pdf
+
+[00:00:00] Speaker: Okay.
+[00:00:11] Speaker 1: No, I feel like we're getting closer to each other in my bed. Like... Maybe we need to do something else, maybe we need to get to a different place. But not because we did it, I feel like it's the best thing we've ever done.
+[00:00:26] Shoval: Which - place? - Bank.
+[00:00:28] Speaker 1: Like, maybe because we don't have time, maybe we shouldn't talk about the TESA Maybe we should talk about everything we did until we got to the TESA and we're just gonna stop. I think I should have
+[00:00:40] Shoval: seen him Like that's what we did We talked about the process and the processes He's very... In the end he's the one who asks questions
+[00:01:01] Speaker 1: No, I'm not gonna say anything about him, I feel like I'm an underdog who tries to tell you how much we love each other.
+[00:01:17] Speaker 2: You're gonna give me a second if you don't mind. I'm about to get the elevator. All right, but you can speak to Liana here for a second and head up right back.
+[00:01:30] Speaker: Heather.
+[00:01:30] Speaker 3: Hi, Shavala.
+[00:01:31] Speaker 4: Hey guys, good to see you. Very well. How are you? Yeah?
+[00:01:42] Shoval: Well, we are very happy to meet everyone and, you know, to connect with everyone.
+[00:01:42] Speaker 4: Good. Hi, Liana.
+[00:01:49] Shoval: Nice to meet Liana.
+[00:01:51] Speaker 3: Or,
+[00:01:55] Speaker 1: Aviv. In Tel Aviv.
+[00:01:56] Speaker 3: okay, 'cause I'm in Bucharest. We're on the same time zone, so.
+[00:02:04] Speaker 5: Cool.
+[00:02:04] Shoval: So we are all
+[00:02:04] Speaker 3: Well, uh.
+[00:02:05] Speaker: Leah -.
+[00:02:05] Shoval: around the world right now.
+[00:02:07] Speaker 3: Yeah -, yeah. And I'm in Bucharest to coordinate with the same time zone Thank you.
+[00:02:13] Speaker: guys.
+[00:02:14] Shoval: just what I wanted to say. Like, I don't know how this meeting happened because there is too many times on
+[00:02:22] Speaker 3: There is another
+[00:02:24] Speaker 6: two minutes because I forgot what my room number is. So there's
+[00:02:27] Speaker 3: that.
+[00:02:28] Speaker 4: No problem.
+[00:02:30] Shoval: No worries.
+[00:02:31] Speaker 3: Believe me. I
+[00:02:34] Speaker 2: do have strengths in other areas. This is not one of
+[00:02:38] Speaker 3: them.
+[00:02:40] Speaker 2: 2028. Okay,
+[00:02:43] Shoval: So, Eder is down. What is the US?
+[00:02:47] Speaker 4: No, Nelson is also, he's in Chicago. He's a London born.
+[00:02:55] Shoval: Yeah, yeah, he sounds like a slight accent.
+[00:03:01] Speaker 4: Yeah,
+[00:03:01] Speaker 2: I lost my accident though. God dammit.
+[00:03:04] Speaker: You know, God damn it.
+[00:03:04] Speaker 4: I always I always tease him that I need closed caption to understand him
+[00:03:09] Speaker 3: You're not the only one head there, but it's right
+[00:03:13] Speaker 2: This is ridiculous from you both because the other day I was I was actually texting Leanna and said I think I told you this already 10 times and she said to me The worst part about it is I can't even blame it in your accent because you said it in writing Oh, all right, here we are. I think I found myself. Sorry, I literally just learned it from Indalis and trying to find my place in the good old...
+[00:03:48] Speaker 6: There we go. I'm moving now.
+[00:03:50] Speaker 3: Yeah, we have a pretty busy week basically with quite a lot of events back to back and this point also is taking on the road, as we call it. But it's lovely to meet you guys. I guess Heather, if you could give a bit of context. I was invited a bit last minute, so if you don't mind giving a bit of context and then we can jump into it. You
+[00:04:11] Speaker 4: bet. So, your name, sir. Shaval, and please remind me of your
+[00:04:17] Speaker 1: Yu -val, it's Yuval. You're valid.
+[00:04:20] Speaker 4: Yuval. I knew it rhymed. I just couldn't remember what it was. I'm sorry. They have been involved in two other startups, correct? And at least Shaval has. and and... Those startups were successful and were sold one to Fortinet and one to Pello Alto, I believe. And they are in a, they're in search mode right now to figure out what their next adventure will be. And they are interested in talking to security leaders to get some feedback on, sorry, my big fat cat here,
+[00:05:04] Speaker 1: Very - cute.
+[00:05:05] Speaker 4: to get some feedback from security leaders on the product that they're considering developing next. And came to us for some guidance.
+[00:05:18] Speaker 5: Well, you come to the right place, so they say.
+[00:05:21] Shoval: Amazing. yeah, basically we'd rather give like the right details, but we would love to like have more of an introduction to get to know you, to share more about us.
+[00:05:37] Speaker: on
+[00:05:38] Shoval: Perfect.
+[00:05:38] Speaker: Hang on, that's perfect. Okay, guys, hang on. Don't do that.
+[00:05:45] Shoval: We can hear you a bit.
+[00:05:48] Speaker 1: Feedback. yeah.
+[00:05:54] Speaker 7: the day.
+[00:05:56] Speaker 2: How do you know the Texans like it when I wear my hat and my cowboy boots and my belts. So today I'm fully loaded.
+[00:06:07] Speaker 4: Yes, indeed.
+[00:06:07] Shoval: I love that, I love that.
+[00:06:10] Speaker 2: The only problem is the cowboy boots, apparently they have some sort of metal. So when you go for the security, the beep.
+[00:06:17] Speaker 4: Yes. Now, I don't know if you have like a piece of steel on your bottom.
+[00:06:22] Speaker 2: Yeah, when you take the cowboy, it's difficult. It is a big problem. So you gotta have one of those things that are called the cowboy boot jack.
+[00:06:31] Speaker 4: Yes.
+[00:06:31] Speaker 5: Right.
+[00:06:33] Speaker 2: Anyways, you don't care about all of that. Well,
+[00:06:39] Speaker 4: it suits you.
+[00:06:40] Speaker 2: Yes. And the lovely, the lovely stories of congrats in your next new endeavors.
+[00:06:47] Speaker 6: And you are in the right place. So I'll give you a quick
+[00:06:55] Speaker 2: intro and run down of what we do real quick.
+[00:06:59] Speaker: Amazing.
+[00:07:00] Speaker 2: We'll take it from there if
+[00:07:00] Speaker: I'm gonna take a photo of that, that's okay.
+[00:07:01] Speaker 6: that's okay.
+[00:07:03] Shoval: Of - course, sounds great.
+[00:07:05] Speaker 6: You're too focused on me because of my cowboy hat. Let me know. I'm happy to.
+[00:07:08] Speaker 1: no, that's okay.
+[00:07:10] Speaker 4: No.
+[00:07:11] Shoval: we will have one too.
+[00:07:14] Speaker 2: As we do business in Texas, you too need to definitely get the cowboy cowboy stuff. Absolutely.
+[00:07:22] Speaker 6: In Texas, we've got to look crazy. I know the guys out there that love me. But
+[00:07:27] Speaker 2: from an
+[00:07:29] Speaker 5: introduction standpoint I'm gonna stick it with me
+[00:07:32] Speaker 6: So we can breeze it through all together. Because I can see Liana is wearing a jacket, which means in a Romanian office, she must be sick. Because typically the office is super hot.
+[00:07:43] Speaker 3: No, it's cold right now stop complaining about the office.
+[00:07:47] Speaker 6: Just saying and Liana runs pretty much everything from an experience standpoint for our customers. Heather here was lucky enough that I bamboozled her to start working with us, got her out of the corporate world which I felt it was a waste of time for everybody and she just literally a couple weeks ago right Heather. Joined us and she's gonna be very pivotal into some of the approach that we're taking in the industry as for me. I'm the CEO of the company and been around the block now long enough where I did lose my hair. If I took the hat off you see a bald head as you can tell.
+[00:08:25] Speaker 5: It comes from it.
+[00:08:26] Speaker 2: So,
+[00:08:29] Speaker 3: let's
+[00:08:30] Speaker 5: give you some visibility. This will be much faster. Okay. And bear with me. Typically, I got three screens in my house, which makes it super easier. And today, you're gonna think that who is this guy who really challenged to do certain things. But like I said, I like to stick to what we do that. And that is not what's happening right now. I need this block to move there we go Here we go you guys can see my screen now
+[00:08:59] Speaker 6: brilliant. Okay. And as advisory, this is the investment arm. We'll talk about that in a second, specifically because of what you guys are at at the moment. From this particular perspective, we have an advisory council, which I rely to your point, you've got an idea. I'm sure it's a good idea because you guys are extremely intelligent when you come up with something, it's because you've noticed there's a gap missing, right? Your job, effectively, is to understand how that gap fits into their needs. Nice and simple and that's usually the gap that takes place is what the founders are thinking and what the environment really needs right so we try and Look into that particular pitch that you're about to give Right and truly understand How to really position this to go to market? Okay? We know the experts of it. Okay, what we are the experts of guys is putting in front of hundreds and hundreds and hundreds of different prospects. And we do that in force. Hence why I'm in Dallas today. Tomorrow we're running a dinner in DC. Austin, Texas is on Thursday and it's nonstop all the way to December. Right. But ultimately, we run those through what you're seeing here. which is the events Armour Venice advisory. All right, we'll get that in a second. You don't need this right now, cause ' we literally here, okay? I'm gonna play a quick testimonial. There's a few options. There's marketing, there's CISOs, there's go-to-market. I'm gonna pick the CEO, all right? And the company you obviously know, but it kind of breaks down exactly what we're doing tonight itself. So it's just easy this way.
+[00:10:52] Speaker 7: Hi -, I'm your damn Teghe. I'm the co-founder and CEO of Sayera, the leader in data security. I started working with NS advisory in the earliest days of the company, as I was migrating myself, my family from Israel to the US. Nelson and the team at NS have been extremely valuable partners for me. to automate and learn the executive landscape in the US, to learn how to best communicate with CXOs, CISOs and CIOs in leading organizations, how to articulate the value proposition of our product and our vision into their organizations and into their roles in those organizations, and really become much more valuable partners to our customers through empathy, understanding, and relationship that we've built with them. over the past few years.
+[00:11:46] Speaker 6: Right there. So
+[00:11:48] Speaker 2: your time met me just like this, by the way, on a cowboy hat in Chicago, I need for what the heck? Okay. I was in the initial field sentence. So Carl Matz and he was at the time with no name security with us.
+[00:12:00] Speaker 6: And I've known Carl now for two decades. He's been a great mentor and friend now. And today I'm one of his LPs on his own sort of fund. And so Carl said, said, hey, a guy coming in. Baby, pretty much about to start and can I bring him to the dinner?
+[00:12:21] Speaker 2: I said, it's your dinner, you paying for it? I don't care. I mean, in different ways. And that's how I met your time. I was actually wearing my cowboy gear and we went out clubbing after that because that's
+[00:12:31] Speaker 6: what we do. You know, it's not always about the technology. It's about to see whether you can handle things at 2, 3, 4 in the morning. And yeah, so he went through the process which you guys are about to go through with us. Okay. The first call that we will take is one where we'll essentially call it a brutal truth. It sounds very aggressive. It can be at times. Okay.
+[00:12:56] Speaker: indistinct
+[00:12:58] Speaker 2: Exactly. And that's why I love dealing with you guys as well
+[00:13:03] Speaker 6: in many different ways. We don't have to bullshit. We can just say to each other's faces, know how it feels, coffee, we friends again, off we go. Cause ' we're all aiming for the same end goal which is success, right? I like that about the culture. be that this is be a We recorded, they cannot speak much about the American culture at times. So let's leave it,
+[00:13:22] Speaker 2: let's leave it outside in case I saw someone is listening to me, you know,
+[00:13:27] Speaker 6: the next thing
+[00:13:28] Speaker 5: could get ugly.
+[00:13:30] Speaker 2: But the brutal truth is a phenomenal call
+[00:13:32] Speaker 6: because what I do I bring in
+[00:13:35] Speaker 5: typically,
+[00:13:36] Speaker 6: and more likely than not. who you're going to sit down with is the former global CIO of Wells Fargo. All right, I got to finance because most solutions try to sell to finance. You're not trying to sell to manufacturing so much, right? And Scott Dillon is his name. He was at the chair for 25 years, security reported to him, risk reported to him, but he did it on a large scale, global five company. All right. And you might sit down there and say, would your experiences obviously which you guys have gone through, but most founders are like, but that's too large. Thank you. I'm like, it is for you, but that's not what we're trying to understand the, what we're trying to understand is the product going to scale or not. And if it does, what can we do to augment your message?
+[00:14:20] Shoval: Yeah.
+[00:14:21] Speaker 6: That's all that comes down to it. And then I'll tell them, And don't worry about selling to us. Wells Fargo, right? Wells Fargo as a whole is too large for you, but Wells Fargo owns another 100,000 freaking small companies. You penetrate one of those small companies. That's how you start and then you branch out to the big ones, right? So there's that knowledge that comes from us, but I'll stop there for a second. There's nothing complicated. It sounds simple. Not many people can do it at this level, okay? Our strength is our ability to go to team back two and put together an event for you. for you depending on the ICP that you need. So before you ask, how strong is our network is global? And now our network is as good as in the next one, which suits you, right? simple there is different needs and all these companies got different needs. We need to understand before we even go to business with you guys, we got to really break down the ICP, the persona, levels, employees, revenue, all sorts of different questions that most organizations just don't care about. That's super critical. And that was That would be the phase one. Okay, phase two, if you bypass the brother truth call, which you will one or the other, you can always attend our events, what we call moments. You can always do that. Okay, we're never gonna stop you from doing that. But there's two different levels of working with us. In fact, there's three, but I'm gonna focus in two. The main one is what we call nexus. Not many companies get into that right now. We only got four companies. The fourth one is actually getting into it as we speak. that go through the same process process I explained to you, all right? And what Nexus basically says is, you're not marketers. You're not salespeople. And I don't want you to be salespeople. I want you to be founders. I want you to behave like founders, all right? We're going to provide all that infrastructure for you and more importantly you get my attention.
+[00:16:13] Speaker 2: So you do directly with the founder himself,
+[00:16:17] Speaker 6: which again, enhances everything that you do with an Azure standpoint to an S advisor standpoints. One of our biggest challenges we've had so far in the company is how do you scale Nelson? Well, you don't have accepted that. All right, because I've spent over 20 years building such relationships and I'm extremely good at penetrating someone I don't know and growing there. You don't replace that you don't scale that if what you do you provide infrastructure to support that growth. Right. So that's what Nexus will do in the other piece, every company that we decide to invest in. It's not small check. It is a large check. All right. I know some companies out there and some advisors like two grand, three grand, and that's not what we're here in business for. If we deem you guys as powerful as the brutal truth core will determine skin in the game makes us look much better because it makes us move much faster, right? Very close to you guys and it's a win-win situation. Okay. So we do that. And from a commercial standpoint, we always attached to everything you do, right? PLCs, closing percentages. You both have seen that kind of stuff before. The only thing that I'll say and you see it in writing, we difference. Where some people say, hey, we're gonna schedule a call. That's not good enough. That is far from being good enough. That's a challenge. That's why I usually call it. When we say we're gonna schedule a call, it means we're gonna show up on the call. It means this little device right there that you see the AI is gonna show up on the call as well. It's not a big deal. It means the first five minutes is us saying, "Hey, we're gonna call you today with these guys because we said XYZ and you said there's interest. We don't want no gimmickies, right? Some people show up, but don't know what I'm here for. You've been there before. We don't have none of that crap, okay? As you can tell, I am direct, not just with you. I am with them as well. The entire call is super direct.
+[00:18:10] Speaker 3: So
+[00:18:11] Speaker 2: we stay in touch.
+[00:18:14] Speaker 6: If the first goal was successful, which typically is, by the time we bring it to you, it will be successful. We're going to show up on the second, on the third. In fact, we want to be in every single communication all the way to close one or last. You win, we win, you lose, we both lose So that's what we do.
+[00:18:33] Speaker 5: Two seconds, I promise you.
+[00:18:34] Speaker 6: I'm so sorry. I'm just going to put it into voice. There you go.
+[00:18:40] Speaker 2: So I'll stop there. That was a lot. There will be a summary. Hence why I use the AI. I would love to know more about you guys.
+[00:18:49] Speaker 6: and watch you guys have in mind and any questions by the way to begin with with everything that we say right now would be fantastic.
+[00:18:56] Shoval: Amazing. First of all, that's incredible. Sounds like you build an empire there and that's super impressive. And it sounds like we arrived to the right place. Totally. As you was direct with us, we want to be direct with you. Basically, as we shared before and also as I mentioned that, we would love of course to tell about us more, but we are on the ideation stage at the moment. So, we are exploring new field and new gaps in the cybersecurity company. So, we did not even raise fund yet. So, it's a very, very early stage. I feel like it's a good connection, even though it's an early stage, because from those connections, we can build a strong relationship and strong collaboration. So, I believe it's, you know, it's good anyway, but we just want to put it to put this disclaimer because we want to be honest and direct as you was.
+[00:20:04] Speaker 6: Thank you, Yuval. I love accompanied during the ideation phase.
+[00:20:08] Shoval: Amazing.
+[00:20:09] Speaker 6: Our most best successes is ideation because now we can really work together.
+[00:20:15] Speaker 5: Okay.
+[00:20:16] Speaker 6: If you show up at seed, it means you got bad habits already.
+[00:20:21] Speaker 2: You can fix those bad habits too quickly. So we spend about six months and I kid you know,
+[00:20:26] Speaker 6: like today I'm ripping every hair that I got left on my bald heads, right because we have a process after an event as an example not to still watch was saying out there by like examples live ones. We have a process which is if we are in support after the event okay we even give you a PDF or step by step and we do one thing we always say
+[00:20:48] Speaker 2: do not reach out to the audience without seeing us ever 9 out of 10
+[00:20:56] Speaker 5: people do.
+[00:20:56] Speaker: LAUGHS
+[00:20:57] Shoval: Really? We're fast learners. You know, what people advise us, we can learn fast.
+[00:20:59] Speaker 2: And it's a good one thing.
+[00:21:06] Speaker 3: And it kills me.
+[00:21:07] Speaker 5: It hurts me because we just wasted now two weeks. Now they're coming to us and saying,
+[00:21:12] Speaker 2: we're not seeing any results.
+[00:21:13] Speaker 5: Of course you're not.
+[00:21:15] Speaker 6: Said I haven't seen an email.
+[00:21:16] Speaker 2: Oh, we didn't see. See, why not?
+[00:21:18] Speaker 5: What does he say on point number three?
+[00:21:21] Speaker 2: You don't own the relationship yet.
+[00:21:23] Speaker 5: Our job is to show you get closer.
+[00:21:26] Speaker 2: So why should I have you reach out
+[00:21:28] Speaker 5: if I can't have the person that got that relationship
+[00:21:30] Speaker 6: at the event reach out directly? Anyways,
+[00:21:34] Speaker 2: please carry on. Michael, about you right now,
+[00:21:37] Shoval: let's share a bit more about us and what we're doing. I did not fully understand it, like the brutal the truth is gonna happen right now if yes we are ready we can share more about our direction
+[00:21:50] Speaker: You won't.
+[00:21:52] Shoval: but first of all let's talk about us a little bit so I'm chivalre and you know I'm in cybersecurity for the past 10 years a bit more started in 8,200 in the cyber operations center it's 8200 I'll give it a word I give a word about that it's basically the intelligence unit of the Israeli army yes you already know that yeah so in the specific I
+[00:22:25] Speaker 6: I spent a lot of time in Tel Aviv and I was a bit drunk on the Israeli whiskey, which no one told me how strong it was, but...
+[00:22:36] Shoval: We're not good at that
+[00:22:37] Speaker 4: Problem.
+[00:22:38] Speaker 2: That's the problem. That's why I was a bit drunk.
+[00:22:41] Shoval: Yeah, I'm surprised you're here that you specifically drank whiskey here. We have like a rock, you know rock It's
+[00:22:49] Speaker 2: Absolutely. Every founder always brings me a bottle, so I got about 10 of those in my house and I like that one a lot more clear.
+[00:22:56] Shoval: Amazing, yeah, we're good at that, you know Okay, so I Started there basically we both there actually met you while we both served there at the infrastructure department Basically all the world of both DevOps engineer and security engineers We had to build and maintain those complex infrastructure, but in a very secure way because they were responsible for very sensitive operations. I served for five and a half years, released as a captain. And after that started my journey in civil life. So I started that, you know, after my service, I realized that I love problem solving. I love to be close to customers. I love to be close to the business. So I became a product manager. I started at a company called Perception Point, a and all the detection capabilities that were based on AI and machine learning, basically as everyone just knew in the to GPD I already built agents and not really new to call them that way but that's what I did. It was acquired by Fortinet. Later on I moved to another cybersecurity company, a co-security amazing company, great customers, amazing journey. This company was acquired as well by Paulo Alto. Basically that was designed to start our journey together. I'm an old friend from our military service and as I'm more of a customer picker. of people Yuval is the technical genius. Like everything he can explain I can explain less better so I let him share his journey.
+[00:24:56] Speaker 1: You know, she didn't tell you that she's a genius product manager. She's the problem chaser and I'm the solutions guy. Actually we started together at 80 to 100 unit and there I started at Chauval's team. I was one of the developers there and there we developed two great platforms that one of them still operating until now for more than seven years. One of the platforms was for auto-remediating incidents over the
+[00:25:28] Speaker 3: Mm-hmm.
+[00:25:29] Speaker 1: the network and all the infrastructure we had. We have there in place. After this technical position I promoted and I became a team lead and a few years later I became the head of the DevOps and infrastructure department which was a really challenging position. I led 40 engineers. across five teams. We managed and were responsible for all the large and complex networks and secured networks we had in place for networks for operations rooms, networks for thousands of users and hundreds of applications. We built and maintained production environments and petabytes of data. And after this long journey in 8200, they finished the military service and I searched for the next challenge in my life. And for me, it was managing and leading this scale of organization, but outside the military. So I joined Paragon, which is an Israeli cyber company. There I was the director of DevOps and SRE, led 25 engineers. I had two areas of responsibilities there. One of them was to build and maintain the security and the infrastructure for the product itself. Paragons, customers, they have our product in their sites and we had to build it very securely because it's a B2G company And we had to sell it to agencies and governments which have really secured environments and the other area of responsibilities was Paragon's Inher... infrastructure. Close to what I did in the Army we built networks, AI infrastructure and production environments for Paragon and we worked very close to the security teams to apply all the security best practices for the infrastructure and then I got the Chauval's phone call and I answered the air and I told her yeah I easy, super easy. Like this. Actually I will quit the job and go to the adventure with you.
+[00:27:44] Speaker: Super
+[00:27:46] Speaker 1: it's an old dream really. I think yesterday we found the whatsapp message that we're talking about this dream since 2020. So now it's our time to the great journey we're going to.
+[00:28:00] Speaker 2: I love it. I love it. I love it. I love it. I love it. You see Heather? There's no such thing as the right time to do such a crazy moment. You just All right, when you feel it you just go for it, which is incredible
+[00:28:12] Speaker 6: That's for the background, right? Really, uh, I always makes us feel so small doesn't it when you think about it the uh, yeah
+[00:28:21] Speaker 2: I go into this industry. I used to work in the government in the uk
+[00:28:26] Speaker: Cool.
+[00:28:27] Speaker 2: So I go into this industry because the H.I.J.A director of Today Are Competitors, if you want to So I'll go into this industry because the HAA director of today are
+[00:28:31] Speaker 6: call it that, because they're also running events, although we got three different arms doing different things, but he mis-styled and he came to me.
+[00:28:41] Speaker 2: So I picked up the film. That's how I So this is regular right and I was like what the heck in over two decades and here I am and sometimes you just never know, right? You just need that mistake somewhere or that knock knock or you know people people live their
+[00:29:01] Speaker 6: entire lives and then when they on their deathbeds they're like I never got the opportunity well you never did see the opportunity right?
+[00:29:07] Speaker 2: Opportunities arise every single moment is whether you want
+[00:29:11] Speaker 6: to take the risk to accept that this is an opportunity right? So that's great stuff so uh
+[00:29:18] Speaker 5: So,
+[00:29:21] Speaker 3: this is like the number one punch
+[00:29:21] Speaker 2: and then there's the hammer. That's the way I'm looking at you two already, okay?
+[00:29:34] Speaker 1: Nice.
+[00:29:34] Speaker 2: And I'm already having dreams in all to make this work, right?
+[00:29:41] Speaker 6: Which is incredible. And I like to set up things in pretty much the way I broke it down to you.
+[00:29:47] Speaker 2: Punch, hammer, nice and simple, right?
+[00:29:49] Speaker 6: As an example, we'll never have you both seeing a second call with director reports, engineers, technical people, right? I like to always make it look like although you are a startup, we should never act like it, all right? Because If they really feel like it's always a challenge, you know. you're acting like a startup, it's a pushback. I've seen it time again. So we already have the knowledge to bypass all of that. Our connections and our ability to connect is not good enough. So we need to act in ways of always ensuring that every step we take is towards their own. There are also... of psychology of accepting you as a thought leader, not as a startup vendor. And once we bypass that everything else becomes super easy, right?
+[00:30:37] Speaker 2: I want to learn just a bit more about roughly what's the
+[00:30:40] Speaker 6: sort of idea that you're thinking of. Everything that we always do with me.
+[00:30:45] Speaker 5: I can't speak for these
+[00:30:46] Speaker 6: two, but since they are with me right now, but it's always in what I call a verbal NDA, okay? integrity and security. So, the secrecy is what kept me with great feedback like the peoples of your time, but eventually we're going to have to sign some papers so we both...
+[00:31:03] Shoval: Yeah.
+[00:31:04] Speaker 6: you know, because I don't want you to also have a conversation about how I'm set up to other people that don't have a clue what to do and they claim they can't. So, but I would love to learn a bit
+[00:31:12] Speaker 2: more just from the
+[00:31:14] Speaker 6: high level. Are you truly just looking for what's the next idea or do
+[00:31:21] Speaker 2: do you roughly have
+[00:31:22] Speaker 6: some sort of skeleton and you're just looking for something? So DNA to make a cabinet life.
+[00:31:28] Shoval: Amazing -. So that's a great question. I'll share a bit about our journey and where we are today because I think we're at a point where we're in between those two points. Basically we started our research in understanding that AI changed the whole ecosystem. We saw it. a lot of product for AI security and like organization are adopting AI and products to secure this AI from inside organization but you know we have to secure infrastructures in many years so we automatically thought about the fact that attackers will start to use AI and as we dive into that we see so and security leaders, we realize that the our first thought that attacks became much faster with easier to execute with large scale and cheaper Organization need to understand how to adapt and adjust their security stock. So First we thought about the fundamental layers We as infrastructure people thought that you know app to make sure your organization is secure you have to go to to the basics and secure your network, for example, that was our first direction. I think that was our first goal, Heather. And basically, I'll be honest and say that we got no sense of urgency from CISO around this area. So we took a step back and we started to talk with CISO about the all security stuff. focusing on the detection part.
+[00:33:23] Speaker: Bye.
+[00:33:24] Shoval: But we did a bit of a shift because the thing that just coming back to us from the conversation is that their detection stock is pretty well not the best but the most challenging part is what happened after the security signal. Like they have a lot of product pentesting detection tools that raising signals and after that they described very manual human based and they can adjust those processes into the machine speed of the new attacks. So basically that's the area we're exploring right now we're understanding that organization are those operations cost a lot to the organization. Usually they have more than one team that operate all their security operation. If it's sock team and remediation processes that cross multiple teams, threat hunting, etc. And we are trying to finalize the area here that we can go through. I talked a lot.
+[00:34:41] Speaker 6: Now you're good. You grow my attention. Two things. First, the sample size of who you spoke to. Look, this was a very negative. Nice and simple. Remember security wasn't a thing 10 years ago. Just didn't exist really. And until this point, security is still seen as a very negative environment. It's not sexy, is it, really? Oh, I need money. for what to protect from what this, okay? It's just like crazy. So when you, when you, and I've seen this before, right? Which is what's the sample size? I mean, it says, did you speak, which type of situation did you speak, right? This, this is super important, because if you speak to the wrong sample size, they're gonna push back. Number one, because you're asking them to admit to something they'll never admit, which is they have a shit showing house. And if they admit that they have a shit showing house, and this is why I rely on my own sort of counsel, because they don't care about that. because they know they are doing something for Nelson so that Nelson can then improve the community. Nice and simple. But the point that you just touched on, it's real. That's a real problem. This is where the conversation becomes real. There's too much noise is the word that you just to put it all together. And that's weak and weak out in conversations in a desperate needs, which is I have too many tools. I don't have enough people to even, I have zero clue. don't even ask me about my environment.
+[00:36:18] Shoval: Yeah.
+[00:36:19] Speaker 6: We just finished the POC right now with a Fortune 59 company and I started up and I can't tell you the names. Okay. And the director managing the PLC as we go through the calls every Friday.
+[00:36:37] Speaker 5: He hasn't even looked at it.
+[00:36:39] Speaker 2: So by the time we present what we found on Friday,
+[00:36:41] Speaker 5: you are so shocked.
+[00:36:42] Speaker 2: He's like, oh my God, this is the best ever. What's that telling you? They don't have the resources, the time, the budget
+[00:36:48] Speaker 5: to be dealing with it.
+[00:36:49] Speaker 6: So to your point, there's a lot of noise out there, which they are begging for someone to come in and say, my tool gets rid of that.
+[00:36:59] Shoval: Yeah.
+[00:37:00] Speaker 2: And so I like what I'm hearing so far,
+[00:37:01] Speaker 6: but I do continue. You don't speak too much. I was listening, which was a, you kept me quiet, which is something difficult.
+[00:37:07] Speaker 5: That's these two.
+[00:37:08] Shoval: Amazing. So I want to point to talk a bit about your point about the sample size, because that's a great point. Like, you know, as we started to talk with more and more and more CISOs over 50, we realized that there is different types of CISOs, different roles in like small companies. It's look like one thing in big companies, it's look different. There is a structure, different structure. So that's a very good point. And, you know, as we narrowing down to the specific ICP we want to talk, we are getting to the right people. I can see it. So, uh, that's mean that our research was good. So I glad for that. Basically, I shared like, uh, do you want to like to share the whole vision maybe about, uh, like, gender employees?
+[00:38:00] Speaker 1: So, uh,
+[00:38:00] Speaker 2: Before you do that real quick, sorry.
+[00:38:04] Speaker 1: No problem.
+[00:38:05] Speaker 2: So I'm gonna, I'm gonna let you into my mind real quick. All right.
+[00:38:08] Speaker 6: So, so go with me on this a little second. Right. So I'm just going to play a little game in here. Okay. I like games.
+[00:38:16] Speaker 2: So who does this CISO typical report to?
+[00:38:23] Shoval: sometime it's the CEO, but usually for the CIO. So as far as we know, uh, usually it's for the CIO,
+[00:38:32] Speaker 6: Yeah, yeah, even when the report to the CEO, who does the CEO really spend most time with CLL. simple. Okay. So all of a sudden we've just eliminated a lot of noise ourselves. And
+[00:38:44] Speaker 3: Right.
+[00:38:45] Speaker 2: The system function, whether they like it or not,
+[00:38:48] Speaker 6: is to enable the CIO to move fast. So they're getting information and instruction orders, however you want to call it
+[00:38:56] Speaker 5: from the CIO.
+[00:38:58] Speaker 2: So when it comes down to a sample size, I bypass the system altogether, because I'm about to go
+[00:39:03] Speaker 6: to the CIO to hear what you have to say.
+[00:39:06] Speaker 2: And whatever is about to tell you is how you're going
+[00:39:08] Speaker 5: going to build your product. Because ultimately that's what the scissors to support.
+[00:39:14] Speaker 6: And that's why we move so fast with companies. Right. If I go directly to a bunch of scissors, they're going to eat me alive with their negativity and I hate it. It's those questions. Now the CIO is thinking, okay, hang on one second. By doing that, you're never meant to go a lot faster, which means I can do XYZ, which returns ROI in these areas. That's how the CIO is my thing.
+[00:39:37] Speaker 2: Right? So ultimately, when I was on sales, I'm not a sales guy, by the way, but when I was on the
+[00:39:44] Speaker 6: software sales sites for startup which we did patch management and uh I've been privileged.
+[00:39:51] Speaker 2: Eventually, I got tired of it
+[00:39:53] Speaker 5: and I had to go back to my own community
+[00:39:55] Speaker 6: and say, "Hey, I'm not getting good traction or " what's going on."
+[00:39:59] Speaker 5: And that's when the CIO says,
+[00:40:00] Speaker 6: Whoa ", you wasn't your freaking timer, you know? You " haven't spoken to me yet. I "'ll teach you how to say something here where " there's nothing to see so can do about it." But to sit down and say, "How do I get this in front?" Right, specifically because if you can convince the CIO
+[00:40:18] Speaker 5: that you'll see.
+[00:40:19] Speaker 6: Security too also can enable his IT department, which is a few business.
+[00:40:25] Speaker 2: Now you're not only touching security budget,
+[00:40:28] Speaker 6: which is very limited. You've opened up the big diamond, which is the IT budget. Right, anyways, I just wanted to put it out there because going through a few like these, took them the different routes. I've got examples with permission that I'm gonna show it to you of some companies that hired CIOs, the security companies, but they hired CIOs through me as their advisors, but my advisors, when I give you an advisor, they better show up in your freaking phone calls that I put together. That's an advisor to me. I don't need more ideas. Okay, they gotta be able to show up to the call to ensure that they can present the way they see it to their peers on your behalf. Hence, while said, "The Lord is the most powerful, the most powerful, the most powerful, the most powerful."
+[00:41:14] Speaker 3: that don't need you as salespeople,
+[00:41:15] Speaker 6: right? We'll find salespeople around you. You were just there to talk about your tech. And now it fits in. Anyways, once I get the permission, I'll show you that, all right? Because it's incredible. We've had like about 40 calls
+[00:41:28] Speaker 2: where the founders lost the call.
+[00:41:30] Speaker 5: They completely lost it
+[00:41:31] Speaker 6: because the scissors not picking it up until the advisor jumped in and said, Let " me re-explain this to you real quick." And they all go to PLCs. So,
+[00:41:39] Speaker: Amazing.
+[00:41:41] Speaker 6: Yuvav, go ahead. Sorry, I wanted to.
+[00:41:43] Speaker 1: So as Shovale mentioned, we're looking at the post detection and post security signal area. And we could realize that this process for for organizations is a really complicated process because it has in it the verification, the planning for the remediation, the remediation itself, and the post remediation verification that you want to do, the fix is really fixed. and... And we asked the scissors about about this process. And some of them, they gave us the example of of their favorite Pantester that came to Pantest their environment. And after the Pantest, they got a list of 200s and patching that they patches that they have to do and misconfigurations that they have to fix and they told us we want to handle the machine speed attacks but we can't do it if we have a list of 200s patches that we need to do and it's It's going to be done in three months or four months. We're gonna need to do it at a minute. speed also to protect ourselves and tighten our perimeter. So what our vision is about, it's about a digital, a gigantic security employee inside the organization for all the post signal area. Meaning, if you could hear about companies that already do it, there are companies like Corma or Alpine, they are playing in this area, kind of. And we believe that with the new AI abilities and all the big data that AI can now work with, we can take the business context, we can take the 200 list of patches, we can assess the impact. for the patching process for your organization and we can help the organization handle at the machine speed their mediations they need to do to defend themselves from the AI attacks.
+[00:44:08] Speaker 5: Interesting.
+[00:44:11] Speaker 6: Okay. Okay. This is good. I'm gonna steal five more minutes. I know we're on top of it, but unless you guys got something to do, but I just want to steal a quick five minutes, I'm gonna go ahead and get that call out to the I'm gonna bring you in with two CILs and one CISO. She is a beast. Absolutely. All right. Nicole Ford's five times CISO. She's not the VP CSO at Microsoft. A very good friend of mine, but the reason why I just want to tackle, she's, she doesn't see things like most security people do. She acts more like a CIO, which is brilliant.
+[00:44:57] Speaker 5: What you just mentioned, that was pretty interesting.
+[00:45:01] Speaker 6: The word data, and you never apply data as I want to secure your data. You see, I love that because when you say you want to secure your data, it means you want to prevent me from using my data and data is king. So I like that sentencing right there and you should stick to it as we walk into the messaging which is I want to enable your data, right? Most people said they want to secure your data and I'm like, oh God, here we go again and that just means preventing data from moving.
+[00:45:27] Speaker 2: That's what that really means.
+[00:45:29] Speaker 6: So which is brilliant.
+[00:45:31] Speaker 2: The name of the company you have right now, is that the one you're sticking with?
+[00:45:35] Speaker 1: That is a temporary one.
+[00:45:38] Speaker 2: Don't change it, it's my daughter's name.
+[00:45:41] Speaker: Really?
+[00:45:43] Shoval: Oh my God.
+[00:45:44] Speaker 3: Skyla.
+[00:45:45] Shoval: Well, now we have to keep it, you know.
+[00:45:45] Speaker 3: Don't
+[00:45:47] Speaker 2: change it. I was looking, I was like, you know what? There's a reason why I like it. Right there, Skyla and without the R, don't you say Skyla as the American? She'll tell you off. All right.
+[00:46:01] Speaker 6: Bye.
+[00:46:01] Speaker 2: My name is Doc Skylar.
+[00:46:07] Shoval: Now I'm sure.
+[00:46:09] Speaker 2: The truth be told, I was going to skip this call, but then I saw it and I saw the name and was like, there's interest there. Okay. Which is brilliant. Which is brilliant. Okay.
+[00:46:20] Speaker 3: All right.
+[00:46:26] Speaker 2: I'm going to get this call ideally for next. You guys are in Tel Aviv right now,
+[00:46:30] Speaker 6: which means there's a bunch of vacations going on in there as well. Are there any restrictions?
+[00:46:36] Speaker 2: That's my luck.
+[00:46:38] Shoval: life.
+[00:46:38] Speaker 2: So how did you bump into these two individuals, Heather?
+[00:46:47] Speaker 4: How did we? LinkedIn -.
+[00:46:51] Shoval: Yeah, basically, you know, we had like a very good research and I myself, I very, I care about my digital awareness and brand. So I love to hear to read like what other CSOs and security leaders are showing there, both of us. And that's really important to us. So we are kind of reaching out to so people will love to hear like what they... How did you get involved and how did you engage? So yeah, I hunted Heather in my research.
+[00:47:30] Speaker 6: I - like it. I like it indeed. I'm gonna...
+[00:47:36] Speaker 3: I
+[00:47:37] Speaker 6: do love it. Yes, it's crazy. I run things, can be at times right in many different ways. And then you got the huge connection. Before I get to the philosophical here, this is good. You're gonna get an email from Marlinda. That's my assistant. She's not gonna add the ad exec. She -'s gonna get that times. It's fortunate we go with their schedules. They don't want our schedule. Okay. I'm gonna try and make that as fast as possible. I'm gonna do 60 minutes by point for 90. All right. A few bits here of advice. They don't care about your backgrounds, not for this call. They'll give the background after. They're gonna come in, they're gonna introduce They want to hear the question, challenge, whatever it is. If anything, just say the idea and they're gonna challenge you instead.
+[00:48:38] Shoval: Yeah.
+[00:48:39] Speaker 6: All right, it will be a great first step. And then let's take it from there, but I'm already enjoying this.
+[00:48:49] Shoval: Us too. Yeah.
+[00:48:49] Speaker 4: Yeah,
+[00:48:51] Shoval: We super appreciate the time and the connection.
+[00:48:51] Speaker 4: Yeah.
+[00:48:55] Shoval: Like we had like a great conversation.
+[00:49:01] Speaker 6: Which is absolutely something.
+[00:49:05] Speaker 4: I'm sorry.
+[00:49:06] Speaker 6: I'm gonna, you know what I'm gonna do for your Christmas gift? I'm gonna give you the Amazon Gateway Hero stuff that I told you several times to get. That is a good thing to have in the house. I have eight of those. It means the internet never drops.
+[00:49:24] Speaker 4: Okay. I'll take it. My house is too old and he said my house is ancient. Is that the word you use? It's ancient.
+[00:49:37] Speaker 2: The British came out of me. It is very ancient. And we work with the internet, which means I don't want any death spots in my house. Wherever I go, even if I'm stuck in the garage, it's very freaking perform, right? That is important. Two things as well, guys. I chances are I will be in Tel Aviv in November.
+[00:49:59] Speaker 6: I run November 11th of 12 for about four nights, or five nights, providing that the everything is still allowing me to get in and get out. All right, which will be great. If that changes, chances are as well as we developed these discussions. I got a good feeling about it. I might just ask you to meet me somewhere in our Romanian office, which is, I call it middle ground, but it's not middle ground cause ' it's closer to you than me. It's two hours from you and 10 hours from me. So that could work. But yeah, this is brilliant. The one thing I need is your numbers please. because what I would like to do is transfer this to a WhatsApp group, otherwise you're never gonna catch me.
+[00:50:43] Speaker: So I'll
+[00:50:45] Shoval: of course, afterwards.
+[00:50:47] Speaker 6: And at least the communication can fall fast on WhatsApp. If we need to put stuff into email, we put stuff into the email.
+[00:50:53] Shoval: Amazing -. - No problem.
+[00:50:56] Speaker 6: Lovely. Any other questions from either of you?
+[00:50:59] Shoval: No -, thank you. - Just to
+[00:51:00] Speaker 1: thank you. And we really appreciate your time. It was a great conversation for us.
+[00:51:05] Speaker 3: Oh, my time is yours.
+[00:51:06] Speaker 6: My time is yours. That's my existence. I mean, different ways, but never mind that.
+[00:51:13] Speaker 2: Vienna, Heather, we all good?
+[00:51:16] Speaker 4: We're good. It was really good to see you both again. Thank you so much for joining the call.
+[00:51:21] Shoval: Eter, thank you for the connection. We had a great click from the beginning.
+[00:51:27] Speaker 1: And it's really good to see you too.
+[00:51:28] Speaker 2: Good news, guys.
+[00:51:29] Speaker 4: Absolutely.
+[00:51:30] Speaker 2: The last company I met with a cowboy had became a monster unicorn.
+[00:51:33] Speaker 5: So.
+[00:51:42] Speaker 2: Thank you so much.
+[00:51:43] Speaker 4: All right. Thanks, guys.
+[00:51:45] Speaker 3: Bye, guys. Bye.
+[00:51:45] Shoval: My guys, great day. Bye.

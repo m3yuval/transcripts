@@ -1,0 +1,181 @@
+Date: 2026-09-18
+Topic: Security Leadership Discovery - John Murphy
+Meeting UUID: 30F1E756-BC05-45D4-BA06-3A601AAD9BF7
+Source: transcript
+Entries: 175
+
+[00:00:00] Shoval Abudraham: Starting, and then I'll share a bit more about myself. So, as I mentioned, I started in,
+[00:00:08] Shoval Abudraham: 8,200, I served at the department, the DevOps and infrastructure department there, where basically I was responsible for
+[00:00:18] Shoval Abudraham: Build and maintain the infrastructure, but also in a very secure way, you know, because those was, super sensitive infrastructures, so…
+[00:00:29] Shoval Abudraham: hold the role both of DevOps Engineer and Security Engineer. I served for five and a half years, and then released, and did a bit of a shift for, product management roles, because I…
+[00:00:41] Shoval Abudraham: loved to deal… to hear pains, and to fix pains, and to solve pains, so I always want to be more close to customers and to the business side.
+[00:00:53] Shoval Abudraham: So, I was a product manager, I started at a company called Perception Point, which is a cybersecurity company, led there, all the detection capabilities that were based on
+[00:01:04] Shoval Abudraham: machine learning, LLMs, agents, like, we built agents back then, but did not know to call them that way. It was super early. This company was acquired by Fortinet.
+[00:01:19] Shoval Abudraham: And basically, after that, I moved to another cybersecurity company. Koi Security was her name, was it named?
+[00:01:28] Shoval Abudraham: basically also their work a lot with AI, and…
+[00:01:32] Shoval Abudraham: did a lot of, it was in the field of endpoint security. Great customers, great, great, great journey, great founders. Basically, this company was acquired also by Palo Alto.
+[00:01:45] Shoval Abudraham: And that was, you know, my sign to start my own journey, so basically right now I'm working with my co-founder, Yuval, which is also
+[00:01:53] Shoval Abudraham: He actually started the DevOps and infrastructure department, and
+[00:02:01] Shoval Abudraham: stayed at those fields, like, he became a team leader there, and then a group manager there, and then after he's finished his service, he was a director at cybersecurity company called Paragon, led their old
+[00:02:19] Shoval Abudraham: DevOps and SRE area, led…
+[00:02:23] Shoval Abudraham: a lot of people, like, I think back there, 25, in the, in the military service, 30 people, 3 teams.
+[00:02:32] Shoval Abudraham: did a lot of crazy things that he can elaborate a bit more than I am, because those… those are technical crazy stuff. And right now, we are exploring our,
+[00:02:46] Shoval Abudraham: the cyber field to build our business. Before we'll dive in into what we're exploring, I would love to hear about you.
+[00:02:55] John Murphy: Okay, so… I've had over 10 years of experience in, incident response. You can hear me fine, right?
+[00:03:04] Shoval Abudraham: Yeah, yeah, I agree.
+[00:03:05] John Murphy: Okay, great. So, I've had over 10 years of experience in incident response, and I pivoted from that field
+[00:03:11] John Murphy: from being a security administrator, most of what I did before that was all related to, United States Marine Corps and the Navy, okay? So, a lot of… my foundations start with them, okay? And what I…
+[00:03:31] John Murphy: when I… I pivoted into, incident response, I worked with the Marines, and it was a contract with Northrop Grumman, and they really gave me a love for that, for that, and a passion for security operations and understanding everything, and how to improve it, and how to… how to build.
+[00:03:50] John Murphy: So… and how to look for… you know, back then, it was more about, responding to incidents, understanding, the… understanding, all of the,
+[00:04:02] John Murphy: you know, who to go to, how to write things up, how to, you know, escalate these things. Moving from there, I went to ReliaQuest.
+[00:04:13] John Murphy: ReliaQuest, is an MSSP. Back then, I was, working at their Las Vegas office, and that was, like, in 2015, I think it was around 2015.
+[00:04:26] John Murphy: So… and, there was only 5 of us there. So, I was, one of the managers, I was a… I was a manager of that. We were just doing swing shift stuff. Now, if you go and you hear about
+[00:04:39] John Murphy: you hear about ReliaQuest nowadays, they are a lot larger, and I can tell you where their humble beginnings were in Las Vegas. I stayed there for a little bit until I was booed into taking another position that kind of moved me from the managed security provider space
+[00:04:58] John Murphy: into… back into, kind of, incident response, so that was with Starwood. Starwood, then…
+[00:05:05] John Murphy: was acquired by Marriott. My entire team left, because they were like, hey, we're out of here. And then I was working with the Marriott security team to merge our program, so there was a lot of similarities and overlap, from there. And then I went, from there to IBM. A lot of the development that I… a lot of the… there's… that's… I… I was there for 5 years.
+[00:05:29] John Murphy: Did quite a bit of, of maturing of the organization, and, and maturing of the processes when it came to, incident response. And also worked on things like
+[00:05:44] John Murphy: tuning, really honing in on our detections, right? So…
+[00:05:49] John Murphy: making sure that, you know, false positives were, not just closed by our analysts and, you know, bumping up our numbers, but giving, you know, we wanted to make, high-fidelity detections, right? So, so I spearheaded a few efforts to make sure
+[00:06:07] John Murphy: That, that we were getting, that our, that our, our rules were accurate, we were tuning them properly. So this meant going in, looking at the command lines, making sure that, that, if there was an exception that we weren't flagging for something.
+[00:06:23] John Murphy: Adding, systems to groups, things like that. Just a lot of, a lot of that. So, as well as being involved with, deeper level investigations. Going from there to McDonald's, McDonald's was, a very much a similar, type of a position, but, one of the things that.
+[00:06:43] John Murphy: I was, one of my achievements there was improving the… so, globally.
+[00:06:51] John Murphy: we have, at McDonald's, we had managers, security managers all over to handle all these things, so, but their incident response processes fell, fell under, fell under us.
+[00:07:04] John Murphy: And in order to… and they would have to escalate things to us, we were testing their NIST cybersecurity maturity with the tabletops, making sure that, you know.
+[00:07:16] John Murphy: that they knew when to escalate things to us, or when they could handle things on their own. So, improved the maturity scores, for 20 of the 50 markets. So that, you know, and that was by working with them, making sure that they understood, what it was that they were doing. So,
+[00:07:35] John Murphy: And so there was, a lot of…
+[00:07:38] John Murphy: Again, there was also a lot of the detection engineering I did there as well, so detection engineering in terms of, working with Google SecOps and, and tuning, and we had, like, a split tenant situation, so we were also making sure that, we had a contractor, Accenture.
+[00:07:58] John Murphy: They were taking care of, certain things, so they wanted to make sure that Those alerts did not…
+[00:08:04] John Murphy: We were sharing the tenants, so it was a very interesting situation. However, we were able to fix that. Also dealt with some IAM, and permissions issues there as well, so making sure that, the roles were properly applied, through Google SecOps and Google GCP, right? So,
+[00:08:27] John Murphy: Moving on from there, we had, I went to Kirkland and Ellis as a con- on a contract, also did detection engineering work there, and…
+[00:08:37] John Murphy: Really, I worked on a few findings from their audit team.
+[00:08:44] John Murphy: Saying, hey, we need to build an intake process to, in order to, in order to properly, onboard
+[00:08:52] John Murphy: certain security appliances into our SIMS or our solution. So, there was a… there was a lot of that, and then also, you know, doing the same type of threat hunting that I've been doing before, and, and then rule optimization. So that's pretty much my experience in a nutshell.
+[00:09:12] Shoval Abudraham: amazing, amazing, you know? I reached out for a reason, and to hear it just, made me even more realize that I reached to the right people, because I'm sure there will be a lot of good insights about, you will have a lot of good insights about our,
+[00:09:30] Shoval Abudraham: Exploration area.
+[00:09:32] Shoval Abudraham: Cool, so I think I will… I will dive into that.
+[00:09:38] Shoval Abudraham: You know, you know you're faced with a lot of attacks, and you probably…
+[00:09:43] Shoval Abudraham: attacks, maybe it's a big word, incidents, security signals, but you know that AI changed the old…
+[00:09:52] Shoval Abudraham: The whole thing right now, not only in terms of how the organization works, but also in terms of how attacks,
+[00:10:00] Shoval Abudraham: look like right now. The scale is much greater, the speed is much faster, it's also sometimes unpredictable, because agents can be very innovative and creative in the way they work.
+[00:10:15] Shoval Abudraham: And that's exactly the starting point
+[00:10:18] Shoval Abudraham: we, we started our research, because we tried to realize how this will… will change the processes and security stack of organizations. And one thing that stood up
+[00:10:33] Shoval Abudraham: the most for us, from security leaders' and CISO's feedback, is that
+[00:10:40] Shoval Abudraham: The attacks will be… will be… came… are already a machine speed attacks, and the processes on the organization side around what happened after a signal, created, centered, is… is not…
+[00:10:57] Shoval Abudraham: probably won't face this speed. They need to…
+[00:11:02] Shoval Abudraham: To adjust their processes and tools to face this specific
+[00:11:08] Shoval Abudraham: these machine speed attacks. So first, I would love to know what you think about that. Do you agree with that at all?
+[00:11:16] John Murphy: Oh, I have been, this has been on my own internal radar for a while, since, since I understood this, so I agree with, that, for sure. As, as, you know, Agentic,
+[00:11:32] John Murphy: AI, which almost feels like I'm saying the same thing twice, but Agentic AI processes… we're not even looking in the right areas in a lot of places, a lot of organizations are not looking in the correct areas. So, and the current tool sets, everyone has thrown AI into it to be an assistant
+[00:11:53] John Murphy: Right? So, let's take Google SecOps that uses Gemini, because it's Google Gemini, right? So, it's in there. However, it is not, like… we're not looking for those things. What are organizations doing? They're using the CASB solutions to try to block things, right? They're saying, like, hey, let's block… let's block these AI things. That's not going to stop it.
+[00:12:14] John Murphy: And so I think that, the processes here, and the tools
+[00:12:20] John Murphy: there might be some adjustment we can do to some things, right? But what if, you know, exfiltration happens to… like, I can set up an AI agent, I can set up… I can set up a… I can set up a chat agent that…
+[00:12:35] John Murphy: that looks like something else, and you can go… and people can unwittingly go there, and they can dump information, and it will give them the right answers, but in the meantime, I'm farming information that, you know, I mean, this is, like,
+[00:12:49] John Murphy: this could… I mean, that could make it look like a spoofing attack, right? Like, it's… but I'm trying to farm your information, right? So, but there will have to be an adjustment of the processes as well, and where we look, and the tools, for sure, we want to make sure that they can detect
+[00:13:06] John Murphy: what… what are we looking for? Now, there are a lot of tools that are being touted out there, but do a lot of organizations have them? No, they do not.
+[00:13:15] Shoval Abudraham: And, like, what do you think about what happened after the detection part? Like, all the respond area? Do you think they will face…
+[00:13:27] Shoval Abudraham: good right now? Like, within the new speed, the new capabilities of the agent, and the new type of attacks?
+[00:13:34] John Murphy: I think that we're gonna… that…
+[00:13:39] John Murphy: we're gonna just see some of the edge cases on this. We're not gonna see the… we're not gonna see the entire thing. So, I think that,
+[00:13:48] John Murphy: The visibility is an issue, and I couldn't even point you to a really good, vetted tool, just because everything is so new, with this. Oh, did I answer your question? I was kind of hoping that…
+[00:14:05] Shoval Abudraham: Yeah, kind of, like, I…
+[00:14:07] Shoval Abudraham: correct me if I understand it wrongly, but you saying that you… you think that the problem is through… there is a still… we still have a problem through the detection and visibility areas in those new types of, attacks.
+[00:14:27] John Murphy: Yes, that's right.
+[00:14:28] Shoval Abudraham: Okay.
+[00:14:29] John Murphy: we can't just simply block a website, right? I can block, I can block, OpenAI. I can block them, say, like, oh, no, you can only use Copilot, right? Yeah. You can use the Microsoft version. But…
+[00:14:41] John Murphy: what… so you're now covering a small piece of it, not everything, right? So what if I'm an adversary nation, I want to set up a, you know, or I'm a threat actor, and I want to set up something that looks the same, right? So, so I don't think that, I don't think that we're fully…
+[00:15:01] John Murphy: covering everything.
+[00:15:03] John Murphy: Certainly, you know, like, say, CASB or, you know, proxy-type solutions that are filtering out websites, they're categorizing things. Like, I used, what was it? Netscope, right? Like, I used Netscope, and they have a category for it, and I'm like, and I look at it, and I'm…
+[00:15:18] John Murphy: There's a ton of things listed in there, and they're only as good as the freshest intelligence they have, so…
+[00:15:26] Shoval Abudraham: Yeah, I understand what you're saying.
+[00:15:29] Shoval Abudraham: That's interesting, because… and share with you some of the signals we got.
+[00:15:35] Shoval Abudraham: I totally agree with you, by the way. That's our,
+[00:15:41] Shoval Abudraham: our mind went to this direction and this saying as well. But we got…
+[00:15:47] Shoval Abudraham: Signals, mixed signals, because some of the security leaders told us
+[00:15:53] Shoval Abudraham: Yeah, there is a problem in the visibility, same as you said.
+[00:15:57] Shoval Abudraham: But…
+[00:15:58] Shoval Abudraham: some of them told us, no, my detection, stock is good. I'm used… I use the… use it, to create more and more, events. So, basically, my problem is to…
+[00:16:15] Shoval Abudraham: From all this noise, to detect what is a real issue, to validate it, to operate.
+[00:16:25] Shoval Abudraham: What do you think about that?
+[00:16:27] John Murphy: Yeah, so…
+[00:16:30] John Murphy: My question back, if I were getting… receiving that information, is what has been your success rate in detecting
+[00:16:39] John Murphy: AI attacks.
+[00:16:41] John Murphy: Right?
+[00:16:42] Shoval Abudraham: Yeah.
+[00:16:43] John Murphy: That's the question I would ask. I don't know the answer to that, and like, what did it… what data…
+[00:16:49] John Murphy: Did you… you know, what did you detect that told you that this was an AI-generated attack?
+[00:16:57] John Murphy: Right? So…
+[00:16:59] Shoval Abudraham: Yeah, but do you think they sh… they care about it? Like, why shouldn't they know.
+[00:17:04] John Murphy: I, I… I don't… I don't think that they… yeah, I… do they care about?
+[00:17:10] Shoval Abudraham: I mean, to be an agent, who cares?
+[00:17:13] John Murphy: What's that?
+[00:17:14] Shoval Abudraham: I'm saying, like, from… I realized from their side, it's like, they told me it's gonna be a human, it's gonna be an agent, who cares who did it? If it's harmed my organization, that's the… that's the thing that I care about.
+[00:17:29] John Murphy: Yeah, so, right, so they're concerned about the… The impact.
+[00:17:38] John Murphy: Right? Yeah. Of… of this.
+[00:17:41] John Murphy: They don't care about the source, is what they're saying. And the question is, can we detect the source? Can we differentiate the source? I mean, like, how do you do that? That's the… that's the question. Like, how do you do that with your current tool sets, right? So…
+[00:17:59] John Murphy: I have not heard of a lot of attribution of attacks to AI agents yet. I have heard of big ones. I've heard of, you know, what is it? Is it, was it…
+[00:18:12] John Murphy: OpenAI and Hugging Face, is that it? Yeah. Like, where it went rogue? I'm gonna put rogue in quotes. So that's a… that's an interesting question, but I don't know that,
+[00:18:27] John Murphy: What kind of a signature do you do to detect an AI-generated attack? Most of the things that… if I just think about this and talk through it.
+[00:18:37] John Murphy: Is it that…
+[00:18:39] John Murphy: It's indistinguishable from a set of scripts and people, or is it… is it something that we can actually detect, right?
+[00:18:50] John Murphy: So… or is it… so… so, from their point of view, they're saying, like, yeah, well, we're detecting the attacks, regardless of whether it's an AI agent or if it's,
+[00:19:00] John Murphy: You know, it's some, you know, some kind of, an attack pattern that an attacker has used before.
+[00:19:08] Shoval Abudraham: That's why they say… that's what they are saying.
+[00:19:11] John Murphy: Yeah, yeah, so…
+[00:19:13] John Murphy: There is, of course, the MITRE Atlas Matrix, and that is something that is, it's growing, in terms of tactics, that can be used.
+[00:19:25] John Murphy: But, yeah, are they even… I don't know that a lot's being mapped to it currently. I think, you know, there's… I think mostly everything falls under… underneath the attack matrix from MITRE. Yeah.
+[00:19:40] Shoval Abudraham: But John, I want to ask, like, to take a step back, maybe, and…
+[00:19:47] Shoval Abudraham: to ting… to ask you, like.
+[00:19:51] Shoval Abudraham: Based on your incident response experience, you did diverse roles there, you led the people there.
+[00:20:01] Shoval Abudraham: Do you feel like… The current methodo… methodology And the current tools.
+[00:20:11] Shoval Abudraham: Incident response people have are enough in this new Error.
+[00:20:18] John Murphy: I think that we can get along with those tools.
+[00:20:24] John Murphy: But I suspect, and this is just my, this is kind of my… educated guess, that…
+[00:20:32] John Murphy: We're not looking at everything that we should be looking at.
+[00:20:38] John Murphy: Well, what are those indicators? And that's the question, right? What are the indicators, and what's the difference between
+[00:20:45] John Murphy: An AI attack and not, you know? Do we know what those… Those techniques are.
+[00:20:56] John Murphy: So my answer to you is…
+[00:21:01] John Murphy: it hasn't been proven… as far as I understand, it hasn't been proven yet, and things fit kind of like what we were talking about just a minute ago. Like, right? Like, like when they say, hey, you know what, our current stack…
+[00:21:14] John Murphy: detects… it doesn't matter if it's AI-generated or if it's a, you know, it's generated, you know, through
+[00:21:22] John Murphy: whatever threat actor, whatever they're doing. They're not… and maybe they're… maybe they are using some, and I… and it has been proven that, like, for example, like, phishing attacks, you know, are…
+[00:21:34] John Murphy: You know, they're getting better at generating the language, they're getting better at generating, like.
+[00:21:39] John Murphy: more believable text, right? Yeah. So, so that's… that's certainly a thing, but that really falls more under the category of, like, a social engineering thing, right? Like, if I can convince you to click on something, that's social engineering.
+[00:21:54] Shoval Abudraham: Yeah.
+[00:21:55] Shoval Abudraham: Yeah, actually, I faced a lot of… from those attacks when I was, like, on my first company that I worked for as a product manager, so I actually love this area because I think it's, it's become much harder to detect those types of attacks.
+[00:22:15] Shoval Abudraham: In the… in the right time, right now.
+[00:22:18] John Murphy: Yeah, it used to be that if you were not a native speaker of the language, and it doesn't matter what language it is, that you're going to have certain grammar mistakes, things like that. Well, AI can certainly fix that, you know? Like, you know, even your simple prompts can fix that, and if you know what you're asking for, it can be convincing, and you just have to spend some time with it.
+[00:22:39] John Murphy: In order to, for it to generate the text you want, so…
+[00:22:44] Shoval Abudraham: Cool. Well, so… To sum… to sum it up.
+[00:22:50] Shoval Abudraham: I feel like this… this… the main point here that you think we should
+[00:22:56] Shoval Abudraham: double down on, it's the visibility and detection area. You think there is a… there is a lot to do there?
+[00:23:05] John Murphy: Yes, I do. I think there is, because I don't have any proof that we have made a lot of progress in that. I don't know. That's my answer to you.
+[00:23:14] Shoval Abudraham: That's a very good… like, that's exactly, like, the direction we love to hear. Like, we love to hand those kind of conversations with an action item for ourselves, a new place to… to go our research to, so that's a very, very good one.
+[00:23:33] Shoval Abudraham: And John, I would love, you know, I learned a lot from you, and I'm sure we can learn more as we're evolving during our process, so I would love to stay in touch, and maybe in the future, so you can meet also my co-founder,
+[00:23:51] Shoval Abudraham: You know, and share with you our journey, basically, because this is a journey.
+[00:23:57] John Murphy: Yeah. No, I am… absolutely, that sounds really good, and I would, As this is new,
+[00:24:07] John Murphy: I, you know, there's a… I mean, it's new. I've been working with AI and things like that since 2023, so… 2023, right? But, there's so much more, that…
+[00:24:19] John Murphy: we're learning about even today, and this… to me, it's exciting to try to set these up in lab environments and see what I can do.
+[00:24:29] John Murphy: But also, yeah, I'm… I would love to continue this conversation, you know, because we're all learning, and learning together is a much better experience than trying to.
+[00:24:40] John Murphy: solve myself. So I think, you know, and I've been looking for opportunities to network with other people, say, like, hey, can we set up a lab? Can we share, you know, set up a lab that we… where we can, we can kind of test these things out, and then, and then, and then prove these out,
+[00:24:55] John Murphy: You know, do a real proof of concept on.
+[00:24:58] Shoval Abudraham: Yeah.
+[00:24:58] John Murphy: ideas, right? And test them out.
+[00:25:00] Shoval Abudraham: Amazing.
+[00:25:02] Shoval Abudraham: Amazing. I'll…
+[00:25:04] Shoval Abudraham: I'll take this direction you gave us internally, and we will… usually what we are doing is diving to the new areas that we discovered, and we will follow up. I would love to keep in touch, and, you know, to… to collaborate, in a way.
+[00:25:23] John Murphy: Yeah.
+[00:25:23] Shoval Abudraham: just described.
+[00:25:24] John Murphy: Yep, and I think it all kind of focuses down on what we have now, right? What are the tools now?
+[00:25:31] John Murphy: What are our gaps? What do we need to be able to do?
+[00:25:35] John Murphy: And what is the… the threat and the likelihood? Because that's kind of a lot of what our discussion… my discussions on a daily basis are almost about that likelihood piece, right? So…
+[00:25:45] Shoval Abudraham: Yep.
+[00:25:46] John Murphy: And it's like, okay, what are the chances are? You know, and I don't want to hear it from…
+[00:25:50] Shoval Abudraham: popping, like…
+[00:25:51] John Murphy: Yeah, I don't want to hear from NBC News. I want to know about it before they start talking about it.
+[00:25:57] John Murphy: Anyway… I agree.
+[00:26:02] Shoval Abudraham: John, thank you again, like, so much, and next time I will share the invitation in a better way.
+[00:26:09] John Murphy: That sounds good. I appreciate… appreciate it. It's a good conversation.
+[00:26:13] Shoval Abudraham: the time you gave me. Thank you so much.
+[00:26:16] John Murphy: Alright, you're welcome.
+[00:26:18] Shoval Abudraham: Have a great day!
+[00:26:19] John Murphy: You too. Bye.
+[00:26:20] Shoval Abudraham: Bye.

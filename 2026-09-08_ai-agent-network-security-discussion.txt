@@ -1,0 +1,516 @@
+Date: 2026-09-08
+Topic: AI Agent Network Security Discussion
+Drive File ID: 1Cf1QuyPQ9CHbyfJeJeAVciZlX44O77lp
+Source: google-drive-pdf
+
+[00:00:00] Speaker 1: here and then confirm. I can turn on facilitator which oh
+[00:00:04] Shoval: I actually started in
+[00:00:07] Speaker 2: okay amazing
+[00:00:08] Shoval: cool so I started with myself
+[00:00:10] Speaker 2: yeah amazing
+[00:00:11] Shoval: so as you already mentioned a 200 that we started there are actually met you Val we both served together in the unit and also in 49 so a center which is the cyber operations, center of the union. We both served there on the department that was responsible to all DevOps and IT infrastructure. So we all there the role of both DevOps engineer, but also a security engineer, cause ' we had to build and maintain those infrastructure, but also in a secure way. We had like a complex secure mission to secure. So it was-- part of the mission there. I served there for five and a half years. I released as a captain. And then I did a bit of a shift because I was always fascinated about, you know, creating value, understanding customer pains, business. So I did a shift to product management roles and started a company called Perception Point. There was the product manager that was responsible for all the detection capabilities. It was on the endpoint security area. area. So basically all the detection engines that were based on machine learning, AI, agents before there was framework out there and all people knew what is agent. So it was very cool. And when I look at this from now, from today perspective, I understand it was super in, we did some innovation there in terms of how we use AI. This was a great company, great products, great customers, and this company was acquired by Fortinet. After that, I moved to another cybersecurity company called Coisecurity. also great product, great customers, very... innovative in terms of how we use the AI and this company was acquired as well by Palo Alto so basically that was my sign to you know pick up my phone and call Yvonne my old friend from the service and telling him oh my god Yvonne that's it this time we are doing it by ourselves
+[00:02:39] Speaker 3: I -'m tired of everybody else walking out with the cash.
+[00:02:44] Shoval: yeah
+[00:02:46] Speaker 2: Exactly.
+[00:02:47] Shoval: but basically, you know, it was like, just our key to start our journey together. So as I mentioned, Yuvala and I, like we know for many years we started on the same department. Basically like, I did like big shift into product management or... and more of a business and customer's role. And you've all doubled down on the technology, the infrastructure. So I let him share about his experience.
+[00:03:19] Speaker 2: You know our conversation, Showa and I when we're talking, we have different perspectives on things because she's a problem chaser and I'm a solutions guy and this is how the conversations looks. So when I started in the army as a DevOps and developing engineer, I started as Shobha's soldier and she was my commander and together we did like great projects and we developed two big platforms, two 8200 unit. One of them is still working until today. I think it's around seven years, something like that.
+[00:04:00] Speaker 1: Very impressive. You're right.
+[00:04:01] Speaker 2: Yeah. Very impressive. This platform was the platform that we used to operate, and secure our network inside 8200 and specifically inside 49 unit. This platform could operate and manage all the complex networks we had and we had multiple networks in multi zones. And we had to-- manage it securely because it's very, very sensitive and restricted. And this platform is still working until today, which is very exciting for us because it means that we found a real problem and a real gap in our unit and we solved it and it's still giving its value. And after we finished this part of developing together, when Chauval was the product manager and I was the developer team lead. and I promoted to be And I started with new challenges of leading people and leading soldiers. And after a couple of years, I promoted again to be the head of the DevOps and Infrastructure Department, where I led body engineers across 15,000 people. We ran large scale networks, complex networks, the networks were for thousands of users, hundreds of applications. We had operations rooms with networks and secured networks inside. And we ran petabytes of data and production environment of the unit, which was a great challenge for me to lead these talented people and to manage those critical infrastructure. And After around 10 years in the 8200, I finished the military service and I started. in a company called Paragon, which is an Israeli cyber company. And I was the director of DevOps and SRE there. And I led three teams, 25 people, and we developed, we took our development knowledge, we took our network knowledge, and we developed tailor-made solutions for our customers in Paragon. And our customers were agencies and governments. We are. B2G company, so we had to develop a really secured and complicated solutions. So it was a great journey. Then I quitted Paragon to start this venture with the Chauvin. Then we would love to hear about you.
+[00:06:46] Speaker 1: I'm nowhere nearly as cool as that. I started out 20 some years ago starting in the financial industry in downtown Chicago. I worked for trading companies, managing the infrastructure network stuff. Security really wasn't a thing back then, but to a degree there was. I stood up all the infrastructure for a trading company, managed all that, managed all the exchange connections, managed all the trading connections. Clearing operations went from there to another couple large companies. Finally landing at a real big Scott helped replace all of their clearing operations nationwide at the time. Let's see, I did witnessed SQL servers all around the world to do clearing operations and transactional logging and making sure that was all good. I was responsible for about $2- 8 billion a day of clearing operations for Royal Bunch of Island. So that was pretty cool. I traveled the world doing that stuff. Then I went into private equity M&A, managed all the infrastructure, took the company from I think I was the 33rd employee high and then grew it, grew with the company, you know, building the infrastructure or everything else securely up until about 250 employees for, I was there for about five years left there, and then started here in the construction industry. So I've been here doing all the infrastructure network and security here for the last 11 years, and then all my friends in the Chicago CISO security infrastructure groups that I know, it's kind of fun. And I enjoy getting to talk to you guys in Israel to hopefully find and help you guys design products that are necessary. in the environment in the world.
+[00:09:09] Speaker 2: Can you please tell us a bit more about the company you work for and how you manage your team and the technologies you use?
+[00:09:18] Speaker 1: So my team is me, the company that I work for. We have 775, maybe 800 live bodies that I'm responsible for. That's,
+[00:09:37] Speaker 3: yeah,
+[00:09:37] Speaker 1: and then we have 12 offices around the country that we do construction for interior construction. So we're a subcontractor and it's not exciting. It's not fun. It's not sexy like you guys do. 800, 200 military and all these cool secure networks. But I have 800 people. We do roughly a billion dollars worth of business.
+[00:10:03] Speaker 3: And we have an IT team of about 10 of us.
+[00:10:06] Shoval: To me it sounds cool. Yeah, actually my father does his employee owned.
+[00:10:09] Speaker 2: Yeah -, actually my father--
+[00:10:10] Speaker 1: That -'s fun because it's employee owned. So we all get a share of it.
+[00:10:17] Shoval: So upset you, Val?
+[00:10:17] Speaker 3: So what was that Yuval?
+[00:10:19] Speaker 2: construction in a construction company No -, I just said that my father worked as a construction construction guy. So I learned everything from him and I know to be a construction guy.
+[00:10:30] Speaker 3: So we do all the time here.
+[00:10:32] Speaker 1: We do all the interior construction, drywall, putting up walls, all that kind of stuff. We build data centers. And yeah, we're kind of all over the country, 12 large metropolitan areas. And yeah. Yeah. And I've taken the company from where we started 11 years ago. We were $380 million up to a billion now. Well, it's a big
+[00:10:59] Shoval: Nice. You did a lot of, like it's not your first company that you're taking from like small company to big. So that's amazing. I feel like this experience of starting with something small and then
+[00:11:08] Speaker 1: year.
+[00:11:12] Shoval: creating more and more infrastructure, more application, more resources and have to be responsible for securing these growths. It's like a bit of a challenge.
+[00:11:24] Speaker 3: Yeah, especially by yourself. Yeah.
+[00:11:28] Shoval: Cool. Actually, I wanted to say it like as you talked about your experience that I love the fact that you came from infrastructure as well, you know, as we shared, we both also started there. You're still on those areas. And we always experienced that the conversation we have like more common knowledge and like things, those are the best. I love to talk with the infrastructure people the most because I feel like we can can understand each other so I have been more happy that we reach out to you.
+[00:12:06] Speaker 1: No.
+[00:12:07] Shoval: because I'm sure you can help us a lot.
+[00:12:08] Speaker 1: Yeah, I can speak to I have my CISSP. It was I took the test and the unfortunate part was is as you guys know if you go to do this CISSP certification especially for you two you both will be it's review for us for everything that we've done in our careers it's not it was really kind of scary is when you go through and you, people talk about how difficult, how hard, how everything,
+[00:12:42] Speaker 3: you know, it's like they spent a year studying for this. I spent like three months.
+[00:12:47] Speaker 1: It was all a review for me.
+[00:12:49] Shoval: Yeah.
+[00:12:49] Speaker 1: And it's difficult to test on something that you've liked. experienced. And it's like, there's really other than the cryptographic piece, I was like, then there's really not a whole lot of new stuff in here. And
+[00:13:04] Speaker 3: yeah, it's, it's rather interesting
+[00:13:06] Speaker 1: that I have the background that I can
+[00:13:09] Speaker 3: speak at depth,
+[00:13:11] Speaker 1: you know, across these things. So
+[00:13:15] Shoval: Exactly, so I think that now it's the best time to share a bit more about what we are exploring, because I'm sure you will have a lot to say about that.
+[00:13:22] Speaker: sure.
+[00:13:24] Shoval: So as I mentioned, we are infrastructure people, we love it. So we're currently exploring the network security era and I want to explain why. So basically, beside that, we are infrastructure people
+[00:13:38] Speaker 3: Sure.
+[00:13:40] Shoval: and we love it. We. We see and use it also probably that AI changed the whole ecosystem. Not only in terms of how organizations use AI and how they need to secure the use of AI inside their organization, but also that attackers use AI and all the attacks will be faster with bigger scale, more actions, things that are not easy to enumend to create are not was easy to enumerate to create until now and we are trying to understand if network security going through transformation because it became much more dynamic like the things there move fast like you know as the organization grow and grow.
+[00:14:31] Speaker 1: Here's my board slide that I've already presented and I'm presenting. So there you go.
+[00:14:39] Shoval: like okay explain us explain us
+[00:14:42] Speaker 1: Sure. So this is what I explained. You know, my board deck here is that everything that you're talking about, Shavall, is business risks remain largely unchanged, right? AI makes familiar attacks and more scalable is exactly what you're saying.
+[00:15:03] Speaker 3: So this is all the
+[00:15:03] Speaker 1: stuff that I'm bringing up to my board of risks for end of 26 going into 27 and you know beyond. So everything that you're talking about is the same things that I'm talking about. I wanted to show you you're not wrong, you're not crazy, and then
+[00:15:22] Speaker 3: this
+[00:15:24] Speaker 1: is the pre-leading slide to it. But is this slide
+[00:15:30] Speaker 2: talking about the internal AI you're using to develop?
+[00:15:36] Speaker 1: In general, for my company, this is at the board level.
+[00:15:40] Speaker 3: So they don't care about infrastructure or software apps. I'm talking at a higher level.
+[00:15:45] Speaker 1: Think of talking to, when you're in 8200, think about talking to Cheval's bosses. They don't care how AI is interacting. interacting with the environment, I just need to go back to you both and say, what are we doing to mitigate the risks to it? In here, I'm introducing what AI is. Okay. AI adoption is moving faster than the governance that we have to watch over it, right? I think you guys could agree with that statement for a lot of the stuff that you were, you're doing too. It's like, it's the AI governance piece, right? How do we make sure that it's contained? We know what it touched. We know what it changed. And if we can roll back the change, right? In general. So this is all the stuff that I'm talking about internally to my board members right here. So I just wanted to let you know that you're not crazy. But just to give you an idea of things that I bring up and that I'm talking about. So the uncontrolled costs, excessive data access, malicious context, and then shadow. So these are all the things that I'm talking about internally as well.
+[00:17:00] Speaker 3: Now, mind you,
+[00:17:03] Speaker 1: I talked to everybody in the community in common amongst Art, Chicago. See you. So community in general here I outlined just what our current business risks are. These are all the common things that you know of.
+[00:17:16] Shoval: Yeah.
+[00:17:16] Speaker 1: And then just the emerging stuff. Now, you and I know the technical details behind all of these business impacts pieces. And then this is the kind of layered defense. that I talk about with it, how we're mitigating the risks to these types of identified things.
+[00:17:36] Shoval: So can we maybe dive in a bit to this
+[00:17:40] Speaker 3: By all means, I just wanted to show you, Chival, that you are
+[00:17:47] Speaker 1: on the right track. These are the emerging things. These are the important things. So that's all I was trying to do is to give you a basis to say you are correct in what you're thinking. This is actual like to my board reporting stuff.
+[00:18:02] Shoval: Amazing. So first, this is a great signal for us because as you mentioned, we are not an illusion. We don't have illusions about what matters.
+[00:18:13] Speaker 3: You're not in the echo chamber of like, yeah, we're going to do this great idea and people
+[00:18:16] Speaker 1: look at you like, what are you doing?
+[00:18:21] Shoval: like mentioned it shortly, a few minutes ago, when you said that hopefully you will help us to find a problem that is worth solving. And so, you know, that's a sentence that stuck with me because that's exactly what we're trying to do. So this is a great signal that we are looking on the important stuff from the CISO side. And now I'm curious, like, to hear. if those are the risks that you are dealing with like we are as I mentioned we are specifically researching the network area but we are not locked to this because we are infrastructure people we are a bit bias in terms of we understand that those risks When you secure your infrastructure, your whole organization is more secure, but we are not like positively 100% sure that this is... the most painful pain we need to focus on. So I'm curious to hear like based on the fact you shared like those are the risks you are trying to address too, how would you do that?
+[00:19:33] Speaker 1: So, So let me preface kind of the frame of how I look at things because I'm 100% in the cloud, infrastructure in the cloud, everything
+[00:19:48] Speaker 3: is 100% in Azure.
+[00:19:48] Shoval: hundred percent in Azure.
+[00:19:49] Speaker 1: Okay, so I have no on-premise hardware except for layer 2, layer 3.
+[00:19:54] Shoval: Yeah.
+[00:19:55] Speaker 3: So
+[00:19:57] Speaker 1: for me, looking at products is
+[00:20:02] Speaker 3: you mind
+[00:20:03] Speaker 1: recommendation as you guys approach whatever product it is that you're doing it has to be cloud is not agnostic and it has to be hybrid driven where regardless of the hypervisor. Azure's a hypervisor. Amazon, GCP, those are all just hypervisors. Same thing. They have VMware, whatever that is. you name it, hyper-V, all of it. The idea being though is that if you're able to approach whatever your idea is where it's more ubiquitous, the more acceptance you would have for it. So if you built your tool just to interact with the Microsoft Azure stack,
+[00:20:54] Speaker 3: that's great, but understand you're only getting a third of the market.
+[00:20:58] Shoval: Yeah,
+[00:20:58] Speaker 1: So. the way I look at infrastructure and security now is that Layer 2 can technically be extended from on-premise to the cloud. There are some organizations that do that
+[00:21:11] Speaker 3: a lot don't because of the micro segmentation and
+[00:21:14] Speaker 1: and everything else. You have all these software companies now, security software. where security companies are like micro segmentation, you put our client on the endpoint, essentially just makes it its own isolated /32 network. Cool, great, wonderful. Has to go through a network layer,
+[00:21:32] Speaker 3: an analyst before it goes in or out
+[00:21:35] Speaker 1: through a client, software client.
+[00:21:36] Shoval: Kind of saucy solutions?
+[00:21:39] Speaker 1: Right, but a lot of the world is moving towards this SASE type platforms because it gives you the flexibility to do the... it's a quick drop-in solution for micro-segmentation, security, oversight, invisibility with layer 7 down, right? Because if you have this software agent on everything it's like well it's all gotta go. through here and you're like, "Okay, whatever." So
+[00:22:14] Speaker 3: that part of it is in play, but it's also
+[00:22:18] Speaker 1: agnostic with regards to what your hypervisor engine is. So I'm very curious to hear what you think or what you see in the industry where you guys could inject yourself that's something different or something that can
+[00:22:41] Speaker 3: change
+[00:22:43] Speaker 1: from the current pathway of SASE or the micro segmentation software
+[00:22:52] Shoval: I have an idea.
+[00:22:52] Speaker 3: kind of idea.
+[00:22:53] Shoval: Yeah, I see we have only two minutes left so I just want to make sure you have a...
+[00:22:58] Speaker 1: You're okay, I have time.
+[00:23:00] Speaker 3: Let me double check.
+[00:23:01] Speaker 1: But, yeah, I have time.
+[00:23:05] Shoval: Perfect. Okay, so basically, as you've all mentioned in the beginning, we are still on the ideation stage. That means that we don't have a solution yet. But we do see a lot of innovation around like how chassis works today and
+[00:23:32] Speaker: Mm-hmm.
+[00:23:34] Shoval: Not not an innovation but a lot of gaps in the way that chassis works today and the new like
+[00:23:40] Speaker 2: Mm.
+[00:23:41] Shoval: attack surface that AI creates. So that's exactly the things we are trying to find and hear from CISOs. I'm super curious to hear what you think about the current solution you have even though you work only with Azure at the moment, like in your company. for those,
+[00:24:03] Speaker 1: Right.
+[00:24:05] Speaker 3: Well, I can say is, is that
+[00:24:06] Speaker 1: in general, looking overall, because I use the Microsoft stack for almost everything. Okay. So frame it from that. I guess you want to say that perspective
+[00:24:26] Speaker 3: is I have some visibility
+[00:24:34] Speaker 1: into AI agents, AI interactions, prompting through the browsers, because I have plugins that Defender puts in their Defender for Endpoint, EDR, MDR, XDR, Endpoint client, Defender for, you know, that's kind of the overall piece.
+[00:24:59] Speaker 3: Now, what I'm lacking
+[00:25:02] Speaker 1: invisibility is the logging, the interactivity that's happening at a level where I can see it and I understand it, regardless of whatever. Sure, sure. Let's say that Yuval is sitting at his desk and he's doing his work and he's interacting with co-pilot or open AI or whatever it is, right?
+[00:25:30] Shoval: Yeah.
+[00:25:32] Speaker 1: I can see that you've all has AI downloaded or he has this or he has that. What I don't see right now is is he running an LLM, SLM? Is he, how is he interacting with open AI and those types of other products?
+[00:25:52] Shoval: Yeah.
+[00:25:53] Speaker 1: Now, when you're talking about the attack surface area,
+[00:25:58] Speaker 3: it's again not
+[00:26:02] Speaker 1: a risk that Yuval has AI. It's what permissions does he have and how does he AI agent interact with not only Yuval but also the system that he's working on.
+[00:26:13] Shoval: Yeah.
+[00:26:14] Speaker 1: In a perfect bad world, I would be able to come in and say, Yuval here, download this AI
+[00:26:26] Speaker 3: small language model that helps save on your token costs,
+[00:26:29] Speaker 1: right? Sure, yeah, building SLM right there,
+[00:26:33] Speaker 3: you can handle it, whatever, but embedded somewhere in that SLM
+[00:26:36] Speaker 1: is some callback code to me to say, hey, guess what, you've all got this in. And now I know that you've all got this. I can send a prompt or I can send some sort of detonation that it does whatever I want
+[00:26:51] Speaker 3: it to do, right? That's kind of risky. The real risk comes in is that I
+[00:26:57] Speaker 1: send code to create another
+[00:27:01] Speaker 3: agent
+[00:27:01] Shoval: Yeah.
+[00:27:02] Speaker 1: and then delete myself after I've created it. So the ownership trace back, everything is gone. you've got an autonomous agent that's sitting there listening for commands without any interactivity or any monitoring or anything. That could interact with your infrastructure. That could interact with your network. That could interact with your computer. It could simply crawl the network, right?
+[00:27:26] Shoval: So you're talking about...
+[00:27:27] Speaker 2: In the perspective of the endpoint specifically, I think there's another perspective from the side of the infrastructure and the production side that we need to consider.
+[00:27:41] Speaker 3: Well, yeah, I was gonna get there. So let's, yeah, we're at the endpoint level, right? We're at the endpoint level, which is great, wonderful, whatever.
+[00:27:54] Speaker 1: But because we're in a day of, now we do what?
+[00:27:57] Speaker 3: Everything's virtualized, right?
+[00:28:00] Shoval: Yeah.
+[00:28:01] Speaker 3: So you can go get
+[00:28:04] Speaker 1: VMware's NSX product, which is essentially security on top of network, right? Huge cost, paying the asset manager oversight, get the information out of. Okay,
+[00:28:18] Speaker 3: but
+[00:28:19] Speaker 1: Azure has the same networking infrastructure, so does GCP, so does Azure. So, you know, I'm saying, or AWS, they all have this virtualized switching infrastructure, right? Who's to say an agent can't power shell and interact with that on the back end,
+[00:28:39] Speaker 3: siphoning off information
+[00:28:41] Speaker 1: packets?
+[00:28:42] Shoval: Yeah
+[00:28:43] Speaker 1: You know, there aren't any VLANs in
+[00:28:48] Speaker: Azure.
+[00:28:48] Speaker 1: There are no VLANs in AWS. There are no VLANs in
+[00:28:53] Speaker 3: GCP. Are there?
+[00:28:57] Speaker 1: What does that mean?
+[00:28:59] Speaker 3: One big collision domain. Right? All you have to do is get a hook into that endpoint, something on the network layer.
+[00:29:08] Speaker 1: It looks completely harmless. All it's doing is siphoning off specific packets that you're looking for.
+[00:29:15] Shoval: And right now do you, sounds like I don't know correct me if I'm wrong, but right now do you have any visibility of those connections between the end one to the cloud?
+[00:29:28] Speaker 1: No.
+[00:29:29] Speaker 3: Because once you set up a virtual machine,
+[00:29:31] Speaker 1: you create a virtual interface, right? It's it. You create the network interface and you put it into this VLAN or this VNet and this VNet talks across regions, if you want.
+[00:29:43] Speaker 3: You could have the same VNet in
+[00:29:46] Speaker 1: Europe and US and China
+[00:29:48] Speaker 3: and whatever, right? One big flat layer to network.
+[00:29:51] Shoval: yeah
+[00:29:52] Speaker 1: There are no security tools in Microsoft to look at that.
+[00:29:56] Shoval: yeah
+[00:29:57] Speaker 1: You're relying on the-- And point to protect you. That's all I'm saying is, you
+[00:30:03] Shoval: you know
+[00:30:04] Speaker 3: have that. But again, don't have-- yeah, go ahead, you fire.
+[00:30:08] Speaker 2: Yeah, just to make sure I understand you well. You're saying that the place that you're on is more
+[00:30:18] Speaker 3: a... I'm saying I'm looking two years down the road. I'm giving you
+[00:30:25] Speaker 1: a two-year down the road path.
+[00:30:27] Speaker 2: But it sounds like you trust the cloud. You trust the cloud.
+[00:30:31] Speaker 1: Everybody trusts the cloud. Everybody trusts the cloud. laughs
+[00:30:36] Speaker 2: And it sounds like you don't trust the endpoint.
+[00:30:39] Speaker 3: I don't know. It's not that I don't trust the endpoint.
+[00:30:42] Speaker 1: I don't trust the AI interaction
+[00:30:47] Speaker 3: across the infrastructure.
+[00:30:49] Speaker 1: So regardless of endpoint server, whatever, right,
+[00:30:55] Speaker 3: they're all connected via that work, right?
+[00:30:57] Speaker 1: No matter what, the underlayment. But if I don't have anything at the network layer, right, that's watching and saying, well, why am I correlating or why is this server and this server talking to each other or why is this agent talking to these eight servers?
+[00:31:21] Speaker 3: There's no, there's nothing that's
+[00:31:24] Speaker 1: telling you that.
+[00:31:25] Speaker 3: Nothing's telling you or correlating your sessions between. And AI agent internally, you can look at that traffic externally, right, you'd be like all day long. Yeah, you can see the session through the pile out the firewall or you name said firewall maker, right, you'd be like, hey, this endpoint's talking to this endpoint.
+[00:31:43] Speaker 1: He's using UDP to send traffic that way or UDP to come in, right.
+[00:31:47] Speaker 2: do you think in the end 2027 it will be one of the problems you're going to solve
+[00:31:53] Speaker 3: not solve
+[00:31:54] Speaker 1: I'm just calling it out for you guys to consider that
+[00:32:00] Speaker 3: go look go look at all your
+[00:32:03] Speaker 1: sassy
+[00:32:03] Speaker 3: sassy plays right
+[00:32:05] Shoval: Yeah.
+[00:32:06] Speaker 3: what are they looking for
+[00:32:07] Speaker 1: they're all looking for securing the end point in centralizing all the network traffic into a single point right and then from the single point
+[00:32:17] Speaker 3: they're going to use that to in and out they're proxying all the traffic that's it it's all sassy was in 1993 proxy that's it yeah okay now that's great you're gonna push all this traffic up there right But
+[00:32:36] Speaker 1: once you start getting that much traffic going to any one location, the ability to
+[00:32:42] Speaker 3: get east and west
+[00:32:44] Speaker 1: is a lot easier to sneak through because what's a UDP
+[00:32:50] Speaker 3: between
+[00:32:50] Speaker 1: endpoint A to endpoint B.
+[00:32:53] Speaker 3: Nobody really cares. right?
+[00:32:55] Shoval: He falls like
+[00:32:55] Speaker 1: He's always like... Somebody's doing something naughty in there
+[00:33:00] Speaker 3: because it's a one way stream. We don't inspect it.
+[00:33:03] Speaker 1: Nobody's going to care. Right? But you could have a complete C to C in your entire network running on UDP.
+[00:33:11] Speaker 3: Undetected. Other than the activity of
+[00:33:15] Speaker 2: the endpoint. That is a complicated scenario. There are more simple scenarios that can happen.
+[00:33:21] Speaker 1: Right. But you see what I'm saying, you follow. This is
+[00:33:25] Speaker 3: name a product today that looks at that or does that. Mm-hm. Because if you control the network piece, you control all of it.
+[00:33:34] Shoval: Yeah,
+[00:33:36] Speaker 2: I get it.
+[00:33:36] Shoval: That's exactly what you said about if you control the network piece. It's exactly what we, I want to say feel, because we don't positively sure about that. But as an infrastructure people, we understand the network is key. When you have the network, you can do a lot. And basically now with AI that can try a lot of things super fast, it probably will find a way inside your network. So you have to-- You have to own the visibility and constantly reduce your attack surface there. So I love that. perspective and like I don't want us to take more of your time but I would love you know to take it internally and to process it and then you know to share with you again our thoughts and maybe talk again and like
+[00:34:31] Speaker 3: Right.
+[00:34:34] Speaker 1: Your biggest, the biggest risks are AI internal communications that
+[00:34:40] Speaker 3: you do not see or know about.
+[00:34:44] Speaker 1: And the, creating an agent, there's no controls over,
+[00:34:51] Speaker 3: you know, if I have the internal access, I don't have to have admin access per se to create an agent, do I?
+[00:34:59] Speaker 1: No.
+[00:35:00] Speaker 3: So
+[00:35:02] Speaker 1: I could go through every machine in my network.
+[00:35:06] Speaker 3: if I wanted to, if I was able to do it as, hey, I'm just creating a local agent.
+[00:35:12] Speaker 1: Hey, we're just creating a local agent.
+[00:35:14] Speaker 3: You have an entire army of internal agents. You know, it's botnet.40, whatever you wanna call it, right?
+[00:35:22] Shoval: But don't the EVR and all those endpoints security products should catch those agents?
+[00:35:23] Speaker 3: Nobody's...
+[00:35:28] Speaker 1: Chival, these are just agents.
+[00:35:30] Shoval: Yeah.
+[00:35:32] Speaker 3: We have no context behind what the agent is. So it just looks like, hey, you're just spinning up an SLM on a machine, right? And I have a bunch of other SLMs on here.
+[00:35:44] Shoval: The - context layer is key here.
+[00:35:44] Speaker 3: How do you know?
+[00:35:49] Shoval: Cool.
+[00:35:51] Speaker 3: That's all I'm saying.
+[00:35:52] Shoval: Yeah.
+[00:35:52] Speaker 3: Think about it. It's just botnet 4.0. You just figure out a way to get past your EDR/MDR thing to make it look harmless.
+[00:36:00] Shoval: Yeah -. And that's not easy, but that will happen to any organization.
+[00:36:02] Speaker 3: You've put embedded... Who says it's not happening today?
+[00:36:10] Speaker 2: Yeah, it's already happening.
+[00:36:12] Speaker 3: You don't have the visibility or the context behind it to say it isn't?
+[00:36:17] Speaker 2: Mm-hmm.
+[00:36:17] Shoval: you think that the...
+[00:36:20] Speaker 3: This is This isn't today's problem. 12 months from now problem. When think about the the ubiquitous nature of the AI agents now, right? We're just starting. We lack a lot of the controls. We lack a lot of the governance around them. Who's to say that somebody doesn't download a hugging face?
+[00:36:45] Speaker 1: You know,
+[00:36:45] Speaker 3: model and they're like, oh, yeah, look, I'm saving on tokens. Yeah, but you're. You know, what are you potentially putting at risk in your network? You know,
+[00:36:54] Speaker 1: by having that model running.
+[00:36:59] Shoval: Yeah, totally. I understand what you're saying.
+[00:37:01] Speaker 3: Yeah,
+[00:37:02] Speaker 1: think about it.
+[00:37:03] Speaker 3: Sheval, I can make an LLM
+[00:37:05] Speaker 1: with
+[00:37:06] Speaker 3: five lines of code in there that are
+[00:37:08] Speaker 1: encrypted and
+[00:37:10] Speaker: you
+[00:37:10] Speaker 1: can't read it.
+[00:37:11] Speaker 3: You're not going to know what it is.
+[00:37:11] Shoval: going to know what it is. You can run on my device and like,
+[00:37:14] Speaker 3: And it runs, skips over the code until, right, until some sort of prompt or I send some sort of response back, right? Because technically when you run the LLM, you control where the endpoint talks to, right?
+[00:37:29] Shoval: Yeah.
+[00:37:38] Speaker 3: and 25 hours later all of a sudden it makes a call out, an HTTP call out. Is it going to look like it's going to be any weird stuff?
+[00:37:40] Speaker 2: Yep.
+[00:37:40] Shoval: Nope.
+[00:37:42] Speaker 1: You have all like, man.
+[00:37:45] Speaker 2: It's not, it's not, it's not, it's not going to be weird to say.
+[00:37:53] Speaker 1: There you go.
+[00:37:57] Shoval: It's supposed to protect both of them and also the connectivity between them. So I, I'm,
+[00:38:04] Speaker 1: But you lack visibility.
+[00:38:04] Shoval: how does it not, would not catch them?
+[00:38:08] Speaker 1: Right. Now think about the shovel. Well, you go back to your secure network, right? How are you going to prove that that's not happening in your secure network, even with the controls that you built?
+[00:38:24] Shoval: I -, I, I, I proved that it doesn't happen on my control network, like in my cloud, for example.
+[00:38:33] Speaker 1: How?
+[00:38:35] Shoval: I have, I don't know, a lot of products like, um,
+[00:38:37] Speaker 2: Well, if server A is supposed to double with server B.
+[00:38:43] Speaker 3: What is it? Cheval, I'm your boss. I need one answer.
+[00:38:49] Shoval: That's a great answer a question.
+[00:38:54] Speaker 1: Approach, approach, when you think you know what it is, say,
+[00:38:59] Speaker 3: All " right, I have one sentence to explain it to my boss."
+[00:39:01] Speaker 1: What is it?
+[00:39:02] Shoval: Yeah, does your boss ask this question?
+[00:39:07] Speaker 1: They don't have a clue. They don't have a clue.
+[00:39:12] Speaker 3: They're on the business side.
+[00:39:13] Shoval: So I'll see that
+[00:39:14] Speaker 3: They don't care.
+[00:39:15] Shoval: are not, you know, super aware to the technical side and super technical like you even know to address this problem.
+[00:39:26] Speaker 3: It's a visibility and governance issue. It all goes back to that, Cheval.
+[00:39:30] Shoval: Yeah -.
+[00:39:31] Speaker 3: All goes back to it.
+[00:39:32] Speaker 1: Governance provides GRC, you know, governance, risk, and compliance, right?
+[00:39:37] Shoval: Yeah -.
+[00:39:38] Speaker 3: If you cannot put it into a GRC bucket somewhere, there's a problem.
+[00:39:45] Shoval: Yeah.
+[00:39:46] Speaker 3: And everything that we were talking about, Shavall,
+[00:39:48] Shoval: well, his
+[00:39:48] Speaker 3: is visibility, accountability, and
+[00:39:52] Speaker 1: verified. That's it.
+[00:39:55] Shoval: But there is, I'm sorry, I'm not sure I understand, there is a bucket on the GRC side that
+[00:40:02] Speaker 3: No, at the end, no, what I'm saying is, at the end of the day,
+[00:40:05] Speaker 1: you're creating a product to provide
+[00:40:07] Speaker 3: visibility, accountability, visibility, accountability,
+[00:40:13] Speaker 1: and verify
+[00:40:14] Speaker 3: the controls around it. That's it.
+[00:40:16] Shoval: Yeah.
+[00:40:16] Speaker 3: That's all you're trying to do. And that's what you did for 8200, right? And the other companies that you worked at, visibility,
+[00:40:23] Shoval: Yeah.
+[00:40:24] Speaker 3: accountability. And then you verify that it's doing what it's supposed to be doing.
+[00:40:29] Shoval: Yeah.
+[00:40:29] Speaker 2: Think about that. But when we're looking at this, like, as a visibility and accountability, there are another products that providing you visibility and accountability. So,
+[00:40:40] Shoval: CISO is--
+[00:40:40] Speaker 3: see
+[00:40:40] Speaker 2: so with that.
+[00:40:41] Speaker 1: Name a product. That's what I'm going to say.
+[00:40:42] Shoval: That's all you're saying.
+[00:40:43] Speaker 3: You've
+[00:40:43] Speaker 1: all around these AI communications. Name me a product.
+[00:40:46] Speaker 2: It's not around the communications, but what I'm asking is when CISO is not technical, like you are, and you couldn't understand what are the risks around the new AI era with AI communications, so when you're talking about visibility, it's the same visibility as before.
+[00:41:07] Speaker 3: That's what I'm saying. You guys aren't, how would I say, you're not skinning a new cat, you're not coming up with something that's completely revolutionary. that's never been thought of or whatever. Don't worry about creating that part of it.
+[00:41:24] Speaker 1: You're
+[00:41:25] Speaker 3: trying to
+[00:41:26] Speaker 1: find the part of visibility that people don't have in the system today, right? All I'm saying is it's like
+[00:41:35] Speaker 3: AI to AI communications, AI to infrastructure, AI to... What is it? what's the automated
+[00:41:49] Speaker 1: CICD? Right?
+[00:41:53] Shoval: Yeah.
+[00:41:53] Speaker 3: But what's to say that
+[00:41:57] Speaker 1: some AI agent, one of your dudes wrote to CICD, all of a sudden,
+[00:42:03] Speaker 3: Excel treats all that data.
+[00:42:05] Shoval: So if I understand correctly, you're basically saying that's problem already was exist before and there was solution for that. But now with AI,
+[00:42:16] Speaker 3: There is no solution, but no, that's what I'm saying. There is no, right, that's what I'm saying.
+[00:42:22] Speaker: You!
+[00:42:22] Speaker 1: You two sit down and pick
+[00:42:24] Shoval: Yeah.
+[00:42:24] Speaker 3: what you think you can resolve around that visibility piece that you're missing. I'm not telling you what to go build. I'm telling you, these are things that are going to come up. These are questions that companies are going to ask, right?
+[00:42:41] Shoval: Yeah. Yeah.
+[00:42:42] Speaker 3: And I'm too. Think about it.
+[00:42:43] Shoval: No solution.
+[00:42:45] Speaker 2: But after the I became and the new communication became became became urgent.
+[00:42:52] Speaker 3: You've all so tell me in your CI/CD
+[00:42:55] Speaker 1: development pipeline, can you tell me the auditability between your CID, CI/CD agent and the software that's being deployed?
+[00:43:06] Speaker 2: Actually, I can't.
+[00:43:08] Speaker 3: You can't. That's a visibility problem. It's a GRC problem.
+[00:43:14] Shoval: Who will add those
+[00:43:28] Speaker 3: The CISO has the CISO, right? So here's the thing. If I could do that for you, Shavall, if I could say, Shavall, look at this great product that I have that gives you visibility between point A and point B. That eliminates or minimizes the amount of risk of an automated thing coming in and changing and doing something out of bounds. Most companies are gonna be like,
+[00:43:57] Speaker 1: do we do that? Yes, we do.
+[00:43:59] Speaker 3: Do we have part A and part B? Yes.
+[00:44:01] Speaker 1: Do we have visibility between part A and part B? No. Probably something we should look at.
+[00:44:09] Speaker 3: Is it a big enough risk? Probably for CICD pipelines, right? Because it's automated, it's just coded out, right?
+[00:44:19] Speaker 1: Run it and go.
+[00:44:20] Speaker 3: I'm just giving you an example of a possible
+[00:44:22] Shoval: Yeah. Yeah, yeah.
+[00:44:23] Speaker 3: risk. And remember, you don't have to come in and say, "Look, I have the solution to do this." No. Your job is to simply ask the same question that I just asked you, Chivalre. Do you have the visibility and accountability
+[00:44:39] Speaker 1: and verify
+[00:44:40] Speaker 3: that it is doing what it's supposed to be
+[00:44:42] Speaker 1: doing?
+[00:44:42] Speaker 3: Yes or no? If you say no,
+[00:44:46] Speaker 1: that's a possible solution that you could create.
+[00:44:49] Speaker 3: That's all I'm saying. You guys are on the network and infrastructure side, great, wonderful on the AI part of it too. Is there much AI adoption on
+[00:44:59] Speaker 1: control around the network now?
+[00:45:01] Speaker 3: Probably not unless you guys are talking about like you're you know what you guys designed to the 800 of that enormous you know sensitive network that you've got to have multiple layers to get in and out of.
+[00:45:13] Shoval: Yeah -.
+[00:45:14] Speaker 3: In general for me I'm not that complicated so I would look at your your problem.
+[00:45:18] Speaker 2: be like, hey, that's really cool.
+[00:45:19] Speaker 3: Way more aperture than what I need, right? Sorry, you're all good.
+[00:45:24] Speaker 2: What what you're saying is is so different from sassy because sassy is just the the pipes and the tunnels. It's just how how you reach the server you want to reach how servers connect connect each other and you're talking about what is going through those pipes and what is going before you get into the pipe.
+[00:45:45] Speaker 1: Right before
+[00:45:45] Speaker 3: you even get into the pipe.
+[00:45:48] Speaker 2: Before you even get into the pipe.
+[00:45:50] Speaker 3: Right. But it's a visibility thing.
+[00:45:53] Speaker 1: That's it. I think, you know, and that's what I'm saying is, you know,
+[00:45:58] Speaker 3: could you have an EDR, MDR, XDR run a cross your network. Could you have a botnet running inside of there that's identified and now probably not because it's going to know it. Say, hey, this is a bad
+[00:46:12] Speaker 1: DLL and a bad executable. Kill him. Right?
+[00:46:15] Speaker 3: Suck him out of the system. How are you going to do that with an AI agent?
+[00:46:25] Speaker 1: I don't know.
+[00:46:26] Shoval: Good question.
+[00:46:27] Speaker 3: See you guys when I'm saying it.
+[00:46:29] Speaker 1: If you go in front of a bunch of CISOs and say, how do you know that your AI agents that you have deployed
+[00:46:37] Speaker 3: is
+[00:46:37] Speaker 1: Safe and providing the correct context that you need
+[00:46:44] Speaker 2: And you're looking at it. Sorry if if it's okay from
+[00:46:47] Speaker 1: Yeah, yeah
+[00:46:49] Speaker 2: Because Are you looking at it only as AI agents are the attack surface Because it's not the only attack surface
+[00:47:03] Speaker 3: correct infrastructure. I know I but I'm saying that's what everybody's focused on right now
+[00:47:09] Speaker 1: you have you guys have to be
+[00:47:13] Speaker 3: thinking. Post bubble burst of the AI
+[00:47:18] Speaker 1: wonder right? Yeah now you have your big goodness AI everywhere. It's built into everything, right? If you don't have the proper
+[00:47:31] Speaker 3: governance risk and controls around it, and it runs unmitigated in your system, oh wait, we're back to Jersey again. You see what I'm saying? You guys don't have to sell
+[00:47:42] Speaker 1: your product.
+[00:47:43] Speaker 3: You have to sell the idea of, well, how do you know it's doing what it's supposed to be dealing. Once you ask that question, you can't. It's like, uh, see, you guys don't have Santa Claus. You don't have the Easter Bunny
+[00:48:01] Speaker 1: tooth fairy. You're kid. You're as a kid. You're grown up.
+[00:48:04] Speaker 3: You lose a tooth. Your parents. Did you guys have the tooth fairy? I don't know. Is that true?
+[00:48:08] Speaker 1: Okay. You're 13, 14 years old, you lost a tooth, your parents like, here's your 10
+[00:48:14] Speaker 3: box, right? You can't unsee it. Right?
+[00:48:18] Shoval: Yeah -.
+[00:48:19] Speaker 1: But you have your own kids. Are you just going to be like, "Four,
+[00:48:23] Speaker 3: here's your ten bucks?" No. You're going to go on with that. That's what I'm saying. Once you ask the question, you can't unask the question.
+[00:48:33] Speaker 2: You
+[00:48:33] Speaker 3: can, how would I say this? You can dodge a question, you can't dodge an assertion. So if you say, "If I ask you, Shavon, what can't you see today?" There's a whole list of stuff, right?
+[00:48:46] Shoval: Yeah.
+[00:48:47] Speaker 3: do you know that all the AI communications between your agents running in your company, do you see all that traffic and are you able to discern what's being communicated? Now you can't, it's a yes or no binary answer.
+[00:49:09] Shoval: I get what you're saying.
+[00:49:10] Speaker 3: See, you can't dodge it. You can't dodge it.
+[00:49:10] Speaker 1: So what do you know about AI communications? You know, you can't dodge it. You can't
+[00:49:10] Speaker 3: see, you can't dodge it.
+[00:49:12] Shoval: Like if they're saying no, it's just a no and they need a disvisibility.
+[00:49:12] Speaker 3: You can't dodge it. Okay, so I have this product that can give you this at the network level, which layer, which means it can't be unseen. It can't be changed. It can't be whatever they're communicating?" That doesn't make any sense. If it's internal and trusted, I should be able to see the traffic.
+[00:49:43] Shoval: Yeah.
+[00:49:45] Speaker 3: See what I'm saying? Those are all the different questions. But if you can get your product, whatever you guys want to design is down to an assertion. of saying,
+[00:49:56] Speaker 1: do you have computers in your network? Yes. Do you have servers in your network? Yes. Do you have a network?
+[00:50:00] Speaker 3: Yes. Do you have full visibility between this and this?
+[00:50:06] Speaker 1: No. Okay. See, now you've got,
+[00:50:09] Speaker 3: now you have to provide the what.
+[00:50:11] Shoval: Like we have a base to the conversation, like for what they're lacking.
+[00:50:12] Speaker 3: That's all. Whatever part that you're going to create, that's all. I tell all the founders that. It's like just get down to the assertion. Do you have this to visit to visualize and to bubble up your risk? Yes or no? No, you don't. Well, I have a tool that does provide that visibility. Mm-hmm.
+[00:50:39] Shoval: everything come back to visibility. accountability and validation.
+[00:50:45] Speaker 3: which is GRC.
+[00:50:46] Shoval: Yeah.
+[00:50:47] Speaker 3: Nobody likes GRC. Everybody's like, "Oh, am I going to go
+[00:50:48] Shoval: Everybody's like, oh my God, we're gonna risk control.
+[00:50:49] Speaker 3: over it as a risk control?"
+[00:50:51] Speaker 1: No. Is it accountable? You know, is it verifiable?
+[00:50:56] Speaker 3: And that's it.
+[00:50:56] Shoval: Yeah.
+[00:50:56] Speaker 1: If you can you see it? If you can't see it, you can't measure it. If you can't measure it,
+[00:51:01] Speaker 3: it's a risk. How much of a risk? I don't know. See?
+[00:51:07] Shoval: Yeah. I understand.
+[00:51:08] Speaker 3: It's very simple.
+[00:51:10] Shoval: It's actually simple when you explain it like that.
+[00:51:14] Speaker 2: But
+[00:51:16] Shoval: Like, it's not that we need to build like the whole conversation around that.
+[00:51:16] Speaker 3: you go.
+[00:51:21] Shoval: But basically, I get what you're saying. Like, we just need to make them realize and don't have visibility to something they care about. And then like, do you need a solution for that? Because that's basically the foundation of DRC. And DRC is a big part of every CISO's work.
+[00:51:43] Speaker 3: Now, I don't have a full GRC program, but everything that I design, do, and whatever is built around
+[00:51:50] Speaker 1: visibility,
+[00:51:51] Speaker 3: accountability, and verify. I have to. Because when something goes wrong, unless you have visibility,
+[00:52:02] Speaker 1: accountability,
+[00:52:03] Speaker 3: and
+[00:52:03] Speaker 1: verified,
+[00:52:05] Speaker 2: yeah.
+[00:52:06] Speaker 3: And think about when you go down to your incident response stuff, guys. Very simple, right? Incident happens. Who?
+[00:52:14] Speaker 1: What, when, where, and why. How,
+[00:52:18] Speaker 3: right? If you can't answer those with one sentence answers,
+[00:52:23] Speaker 1: you have a problem. Yeah. Because
+[00:52:28] Speaker 3: at the end of the day, it's your butt that's on the line to provide that one sentence. So if you don't have that down to a one sentence answer, that means you probably are lacking some part of
+[00:52:41] Speaker 1: accountability, visibility,
+[00:52:44] Speaker 3: and verified validation.
+[00:52:48] Speaker 1: Yeah.
+[00:52:49] Speaker 3: Validation, verification, whatever you want to call it. At the end of the day, if you can't do those three things with it, it does no good. And that's where a lot of products break down is like, I'd like for a company that I'm working on right now, it's called AI.
+[00:53:06] Speaker 1: AI zone.
+[00:53:10] Shoval: back.
+[00:53:15] Speaker 1: Is this it? Oh, that's abnormal.
+[00:53:17] Speaker 3: Let's go here. I'll give you an example.
+[00:53:24] Speaker 1: So I did really quick and I'll share my screen.
+[00:53:30] Speaker 3: It's logged in. Have you guys heard of abnormal.ai?
+[00:53:36] Shoval: Of what?
+[00:53:37] Speaker 3: Abnormal.ai.
+[00:53:42] Shoval: It's actually one of my competitors when I was on Perception Point. So I know them very well.
+[00:53:52] Speaker 1: Okay, so this is their portal really quick.
+[00:53:55] Shoval: Yeah. Okay.
+[00:53:56] Speaker 3: Okay.
+[00:53:58] Speaker 1: These are the attack trends for all the network or information that's coming past Microsoft Exchange Online Protection. Right? You're like, well, I've already got a solution.
+[00:54:10] Speaker 3: Well, for the last 30
+[00:54:13] Speaker 1: days,
+[00:54:17] Speaker 3: it looks like
+[00:54:17] Speaker 1: that was having some attacks still... I'll get through it, right? Give me the visibility of it. Right. So now we come down here and tell me what the R the attack highlights. Visibility to provide and tell you exactly why this email was flagged.
+[00:54:38] Speaker 3: OK.
+[00:54:40] Speaker: Now.
+[00:54:42] Speaker 1: This is what was picked up or whatever, right? But now I can go through and I can say. Here's the threat log. Here's all of the emails attacks that were stopped in the last six months.
+[00:54:57] Shoval: Yeah.
+[00:54:59] Speaker 3: The visibility.
+[00:55:01] Speaker 1: Correct.
+[00:55:02] Speaker 3: That's all it is. And
+[00:55:04] Speaker 1: now we have a C. There's this is what they're creating now, just to give you some visibility. So identity threat protection, detect and mitigate identity threats in real time, because
+[00:55:20] Speaker 3: they're connected to our O365 environment, right? They see all the email threats. They see the teams messages. So they can tell if somebody's being attacked there, right? And they're going to say, "Hey, this is really high risk. I'm going to disable this account just in case because the user's Under attack or it seems compromised, right? This one here.
+[00:55:40] Speaker 1: Surfaces, security recommendations, infiltration for pre employment. This is the North Korean, you know, fake employee stuff. Not a problem. you know, fake
+[00:55:50] Speaker 3: They're providing AI governance now.
+[00:55:53] Shoval: Ooh, nice.
+[00:55:55] Speaker 3: Governance. Where did we mention that one before? Account takeover protection, fishing coach. All of these things they're coming out with now that they're a customer, like I'm a customer, they're like, oh, hey, look what all these new things we have. That's what I'm saying. They're providing visibility in a single ecosystem
+[00:56:17] Shoval: Yeah. With
+[00:56:17] Speaker 3: with my my tenant. That's success because if I can see it, I can measure it, I can provide a risk and I can mitigate that risk.
+[00:56:31] Shoval: Yeah. Yeah, I don't.
+[00:56:33] Speaker 3: Case in point, we had our meeting with all of our directors, right?
+[00:56:38] Speaker 1: Of our company. Shavall, you're in charge of accounting, right?
+[00:56:45] Shoval: Yes, I just opened the dashboard and showed them what we have, which risk we had.
+[00:56:45] Speaker 3: So, Shavall, do you have...
+[00:56:50] Shoval: We do we stop them by this product. So that's good work for you.
+[00:56:54] Speaker 3: But, right, but what I'm saying is, is you can't do anything unless you have your processes documented, right? Our county doesn't have anything documented. So, it was like, oh, that's a big risk, because we don't have it documented. We don't know how to come back in case something goes wrong.
+[00:57:15] Shoval: Yeah. I think that's, but Trent, that first, I totally understand your point. that that's just out to say it in Hebrew we say it like the Asimone file like the
+[00:57:33] Speaker 2: Go in.
+[00:57:34] Speaker 3: Wait, wait, wait, wait. Say that one more time. Asimone, the fall.
+[00:57:42] Shoval: Exactly like the the the coin dropped and we understand like the back kind of the basics of GRC which is visibility accountability and
+[00:57:43] Speaker 1: Yeah,
+[00:57:44] Speaker 2: okay.
+[00:57:51] Shoval: Verify I think that now our challenge is to understand where this visibility Where there is no this kind of visibility and we can provide a solution and I think that was a great a glimpse to how CISOs think and what motivate them to do their job and to buy products and like how to encourage them to understand the risk and understand their gaps in the current security stock. And-- And that's amazing because now we can take it internally and like understand which type of visibility we are detecting that are missing and engage with CISO about those. So thank you so much for this like, I want to say lesson, but it's like more of a conversation. And I would love like to share with you where are the areas that we detected
+[00:58:55] Speaker 3: anytime, Anytime.
+[00:58:57] Shoval: after we will do this process like again with all the security stack map.
+[00:59:05] Speaker 3: Good. Now here's something that's still in stealth, but it's I want to show you.
+[00:59:10] Shoval: Yeah.
+[00:59:12] Speaker 3: So this is one of the companies I'm talking to is called AIZome here.
+[00:59:15] Shoval: Yeah.
+[00:59:16] Speaker 3: And all they're doing is providing AI visibility
+[00:59:19] Speaker 1: in our environment.
+[00:59:20] Shoval: Yeah.
+[00:59:22] Speaker 1: So you see how they're providing here's your top applications that are using AI. First stations that are using the software, right, endpoints. And there's
+[00:59:35] Speaker: They're
+[00:59:36] Speaker 3: giving me some idea of,
+[00:59:40] Shoval: of what's happening inside your organization.
+[00:59:43] Speaker: right.
+[00:59:44] Shoval: Right. Amazing. Yeah.
+[00:59:46] Speaker 3: So I just wanted to show you and seek governance, auditability. Now they put in governance and auditability after I had the same conversation with them. They're like, you know, that's a really good point. People need to see this. And you can see you can audit people's actions, systems, sign ins, like all the stuff is being monitored. Visibility. Wonderful. Can't wait.
+[01:00:13] Speaker 1: Can't wait.
+[01:00:15] Shoval: We do. Like, as I mentioned, that's...
+[01:00:16] Speaker 2: Okay.
+[01:00:19] Shoval: I think the big challenge that we are facing right now is that to understand where this visit, when there is no discount of visibility. So that's was like, as we will find this part, we could like connect all those parts of the visibility, Declanability to Governance. and just to create a great product. But to find the gap of where we don't have visibility, that's exactly the point where we are now.
+[01:00:50] Speaker 2: Yeah, and we'll take it internally too.
+[01:00:52] Speaker 3: And I'm sorry I couldn't tell you what to design the product for.
+[01:00:56] Speaker 1: I'm sorry.
+[01:00:56] Speaker: That's... Yeah.
+[01:00:57] Shoval: We don't look for an answer. Those kind of conversations teaching us a lot about how CISO think and what motivated them and how they decide to invest. So that's was great. Like that's was totally great and again look we would love to Share with you more about our journey and our thoughts
+[01:01:23] Speaker 3: Yes. Thank you for the time, guys. It was a pleasure meeting you.
+[01:01:27] Speaker 1: Good luck.
+[01:01:28] Speaker 2: Thank you so much.
+[01:01:29] Speaker 3: Let me know if I can help again.
+[01:01:31] Shoval: Yeah -, us too. Have a wonderful day. -
+[01:01:34] Speaker 1: Take care.

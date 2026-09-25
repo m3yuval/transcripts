@@ -1,0 +1,285 @@
+Date: 2026-08-31
+Topic: Network Security Discussion - Leda Muller
+Meeting UUID: A6260201-454A-4A4B-9D2E-BC5FB6A3961A
+Source: transcript
+Entries: 279
+
+[00:00:00] Shoval Abudraham: I remind you…
+[00:00:01] Shoval Abudraham: that I started in the Unit A200, and this is exactly the place I met Yuval. We, like, we both, started on the same unit, and I'll… I give you the stage, Yuvalu.
+[00:00:13] Yuval Mermer: I don't know if Shoval told you that she was my first commander there.
+[00:00:17] Leda Muller: Well, I didn't…
+[00:00:18] Shoval Abudraham: older, because… It was not in the context of the story.
+[00:00:24] Yuval Mermer: I was my first commander, this is where we met at first, and in this team, I was an engineer.
+[00:00:30] Yuval Mermer: I was a DevOps and development engineer, and we ran together two big projects. One of them is a network application that manages all the 8200 unit network.
+[00:00:44] Leda Muller: Wow.
+[00:00:44] Yuval Mermer: It's a really good one, it's still working until today. It was, I think, 8 or 9 years ago.
+[00:00:51] Shoval Abudraham: Yeah.
+[00:00:52] Yuval Mermer: And, in this project, we, like,
+[00:00:54] Yuval Mermer: understood that this is the thing. We are the team, we want to do this journey sometime, and we understood it, because
+[00:01:03] Yuval Mermer: Shoval took the product management side, and I took the developing side, and it was really fun for us. She told me what to do, I just searched for a solution, and everything worked.
+[00:01:16] Shoval Abudraham: what to do. He had good ideas by himself.
+[00:01:19] Yuval Mermer: Yeah, I have good ideas, but I really trust Shoval about it.
+[00:01:23] Yuval Mermer: with the customers and with the business side. And, after I ended as, engineering, I finished the engineering position, I promoted to TeamLead.
+[00:01:36] Yuval Mermer: Then, two years after, I promoted to a DevOps and infrastructure director.
+[00:01:43] Yuval Mermer: And then I led the 40 engineers across 5 teams.
+[00:01:48] Yuval Mermer: We ran large-scale networks, very complex networks for operations rooms.
+[00:01:53] Yuval Mermer: And then, petabytes, petabytes of storage systems.
+[00:01:58] Leda Muller: Wow.
+[00:01:59] Yuval Mermer: in production environments of all 8200, you know, it's a really highly secured environment, so we had to do a good, good job there, from the security.
+[00:02:12] Shoval Abudraham: familiar with the A200 ecosystem.
+[00:02:16] Leda Muller: Oh, yeah, yeah, I met a lot of you.
+[00:02:21] Yuval Mermer: A lot of good guys there.
+[00:02:22] Leda Muller: Yeah, no, it's great. I've enjoyed the conversation, it's been fantastic, yeah.
+[00:02:28] Yuval Mermer: Yeah, and then I finished the army. It was around 10 years journey in the army.
+[00:02:35] Leda Muller: Yeah.
+[00:02:36] Yuval Mermer: Then I started as Director of DevOps and SRE at Paragon, which is a cyber company, it's an Israeli cyber company.
+[00:02:45] Leda Muller: Okay, okay.
+[00:02:46] Yuval Mermer: acquired by a private equity called Red Lattice.
+[00:02:49] Leda Muller: Oh, no, okay. The private equity… just FYI, when companies
+[00:02:53] Leda Muller: are bought by private equity, it… the prices go up to the operators, to the… to us. Companies that we've dealt with that have bought that private equity, the… the increase in the next fees that we need to pay go up extremely high.
+[00:03:10] Shoval Abudraham: Oh, really?
+[00:03:11] Leda Muller: Yes.
+[00:03:12] Shoval Abudraham: Leda.
+[00:03:12] Yuval Mermer: I did not…
+[00:03:13] Leda Muller: I wanted to share that with you, because there's, there's, yeah.
+[00:03:17] Yuval Mermer: Really cool.
+[00:03:17] Leda Muller: we're dealing with right now that we've had for a few years, and they got bought by private equity, and actually, there's two companies. And once that happens, they deal with our vendor management, but they want to increase the price substantially.
+[00:03:30] Shoval Abudraham: Whoa.
+[00:03:30] Leda Muller: And the product hasn't changed that much, so…
+[00:03:33] Yuval Mermer: Yeah, I can… I can assume.
+[00:03:36] Leda Muller: So just to let you know that, but yeah, that's great that you're.
+[00:03:37] Shoval Abudraham: That's a good inspiration.
+[00:03:38] Yuval Mermer: Thank you. Yeah.
+[00:03:41] Leda Muller: Yeah, yeah.
+[00:03:42] Yuval Mermer: And there, I led 25 engineers.
+[00:03:46] Yuval Mermer: Across three teams, we developed tailor-made solutions for the product security networks.
+[00:03:56] Yuval Mermer: And because it's a very restricted product and situation, the customers were governments and agencies.
+[00:04:05] Leda Muller: Sorry.
+[00:04:06] Yuval Mermer: To tailor-made everything we did for each customer, and it was a real big challenge.
+[00:04:12] Yuval Mermer: And we ran the production environment inside Paragon's infrastructure and the production at the customer site, and after two years and a half, I quitted Paragon and started the journey with…
+[00:04:27] Leda Muller: Wow, well, thank you for sharing, that's awesome.
+[00:04:30] Yuval Mermer: That's great. Leda, I would love to hear about you.
+[00:04:34] Leda Muller: My journey's been a lot longer,
+[00:04:38] Leda Muller: Because it did start in the last century, but, my background just…
+[00:04:44] Leda Muller: when I was in college, or high school, one of my close friends, that we would have physics and lab together, and, you know, we'd blow something up, we'd get the wrong number, she'd go under her calculator, figure it out. This is before computers. But she, you know, she went to MIT.
+[00:05:02] Leda Muller: And, I, you know, Massachusetts Institute of Technology, very smart engineers go there, very, you know, a very fake school, but I thought all engineers were as smart as her.
+[00:05:14] Leda Muller: And I realized that was not the case. You know, it's kind of like, what do you call a person who graduates last… in their class from med school?
+[00:05:26] Shoval Abudraham: Are we too cold?
+[00:05:28] Shoval Abudraham: is a name for that. I'm not familiar that I'm…
+[00:05:30] Leda Muller: a… a doctor.
+[00:05:32] Shoval Abudraham: Right? Yes, exactly! That's right!
+[00:05:39] Leda Muller: So, I took the path, I actually majored in sociology, because I like working with people. The computer classes when I was in school was basic computer programming, Cobalt Pascal, so that's really telling you a lot about my background.
+[00:05:55] Leda Muller: I worked for Ruffel Intern… when I graduated from college, I worked in the procurement for Ruppel International. We were supporting the space shuttle.
+[00:06:03] Leda Muller: And then, we weren't building any more space shuttles, so I moved up to the Bay Area from Southern California. I was actually born in New York.
+[00:06:11] Leda Muller: And I don't like snow, so that's what brought me to California. Yeah, don't know.
+[00:06:16] Shoval Abudraham: like snow either.
+[00:06:17] Leda Muller: Yeah, I'm not a big fan of that.
+[00:06:20] Leda Muller: So, so I worked, I moved up to the Bay Area, I moved to Mountain View, before Google, before a lot of the, Silicon Valley companies, but Silicon Valley was happening at the time. There was, a lot of companies that aren't around anymore,
+[00:06:38] Leda Muller: That got bought up tandem computers, and all computers, digital computers,
+[00:06:44] Leda Muller: Apple, this is right before they moved to Texas, part of Apple, because you could get your people that were working there could get houses a lot cheaper than they were in California, so a lot of them moved to Austin, Texas, and Austin, Texas, as you know, has a lot of technology as well now, also.
+[00:07:00] Leda Muller: Ebay was just a baby.
+[00:07:02] Leda Muller: So I worked for a non-profit, Big Brothers Big Sisters, which helps mentor kids. And I was the one who knew a little about computers, so I set up our network. And this is with, you know, network… it was Novell Network 3, which is a very old network. I'm trying to remember who bought Novell, but it was a really good network. It was before,
+[00:07:26] Leda Muller: via Microsoft, with their, before Active Directory,
+[00:07:31] Leda Muller: And I was going for an MC, an MCC, an MSCE for, 4.0, Microsoft, because I was doing a lot of help desk within our organization. Set up our email, because this is what email just was coming out. So I kind of saw it from the ground up.
+[00:07:48] Leda Muller: Of what was going on with technology. I left Big Brothers Big Sisters. I went to this job fair at the Santa Clara Convention Center. Google was there, didn't know who they were, so I didn't give them a resume. So gave a couple of other, companies' resumes when I got home.
+[00:08:07] Leda Muller: I had, like, 5 phone calls. Went with the dot-com.
+[00:08:11] Leda Muller: And I'm telling you this story, and I'll tell you why. I went with the .com. They did have customers, it was called, MediaFlex.com. They dealt with printers. So, way back in the day, you get a business card, but it would take, like, a week to get your business card, because you would be faxing back and forth.
+[00:08:28] Leda Muller: And so this, our company, let you sit at your computer, because there were computers by then, this is in the,
+[00:08:36] Leda Muller: late 90s, early 2000, you would,
+[00:08:39] Leda Muller: you would type your name in and your phone number. The file… the printer had the file, so they were able to just get your card, so the next day, you would have your business card. And no spelling errors, no font issues, no logo issues, right?
+[00:08:55] Leda Muller: But that company was dealing with printers who don't have money. Then they pivoted to, like, Coca-Cola working with them, instead of working with Coca-Cola's printers, right? So doing a lot of that stuff.
+[00:09:09] Leda Muller: Salesforce was just a baby. It was used by salespeople to reach out to their customers. It was not a platform at the time, right? So, it's been very interesting to watch the evolution of Silicon Valley. I lived in Mountain View before Google was there. I live up in Washington state now, and I go down to the Bay Area just because my husband was from Palo Alto, never
+[00:09:33] Leda Muller: moved anywhere else, and I didn't want to go back east, and so we're outside of Seattle. Bellevue is like when I… I don't know if you've heard of Bellevue, Washington.
+[00:09:42] Shoval Abudraham: Yeah, I hear that.
+[00:09:43] Leda Muller: When I was there the first time, I felt like I was back in San Jose and San Francisco. It was just like, oh wait, so, right, so…
+[00:09:52] Leda Muller: So, I've just kind of watched it, and at Stanford, I got into… well, with cybersecurity now, before it was called information security, right? I've managed, help desk people, project… everything but project managers. System administrators,
+[00:10:11] Leda Muller: developers, I've managed all, all of that, and… and the department that I'm in at Stanford, we're, like, a business within Stanford, so, we have a hotel at the linear accelerator, so I have PCI in my environment.
+[00:10:26] Leda Muller: We have cafes, so any type of role, that you can think of of a person within a company we have, because we have software developers, technicians, everything. Facilities, plumbers, all that stuff.
+[00:10:39] Leda Muller: So, I've seen a lot over the years. And where… why I shared the dot-com, and I'm excited for your company.
+[00:10:48] Leda Muller: I feel like we're in the dot-com bubble right now.
+[00:10:52] Leda Muller: I've seen this before.
+[00:10:54] Leda Muller: Lots of money flowing.
+[00:10:56] Leda Muller: Some companies have products, some don't.
+[00:11:00] Leda Muller: And the lessons learned… like, my husband worked at a dot-com. They built a building in San Jose.
+[00:11:10] Leda Muller: And they never really had a product.
+[00:11:14] Leda Muller: They had a great idea, before YouTube, they were going to be pulling content and video from television all over the world, and let people see that, so they kind of were going down that. They were called geocast, but they spent a lot of money, so the burn rate
+[00:11:29] Leda Muller: of the money that they were getting in, they went through quickly, and then they didn't have the product, and then there was just this, like.
+[00:11:36] Leda Muller: Dot-com crash, which you probably heard about or wrote about.
+[00:11:40] Yuval Mermer: Did you work on this project with the Israeli guy? Huh? Did you work on geocast with an Israeli guy?
+[00:11:47] Leda Muller: No, you know, geotech was probably before the… you guys were probably still on the 8200, or just getting into the 8200, so…
+[00:11:53] Yuval Mermer: Yeah, yeah, yeah, I know, I know.
+[00:11:54] Leda Muller: border.
+[00:11:54] Yuval Mermer: Some guy over the…
+[00:11:55] Leda Muller: these words!
+[00:11:56] Yuval Mermer: neither.
+[00:11:56] Leda Muller: You know, it was interesting to watch,
+[00:11:59] Leda Muller: a lot of the ideas… I mean, Sandhill… I was just there last week in Stanford, and I was driving down Sandhill Road, where all the venture capitalists are and whatnot, and it is really what is… what sets your company apart, what…
+[00:12:14] Leda Muller: makes it because, you know, I'm seeing a lot, we're seeing a lot out there, but what… what sets you apart from the others, right? Because… because you can only get so many. You can either fail, get bought out by somebody, or thrive, right? That's the way that I see how these companies are. Like you mentioned, the one that got bought by private equity. It'll be interesting to see what happens with that product.
+[00:12:37] Leda Muller: And how that private equity puts it into their portfolio.
+[00:12:41] Leda Muller: To say, will this come to the top, or is it just because they're getting the customers that you had?
+[00:12:47] Leda Muller: And now they're developing this way, so they just bought for customers, right? And that's if the customers can afford it, so… yeah. But that's… I just wanted to share that.
+[00:12:57] Shoval Abudraham: No, that'.
+[00:12:58] Leda Muller: It's okay.
+[00:12:59] Shoval Abudraham: incredibly, like.
+[00:13:02] Shoval Abudraham: I heard already your background, but again, I… again, relate with what you said about, like, now it's similar to the dot-com era. Like, what is happening right now, it's super similar, and this is actually exactly
+[00:13:19] Shoval Abudraham: What we want to share with you. And what you said about that what sets the successful companies from the other is that a good product.
+[00:13:30] Shoval Abudraham: that's exactly what we are on the race for, like, right now.
+[00:13:37] Shoval Abudraham: Yuval, I think I'll leave a bit, dive into, yeah.
+[00:13:42] Leda Muller: Yeah, how important it is.
+[00:13:43] Shoval Abudraham: like, when we last… when we had our last talk, we talk, like, we have a mutual introduction, and then we talk a bit about resilience. We talk about the fact that now with AI, you have to be sure your things are properly baked.
+[00:14:00] Shoval Abudraham: And you can use those backups, and we started to explore this area. I'll be honest and say that we didn't felt a huge urgency around this area.
+[00:14:12] Shoval Abudraham: And because we are, network people, like, the base of our work comes from network, and actually, in your background, you have, also a similar background.
+[00:14:27] Shoval Abudraham: points. So, we started to explore this area, okay? We started to think about maybe operational pains, security pains.
+[00:14:38] Shoval Abudraham: we… we are… we feel that the market right now is overwhelmed from the AI
+[00:14:48] Shoval Abudraham: things like the AI solution, the AI security startups, and we are not really understand and find problems that are worth solving that are not in the AI.
+[00:15:02] Shoval Abudraham: Now, we don't want to do AI security product. We believe that the companies that place there are… there are good companies, and if… even if they don't have the perfect solution right now, they will have it in a short time.
+[00:15:15] Leda Muller: Yes.
+[00:15:16] Shoval Abudraham: Now, we are kind of…
+[00:15:20] Shoval Abudraham: We love the network area, but we are not, lock on it. And we…
+[00:15:28] Shoval Abudraham: wanted to share this part of the journey with you, because
+[00:15:33] Shoval Abudraham: like, I shared your experience with Yuval, and, like, you had, like, significant experience over the year. You see a lot of, transformation through the technology, and I thought, like, you will be the perfect person to
+[00:15:48] Shoval Abudraham: talk with us a bit about, like, okay, AI security, we all know that this is an issue. What are the big issues for next year? Like, what are the big projects? What are the new budget line? We…
+[00:16:02] Shoval Abudraham: I'll be honest and say that we don't have a clue at the moment, and we want to put our resources, not in another product, like, we can raise money and create another product of AI security, but we…
+[00:16:14] Leda Muller: Right.
+[00:16:15] Shoval Abudraham: I shared with you in our previous call that I did the switch to product management because of those things, because I love to solve pain, and we want to solve pain and problem, a real problem. So, that's what we want.
+[00:16:31] Yuval Mermer: Shoval said that we love network, but we are not locked on it, because we want to focus on the real pain, we want to search for a real pain, and we want to put our efforts on the real pains in the industry.
+[00:16:46] Yuval Mermer: We're very dynamic, I'll say, I'll say, and we can move from one category to another, but we want to start with the network because of our expertise.
+[00:17:01] Shoval Abudraham: We're basically eager to learn.
+[00:17:03] Leda Muller: No, I think that's great, and I love the next phone call, that we meet. My assistant, we're a small team, but mighty team, Daniel Silverman.
+[00:17:14] Leda Muller: Who actually, was born in California, but served in the Israeli army as well. So you'll… Daniel could tell you his story. But…
+[00:17:25] Leda Muller: You know, right now, I'm seeing a lot of, as you know, these are your peers, there's a lot of AI security on the endpoint, right? A lot of that. But we have a product right now, and I'll be transparent with you, Dark Trace, you probably know it and heard of it, who got bought by a private equity firm.
+[00:17:43] Leda Muller: Dark Trace was probably… gosh, how long has it been?
+[00:17:48] Leda Muller: 2019, 2018, kind of when we were looking at them, when we got them, they were talk… they were talking about AI then, right? Now we know, like, machine learning, like, what's happening within the network, and then seeing the behavioral change, and that's been a great product for us. They don't have a lot of competitors that we found that are probably in our price point.
+[00:18:09] Leda Muller: And they, you know, they got bought by a private equity firm, so they're going to go…
+[00:18:14] Leda Muller: you know, their prices, so we are looking. We're not going to be renewing with them, right? That's just… it's just out of our… our budget. But I… just… it's interesting you're talking about network security, because I just got pinged by two other people, that are doing network security in the last week.
+[00:18:32] Leda Muller: On LinkedIn, yeah, I was like, you know, first it was the…
+[00:18:37] Shoval Abudraham: You know, we're all in the same city, and these words are flying.
+[00:18:41] Yuval Mermer: Are there Israel?
+[00:18:43] Shoval Abudraham: One to each other.
+[00:18:44] Yuval Mermer: Maybe those are friends.
+[00:18:46] Leda Muller: They're all the Israel… they are your friends, I'll tell you, they are. If you show me a photo of when you're in the 8200, and show me who everybody is…
+[00:18:53] Shoval Abudraham: I'm kidding!
+[00:18:54] Shoval Abudraham: Recognize all the… Recognizable.
+[00:18:57] Leda Muller: That's so funny. I want to see you all succeed and be successful. Yeah, so, I mean, just from an operator, I'll tell you the pain. I mean, it's…
+[00:19:08] Leda Muller: And as… why I mentioned, I have so many roles within my organization, right? So many roles within my organization, and they're all using technology. They're all… even our custodians, the people that clean, they're on iPhones. Our custodian… our facilities people that… they get work orders to go out and do work on the buildings, they're on iPads.
+[00:19:27] Leda Muller: The OS is important to us, and I don't see a lot of OS focus on the OS also, but more and more users is becoming more and more mobile. You know, I traveled this week, I went down to Stanford, I didn't bring my Mac laptop, I brought my iPad to work, because it's lighter, it was easier, right?
+[00:19:46] Shoval Abudraham: Yeah.
+[00:19:46] Leda Muller: So that's one of the areas that we ask when we talk… when I talk even to the endpoint, we mentioned, you know, oh, we have AI this, AI that. Well, I can download Quad for my AI, right? I can have things on my… on my OS.
+[00:20:01] Leda Muller: So that's important to us. But yeah, network security, really, what
+[00:20:08] Leda Muller: the understanding, and I think with security, of all the work that gets done is really
+[00:20:14] Leda Muller: having the CFO understand, I think we… we shared this before, having leadership understand,
+[00:20:21] Leda Muller: I can say I'm a Gen X, some of them are boomers, right? Generational. It's really understanding, because they're asking what's the cost-benefit, that analysis when they're just looking at the numbers, and how does cybersecurity, and how does… how does security and anything, like, what's the cost-benefit? Because you don't see it, right? I like to relate it when, back in the day, it may still happen, I'm on a Mac
+[00:20:44] Leda Muller: now, but your PC goes blue screen, right? Everything's great till your PC goes blue screen. Then you call your help desk, then you're calling support services. When everything is up and running fine.
+[00:20:55] Leda Muller: people in all these different roles are not thinking about technology because they have things to do, right? Yeah. I need to raise money, I need to be marketing this, I'm doing this, everything's great. But when that computer fails on them, technology fails on them, then they're aware. They don't… they're not aware of all what's happening in the cybersecurity world, that we blocked this much malware, people had gone to these sites and had done this.
+[00:21:19] Leda Muller: They don't see that. That's a story that I tell once a month to my leadership, just so they're aware, like, what's the cause and effect.
+[00:21:27] Leda Muller: But they don't see, you know, they only see the effect once in a while, right? And how does it affect them?
+[00:21:35] Shoval Abudraham: Yeah, so, like.
+[00:21:36] Yuval Mermer: rethink? Yeah, go ahead.
+[00:21:38] Leda Muller: Funko.
+[00:21:38] Shoval Abudraham: No, no, Yuval Go.
+[00:21:40] Yuval Mermer: Do you think the new AI era
+[00:21:42] Yuval Mermer: With the new frontier models influence it a bit?
+[00:21:46] Leda Muller: It bit, yes, and I'll tell you the difference, and I may have shared this story before. So back in the day, when games were coming out, I had… my husband and I, timely as my boyfriend, we had, Apple computers. Apple didn't have a lot of games. It was the PCs. The PCs had the games. Again, we didn't have a lot of internet at the time, either, so…
+[00:22:03] Yuval Mermer: Situation.
+[00:22:04] Leda Muller: Yes. So we bought… we built a PC. My husband and I built… went out, bought the stuff to build a PC so we could play games. And then you overclock your processor, you overclocked your Intel processor, you had a 386 or a 486, right? To make the games go faster. But not everybody knew about that, right? Because they weren't in technology, they weren't building computers.
+[00:22:26] Leda Muller: When AI came out, boom, everybody heard about it. It was on the news, however they consumed their information was talking about AI. So every layer, again, all the roles in my organization, they all know AI.
+[00:22:42] Leda Muller: I have a tool, an endpoint protection tool, it's not CrowdStrike, that actually, 2 months ago.
+[00:22:49] Leda Muller: lets me see, because it's an endpoint protection tool that could also let me see that somebody's running Word, or Adobe Photoshop, or whatever. It… this… in the last two months, it now says somebody has Anthropics, somebody has Grammarly, somebody has this, right? It started showing the different type of AI, application tools, that the users are using.
+[00:23:11] Leda Muller: I was surprised At some of the people in the roles that they are in.
+[00:23:17] Leda Muller: were used… had downloaded some of this AI, because at Stanford, we only were playing in a sandbox, per se, with a whole bunch of AI tools.
+[00:23:27] Leda Muller: just until 2 months ago did we sign contracts with, Anthropic and OpenAI and Google for Gemini. And then now we have a list of AI-approved services.
+[00:23:41] Leda Muller: But up until 2 months ago, if you were to use AI at Stanford, you should have only been in the playground.
+[00:23:48] Leda Muller: Were these people in the playground? No, because people have admin access to their computers. That's still something that… that's on my CIO, and discussions of, you know, what incidental use you could do, do we block things, do we not? Because people… this may be their only computer, they may… are working and they want to check their bank, which they shouldn't, but anyway, they may check their bank account, but that's incidental use, right? Yeah. On their work computer.
+[00:24:12] Leda Muller: So,
+[00:24:14] Leda Muller: Yeah, so that was very interesting of the people that were using some AI tools that I didn't think would in the role that they are, but they had that on their, you know, computer. They were… they interacted with it.
+[00:24:26] Shoval Abudraham: So basically, on the board meeting, or when you are presenting, I guess they asked about how we are protecting from AI.
+[00:24:35] Leda Muller: Right.
+[00:24:37] Shoval Abudraham: those are… those questions are… was only about, like, AI security tools, or they were,
+[00:24:45] Shoval Abudraham: Curious or borrowed by other elements of the…
+[00:24:51] Leda Muller: Well…
+[00:24:52] Shoval Abudraham: parity security.
+[00:24:53] Leda Muller: So it's… it's, again, the conversation of the presentation, again, who you're… so we're talking to the CFO. This is a person who… who knows numbers, and accounting hasn't changed that much, right? That's what they do, right?
+[00:25:08] Shoval Abudraham: And…
+[00:25:09] Leda Muller: So, when we showed him, hey, you know, we have this endpoint protection, we now see these applications are out there, are being used, he was like, oh, great, because he thought, okay, now we're good, we're protected. Well, no, we're not protected about what could happen. It's sharing the use cases for them to understand
+[00:25:27] Leda Muller: And relating it to their day-to-day of how could it potentially affect them, and what we're protecting.
+[00:25:35] Leda Muller: Right? And that's the… that's where I see the cost-benefit, but it's having them understand, you know, I'm an accountant, okay, I'm the CFO, I'm dealing with financial data, I'm dealing with the financial applications that we can use, I'm dealing with, you know, Excel, Google Sheets, whatever.
+[00:25:52] Leda Muller: Where are those intersections that something bad potentially could happen, and how the tools and solutions that
+[00:26:00] Leda Muller: we potentially could be using, how it's protecting them and saving them. You know, on this endpoint protection tool, we installed it in 2019, fall of 2019. Well, what happened in March of 2019, right? Pandemic.
+[00:26:14] Leda Muller: What was very interesting to me is that the malicious websites, we were able to see where people were going, right? Before it, it was pretty, okay, chill, not a lot going on. In March of 2020, in April of 2020, malicious websites, it was like the COVID… the life cycle.
+[00:26:34] Leda Muller: going up and down the waves, right? That's what it looked like. I had an aha moment. I'm like, oh my gosh, look at that. So it's also looking at what's going out in the world, or what's going out in the same type of company as yours, where that… I was able to map
+[00:26:49] Leda Muller: the COVID wave to malicious websites.
+[00:26:52] Shoval Abudraham: Yeah, and I have a few more sec.
+[00:26:56] Leda Muller: Oh, yeah, pardon.
+[00:26:57] Shoval Abudraham: Do you have time, or you have a…
+[00:26:59] Leda Muller: Yes, I do. I don't… I have a few minutes I can share a few.
+[00:27:02] Shoval Abudraham: I wanted to ask, like, if you do succeed to
+[00:27:08] Shoval Abudraham: To enter new product to your budget.
+[00:27:11] Leda Muller: Huh.
+[00:27:12] Shoval Abudraham: For next year.
+[00:27:13] Leda Muller: Yep.
+[00:27:15] Shoval Abudraham: Yeah.
+[00:27:15] Leda Muller: Yes, the conversations there, again, it's the, the priorities, you know, there's always competing priorities in organizations, and how does this support the priorities, right? Yeah. And that's the story that we have to.
+[00:27:30] Shoval Abudraham: Maybe the priorities and, like, what you entered?
+[00:27:34] Leda Muller: Yeah, I mean, right now, the AI, the endpoint, right? I'm also concerned about the human.
+[00:27:43] Leda Muller: And, which I may have shared, you know, last time we spoke, the internet's the Wild West?
+[00:27:47] Shoval Abudraham: Yeah.
+[00:27:48] Leda Muller: Hasn't changed. It's still the Wild West, and we've built all of this on top of the Wild West.
+[00:27:53] Leda Muller: human behavior activity hasn't changed, right? And now we're going to build AI agents off of human persona, potentially, right? And that's the part that scares me, because the whole onboarding and offboarding process
+[00:28:08] Leda Muller: is not good.
+[00:28:10] Leda Muller: And when I talk to other CISOs, I ask them, like, so how are you managing your offboarding? And they all chuckle, because there's many applications… it's not always about RBAC.
+[00:28:21] Leda Muller: Right? Because I may start with a company, and because of my role, this is what I'm given access to, but in my life cycle.
+[00:28:31] Leda Muller: I start getting access to these other applications, and some of them are third-party applications, and it not be SSO that I log in, and then I'm using another username and password, and then I'm done on that project, and they don't remove me, and then I leave, and potentially my, you know, I haven't been turned off. And even if I have, when it goes to an inactive state or retired state.
+[00:28:51] Leda Muller: to me, that doesn't mean anything, because if I was a hacker, I would start activating all of these retired.
+[00:28:58] Shoval Abudraham: Yeah.
+[00:28:59] Leda Muller: Because they're not, they're still in the system.
+[00:29:01] Shoval Abudraham: How do you manage those now? Like, in… do you have.
+[00:29:04] Leda Muller: Nope.
+[00:29:05] Shoval Abudraham: Sword kind of tool for that, or…
+[00:29:08] Leda Muller: We have… well, it all depends. The applications are managed very different. We're very decentralized, and we have a lot of applications. Some… if you're met with SSO, they'll turn off the ID. Okay, great. But if it's not part of a work group, or if it's a third party, like our vendor management, for example.
+[00:29:25] Leda Muller: they log into, other applications, third-party applications that are not managed by our SSO, so it's more of going back to the people and process.
+[00:29:36] Leda Muller: You know, how do you… don't use this password, you know, don't use the one that you log in here, use something else, but then it's somebody has to tell that company, you know, Leda's no longer here, please remove her, right? So it's that whole people and process part. So even though we have some of these great tools of being able to add or remove people quickly, there's all these other applications out there that…
+[00:29:59] Leda Muller: They could be in.
+[00:30:01] Shoval Abudraham: Yeah.
+[00:30:02] Leda Muller: Yeah.
+[00:30:03] Shoval Abudraham: Yeah, that's only interesting.
+[00:30:04] Leda Muller: scares me.
+[00:30:05] Shoval Abudraham: I can understand why. That sounds super, like, complex, and a lot of information, and a lot of sources to manage.
+[00:30:13] Leda Muller: Yes.
+[00:30:15] Shoval Abudraham: Cool, that's a great, like, a great insight to…
+[00:30:22] Shoval Abudraham: To, you know, to keep exploring. Yeah.
+[00:30:26] Shoval Abudraham: I'm… I don't want to take, like, more…
+[00:30:30] Shoval Abudraham: like you have. Yuvalu, do you have any more questions?
+[00:30:36] Yuval Mermer: No, just to tell you that it's very valuable for us, and thank you so much for sharing with us your perspective.
+[00:30:43] Leda Muller: Oh yeah, no problem.
+[00:30:44] Shoval Abudraham: And, you know, I'm learn… I'm, and I can say now, Yuval as well, learning so much from you and from your experience, and, like, I… we are still on the beginning stage and all of that. We really want to find a real pain and to explore it, and you give us.
+[00:30:59] Leda Muller: Yeah.
+[00:31:00] Shoval Abudraham: really, good leads, and we would love, you know, to share with you our, like, what are we found after, around those areas.
+[00:31:09] Leda Muller: Yeah, most definitely, most definitely, and definitely would love to bring Daniel into the next conversation, because…
+[00:31:15] Shoval Abudraham: But would love…
+[00:31:16] Yuval Mermer: Oh, goodness.
+[00:31:16] Leda Muller: he and I bounce a lot off of each other, and we're always like, gosh, because we always talk about, we have not found a product that we're looking for. Yeah. Like, ugh, you know, because we just… there's just… I think, for me, you know, what I just told you about the off-boarding, I attended an event back in…
+[00:31:36] Leda Muller: March, I think it was, with other CISOs, and two Fortune maybe 100 companies?
+[00:31:43] Leda Muller: both talked about the off-boarding, so I knew I was on the right track, because they're feeling the pain too, and just when I go to these dinners and meet other people, they just, you know, they kind of chuckle, and it is. I mean, we talk about identity, that's a thing, identity, and our
+[00:31:59] Leda Muller: talking about AI identity, but we haven't even solved the human identity side.
+[00:32:04] Shoval Abudraham: Yeah, we just went down the line, and we didn't solve the beginning.
+[00:32:10] Leda Muller: And still building it, and so the foundation to me, being the internet and Wild West, it's not stable. We haven't built a stable foundation. We need that stable foundation to go off of to feel really good.
+[00:32:24] Shoval Abudraham: Yeah, I totally understand what you're saying, and you know, if you… if you are open to it, I will send a new, like, slot, and we can do a mutual conversation with Daniel.
+[00:32:35] Leda Muller: Yeah, let me look… I know we have a holiday next week. Do you think the… let me look at his… The week of September 14th… let me look at his calendar…
+[00:32:45] Shoval Abudraham: Yeah, we can do… We can do that.
+[00:32:48] Yuval Mermer: 14, that's good.
+[00:32:49] Leda Muller: Yeah, does this time, I mean, work for you? Does time work okay?
+[00:32:56] Shoval Abudraham: September 14, yeah, but which time?
+[00:32:59] Leda Muller: You're… my 9 o'clock, your 7 o'clock? Is that okay?
+[00:33:03] Shoval Abudraham: Amazing.
+[00:33:04] Leda Muller: Does that work?
+[00:33:06] Shoval Abudraham: I will send, I will send an invitation.
+[00:33:09] Leda Muller: Perfect. And then I'll just forward it on to Daniel, and I'll be speaking with him this afternoon, too, so…
+[00:33:13] Yuval Mermer: Amazing.
+[00:33:14] Shoval Abudraham: Amazing. Leda, thank you so much. We really appreciate that you're part of our journey.
+[00:33:21] Leda Muller: No, thank you, thank you for including me and sharing me. I enjoy it. I'm at the point in my life, I want to, you know, give back and share my experiences because… That's amazing. Yeah.
+[00:33:31] Shoval Abudraham: We really, really, really appreciate it, and we are looking forward to more successful conversations.
+[00:33:38] Leda Muller: Sounds great. Thank you. Well, have a good evening.
+[00:33:40] Shoval Abudraham: Have a great day!
+[00:33:41] Yuval Mermer: Thank you so much, everyone.
+[00:33:42] Leda Muller: Bye-bye.
+[00:33:43] Yuval Mermer: I didn't realize.

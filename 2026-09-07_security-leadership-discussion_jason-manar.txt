@@ -1,0 +1,276 @@
+Date: 2026-09-07
+Topic: Security Leadership Discussion - Jason Manar
+Meeting UUID: 117B1961-F087-4337-AE4E-D2DEB458EF33
+Source: transcript
+
+[00:00:03] Yuval Mermer: Now it's being recorded.
+[00:00:06] Yuval Mermer: So… So what… what we're talking about is, is, we're currently still exploring.
+[00:00:18] Yuval Mermer: exploring, ideating, validating everything, and it's around the infrastructure. As I mentioned, this is where our expertise are. And basically.
+[00:00:28] Yuval Mermer: we could see that AI changed the whole market, okay? We can see that there are a lot of new products that are protecting AI.
+[00:00:37] Yuval Mermer: But we want to explore the other way. Like, we understand that AI is not used only from the organization side, but also from the attacker side.
+[00:00:50] Yuval Mermer: And… we can see that AI increased the…
+[00:00:54] Yuval Mermer: The speed and the scale and the sophistication of attacks.
+[00:00:59] Yuval Mermer: Okay, do you know what happened with the OpenAI and Hugging Face?
+[00:01:03] Jason Manar: Yes, I'm very familiar. Actually, I talked to the OpenAI, CISO at Black Hat, and he gave a very detailed explanation,
+[00:01:14] Jason Manar: in a, in a fireside chat session, so…
+[00:01:21] Yuval Mermer: And did you hear about the, the last,
+[00:01:24] Yuval Mermer: the last event that they have with a German site.
+[00:01:28] Jason Manar: Feel, feel free, and I'll stop you if I have.
+[00:01:33] Yuval Mermer: So, two days ago, the, the, posted.
+[00:01:39] Yuval Mermer: that, I think, 3,000 agents.
+[00:01:43] Yuval Mermer: started communicating over DSE Wiki, which is a German wiki site for developers.
+[00:01:50] Yuval Mermer: An open AI agent, they started to talk with each other over this site.
+[00:01:55] Yuval Mermer: And there's a big investigation, and everybody's talking about it, and it's in another event that, agents that just decided to do whatever they want.
+[00:02:06] Yuval Mermer: Okay, so we… we want to look at the problem from the attacker side, and not from the organization side.
+[00:02:14] Yuval Mermer: Okay, and… and we believe that, this shift in attacks, like, that the attacks are faster and… and that they…
+[00:02:24] Yuval Mermer: They're at big scale. We believe that this shift will make your organization go to the basics, to the building blocks, to the infrastructure, and make it secured.
+[00:02:36] Yuval Mermer: And…
+[00:02:37] Yuval Mermer: The part of the infrastructure that we are exploring right now is the network, which is our favorite one.
+[00:02:45] Yuval Mermer: And…
+[00:02:46] Yuval Mermer: We know that big companies, like corporates, they have complex and fragmented networks, they have multiple sites, cloud environments, different vendors, different security tools, firewalls, and we're exploring how CISO's managing those networks… network risks.
+[00:03:07] Yuval Mermer: Okay?
+[00:03:09] Yuval Mermer: And… And we explored specifically in the current stack they have, and we believe
+[00:03:15] Yuval Mermer: That we believe that these stack haven't changed in the past few years.
+[00:03:22] Yuval Mermer: But now there are new types of attacks, and new types of risks, and we want to know how CISOs manage
+[00:03:29] Yuval Mermer: Network risks in their complex environment.
+[00:03:33] Yuval Mermer: Hey, I'm curious, what is your take about it?
+[00:03:39] Jason Manar: As far as how CISOs are currently managing AI risk?
+[00:03:46] Yuval Mermer: Yeah, specifically in their network.
+[00:03:50] Yuval Mermer: In the complex network kit.
+[00:03:52] Jason Manar: So, specifically in their network, yeah, so I think there's a couple different things. And when you're talking about, you know, AI risk, you…
+[00:04:02] Jason Manar: you've hit on at least two of the three, if not the three that I'm about to mention. The three that I'm about to mention are…
+[00:04:08] Jason Manar: There's… The internal risk, whether that's overt or, covert, meaning, you know, someone
+[00:04:17] Jason Manar: willfully takes action that is known to hurt the infrastructure with the utilization of AI.
+[00:04:25] Jason Manar: Versus, you know, not non-intentional. Anyway, that's one categorization.
+[00:04:31] Jason Manar: internal,
+[00:04:35] Jason Manar: internal AI misuse, and that covers a lot, as far as whether they're, actively going against policies, or going with policies, you know, for AI, and then potential misconfigurations, etc, etc.
+[00:04:52] Jason Manar: You know, the other one is external threats from AI utilization, meaning
+[00:04:59] Jason Manar: That an attacker with Frontier models and or, you know, it doesn't even exactly take Frontier models nowadays.
+[00:05:07] Jason Manar: to leverage and find, zero-day vulnerabilities, and quite frankly, not even just vulnerabilities, but i.e. bugs, that can be pieced together for zero-day type vulnerabilities,
+[00:05:21] Jason Manar: for access into the network. So when we start talking about AI security in the network and the posture, the current posture for most CISOs.
+[00:05:30] Jason Manar: Is, quite frankly…
+[00:05:31] Jason Manar: we've adopted whatever… when I say we, I mean the CISO community as a whole, we've adopted whatever the company needs immediately, for it to be viable in this new Agentic world.
+[00:05:46] Jason Manar: Meaning, security is usually secondary to the needs of the company, and it's quite frankly not often thought about during, the inclusion into AI. And if it is, it is deemed too restrictive, and there have been governance and risk
+[00:06:06] Jason Manar: Acceptance throughout various companies that allow a less restrictive environment.
+[00:06:13] Jason Manar: within relate… in regards to AI,
+[00:06:17] Jason Manar: Generally, with very little insight or oversight.
+[00:06:21] Jason Manar: The company specifically views that as friction, and oftentimes, what I see in about 80-90% of the companies out there is they are…
+[00:06:31] Jason Manar: Not as willing to even adopt
+[00:06:34] Jason Manar: AI monitoring and or security posture from other third parties outside of
+[00:06:44] Jason Manar: Traditional third-party security companies that they may already be doing business with.
+[00:06:49] Jason Manar: So, i.e, they believe the Palo Altos of the world, the Fortinets of the world, and any other big name that you can think about that they may already be doing business with will be able to leverage on their platform a meaningful way, to control
+[00:07:04] Jason Manar: audit, and utilize AI, because that, quite frankly, is what they are being told by these bigger vendors.
+[00:07:12] Jason Manar: I don't believe that is the case.
+[00:07:15] Jason Manar: You know, every… Large environment and network require independent reviews and their own architectural,
+[00:07:27] Jason Manar: build for AI monitoring and security, which often means that they're gonna need components
+[00:07:36] Jason Manar: Of various tool sets in order to secure their environment.
+[00:07:42] Yuval Mermer: And do you… did you work with one of those, big companies' net… network posture tools?
+[00:07:51] Jason Manar: So, when you say network posture tools.
+[00:07:55] Jason Manar: Explain what your definition of a network posture tool is, because I can think of about a half-dozen quote-unquote network posture tools, but they're not necessarily AI-centric.
+[00:08:06] Yuval Mermer: Yeah, what I'm talking about is that with the new age… with the new age of AI, when the risks
+[00:08:16] Yuval Mermer: are more… when it's more dangerous that AI will get a task to attack your company.
+[00:08:25] Yuval Mermer: You want… you maybe want to tighten your… your policies and rules over your network.
+[00:08:32] Yuval Mermer: So… Do you have today a way to understand where are those risks?
+[00:08:38] Yuval Mermer: in your network, like you said, the big companies that you already do acquire network tools from them, they already solve you the AI side of the network, right?
+[00:08:54] Jason Manar: Okay, so I think we're conflating two different things. I think your original question was, what do you see, the right CISOs in the community, and how are they securing AI? And now you've positioned that, and you've switched it to, how am I securing AI?
+[00:09:10] Jason Manar: Did I misunderstand?
+[00:09:12] Yuval Mermer: Yeah, maybe I… maybe because of the language, I don't explain it well, but what I'm trying to say, that… that,
+[00:09:19] Yuval Mermer: That I'm not talking about how do you secure AI in your organization, I'm talking about how do you secure your network with a new AI era.
+[00:09:28] Yuval Mermer: with the new risks the AI era brings.
+[00:09:31] Jason Manar: Right, right. Okay, so if you're asking how we secure versus how we see broadly other CISOs and companies secure, those are two different things.
+[00:09:43] Yuval Mermer: Yeah, so… so I'm asking specifically, how do you…
+[00:09:46] Yuval Mermer: Secure your network, and now do you know your risks in your network?
+[00:09:51] Jason Manar: Yeah, yeah, yeah, so we're…
+[00:09:52] Yuval Mermer: It's okay, if you're okay with answering that.
+[00:09:54] Jason Manar: Where are you… We're using larger company tool sets, and we're using,
+[00:10:00] Jason Manar: The boundary, telemetry at the, firewalls, and also utilizing other log source telemetry.
+[00:10:12] Jason Manar: To first be deterministic on what is AI, utilization, and then we're working backwards from there to make sure that the policies are being followed, and that
+[00:10:29] Jason Manar: especially AI agents are being given specific credentials that allow us to identify them very quickly as Agentic agents that allow us to put, guardrails around, those identities. And then we also have,
+[00:10:49] Jason Manar: Guard rails in place that show
+[00:10:52] Jason Manar: Based off the timing mechanism… machination of, and volume, it's very easy to see who's humanistic versus non-humanistic.
+[00:11:02] Jason Manar: And then, so anything that jailbreaks, we're able, through behavior analytics, to quickly identify, put the right label on it, and then make sure, that we're monitoring in that regard.
+[00:11:16] Jason Manar: Now…
+[00:11:17] Jason Manar: More specifically, depending upon what product it's in, what it's supposed to be using, or how it's supposed to be, you know, behaving, right? That's a different set of questions, and that's handled more specifically
+[00:11:30] Jason Manar: Product to product, and we have 40 different products. And so, based on… on that, that's how we would be looking at that.
+[00:11:38] Jason Manar: And then, more so from a platform perspective, we've developed,
+[00:11:45] Jason Manar: an Agentic wrapper on the SDLC pipeline that allows for developers, in real time, to go back and forth, with our AI security agent so that they can help better secure, the environment,
+[00:12:04] Jason Manar: While they are… In the development phases of coding, and we've seen a huge reduction in
+[00:12:12] Jason Manar: Security gaps, bugs, And we've seen them, be able to, more quickly
+[00:12:22] Jason Manar: Go from, beginning stages of development to actually pushing code.
+[00:12:28] Yuval Mermer: Maybe I didn't catch that, but you said you have an AI security agent?
+[00:12:33] Yuval Mermer: That, help you, secure better.
+[00:12:36] Jason Manar: Yeah, so that's… that's correct.
+[00:12:38] Yuval Mermer: Internal, internal development?
+[00:12:40] Jason Manar: We created, we created a…
+[00:12:44] Jason Manar: a security, agent that lives on our SDLC platform.
+[00:12:51] Jason Manar: That interacts with every dev.
+[00:12:55] Jason Manar: So, instead of having to have
+[00:12:58] Jason Manar: you know, an individual security person interact with every single dev. They're interacting at the earliest stage and earliest gate. They're interacting, with AI and how… and our security agent, and how to securely configure and build,
+[00:13:18] Jason Manar: all of, all of their repos.
+[00:13:25] Yuval Mermer: Is it specifically for the repos build, or this security agent can edit network configurations?
+[00:13:34] Jason Manar: No, no, no, it doesn't do, edit network configurations, you know, those are… those are individual within
+[00:13:42] Jason Manar: Each of our other… various tool sets, right? And so, where we see any drift from an Agentic agent.
+[00:13:51] Jason Manar: Within the environment, we're able to put different tool sets and controls based on our, our,
+[00:13:58] Jason Manar: Based on our existing control and tool sets.
+[00:14:05] Yuval Mermer: I got it, and… Okay, last, last question I have.
+[00:14:11] Yuval Mermer: Because I see we're almost on time.
+[00:14:14] Jason Manar: No, that's okay, I, like I said, I was late, I can go over, so whatever you need.
+[00:14:19] Yuval Mermer: Thanks. You talked a lot about your internal agents, and how do you protect Your infrastructure from them, Right?
+[00:14:32] Yuval Mermer: the… the risk from… from outside, the risk from exposure and lateral movement in your network from the outside, is it…
+[00:14:42] Yuval Mermer: a painful risk? Do you even consider to
+[00:14:47] Yuval Mermer: To do something with this risk?
+[00:14:49] Yuval Mermer: Are you saying you already have your network stack that you're good with, and you don't want to do something with it next year?
+[00:14:58] Jason Manar: No, no, I'm sorry. Say that again, maybe I'm misunderstanding you. What risk are you saying cover down? I'm sorry, say again?
+[00:15:07] Yuval Mermer: I'm saying that, the risk that agents from outside, from the internet.
+[00:15:15] Yuval Mermer: We'll try to attack your infrastructure, to exploit
+[00:15:19] Yuval Mermer: And… and, come… and go to… into your infrastructure from the internet.
+[00:15:25] Yuval Mermer: like…
+[00:15:26] Yuval Mermer: like, like I said, the AI agents today, not the internal agents, the agents outside, the agents that attackers use.
+[00:15:34] Yuval Mermer: they can… Be tasked to attack Some endpoint, and just…
+[00:15:42] Yuval Mermer: just break inside. So, is it a risk? Yeah.
+[00:15:47] Jason Manar: So, so, so I think what you're talking about are some of our initiatives around, Agentic SOC and, you know, even some of our Agentic CERT capabilities, meaning that we know that,
+[00:16:02] Jason Manar: We have to go faster than is humanly possible for this new Agentic world.
+[00:16:08] Jason Manar: And that we can't assume, right,
+[00:16:13] Jason Manar: we have to basically assume breach, right? Which means, in that… scenario.
+[00:16:21] Jason Manar: We no longer have time.
+[00:16:25] Jason Manar: And so, we have to have an Agentic security workforce that is operating on a SOC and CERT level.
+[00:16:34] Jason Manar: with some humanistic oversight and controls that allows for the rapid action of any adversary using AI technology.
+[00:16:47] Yuval Mermer: So I'm not talking about the SOC side, I'm talking about the network posture side, like…
+[00:16:56] Yuval Mermer: Like, I can imagine you said that you have 32 data centers, right?
+[00:17:01] Jason Manar: But when you say the network posture side, and you're… and you're asking about adversarial,
+[00:17:07] Jason Manar: you know, compromise of those sites, you are talking about our SOC and our ability to quickly, you know, see what is different from our current environment, and then be able to react to that.
+[00:17:19] Jason Manar: Unless you're talking about something else.
+[00:17:22] Yuval Mermer: I'm talking more on the side of the policies you have in your network. I mean, I can assume that you have multiple firewalls in each site.
+[00:17:31] Yuval Mermer: And you have internal and external firewalls, and you have connectivity to the internet, so somehow you're exposed to the internet.
+[00:17:38] Yuval Mermer: And, like, Do you even know what is going on in the policies all over your network?
+[00:17:45] Jason Manar: Well, yeah, I mean, first of all, Yeah. Yes. So…
+[00:17:53] Yuval Mermer: We're all dancers.
+[00:17:54] Jason Manar: I'm sorry, I'm sorry.
+[00:17:55] Yuval Mermer: Cecil say no.
+[00:17:57] Jason Manar: No, I kind of chuckle on that, because…
+[00:18:00] Jason Manar: Right, I mean, first and foremost, you have to have an understanding of… you're talking about basic understanding of your, you know, asset network, and then you're talking about holistically making sure that you understand what's coming onto your network at any given time, and that you have
+[00:18:17] Jason Manar: and then you have controls set up where if anything comes on that is not supposed to come on, it's automatically, you know, denied and or you have visibility on it.
+[00:18:28] Jason Manar: Right? So, so yes, is the short answer is… you know.
+[00:18:34] Jason Manar: You know, we have that visibility, and if we, for some reason, don't in a certain area, we're rolling out that visibility.
+[00:18:41] Jason Manar: You know, so, I… I mean…
+[00:18:47] Jason Manar: I think I feel like, all of a sudden, that we're just asking questions as to almost a sales pitch instead of having a conversation, because I still don't understand, like, what your toolset does, or how, you know.
+[00:19:03] Yuval Mermer: We don't have… we already… we don't have already a tool.
+[00:19:07] Yuval Mermer: And we didn't develop anything, we just wanted to understand.
+[00:19:10] Jason Manar: of a thesis, is that where we're at right now? A thesis for, you know, what you can bring to market, potentially?
+[00:19:17] Yuval Mermer: Yeah.
+[00:19:18] Jason Manar: Okay, okay, well, so that really helps out. So, just so you know,
+[00:19:23] Jason Manar: I'm helping many, many people, develop their thesis. I remember when Wiz was developing their thesis, and I love that story, because their original thesis
+[00:19:34] Jason Manar: you know, became much different to what their original public's thesis was. So they had an original… anyway, I don't need to go into that, but…
+[00:19:44] Jason Manar: It was really cool to watch their evolution of what they decided to bring to the marketplace.
+[00:19:51] Jason Manar: So, I think what would be helpful, if you have time, we'll spend the next, you know, 13, 14 minutes on this, because I do have to go at the top of the hour.
+[00:20:01] Jason Manar: But, you know, what is your current thesis? And it sounds like it's on the networking aspect end.
+[00:20:11] Jason Manar: with AI, what is your current thesis on, you know, what you want to build, or what you potentially have built?
+[00:20:21] Yuval Mermer: First, we didn't build anything, because they want to make sure that this is a painful Building that.
+[00:20:27] Jason Manar: That's good. Okay, well, some people have, and that's why I ask, because I don't know what, you know, where you're at. So, so great. So, so far, in talking to people, I'm assuming that you're looking for gaps, and one of the gaps that you've found is visibility within the network.
+[00:20:46] Yuval Mermer: It's more about… it's more around managing the risks over the network.
+[00:20:51] Yuval Mermer: Okay. Some of the CISOs we talked with, they said that all the policies and configurations of their network is chaotic, and this is a really bad mission that they have to do, and they don't really know what is going on on their network.
+[00:21:09] Yuval Mermer: But, I didn't want to start with that, because I wanted to hear it from you, or not to hear it from you, and it's like…
+[00:21:18] Yuval Mermer: We hear all the answers. We hear that it's not a problem at all.
+[00:21:24] Yuval Mermer: And that CISOs want to secure their internal AI agents, and we hear that this is a real problem.
+[00:21:32] Yuval Mermer: And with complex networks, you can't track all your changes and all your rules and policies over your firewalls and security groups over the cloud.
+[00:21:46] Jason Manar: Okay, so can I…
+[00:21:47] Yuval Mermer: Can I hear everything?
+[00:21:48] Jason Manar: Can I give you something that I think will help out?
+[00:21:51] Yuval Mermer: Of course.
+[00:21:52] Jason Manar: So, what I think would help out is, right now it sounds like you are trying to identify, quote-unquote, the biggest problem and pain point.
+[00:22:00] Jason Manar: Right?
+[00:22:02] Yuval Mermer: Exactly.
+[00:22:02] Jason Manar: Okay.
+[00:22:03] Jason Manar: I'm… respectfully, I'm gonna say that's somewhat wrong.
+[00:22:08] Jason Manar: And this is why.
+[00:22:09] Jason Manar: It has to be the biggest problem and pain point
+[00:22:13] Jason Manar: That the company actually wants to address.
+[00:22:16] Jason Manar: And so, how do you figure out what a company, quote-unquote, wants to address or needs to address?
+[00:22:22] Jason Manar: It's not always by talking to CISOs. CISOs are gonna tell you, you know, from a security perspective, what they would want to do, what they have to do, or what they think they have to do.
+[00:22:35] Jason Manar: Right? The business will come in oftentimes and tell them, no, you don't have to do this, because by, regulation and or law, we don't have to cover down on that, so we're not going to spend money on it.
+[00:22:46] Jason Manar: And it will have you going in a different direction.
+[00:22:49] Jason Manar: And so, I would… I would say that in the future, right, what you need to do is you need to figure out
+[00:22:59] Jason Manar: What are the biggest problems that are associated
+[00:23:03] Jason Manar: To legal, statutory, and regulatory risk right now.
+[00:23:08] Jason Manar: When you add those 3 things in there.
+[00:23:11] Jason Manar: Then, all of a sudden, you give not only the CISO and the security, the company.
+[00:23:17] Jason Manar: a reason to, quite frankly, care about these risks. Because the company, every day will take risks that you and I think are absolutely insane.
+[00:23:27] Jason Manar: And sometimes companies will even do that against regulatory and legal, but the majority of companies out there will not take
+[00:23:34] Jason Manar: On a lot of risk around regulatory, legal, and compliance frameworks.
+[00:23:42] Yuval Mermer: Okay, so how do you recommend me to approach what I… when I talk… I'm talking with Cecil, or not Cecil?
+[00:23:50] Yuval Mermer: To understand those things.
+[00:23:52] Jason Manar: So, so that's a great question, right? That is the question.
+[00:23:56] Jason Manar: Right? And some of that is…
+[00:24:00] Jason Manar: And it's hard to do in 30 minutes, but where I would start extracting information is,
+[00:24:07] Jason Manar: Hey, you know, and I don't know if people will be this honest this quickly.
+[00:24:12] Jason Manar: But one of the things I think I would do is I would say, Hey.
+[00:24:19] Jason Manar: I'm interested in stories… Because I want to learn from you.
+[00:24:25] Jason Manar: How did you get some of the largest investments from your company?
+[00:24:30] Jason Manar: What were they tied to? Just tell me that story.
+[00:24:33] Jason Manar: Right? Everyone has a different story, and I learned so much from how they go about getting investments from their company.
+[00:24:41] Jason Manar: And then find… and then you will find out what those are… what those are all tied to. You don't have to take my answer for it, you take their answer. And most people will like to brag about, oh, well, I got $50 million investment for X, Y, or Z. And then at the root cause of it.
+[00:24:58] Jason Manar: You'll figure out.
+[00:24:59] Jason Manar: Why did they have to have that investment? Was that tied to, you know, a law, a regulatory compliance standard, you know, some kind of potential intrusion or incident that they had that then spawned additional investment?
+[00:25:15] Jason Manar: And it's gonna give you an understanding of how people spend their money, where they spend their money.
+[00:25:21] Jason Manar: And what areas to go after. That is my take on the business side. I know that's more business than technical, but especially when you're starting out and you're trying to get, you know, rapid adoption and growth and everything else.
+[00:25:36] Jason Manar: I think that is, quite frankly, one of the things that Wiz was able to hit on
+[00:25:44] Jason Manar: Very quickly, because there was… There was just not a lot of visibility
+[00:25:51] Jason Manar: Into that cloud infrastructure space, and because of that infrastructure was so, you know, regulated and attached to many different, laws, regulations, you know, security compliance, etc, etc.
+[00:26:09] Jason Manar: I think…
+[00:26:11] Jason Manar: I think that was one of the biggest connections that allowed for a lot of spend in that environment. But maybe I'm wrong. That's just my two cents.
+[00:26:19] Yuval Mermer: Yeah, I'm actually gonna… gonna learn from it a lot, and think about it. And, you know, in Israel, we have a word, we say, chutzpah. You heard about chutzpah?
+[00:26:29] Jason Manar: No, what's that?
+[00:26:30] Yuval Mermer: When you ask things that you sometimes don't need to ask. So I will ask you the question you
+[00:26:42] Yuval Mermer: You advised me to ask another CISOs.
+[00:26:46] Jason Manar: Yeah, so…
+[00:26:47] Yuval Mermer: So, how can you get some of the legends?
+[00:26:49] Jason Manar: I'll tell you right now, right,
+[00:26:51] Jason Manar: in the next 30 seconds, right? Some of the biggest investments we got were a result from, you know, various incidents. Now, you don't want to have people
+[00:27:03] Jason Manar: you know, explain their incidents, but that's great. What were some of the things that… what were some of the lessons that you learned from that? Or if you could go back in time, you wouldn't, and then you get securing X, Y, or Z. Well, okay, then the next follow-up question from that is.
+[00:27:20] Jason Manar: well, why wasn't that done before? And because that's a very important question, why that wasn't done before, because at the end of the day, what I've seen, you know, with the FBI was 95 to almost 97%
+[00:27:37] Jason Manar: Of all companies that had ever had experienced an incident knew ahead of time that they had a gap, or they had a secure… they had…
+[00:27:46] Jason Manar: they had a security hole within their environment, and they just did not address it. It went unfunded, it went unaddressed, even though that it had been brought up. And so the why behind that becomes very, very important. Otherwise, you're just constantly chasing the tail of.
+[00:28:03] Jason Manar: You know, who potentially gets exploited, which may not be a bad thing coming in 2027, with…
+[00:28:10] Jason Manar: because I really think 2027 is going to be the year of exploitation, where you really start seeing these, you know, the adoption of these, you know, what are current frontier models as regular models in 2027.
+[00:28:24] Jason Manar: And causing the pace of exploitation to just, you know, far exceed, and any of the pace that we can currently address with our SOC insert teams.
+[00:28:36] Jason Manar: Anyway, that's my two cents. Last five minutes is over to you. What, what other questions, thoughts do you have closing-wise?
+[00:28:45] Jason Manar: Was this helpful? Was this not helpful? Is there anything else I can do for you in the future?
+[00:28:52] Yuval Mermer: First, I would love to keep in touch with you and keep you in the loop.
+[00:28:57] Jason Manar: Sure.
+[00:28:57] Yuval Mermer: to do a follow-up meeting and update you on our journey and what we found already. And second,
+[00:29:08] Yuval Mermer: I think I will take those minutes to thank you for your perspective, which is very thoughtful for me. I can really learn from it.
+[00:29:19] Yuval Mermer: And, and I think, I think this is…
+[00:29:23] Yuval Mermer: the most interesting CISO conversation I had.
+[00:29:27] Yuval Mermer: Because you're the first who took it to… To the… to the basics.
+[00:29:33] Yuval Mermer: of the questions and the basics of the conversation that I need to… to go there.
+[00:29:40] Jason Manar: If we don't have the questions and the basic right, right? Just like our LLM entries, right? Just like our choose-any-model-you-want-to, if you haven't asked the right question, you're not going to get the right answer.
+[00:29:53] Yuval Mermer: Right.
+[00:29:54] Jason Manar: And so that's why I really challenge, have we… are we asking the right question? Because we can get CISOs to talk about
+[00:30:04] Jason Manar: very, very cool things. And we can talk, and we can get them to talk about very, very good things that might be even good.
+[00:30:13] Jason Manar: Holistically, for the security… you know,
+[00:30:17] Jason Manar: ecosystem as a whole.
+[00:30:21] Jason Manar: But they may not translate
+[00:30:24] Jason Manar: into a current business case. And if they don't translate into a current business case.
+[00:30:31] Jason Manar: What that means for you is…
+[00:30:34] Jason Manar: You're gonna have a bright, shining moment for a very, very short time, and you're not gonna be able to help the people you need to help, because you're not where businesses need you to be in the moment.
+[00:30:45] Jason Manar: And quite frankly, most CISOs don't understand that.
+[00:30:52] Yuval Mermer: You know, we… when we started our journey.
+[00:30:55] Yuval Mermer: The first decision we made is that we're not gonna write even one line of code
+[00:31:02] Yuval Mermer: Before we gonna be… Pretty sure that this is a painful area, the area we're exploring, and
+[00:31:11] Yuval Mermer: I think I'm gonna share this conversation with my colleague.
+[00:31:16] Yuval Mermer: So we can learn from it together.
+[00:31:20] Yuval Mermer: And I already took A lot of dime from you, so… And thank you for that.
+[00:31:27] Jason Manar: No, no, no, it's my pleasure. I love these conversations, you know, and at the end of the day.
+[00:31:36] Jason Manar: I don't expect anything from them, meaning I don't expect anything back, but I really do hope to forge relationships through them. And, you know, it's how I met
+[00:31:49] Jason Manar: a soffit Whiz, and he's one of the most…
+[00:31:54] Jason Manar: influential and interesting people that I think I've ever met. And, I hope to meet others like him, and for all I know, you are very much like him, and that's why I take these calls and why I spend time with everyone.
+[00:32:11] Jason Manar: I, too, find it immensely valuable, and
+[00:32:14] Jason Manar: You know, to the… to the extent that you have additional feedback where I can be more helpful, I… I want to be. But right now, that…
+[00:32:24] Jason Manar: That is me trying to be as frank and honest as I possibly can be with everyone that I talk to, and give them the kind of advice that I would want to have.
+[00:32:37] Yuval Mermer: Really appreciate it, and I really appreciate the new perspective you gave me in this conversation.
+[00:32:43] Jason Manar: I look forward to hearing from you in the near future, and hopefully, maybe we can have a conversation with your colleague, you know, next time, and…
+[00:32:51] Yuval Mermer: Really?
+[00:32:52] Jason Manar: you know, thanks again, appreciate it. Have a great day.
+[00:32:55] Yuval Mermer: Thank you, and have a great day.
+[00:32:56] Jason Manar: Bye.
+[00:32:57] Yuval Mermer: Bye-bye.

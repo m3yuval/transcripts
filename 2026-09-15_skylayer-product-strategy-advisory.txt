@@ -1,0 +1,126 @@
+Date: 2026-09-15
+Topic: SkyLayer Product Strategy Advisory
+Drive File ID: 1vfgw6viYHs34kpzuCCQbarGSxELj9NJT
+Source: google-drive-pdf
+
+[00:00:00] Shoval: I'm Shoval, I'm in Cybersugut and past 10 years. Like most of the Israeli founders, I started in the unit 8200. There I actually met Yuval. We both served in the department that was responsible for all cyber operations infrastructure. Basically all the role of DevOps engineer together with security engineers had to build
+[00:00:21] Speaker 1: Mm-hmm.
+[00:00:26] Shoval: and maintain those infrastructure but also in a very secure way because they hold very sensitive operations. I served for five and a half years and after that I released as a captain and basically there I did a bit of a ship in my roles because I started in the technical side but I always was fascinated from and love to deal with problems and problem solving in customer Spain. So I did a shift into a product management role, started a company called Perception Point,
+[00:01:03] Speaker 1: Mm-hmm.
+[00:01:05] Shoval: led there all the detection capabilities that were based on AI, machine learning, built agent before I knew to call them like that. This was a great journey
+[00:01:16] Speaker 2: Mm-hmm.
+[00:01:18] Shoval: and this company was acquired by Fultonet. After that, I moved to another company called Koi Security. Also, great company, amazing customer.
+[00:01:29] Speaker 1: Yep, I know that.
+[00:01:30] Shoval: Yeah, cool. Amazing. So you know how the story ends? Basically this company was acquired by Paolo Alto
+[00:01:34] Speaker 2: Mm-hmm.
+[00:01:38] Shoval: and you know that was my sign to talk with Yuval which is a very good friend from the military service and to start our own thing. We both started on the same department doing the same things and I did like the shift to the product management role, but Joval doubled down on the technology so I let him share his journey.
+[00:02:06] Speaker 2: Yeah, watchable
+[00:02:06] Shoval: Yeah, what Joval
+[00:02:07] Speaker 2: didn't say that she was my first commander at 8200 unit.
+[00:02:14] Shoval: For a short time, you know, after that, he will tell you that he goes through the managing very fast.
+[00:02:26] Speaker 2: Yeah, after the great time we had together developing great platforms for the unit infrastructure, Showa Lexiik promoted me to be a team lead.
+[00:02:38] Speaker 1: Congratulations on your promotion.
+[00:02:40] Speaker 2: Thanks, it was a long time ago. Then I promoted again after a couple of years as a team lead, I promoted to be the head of the DevOps and Infrastructure Department in 8200. Actually, I led 40 engineers across five teams. We built and ran large-scale networks, very complex for operations rooms, for thousands of users and and hundreds of applications. We managed the petabytes of data and large scale production environment. And after I finished the military service, the head of DevOps infrastructure was the last role, last position there. And after I finished, I searched for a new challenge in the industry. And my challenge was to learn how to manage in this scale and this sophisticated infrastructure, but outside the military. So I started as a director of DevOps and SRE at Paragon, features in Israeli cyber company. There I led 25 engineers, three teams. We developed networking solutions for Paragon's product. And after the long journey I did, I quit at Paragon. And I answered Chauval's phone. I told her, yeah, I'm with you. I quit at Paragon. And we started this journey together. And we would love to--
+[00:04:03] Speaker 1: Congratulations again.
+[00:04:05] Speaker 2: Thanks.
+[00:04:08] Speaker 1: OK, I'm Andrew. I have been in cyber leadership for about 25 years. I started in consulting. And then I spent 18 years at Nestle, the food giant. Since then, I've been a CISO three times once in manufacturing and two times now in the veterinary space. Which I really like. I've been in the startup world for about six years. I've done 30 angel investments. And I've also co-founded a CISO investment syndicate similar to SVCIO. It's called LEED. And then I co-founded a fund or I co-manage a fund with about 25 CISOs. So I'm pretty deep into the cyber startup community. That's why when Shavala originally reached out, I said, have a good one. I've been a CISO three times. I've been a CISO three times. I've been I figured, OK, well, let's be better talk. If you guys will indulge me for a second, I'd like to share one slide with you. This is what I call my... my Chinese menu for startups. I apologize if you're very hungry right now because this is not going to be nice to you. But it's set up like a Chinese menu because you can pick and choose the things that you want or need help with. The appetizers is the go-to- market. So giving you feedback on your pitch, both the presentation and your verbal pitch. Support on your product roadmap when you're very early stage, before you have a number of customers or design partners, getting new design partnerships. So you probably are needing some of those right now. So I have, I know a few groups that can help with that. I'm not a super expert on channel sales, but I know all the major bars and MSSPs, and I can make those introductions to you and your team. If you've read about me or talked to any of your other peers who work with me, I really like the thought leadership stuff. So I write a lot of articles and go on podcasts and speak at conferences, never ever selling. I can never be perceived to be selling in any way or I lose my credibility. to you and your peers. You got to do those dinners and conferences so you know getting you connected to those. When you raise either your first round or your next round or whatever all the market research companies reach out to me and they want to talk their analysts want to talk and they want to know about SkyLayer and whoever your competitors are and what I think about each one. I am a practitioner so I can see what your competitors are up to. I can go through their sales cycle and What you really want is that orange and talk to them and feed that back into you. chicken that's down at the bottom, that's what we call our casual conversations or indirect intros. So I have about 16,000 connections and I'm in about 20 different CISO Slack groups. CISOs do not go look at the Gartner Magic Quadrant anymore, they go into those Slack groups and they say, Hey ", I need something to fix." security or AI security or whatever, and they want to know who's doing what. And then we've already talked about the different investment vehicles. If you need help finding field CISOs or whatever, and then if you need help getting connected to VC, you probably don't. You're in a pretty good ecosystem for that, but I'm fairly well connected there. You can see my hat today. Anyway, that's me in a nutshell. as a swag consultant. Here, I have this one too. And what I didn't say is the dessert at the bottom I consume a lot of swag, and so I know what people like and what they don't. So that's me in a nutshell.
+[00:07:47] Shoval: love it. Well, I totally understand like why Giselle thought we should speak to you.
+[00:07:55] Speaker 1: Uh-huh.
+[00:07:56] Shoval: Honestly, I think we are even a
+[00:08:04] Speaker 1: Mm-hmm.
+[00:08:08] Shoval: we got connected to Giselle and what she thought we can help us with. Basically as I mentioned we are building our company, we are on the ideation stage as you probably saw, like the AI changed the
+[00:08:20] Speaker 1: Mm-hmm
+[00:08:24] Shoval: whole ecosystem there are a lot of AI security products right now and we are
+[00:08:28] Speaker 1: Yeah, do you know how many there are right now Yeah, there's 412 as of today
+[00:08:37] Shoval: AI security specifically
+[00:08:37] Speaker 1: whoa AI security companies now some of them fall across multiple quadrants or whatever, but there are 412
+[00:08:47] Speaker 2: How do you keep track and the number
+[00:08:49] Speaker 1: there's somebody built a tracker. It's called the AI startup map I'll share that with you amazing. It's the guys from prop security who they also got acquired by sentinel one They built this map
+[00:09:05] Shoval: Love it.
+[00:09:06] Speaker 1: Nice
+[00:09:08] Shoval: Um, yeah, so.
+[00:09:09] Speaker 1: I didn't see a see Skylayer on there yet, so you looked very early to see.
+[00:09:13] Speaker 2: Okay, so you're going to be surprised.
+[00:09:28] Speaker 1: Uh-huh.
+[00:09:29] Shoval: we trying, like one of the reason I did a shift into product management is, as I mentioned, I love to solve problem, real problem, to create real value.
+[00:09:39] Speaker 1: Mm-hmm.
+[00:09:40] Shoval: We want to find a real pain to solve, and we believe that there are many, many good AI security companies. We know the founders, so we know that even though the solution is not perfect right now, it will be.
+[00:09:50] Speaker 1: Mm-hmm.
+[00:09:54] Shoval: And we want to solve a different pain.
+[00:09:55] Speaker 1: Mm-hmm.
+[00:09:57] Shoval: And
+[00:09:58] Speaker 1: Okay.
+[00:09:58] Shoval: basically, right now we are talking with security leaders, with CSOs to
+[00:10:04] Speaker 1: Mm-hmm.
+[00:10:04] Shoval: learn their pains and learn them their fault. Like we started the talk.
+[00:10:08] Speaker 1: Yeah, you're doing your own sunrise process. I understand. I've had hundreds of these conversations.
+[00:10:13] Shoval: Cool. So actually we would love to hear your take about the new emerging trends in the field at the moment. And I can share after what we thought and our discussion with Gisela and more CSOs went.
+[00:10:32] Speaker 1: Okay. I don't have some kind of groundbreaking problem that I think people are not really focusing on right now. You know, I think I'm hearing almost daily or maybe at least a couple of times a week. pitches from different AI security companies and they're all trying to do what you just said which is kind of differentiate themselves in some way. There's people that are agents, there's people that are really focused on DLP, there's people that are kind of API hooks, there's people that are doing browser plugins. and there's big competitors in that area that are also trying to build their own AI stuff or buy startups who are doing that stuff. So I wish I had something really groundbreaking to share with you that could help you to build the next great amazing product, but I don't.
+[00:11:23] Speaker 2: Actually, actually all the solutions and companies you talked about, they are trying to solve the usage of AI internally inside the organization.
+[00:11:36] Speaker 1: Yeah, there's that part of it. There's also people who are building AI agents for security teams to help do stuff for them. There's probably 10 startups that I know that are doing that. So whether it's identity or SOC or role management or GRC or whatever, there's that aspect to it as well. I think there's things where if you're thinking about the Koi side of it, there's like the people who are trying to build AI agents for security teams. And so, you know, we're trying to build, I don't know, stores or platforms that look at every skill or something that can detect, you know, nasty skills that will block those things. many different approaches to it right now that it's kind of overwhelming. And it's not clear to me who's really going to win in that race.
+[00:12:30] Shoval: I must say we are totally agreeing on that. And basically that's the reason we started to think about it in a kind of not necessarily different, but different perspective. Like, as we shared, we are both infrastructure people that made us realize and think that
+[00:12:44] Speaker 1: Mm-hmm.
+[00:12:52] Shoval: probably like, of course, you need to secure the AI inside your organization and the one that come to attack you, but... Basically, if you will handle your infrastructure good, if you will do it securely, you will
+[00:13:05] Speaker 1: Mm-hmm.
+[00:13:06] Shoval: reduce the risk drastically. the reason we started to think into network security. And that's
+[00:13:10] Speaker 1: Mm-hmm.
+[00:13:16] Shoval: And we started to talk with CISOs about managing and visibility, you do the risk
+[00:13:16] Speaker 1: Okay.
+[00:13:22] Shoval: in their complex networks because you know, for big organizations, the network is fragmented, super complex, and vendor different tools. And basically we got a feedback that
+[00:13:31] Speaker 1: Mm-hmm.
+[00:13:34] Shoval: there is a problem that but it's not too urgent for the CISOs.
+[00:13:38] Speaker 1: Mm-hmm.
+[00:13:39] Shoval: And you know, that's how we started the conversation. We tried to think about the problem that will appear in our organization in one year, two years, when the AI attacks, machine speed attacks,
+[00:13:56] Speaker 1: Yeah, you're making a bet. And your bet is that by the time you've built the company that these kind of AI-based network attacks will be prolific and that people will need that. I don't know if that's the case now. Okay.
+[00:14:14] Speaker 2: Because we have IR friends that are the response to incidents from another company that's what they're doing. And then we talk to them and we heard that already they handle incidents and attacks that has been made by AI agents. So we already know how the attack looks different from I
+[00:14:44] Speaker 1: understand what you're saying, but what you're saying
+[00:14:46] Speaker 2: not 100% bet.
+[00:14:48] Speaker 1: Your bet is that that will become more commonplace. Yeah. Something else won't surpass that. When we do advising for security companies, we have to ask a lot of questions. One of them is like, where does the budget come from? The other one is, where is it in the problem solution life cycle? The first thing you need is that you need people, you need your buyers, you need CISOs be aware. You're aware that this problem exists to the point that they are trying to find a solution to solve it. Then you need to become solution aware where they know that Skylayer is the one that they're going to go to to help them fix the problem. But right now you're in a stage where you're betting on a problem that you know from your IR friends that may become more prevalent in the future. But right now you probably don't have people banging down your door saying please give me a solution to fix this AI network attacks thing that I'm getting. Again, because we don't know that that's going to be the thing that happens. happens.
+[00:15:55] Speaker 2: Yeah, and this is the exact point where we're in because when we ask for the top three things that are on top of the mind of the CISO. They are not talking about this kind of attacks, even though they think that it will happen and this is how it will work. They are talking about another things that we know that there are already 400 companies that try to solve
+[00:16:24] Speaker 1: it. Yeah, I would challenge you to think about it in a different way. If I can. And I know that I'm not one of your advisors yet. I know you haven't even raised, so I definitely haven't invested any money. This advice is coming for free. But what I would say is think about the network security companies that are out there today. Think about Palo and Zscaler and Checkpoint and NetScope and whatever. Think about those companies now and think about what part of their solution is lacking that you could enhance. I would challenge you to think about it in a different way. I would challenge you to think about it in a different way. I would challenge you to think about it in a different way. a year because they're gonna do this other thing that Palo is doing, but they're gonna do it better. and I'm willing to sacrifice that. And I'm gonna go cut down what I'm spending with somebody else today to give some money to you. So I think about the question of where the budget comes from. But, and that way you can do a land and expand network business case, right? So you get in there and you're doing whatever function, and I don't know what that is today. You're doing a better SASE or a better CASB or a better network DLP or whatever it is that exists today that you can do better than they can. again, and then you can say, oh, by the way, we also can do can stop network based AI attacks. Would you like to have that as well? That's another function that we can add for you. It's like, where did IDP and what's the other one? Like where did those things go that were promised? These network attack detection protocols that were supposed to be there in the past. Where are those now? Nobody's really using that. Maybe they feed it into the stomach. their Sim, but that's not getting a lot of traction today.
+[00:18:23] Shoval: Yeah, I totally understand what you're saying. I'm wondering if we thought about it as well. We tried to figure out how we are kind of thinking from the budget of other products.
+[00:18:40] Speaker 1: Mm-hmm.
+[00:18:41] Shoval: Basically, we did not succeed to detect a pain from the season like they need a better chassis they need a better cost based allies even though I know there is a company that like our next gen of those things already so we are we are trying to think like
+[00:19:01] Speaker 1: Yeah.
+[00:19:03] Shoval: if if it's good and if it's it's will be needed someone will buy it we're just saying that we were doing next gen something
+[00:19:13] Speaker 1: Yeah. I understand what you're saying, and there are companies that are already trying to do that next gen network thing today. But I'm trying to give you a way to get in so that you can then do what it is that you're saying that you want to do, which is this AI security network attack prevention. Maybe it's something around intrusion detection and intrusion prevention that's not in place today where you can do that using an AI way of doing that and you can API hook into your different network companies that are out there today and say let me just hook in let me take take a look at your network and I'll give you more details than those guys can give you. I don't know. I mean, I'm just spitballing in for you.
+[00:20:02] Shoval: No, I'm totally appreciated. I think that what I want to say is that we are not locking into the network specifically. We just try to explain to you how our mind
+[00:20:12] Speaker 1: Uh huh.
+[00:20:16] Shoval: went and how we thought about it.
+[00:20:20] Speaker 1: Yeah.
+[00:20:21] Shoval: So if a network is not a current big pain, we want to fight to fix it if it's not broken.
+[00:20:31] Speaker 1: Yeah. For me, in my specific CISO role, network is not a big pain. And the reason is, we have about a thousand hospitals. All of them are totally segmented. So where you talked before about the real pain to solve and the risk in complex networks, I have a very uncomplex network. And it doesn't present a risk. So if one hospital gets attacked, the other one can't. I mean, I mean, there's no connectivity. Yeah.
+[00:21:03] Shoval: it's actually a great feedback and we heard it before, like creating an architecture that reduced the risk massively. And actually another, I will use the few minutes left to show you another direction.
+[00:21:20] Speaker 1: Mm-hmm.
+[00:21:22] Shoval: It's actually more of a feedback we got from CISO, like when we try to realize when, what we will do, what the... are the open projects at the moment, what they want to not to buy most of them express as they want to build it themselves is all the
+[00:21:39] Speaker 1: Mm-hmm.
+[00:21:41] Shoval: remediation process. Like they got findings from the different network and the different security tools and they needed to do action, remediate and a lot of organization wants to build those processes
+[00:21:51] Speaker 1: Mm-hmm.
+[00:21:55] Shoval: agentically right now
+[00:22:00] Speaker 1: Mm-hmm.
+[00:22:01] Shoval: and it's actually like we are kind of an across board right now we are trying to figure out like we heard this feedback a lot from CSOs and we have like our first thesis and
+[00:22:15] Speaker 1: Mm-hmm.
+[00:22:16] Shoval: we are trying to think like many maybe to drop the network area and to hear what they're saying about creating identity remediation processes even though they want to build it by themselves but maybe it's an opportunity for a bigger organization
+[00:22:29] Speaker 1: Mm-hmm.
+[00:22:32] Shoval: so I really
+[00:22:36] Speaker 1: Yeah, we actually did a, we did a design partnership with a company that was building AI agents for the security team, and we were able to use them on the identity side to do some kind If you think about those kind of hygiene things that will not break stuff, but only do some cleanup, in worst case scenario, you just have to turn something back on that you've turned off. One thing I would say about that is let's Thanks. So two things I would say about that. The first one is, when you talk to CISOs, you have different levels of maturity, right? So you have, and I'm not talking about whether or not the person is mature, but the organization's security program maturity. And some people are at a level, especially people in tech companies and things like that, where they are building their own tools. There's no mode anymore for cybersecurity companies. I'm gonna build my own tool that will do this remediation stuff for me, and it'll take the feed from all the tools and tell me how to prioritize and all that shit. There's also people who are kind of in the middle who understand the need for it, but don't have the time or the resources to be able to build their own stuff. And then you have people at the bottom who have absolutely no idea and don't even really look at the stuff that's coming off their feeds. They have an outsource sock can they assume that somebody--
+[00:23:55] Speaker: is doing stuff that they're doing.
+[00:23:55] Speaker 1: So your ICP for that is that is not Fortune 500 or maybe Fortune 100, but it's somewhere kind of mid-market where you have people who understand the need to do this and want to kind of reduce their resources time spent on manual activities, so that they would buy something to do that because they're not gonna build it themselves. The second part is that space is fairly crowded. So once again, when you go talk about AI security or building AI agents for the security team, I can think offhand of about five different companies that are already doing that, and some are like B round already. So there's companies that have already have been fairly well built that are doing that. There are some non-cyber security companies that do that as well that build AI agents for business. And you can use those and you can say, hey, this is a process that I do on my security team. I want you to build this process for me as an agent that has nothing to do with security. So
+[00:25:00] Shoval: just used the mechanism for security.
+[00:25:03] Speaker 1: yeah. So if you were going to do that, you'd have to have a really key differentiator that if you went and talked to your grandma or a 10-year-old or whatever that you could say This is why ours is better because we do it this way
+[00:25:17] Shoval: Yeah. Yeah,
+[00:25:20] Speaker 2: Okay
+[00:25:20] Shoval: that's a very good feedback. Well, Andrew, I mentioned it at the beginning, but it's clear why Gisela wants us to talk with you. I think that those are insights that, you know what, I feel we collect them bite after bite with a lot of conversation, but we got a lot of like a
+[00:25:38] Speaker 1: Uh-huh
+[00:25:42] Shoval: clear view of the field and the market from your eyes in
+[00:25:52] Speaker 1: I hope it was helpful. Yep
+[00:25:55] Speaker 2: super
+[00:25:56] Shoval: Yeah, and I hope we will find our take about the security new security era and we will share it with you at the
+[00:26:08] Speaker 2: Yeah. That's great.
+[00:26:10] Speaker 1: What I'll say is when you guys raise, just ping me and tell me about it. And I hope it's from a good VC. I'll give you one advice about that that you probably already know. But it's really about the quality of your venture capital partner and not about how much money they're willing to give you or what valuation they give you on the first raise. So consider going with the best people versus getting more money. because you can always get more. I'm not going to get any money, but get good quality board members and stuff.
+[00:26:44] Shoval: totally agree and it's not you know it's like known here but it's it's always worth mentioning because I feel not a lot of founders like realizing that so
+[00:26:55] Speaker 1: Yeah, it makes me sad when I talk to a founder who raised from like Dell Capital or, you know, something that's kind of like a second rate VC and then I'm like, I don't know if I really want to be part of that. So anyway, I hope you guys raised from an amazing VC and then you ping me and say, hey, we'd love to have you participate, which I would be happy to. Yeah,
+[00:27:16] Speaker 2: I'm sure we will.
+[00:27:17] Speaker 1: All right. Great to meet you guys. Take care. Have a good evening.
+[00:27:21] Speaker 2: Thank you very much. Bye.
+[00:27:21] Shoval: Bye bye. Bye bye.

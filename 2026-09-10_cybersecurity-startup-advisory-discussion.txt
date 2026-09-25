@@ -1,0 +1,142 @@
+Date: 2026-09-10
+Topic: Cybersecurity Startup Advisory Discussion
+Drive File ID: 1jd2RxGhqTRB08ayqEWzSEmvXspusITZc
+Source: google-drive-pdf
+
+[00:00:00] Shoval: MUSIC Hey you.
+[00:02:40] Speaker 1: Okay, that's it. Okay, that's it.
+[00:02:58] Shoval: speaking in foreign language He started talking to me and I said, "It's not the main value." So when he talked to me, he said, You " can't talk to me about it, but..."
+[00:03:21] Speaker 1: Okay.
+[00:03:22] Shoval: It's not the main thing. I had a choice of which to choose. If you don't know what you're doing, you're going to want to do something.
+[00:03:35] Speaker 1: With a sock, and
+[00:03:38] Shoval: Bend the seam.
+[00:03:38] Speaker 1: using playing tools.
+[00:03:41] Shoval: Still on your end.
+[00:03:42] Speaker 1: Pentesting. No, no, no. Pretty good good. It's all my Salt.
+[00:03:48] Speaker: It's awesome.
+[00:03:50] Speaker 1: I know me. I know. That's
+[00:03:56] Shoval: Yes. Yes. How do they call him? They call him a monster.
+[00:03:56] Speaker 1: the one does.
+[00:04:01] Shoval: I don't know. Hey, Sun.
+[00:04:06] Speaker: Hello.
+[00:04:07] Speaker 2: How are you?
+[00:04:09] Speaker 1: You knew it. Good. What's
+[00:04:11] Speaker 2: your first name for me?
+[00:04:13] Shoval: Sure, I'm Soval and this is Yuval.
+[00:04:17] Speaker: You know.
+[00:04:17] Speaker 2: Okay. I had it right. I just wanted to make sure I had the accent correct.
+[00:04:21] Shoval: Amazing.
+[00:04:22] Speaker 1: Nice.
+[00:04:22] Speaker 2: Thank you both.
+[00:04:23] Shoval: Nice to meet you too. Thank you for the time. We really appreciate it.
+[00:04:28] Speaker 2: No worries. So tell me what you're doing.
+[00:04:32] Shoval: Sure. Okay, so I will share a bit about our goal for this conversation. Like, as I shared in the message, Yuval and I are building our company right now. So basically, our goal is like to do a mutual introduction and then to share with you a bit the direction we're exploring and get your thoughts, feedback about it, how does it sounds to you?
+[00:05:02] Speaker 2: Sounds great.
+[00:05:03] Shoval: Perfect. So before we start the introduction, do you mind if I record this conversation?
+[00:05:09] Speaker 2: Yeah, that's okay.
+[00:05:10] Shoval: Amazing. So I do it. Cool. Okay, so I start. I'm Shaval, as I mentioned. This is the right pronunciation. And I'm in cybersecurity for the past 10 years. I started in 8200, which is the security operations unit of the Israeli army. There I actually met Shaval, my co-founder. We both served in the department that was responsible for the DevOps and ID infrastructure. So basically all the walls... So I started with five and a half years I started with five and a half years ago. I started with five and a half years ago. and then released as a captain. And after that, I did a bit of a shift. Like I always loved to be ends on with the technology but I was even more curious about creating value and understand customers pain and like the business side of it. the world. So I became a product manager. I started in a company called Perception Point, which is a cybersecurity company. Let there all the detection capabilities that were based mostly on machine learning, LLM, and agents. Basically, before we even knew to call it agents, that's what kind we did. So this journey was amazing and this company was acquired by 4DNet. at the end. called Koi Security. Again, amazing journey, great company, great customers, very innovative in terms of how we use the AI. And this company was acquired as well by Palo Alto. And that was basically my sign to pick up the phone and call Duval and tell him like, "Do you remember our old dream to build something together?" and basically like now it's a time, so now we're doing it. And currently we're like, we will dive into it in a minute, but now we are in the ideation stage and exploring and learning for security leaders. Yeah, and I let Yuval like introduce himself.
+[00:07:43] Speaker 1: Yeah, I answered Shofal's call and I told her, "Let's go." I think it's my time also.
+[00:07:47] Shoval: Yeah, basically that's what the, that was it.
+[00:07:54] Speaker 2: When you find the right person, that's all that matters.
+[00:07:57] Shoval: Wow, totally.
+[00:07:58] Speaker 1: Yeah, really. Okay, I'll talk about myself. I started my career in the 8,200 unit. I can see if you know this unit already.
+[00:08:11] Speaker: Oh yeah.
+[00:08:13] Speaker 1: And I started there as a Shovaz soldier. And in her team, I started as a developer. And together we developed two great platforms for the unit, one of them was the platform for securing it. mapping and operating our complex networks. And after the great journey of being a developer, I promoted to be a team lead. And after a couple of years of team leading, I promoted again to be the head of the DevOps and Infrastructure Department. There I led 40 engineers across five teams. We ran large-scale networks, complex networks for operations rooms, for thousands of users and hundreds of applications. And after many years in 8200, I finished the military service and I started as the director of DevOps and SRE in Paragon, which is an Israel Israeli cyber company. There I led the 25 DevOps and SRE engineers. We developed solutions for our customers' network, like for the products network specifically. We had to develop tailor- made solutions because of the security restrictions they have in place. Argonne's customers, it's a B2G company and we worked with very secure environments in...
+[00:09:52] Speaker 2: Can I ask you a question? To interrupt you, but what kind of networks were these that were tailored? Can you... you don't have to give me answers?
+[00:10:02] Speaker 1: solution.
+[00:10:02] Speaker 2: Yeah, but
+[00:10:03] Speaker 1: yeah, it's in the aspect of the object. Like, how do I defend myself and how do I defend my product in the network aspect? And this is where we developed and this is actually all I can say about it because of the...
+[00:10:24] Speaker 2: That's okay.
+[00:10:25] Speaker 1: Yeah. And that's all. And then I quit at Paragon, I answered Chauval's phone, and I started the, together, what made this role special in Paragon is that we took the abilities of developing and the knowledge in the networking, and we combined it together, which was really challenging in the-- great opportunity to learn about securing networks. And yeah, and then we started our journey together.
+[00:11:00] Shoval: As you can see, we started on the same place and you've all doubled down on the infrastructure and security and engineering. And I did a
+[00:11:07] Speaker 1: Yeah.
+[00:11:11] Shoval: shift.
+[00:11:13] Speaker 2: That's okay. That's okay. So you have to have complementary skills. So
+[00:11:17] Shoval: we do the limits.
+[00:11:19] Speaker 2: you're in ideation, and I'm assuming you're doing something with securing networks.
+[00:11:26] Shoval: Oh, it's kind of related. I'll share about that. Do you want maybe to tell us a bit about you before that, before we dive into that?
+[00:11:36] Speaker 1: I
+[00:11:38] Speaker 2: I have a lot of friends in Tel Aviv. I love Tel Aviv. I went right after COVID and I haven't been back and I really want to come back because it was spectacular. I have been a very, I shouldn't say it that way, I've been a long-term global CIO and CISO. I started my own company several years ago. I work with startups all the way from Ideation all the way through sale and I help where I can. So I'm not a go-to- market person. I don't, that's not what I do. There are companies out there and I affiliate with companies that do go-to-market, but I'm really there to get under the covers with you and help. And I've worked with several cyber firms, both US and Israeli based, you know, literally from everything from, I've got one right now where, you know, I've said to them, no, no, no, like they came to me like you are saying, you know, we're, we're just an ideation. I was like, now you're off on the wrong page. And so help them get somewhere. And now they're going like gangbusters. So I've got a couple of those under my belt
+[00:12:53] Shoval: indistinct chatter
+[00:12:54] Speaker 2: and worked with another firm several years ago. They sold, they sold big, actually several companies that I've worked with. with, sold big. I just have a lot of fun. You guys are just a lot of fun. So at the end of the day, I'm like, oh, here's another one, you know, it's like
+[00:13:14] Shoval: chatter Yeah.
+[00:13:15] Speaker 2: how many of these can you do? But I can't say no, I just can't say no. So I will give you 30 minutes today. And then after that, if you want to come back, we have to think about something else.
+[00:13:27] Speaker 1: But
+[00:13:28] Speaker 2: I don't wanna steal your thunder. I'm just a long-term practitioner. So I'll give you real life experience. even though I'm consulting, I still am a VCIO CISO. So I keep my hand in the pie and, you know, and again, practical, direct experience. So, tell me what you're doing. I'm anxious to hear it.
+[00:13:53] Shoval: First of all, amazing. Love to hear that. I share a bit about what we're exploring. So basically you're on the space, so you know that AI changed the whole ecosystem. Like it changed the way organizations work, it changed the way attackers operate. And we basically know that you need to secure your AI as an organization, but you have to be able to protect yourself from AI and from now on. New kind of attacks that are out there. We talked a lot with CSOs and incident response people and leaders and they described us a new types of attack that are not only faster and with larger skill, but like the thing that stuck with us the most is that those attack became unpredictable. like the agents create new sequence, new... mix that we did not know before. For example, we have the best example, the one with openAI and Agingface that I'm assuming you know. Basically, as they didn't use the file system as a message board, that's super innovative, super creative. Those things will happen more and more and more. And first, does it resonate to you?
+[00:15:23] Speaker 2: It does, but I haven't heard enough yet.
+[00:15:26] Shoval: Yeah, no, but the fact like that, you know, the unpredictability part of it.
+[00:15:34] Speaker 2: Yeah, I mean that comes with the territory. Right. So AI is out there. It's a new form of attack vector. People don't see it coming. I mean, as a consultant, I talked to a lot of companies. You can't turn on the news without hearing something about a cyber attack here in Massachusetts. It started Monday morning. Two school systems, actually one government system, one school system, in two different towns, completely You can't turn the news on without hearing about cyber. And yet, when I talk to companies, unless they're big enterprises and they have lots and lots of money, security is a short change. Lack of resources lack of tools lack of skills lack of training. It's always a short change.
+[00:16:27] Shoval: Yeah.
+[00:16:27] Speaker 2: I'm in a VCC.
+[00:16:29] Speaker 1: the role right now.
+[00:16:29] Speaker 2: And, you know, I just started it recently. And, you know, I was like, Hey, can I see the org chart? SecOps, two people.
+[00:16:37] Shoval: Yeah.
+[00:16:39] Speaker 2: And one is the CISO who's leaving, because obviously is exhausted. Right? I mean,
+[00:16:45] Speaker 1: yeah,
+[00:16:46] Speaker 2: this is what's going on. So AI is going to make this even more complex.
+[00:16:50] Shoval: We totally agree. And you know that made us think about our organization will handle that. end Like, we believe that most of the security stock of organization is built on known patterns. You know what your attackers usually do and you put your guards on the same places, the most important places, the most common places to get attacked from. And we just realized that we have like, I mean, actually we have a very cool nice analogy of like, securing a bank. Okay, so you have the vault room and you have one guard that needs to guard all the buildings. So basically what he does is like, go to the vault room, check it, is on the entrance, always one or two times a day you will do around around the building, and he has a security routine. And we feel like the current security stock is behaved the same way, like you have security routine. And if you are a attacker, you don't have to be a super complex attacker to understand this routine and understand what are the places organization protects and controls and where you can find a gap. Now, we're going to go back to the last question. So when a human did attack, it was hard to find the gaps because you have to scroll many places, do many tries to be creative, which is very not super easy for a lot of people. But now with AI, they do it for you. They do it for you faster, in scale, and basically it can break your security routine. So that's the area we're exploring, and I'm curious
+[00:18:39] Speaker 2: Um
+[00:18:50] Shoval: to hear your thoughts about it before we will dive into what we're doing.
+[00:18:55] Speaker 2: Are you thinking about a genetic sock?
+[00:18:59] Shoval: Oh, so no, I understand why it can be...
+[00:19:01] Speaker: Okay
+[00:19:03] Shoval: It's actually one of the questions we are asking ourselves, because it's very similar to SOC, but we understand that this area is very crowded, and that's not exactly what we want, because we believe that a genetic SOC is a build of logs that happened after the action. It's not like in real time, it's not like detecting the moon. What are some of your attacks, or attacker and suspicious actions on real time? You can see the log after, you can analyze them, you can investigate, which is great. But now that everything happens super fast, that everything happen in large scale, we believe that you might I might want to do it all the time.
+[00:19:58] Speaker 2: So continuous monitoring, but not picking up, how do I want to say this, on current patterns, but trying to identify new patterns.
+[00:20:12] Shoval: Yeah, basically like a 100 guards that look everywhere, you know, go all the unimportant rooms, not only the vault room, not only the entrance, like the back of the building or all the irrelevant places that usually you're not checked because you don't have the resources.
+[00:20:31] Speaker 1: Like, I can imagine you can have 100 guards in your bank branch and they can look everywhere continuously and can validate everywhere what they want in real time and they can alert and can do they can do whatever they they're supposed to do but you can do it now. You can send 100 guards to do the security work for you. If you could have 100 guards, what do we do with those guards in your infrastructure if we go with the analogy?
+[00:21:12] Speaker 2: So give me a for instance of what these 100 guards are going to be looking at.
+[00:21:23] Speaker 1: Like. No, I just wanted to say that that we believed it that we need to continuously understand what's normal, which is the opposite of what the traditional security do. Okay, we want to continuously understand what's normal and explore the environment validate when when something doesn't make sense. Like the traditional security, how we work today. In organizations, we have we have only the things that that people seen before like the signatures the IOC is the detection was everything people have seen before. And now we want to do it the opposite way and want to say like Like this is the normal and if something is out of the normal we want to we want to alert it we want to say that something is happening. Okay. Do you think it solves the real problem?
+[00:22:24] Speaker 2: Well, my next question, I'm trying to think through everyone that I've spoken to recently. Have you done any competitive analysis?
+[00:22:35] Shoval: Yeah, yeah.
+[00:22:36] Speaker 1: At least.
+[00:22:37] Shoval: Yeah, we are... That's the... Exactly the point, because we are not... As I mentioned, we are not... First, I want to give the disclaimer again, same disclaimer, that we are on the exploration mode. So we're exploring a lot of areas, but we don't want to be an agentic stock.
+[00:22:52] Speaker: Yeah.
+[00:22:56] Shoval: We understand there is a lot of solutions there. Also, exposure management is not exactly what we think. So we looked on those kind of-- of products and also a mass product like Pantera stuff like that. We also looked at it and it's just like we know that it's touched a lot of areas that already exist. That's the reason like we are not 100% sure that we'll solve in the right way the predictability problem but we feel that
+[00:23:31] Speaker 1: Mm hmm.
+[00:23:34] Shoval: the core pain is not there. So we're not going to be able to solve that problem. you want it want to, it's an endless race for finding the next pattern and you can just always look for the next partner and you have to find a way to secure yourself without knowing from what you're securing.
+[00:24:03] Speaker 2: Yeah, so in my head was going into exposure management. What I have found in that space is that it's very specific to infrastructure or cloud or network or apps bordering on agentec AI. My gut is that you need more investigation. You're onto something, but you need more you need more investigation. And I'm curious if an outcome will be that you'll take it from your great idea, which is this big, and if you'll have to skinny it down. Now, that's on a bad thing if you think about what the future could bring for you if you added multiple modules, but would this be enough to get you out and running because everybody's had a pathway in front of you for quite a while now, the exposure management
+[00:25:05] Shoval: Yeah.
+[00:25:06] Speaker 2: companies? So I would counsel you to be very careful of that world because they're getting momentum, they're getting a lot of momentum. So
+[00:25:17] Shoval: Positive or negative momentum?
+[00:25:18] Speaker 2: I think you need more. good momentum, but you know, it's it's hard like let's let's talk about the whiz for a second. Okay? Not my favorite company know the founders and I told them point-blank now that you've Hit utopia. There's only one way for you to go right? When you're at the top of the rung, hopefully you can hold that position, but everybody's gunning for you, right? So you got to be better, constantly reinventing. And it's happening. I hear it all the time. You know, the whiz is so expensive. You know, I'm going to go with another vendor that can get me because remember, we're the, we're the shoemaker's children. We have no funding in cyber. We get crumbs and we have to beg for those crumbs. I'm just saying, I think you have to be very careful about which crumb you choose. And don't mean to make that sound negative because it's not like, you know, um, but you need to
+[00:26:19] Shoval: No, no, this is a, sorry, I interrupt you, but
+[00:26:20] Speaker 1: follow up.
+[00:26:22] Shoval: this is an amazing point. And as a product manager, I'm a big believer of MVP and find a minimal value. We just-- I think-- I feel that we are not there yet.
+[00:26:34] Speaker 1: Yeah.
+[00:26:36] Shoval: We are not-- we are talking about the problem for the test, but I'll be honest and say that we are not Like lock on it. MUSIC
+[00:26:47] Speaker 1: Yeah.
+[00:26:49] Shoval: And we just don't know it.
+[00:27:07] Speaker 2: No, I don't think we, well, let's talk about a couple of things. One, there's a new breed of CISO out there, and they're not very mature or experienced. So that's the first thing. A lot of, they're hiring a lot of sec ops managers. They're hiring pen testers and they're hiring network engineers and giving them the season So we'll go look at some of the new ceasars that are out there. It is shocking to me how they went from point A to point B with nothing in between. Right. So this is the new norm. You could say that a network engineer, you know, is great. They're going to protect the network, but they have no idea how to put together a security program, right? So that's the first thing. Immature, inexperienced, sure inexperience ceases. Good news is they'll talk tech because that's all they know what to do, but they don't understand how to defend against security. Then you have CISOs in general that do not own AI. That's a bigger problem for me because there's so many companies out there. And I have this conversation with one of the companies I work with all the time. Stop with the CISOs. Seasaws. The Seasaws do not only... own AI. With the SEC Cyber Disclosure Rule that came out a few years ago in the US, we no longer want to volunteer anything that's risky because we own risk, right? And we're getting arrested for material breaches. We don't want to touch AI. CIOs are kind of getting pushed into it because they're the next fall guy, right? If you can't blame the CISO, go blame the CIO. So right there, no ownership is a real issue. So who gives? Who cares, right? And and right now it's a free-for-all out there. No, it like the and I can't figure out what is is going on. But the CEOs have waved the white flag, not the white flag, waved the flag saying go, right? Give me AI, non- technical people, you know this are developing code agents Right MCP surplus It's a free for who's securing that? Governance it's pretty much non-existent. I I do governance all the time follow me on LinkedIn every Tuesday. I post something I Talked to people all the time. What are you doing for governance? We do it. Oh, I Created a Kimmy agent. Oh, I got Claude looking. I'm like, oh dear god, right because we don't have tools we have crumbs so it gets Even worse it's deeper. We're doing with the hole that we're digging. I don't know if we're ever gonna get out last night Right yesterday the guy from the anthropic the researcher,
+[00:30:21] Shoval: yeah left
+[00:30:22] Speaker 2: left his job. We were on the news.
+[00:30:24] Shoval: yeah
+[00:30:25] Speaker 2: We're going to kill humanity. in a different way. decade, right? It's like, oh, dear God, no or not. No or not. So I'm telling you this because
+[00:30:36] Speaker 1: I think
+[00:30:36] Speaker 2: you're onto something, but you need more investigation, because the unpredictability part is going to be huge. Ask yourself the next time you go into the lab, could I have found what happened with Anthropic or with OpenAI? Now, I will tell you, if they had any kind of governance, guardrail, monitoring, somebody paying attention, those breaches wouldn't have occurred. There was another one today. I didn't even get to read it yet. I think it was OpenAI went off road again. So how do you, you know? governance, you're not sock, you're trying to find something unpredictable. What's that bridge and how do you make it all happen?
+[00:31:25] Shoval: Yeah, that's a very good question I wanted to say. Sorry.
+[00:31:29] Speaker 1: Yeah.
+[00:31:31] Speaker 2: No, no, no, I'm interested in what you're trying to do. So go away for a little bit in a nice way. Come back to me and I'll give you another 30 minutes cause ' sometimes I say to new companies, like go back to the drawing board like this isn't gonna resonate. But what you're thinking about, I think can have some legs if you figure out what it is that it needs to do.
+[00:32:02] Shoval: Amazing. So,
+[00:32:02] Speaker 2: I like the thought.
+[00:32:04] Shoval: I mean, first it's like we really appreciate it.
+[00:32:04] Speaker: Yeah.
+[00:32:07] Shoval: That's a great signal for us and we will totally take the open question you raised and we'll dig into them and we'll explore more. Well, thank you so much. We are super appreciate it.
+[00:32:20] Speaker 1: Yeah.
+[00:32:21] Shoval: We feel that you have a lot of experience and
+[00:32:22] Speaker 1: It was really valuable.
+[00:32:26] Shoval: the fact that you can see what we are feeling inside our stomach. when we just... You know exactly what we're feeling, but the fact that you that you feel it too it's a very good signal for us so thank you so much
+[00:32:39] Speaker 2: Yeah.
+[00:32:40] Shoval: for the feedback and of course for the time and we will be in touch
+[00:32:45] Speaker 2: Yeah. I'd like to see where this heads because two months from now you may come back to me and say we figured it out or we went in a totally different.
+[00:32:58] Speaker: Yeah.
+[00:32:58] Speaker 2: But I like your energy, both of you.
+[00:33:00] Shoval: Oh, thank you.
+[00:33:01] Speaker 1: And I think we move faster than two months.
+[00:33:03] Speaker 2: Yeah. Yeah. Come back. Come back.
+[00:33:05] Shoval: Thank you so much. We really appreciate it.
+[00:33:06] Speaker 1: We will. Thank you.
+[00:33:09] Speaker 2: All right.
+[00:33:09] Shoval: Have a great day.
+[00:33:10] Speaker 1: Bye.
+[00:33:11] Speaker 2: Bye.

@@ -1,0 +1,260 @@
+Date: 2026-09-16
+Topic: Security Leadership Discovery - Harris Schwartz
+Meeting UUID: EDA16CE7-8C89-4C09-BA8A-94B526B69518
+Source: transcript
+Entries: 254
+
+[00:00:00] Shoval Abudraham: The introduction.
+[00:00:01] Shoval Abudraham: I'm Shoval. I'm in cybersecurity for the past 10 years.
+[00:00:06] Shoval Abudraham: actually started in the Unit 8200, which is the Cyber Operations Unit. I see that you already know her.
+[00:00:14] harris schwartz: I do, I do. I, I… in my past, I did a lot of work with, Shabak and, with Massan.
+[00:00:22] Shoval Abudraham: Nice! Yeah. Well, now I'm curious to hear about you.
+[00:00:27] Shoval Abudraham: Even more.
+[00:00:31] Shoval Abudraham: Yeah, so there we started, there I actually met Yuval, so we know for a long… for many years. We started at the department that was responsible for the infrastructure of the cyber operations, basically all the roles
+[00:00:49] Shoval Abudraham: DevOps engineer together with a security engineer, you know, had to build and maintain those infrastructure for the cyber operation, but do it very securely, because those were very sensitive infrastructures. I served for five and a half years, and released as a captain, and after my service, I decided to do a shift into a product management role.
+[00:01:13] Shoval Abudraham: and not technical roles, because I was always curious about solving problem, creating real impact, and I felt like I can be more close to customers and their pain that way.
+[00:01:27] Shoval Abudraham: So I was a product manager and started at a cybersecurity company called Perception Point, led all the detection capabilities that were based on machine learning, LLM, agents, even before I knew to call them agents.
+[00:01:47] Shoval Abudraham: So it was very cool and very innovative back then.
+[00:01:51] Shoval Abudraham: And this company was acquired by Faultinet. After that, I moved to another cybersecurity company called Koi Security. Also, great company, amazing customers, very innovative in terms of how we use AI, and this company was acquired by Palo Alto.
+[00:02:10] Shoval Abudraham: Yeah, and you know, that basically was my sign. After two companies
+[00:02:16] Shoval Abudraham: I picked up the phone and just called, I, like, called Yuval, told him, okay, now, now, we need to do it ourselves.
+[00:02:26] Shoval Abudraham: Yeah, so basically we started on the same department, and, like, worked together for many years, and then, in different companies for some years, and now are back, together, so I let Yuval share, like, his.
+[00:02:40] Yuval Mermer: Actually, in my side, I answered Shoval's phone, and I told her, yeah.
+[00:02:45] Yuval Mermer: Let's go, I'll quit my job.
+[00:02:47] Shoval Abudraham: I'm cleaning my job, now!
+[00:02:49] Yuval Mermer: Actually, it's a dream that we have a long time ago. Yesterday, we found WhatsApp messages from 2020 that were talking about how we're going to build a new startup company. So, yeah, it's a great journey. I'll tell you about me.
+[00:03:05] harris schwartz: Yeah, sure.
+[00:03:06] Yuval Mermer: I started as a developer and engineer at Shovalstein.
+[00:03:12] harris schwartz: Oh.
+[00:03:13] Yuval Mermer: Perfect.
+[00:03:14] Yuval Mermer: So, actually, she was my first commander as a developer, when I was a developer, and together we did some great developing
+[00:03:23] Yuval Mermer: together, development projects. We built platforms. One of them was about managing, operating, and securing the complex networks we have.
+[00:03:34] Yuval Mermer: In, 8200, and another one was around, auto-remediating incidents, we had. And, after, this,
+[00:03:44] Yuval Mermer: a really challenging journey as a developer. I promoted to be a team lead, and a couple of years later, I promoted again to be the head of the DevOps and Infrastructure Department in 8200,
+[00:03:56] Yuval Mermer: And, actually there, it was a really challenging position. I led 40 engineers across 5 teams. We ran large-scale networks.
+[00:04:06] Yuval Mermer: Networks for the operations rooms, and networks for thousands of users and hundreds of applications, and we ran petabytes of data. We were responsible of all this data and the production environment
+[00:04:20] Yuval Mermer: in the unit, and then, I finished my military service, and I…
+[00:04:25] Yuval Mermer: looked for a new challenge, and the challenge I wanted was to learn how to lead
+[00:04:33] Yuval Mermer: This, this scale of organization, but… Outside the army?
+[00:04:41] Yuval Mermer: So, because it's a really different challenge for me, and outside, with the competitive world we have around us in the high-tech companies, I learned how to do it, and actually I started at Paragon, which is an Israeli cyber company.
+[00:04:59] harris schwartz: Yeah, yeah.
+[00:05:01] Yuval Mermer: I started there as Director of DevOps and SRE.
+[00:05:05] harris schwartz: Hmm.
+[00:05:05] Yuval Mermer: And there I led 25 engineers.
+[00:05:08] Yuval Mermer: And actually, what we did was to combine the developing abilities we have, and the networking and infrastructure abilities we have, and we developed tailor-made networking solutions for Paragon's customers, specifically to Paragon's product.
+[00:05:25] Yuval Mermer: And after this journey, I got the phone call from Shoval, and I told her, yeah, I'll quit Paragon. I gave them 3 months' notice, and then we started…
+[00:05:36] harris schwartz: That's great, that's great. Can we break right there? Because my delivery is literally right… Of course, of course. Alright, I will be right back. No problem.
+[00:05:45] Shoval Abudraham: No worries.
+[00:07:27] harris schwartz: Thank you for that.
+[00:07:29] Yuval Mermer: Bolin.
+[00:07:32] harris schwartz: All right, so I guess I have to talk about myself? Yeah.
+[00:07:36] Yuval Mermer: We'd love to.
+[00:07:36] Shoval Abudraham: Most interesting part.
+[00:07:38] harris schwartz: Oh, well, you know. I mean, I… I have had a very interesting, career.
+[00:07:47] harris schwartz: I mean, I've sort of worked across, security, and investigations and stuff like that.
+[00:07:56] harris schwartz: I started… I started my career when the public internet was born.
+[00:08:03] harris schwartz: And so back in the mid-90s, working for…
+[00:08:07] harris schwartz: Various internet service providers, heading up information security.
+[00:08:12] harris schwartz: In some cases, trust and abuse.
+[00:08:17] harris schwartz: or trust and safety, as they call it. And I did that for… for a little bit, until the… until the bubble burst, or the first time it burst. And then,
+[00:08:33] harris schwartz: Then I went a different direction. I was a criminal investigator.
+[00:08:38] harris schwartz: Yeah.
+[00:08:41] harris schwartz: I know, yeah, very, very different, you know, I mean…
+[00:08:44] harris schwartz: part of my job with the internet service providers, I did do a lot of cybercrime investigations. I…
+[00:08:50] Shoval Abudraham: No.
+[00:08:50] harris schwartz: I happened to meet, some agents from the FBI, because we had a customer that was hacked. This was at Earthlink.
+[00:09:00] harris schwartz: So we had a customer that was hacked.
+[00:09:02] harris schwartz: And I basically tracked down the hacker.
+[00:09:05] harris schwartz: And put the whole case together, and then called them up, or actually, they called us, and I just basically handed them, here you go. And they were just like, how did you do that? You know? And, you know, the Bureau back then, they were very, very…
+[00:09:23] harris schwartz: new to cybercrime investigations. You know, they were concentrating on critical infrastructure and, you know, those types of things. Anyway.
+[00:09:32] harris schwartz: So, I went into criminal investigation, I worked for a company, I worked for Wells Fargo and company.
+[00:09:39] harris schwartz: I handled, all major crime, so this was money laundering, counterfeiting, organized crime, a lot of organized crime, gangs, domestic terrorism, etc, etc. And so I did that for a while. Then I went… then I went into…
+[00:09:56] harris schwartz: more physical security. So, you know, again, so I'm, like, touching different areas of security and whatnot.
+[00:10:04] harris schwartz: And so I was in executive protection, I used to run QRFs for…
+[00:10:12] harris schwartz: when we would do, strike activity,
+[00:10:16] Shoval Abudraham: That's the time you work with the Shabak?
+[00:10:19] harris schwartz: No, so I actually… so I worked with them in… in two ways. I worked with them when I was a criminal investigator, because I traveled the world.
+[00:10:28] harris schwartz: 108 countries in my time.
+[00:10:32] Shoval Abudraham: Do you visit Israel?
+[00:10:34] harris schwartz: I have, yes.
+[00:10:36] Shoval Abudraham: Nice!
+[00:10:37] harris schwartz: Yes? I was born Jewish.
+[00:10:41] Shoval Abudraham: It is odd.
+[00:10:42] Yuval Mermer: You can see the schwartz, yeah.
+[00:10:44] harris schwartz: Yeah, I was born Jewish.
+[00:10:46] Shoval Abudraham: Like.
+[00:10:46] harris schwartz: I'm more of a practicing Buddhist.
+[00:10:51] harris schwartz: And, but I, you know, went through my bar mitzvah and got confirmed, all of that.
+[00:10:57] Shoval Abudraham: Yeah.
+[00:10:58] harris schwartz: Yeah, I even taught in, hebrew school for one year.
+[00:11:04] Shoval Abudraham: Oh my god.
+[00:11:06] harris schwartz: I know, yeah. Again, different directions.
+[00:11:09] Shoval Abudraham: word, I love it, you know, every time that we are, you know, connecting with someone that is anyhow related to Israel, to Jewish, I'm just freaking out, because.
+[00:11:22] Yuval Mermer: That's okay.
+[00:11:22] Shoval Abudraham: Super small word, you know?
+[00:11:24] harris schwartz: Oh, I know, I mean, totally, yeah, very small. I mean, I have worked with a lot of companies, you know, in the past that were, you know, that originated out of Israel. Sort of the same type of scenario, you know, where they're seeking
+[00:11:41] harris schwartz: insights and things like that.
+[00:11:44] harris schwartz: there was a period of time where I was, involved in domestic terrorism investigations. This was something that I had done on my own, but I ended up working with a lot of law enforcement, a lot of government agencies.
+[00:11:58] harris schwartz: And so anytime we had actionable intelligence and things of that nature, you know, we shared it with other… other agencies.
+[00:12:07] harris schwartz: It was me and another guy,
+[00:12:10] harris schwartz: we had worked together at Wells Fargo. He worked in executive protection, and, you know, I was a criminal investigator, so…
+[00:12:16] harris schwartz: But yeah, another day, lots of stories and fun times. I mean, I would say that, you know, I've worked for some big companies, you know, heading up some… some form of security operations, things like that, and then I've done a lot of consulting.
+[00:12:36] harris schwartz: And most of the consulting was offering, fractional CISO services.
+[00:12:45] harris schwartz: So, working with various clients, you know, helping them build out strategy.
+[00:12:50] harris schwartz: Help them implement, you know, different programs and things like that. And then the last 5 years, I've basically been doing that on my own.
+[00:12:58] harris schwartz: And I have one long-term client.
+[00:13:01] harris schwartz: That I've been working with as a fraction.
+[00:13:05] Shoval Abudraham: Cool.
+[00:13:06] harris schwartz: Yeah.
+[00:13:07] Yuval Mermer: Nice.
+[00:13:07] Shoval Abudraham: that's, like, the… I think the most, diverse.
+[00:13:12] harris schwartz: Yeah.
+[00:13:12] Shoval Abudraham: pretty.
+[00:13:13] Shoval Abudraham: Excuse me.
+[00:13:14] harris schwartz: And so it's weird.
+[00:13:15] Shoval Abudraham: Till now, I love it.
+[00:13:18] harris schwartz: Yeah, I mean, I've been called a unicorn, you know, I mean, because I…
+[00:13:22] harris schwartz: I can, you know, I have dealt with, sort of, across the board. You know, most people are just focused on one area. You know, and a lot of it was, right time, right place, or right place, right time.
+[00:13:37] harris schwartz: Which I love, so it's like, if it, you know, if it makes sense, why not? Let's do it.
+[00:13:42] harris schwartz: So…
+[00:13:44] Yuval Mermer: impressive.
+[00:13:46] Shoval Abudraham: Cool, so I think, you will have very interesting insights about the area we're exploring. Basically.
+[00:13:57] Shoval Abudraham: you know that AI changed the whole ecosystem. We are exploring how the new types of attack, like, there is the most famous example, I think, the Aging Face OpenAI incident, that show us, like, the
+[00:14:14] Shoval Abudraham: capabilities of agent, and how they can…
+[00:14:19] Shoval Abudraham: attack, companies. And we started to explore this area. Basically, we talked with,
+[00:14:27] Shoval Abudraham: many CISOs, a lot of security leaders, and the thing that they constantly mention is that the attacks are…
+[00:14:37] Shoval Abudraham: much faster and with bigger scale when they're Agentic, and we're exploring, like, first.
+[00:14:45] Shoval Abudraham: like you started to say, so I would love to know if you agree with that, but we're exploring how organizations are adjusting their security stack to handle those type of new attacks.
+[00:15:00] Shoval Abudraham: So…
+[00:15:01] harris schwartz: Love to.
+[00:15:01] Shoval Abudraham: your take?
+[00:15:03] harris schwartz: Oh yeah, no, of course, because I, I talk a lot about this on LinkedIn, a lot. Yeah. A lot of posts about AI and, having better guardrails and governance, because
+[00:15:14] harris schwartz: A lot of the companies out there, you know, they claim they've got guardrails, but they don't, you know. There's no human oversight.
+[00:15:24] harris schwartz: So,
+[00:15:28] harris schwartz: And you know, with Agentic, we're only at, sort of, that second level. There's four levels of, you know, AI and, you know, how smart it gets and whatever, but Agentic has been an issue.
+[00:15:43] harris schwartz: I could use my client as an example.
+[00:15:46] harris schwartz: they were actually very, I would say, proactive in putting together an AI and advanced technology policy for employees, and then they started to
+[00:15:59] harris schwartz: Adopt, commercial versions of ChatGPT and Claude, in their environment.
+[00:16:10] harris schwartz: Have we seen, malicious activity? Yes. Some of it's been identified by our, SOC as a service, provider, so our Security Operations Center.
+[00:16:27] harris schwartz: there is a third party that they brought in as well, which has been more of my concern, because it is an Agentic AI agent.
+[00:16:39] harris schwartz: It works within the, supply chain realm, so it's supposed to make supply chain operations more efficient, and so, of course, it has access to everything. And,
+[00:16:53] harris schwartz: you know, I…
+[00:16:54] harris schwartz: I put them through the ringer, you know, as far as a vendor risk assessment. They hated me for it, you know, they kept saying, well, your CEO wants it, and I'm like, yeah, I understand that, but, you know, I have to make sure you guys, you know, are, you know, are up to snuff.
+[00:17:11] harris schwartz: on your guardrails and everything else. And they claimed a bunch of things.
+[00:17:17] harris schwartz: And so far, it's been okay, I think.
+[00:17:20] harris schwartz: We are looking at other, or let's say additional technical.
+[00:17:30] harris schwartz: controls… So around prompt AI, so prompt security.
+[00:17:37] harris schwartz: At the endpoint. So, you know, we're looking at that. We're also looking at chat as well.
+[00:17:45] harris schwartz: You know?
+[00:17:45] Yuval Mermer: Bruce.
+[00:17:46] harris schwartz: Yes.
+[00:17:47] Yuval Mermer: Question about that.
+[00:17:48] harris schwartz: Yeah.
+[00:17:49] Yuval Mermer: you're mostly talking about how the usage of AI inside the company became an attack surface, and how do you need to protect
+[00:17:59] Yuval Mermer: From this new attack surface in the organization.
+[00:18:02] Yuval Mermer: Which we totally agree with.
+[00:18:04] Yuval Mermer: But… I'm curious if you think that… that, now that attackers can use AI,
+[00:18:11] Yuval Mermer: To… against your organization, from… from, like, external attackers, not the internal one.
+[00:18:18] harris schwartz: Yep.
+[00:18:18] Yuval Mermer: I'm curious to hear if you think that it's a new risk.
+[00:18:24] Yuval Mermer: With the new frontier models, a new kind of attacks that We can see online.
+[00:18:32] harris schwartz: Yeah, I mean, I would definitely agree with that. I mean, I think that, you know, there's been mention of, like, poison attacks, against, LLMs and whatnot, right? So, I mean, if you wanted to… if an attacker
+[00:18:46] harris schwartz: wanted to launch a misinformation campaign, especially we have our midterm elections coming up, right? What better way to, you know.
+[00:18:54] harris schwartz: poison, and… and… you know, wreak havoc and whatnot. I wouldn't put it past them. You know.
+[00:19:02] harris schwartz: Unfortunately, I mean…
+[00:19:04] harris schwartz: I've seen our election stuff before, and again, in the past, you know, pretty secure, but anyway.
+[00:19:14] harris schwartz: Luckily, so I… I would say that the… I would say that the biggest, like, for the company.
+[00:19:21] harris schwartz: the biggest risk is data, right? So, you know.
+[00:19:28] harris schwartz: a data breach is only after sensitive data, right? Something they can sell, something that has monetary value, etc, etc. And so,
+[00:19:38] harris schwartz: with us, like, putting in controls and stuff, we want to control what data that they're actually, uploading into, like, ChatGPT and Claude. You know, again, there's a policy, they've had to acknowledge it and sign it and all of that, but we still…
+[00:19:56] harris schwartz: Have had situations where people have uploaded, sensitive information.
+[00:20:01] harris schwartz: Or Code, that's another one that I love.
+[00:20:06] harris schwartz: you know, developer sticks code in there, and, hey, can you, you know, find, you know, find the, you know, the problems? And it's like, yeah, let's not do that.
+[00:20:17] harris schwartz: You know.
+[00:20:19] Shoval Abudraham: Right, they shouldn't…
+[00:20:21] harris schwartz: No, they shouldn't do that, and a lot of the, you know, a lot of the solutions that are out there to kind of implement these technical controls look at, you know.
+[00:20:32] harris schwartz: sort of, again, from the prompt perspective, you know, controlling what data can go, you know, it would block the data, you know, if it's, you know, if it's classified as, you know, sensitive data, or, you know.
+[00:20:46] harris schwartz: Or labeled that way. Shadow AI, we've had a few people that have used unauthorized, you know, like.
+[00:20:56] harris schwartz: consumer-grade ChatGPT and stuff like that, on company systems, and so, you know, they were stopped. And we had… we had somebody that was trying to create a… a program inside ChatGPT, and that got flagged through…
+[00:21:12] harris schwartz: Through our monitoring and whatnot. So, that was put, you know, put to a stop.
+[00:21:20] Shoval Abudraham: So, if I understand correctly, like, the main risk around AI
+[00:21:25] Shoval Abudraham: That bother you and keep you occupied is, like, how the users inside the organization are using it.
+[00:21:35] Shoval Abudraham: Like, you're not, or maybe you do, I don't know, you're not,
+[00:21:44] Yuval Mermer: Concerned.
+[00:21:45] Shoval Abudraham: concerned from AI in terms of, its make… the detection… not the… also, not only the detection, all the security stack, we have, the… the…
+[00:21:57] Shoval Abudraham: kind of the EDR, the DSPM, the cloud desk, posture management and detection, response, whatever, everything is not… every new, attack, AI-used attack, we will handle it with the current security stack.
+[00:22:18] harris schwartz: Yeah, or, or new technical controls through a, you know, through a different provider or a different solution that the provider offers.
+[00:22:27] Shoval Abudraham: That you, that you already have?
+[00:22:30] harris schwartz: Oh, that we're actually looking at right now.
+[00:22:32] Shoval Abudraham: Really?
+[00:22:34] harris schwartz: Yeah, yeah.
+[00:22:35] Shoval Abudraham: Which of which kind, like, what concerns you the most?
+[00:22:40] harris schwartz: So, we use, for our endpoint detection, we use Sentinel-1.
+[00:22:45] harris schwartz: Sentinel-1 has a solution called,
+[00:22:51] harris schwartz: It's basically AI prompt security. Yeah. So it works at the endpoint, and then, you know, sort of controls
+[00:22:59] harris schwartz: You know, data and, you know, actions by the user.
+[00:23:07] harris schwartz: I would say that, you know, like, within a company, you know, if they're using ChatGPT and Claude and whatever.
+[00:23:15] harris schwartz: You know, it's more about data, right? What data are people putting into it?
+[00:23:20] Yuval Mermer: Yeah.
+[00:23:21] harris schwartz: flawed.
+[00:23:22] harris schwartz: is a little bit more advanced, and it has the ability to connect to your email infrastructure, your, you know, whatever, and then actually take actions for you.
+[00:23:37] harris schwartz: And I fought with the client, very hard, and I said, you know, why don't you start off with read-only access, let's see how that goes, and then maybe you could move into write access.
+[00:23:50] harris schwartz: But right now, I would not.
+[00:23:53] harris schwartz: And, you know, some people were like, yeah, I agree with you. Other people were like, well, you know, but this person wants to use it, and I'm like, yeah, but if Claude gets into your email, and there's been many, many cases,
+[00:24:09] harris schwartz: of Claude and, you know, other solutions that they get in the email, and then they wreak havoc, they start deleting all your emails, you know, can't stop the operation, you know, et cetera, et cetera.
+[00:24:22] harris schwartz: I would say that that's more my concern with bringing in Agentic AI.
+[00:24:27] Shoval Abudraham: Yeah.
+[00:24:28] harris schwartz: Because again, the agent has access
+[00:24:32] harris schwartz: to various systems. They could have access to your, supply chain, you know.
+[00:24:39] harris schwartz: applications, email, you know, messaging apps and things like that. And then, again, can take actions. Now, this particular provider, they claim that they have controls around it.
+[00:24:54] harris schwartz: That, they have human-in-the-loop, review on certain things.
+[00:25:02] Shoval Abudraham: From their side, or from your side?
+[00:25:04] harris schwartz: Say that again?
+[00:25:06] Shoval Abudraham: Like, you mean from the product, the vendor side, or your side?
+[00:25:10] harris schwartz: Yeah, from the product side, which I kind of laugh at.
+[00:25:14] harris schwartz: You know, they're… they're a small company. I don't, you know, and they've got a bunch of clients. I don't think that they've got the staff that are doing human-in-the-loop reviews. I think it did come up at one point when they were working on the contract, and that came up again, and I was like… and I was on the call, and I was like.
+[00:25:34] harris schwartz: No. They have to have that. If they don't have that, that's not good AI.
+[00:25:40] harris schwartz: You know, or, you know, proper governance.
+[00:25:46] harris schwartz: And, yeah, I mean, I would say the biggest thing is the Agentic AI.
+[00:25:53] harris schwartz: As far as within the company.
+[00:25:55] harris schwartz: Yeah. You know, obviously there's AI attacks and things of that nature that are just speeding up the, you know, the…
+[00:26:04] harris schwartz: Increasing the speed of attacks, you know, phishing attacks and whatever else.
+[00:26:10] harris schwartz: You know.
+[00:26:12] harris schwartz: To, like, milliseconds, not minutes anymore, so obviously we'll be able to detect in milliseconds.
+[00:26:18] harris schwartz: So…
+[00:26:19] Yuval Mermer: Yeah.
+[00:26:22] Yuval Mermer: Cool.
+[00:26:23] Shoval Abudraham: So, sounds like you're, like, in… You're thinking where will be…
+[00:26:29] Shoval Abudraham: The gaps, and where you need to better detection capabilities, and…
+[00:26:34] Shoval Abudraham: Upgrading to a better solution there.
+[00:26:38] Shoval Abudraham: And as you mentioned, like, the data is your crown jewels, you're very protective about your data, and sounds like the endpoint is,
+[00:26:47] Shoval Abudraham: Is… is the main point that you're focusing right now?
+[00:26:52] harris schwartz: Yeah, I think so. Yeah, I think that's where we are focusing.
+[00:26:59] harris schwartz: Oh, what was I gonna say?
+[00:27:04] harris schwartz: It'll come back to me, hopefully.
+[00:27:06] Shoval Abudraham: Yeah. Cool. What the… can I ask, like, what the organization, size?
+[00:27:18] harris schwartz: Yeah, so it's a manufacturing company. They were international, but then they recently sold off their international business, so now it's just the U.S. and Mexico.
+[00:27:30] harris schwartz: And so they have about, hmm, almost 600 employees.
+[00:27:38] harris schwartz: Yep.
+[00:27:41] Yuval Mermer: You know they…
+[00:27:43] Shoval Abudraham: Yuval any more questions you have? Because I see we're almost in time.
+[00:27:46] Yuval Mermer: Nope.
+[00:27:48] Yuval Mermer: Actually, you elaborated a lot about the things that you're concerned from, and it was really helpful insights for us, so…
+[00:28:02] Yuval Mermer: That's good. I don't have any other questions?
+[00:28:04] Shoval Abudraham: Yeah, and I can say, like, that thing that we're hearing a lot, like, the endpoint is becoming… it always was a super sensitive attack surface, but now with Agentic AI, it's, like, becoming one of the,
+[00:28:18] Shoval Abudraham: Biggest pains of organizations?
+[00:28:21] Yuval Mermer: started with the human factor, and now it's the human and the AI factor together on the endpoint, and…
+[00:28:26] Shoval Abudraham: Yeah.
+[00:28:26] harris schwartz: Exactly, that's exactly right.
+[00:28:28] Yuval Mermer: complicated, yeah.
+[00:28:29] Shoval Abudraham: Yeah, and if, like, I don't know if I were, like, not… not, selling anything, but we have, like, I don't know if you will buy the product you share, but if not, give me a ping, because I know a lot of good companies in those areas of France, so…
+[00:28:47] harris schwartz: Yeah, I mean, I'd love to, I'd love to take a look at it when it's,
+[00:28:51] harris schwartz: When it's ready.
+[00:28:52] Shoval Abudraham: Amazing.
+[00:28:53] Shoval Abudraham: Cool. So, Aries, thank you so much. We really, really, really appreciate the help, and we would love, you know, to, as we move forward in our journey, to share more insights with you and, like, hearing your feedback, because that was a super helpful, conversation.
+[00:29:13] harris schwartz: Sure, I'm happy to. Happy to.
+[00:29:15] Shoval Abudraham: Amazing.
+[00:29:16] Yuval Mermer: Many things.
+[00:29:17] Shoval Abudraham: But…
+[00:29:18] harris schwartz: Thank you.
+[00:29:20] Yuval Mermer: Bye-bye, have a good day.

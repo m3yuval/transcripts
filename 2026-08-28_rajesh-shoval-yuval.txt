@@ -1,0 +1,310 @@
+Date: 2026-08-28
+Topic: Rajesh, Shoval & Yuval
+Meeting UUID: A35BB9E6-9229-4ACD-B699-0FF25892C64E
+Source: transcript
+
+[00:00:00] Shoval Abudraham: I'll remind… I'll remind you, I will do a short recap.
+[00:00:06] Shoval Abudraham: about what we talked in the previous conversation, we focused mainly on
+[00:00:13] Shoval Abudraham: managing firewall policies in terms of, doing it in a secure way. We talked a bit about, like, how you do it, and how you do it for your customers.
+[00:00:28] Shoval Abudraham: We talk about many firewalls that create a bit of a… you used the word chaotic?
+[00:00:35] Shoval Abudraham: situation in larger organizations. So, yeah, we loved it, you know, that was super,
+[00:00:45] Shoval Abudraham: valuable conversation for us. We learned a lot about the situation in enterprises and big companies.
+[00:00:54] Shoval Abudraham: And you know, we continue to dive into that with more CISOs, because we want, like, to get a large group of, people, that are acknowledging the problem. And they actually did. Like, we felt like,
+[00:01:10] Shoval Abudraham: many CISOs we talked to understand this problem. Like, the… the three pains we detected was that
+[00:01:19] Shoval Abudraham: First, the network is fragmented by design, you use a lot of tools, different vendors, in order to maintain it securely, and because in large organizations, there is big scale, that creates complexity and mess. Like, you have a lot of tools, you have a lot of policies to manage, you need to do it in different places.
+[00:01:43] Shoval Abudraham: And this creates… Mess and challenges, and…
+[00:01:48] Shoval Abudraham: There is no clear visibility of what you have, and what it affects
+[00:01:54] Shoval Abudraham: On the… on the business, on the business workflows.
+[00:02:00] Shoval Abudraham: So that's the, like, was the first thing we… we get acknowledged from the CISO we talked to. So…
+[00:02:11] Shoval Abudraham: First, we would love to hear, like, if you agree with this statement.
+[00:02:18] Rajesh Kumar Thangavelu: Yeah, yeah, I totally agree, because,
+[00:02:21] Rajesh Kumar Thangavelu: Firewall being one of the critical layer controls, right? Because…
+[00:02:26] Shoval Abudraham: Yes.
+[00:02:27] Rajesh Kumar Thangavelu: That starts with your perimeter.
+[00:02:29] Rajesh Kumar Thangavelu: And also, internally, it segregates your DMZ And non-DMZ, right? So…
+[00:02:36] Rajesh Kumar Thangavelu: Firewall is one of the really critical controls where you differentiate internal users, your staff… And,
+[00:02:45] Rajesh Kumar Thangavelu: External users who, once in a while, will come, like, he could be a business partner, or he could be some third party who gives some limited services.
+[00:02:54] Rajesh Kumar Thangavelu: So, it's always… really critical to…
+[00:02:59] Rajesh Kumar Thangavelu: Differentiate and bucket these users into different
+[00:03:03] Rajesh Kumar Thangavelu: Areas with respect to network segmentation, right?
+[00:03:07] Shoval Abudraham: Yeah. That's right.
+[00:03:08] Rajesh Kumar Thangavelu: Yeah.
+[00:03:11] Rajesh Kumar Thangavelu: Yeah, it's…
+[00:03:12] Shoval Abudraham: You wanted to say something?
+[00:03:13] Rajesh Kumar Thangavelu: Yeah, yeah, I said that's why large enterprises, if you see mostly…
+[00:03:19] Rajesh Kumar Thangavelu: very, very large enterprise. They will always have a… a different OEM firewall for
+[00:03:26] Rajesh Kumar Thangavelu: bringing in connectivity to third party, and they will have a different OEM firewall for the internal and the perimeter.
+[00:03:35] Rajesh Kumar Thangavelu: To give you an example, Somebody may have a… Palo Alto, or something.
+[00:03:43] Rajesh Kumar Thangavelu: for the internal and the DMZ and all the perimeter and everything, but…
+[00:03:47] Rajesh Kumar Thangavelu: They may not have Palo Alto, they may have something like Juniper or a Cisco.
+[00:03:52] Rajesh Kumar Thangavelu: or a FortiGate for the third-party access.
+[00:03:57] Shoval Abudraham: Cool.
+[00:03:58] Shoval Abudraham: So.
+[00:03:59] Rajesh Kumar Thangavelu: Yeah.
+[00:04:00] yuvalmermer: Well, before you continue, Rajesh, do you know any company or any customer you have that uses any SASE or SD1 solution?
+[00:04:14] Rajesh Kumar Thangavelu: There are a couple of them, yes.
+[00:04:16] yuvalmermer: Yes, and do they.
+[00:04:17] Rajesh Kumar Thangavelu: you know, use.
+[00:04:18] yuvalmermer: work with the SD1?
+[00:04:20] yuvalmermer: solutions, and SASE solutions, like ZTNA,
+[00:04:26] yuvalmermer: And firewall together, combined in the same network?
+[00:04:31] Rajesh Kumar Thangavelu: Yes, most large banks, they have this approach.
+[00:04:38] Rajesh Kumar Thangavelu: Yeah.
+[00:04:40] yuvalmermer: I got it. Okay, Shoval, go ahead.
+[00:04:42] Shoval Abudraham: Cool.
+[00:04:42] Rajesh Kumar Thangavelu: No.
+[00:04:43] Shoval Abudraham: So…
+[00:04:45] Shoval Abudraham: the place we're right now in our research is that we did get acknowledged from CISO about those problems, but we actually
+[00:04:58] Shoval Abudraham: not sure… like,
+[00:05:02] Shoval Abudraham: as we shared in our… in our previous conversation, like, we are… we're coming from the cyber… from the security field, and we want to build a security company. Therefore, we are talking with a lot of CISOs.
+[00:05:16] Shoval Abudraham: And we felt, and I'm super curious to hear what you think about that, that This problem is not…
+[00:05:26] Shoval Abudraham: sometimes even…
+[00:05:28] Shoval Abudraham: even though the CISO know this problem, and it's painful for him, he's not responsible for this problem. Therefore, he won't buy the solution by himself. It will be, probably in the infrastructure, network engineer's,
+[00:05:47] Shoval Abudraham: Side to deal with this problem.
+[00:05:51] Shoval Abudraham: And it's not urgent enough in his side.
+[00:05:57] Rajesh Kumar Thangavelu: That's correct. That's correct, because typically, I mean, I don't know about the Western world, because in the Western side of it, when I say Western world, especially, Europe and the Americas, those side, I don't know the reporting structure, but at least in India, if you see, as you rightly mentioned.
+[00:06:14] Rajesh Kumar Thangavelu: CISO roll up to the risk arm of the organization. Basically, a CISO will report into somebody like a CRO,
+[00:06:22] Rajesh Kumar Thangavelu: And CISO organization is more of a policy… Body, where they will dictate
+[00:06:29] Rajesh Kumar Thangavelu: what are the security best practices to be followed? However, the implementation is done by somebody under the CAO's vertical.
+[00:06:36] Rajesh Kumar Thangavelu: Or, like, a parallel, or a…
+[00:06:39] Rajesh Kumar Thangavelu: peer for the CISO, but they will have better handle onto the infrastructure where implementing policies, changing the rules.
+[00:06:49] Rajesh Kumar Thangavelu: Upgrading the software, or even, for that matter, procuring the… tools.
+[00:06:55] Rajesh Kumar Thangavelu: All these are done by the CAO umbrella.
+[00:06:58] Rajesh Kumar Thangavelu: So, CISO only has the… has the…
+[00:07:01] Rajesh Kumar Thangavelu: Control of saying what they want.
+[00:07:04] Rajesh Kumar Thangavelu: What they want and how they want.
+[00:07:07] Rajesh Kumar Thangavelu: And put some… Policy procedure around managing those devices, security devices in a…
+[00:07:14] Rajesh Kumar Thangavelu: following certain best practices, like your NAST CSF, or… Any other risk management framework?
+[00:07:21] Rajesh Kumar Thangavelu: Those are all prescribed and dictated by the CISO vertical, however.
+[00:07:26] Rajesh Kumar Thangavelu: procurement and getting it done, getting the solution up and running, doing the daily upkeep of the solution, this is all done by the CIO vertically.
+[00:07:37] Shoval Abudraham: Sorry, that was my bad. I don't know what happened, but I… disconnected for a second.
+[00:07:46] Rajesh Kumar Thangavelu: Hmm.
+[00:07:47] Rajesh Kumar Thangavelu: Yeah, I was saying, I was just trying to reiterate what you mentioned.
+[00:07:50] Shoval Abudraham: Yeah, yeah.
+[00:07:51] yuvalmermer: I guess…
+[00:07:54] yuvalmermer: So, yeah, it's under the CIO umbrellas, we agree on that, but do you agree with us that it's not on the top three gaps that CISOs want to solve in the next year?
+[00:08:11] Rajesh Kumar Thangavelu: It does.
+[00:08:12] Rajesh Kumar Thangavelu: It is definitely there in the CISO's bucket, but CISO, what he wants is…
+[00:08:17] Rajesh Kumar Thangavelu: He don't want dormant rules, he don't want…
+[00:08:20] Rajesh Kumar Thangavelu: Rules which are just opened and left.
+[00:08:24] Rajesh Kumar Thangavelu: indefinitely, for example, you give access to a third party today for some limited purpose. What happens is somebody opens a rule.
+[00:08:33] Rajesh Kumar Thangavelu: gives action… give access to one of the Bastion hosts, so the third-party guy comes in, through the VPN, user to VPN, and then from VPN, he comes into the Bastion host, and then from Bashion host, he gets access to a few limited set of servers.
+[00:08:48] Rajesh Kumar Thangavelu: Yeah. Do his work.
+[00:08:50] Rajesh Kumar Thangavelu: Then, that might be for a week or 10 days is a requirement, but the rule is…
+[00:08:56] Rajesh Kumar Thangavelu: left open indefinitely instead of shutting it down after 10 days. So these are…
+[00:09:02] Rajesh Kumar Thangavelu: this becomes a risk for the CISO, right? So tomorrow, when the regulator or some external third party comes and does an audit.
+[00:09:09] Rajesh Kumar Thangavelu: Then he will point out these gaps.
+[00:09:13] Rajesh Kumar Thangavelu: So, obviously, having said that, these are definitely priorities in the CISO bucket, however.
+[00:09:21] Rajesh Kumar Thangavelu: Getting it sorted and solved is putting the right practice in place, which is the ownership on.
+[00:09:27] Rajesh Kumar Thangavelu: the Savos team.
+[00:09:30] Shoval Abudraham: Yeah, and… I love what you said about the… the fact that the policies are not managed…
+[00:09:41] Shoval Abudraham: efficiently, or… or… or… something like that, is…
+[00:09:47] Shoval Abudraham: creating a risk, and the risk is the responsible… is the responsibility of the CISO. I love this, statement. I'm…
+[00:09:57] Shoval Abudraham: I'm trying to… to think with you, because that's… that's exactly what we thought, okay? We totally…
+[00:10:05] Shoval Abudraham: talked the same as you. You can… you basically read our minds, but we had a difficulty to get
+[00:10:16] Shoval Abudraham: this exactly phrase from CISOs. Like, they're not…
+[00:10:23] Shoval Abudraham: most of them told us, that's not my problem. Like, I care about this network to be managed correctly, I give them the best practices, they need to do it. They did not really…
+[00:10:37] Shoval Abudraham: We don't felt the urgency around knowing exactly what is the risk
+[00:10:44] Shoval Abudraham: that they hold in their firewalls and network tools.
+[00:10:50] Shoval Abudraham: Do you think, like…
+[00:10:53] Shoval Abudraham: Maybe you… you can help us think about a way to better explain it, or to… how do you think we should approach it in the conversation to… to try to…
+[00:11:05] Shoval Abudraham: We don't want to, you know, put words in their mouth, but maybe we like to better… maybe to better explain it.
+[00:11:14] Rajesh Kumar Thangavelu: Okay, so… what happens is, well, like I mentioned, CISO is a policy body. Under CISO, there are
+[00:11:23] Rajesh Kumar Thangavelu: Few direct reports where… Typically, different…
+[00:11:30] Rajesh Kumar Thangavelu: Domains of cybersecurity are divided and given to those direct reports.
+[00:11:35] Rajesh Kumar Thangavelu: For example, somebody will be handling
+[00:11:38] Rajesh Kumar Thangavelu: Cyber Defense part of it, where… Responding to incidents.
+[00:11:43] Rajesh Kumar Thangavelu: Performing a blue teaming, performing a red teaming, performing vulnerability assessment.
+[00:11:49] Rajesh Kumar Thangavelu: performing DDo simulation. These activities, all which is part of cyber defense, that'll be handled by one direct report. And there may be another direct report who will be handling all the regulatory compliance requirements.
+[00:12:03] Rajesh Kumar Thangavelu: like SOCs, PCADSS, and so on and so forth. And there may be another direct report under the CISO who would be responsible for intra-security.
+[00:12:13] Rajesh Kumar Thangavelu: So that person would manage Or…
+[00:12:17] Rajesh Kumar Thangavelu: who would take the… hold the responsibility of prescribing? What are the do's and don'ts, or what are the, you know, cyber hygiene to be maintained at the endpoint layer, or at the firewall layer, or at each… at the WAF layer?
+[00:12:32] Rajesh Kumar Thangavelu: or even at the DDoS appliance layer.
+[00:12:37] Rajesh Kumar Thangavelu: at the load balancer level, at the border router, or perimeter, firewall…
+[00:12:43] Shoval Abudraham: like, PRC, man for GLC a role for infrastructure?
+[00:12:53] Rajesh Kumar Thangavelu: Correct. He would be the person who's doing the governance
+[00:12:56] Rajesh Kumar Thangavelu: a risk review of the infrastructure under the CISO. So, since he's responsible for network security under the CISO, so he will constantly interface with the peer on the CIO side.
+[00:13:08] Rajesh Kumar Thangavelu: to, keep communicating what is expected by the CISO arm.
+[00:13:14] Rajesh Kumar Thangavelu: In terms of cyber hygiene.
+[00:13:18] Shoval Abudraham: So, if I understand correctly, and I actually love this, nuance, is that in the CISO side.
+[00:13:26] Shoval Abudraham: There is the operating, people that will perform,
+[00:13:34] Shoval Abudraham: how did you call it? Kind of the red team in, blue team in will do… will operate the security, and there is another side of understanding risk.
+[00:13:45] Shoval Abudraham: And, I mean…
+[00:13:49] Shoval Abudraham: Maintain a first visibility for the risk you have in your organization, and responsible to govern and enforce policies that reduce the risk, reducing the attack surface.
+[00:14:05] Rajesh Kumar Thangavelu: That's correct.
+[00:14:07] Rajesh Kumar Thangavelu: Nice. So, what happens is, for example.
+[00:14:10] Rajesh Kumar Thangavelu: So there is an infra-security person or a network security person under the CIO.
+[00:14:16] Rajesh Kumar Thangavelu: So, he will be a peer for the intra-person under the CISO, so these… both these guys will get into a room with their team members.
+[00:14:24] Rajesh Kumar Thangavelu: The CISO vertical will… tell them…
+[00:14:28] Rajesh Kumar Thangavelu: This is the policy, and this is what needs to be applied in the… each of these layers, right?
+[00:14:34] Shoval Abudraham: Yeah.
+[00:14:34] Rajesh Kumar Thangavelu: So then that gets implemented by the…
+[00:14:37] Rajesh Kumar Thangavelu: CAO team, and then there may be a quarterly review or a touch base on where we stand, right?
+[00:14:42] Rajesh Kumar Thangavelu: So that is how the… CISO team keeps a check on
+[00:14:47] Rajesh Kumar Thangavelu: Are there any loose ends to be…
+[00:14:50] Rajesh Kumar Thangavelu: attended to. Are they still…
+[00:14:52] Rajesh Kumar Thangavelu: Any attacks are faced to be handled, or how do we reduce the risk?
+[00:14:58] Rajesh Kumar Thangavelu: Constantly monitoring this.
+[00:15:00] Shoval Abudraham: Yeah.
+[00:15:01] Rajesh Kumar Thangavelu: Yeah, so that is how they do it. That is where…
+[00:15:04] Rajesh Kumar Thangavelu: All these tools, like AlgoSec and a few other things. I think I shared a small table with,
+[00:15:10] Rajesh Kumar Thangavelu: You all over a chat or something last week.
+[00:15:14] Rajesh Kumar Thangavelu: Yeah, yeah.
+[00:15:15] Shoval Abudraham: We saw it. That was super, super helpful. Amazing. I actually love this nuance, and I want to…
+[00:15:22] yuvalmermer: I just wanna ask, what are the names of the positions of the people who do the risk assessments of the organization?
+[00:15:34] yuvalmermer: Is there a specific… That actually varies.
+[00:15:36] Rajesh Kumar Thangavelu: from organization to organization, but I can send you some…
+[00:15:41] Rajesh Kumar Thangavelu: Indicative, generally, typically in India, how in banks it works, I can send you an indicative org chart if you want. I can get an org chart for some… some… something that I can share with you.
+[00:15:52] yuvalmermer: Thanks.
+[00:15:53] yuvalmermer: I'll resend you a message after.
+[00:15:55] Rajesh Kumar Thangavelu: Yeah, yeah, yeah, I'll share that.
+[00:15:59] Shoval Abudraham: So what I wanted to ask is that, okay, now I think we are better understand, like, the… where are… where is the responsibility part on the CISO side, which is super, super, super valuable for us, because now we know to talk with
+[00:16:17] Shoval Abudraham: The right, The SPACT in the
+[00:16:22] Shoval Abudraham: Perspective, yeah, and the right framing.
+[00:16:24] Shoval Abudraham: And I want to go back, Rajesh, to the urgency question.
+[00:16:30] Shoval Abudraham: How do you think this problem is urgent for CISO? And I'm asking it
+[00:16:37] Shoval Abudraham: Because I feel, you might too, that we feel that everything is around AI right now, you know? All what people talk about, it's just how I'm protecting my AI agents, my AI tools.
+[00:16:57] Shoval Abudraham: And… We are… we… we don't understand if there is any more urgent areas.
+[00:17:08] Shoval Abudraham: For the CISO, and if this specific pain is also one of them.
+[00:17:20] Rajesh Kumar Thangavelu: No, I'm not getting your question. You talked about AIMA.
+[00:17:24] yuvalmermer: I will, explain the…
+[00:17:26] yuvalmermer: Another way, it's… when we talk with CISOs, and we talk about network policies, and complex networks, and multiple network tools, they say, like, yeah.
+[00:17:42] yuvalmermer: we have this problem, but they don't really say that this problem is urgent, as they say about AI.
+[00:17:49] yuvalmermer: when people talk about AI security, and AI will secure your AI era, and help you adapt AI, CISOs, their eyes are shining, and they say, yeah, yeah, we need to secure our AI. But the gap of the network that we know that exists.
+[00:18:12] yuvalmermer: It doesn't… it's not urgent for them that much when we talk with them.
+[00:18:18] yuvalmermer: This is what we feel from our CISO's conversations.
+[00:18:23] yuvalmermer: This is why we feel it's not painful enough for them to pay for it and buy a solution for this problem.
+[00:18:29] Rajesh Kumar Thangavelu: No, no, it's not that. See, there are… we are talking about two different things here, right? One is…
+[00:18:35] Rajesh Kumar Thangavelu: The typical network security is a… traditional… IT security problem.
+[00:18:44] Rajesh Kumar Thangavelu: Wherein, something we are talking about, the AI is some… something new and…
+[00:18:50] Rajesh Kumar Thangavelu: A talk of the town for everybody.
+[00:18:52] Rajesh Kumar Thangavelu: So that's why… Any solution around AI or AI security.
+[00:18:58] Rajesh Kumar Thangavelu: the CISO gets lightened up, wherein…
+[00:19:02] Rajesh Kumar Thangavelu: For the standard operational network security issue, they are not much.
+[00:19:08] Rajesh Kumar Thangavelu: interested. Otherwise, if you ask me, both these areas carries a risk.
+[00:19:13] Rajesh Kumar Thangavelu: Which has to be addressed.
+[00:19:17] Shoval Abudraham: Yeah.
+[00:19:18] yuvalmermer: You mean we… Maybe we need to start with the risks.
+[00:19:24] yuvalmermer: And then talk about the problem error? What did you mean? Can you please, elaborate?
+[00:19:30] Rajesh Kumar Thangavelu: So, correct.
+[00:19:32] Rajesh Kumar Thangavelu: Oneness?
+[00:19:33] Rajesh Kumar Thangavelu: The underlying risk… Which is associated with the…
+[00:19:42] Rajesh Kumar Thangavelu: All the gaps in the firewall rule or whatever.
+[00:19:46] Rajesh Kumar Thangavelu: That is one.
+[00:19:48] Rajesh Kumar Thangavelu: And then, if you're making a solution, and that solution is bringing in certain maybe automated way of…
+[00:19:59] Rajesh Kumar Thangavelu: Summarizing it in one place.
+[00:20:02] Rajesh Kumar Thangavelu: Instead of somebody going and clicking, manually checking certain things.
+[00:20:07] Rajesh Kumar Thangavelu: Okay, to put, I'll give you one example.
+[00:20:11] Rajesh Kumar Thangavelu: Typically, there is a communication happening between two… one source and destination, right?
+[00:20:17] Rajesh Kumar Thangavelu: Generally, what happens is, in any organization, they will…
+[00:20:22] Rajesh Kumar Thangavelu: most matured organization, rather, I would put it.
+[00:20:25] Rajesh Kumar Thangavelu: They will open… A particular source and a particular destination.
+[00:20:30] Rajesh Kumar Thangavelu: Right?
+[00:20:31] Shoval Abudraham: Yeah.
+[00:20:32] Rajesh Kumar Thangavelu: If the organization is not that much matured, there will be a source and destination, and there will be, like, any to any they will open, which is, like, any servers, any port.
+[00:20:42] Rajesh Kumar Thangavelu: Which is more riskier.
+[00:20:44] yuvalmermer: Yeah.
+[00:20:45] Rajesh Kumar Thangavelu: I'm talking about from a network parlance standpoint.
+[00:20:48] Rajesh Kumar Thangavelu: So now bringing in automation, how automation or AI gonna help in this, situation?
+[00:20:56] Rajesh Kumar Thangavelu: For example, the moment you talk about security, most thing happens over 80443.
+[00:21:04] Rajesh Kumar Thangavelu: which is your, secured port, right? Standard port. Unless that particular, source destination or the underlying application
+[00:21:13] Rajesh Kumar Thangavelu: asking for a custom port or a custom IP.
+[00:21:17] Rajesh Kumar Thangavelu: It's always gonna be… 8443.
+[00:21:23] Rajesh Kumar Thangavelu: So, wherever it is going to be, like, a default setting when it comes to security, that can be populated
+[00:21:30] Rajesh Kumar Thangavelu: Automatically, so that… Unless there is a customized port required, the end user can just…
+[00:21:38] Rajesh Kumar Thangavelu: Take a quick cursory look, and then… Move ahead with…
+[00:21:42] Rajesh Kumar Thangavelu: Approving that rule to get implemented.
+[00:21:47] Rajesh Kumar Thangavelu: You know what I mean?
+[00:21:48] Shoval Abudraham: Yeah, yeah, that's, that's, well, that's… that's something that we'll…
+[00:21:54] Shoval Abudraham: totally understand, and again, like, that's what we… taught… Originally, like, as…
+[00:22:05] Shoval Abudraham: as a CISO, work with a lot of organizations, do you think organization…
+[00:22:11] Shoval Abudraham: Will buy this kind of product?
+[00:22:19] Rajesh Kumar Thangavelu: Yeah, yeah, obviously.
+[00:22:20] Rajesh Kumar Thangavelu: Most… most of the Indian banks, they use AlgoSec.
+[00:22:24] Rajesh Kumar Thangavelu: like I mentioned, AlcoSec was one example. I think I mentioned 2-3 examples with the information table, which I shared with…
+[00:22:31] Shoval Abudraham: Yeah.
+[00:22:32] Rajesh Kumar Thangavelu: Yuval last week. So, mostly they use… I have also shared a few other tools who are competitors to AlgoSec.
+[00:22:39] Rajesh Kumar Thangavelu: what happens is, RBI… so, since I work mostly with bank and a few other customers, like defense and manufacturing customers.
+[00:22:50] Rajesh Kumar Thangavelu: So everybody…
+[00:22:52] Rajesh Kumar Thangavelu: comes under some sort of a regulatory audit, mostly for banks. In India, we have the central bank, which is the Reserve Bank of India.
+[00:22:59] Rajesh Kumar Thangavelu: who comes and governs, right? So they periodically release cybersecurity framework, or cybersecurity circulars, where the bank has to comply. So in the earlier days, way back in 2016, they released a circular where they clearly mentioned
+[00:23:16] Rajesh Kumar Thangavelu: The technology arm in the bank has to procure
+[00:23:22] Rajesh Kumar Thangavelu: These kind of solutions to manage and maintain…
+[00:23:27] Rajesh Kumar Thangavelu: These firewall rules and all of that.
+[00:23:30] Rajesh Kumar Thangavelu: These cannot be done manually.
+[00:23:34] Shoval Abudraham: Yeah.
+[00:23:35] yuvalmermer: And from your experience with the AlgoSec.
+[00:23:40] yuvalmermer: I know Alice, they give a list of recommendations, how to change your firewall rules to be less exposed, right?
+[00:23:51] Rajesh Kumar Thangavelu: Correct, so that will be… that will be like a window of interface on your existing rules, and
+[00:23:59] yuvalmermer: And…
+[00:23:59] Rajesh Kumar Thangavelu: So basically, it can connect to all the viral infrastructure in the organization and bring everything into under one roof, where you can see
+[00:24:08] Rajesh Kumar Thangavelu: Which firewall carries what kind of rule?
+[00:24:10] yuvalmermer: Yeah, and… and from your experience, do you know if the… if this, large table of recommendations is,
+[00:24:21] yuvalmermer: Is, being handled.
+[00:24:23] yuvalmermer: By the networks… network engineers.
+[00:24:28] yuvalmermer: Like,
+[00:24:29] Rajesh Kumar Thangavelu: they may not directly take the recommendation coming from Malgosek.
+[00:24:34] Rajesh Kumar Thangavelu: So it has to be combined with the… the business requirement
+[00:24:39] Rajesh Kumar Thangavelu: And the purpose of… for the rule being opened, right? So… Combining that, they may consider
+[00:24:47] Rajesh Kumar Thangavelu: Or they may tweak something, partially they may consider.
+[00:24:51] yuvalmermer: And you say AlgoSec… you say that AlgoSec, do you combine the business…
+[00:24:57] yuvalmermer: Flow with the rules, or don't combine them?
+[00:25:05] Rajesh Kumar Thangavelu: It does do that.
+[00:25:09] Rajesh Kumar Thangavelu: Depending on what kind of version and what features they bought, right? I mean, each tool comes with its own…
+[00:25:16] Rajesh Kumar Thangavelu: Technology features.
+[00:25:18] yuvalmermer: So you can choose to use AlcoSec to combine the business flow and logics into their firewall rules, right?
+[00:25:27] Rajesh Kumar Thangavelu: Yes.
+[00:25:28] yuvalmermer: I got it.
+[00:25:32] Shoval Abudraham: Rajesh, we're on time, and we want… we don't want to take you more time from your vacation.
+[00:25:39] Shoval Abudraham: But I want to say thank you so much, you know, every conversation with you, we learn a lot.
+[00:25:46] yuvalmermer: So valuable for us.
+[00:25:47] Shoval Abudraham: Yeah, we give us From your knowledge, and we are super, super, super appreciate it.
+[00:25:54] Shoval Abudraham: Because, you know, we learn…
+[00:25:57] Shoval Abudraham: A lot. A lot, a lot, a lot. So, thank you so much.
+[00:26:01] Shoval Abudraham: And we wish you a nice and fun travel.
+[00:26:07] Shoval Abudraham: with your family.
+[00:26:10] Rajesh Kumar Thangavelu: Yeah, thank you so much,
+[00:26:12] Rajesh Kumar Thangavelu: Shoval. So, if I may ask you, so you all are developing a product, or you already built your product?
+[00:26:19] Shoval Abudraham: True.
+[00:26:20] Rajesh Kumar Thangavelu: You are developing something competitive to something like AlcoSec, or…
+[00:26:25] Rajesh Kumar Thangavelu: You're going beyond. What is it that you are developing?
+[00:26:27] yuvalmermer: space, we're still exploring. We don't have a product, and we don't… we didn't solve anything yet. We just want to deep dive into the problems that are painful for CISOs.
+[00:26:39] yuvalmermer: to decide… To get a good decision which product to, develop.
+[00:26:45] Shoval Abudraham: Because, as we mentioned, like, we feel like there are a lot of products out there, and right now, because the AI
+[00:26:54] Shoval Abudraham: phase of the things. A lot of them are doing the same thing, and we don't want to do the same thing. We want to bring a real value
+[00:27:04] Shoval Abudraham: a real solution to a painful problem, to our customers. So, that's what we are trying to figure out now, like, what we are building.
+[00:27:17] Rajesh Kumar Thangavelu: But are you all focused only on the network security part of it, or you are looking at something else?
+[00:27:24] Shoval Abudraham: If you have more ideas, we would love
+[00:27:28] Shoval Abudraham: Like, we are… we started from network security because we felt the pain there by ourselves, but we are exploring, we are open to hear more areas.
+[00:27:41] Rajesh Kumar Thangavelu: Okay, okay.
+[00:27:43] Rajesh Kumar Thangavelu: Okay, let me think through something, since you all are still working on your concept.
+[00:27:48] Rajesh Kumar Thangavelu: Because I thought you were already developing something in network security, so now…
+[00:27:52] Rajesh Kumar Thangavelu: Now that you told that you are still zeroing in on the concept, what is the problem you want to solve?
+[00:27:57] Shoval Abudraham: Yeah.
+[00:27:58] Rajesh Kumar Thangavelu: maybe I will, give a broader perspective of what are the different pain areas, generally.
+[00:28:04] Rajesh Kumar Thangavelu: Faced by a cyber risk management leadership.
+[00:28:08] Rajesh Kumar Thangavelu: Maybe not in this call, but I will also take some time to gather some information, and then I'll share it with you.
+[00:28:15] Shoval Abudraham: Wow, what…
+[00:28:16] yuvalmermer: Really appreciate it.
+[00:28:18] Shoval Abudraham: We can't thank you enough.
+[00:28:20] Rajesh Kumar Thangavelu: No, no, that's okay, not an issue.
+[00:28:23] Shoval Abudraham: Thank you so much. We really, really, really appreciate it, and it's important for us to say it.
+[00:28:30] Rajesh Kumar Thangavelu: Okay.
+[00:28:32] Rajesh Kumar Thangavelu: Not at all.
+[00:28:35] yuvalmermer: Thank you so much for the show.
+[00:28:36] Rajesh Kumar Thangavelu: Anything, anything else you want to ask?
+[00:28:38] Shoval Abudraham: No, we won't thank you more of your vacation time.
+[00:28:43] Rajesh Kumar Thangavelu: That's fine, that's fine.
+[00:28:46] Shoval Abudraham: Cool, so…
+[00:28:47] Rajesh Kumar Thangavelu: If you're gonna jointly solve some problem, and if that's gonna come out as a product.
+[00:28:53] Shoval Abudraham: Yeah. Amazing.
+[00:28:56] Shoval Abudraham: Thank you so much. Have a great, weekend, almost a weekend and vacation.
+[00:29:03] Shoval Abudraham: And we, of course, will stay in, touch.
+[00:29:07] Rajesh Kumar Thangavelu: Sure, sure, definitely.
+[00:29:09] Rajesh Kumar Thangavelu: Nice talking to you all.
+[00:29:10] Shoval Abudraham: Amazing.
+[00:29:10] yuvalmermer: Talking to you, friend. Thanks.
+[00:29:12] Rajesh Kumar Thangavelu: Thank you, bye-bye.
+[00:29:14] yuvalmermer: highlight.
+[00:29:14] Shoval Abudraham: Bye!
+[00:29:15] Rajesh Kumar Thangavelu: Bye.

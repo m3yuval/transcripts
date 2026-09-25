@@ -1,0 +1,269 @@
+Date: 2026-09-01
+Topic: CISO Network Security Discovery Discussion
+Drive File ID: 1TpHo0ZqhLtph507rquyqImeCbcntW3Nf
+Source: google-drive-pdf
+
+[00:00:00] Speaker 1: You wish.
+[00:00:06] Speaker 2: All right.
+[00:00:07] Speaker 1: Good.
+[00:00:58] Speaker 2: and I have a question that I don't want to answer.
+[00:01:05] Speaker 1: Yes, what's the regular opening?
+[00:01:07] Speaker 2: What do you usually say if you're using network?
+[00:01:09] Speaker 1: I'm a father.
+[00:01:25] Speaker 2: Let's start with someone now.
+[00:01:27] Shoval: Ego.
+[00:01:28] Speaker 1: I'm curious about the new movies that we're doing next gen, Sassy.
+[00:01:36] Speaker 2: I'm going to answer what I said earlier. Now, let's do the next session. Or let's do session for the session.
+[00:01:45] Speaker 1: They're doing it in the end point.
+[00:01:47] Speaker 2: the end point? What's
+[00:01:49] Speaker 1: Yes, there's an image in the end point. is an image in the end point.
+[00:01:52] Speaker 2: It's in the middle.
+[00:01:54] Speaker 1: That's what it is?
+[00:01:54] Speaker 2: Also in the middle it's like this. I tried to get it with the other end points, that doesn't work.
+[00:02:00] Speaker 3: I
+[00:02:00] Speaker: I don't know.
+[00:02:01] Speaker 1: I don't know what to say about the image, but...
+[00:02:03] Speaker: I know the image of the end point.
+[00:02:03] Speaker 2: still have the pink point here.
+[00:02:05] Speaker 1: I know the image of the end point.
+[00:02:08] Speaker 2: Voila.
+[00:02:13] Speaker: I took a break for three hours already.
+[00:02:14] Speaker 2: I just took the 3rd one because I'm a boss.
+[00:02:16] Speaker 1: I'm really tired. I'm going to blow my nose today.
+[00:02:23] Speaker 2: But I should have the steel one, because I'm a gen chassis.
+[00:02:25] Speaker 1: Wow, there are people... I want to say that it's just... When I think about it, I understand that it's another form of it that people don't like from what they want on Endpoint, and how it's like talking to the crowd. Like, you're doing an Endpoint, or an Endpoint to the crowd. And then, like, the next generation of this, we're going to see what happens.
+[00:03:03] Speaker 2: Yes. And after you get the point.
+[00:03:10] Speaker 1: I - mean, that's what I'm saying. - I don't think it's interesting to hear about it.
+[00:03:10] Speaker 2: Yes. I mean it's interesting to ask about it.
+[00:03:14] Speaker 1: But what?
+[00:03:18] Speaker 2: But it's not a good idea
+[00:03:22] Speaker: to...
+[00:03:22] Speaker 2: enough to say yes.
+[00:04:29] Speaker 1: Hey you go.
+[00:04:32] Speaker 3: Hello, hello, how are you Grace?
+[00:04:35] Speaker 4: Good, how are you?
+[00:04:37] Speaker 3: Yeah, thanks.
+[00:04:39] Shoval: Amazing. What time is your side?
+[00:04:44] Speaker 3: It's area.
+[00:04:44] Speaker: It's 8am.
+[00:04:45] Shoval: 8am, so you're just starting the day.
+[00:04:48] Speaker 3: That's right.
+[00:04:49] Shoval: Yeah. Remind me, where are you based?
+[00:04:58] Speaker 3: You're muted with the audio.
+[00:05:01] Shoval: What? Again? Sorry?
+[00:05:03] Speaker: I'm in Florida.
+[00:05:04] Shoval: Oh, amazing. We're on television. Not sure.
+[00:05:11] Speaker 1: Yeah.
+[00:05:12] Shoval: Cool. So first, thank you for the time. We super appreciate it. I share a bit about our goal from this conversation. So as I mentioned on the message, Yvonne and I are building our company right now. We're on the ideation stage exploring the cyber field. So basically what we wanted to do is like a quick intro for both sides and then to share with you a bit about the direction we're exploring and hear your thoughts, how does it sounds to you?
+[00:05:47] Speaker 4: Yeah, that sounds great. We'll get forward to it.
+[00:05:50] Shoval: Perfect -, before we start, can we record this conversation?
+[00:05:55] Speaker 3: Yeah, that's fine.
+[00:05:56] Shoval: Amazing. Okay, so I'll start.
+[00:06:00] Speaker: Recording in progress.
+[00:06:02] Shoval: I'm Shaval. I started in cyber like 10 years ago. Like most of the Israeli founders in the unit 8200. They're actually Metyuval, my co-founder. We both served in the department that were responsible to the DevOps and ID infrastructures for Yeah -, for the cyber's operation purpose. the cyber's operation. Basically had their role of DevOps engineer combined with a security engineer because we We had to-- manage and build those infrastructure both from the operational side but also from a secure way so we hold the security perspective. I served for five and a half years, released as a captain and after my service I did a bit of a shift into product management roles. I was always fascinated about how to create a real value and understanding customers' pains. So basically started at at a company called Perception Point. It was on the Workspace Endpoint Security field. Basically, led there all the detection capabilities, worked a lot with AI, machine learning, LLMs, before people knew what is ChagPT, built
+[00:07:19] Speaker 3: What -?
+[00:07:21] Shoval: and agents before people, you know, there was all the frameworks out there, so it was super innovative back then. This company was acquired by Fortinet. Afterwards, I worked at a company called Coisecurity, also on the endpoint area, great products, amazing customers, like also great, great adventures, very innovative in terms of how we use the AI. And this company was acquired as well by Paulo Alto. And you know, after that, it was like basically my sign to start my own thing with Yuval, which is an old friend. From the unit. I love to say that we both like started on the same place, on the same department, but like I did a shift in the product management where our market customers are facing worlds and Yuval dive into the technology, so I'll let him share his experience. That's it.
+[00:08:25] Speaker 1: I think
+[00:08:26] Speaker 2: Shavala won't tell you, but she's a genius product manager.
+[00:08:29] Speaker 4: Thank you.
+[00:08:30] Speaker 2: And I learn from her every day about how How to build a product and how to ask good questions as a product manager. But yeah, as Chauval said, I did dive through the technology and I started my career at 8200 as a Chauval soldier. This is where we met at first. But there during the team we developed and built a product together two big apps. One of them was for mapping and managing the network operations in the unit and we managed all the multiple and the complex networks of the unit. This app is still running and still serving its purpose until today and after this amazing position I promoted to be a team lead And I led the 10 engineers and then I promoted again to be the head of the DevOps and Infrastructure Department in 8200.
+[00:09:32] Speaker: in editor hybrid.
+[00:09:34] Speaker 2: And it was a really great, great, great position. I led 40 engineers across five teams. We ran large scale networks, very complex and highly secured networks. We managed petabytes of data. We ran production environments and all the good 8200 infrastructures. And after around 10 years in 1821 feed and I finished the
+[00:10:13] Speaker 4: The army and then I started at Paragon, which is a cyber company.
+[00:10:13] Speaker 3: It's an Israeli cyber company.
+[00:10:15] Speaker 2: I think, I think two years ago, acquired by a private equity with the cold red lattice. America. I quit Paragon two months ago and started the journey with Chivalre. And this is about me. We would love to hear about you.
+[00:10:33] Speaker 4: Very impressive guys, the background. I'm a member for 25 years. Five or six times. I'm a member for 25 years. Pretty much have done. Yeah, yeah, programs, people who link architecture. you see compliance, I mean, the whole suit to not suck in some response.
+[00:11:09] Speaker 3: So pretty much everything.
+[00:11:10] Speaker 4: And on top of this, dollar, seven or eight margin acquisitions
+[00:11:16] Speaker 3: on both sides, different sides. So
+[00:11:20] Speaker 4: that's my background. And then today, no longer was Verizon, I left them. I'm actually working with two other companies like yours in the advisory role. I'm also a board member of Cloud Nexus. So it's a holding company, we're on different businesses. And the reason I got this interested, because my partner and I started the-- why don't you go ahead? tell me about yourself and then I'll tell you maybe how we can help each other
+[00:11:55] Speaker: other, because I have somebody that's only years.
+[00:11:55] Speaker 3: because I have so many different ideas.
+[00:11:58] Speaker 1: Amazing. Cool. So
+[00:12:01] Shoval: I'll tell you a bit more about our stage. So basically, as I mentioned, we are exploring right now. Basically, based on our experience, you heard it when you Wild told us about himself. We are infrastructure people. So we was immediately fascinated by network security. We also think that this is a very big... I think it's a big market, that there was no massive changes there in the past few years. And also, like, beside that in the all the technology world like all the new AI era and all the changes She -'s there, quick.
+[00:12:46] Speaker 1: We added
+[00:12:46] Shoval: new attack surface and new types of attacks. And we are now exploring how CISOs are managing the risk around their networks in cloud environment, hybrid environment, on-prem environment, and trying to find the white spaces there. Not exactly white spaces, but still gaps and pain points we can address too. And that's exactly like we are doing in those kind of conversations. Like we would love to hear your take about this specific area, and I would like you to manage it as a CISO in the companies you worked for. And we can take it from there.
+[00:13:33] Speaker 2: And if it's okay, then you ask a couple questions about the previous company you worked in. So,
+[00:13:39] Speaker 4: I want to make sure I understand that at this point, you guys are just probing the market and see what's out there. You don't currently have, I guess, an idea or concept, do you?
+[00:13:58] Shoval: Yeah -, we don't have, like we don't have a solution yet.
+[00:13:59] Speaker 2: Yeah. It's like the ideation and validation what we're doing right now.
+[00:14:05] Shoval: Yeah.
+[00:14:05] Speaker 4: No solution I understand that we have but at least do you have an idea of what you want to go after?
+[00:14:11] Shoval: So we do have a direction.
+[00:14:16] Speaker 4: Okay.
+[00:14:17] Shoval: We don't want to focus the conversation on this direction because we're not positively sure that's the right direction and want to feel and hear the pains from the people that actually need to deal with those pains.
+[00:14:36] Speaker 4: I'd like to hear this anyway but I'll tell you what's kind of on my mind.
+[00:14:40] Speaker 3: as eyes were relaxed and once in your own young somebody.
+[00:14:46] Speaker 4: If we can kind
+[00:14:48] Speaker: Cool.
+[00:14:48] Speaker 4: of check the notes so I think I came off the large enterprise, not a large telecom.
+[00:14:58] Speaker 1: Yeah.
+[00:14:59] Speaker 4: And you guys probably heard about some of the Soul Typhoon related attacks, Soul Typhoon related In - fact. just a little bit of critical infrastructure back in, what September of 2024 I think, right?
+[00:15:18] Shoval: Okay.
+[00:15:20] Speaker 4: I think the, the, so that specific incident unpacked several gaps.
+[00:15:31] Speaker 3: And you guys know in security it's all about,
+[00:15:35] Speaker 4: what do you know, invisibility, right?
+[00:15:38] Speaker: Exactly.
+[00:15:39] Speaker 4: Right, so for us, yeah, exactly. So for us, the number one was because company have gone to many positions. So for us was the huge discovery, some of the
+[00:16:05] Speaker 3: labs and some of the center of excellence that
+[00:16:11] Speaker 4: maybe kind of when they're all going to us. So some of the pieces of the network where it's connected to us, disconnected, those And those guys ... those teams typically ... those are the guys ... that's doing some of the product development, those are guys that are doing, you know, patterns involved. Those are guys who like to do everything when they don't have any obstacles. So those guys like to do everything without additional controls. So basically they want to be the kings of the kingdom. So for us this was a big impact. Okay,
+[00:17:02] Shoval: Okay, just to make sure I understand,
+[00:17:03] Speaker 4: and again.
+[00:17:05] Shoval: like those people that develop, they don't want obstacles and you know, developing everything by themselves. Who exactly you are referring to?
+[00:17:15] Speaker 4: engineering labs, like over a center of excellence, people that likes to play with the toys, I guess, innovating, exactly, exactly. So that's problem number one. I think problem number two we unpacked was some of the IT IoT devices.
+[00:17:44] Speaker 1: Okay.
+[00:17:45] Speaker 4: that we didn't have good visibility or controls over. That was number two.
+[00:17:53] Shoval: Can you give us an example to some of those devices?
+[00:17:56] Speaker 4: I mean, some of the industrial maybe sensors,
+[00:18:00] Speaker 1: Okay.
+[00:18:02] Speaker 4: gauges or systems that may be connected to your critical infrastructure. No, it could be even, you know, HVC could be some sort of lane to top whatever that may be. Or could be something that, you know, we limited, you know, visibility to some of those devices.
+[00:18:32] Speaker 1: Okay.
+[00:18:33] Speaker 4: But that was problem statement number two. Problem statement number three, I think probably a little bit more higher level because of all this. So, let me back up. You probably know that industry is changing
+[00:18:52] Speaker 3: more total to resilience,
+[00:18:54] Shoval: Yeah -.
+[00:18:55] Speaker 4: right? You know, a lot of people shifting their minds on how resilient their environment is. So that became a huge impact to us because of some of this lack of visibility or gaps. Resilience, did general resilience become a problem statement? Now when I say resilience, I'm thinking about the big for the ecosystem where you need to have you need to have platform that able to identify your critical infrastructure pieces, available to identify your critical... services that ever identify a critical customer facing, this term is applications. So that's one, too. It needs to be connected to your full back end for equipment, software hardware, whatever that may be. So that kind of spun up the big conversation. how to make sure we're resilient for some of this unknown critical pieces?
+[00:20:22] Speaker 1: because we
+[00:20:23] Shoval: did explore resilience for a while because we heard about it as well. It's also a big, it's happening a lot around it here, but we, from a conversation we had with CISO,
+[00:20:34] Speaker 4: Yeah.
+[00:20:38] Shoval: we did not fill the urgency around it. Like,
+[00:20:44] Speaker 4: Surprise because look what would happen in the state of Minnesota where six, seven war companies got hit at the same time. So I think there's a, in my view, right? I think there's bad guys will be going up. after the critical infrastructure, critical services. And we're always, we're always seeing resilience, I think, becoming the thing in the industry. You know what it is?
+[00:21:15] Speaker 3: I think maturity is not there,
+[00:21:17] Speaker 4: and I think people need to start shifting their minds.
+[00:21:21] Shoval: Yeah. And another question about it, because you are basically talking about nature incidents. And I'm wondering, in this case, the resilience responsibility is under the CISO
+[00:21:29] Speaker 3: Yeah.
+[00:21:36] Shoval: or under the CDO, CIO?
+[00:21:40] Speaker 4: I mean, that's a good question. I think there is a shared, it's a shared responsibility. It depends on the company size, depends on how mature the organization is,
+[00:21:54] Shoval: Yeah.
+[00:21:55] Speaker 4: and it depends on the industry. It can be anywhere.
+[00:21:58] Speaker 1: Yeah.
+[00:21:59] Speaker 4: I think, I think when you look at some of the incidents over the last 12 months, I think one of the key stakeholders would be CSO, right? Because it's a cyber attack and do today. Now, there is a piece that you can, you know, there is a big piece of overall enterprise risk management, where typically CSO is not an owner, but CSO is the, and the
+[00:22:31] Speaker 3: table, right?
+[00:22:32] Speaker 4: Shadows, I think it's, it's, I don't know, typically now, in our case, this was the, we didn't have the CDO function, but this was pretty much CIO responsibility, that he was leading the enterprise space management along with legal, along with some other folks. So it depends, I can't tell you, it's a single tail.
+[00:23:02] Shoval: Yeah, that's actually interesting. That's exactly the question we're asking ourselves. We asked this around the resilience and also around network, because also there, and we're exploring this area a bit more like at the moment, we are, we detected that like the responsibility to the risk is on the Cesar size, but the operational side is on the CTO, CIO.
+[00:23:26] Speaker 3: Okay.
+[00:23:30] Shoval: So it's very, like we are not, Sure, we understand who is responsible to the budget in this case. Who will buy the product, the solution in those cases.
+[00:23:44] Speaker 3: Yeah,
+[00:23:45] Speaker 4: it's a shadow of responsibilities because to your point, this may be, this may be an operational responsibility is where, I don't know, you may, you may have some of the technical depth sitting in your network, right? And technical depth, meaning old, application, old systems that own someone in the business.
+[00:24:13] Speaker 1: Yeah.
+[00:24:14] Speaker 4: So it's not a single person that's responsible for this.
+[00:24:21] Speaker 1: And do you think that--
+[00:24:22] Speaker: But the C2--
+[00:24:23] Shoval: Sorry, I won't go ahead.
+[00:24:25] Speaker 2: Do the CISO monitor those old applications?
+[00:24:31] Speaker 3: Say what?
+[00:24:32] Speaker 2: Do the CISO monitor the traffic and the network rules and capabilities of those applications you talked about?
+[00:24:45] Speaker 3: Well,
+[00:24:46] Speaker 4: yeah, I mean, that's just how it became as a risk. I mean, if there is a built in, it's a known fact, then yes. And it's constantly, it's constantly become a risk to your business that you need to surface. So yes, Cesar should be monitoring the traffic.
+[00:25:07] Speaker 3: But
+[00:25:08] Speaker 4: look, if you have a 30-year-old database sitting in the web app, sitting on a network and it's exposed to the internet, I mean, you can only do so many things.
+[00:25:21] Speaker 2: And how do you monitor it? Which tool do you use to monitor this kind of...
+[00:25:26] Speaker 3: I think it's very good to do it and again, it's sufficient to do the risk, the whole point, right?
+[00:25:36] Speaker 2: What do you mean?
+[00:25:36] Speaker 3: You may have side intelligence like reported future, you have your
+[00:25:43] Speaker 4: solar wind, you get stuff in the sea, so you do all that. But you still exposing the outdated system to the internet can be easily explained. You can apply laws in between, you can apply application waft, right? If this is applicable.
+[00:26:05] Speaker 2: You know, I'm curious when when a new service goes to production, who decides what it's allowed to talk to? Like this database, it was exposed to the internet, who decided to approve this database and let it talk with the internet? When you deploy new service, how and who decide what you can talk with?
+[00:26:34] Speaker 4: Yes, so it's typically you have your
+[00:26:39] Speaker 3: general
+[00:26:41] Speaker 4: architecture. Then you get security architecture people engaged
+[00:26:48] Speaker 3: in the office. And
+[00:26:53] Speaker 4: they are typically the gate. The final gate is the, you know, I'm thinking like a firewall operational guy that's typically driven by IT. And when you open, close or requested in the new rules, then you typically have your security operation as the approval. So typically it works, your security operation approves
+[00:27:24] Speaker 3: or rejects,
+[00:27:26] Speaker 4: and IT operation typically executes. And once it's executed, it goes back to the security for the wood,
+[00:27:35] Speaker 3: and make sure we actually have done what they supposed to do.
+[00:27:38] Speaker 4: That's kind of the typical chain of reaction.
+[00:27:42] Speaker 2: In the previous organization you worked in, which kind of network you used? It was on-prem or it was the cloud?
+[00:27:52] Speaker 4: Both, yeah.
+[00:27:53] Speaker 2: However, both. And did you find the communication between two internal servers that you didn't know that exists, like you didn't approve it, but you found this? this communication? -
+[00:28:08] Speaker 3: Yes. -
+[00:28:09] Speaker 2: How did you find it? What did you use to find it?
+[00:28:13] Speaker 4: So - going back to the sole platform incident we have, right?
+[00:28:22] Speaker: Guys, um...
+[00:28:28] Shoval: Did you even cared when you find it?
+[00:28:32] Speaker 4: What - do you mean, kid?
+[00:28:33] Speaker 1: Like,
+[00:28:33] Shoval: you know, it sounds like these things, those technical depth in the network, are happening. Like, sounds like it's a real problem, that problem that happens, some organization, and you always need to find them. But I'm curious, like how does it bother you like a lot or you know, does it a small issue that you need to fix but it's not like a massive problem to the security organization.
+[00:29:06] Speaker 4: I mean, practice was a big problem, right? And again, I think end of the day, we didn't have, I'll give you an example, so we didn't have, in our inventory, all the firewalls that we have with cross-organization, all the VPNs we had in our organization, because some of the acquisition we made, right? So you know, when you have your subnets inventory, for example, right, We were missing something. from our list.
+[00:29:39] Speaker 1: you try to create this kind of inventory
+[00:29:43] Speaker 4: no we have we had inventory created but there was a bunch of subnets were just missing they were not there
+[00:29:50] Speaker 2: I was just an inventory of subnets or inventory of network components both are in stock for your subnet and then you look once again and what do you save in this inventory besides subnets say what what do you save what do you have on this list in your inventory besides your subnets and network components
+[00:30:14] Speaker 4: it just didn't enter the public at this point so you have so we have the table and it's a homegrown developed system right you have your what do you call it, say, key inventory and then kind of same database as... at least hardware has you know. Model, versions, the IPs, the owners, things like that as the base.
+[00:30:48] Speaker 2: Did you, did you save there what is supposed to dock with what? Over
+[00:30:54] Speaker 3: No, not part of this in an inventory now.
+[00:30:59] Speaker 2: So did you have any list that tells you what's supposed to dock with what? Or it just was there? No, no,
+[00:31:08] Speaker 3: we don't have this at the network layer, but we have this as part of the
+[00:31:17] Speaker 4: systems. Let's say you deploy ERP or whatever that. So that's kind of part of the larger capital project, but not in the network layer. You can... You can, I mean, you should be able to pull this off. Maybe specific firewalls, but nothing exists as they just... One big list who talks to what, I guess.
+[00:31:50] Speaker 2: And in the case you said that you found communication between two internal servers that you didn't know that exists, how did you react to that?
+[00:32:02] Speaker 3: So you typically don't look for
+[00:32:06] Speaker 4: because of the complex and live networks which typically come across as part of the event or the incident. And then
+[00:32:18] Speaker 3: you kind of looking over and making decisions on one of those specific.
+[00:32:24] Speaker 2: Which system popped the alerts?
+[00:32:26] Speaker 4: Huh?
+[00:32:27] Speaker 2: which system popped the alerts of this communication?
+[00:32:31] Speaker 3: Yeah whether it's a little bit or not and you decide to close right.
+[00:32:36] Speaker 4: Keep in mind there's also we do this but every 90 days people reviewing like all firewall rules.
+[00:32:46] Speaker 3: Yeah
+[00:32:47] Speaker 4: typically they start with, hey, we see this rule inactive for a year, as it needs to be, and so that type of awkwardness. So some of this being closed as we go, but very tedious processes.
+[00:33:06] Speaker 2: Yes, Shobat, go ahead.
+[00:33:08] Shoval: No, I just wanted to mention that we are almost in time. So I don't want to be mindful with your timing goal. But like to summarize the conversation, like you have you gave us a few direction problem statement at the beginning. And now we talked about kind of network operation security side. I just want to ask the last question around that. It sounds like you knew those processes. There was a part of your work. But do you think the organization creating new budget lines or project for those kind of problems, can you prioritize them for me maybe?
+[00:34:01] Speaker 4: I mean, we do it again, what came out of Soul Telephone, we've got a lot of money. In addition to our budget, just to deal with this and close some of these issues and we actually create some great organization just to focus on this.
+[00:34:20] Speaker 3: So, yes, we've got, I mean, we did.
+[00:34:23] Speaker 4: I don't know how other people handling this.
+[00:34:26] Shoval: cool. That's super interesting. Amazing. So Igor, again, thank you for your time. We'll learn a lot from this conversation. We would love like to, we will dive into the subject you gave us at the conversation, but we'd love to, you know, show with you more about our process and, you know, give you updates as we're moving forward. That's it, I think.
+[00:34:53] Speaker 2: Thank you so much. It was really valuable.
+[00:34:55] Speaker 3: You guys have a few more minutes because I want to ask you a few questions. Yeah. Yeah, but oh
+[00:35:03] Speaker 4: You know, tell me what do you think? Where do you want to go? Kind of where you are
+[00:35:09] Shoval: Where - we wanna go? Basically, we are understanding that, like we are talking with a lot of CISOs and a lot of security leaders, and we are understanding that the attacks are not like with a different script and different sequence, but in a different scale and different speed.
+[00:35:31] Speaker 2: Thanks. Yeah
+[00:35:34] Shoval: so basically, we are understanding that, okay, right now, those little gaps in your security
+[00:35:43] Speaker 1: stack
+[00:35:43] Shoval: was not, the severity of them wasn't high because, you know, as a human do the attack, you don't, it's more difficult to him to find all those little gaps and go through them. For an agent, now that attackers are using agents, all these little breach in your network, in your security stack became a bigger problem. So that's the direction we are going to go. going through as I mentioned we are still at the beginning so we are not positively sure like how this exactly gonna work.
+[00:36:15] Speaker 3: Yeah, yeah. Yeah, so,
+[00:36:22] Speaker 4: like, maybe a few comments on this. First of all, I like the fact that you go into the network, because every other companies I'm talking to focus on AI specifically on the endpoint management, I think that area is overcrowded.
+[00:36:40] Speaker 1: Yeah, we agree.
+[00:36:42] Speaker 4: I like the fact that you're moving into the network. One, two is typically what, and you've done this in the past, but typically think about a specific niche you want to solve.
+[00:36:59] Speaker 1: Yeah.
+[00:37:00] Shoval: Do you have an example? Things that you feel that are
+[00:37:02] Speaker 3: I'm talking to...
+[00:37:04] Shoval: more painful at the moment?
+[00:37:06] Speaker 1: Niche there?
+[00:37:08] Speaker 4: Again, I think folks that in critical infrastructure services, yes. Because I do believe we're going to start seeing more involved this attack specifically against critical infrastructure.
+[00:37:26] Speaker: partnership.
+[00:37:27] Speaker 1: Yeah.
+[00:37:27] Speaker 4: But my point is, I'm talking to many people that in your shoes that's going to start something. Everyone is trying to solve everything, right? And I'm saying that's not gonna work here. Start up, focus on something, target something, and find a specific use case, and solve this and go to market.
+[00:37:56] Speaker 1: Yeah,
+[00:37:57] Shoval: I have a question around that on network like we are always debating, like that's right, you are correct when you're saying we're trying to solve all the picture. And like we are always debating where are the larger problems on the cloud network or on on-prem, firewalls, those area, we are not
+[00:38:18] Speaker 2: I breathe.
+[00:38:19] Shoval: positively sure like where to focus. Do you have thoughts around that?
+[00:38:28] Speaker 1: I don't know.
+[00:38:28] Speaker 4: Um. I'm struggling to answer where the most problem is not.
+[00:38:39] Speaker 3: Um.
+[00:38:42] Speaker 4: Because in, you know, when you think about cloud and what you do like iPass, most of the customers do not have all the cloud infrastructure.
+[00:38:50] Shoval: Yeah.
+[00:38:52] Speaker 4: That's maybe a different use case, right? Those are the guys, the big guys, the Google, the Microsoft, the Amazon, right?
+[00:38:58] Shoval: Yeah.
+[00:39:00] Speaker 4: I think you should, again, my opinion, you should be focusing on the other side, the data centers, the on-prem stuff.
+[00:39:06] Shoval: Yeah.
+[00:39:07] Speaker 4: The reason I'm saying this... Two reasons. One, we've seen data centers on the rice.
+[00:39:15] Shoval: That's right.
+[00:39:17] Speaker 4: I mean, I'm part of the other company, we're actually building data center because everyone is out of capacity. So what we see in one is the data center is being built everywhere, and companies are moving out of the cloud.
+[00:39:38] Speaker 1: Yeah.
+[00:39:40] Speaker 4: Wonder why small, mid-sized companies are moving out because the ownership and the cost. So my recommendation, kind of think about to the brand data centers. not the cloud service providers. So one last thing I want to tell you why I'm getting into this. So and I'm going to send you the quick file so you can look on.
+[00:40:14] Speaker 3: But I started something about six months ago
+[00:40:22] Speaker 4: with my partner.
+[00:40:23] Speaker 1: Okay.
+[00:40:24] Speaker 4: And we build a very boutique customer approach. The idea is to help companies on edge, or no matter where they are. So we can help companies like where you are,
+[00:40:38] Speaker 3: in just the ancient,
+[00:40:40] Speaker 4: we can help companies that may be already into product and selling to customers. So what do we do is three things that make us unique. One is one company. We do provide you with advisory services. We have access to, well, both us, I can't simply imagine the Wilson have four top-notch CISOs and now a portfolio is part of our company that we can get access to. We also have access to hundreds of CIS around the United States. So that's the advises. Again, we can help you with the idea, we can help you with the verification, we can help you with design partners, the roadmap, full soup to nuts. That's one side. Second side is the, we can help you with exposure. The other part of our company is actually hosting events and dinners.
+[00:41:40] Speaker 3: This is where we can bring to the table.
+[00:41:43] Speaker 4: We have several teams we can bring, like 50 to 100 people. We can bring more, 20 people. We can bring five people that are handpicked for your use case. So that's the second company. And the third company is we're doing it. We also have the VAR Reservoir Services. So we build that and I'll send you the brochure so you can look at it, but you know, I would like to stay in touch with you guys, see if we can kind of look together and you have any interest.
+[00:42:13] Shoval: Amazing, we would love to get the extra information and like to stay in touch. And
+[00:42:21] Speaker 4: Yeah.
+[00:42:23] Shoval: also thank you for the time and support, we really really appreciate Cool, super cool.
+[00:42:30] Speaker 4: Of course. Then, guys, I'm going to send you a brochure from my other email address so you have it, okay?
+[00:42:38] Speaker 2: Thank you so much.
+[00:42:39] Shoval: Igor have a wonderful day. Like I wish you the rest of the perfect rest of the day
+[00:42:40] Speaker 4: Bye. Thank you. You too.
+[00:42:46] Speaker 3: Have a great week.
+[00:42:47] Speaker 4: Take care.
+[00:42:48] Speaker: Bye.
+[00:42:48] Speaker 2: Bye.

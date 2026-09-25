@@ -1,0 +1,194 @@
+Date: 2026-09-11
+Topic: Security Leadership Discussion - Ray Lewis
+Meeting UUID: AF9DB694-1BC8-44B5-89B3-A77B67688BD4
+Source: transcript
+
+[00:00:02] Shoval Abudraham: Amazing.
+[00:00:03] Shoval Abudraham: Cool, so I'll start. I'm Shoval. I'm in cybersecurity for the past 10 years. I started in
+[00:00:10] Shoval Abudraham: the unit 8200, which is the cyber operations unit of the Israeli army. Basically, there I actually met Yuval, which is my co-founder. We are working together right now.
+[00:00:25] Shoval Abudraham: we served there at the department that was responsible to all the infrastructure of the unit, so basically all the role of DevOps engineer, combined with a security engineer, because we don't have… only had to build and maintain those infrastructure, but to do it
+[00:00:42] Shoval Abudraham: Very securely, because there was super, super sensitive, infrastructure.
+[00:00:47] Shoval Abudraham: That was an amazing experience. I served there for five and a half years and released as a captain. But after I finished my service, I realized that, you know, I love technology, to be hands-on.
+[00:01:04] Shoval Abudraham: But I'm more fascinated about, creating value, about customers' pain and business in general.
+[00:01:12] Shoval Abudraham: So I did a shift to a product management role, and in my, civil life, career, I, I was a product manager, started in cybersecurity company called Perception Point, led their… all the detection capabilities that were based on machine learning, LLM, and AI.
+[00:01:35] Shoval Abudraham: iAgents before I knew to call it AI agents.
+[00:01:39] Shoval Abudraham: That was an amazing adventure, and basically this company was acquired by Ferdinet at the end. After that, I moved to another cybersecurity company called Koi Security, also
+[00:01:51] Shoval Abudraham: Great company, amazing customers, very innovative in their… of how we use AI in our product. And this company was acquired as well by Palo Alto.
+[00:02:03] Shoval Abudraham: Basically, you know, that was my sign, to start doing it on my own, and I called Yuval, which was a very, very good friend from the military service. We worked together multiple times,
+[00:02:18] Shoval Abudraham: and for many years, and yeah, like, right now we are on… starting our journey, and I love, like, to say that we both started on the same place, like, we both served in the same department, but I did, like, shift left into the business world, and Yuval kind of doubled down on the technology, so, I let him, share his,
+[00:02:41] Shoval Abudraham: is part of the journey.
+[00:02:44] Yuval Mermer: and the…
+[00:02:45] Yuval Mermer: I'm the tech guy, and I learn a lot from Shoval about how managing product and how to ask the real good questions to understand what a product should be like. And I started at 8200 as Shoval Soldier.
+[00:03:00] Yuval Mermer: in a team where I was the developer, and Shoval, she was the commander and the product manager inside the team, and we developed together
+[00:03:08] Yuval Mermer: great platforms. One of them was for managing, mapping, and operating the secured networks we had inside 8200, and after this long journey as a developer, I promoted to be the… to be a team lead.
+[00:03:23] Yuval Mermer: And after a couple of years, I promoted again to be the head of the DevOps and Infrastructure Department, the same department that Shoval talked about. There, I led 40 engineers across 5 teams, we ran
+[00:03:36] Yuval Mermer: large-scale networks, complex networks for operations rooms, for thousands of users, hundreds of applications. We ran petabytes of data in production environments, and after this very challenging
+[00:03:49] Yuval Mermer: period, I finished the military service, and I started at Paragon, which is an Israeli cyber company, as the director of DevOps and SRE.
+[00:04:01] Yuval Mermer: There, I led 25 engineers. We developed networking solutions for Paragon's customers, like, around the security for Paragon's product, and we just combined the abilities of the development and the knowledge from the networking side, and we combined them together, and we developed
+[00:04:24] Yuval Mermer: Very, very great networking solutions, and, now…
+[00:04:30] Yuval Mermer: I actually, of now, a couple of months ago, I quitted the Paragon, and I joined Shoval to the great journey we're doing.
+[00:04:40] Yuval Mermer: And this is about us, we would love to hear about you.
+[00:04:44] Ray Lewis: So those were excellent stories. Sounds like you guys had an awesome career up to this point. Mine started a long time ago.
+[00:04:52] Ray Lewis: When I joined the military, I joined the military in 1989. There was no such thing as cybersecurity. I don't think anywhere, really, in the world, maybe in some deep corners of the world, but I joined in the infantry, and so I got to jump out of airplanes and rappel helicopters.
+[00:05:10] Ray Lewis: I was the only nerd in the barracks that had a computer. It was a Commodore 64 with a modem. I don't remember which modem speed it was at that time. But my first computer was a Commodore 64 with a 300 baud modem. So I was already very much interested in technology, even though I was in the Army.
+[00:05:29] Ray Lewis: I had a great time in the service. I was in the service for 4 years and 16 weeks. I traveled,
+[00:05:34] Ray Lewis: To a lot of different places,
+[00:05:37] Ray Lewis: As I said, I got to jump out of airplanes and rappel out of helicopters, it was awesome. But when I got out, I decided to get out, and make a career out of IT and cybersecurity. Cybersecurity was always my interest, but even when I got out, there really wasn't a field yet for cybersecurity.
+[00:05:55] Ray Lewis: So I, became a programmer, I was a COBOL programmer for the mainframe, and so, I got to learn that side of it for a bit. I quickly realized I was much more interested in the networks, and building servers, and so, I've had… supported every version of Microsoft products since DOS.
+[00:06:14] Ray Lewis: all the way to up to today. And then, 6 or 7 companies later.
+[00:06:21] Ray Lewis: I built data centers, I ran, you know, I put in the generators, multiple redundant circuits, had to build their first switches and routers and firewalls, VPN concentrators.
+[00:06:34] Ray Lewis: So even then, even though I was in IT role, there was no one else in the company doing security, so I very much helped, with security. Put in the first updating stuff when Microsoft finally updating.
+[00:06:45] Ray Lewis: Start updating their stuff.
+[00:06:47] Ray Lewis: So anyway, well, I will fast forward now, to today. I work at Pekin Insurance, I've been here for 7 years.
+[00:06:57] Ray Lewis: I lead a small team. There's 11 of us. The company is 650 employees, so we're a small regional insurance company, they call it here in the U.S. But I have a very talented team. I've been in the industry over 30 years. My managers have both been in the industry over 20 years.
+[00:07:15] Ray Lewis: And then the rest of the team is anywhere between 3 to 5 years, and up to 10 or 15 years. So, strong team. What we do is we do all of the cybersecurity things, and by that I mean firewalls, identity and access management, incident response, managed detection response,
+[00:07:35] Ray Lewis: email security, and what's the other big one I'm missing? Security awareness training, to try to keep the server, all the,
+[00:07:44] Ray Lewis: employees aware of the risks that are out there. So, we've built a strong program here. I have a nice security stack. Our company is just getting into LLMs and AI. They've certainly been using Gen AI for the last year or two, but they're just starting to
+[00:08:03] Ray Lewis: adventure down Agentic AI, and kind of the developers are kind of learning what it is. We're a 100-year-old company. In the U.S, that means they move like molasses. We still have a mainframe, we still have a lot of COBOL, so we have a lot of,
+[00:08:20] Ray Lewis: It's not…
+[00:08:21] Ray Lewis: We do have tech debt. It's not all tech debt. We're mostly a Microsoft Windows shop. We do have some Linux servers. On the desktop side, we're almost all Windows 11. So, at a very high level, that's my 30,000-foot journey. Very much still love the industry, and looking forward to retirement one of these years.
+[00:08:43] Shoval Abudraham: Wow, that's super, like…
+[00:08:45] Shoval Abudraham: impressive, and like, sounds like you did everything in the cybersecurity field, and still doing.
+[00:08:52] Ray Lewis: I was a sysadmin for a long time. I was a network admin for a long time. I put in switches and routers, built entire Active Directory networks, and it just means I'm old and I've done a lot of things, but I do like it. I got a stack of certifications, and I did those more not to help
+[00:09:09] Ray Lewis: my career as much to help me make sure I understood what the heck I was doing. And so, I built Active Directory environment in my own house, I built Pix firewalls and Cisco ASAs in my house. I made my kids all log into Active Directory and change their passwords every 30 days.
+[00:09:27] Ray Lewis: A complete nerd.
+[00:09:29] Yuval Mermer: I really love it that we all started in infrastructure. It means that we have a common language.
+[00:09:34] Ray Lewis: It does, yeah, I very much enjoy the infrastructure side.
+[00:09:38] Yuval Mermer: And I really loved the shift you did. It's very impressive, from infantry to security and cybersecurity.
+[00:09:46] Yuval Mermer: big, too.
+[00:09:46] Ray Lewis: You know, it is… I was kind of a unicorn in that no one else… like, I was a jock in high school, I'd never even looked at computers. Computers weren't really a thing when I went through high school, but the first time I saw a computer, I really fell in love with it.
+[00:10:00] Ray Lewis: And that was in college, and then, I didn't do well in college because I was more interested in having a good time. That's why I joined the infantry, the army, and that was the best decision I ever made.
+[00:10:12] Ray Lewis: There I found a lot of friends, we did a lot of things, I got deployed to a lot of different places.
+[00:10:17] Ray Lewis: And then, I would have stayed in the Army, but I got married to my lovely wife, who was my high school sweetheart, and I only saw her for 31 days the first year I was in the Army. The rest I was deployed. So that's the main reason I decided to get out.
+[00:10:32] Ray Lewis: Because I thought that would be a pretty rough… Marriage and life.
+[00:10:36] Ray Lewis: Gone.
+[00:10:37] Shoval Abudraham: Yeah. Oh my god, that sounds rough, but well, that's… that's, I think it's a very good reason to… to live. Wow, nice. I think that we will have a lot to talk about, because as Yuval said, we are also infrastructure people, and we love
+[00:10:57] Shoval Abudraham: To talk with people that know our language and understand what we mean, like, very… we usually, see that, conversation with people that started in infrastructures are, you know, we can…
+[00:11:10] Shoval Abudraham: think the same, and you get great ideas and insights, so that's perfect. I share a bit what… about what we are exploring. Basically.
+[00:11:22] Shoval Abudraham: you know, AI changed the entire ecosystem. Like, we are seeing a lot of products related to AI, a lot of attacks related to AI, and…
+[00:11:31] Shoval Abudraham: we started to think about it, because we… we saw a lot of AI security products, and we understand that organizations need to secure their AI and AI agents, when they use them inside, for their organization use, but then it… it made us…
+[00:11:50] Shoval Abudraham: realized, like, okay, same as the organization would use AI, attackers will start to use AI, and we start digging to that and understand how the attacks became different. And, you know, when we talked with a lot of security leaders, incident response people, CISOs, we realized that the main difference is
+[00:12:09] Shoval Abudraham: the speed and the scale. Like, they usually do similar patterns, sometimes very innovative stuff, but the main, main difference is that it's much faster with bigger scale, more action in your environment. And then.
+[00:12:26] Shoval Abudraham: It made us think, like, do the organization's security stock will…
+[00:12:32] Shoval Abudraham: can handle it, can find and detect this attack, and react to them in a good way. And basically, because we are infrastructure people, we go back to the basics, to the building blocks, to the fundamental part and layers, and networks is one of them, one that we specifically very love to talk and
+[00:12:55] Shoval Abudraham: touch, so… We talk… we talked those new types of attack, and thought about organization with
+[00:13:05] Shoval Abudraham: complex networks. Like, we know that for organizations, there are, like, fragmented networks, sometimes, different sites, different tools to manage them, different vendors even, like, they have on-prem and cloud in the same time sometimes, and
+[00:13:23] Shoval Abudraham: We realized that we're not sure how security leaders, our CISOs, managing and
+[00:13:31] Shoval Abudraham: have visibility to the risk, to the new type of risk inside their network. And basically, before we dive into that, we are curious to hear, like, what is your take about it? How you manage your risk inside a network.
+[00:13:47] Shoval Abudraham: Sure. Additional new era.
+[00:13:49] Ray Lewis: Yeah, so, I appreciate that story very much. I am fortunate here that our network is less complex. We have one headquarters. They closed all of their remote locations many years ago.
+[00:14:05] Ray Lewis: So they centralized everything into the headquarters, into the data center, and then pretty much they've moved everything out of the data center and to the cloud. So, for us, our network is the headquarters.
+[00:14:18] Ray Lewis: which is wired and Wi-Fi. And then, AWS is the cloud. That's all through Direct Connect. And then,
+[00:14:28] Ray Lewis: And then SaaS applications, right? Which is all through the internet. In some cases, we have direct connections with some of the SaaS vendors. But the reality is, from that standpoint.
+[00:14:41] Ray Lewis: It's made it simpler on me. Like, when I was the CTO at a bank, we had, like, 25 different locations. I had to secure each of the branches, and then I had to, secure the networks. That was back during the T1 days when I started, so it was much…
+[00:14:55] Ray Lewis: different. But still, the concept was the same, and I had firewalls everywhere, and all that, and VPN tunnels between all of them.
+[00:15:02] Ray Lewis: However, to get back to what we're doing now.
+[00:15:06] Ray Lewis: It's much simpler now. Now, we still, of course, worried about the network
+[00:15:10] Ray Lewis: traffic and detections and making sure that we, can see what's happening in the network to try to stop lateral movement and try to stop anything funny. We do have, IDS, via our, managed detection response partner here in our corporate network.
+[00:15:28] Ray Lewis: That tracks that stuff, and
+[00:15:32] Ray Lewis: It's as good as you would expect, I would say. It's not perfect, but it's good enough for our size company.
+[00:15:40] Shoval Abudraham: Cool, and I want to take a step back and ask you, like, if those new types of attack that are with much bigger scale and speed, is it bothering you? Like, do you think about it when you're.
+[00:15:54] Ray Lewis: Yeah, that's a valid question.
+[00:15:58] Ray Lewis: The reality is, my belief still is, yes, the attacks are certainly coming faster, AI is going to speed it up, we've certainly seen it in the Microsoft patch windows increasing faster and faster and bigger and bigger. However, the basics still matter, right? Do you have layered defense and depth?
+[00:16:18] Ray Lewis: Can you detect the attackers early? Do you have prevention technologies in place, that if they do get in, it's gonna stop them from running something? Like, for instance, now we're doing a POC for, a law listing product, so if they do get in, we've had a few incidents over the last couple years where an attacker did get on someone's box.
+[00:16:37] Ray Lewis: And we didn't stop it the way I would have liked to stop it, because we didn't have a loud listing. Now, we detected it very quickly, we were able to always isolate it down to one box before they were able to laterally move across the network.
+[00:16:50] Ray Lewis: One attack we had, they did try to do lateral, discovery across the network.
+[00:16:57] Ray Lewis: But we quickly got, caught that and isolated the box, and we're done with it. So, are we seeing a lot more attacks? We certainly are seeing the edge being pounded a lot more, but fortunately, our external footprint is pretty small.
+[00:17:12] Ray Lewis: Relative to a lot of companies, so our foot… our external footprint is like, Netscalers, Palo Altos, that type of stuff, Citrix, but it's relatively small compared to other places, and then our web… our web services, but the web services are all in, AWS behind Palo Altos.
+[00:17:30] Ray Lewis: There. So, our footprint's pretty small, relative. We have our pen testers here this week, actually. They're doing external, internal.
+[00:17:39] Ray Lewis: And we're gonna do an assumed breach attack later this month. So, the answer is yes, of course, we're seeing things happy, but we are very much trying to keep our external footprint very small.
+[00:17:53] Ray Lewis: And still keep beefing up on the basics, and by basics, I mean basics in cybersecurity. The stuff that everyone should have been doing all along, and sometimes it was hard to get budget for it. I report directly to the General Counsel and the Board of Directors, above that, and
+[00:18:12] Ray Lewis: their push, as always, they just want to know, are we spending enough money? Are we spending too much or too little money? And, how are we doing compared to our peers on a security standpoint? They definitely have heard about the ransomware attacks in the news, and they want to make sure that we don't end up in the news in a negative way. So, that's kind of where we are, and I still very much, since I came up through the infrastructure sysadmin
+[00:18:37] Ray Lewis: I very much believe in making sure that you are
+[00:18:40] Ray Lewis: Understand the basics, and make sure you're doing the basics, to protect your organization.
+[00:18:46] Yuval Mermer: Yeah.
+[00:18:48] Yuval Mermer: Can I ask you a couple of questions about the attack you said you had in your infrastructure?
+[00:18:54] Ray Lewis: Sure.
+[00:18:54] Yuval Mermer: You said that you, like, isolated
+[00:18:58] Yuval Mermer: Was it a server, or an endpoint?
+[00:19:02] Ray Lewis: Endpoint is a sales guy. Sales guy got tricked into… it's the classic attack, the sales guy got tricked into a Teams call.
+[00:19:09] Ray Lewis: It didn't have teams locked down the way that I'd had it locked down at previous locations, and so the attacker was from Russia, claimed to be the service desk, tricked the sales guy into thinking he was there to help, and then talked him into installing, software.
+[00:19:27] Ray Lewis: And so, fortunately, between a little luck and a little bit of, and because some of our security controls slowed down the attacker, we were able to detect that and isolate it pretty quickly.
+[00:19:41] Ray Lewis: And so we isolated… we isolated it with our EDR product, and so it had no more network access. We brought it in and did forensics on the laptop and figured out what happened.
+[00:19:53] Yuval Mermer: Would you say if the attacker used AI or not?
+[00:19:56] Ray Lewis: Oh, no, they didn't… attackers!
+[00:19:59] Ray Lewis: I agree attackers are gonna start using AI more, but no, this was all just old-fashioned, come in, get on the box, and try to move laterally.
+[00:20:10] Shoval Abudraham: And you detect it using the EDR?
+[00:20:13] Ray Lewis: It's a combination of EDR and MDR.
+[00:20:17] Shoval Abudraham: an MDR.
+[00:20:19] Ray Lewis: Yeah, manage detection response. The combination of the two technologies. Now, in my opinion, they didn't catch it fast enough, and so I beat them up on it, and I asked them to put in different controls, and they have, and so we would even catch things faster now. I mean, the biggest…
+[00:20:36] Ray Lewis: In that specific incident, the biggest gap is we should have never allowed an outside team's call to hit our network and be allowed in. And we, of course, fixed that control. And that is down to a very, very small whitelist now.
+[00:20:50] Ray Lewis: However, they did, and right, there's many gaps like that that you hope you have filled, but you don't find out until too late. But, in the case of, AI, AI's new enough that I would say AI really hasn't affected us until the last
+[00:21:05] Ray Lewis: a year or so. I'm a big conference attendee. I've been attending Black Hat and DEF CON for the last, it's been almost…
+[00:21:15] Ray Lewis: almost 20 years now I've been going to them. So I… but the last 2 years have been all focused on AI.
+[00:21:24] Ray Lewis: And certainly see defenders and attackers alike, starting to, to use it. So, like, our vendors, my vendors,
+[00:21:33] Ray Lewis: EDR, MDR, DLP, email security, all of them are adding AI to their products, to help us defend faster and catch things faster, right? Detect and prevent, hopefully, is the idea.
+[00:21:50] Ray Lewis: Across the board.
+[00:21:53] Shoval Abudraham: Yuval, do you have more questions about that talk, or should I… can I,
+[00:21:58] Yuval Mermer: Just want to make sure that I understand well that you could isolate the attacker in the endpoint.
+[00:22:06] Ray Lewis: Yeah, we isolated the… we isolated the endpoint. It just means we cut off all network except for our tool. Our tool, we could still connect via a Sentinel-1, I don't mind telling you who it is. We could connect to the laptop from headquarters via Sentinel-1, but it was isolated from the network, and I actually drove the machine.
+[00:22:25] Yuval Mermer: citizenship.
+[00:22:25] Ray Lewis: I drove and got the laptop and brought it back. We put it in an isolated network, and then did our forensics on it. So yeah, when I say I… we isolated… we isolated it via the network.
+[00:22:38] Yuval Mermer: So…
+[00:22:38] Ray Lewis: EDR, and then physically. I drove up and got it.
+[00:22:41] Yuval Mermer: I got it, so I don't have any questions about the attack.
+[00:22:45] Shoval Abudraham: Cool. I wanted to ask, you mentioned before about the internal pen testing you do?
+[00:22:53] Ray Lewis: Yeah, I've been bringing pen testers in for virtually my whole career. I did the same thing when I was at the CTO at the bank.
+[00:23:04] Ray Lewis: and before that, a telecommunications company. You bring in the pen testers, and then you scope it out. You already know where all your skeletons are, so you help the pen tester, you tell them,
+[00:23:15] Ray Lewis: where they need to focus on, so then you can use that to help get the funding you need to fix, where your gaps are. So, we're on our third year with this pen tester.
+[00:23:26] Ray Lewis: We usually stick with the pen tester for 3 years, and then after the third year, we go out and find a different pen tester, just to get a different set of eyes on it. So this year, the pen tester came in and he did a week of external pen testing first, and then he did a week… this week, he's on internal pen testing. Fortunately, he got domain admin on the first day.
+[00:23:45] Ray Lewis: Which always irritates me, but, that's why we hire him, so he can come in and show us where the gaps are. The gaps this year… the gap this year was,
+[00:23:54] Ray Lewis: the Pixie boot, for the IT team, the way they set up their laptops, they had a weak password on the Pixie boot, so that was irritating.
+[00:24:03] Ray Lewis: The password they had on it was, like, 12-year-old password. They'd never changed it. So, you can imagine what a 12-year-old password was like. Yeah. And so they got in, but they do a good job, and we have, we have,
+[00:24:18] Ray Lewis: That's why we bring them in, and so then we also are doing… we had a new Wi-Fi system put in, last year, so I'm having test Wi-Fi, next week, and then after that, we're doing, their, their… they sold us a…
+[00:24:33] Ray Lewis: assume breach. And basically what that is, that is 2 weeks of,
+[00:24:38] Ray Lewis: us working with our MDR and our Blue Team, Blue Team.
+[00:24:43] Ray Lewis: While they do the attacks, so then we can work together and find out where we have gaps in our detection, in our detection controls.
+[00:24:51] Shoval Abudraham: Yeah, and when you said, like, internal pen testing, that means that you give them an access to your
+[00:24:58] Shoval Abudraham: To your…
+[00:24:58] Ray Lewis: Yeah, they sent… they sent a tap, we plugged into our network, gave them full access into our network, and let them attack from the inside out. So their first attack was from the outside in, the external. The second attack, the second,
+[00:25:12] Ray Lewis: I guess,
+[00:25:14] Shoval Abudraham: But why.
+[00:25:15] Ray Lewis: Service is internal.
+[00:25:16] Shoval Abudraham: Internal attack, like, do you track.
+[00:25:19] Ray Lewis: In case…
+[00:25:19] Shoval Abudraham: the organization from the inside, attack?
+[00:25:22] Ray Lewis: Yes, absolutely. If that's… and that's so if someone does get on one of the sales guy's laptop, or anybody's laptop, or someone comes in and plugs in a device into the network, and no one notices. But generally, it's in case a laptop gets compromised, because we have a lot of people that travel remote.
+[00:25:41] Ray Lewis: And then if they bring their laptop back in, whether via VPN, or whether just coming back into the office and that laptop is compromised.
+[00:25:49] Ray Lewis: That's what the internal testing's for.
+[00:25:52] Ray Lewis: That's been very common. I've been doing internal pen tests for 10 years, maybe longer.
+[00:25:58] Ray Lewis: But yeah, like, sometimes we'll… sometimes we'll do more of a black box, where they can just plug something in. Sometimes we'll even actually give them a, one of our laptops on the network, and give them the regular user account, and say, go out and see if you can get domain admin, and without us catching you. And if they… it's not like…
+[00:26:18] Ray Lewis: If they catch us, like this time, we caught their activity immediately, right?
+[00:26:23] Shoval Abudraham: It's like a game, like, you're trying to catch them, and them trying to, like.
+[00:26:27] Ray Lewis: Yes.
+[00:26:28] Shoval Abudraham: Collaterally in the organization without you to catch them.
+[00:26:31] Ray Lewis: Yes, now, in this case, they have to be noisy, so they're not coming in, they only have a week, so they can't be super quiet and try to sneak around anyway. But they're noisy, we see them start doing things, they put responder on the network.
+[00:26:44] Ray Lewis: They started trying to, see if they could… but, you know, they're testing our SMB, signing, they were testing to see if we were in TLM, had gaps, they're testing a lot of things that are known
+[00:26:55] Ray Lewis: problems. They tested our, certificate services. So they're testing all the common attacks, and then help us find where we still have gaps.
+[00:27:05] Yuval Mermer: I have a last question.
+[00:27:07] Yuval Mermer: I want to zoom out and ask a general question.
+[00:27:10] Ray Lewis: Ask away.
+[00:27:12] Yuval Mermer: And what are the three things that are top of your mind that you plan to put your attention on?
+[00:27:21] Yuval Mermer: Looking forward to 2027.
+[00:27:24] Ray Lewis: I just had my, meeting quarterly executive update with the executives yesterday, and they asked me the same thing. And I'm always prepared for that. But without a doubt, the top 3 things for next year, is we need to beef up our, PKI infrastructure.
+[00:27:40] Ray Lewis: We need to, get better visibility, into AI, both GenAI usage and, Agentic AI usage. And the last one is prepare for the, quantum.
+[00:27:52] Ray Lewis: The quantum Q day, they call it, when quantum computing comes out within the next couple years. So those are the top 3 things that I'm preparing for, in 2027.
+[00:28:03] Ray Lewis: And asking for additional budget.
+[00:28:06] Shoval Abudraham: Amazing. Okay.
+[00:28:09] Shoval Abudraham: we are on time, exactly. And we want to say…
+[00:28:15] Shoval Abudraham: Thank you. Really, it's obvious that you do your job really, really, really good, and you know all the small detail, even though you are a manager. So that was super informative and valuable conversation for us. I can say that I learned a lot.
+[00:28:31] Ray Lewis: I learned long ago to lead from the front, and I like the technology, so I very much came up through the technical ranks. The hardest part about my job is I don't… I get to do very little technical stuff, and it drives me crazy, but I let my team do all that.
+[00:28:47] Shoval Abudraham: Yeah, I can relate with those feelings. And it's very, you know, it's very… I can see from talking to you that you love the technology, and you can… if someone will give you the job and do it by yourself, you will be able to do it by yourself.
+[00:29:01] Ray Lewis: That's correct.
+[00:29:03] Ray Lewis: I wish I could take the Active Directory here and fix it. My frustration, is I know where the gaps are. I have done… I've fixed it myself, but it's not my job.
+[00:29:13] Shoval Abudraham: Self, you know?
+[00:29:15] Ray Lewis: That's alright.
+[00:29:16] Shoval Abudraham: So, thank you so much, and we would love, you know, to keep you part of our journey and, you know, to share with you more insights about our research, because I'm sure we can learn a lot from you.
+[00:29:30] Ray Lewis: Yeah, like, I love talking about technology. I… sometimes I'm busier than others, but if I have time, I always like to talk about technology. I mentioned retirement. When I retire, I'll still figure out a way to keep my foot in the door in the cybersecurity industry. I really do love it. I just will be happy not to have,
+[00:29:48] Ray Lewis: meetings every day, and Agile, and all the things that are painful in the industry. Alright.
+[00:29:56] Yuval Mermer: Ray, thank you so much.
+[00:29:58] Ray Lewis: Likewise. Nice to meet you. Good luck on your journey. Reach out anytime.
+[00:30:03] Yuval Mermer: Thank you.
+[00:30:04] Shoval Abudraham: Gray, have a great day.
+[00:30:05] Ray Lewis: You too, take care.
+[00:30:07] Shoval Abudraham: Thank you. Bye.

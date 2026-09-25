@@ -1,0 +1,390 @@
+Date: 2026-09-01
+Topic: Security Leadership Discovery - Igor Spektor
+Meeting UUID: 92700F6C-B309-4288-B89A-8479339BC544
+Source: transcript
+Entries: 384
+
+[00:00:00] Shoval Abudraham: Actual…
+[00:00:01] Shoval Abudraham: Amazing. I'm Shoval. I started in cyber, like, 10 years ago. Like most of the Israeli founders in the unit 8,200, there I actually met Yuval, my co-founder. We both served
+[00:00:17] Shoval Abudraham: in the department that were responsible to the DevOps and ID infrastructures, for the cyber's operation, purpose. Basically.
+[00:00:29] Shoval Abudraham: had the role of DevOps engineer combined with a security engineer, because we had to manage and build those infrastructure, both from the operational side, but also from a
+[00:00:41] Shoval Abudraham: in a secure way, so we hold a security perspective. I served for five and a half years, released as a captain, and after my service, I did a bit of a shift into product management roles. I was always fascinated about, like, how to create a real value and understanding customers' pains.
+[00:01:00] Shoval Abudraham: So basically started, at a company called Perception Point. It was on the workspace endpoint, security field, basically led their… all the detection capabilities, worked a lot with, AI, machine learning, LLMs.
+[00:01:19] Shoval Abudraham: Before people knew what is ChatGPT, building agents before people, you know, there was all the frameworks out there, so it was super, innovative back then.
+[00:01:33] Shoval Abudraham: this company was acquired by Ferdinet. Afterwards, I worked at a company called Koi Security, also on the endpoint, area,
+[00:01:44] Shoval Abudraham: great products, amazing customers, like, also great, great adventures, very innovative in terms of how we use the AI.
+[00:01:52] Shoval Abudraham: And this company was acquired as well, by Palo Alto. And, you know, after that, it was, like, basically my sign to start my own thing, with Yuval, which is an old friend from the unit.
+[00:02:06] Shoval Abudraham: I love to say that we both, like, started on the same place, on the same department, but, like, I did a shift in the product management, more, market, customers, facing roles, and Yuval dived into the technology, so I'll let him share his experience.
+[00:02:24] Shoval Abudraham: That's it. Link.
+[00:02:26] Yuval Mermer: Shoval won't tell you, but she's a genius product manager.
+[00:02:30] Yuval Mermer: And I learn from her every day about how to build a product and how to ask good questions as a product manager. But yeah, as Shoval said, I deep-dived through the technology, and I started my career at 8200 as a Shoval soldier.
+[00:02:49] Yuval Mermer: This is where we met at first, but they're in the team.
+[00:02:55] Yuval Mermer: We developed and built together two big apps. One of them was for mapping and managing the network operations in the unit, and we managed all the multiple and the complex networks of the unit.
+[00:03:12] Yuval Mermer: This app is still running and still serving its purpose until today. And after this amazing position, I promoted to be a team lead.
+[00:03:24] Yuval Mermer: And I led 10 engineers, and then I promoted again to be the head of the DevOps and Infrastructure Department in 8200, and it was a really great, great, great position. I led 40 engineers.
+[00:03:40] Yuval Mermer: Across 5 teams, we ran large-scale networks, very complex and highly secured networks. We managed petabytes of data.
+[00:03:50] Yuval Mermer: We ran production environments and all the good 80-200 infrastructures, and after around 10 years in AD200,
+[00:04:03] Yuval Mermer: I finished the army, and then I started at Paragon, which is a cyber company. It's an Israeli cyber company. The last,
+[00:04:15] Yuval Mermer: I think… I think two years ago, acquired by a private equity called Red Lattice, American private equity, and I quit at Paragon two months ago, and started the journey with Shoval.
+[00:04:30] Yuval Mermer: And this is about me.
+[00:04:32] Yuval Mermer: We would love to hear about you.
+[00:04:35] Igor Spektor: Pretty impressive, guys, the background. Me, I'm, you know, December 4.
+[00:04:40] Igor Spektor: 25 years?
+[00:04:42] Igor Spektor: Hello.
+[00:04:44] Igor Spektor: 5 or 6 times CSUs, I forget, in different companies, different sizes, different industries.
+[00:04:51] Igor Spektor: I mean, pretty much, I've done… Everything.
+[00:04:56] Igor Spektor: Yeah, yeah, program.
+[00:04:58] Igor Spektor: People pooling on architecture.
+[00:05:02] Igor Spektor: Yeah, see…
+[00:05:04] Igor Spektor: compliance, I mean, the whole soup to nuts, stack, incident response, pretty much, and then on top of this.
+[00:05:13] Igor Spektor: color.
+[00:05:15] Igor Spektor: 7 or 8 merger and acquisitions on both sides, different sizes, so… Cool.
+[00:05:21] Igor Spektor: That's my background.
+[00:05:22] Igor Spektor: And then today… I'm no longer with Verizon, I left them. I'm actually working with
+[00:05:32] Igor Spektor: Two other companies, like yours, in the advisory role.
+[00:05:37] Shoval Abudraham: Cool.
+[00:05:37] Igor Spektor: I'm also a board member of Cloud Nexus, so it's a holding company, we own different businesses.
+[00:05:44] Igor Spektor: And the reason I got disinterested, because my partner and I started the… why don't you go ahead, tell me about yourself, and then I'll tell you maybe how we can help each other, because I have so many different ideas.
+[00:05:59] Shoval Abudraham: Amazing.
+[00:06:01] Shoval Abudraham: Cool! So, I'll tell you a bit more about our stage. So basically, as I mentioned, we are, exploring right now. Basically, it's based on our experience, you heard it, when Yuval told us about himself.
+[00:06:15] Shoval Abudraham: We are, infrastructure people, so we was immediately fascinated by, network security. We also think that
+[00:06:25] Shoval Abudraham: Like, this is a very, big market, that there was no, massive changes there, in the past few years.
+[00:06:37] Shoval Abudraham: And also, like, beside that, in the… all the technology world, like, all the new AI era and all the changes there created.
+[00:06:47] Shoval Abudraham: new attacks surface and new types of attacks. And we are…
+[00:06:53] Shoval Abudraham: now exploring, like, how CISO's managing, the risk around their networks.
+[00:07:00] Shoval Abudraham: In cloud environment, hybrid environment, on-prem environment, and trying to find the white spaces there. And not… not base… not exactly white spaces, but, you know, still gaps and pain points we can address, too.
+[00:07:16] Shoval Abudraham: And that's exactly like we are doing in those kind of conversations, like, we would love to hear your take about this specific area, and how, like, you manage it as a CISO in the companies you worked for. And you know, we can take it from there.
+[00:07:33] Yuval Mermer: And if it's okay, that we.
+[00:07:34] Igor Spektor: Are you…
+[00:07:35] Yuval Mermer: Can I ask you a couple questions about the previous company you worked in.
+[00:07:39] Yuval Mermer: About the…
+[00:07:40] Igor Spektor: So, trying to make sure I understand, at this point, Y-you guys… I'm just probing…
+[00:07:48] Igor Spektor: the market and see what's out there. You don't currently have I guess…
+[00:07:55] Igor Spektor: An idea or concept, do you?
+[00:07:59] Shoval Abudraham: Yeah, we don't have, like, we don't have a solution yet.
+[00:08:03] Yuval Mermer: Like the aviation and validation, what we're doing right now.
+[00:08:06] Igor Spektor: solution, I understand that we have, but at least do you have an idea of what you want to go after?
+[00:08:12] Shoval Abudraham: So, we do have a direction, saying that, we don't want to…
+[00:08:21] Shoval Abudraham: to focus the conversation on this direction, because we're not positively sure that's the right direction, and want to feel… feel and hear the pains from the people they actually… that actually need to deal with those pains.
+[00:08:37] Igor Spektor: I'd like to hear this anyway, but I'll tell you what's kind of on my mind. Sure.
+[00:08:44] Igor Spektor: in Europe and humans, but we can connect.
+[00:08:48] Igor Spektor: Cool? Check the notes, so… I, I think,
+[00:08:54] Igor Spektor: But I came off the large enterprise, a large tunicom.
+[00:08:59] Shoval Abudraham: Yeah.
+[00:08:59] Igor Spektor: And you guys probably heard about some of the Seoul Typhoon
+[00:09:05] Igor Spektor: Related attacks, so typhoon-related, impacts.
+[00:09:10] Igor Spektor: Just some of the critical… infrastructure back in, what, September of 2024, I think, right?
+[00:09:19] Shoval Abudraham: Okay.
+[00:09:19] Igor Spektor: I think the, the… So that specific incident unpacked several gaps.
+[00:09:31] Igor Spektor: And you guys know, in security, it's all about what do you know and visibility, right?
+[00:09:38] Shoval Abudraham: Exactly.
+[00:09:40] Igor Spektor: Right, so…
+[00:09:41] Shoval Abudraham: and secure No!
+[00:09:43] Igor Spektor: Yeah, exactly. So, for us, so number one was…
+[00:09:52] Igor Spektor: Because companies have gone through many positions.
+[00:09:57] Igor Spektor: So, for us, was a huge dis… huge, I guess, discovery, some of the… Lobs.
+[00:10:07] Igor Spektor: and some of the Center of Excellence steps.
+[00:10:12] Igor Spektor: Maybe kind of wander Ogonas.
+[00:10:15] Igor Spektor: So, some of the pieces of the…
+[00:10:17] Igor Spektor: Network, whether it's connected to us or disconnected.
+[00:10:22] Shoval Abudraham: Yeah.
+[00:10:22] Igor Spektor: those, Wouldn't have visibility to. And those guys, those teams are typically
+[00:10:33] Igor Spektor: Those are the guys that are doing some of the product develop, and those are the guys that are doing, you know, patents involved.
+[00:10:41] Igor Spektor: Those are guys likes to do everything…
+[00:10:47] Igor Spektor: When they don't have any obstacles.
+[00:10:50] Igor Spektor: So, those guys like to do everything without any additional controls. So, basically, they want to be the kings of the kingdom.
+[00:10:59] Igor Spektor: So, for us, this was a big impact.
+[00:11:02] Igor Spektor: Fair.
+[00:11:03] Shoval Abudraham: Just to make sure I understand, like, those people that develop… they don't want obstacles and, you know, developing everything by themselves, who exactly you are referring to?
+[00:11:15] Igor Spektor: Engineering labs.
+[00:11:17] Shoval Abudraham: Engineering labs, okay, in general.
+[00:11:19] Igor Spektor: Right, or Center of Excellence.
+[00:11:22] Shoval Abudraham: Okay.
+[00:11:23] Igor Spektor: people that likes to play with the toys. Yeah.
+[00:11:28] Shoval Abudraham: Innovate… innovation now.
+[00:11:29] Igor Spektor: exact, exactly. So that's problem number one.
+[00:11:35] Igor Spektor: I think problem number two we unpacked was some of the… IT, IoT devices.
+[00:11:45] Shoval Abudraham: Okay.
+[00:11:45] Igor Spektor: That we didn't have good visibility or controls over.
+[00:11:52] Igor Spektor: That was number 2.
+[00:11:53] Shoval Abudraham: Can you give us an example to some of those devices?
+[00:11:57] Igor Spektor: I mean, some of the industrial, maybe, sensors.
+[00:12:01] Shoval Abudraham: Okay.
+[00:12:02] Igor Spektor: Gauges, or systems.
+[00:12:06] Igor Spektor: That may be connected to…
+[00:12:08] Igor Spektor: your critical infrastructure, you know, it could be even, you know, HVAC, it could be some cellulite, whatever that may be. It could be something that…
+[00:12:20] Shoval Abudraham: And, like, the visibility was lost because the incident, or you did not have visibility from.
+[00:12:26] Igor Spektor: We, yeah, we're limited in all visibility to some of these devices.
+[00:12:33] Shoval Abudraham: Okay.
+[00:12:34] Igor Spektor: But that was problem statement number two. Problem statement number 3, I think, probably a little bit more…
+[00:12:42] Igor Spektor: Higher level, because… Because of all this… so, let me back up.
+[00:12:49] Igor Spektor: You probably know that industry is changing more to resilience.
+[00:12:54] Shoval Abudraham: Yeah.
+[00:12:56] Igor Spektor: You know, a lot of people shifting their minds on how resilient their environmentalists.
+[00:13:05] Igor Spektor: So that became a huge impact to us, because of some of this… Lack of visibility or gaps.
+[00:13:15] Igor Spektor: resilience, did general resilience become a problem statement? Now, when I say resilience, like, think about the big ecosystem where
+[00:13:26] Igor Spektor: You need to have… You need to have platform, Okay. They're able to…
+[00:13:37] Igor Spektor: identify your critical infrastructure pieces. Are they able to identify your critical
+[00:13:45] Igor Spektor: services that are able to identify critical, maybe customer-facing.
+[00:13:50] Shoval Abudraham: Yeah.
+[00:13:51] Igor Spektor: systems applications.
+[00:13:53] Igor Spektor: So that's one. Two, it needs to be connected to your full… backend pouring… Equipment.
+[00:14:04] Igor Spektor: Software, hardware, whatever that may be.
+[00:14:07] Igor Spektor: So… That kind of spun up the big conversation. How do we make sure we're resilient?
+[00:14:16] Igor Spektor: But some of this… Unknown critical pieces.
+[00:14:21] Shoval Abudraham: Yeah, that's actually interesting, what you're saying, because we…
+[00:14:24] Shoval Abudraham: did explore resilience for a while, because we heard about it as well. It's also a big, it's happening a lot around… around it here. But we, from a conversation we had with CISO, we did… we did not
+[00:14:41] Shoval Abudraham: feel the urgency around it, like…
+[00:14:45] Igor Spektor: Because look what happened in the state of, what was it, Minnesota?
+[00:14:52] Igor Spektor: where six, seven war companies get hit at the same time, so I think there's a…
+[00:14:59] Igor Spektor: In my view, right, I think there is… bad guys will be going up to the critical infrastructure, critical services.
+[00:15:07] Shoval Abudraham: Yeah.
+[00:15:09] Igor Spektor: Excuse me.
+[00:15:10] Igor Spektor: resilience, I think, becoming the thing in the industry. It already is.
+[00:15:16] Igor Spektor: I think maturity is not there, and I think people need to start shifting their minds.
+[00:15:21] Shoval Abudraham: Yeah, and another question about it, because you are basically talking about, like, nature, incidents, and I'm wondering, like, in this case, the resilience responsibility is under the CISO, or under the CDO, CIO?
+[00:15:40] Igor Spektor: I mean, that's a good question. I think there is a shared…
+[00:15:46] Igor Spektor: It's a shared responsibility, depends on the company size.
+[00:15:51] Igor Spektor: Depends on how mature the organization is.
+[00:15:55] Shoval Abudraham: Yeah.
+[00:15:55] Igor Spektor: And it depends on the industry. It can be anywhere.
+[00:15:59] Shoval Abudraham: Yeah.
+[00:16:00] Igor Spektor: I think, I think when you look at some of the incidents over the last 12 months.
+[00:16:07] Igor Spektor: I think one of the key stakeholders would be CISO.
+[00:16:13] Igor Spektor: Right, because it's… it's a cyber attack, end of the day. Now, there is a piece that… you can…
+[00:16:20] Igor Spektor: You know, there is a big piece on overall enterprise risk management.
+[00:16:26] Igor Spektor: Where, typically, each CISO is not an owner, but CISO is the, at the table, right?
+[00:16:33] Shoval Abudraham: Yeah.
+[00:16:33] Igor Spektor: In the shadows, I think it's… it's…
+[00:16:37] Igor Spektor: again, I don't know, typically. In our case, this was the,
+[00:16:44] Igor Spektor: We don't have… we didn't have the CDO function, but this was pretty much CIO responsibility.
+[00:16:51] Igor Spektor: But he was leading that enterprise space management, along with legal, along with some other folks.
+[00:16:58] Igor Spektor: So it depends. I can't tell you it's a single title.
+[00:17:03] Shoval Abudraham: Yeah, that's actually interesting. That's exactly the question we're asking ourselves.
+[00:17:08] Shoval Abudraham: We asked that about around the resilience, and also around network, because also there, and we are exploring this area a bit more, like, at the moment.
+[00:17:18] Shoval Abudraham: We are… we detected that like, the responsibility to the risk is on the CISO side?
+[00:17:27] Shoval Abudraham: But the operational side is on the CTO, CIO, so it's very… like, we are not…
+[00:17:35] Shoval Abudraham: Sure, we understand, like, who responsible to the budget in this case, who will do the… who will buy the product, the solution.
+[00:17:44] Igor Spektor: those cases.
+[00:17:45] Shoval Abudraham: Yes.
+[00:17:46] Igor Spektor: It's a shared responsibility, because, to your point, this may be,
+[00:17:52] Igor Spektor: This may be an operational responsibility, where…
+[00:17:56] Igor Spektor: I don't know, you may… you may have…
+[00:17:58] Igor Spektor: Some of the technical debt sitting in the network.
+[00:18:03] Igor Spektor: Right?
+[00:18:05] Igor Spektor: And technical debt.
+[00:18:07] Igor Spektor: Meaning, old applicational systems that own someone in the business.
+[00:18:14] Shoval Abudraham: Yeah.
+[00:18:15] Igor Spektor: So, it's… it's… it's not a single person that's responsible for this.
+[00:18:23] Yuval Mermer: Sure.
+[00:18:24] Shoval Abudraham: Sorry, Yvonne, go ahead.
+[00:18:26] Yuval Mermer: do the CISO monitor those, old applications?
+[00:18:32] Igor Spektor: Say what?
+[00:18:33] Yuval Mermer: Do the system monitor the, the traffic?
+[00:18:36] Yuval Mermer: And the, the network,
+[00:18:41] Yuval Mermer: Rules and capabilities of those applications you talked about?
+[00:18:44] Shoval Abudraham: Like, the technical.
+[00:18:45] Igor Spektor: Yeah.
+[00:18:46] Shoval Abudraham: You mentioned…
+[00:18:47] Igor Spektor: Well, yeah, I mean, that's just how it became as a risk. I mean, it's… if you have visibility and it's a known fact, then yes.
+[00:18:56] Yuval Mermer: And indeed… Right.
+[00:18:57] Igor Spektor: Constantly, it's constantly become a risk.
+[00:19:01] Igor Spektor: to your business.
+[00:19:02] Igor Spektor: that you need to surface, so yes, CISO should be monitoring the traffic, but look, if you have
+[00:19:10] Igor Spektor: A 30-year-old database sitting in the web app, sitting on a network, and it's exposed to internet.
+[00:19:19] Igor Spektor: I mean, you can only do so many things.
+[00:19:21] Yuval Mermer: And how do you monitor it? Which tool do you use to monitor this kind of, Although…
+[00:19:27] Igor Spektor: Again, it's not sufficient to deal with the risk. That's the whole point, right?
+[00:19:36] Yuval Mermer: What do you mean?
+[00:19:38] Igor Spektor: You may have… you may have side intelligence, like reported future, you have your…
+[00:19:44] Igor Spektor: You know, you have your solar wind, you got stuff in the seams, so you do all that.
+[00:19:50] Yuval Mermer: Yeah.
+[00:19:51] Igor Spektor: But you're still exposing the outdated system to the internet that can be easily explained, right?
+[00:19:58] Yuval Mermer: Nope.
+[00:19:58] Igor Spektor: firewalls in between. You can apply…
+[00:20:01] Igor Spektor: Application WAF, right, if this is applicable.
+[00:20:06] Yuval Mermer: You know, I'm curious, when a new service goes to production.
+[00:20:12] Yuval Mermer: Who decides what it's allowed to talk to? Like…
+[00:20:17] Yuval Mermer: this database, it was exposed to the internet. We decided to…
+[00:20:22] Yuval Mermer: Approve this database and let it talk with the internet.
+[00:20:27] Igor Spektor: So, typically…
+[00:20:28] Yuval Mermer: When you deploy a new service, how and who decide What you can talk with.
+[00:20:35] Igor Spektor: Yeah, so it's typically… You have your… No architecture.
+[00:20:43] Igor Spektor: Then you get your… then you get security and protection people engaged, involved, right?
+[00:20:51] Igor Spektor: And… They are typically the gate.
+[00:20:58] Igor Spektor: The final gate is the,
+[00:21:02] Igor Spektor: You know, I'm thinking, like, a firewall operational guy that's typically driven by IT.
+[00:21:08] Igor Spektor: And when you open, closed, or requested any new rules, then you typically have
+[00:21:16] Igor Spektor: your security operation as the kind of approval. So, typically it works. Your security operation approves or rejects.
+[00:21:26] Igor Spektor: an IT operation typically executes.
+[00:21:30] Igor Spektor: And once it's executed, then it goes back to the security for the wooden. Make sure they actually have done what they're supposed to do.
+[00:21:39] Igor Spektor: So that's kind of the typical chain of reaction.
+[00:21:43] Yuval Mermer: In the previous organization you worked in.
+[00:21:47] Yuval Mermer: Which kind of network you used? It was on-prem, or it was a cloud?
+[00:21:53] Igor Spektor: Both, we have hybrid.
+[00:21:54] Yuval Mermer: Both. And… and…
+[00:21:56] Yuval Mermer: Did you have found there a communication between two internal servers that you didn't know that exists?
+[00:22:04] Yuval Mermer: Like, you didn't approve it, but you found this… this communication?
+[00:22:09] Igor Spektor: Yes.
+[00:22:10] Yuval Mermer: How did you find it? What did you use to find it?
+[00:22:14] Igor Spektor: So going back to that salt typhoon incident we had, right?
+[00:22:20] Shoval Abudraham: Yeah.
+[00:22:22] Igor Spektor: Gosh,
+[00:22:28] Shoval Abudraham: Did you have even cared when you found it?
+[00:22:32] Shoval Abudraham: Like…
+[00:22:33] Igor Spektor: code.
+[00:22:34] Shoval Abudraham: Like, you know, it sounds like these things, those,
+[00:22:38] Shoval Abudraham: technical depth in the network are, happening, like, sounds like it's a real problem, that problem that happens, some organization, and you always need to find them, but
+[00:22:51] Shoval Abudraham: I'm curious, like, how… I'll…
+[00:22:55] Shoval Abudraham: does it bother you, like, a lot? Or, you know, does it a small issue that you need to fix, but it's not, like, a massive problem to the security organization?
+[00:23:07] Igor Spektor: And for practice was a big problem, right? And again.
+[00:23:11] Igor Spektor: I think end of the day, we didn't have… I'll give you an example, so we didn't have…
+[00:23:17] Igor Spektor: And now we inventory all the firewalls that we have across organization.
+[00:23:21] Igor Spektor: all the VPNs we are in our organization, because some of the acquisitions we made.
+[00:23:27] Shoval Abudraham: Yeah.
+[00:23:28] Igor Spektor: Right, so you know when you have your… Subnets inventory.
+[00:23:34] Igor Spektor: For example, right? We were missing some from our list.
+[00:23:39] Shoval Abudraham: You try to create this kind of inventory.
+[00:23:43] Igor Spektor: No, we had… we had inventory created, but there was a bunch of subnets were just missing there, were not there.
+[00:23:52] Yuval Mermer: Inventory of subnets, or inventory of network components?
+[00:23:56] Igor Spektor: Both. I mean, start with your subnet, and then you look what's on your subnet.
+[00:24:02] Yuval Mermer: And what do you save in this inventory besides subnets?
+[00:24:05] Igor Spektor: Say what?
+[00:24:06] Yuval Mermer: What do you save… what do you have on this list in your inventory, besides your subnets and network components?
+[00:24:15] Igor Spektor: it's just inventory of hardware at this point, so you have…
+[00:24:22] Igor Spektor: So we have the table… I mean, it's a homegrown, developed system, right? You have your…
+[00:24:28] Igor Spektor: we call this AP inventory, and then in the same database has… List of…
+[00:24:37] Igor Spektor: Hardware? It has, you know… model, versions… the IPs, the owners.
+[00:24:47] Igor Spektor: Things like this, as the base.
+[00:24:49] Yuval Mermer: Did you… did you save there what is supposed to talk with what?
+[00:24:54] Yuval Mermer: Over here on the.
+[00:24:55] Igor Spektor: No, not part of this inventory, no.
+[00:24:59] Yuval Mermer: So, did you have any list that tells you what's supposed to talk with what?
+[00:25:06] Yuval Mermer: Or it just was the…
+[00:25:07] Igor Spektor: No, no, no, we don't have… we don't have this at the network layer, but we have this as part of the,
+[00:25:15] Igor Spektor: Like, systems.
+[00:25:19] Igor Spektor: Let's say you deploy…
+[00:25:21] Igor Spektor: I don't know, ERP, or whatever that, so that's kind of part of the larger capital project, but not at the,
+[00:25:31] Igor Spektor: Not in the network layer. You can…
+[00:25:35] Igor Spektor: you can, I mean, you should be able to pull this off the, maybe specific firewalls.
+[00:25:42] Igor Spektor: But nothing exists as they just,
+[00:25:46] Igor Spektor: you know, one big lease, who talks to what, I guess.
+[00:25:50] Yuval Mermer: And in the case you said that you found communication between two internal servers that you didn't know that exists.
+[00:25:58] Yuval Mermer: How did you react to that?
+[00:26:02] Igor Spektor: So you typically don't look for…
+[00:26:06] Igor Spektor: Because of the complex and large network, so we typically come across as part of the,
+[00:26:14] Igor Spektor: Event, or alert, or an incident.
+[00:26:17] Igor Spektor: And then, you're kind of looking over and making a decision whether that's specific.
+[00:26:24] Yuval Mermer: Which system popped the alerts?
+[00:26:27] Igor Spektor: Huh?
+[00:26:28] Yuval Mermer: Which system popped the alerts of this communication?
+[00:26:32] Igor Spektor: Yeah, whether it's legit or not, and you decide to close, right? Keep in mind, there's also
+[00:26:40] Igor Spektor: We do this, but every 90 days, people reviewing Like, all firewall rules…
+[00:26:47] Yuval Mermer: Match.
+[00:26:48] Igor Spektor: Typically, they start with, hey.
+[00:26:51] Igor Spektor: You know, we see this rule inactive for… for a year, as it needs to be there, so that type of approach. So, some of this being…
+[00:27:01] Igor Spektor: Closed as we go, but very tedious process.
+[00:27:06] Yuval Mermer: I got it. Yeah, Shoha, go ahead.
+[00:27:08] Shoval Abudraham: No, I just wanted to mention that we are almost in time, so I don't want to… I want to be mindful with your time, Igor.
+[00:27:16] Shoval Abudraham: But, like, to summarize the conversation, like, you gave us a few directions, a problem statement at the beginning, and now we talked about
+[00:27:28] Shoval Abudraham: kind of network operations security side, I just want to ask the last question, like, around that. Like.
+[00:27:40] Shoval Abudraham: Sounds like you will… you knew those processes. There was a part of your work, but do you create… do you think the organization, creating new budget lines or a project for those kind of problems?
+[00:27:57] Shoval Abudraham: Can you, prioritize them for me, maybe?
+[00:28:01] Igor Spektor: I mean, with it, again, what came out of Salt Typhoon, we've got a lot of money.
+[00:28:08] Igor Spektor: In addition to our budget, just to deal in… to deal with this and close some of these issues, and…
+[00:28:14] Igor Spektor: And we actually created a separate organization
+[00:28:19] Igor Spektor: just to focus on this. So, yes, we've got… I mean, we did…
+[00:28:24] Igor Spektor: I don't know how… how are the people are handling this?
+[00:28:27] Shoval Abudraham: Cool. That's very interesting. Amazing. So…
+[00:28:32] Shoval Abudraham: Igor again, thank you for your time. We learned a lot from this conversation. We would love, like, to… we will dive into the subject you give us at the conversation, but we would love to, you know, share with you more about our process and, you know, give you updates as we're moving forward.
+[00:28:51] Shoval Abudraham: That's it, I think.
+[00:28:54] Yuval Mermer: Thank you so much, it was really valuable.
+[00:28:56] Igor Spektor: You guys got a few more minutes? Because I want to ask you a few questions. Yeah, so…
+[00:29:03] Igor Spektor: You know, tell me, what do you think? Where do you want to go?
+[00:29:07] Igor Spektor: Kind of where you are.
+[00:29:09] Shoval Abudraham: Where… where we wanna go?
+[00:29:12] Shoval Abudraham: basically, we are understanding that… like, we are talking with a lot of CISOs and a lot of security leaders, and we are understanding that the attacks
+[00:29:23] Shoval Abudraham: Are not, like, with a different script and different sequence, but in a different scale and different, speed.
+[00:29:32] Yuval Mermer: face.
+[00:29:32] Shoval Abudraham: So it… Yeah. Yeah.
+[00:29:35] Shoval Abudraham: So, basically, we're understanding that, okay, right now, those little gaps in your security stack was not… the severity of them wasn't high, because, you know, as a human do the attack, you don't…
+[00:29:52] Shoval Abudraham: it's more difficult for him to find all those little gaps and go through them. For an agent, now that attackers are using agents, all this little bridge in your network, in your security stack.
+[00:30:06] Shoval Abudraham: became a bigger problem. So, that's the direction we're, going through. As I mentioned, we are still at the beginning, so we are not positively sure, like, how this is exactly gonna work.
+[00:30:20] Igor Spektor: Yeah, so… Mike, maybe a few comments on this.
+[00:30:27] Shoval Abudraham: Yeah, good luck.
+[00:30:28] Igor Spektor: First of all, I like… I like the fact that you're going into the network.
+[00:30:33] Igor Spektor: Because every other companies I'm talking to focusing on AI, specifically on the endpoint management, I think that area is overcrowded.
+[00:30:41] Shoval Abudraham: Yeah, we agree.
+[00:30:43] Igor Spektor: I like the fact that you're moving into the network one. Two is… Boom.
+[00:30:49] Igor Spektor: Typically, what… and you've done this in the past, but typically, think about
+[00:30:56] Igor Spektor: A specific niche you want to solve.
+[00:31:00] Igor Spektor: Yeah.
+[00:31:01] Shoval Abudraham: Do you have an example? Things that you feel that are, more painful at the moment?
+[00:31:07] Shoval Abudraham: Nichter?
+[00:31:08] Igor Spektor: I… again, I think… I think folks that's in critical infrastructure services, yes.
+[00:31:17] Shoval Abudraham: Yeah.
+[00:31:18] Igor Spektor: But I do believe…
+[00:31:20] Igor Spektor: You know, we're gonna start seeing more and more of these attacks, specifically against critical infrastructure.
+[00:31:27] Shoval Abudraham: Yeah.
+[00:31:28] Igor Spektor: But my point is, I'm talking to… Menu.
+[00:31:32] Igor Spektor: people that… And in your… in your shoes, that's trying to start something?
+[00:31:38] Igor Spektor: And everyone, I think, trying to solve
+[00:31:41] Igor Spektor: everything, right? And I'm saying that's not gonna work, you're a startup.
+[00:31:45] Igor Spektor: Focus on something.
+[00:31:47] Igor Spektor: target something, and… Wow.
+[00:31:51] Igor Spektor: Find a specific use case and solace, and go to market.
+[00:31:57] Shoval Abudraham: Yeah, I have a question around that. Like, on network, like, we are always debating… that's right, you are correct when you're saying we're trying to solve all the picture. And, like, we are always debating where are the larger
+[00:32:13] Shoval Abudraham: problems on the cloud network, or on on-prem firewalls, those areas. We are not, positively sure, like, where to focus. Do you have thoughts around that?
+[00:32:35] Igor Spektor: Duck.
+[00:32:36] Igor Spektor: I'm struggling to answer where the most problems are.
+[00:32:42] Igor Spektor: Because in, you know, when you think about cloud, unless you do, like, IPOS, most of the customers do not own cloud infrastructure.
+[00:32:51] Shoval Abudraham: Yeah.
+[00:32:52] Igor Spektor: that's maybe a different use case, right? Those are the guys, the big guys, the Google, the Microsoft, the Amazon, right?
+[00:32:59] Shoval Abudraham: Yeah.
+[00:33:00] Igor Spektor: I think you should… again, my opinion, you should be focusing on the other side, the data centers, the on-prem stuff.
+[00:33:07] Shoval Abudraham: Yeah.
+[00:33:07] Igor Spektor: And the reason I'm saying this…
+[00:33:11] Igor Spektor: Two reasons. One, we've seen data centers on the rise.
+[00:33:16] Shoval Abudraham: That's right.
+[00:33:18] Igor Spektor: I mean, I'm part of the other company, we're actually building Davis Center, because… the…
+[00:33:24] Igor Spektor: Everyone is out of capacity.
+[00:33:28] Igor Spektor: So, what are we seeing? One is the data centers being built everywhere.
+[00:33:35] Igor Spektor: And companies are moving out of the clouds.
+[00:33:39] Shoval Abudraham: Yeah.
+[00:33:40] Igor Spektor: Not the one… Small, mid-sized companies are moving out.
+[00:33:46] Igor Spektor: Because… the ownership?
+[00:33:50] Igor Spektor: and the cost.
+[00:33:52] Igor Spektor: So, my recommendation, kind of think about total on-prem data centers.
+[00:33:58] Igor Spektor: Not the, not the, not the cloud service providers.
+[00:34:04] Shoval Abudraham: Cool.
+[00:34:05] Igor Spektor: So, one last thing I want to tell you, why I'm getting So…
+[00:34:11] Igor Spektor: And I'm gonna send you the quick file so you can look at him, but…
+[00:34:18] Igor Spektor: I started Company about 6 months ago.
+[00:34:22] Igor Spektor: Where's my partner.
+[00:34:24] Shoval Abudraham: Okay.
+[00:34:25] Igor Spektor: And… we build a very boutique customer approach. The idea is to help companies
+[00:34:33] Igor Spektor: When they're joining, no matter where they are.
+[00:34:35] Igor Spektor: So we can help companies, like, where you are, in this region, we can help companies that maybe already have product.
+[00:34:44] Igor Spektor: and selling to customers. So what we do is three things that make us unique as one company. We do provide you with advisory services.
+[00:34:55] Igor Spektor: We have access to, well, both us, I can't believe watching them, we also have four top-notch
+[00:35:03] Igor Spektor: CISOs in our portfolio. It's part of our company that we can't get access to.
+[00:35:11] Igor Spektor: We also have access to hundreds of sheets around the United States.
+[00:35:15] Igor Spektor: So that's the advisors. Again, we can help you with IDEA, we can help you with verification.
+[00:35:21] Igor Spektor: We can help you with design partners, the roadmap, full soup to nuts. That's one side. Second side is the,
+[00:35:31] Igor Spektor: We can help you with exposure.
+[00:35:35] Igor Spektor: Right, the other part of our company is actually…
+[00:35:38] Igor Spektor: Hosting events and dinners. This is what we can bring to the table.
+[00:35:43] Igor Spektor: We have several teams, we can bring, like, 50 to 100 people, we can bring more 20 people, we can bring 5 people that are hand-picked for your use case. So that's a second company.
+[00:35:56] Igor Spektor: And the third company is we're doing… we also have the VAR reseller services.
+[00:36:03] Igor Spektor: So, we build that, and I'll send you the brochure so you can look at it, but, you know, I would like to stay in touch with you guys, see if we can kind of put it together, and if you have any interest.
+[00:36:14] Shoval Abudraham: Amazing, amazing, would love to get, the, like, the extra information and, like, to… to stay in touch. And, like.
+[00:36:23] Shoval Abudraham: Also, thank you, like, for the time and support. We're really, really appreciate it.
+[00:36:28] Shoval Abudraham: Cool, super cool.
+[00:36:31] Igor Spektor: Of course.
+[00:36:32] Igor Spektor: Stay in touch, guys, I'm gonna send you a brochure from my other email address so you have it, okay?
+[00:36:38] Shoval Abudraham: Amazing.
+[00:36:39] Yuval Mermer: Thank you so much.
+[00:36:40] Shoval Abudraham: Igor have a wonderful day! Like, I wish you the rest of the… perfect rest of the day.
+[00:36:46] Igor Spektor: Thank you, you too. Have a great week. Take care, bye.
+[00:36:48] Yuval Mermer: Bye-bye.
+[00:36:49] Shoval Abudraham: Bye.

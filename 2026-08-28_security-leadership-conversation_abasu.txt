@@ -1,0 +1,151 @@
+Date: 2026-08-28
+Topic: Security Leadership Conversation (Shoval Abudraham & Yuval Mermer with ABasu)
+Meeting UUID: F0DCCFB9-4F6C-4EFF-9154-5C379F6CE562
+Source: transcript
+
+[00:00:01] Shoval Abudraham: Amazing. So, we will start, with the introduction. I'll start with myself. I'm Shoval. I started my cybersecurity career in 8200, like most of the Israelis in the cyber field. There, I actually met Yuval. We were… we both served in the department responsible for the ID and DevOps infrastructure there.
+[00:00:26] Shoval Abudraham: basically was responsible for that, also from the operational side, but also from the security perspective, because, you know, that was super complex, secure infrastructure. We had to make sure they are secure. I served for five and a half years, released as a captain, and after my service and all the amazing technical job I did.
+[00:00:50] Shoval Abudraham: I, I did a bit of a shift, because I always was fascinated from
+[00:00:57] Shoval Abudraham: the customer's pain, like, how to create a real value, what companies build the product as they build it, so I did a shift to a product management tool, and in the past.
+[00:01:08] Shoval Abudraham: 6 years, I'm a product manager in cybersecurity companies. I started in a company called Perception Point. I led their old security and detection field, you know, did a lot of ML, LLM, AI things, either before people knew what is ChatGPT, and before everyone talked about agent.
+[00:01:31] Shoval Abudraham: This company was acquired by Fortinet. After that, I moved to, Koi Security, which is also a cybersecurity company. Amazing company, great customers, also very innovative in terms of how they use AI. And this company also was acquired by,
+[00:01:50] ABasu: I don't know.
+[00:01:50] Shoval Abudraham: So, yeah, that… that was my cue to move forward and to start something on my own, and as I…
+[00:01:59] Shoval Abudraham: mentioned, I met Yuval during my military service, so, we are friends for many, many years, and we, like, both started on the same place, but
+[00:02:10] Shoval Abudraham: build, like, kind of the same story from different perspective, so I'll let Yuval introduce, and share his, his journey.
+[00:02:20] yuvalmermer: So, Shoval didn't tell you, but she was my first commander in AD200.
+[00:02:25] ABasu: Yep.
+[00:02:25] yuvalmermer: And, in this team I was in, I was the engineer and the developer inside the team, and we together built great systems.
+[00:02:35] yuvalmermer: systems for managing the large-scale network we had, and systems for auto-remediation, and after this position, I promoted to a team lead, and then I promoted to be a director of DevOps and infrastructure. Actually, I was a colleague of Alon.
+[00:02:54] yuvalmermer: in the Army, and there I managed and led 40 engineers across 5 teams.
+[00:03:03] yuvalmermer: We ran large-scale networks, all the very, very sensitive networks of 80-200 were my responsibility.
+[00:03:12] yuvalmermer: And, for the operations room, for the thousand users, and for the hundreds of applications, we had, really, really big.
+[00:03:25] yuvalmermer: Like, petabytes of data that we ran.
+[00:03:28] yuvalmermer: And, after, after this, 10 years in 80-200, I finished the army, and I started at, Paragon.
+[00:03:37] yuvalmermer: You know this company?
+[00:03:39] ABasu: Part of the name, I don't know much, but I had the name yet.
+[00:03:41] yuvalmermer: Yeah, it's a cyber company, acquired by Red Lattice Private Equity, and after… and there at Paragon, I was the director of DevOps and SRE,
+[00:03:50] yuvalmermer: What we did there is to… we took our knowledge in develop, and we took our knowledge in networks, and we combined it together to develop networks, tailor-made solutions for the company's customers.
+[00:04:06] yuvalmermer: And then… I think it… and we run the production environments, and we run the deployments of the…
+[00:04:15] yuvalmermer: all the things that DevOps do, but we did a tailor-made developing solution, and after two and a half years, I quitted Paragon and started with the journey.
+[00:04:28] ABasu: Yes.
+[00:04:29] yuvalmermer: Thanks.
+[00:04:30] Shoval Abudraham: Very not long ago.
+[00:04:34] Shoval Abudraham: So, that's exactly what I want to share with you, like, this is the beginning of our journey. What we are doing now, we are on the ideation stage. You probably noticed there are a lot of startups coming recently, and now we are trying to find the problem that we're gonna solve.
+[00:04:53] Shoval Abudraham: And we are currently exploring how CISOs understand and manage a network-related security risk.
+[00:05:01] Shoval Abudraham: How they get visibility into their organization, Network stuff, stock?
+[00:05:07] Shoval Abudraham: And how they are reducing, risk from the network, attack surface. For example,
+[00:05:16] Shoval Abudraham: unnecessary exposure, open ports, overly permiss… over permission, how they detecting, places where lateral movement is optional? Like, how they holding and understand the risk around this area?
+[00:05:35] Shoval Abudraham: So we're super curious to hear, like, about
+[00:05:38] Shoval Abudraham: your, perspective for that. It's actually… I'm actually very curious to hear, like, because I feel like, every ship is kind of a new site,
+[00:05:49] ABasu: Each one has its own network. It's kind of a remote office, remote floating office.
+[00:05:55] Shoval Abudraham: Yeah, so I was super curious to hear, like, how that's… how you manage the risk from all those, like, many remote offices.
+[00:06:05] ABasu: So, two things go ahead and say. One is the… my… let me talk first about my office-side network, which is like… like any other company, but I think the risk is higher there, because they are…
+[00:06:17] ABasu: at this point, sitting on the open internet, even if I may not have much open internet ports open or connectivity, but still in the age of those frontier models.
+[00:06:29] ABasu: The firewalls are getting bridged very easily now.
+[00:06:33] yuvalmermer: So…
+[00:06:34] ABasu: to answer your question, how I am protecting my network, I think I am very worried. At this point, every CISO will speak to, I think they all will say they're very worried, because
+[00:06:44] ABasu: the firewalls are not very… I would say, they're not very transparent.
+[00:06:49] ABasu: the device, be it your good old… we're still using a Palo Alto next-gen firewall, but even if I have a SASE product, or if I have a new Arthos Fortinet or Gscaler product, they all are not very transparent. What kind of rules they have.
+[00:07:06] ABasu: See, people generally put their firewall at the time they configure their rules, and then forget about it.
+[00:07:12] ABasu: They don't come back and review that every day or week, okay, what are my block rules, what are my allow rules, what I am doing? We kind of rely on the provider to do that on our side, and I think those big players are
+[00:07:26] ABasu: Exceptionally slow in reacting to these new frontier model attacks.
+[00:07:31] ABasu: Be it Palo, or be it Cisco, or be it Fortinet, they all are… they're all telling that they're doing something, but I don't think they've done much.
+[00:07:39] ABasu: So, we… I think we all CISOs at this point, are looking for a solution. I think that's what I like your idea, is that, which can
+[00:07:49] ABasu: Make my firewall and my rules and my network topology a little bit more transparent to me.
+[00:07:56] ABasu: What are my weaknesses are, what should change, what is happening, and how can I…
+[00:08:02] ABasu: stop that. So, all it will buy me some time. It may not be able to stop the attack, but it will buy me some time. Same thing applies to my inside of the ships also, but only difference is the ship networks are not reachable from outside.
+[00:08:20] ABasu: Generally, we always deploy the ship networks, which only… all call… all external calls happen from inside.
+[00:08:29] Shoval Abudraham: Okay.
+[00:08:29] ABasu: But, still, there are segmentation there, what kind of traffic is coming, what kind of.
+[00:08:34] yuvalmermer: But as the option on the ship? Is there a line on the ship that can allow it to go to the internet?
+[00:08:42] ABasu: Yeah, yeah, they all are, as I mentioned, they all are on Starlink.
+[00:08:45] yuvalmermer: Soviet…
+[00:08:45] ABasu: 200, 200 plus bandwidth, so they are very well-connected internets.
+[00:08:50] yuvalmermer: So there's no… there's no, ingress by.
+[00:08:53] ABasu: The network is connected such a way that the connectivity happens, you cannot reach them. They all are a 10.10 network. There is no daily there. So they're all kind of… the provider, whoever is the satellite provider, they kind of… only you can connect there, and get that from there, basically. So that's how it is controlled, but…
+[00:09:12] ABasu: Today, everything is bridgeable, Yuval, I don't have to tell you. Today, with these Frontier models, everything can be breached, and the ships are kind of a, at this point.
+[00:09:22] ABasu: hasn't happened on ships, that's why we may be a little complacent at this point, but it will happen. One day it'll happen, and then we'll all kind of scramble to get a solution.
+[00:09:33] ABasu: But…
+[00:09:34] ABasu: Office side is a problem today. We need, definitely, any company will tell you that having a good network visibility and a network kind of a
+[00:09:43] ABasu: I would say it is more of a… not production tool, but it is more of a validation tool. Looking what's happening in my network, is my network configured right? It is something… based on what happened in the world, do I need to change something?
+[00:09:56] yuvalmermer: I have a question.
+[00:09:58] Shoval Abudraham: Yes, sorry, Yuval.
+[00:09:59] yuvalmermer: Did you try to research or to find, actually, a company that do it already?
+[00:10:05] ABasu: I am looking at quite a few companies, but they all are, at this point, only look for AI… the AI agents and, okay, AI agent-related boom-bams, but it doesn't have to be always AI agents, really, frankly.
+[00:10:19] yuvalmermer: Yeah.
+[00:10:20] Shoval Abudraham: Is that because…
+[00:10:23] ABasu: Huh?
+[00:10:24] Shoval Abudraham: Can you share with us which companies?
+[00:10:26] ABasu: Sure, absolutely. So, Loop is one of the guys we looked at.
+[00:10:29] ABasu: Lope, SAN Security.
+[00:10:31] ABasu: Matan is a good friend, really. He's doing the job security. Then, this morning only, I was talking to, actually, one of the VCs. He was evaluating a company called, Jesta.
+[00:10:42] ABasu: JSTAR is a kind of a deception. They're trying to put a deception tool.
+[00:10:47] Shoval Abudraham: Oh, yeah, this became the stronger novel.
+[00:10:50] ABasu: Yeah, because deception suddenly became important, because you can't protect anymore. These frontier models will anyway break your barrier, so if they break, you deceive them. So that's… became suddenly a little popular thing. So these are the companies we're looking at. A few others also, I'm not remembering the names, but quite a few are working on the AI Agent part.
+[00:11:09] Shoval Abudraham: Yeah, but did you, like, sounds like it's not an… it became more important, but it's not a new problem. Did you try…
+[00:11:16] ABasu: So it's always there. We never earlier bothered about it, but now that we know that a frontier model, using a simple frontier model, anybody can breach my network. Literally anybody.
+[00:11:29] Shoval Abudraham: Well, good.
+[00:11:30] ABasu: So that has… that's why suddenly we are getting asked this question by my board, my CEO, everybody, hey, what are they doing about it?
+[00:11:38] Shoval Abudraham: And, like…
+[00:11:41] Shoval Abudraham: I'm curious because, you know, I hear a lot that the solution is in terms of looking on the AI perspective, like, AI out to solve it for AI agents. I'm curious to hear why you thought about it in a network perspective.
+[00:11:59] ABasu: At the end of the day, for my office network, I still consider the firewall is my main barrier there. That is the main wall I have there.
+[00:12:09] ABasu: And today, because again, of these frontier models and all those little projects like Glasswing and all, all these guys, be it Palo Alto, or be it other vendors, they all are the amount of patches they are releasing, and the kind of fixes they are releasing, I don't think any company can deploy those realistically in a short time.
+[00:12:27] ABasu: That will bring down my network, the downtown would be huge. Okay, so then I need a tool that may buy that time.
+[00:12:35] Shoval Abudraham: Yeah.
+[00:12:35] ABasu: figure out, okay, do I… if I don't deploy those pads, how long can I hold on?
+[00:12:41] Shoval Abudraham: Yeah, like, if I… if I understand correctly, you said that in the firewall themselves.
+[00:12:47] Shoval Abudraham: There are a lot of, kind of vulnerabilities, and you need to patch them with the updates.
+[00:12:53] Shoval Abudraham: Yeah.
+[00:12:54] Shoval Abudraham: And you want a visi… a better visibility tool, the whole stack you have, and what happened…
+[00:12:59] ABasu: Yeah, exactly. What I have, what are my weak points, what are the vulnerabilities that really can break me there, and then how can I…
+[00:13:07] ABasu: buy some time on that, to put something there maybe which will deter that, and I will buy some time to get that fixed.
+[00:13:14] ABasu: Alright, at least I know my…
+[00:13:15] yuvalmermer: Vulnerability as in vulnerability, or you mean, like.
+[00:13:19] ABasu: No, so we're not the vulnerability, really. It's not the vulnerability that we have. The SLA themselves are doing that, right? So, but it is more of, okay, what can I do?
+[00:13:28] ABasu: I know the vulnerability, but even today, when companies are releasing 500, 600 vulnerabilities, even by knowing, prioritizing them, I still won't be able to fix every one of them in a short time. I need more time. So how do I buy that time?
+[00:13:42] Shoval Abudraham: Amita, Amit, I want to be honest with you, okay? That's exactly the direction we thought about, okay? But we, as we talk with more and more CISOs.
+[00:13:54] Shoval Abudraham: we realized that this responsibility for the network is not only under the CISO, and therefore they not feel the urgency around the risk there.
+[00:14:07] ABasu: I'll tell you because, though, yes, I agree with you. That is the problem of… that is the problem of theirs, and I have a little benefit, because I wear both the hats, CIO and CISO. Yeah. But at the end of the day, the responsibility is of the CISO. If something happens.
+[00:14:22] ABasu: Yes, it's not my job, if I'm just a CISO, it's not my job to patch the firewall. That is a network management job, which is under the CIO or a CTO, maybe.
+[00:14:33] Shoval Abudraham: Okay.
+[00:14:34] ABasu: If tomorrow there is a breach happens.
+[00:14:37] ABasu: Whose risk it is, who will… who will be called? Whose head would be on the line if tomorrow there is a beach?
+[00:14:43] Shoval Abudraham: The CISO…
+[00:14:44] yuvalmermer: Let's see something here.
+[00:14:45] ABasu: Right.
+[00:14:46] ABasu: So that they have to see. Yes, it is not my job to do it, but if it is not done, if something happens, then I will be the guy who'll be liable.
+[00:14:55] Shoval Abudraham: Yeah, I get it. And, like… I'll…
+[00:14:59] Shoval Abudraham: Sounds like, you're very aware to this problem. This is part of your, budget line for next year?
+[00:15:07] ABasu: Absolutely, it is. At this point, this is becoming so serious, I'm telling you, the questions are coming directly from my chair of the audit committee to me.
+[00:15:17] ABasu: to do something. So, I have… I'm being… since you are being honest, I'm being honest with you. I've told my director of operations… network operations, that put a tool, I don't care if it works or not.
+[00:15:29] ABasu: I want to have a tool there so I can go back and tell, hey, we have put something.
+[00:15:32] Shoval Abudraham: Yeah.
+[00:15:33] ABasu: If what's or not, it's very difficult to prove, to be very frank with you. Fine. The tool you will be developing, whether it protects me if somebody is trying to attack me or not, unless somebody attacks, it is not a kind of a penetration testing problem, using a frontier model attack. But I need to have something so that I can show my…
+[00:15:51] ABasu: the city management and the board, hey, I have taken care of it. For now.
+[00:15:56] yuvalmermer: But how do the board know that it's a problem?
+[00:15:59] ABasu: It is everywhere, the news… coming in the news articles, fine? Anthropic is this guy, whatever happened to this, your, that Anthropic Cloud thingy, or ChatGPT thingy… Yeah.
+[00:16:11] Shoval Abudraham: They got an AI language fade into the…
+[00:16:13] ABasu: I think there's always in the newspaper everywhere.
+[00:16:16] Shoval Abudraham: Amazing. And do you… do you, like, since you… it sounds like you are very, engaged with the community, do you hear from more colleagues about this need?
+[00:16:31] ABasu: I think people are realizing that they need to put something.
+[00:16:35] ABasu: Okay, people are realizing that it's not… see, they are… I think people are still a lot bothered about their internal AI agents, which is also a problem, because those internal AI agents also, if…
+[00:16:46] ABasu: they are going out and doing… interacting with external MCP servers and other things, I think that needs to be caught also. I think people are thinking more on that, but I kind of call it two different risks. One is my internal AI risk, another is my external AI risk.
+[00:17:02] Shoval Abudraham: Yeah.
+[00:17:03] ABasu: At this point, the external AI risk may be bigger than internal AI risk for me. Some other companies, it may be same. People who have developed too many AI agents and deployed too many AI agents already, they have that internal risk also.
+[00:17:18] Shoval Abudraham: Yeah. Oh, I, I want to say that you're, you know, the fact… you mentioned it in the beginning of the call, that you are seeing a lot of, startup and try to keep up with technology and the market. It… I feel it, you know? I… we… I shared with you some of our difficulties, when we talked with CISO about,
+[00:17:41] Shoval Abudraham: the area that we go through, and I feel like you really think ahead, like, what should I do next? What is the next risk, the next challenge? So, that's, super impressive.
+[00:17:53] ABasu: Again, give some thoughts, talk to others also. Of course, talk to others, and see whatever idea sticks, but if you… anytime you need to bounce your ideas, please, all means, I'll be happy to have calls.
+[00:18:03] Shoval Abudraham: Amazing. We would love, would love to stay in touch. And also, Yuval, do you have more questions, Yuval?
+[00:18:09] yuvalmermer: No, no, no, go ahead.
+[00:18:10] Shoval Abudraham: And I wanted to say that, if you hear about more, colleagues that are interested in this area, we would love, you know, to…
+[00:18:20] ABasu: I love it.
+[00:18:21] Shoval Abudraham: them.
+[00:18:21] ABasu: I'll talk to people around and do that, yeah, absolutely.
+[00:18:24] Shoval Abudraham: Amazing. Amit, wow, thank you so much, it was, like, amazing, call.
+[00:18:31] ABasu: Absolutely. All the best to you guys, have some talk again, I'm sure.
+[00:18:36] Shoval Abudraham: As to thank.
+[00:18:37] yuvalmermer: Thank you, Amit. Have a great day.
+[00:18:39] Shoval Abudraham: date.
+[00:18:40] ABasu: Good luck, bye.
+[00:18:40] yuvalmermer: Bye-bye.

@@ -1,0 +1,177 @@
+Date: 2026-09-08
+Topic: Security Leadership Discussion - Al
+Meeting UUID: 8B20404F-F85F-41D8-87AE-00FC90BCBC9F
+Source: transcript
+
+[00:00:00] Shoval Abudraham: It…
+[00:00:02] Shoval Abudraham: Amazing. Well, I'm start, I'll start. So I'm Shoval, I'm in cyber, like, on the last decade. I started in A200, together with Shoval, there we actually met.
+[00:00:16] Shoval Abudraham: We both serve in the, cyber operations center, and in the department that we're responsible for all the DevOps and ID infrastructure, so basically we hold both the DevOps engineer and security engineer role,
+[00:00:34] Shoval Abudraham: combined, so it was super, challenging, you know? Also built the infrastructure, but also security, because we, had such a, important and critical mission in the unit. So I served for five and a half years, released as a captain, was a great experience, but after… after my service, I did a bit of a shift into a product
+[00:00:59] Shoval Abudraham: management role, because I always was fascinated about creating value, customers, creating business,
+[00:01:08] Shoval Abudraham: So I still, continued in the cyberspace, because I do love technology, and I love the challenges that cyber brings to the table. But started as a product manager in a security company called Perception Point. It was on the endpoint security space, basically led there all the detection capabilities that were based on
+[00:01:30] Shoval Abudraham: machine learning, AI agents, before there was all the agent framework, and people knew what it is. It was great experience, and this company was acquired by Fortinet.
+[00:01:44] Shoval Abudraham: Later on, I moved to another cybersecurity company as a product manager, called Koi Security. Also, great product, amazing customers, very innovative in terms of how we use AI, both for, the product, but also, securing our,
+[00:02:05] Shoval Abudraham: our IP, and… and this company was acquired, as well, by Palo Alto.
+[00:02:12] Shoval Abudraham: Which basically was my sign to, you know, pick up my phone and call Yuval, my old friend from the military service, and tell him, okay, now we need to do it by ourselves, we need to do it, to build our own company.
+[00:02:27] Shoval Abudraham: And basically, that's what we are doing now. You know, we started on the same place, Yuval and I, on the same department, and we, like, I did a massive shift in the world of the business side, you know…
+[00:02:47] Yuval Mermer: Can you hear me?
+[00:02:49] Al: Yes.
+[00:02:50] Yuval Mermer: I think something is going… Nothing, I…
+[00:02:53] Al: It happened.
+[00:02:55] Yuval Mermer: Yeah,
+[00:02:56] Al: We'll give it, we'll give it a minute. Sure, I'm free.
+[00:02:59] Shoval Abudraham: But from different perspectives.
+[00:03:01] Shoval Abudraham: Oh, do you hear me? I think I lost the connection.
+[00:03:03] Yuval Mermer: Yeah, it was lucky. Yeah.
+[00:03:06] Shoval Abudraham: Okay, so where did I stop?
+[00:03:09] Yuval Mermer: We started to find that, we serve together, In the end.
+[00:03:14] Al: When you were starting the company together, when you decided it's our time to start the business together.
+[00:03:18] Yuval Mermer: Yeah.
+[00:03:19] Yuval Mermer: Yeah, and I will… I will start from my side.
+[00:03:23] Shoval Abudraham: For Yuvalu.
+[00:03:25] Yuval Mermer: I will go ahead and tell you that Shoval and I, we have this old dream.
+[00:03:32] Yuval Mermer: for 10 years, I think, since we know each other. And I started as a Shoval soldier in the army, in the military service, and I was the developer, and we developed together two big platforms for our unit. One of them was
+[00:03:48] Yuval Mermer: for managing the complex networks we have there, and which is still working and giving its value. And then I promoted to be a team lead.
+[00:04:00] Yuval Mermer: And then, after a couple of years, I promoted again to be the head of the DevOps and Infrastructure Department in 8200 unit.
+[00:04:10] Yuval Mermer: There, I led 40 engineers across 5 teams. We ran large-scale networks, petabytes of data, and production environments. And after I finished my military service, that was…
+[00:04:25] Yuval Mermer: Around 10 years.
+[00:04:27] Yuval Mermer: In 8200, I started at Paragon, which is an Israeli cyber company. I started there as a director of DevOps and SRE.
+[00:04:38] Yuval Mermer: And, there I, I led 25 engineers, and together we developed Tailor-made solutions for our customers.
+[00:04:48] Yuval Mermer: in the network and security area, because our customers were… we were, like, a B2G company, and our customers, they had to use very secured solutions, and we had to develop it for them. So, after the great journey I had in Paragon.
+[00:05:07] Yuval Mermer: I quit it and started this journey with Shoval together.
+[00:05:13] Yuval Mermer: Shoel, can you hear us?
+[00:05:15] Al: Yes, I can. I would… I would just say real quick that for many years, I've spoken to many… I feel like I've spoken to everybody that must live in Israel, because I've had a lot of calls over the years, and it's really that startup nation area where you go, you go into the military, you develop skills and expertise, you get ideas, you do a startup.
+[00:05:34] Al: Yeah. And so I've worked with many people, early-stage IDH and MVP, some from MVP going forward. There's a few companies, early-stage companies, I was, you know, kind of fortunate I was able to buy products from the companies in the early years. The one most recently, I was an Entra Security customer, so I was happy to get
+[00:05:53] Al: acquired by SailPoint. I would have rather had him get acquired by Cisco. I think it would have been a better fit for him, but, you know, anyway, it's good for them.
+[00:06:00] Al: So…
+[00:06:02] Yuval Mermer: Nice, and are you still working with those teams?
+[00:06:06] Al: Not naturally changed roles. So, in my previous role, I was still, so in my previous role, I was an ENTRO customer, so…
+[00:06:14] Al: I dealt with them a lot. You know, they were in Cambridge, Massachusetts, where they were based out of, and I was in Massachusetts at the time. I had an apartment there, and I lived near DC.
+[00:06:23] Yuval Mermer: I got it. You know, you talked about the AI boom.
+[00:06:27] Yuval Mermer: I knew… Introduce yourself, and
+[00:06:31] Yuval Mermer: And this is exactly what we're exploring now, because the AI boom brought with it a lot of risks.
+[00:06:40] Yuval Mermer: Like, we know that there are a lot of risks
+[00:06:45] Yuval Mermer: inside the organization, when you use AI and you adapt it to provide more productivity to your developers and all your organizational processes. But we know that there are another risks from the attacker side, from the outside.
+[00:07:01] Yuval Mermer: that AI brings with it.
+[00:07:04] Yuval Mermer: Especially the frontier models, and…
+[00:07:08] Yuval Mermer: And we know that it's really changed the whole market and all the ecosystem.
+[00:07:13] Yuval Mermer: And We researched how… this AI boom changed the way, CISOs manage there are risks.
+[00:07:25] Yuval Mermer: Around their networks inside their organizations.
+[00:07:31] Yuval Mermer: Shoval, you want to elaborate more?
+[00:07:33] Yuval Mermer: About it.
+[00:07:34] Shoval Abudraham: Sure, like, basically, as Yuval mentioned, like, we understand that, like…
+[00:07:43] Shoval Abudraham: not… you don't… like, AI adopted very fast, not only in terms of how organization used it, but also in terms of how attackers use AI. So, attacks became more, like, with bigger scale and faster, and basically what
+[00:08:01] Shoval Abudraham: we are assuming, that's basically our hypothesis, is that, you have to go back to the foundation, you have to go back to your infrastructure and secure it well,
+[00:08:15] Shoval Abudraham: to make sure
+[00:08:17] Shoval Abudraham: That all those new types of attack that go very fast, and with a lot of action all over the place, want, kind of reach, like.
+[00:08:28] Shoval Abudraham: With them, attackers won't reach to your crown jewels, and we think that network is, like, the basic, layer, for this type of protection, but…
+[00:08:41] Yuval Mermer: We understand. You can understand from our expertise that we can look at this problem from the network perspective.
+[00:08:50] Yuval Mermer: Because of our infrastructure background and what we bring with us, so… So…
+[00:08:58] Shoval Abudraham: So basically, we are exploring how our organization
+[00:09:02] Shoval Abudraham: understand the risk, inside the networks. And, like, like, let's put it in a simple question, like, how can you tell whether the connectivity inside your organization is actually supposed to exist?
+[00:09:17] Shoval Abudraham: So, basically, I would love to hear your take about that, and how you manage those risks.
+[00:09:25] Al: Okay, so, there's a lot here, depending on how we talk about it. So I'm gonna go…
+[00:09:31] Al: And just give an opinion, and you can kind of hone in on that, because this might be a little wider than you want to go. So obviously, I think AI changes cybersecurity in two ways, which you said.
+[00:09:40] Al: So I'm… some of this, I'm restating what you said. So part of it is this adversarial AI, how threat actors are using AI.
+[00:09:47] Al: And part of that might have an AI response, but part of it isn't an AI response, like a simple thing, like a…
+[00:09:53] Al: moving from vulnerability management to exposure management, which continues to put exposure management would be a counter that may have AI-enabled remediation operations, but doesn't have to be an AI solution, right? Something simple. Zero trust assessments, right?
+[00:10:08] Al: That would be a recommendation that's not AI-enabled, necessarily. Right. So on GRC, it's becoming AI-enabled. I kind of see the future of cybersecurity
+[00:10:19] Al: I'm not gonna sub… if you look at Gartner, the term cyber mesh.
+[00:10:23] Al: But if you look at it, I kind of see there's key operational areas that are going to be AI-enabled hubs.
+[00:10:28] Al: And there'll be connections between the hubs, but the AI-enabled hubs, these connections will be more efficient. Because right now, the silos are very disconnected in many organizations, particularly if they span cyber and IT groups.
+[00:10:42] Al: Right? You get different managers, different objectives, and that's where the exploit is. And then you also have companies deploying AI solutions, and I'm going to focus here primarily on, like, autonomous AI solutions.
+[00:10:56] Al: And then you have delegated authority.
+[00:10:58] Al: Right? How do we manage the delegated authority piece? And that's a huge problem.
+[00:11:04] Al: when I deal with… I… you know, I'm assuming that this is a small percentage of people this way, but it seems like I talk to a lot of CISOs and CIOs. I don't know how most of them got their job. Most of them, there's stuff they… when I talk to a CISO,
+[00:11:18] Al: if I reference something that was a really big noteworthy report, and they don't know what I'm talking about, it's like, what are you doing?
+[00:11:26] Al: I mean, did you read maybe, like, just the CrowdStrike annual report, which isn't good enough? Or did you read this other big news… stuff? Stuff that was major news stories, even all the… all the mythos stuff, a cloud security agency that did a write-up on that, NSA did a post on it.
+[00:11:42] Al: There's a… there's another big post. They didn't read any of them. It's like, what are you doing? You were completely unprepared for AI.
+[00:11:50] Al: So that obviously isn't everybody, but quite often, they don't know where to start.
+[00:11:55] Al: And they don't know what the problems are, and they don't understand it. And in my experience, here's how it goes. A lot of CIOs and CISOs, they move up in a certain progression.
+[00:12:06] Al: So, a CIO might have been in infrastructure, became a CIO, he might go, I can kind of apply this to cloud, so he may not know cloud, but he might kind of know cloud. He's usually clueless on DevSecOps, because he didn't do anything there.
+[00:12:19] Al: So, if you have a really good security-minded person at DevSecOps, you have a good team. If not, that's like the Wild West, and that's why you get… that's why it's such a targeted area now.
+[00:12:29] Al: Right? That's why you have those software supply chain attacks, because there's people not following best practices, because nobody's watching them.
+[00:12:35] Al: Same thing for the CISO. If your CISO came from GRC or compliance or something like that, he doesn't… he doesn't really know SecOps. He doesn't really know cloud. He doesn't really know DevSecOps.
+[00:12:46] Al: Yeah. So they… and then when you go to AI, it's different from all of those. You can't take what you know and apply it to it, because it doesn't work that way. So you actually have to be… you have to learn something new. And there's a lot of the people that haven't learned anything new.
+[00:13:01] Al: So that's a… that's a huge challenge. The one thing from a marketing area, for whatever your solution is, you need to communicate with the assumption that your CISO knows nothing and your CIO knows nothing.
+[00:13:11] Al: Otherwise… yeah. Go ahead.
+[00:13:14] Yuval Mermer: Continue.
+[00:13:16] Al: And I… so I was gonna go… so, if you look at the evolution of it, there's two documents that I think are really important. There's a document from Five Eyes. Are you familiar with Five Eyes?
+[00:13:27] Shoval Abudraham: No, actually, no.
+[00:13:29] Al: So, Five Eyes, or are there…
+[00:13:30] Yuval Mermer: Canada…
+[00:13:31] Al: Yeah, the U.S.-speaking intelligence agencies, so it's really a partnership between, NSA, I forget who it is in Canada that does it, and
+[00:13:41] Al: you know, and signals director, yeah, five agencies. And a lot of times, like, sometimes those agencies, like ASD or NSA, will actually publish. A lot of times, they'll funnel, their published work through, like, a CISA or some other group, but it is driven from Five Eyes.
+[00:13:57] Al: But they have a paper called Five Eyes Careful. If you just Google Five Eyes Careful AI, it'll pull up the paper.
+[00:14:03] Al: And all the countries kind of did their version of it, but it's the same paper. And then there's another… it came out in May.
+[00:14:09] Yuval Mermer: paper?
+[00:14:11] Al: What was that?
+[00:14:13] Yuval Mermer: Do you think CISOs follow this paper?
+[00:14:15] Al: Oh, yeah, I would… well, here's what I would look at it. I'd look at the Five Eyes… it's Careful AI, and it has some other stuff, but if you Google Five Eyes, Careful AI, and that came out in May, right? And then, around May, there's another paper from China.
+[00:14:30] Al: Which is the Chinese version of that.
+[00:14:32] Al: I'd have to look at it. Anything that I posted related to this on my LinkedIn, I usually put that as a comment, as a link, so I could look up a link if you want me to find it for you. But I think those two documents are important, because there's a different philosophy between state control or business function between them.
+[00:14:49] Al: But if you narrow it down, they all recommend you have to do these things to secure AI.
+[00:14:54] Al: So, to me, it's a really good forward-looking document to where AI is going, is where security requirements are going to be, where you're going to be audited, where your cyber insurance is going to be, where there's new frameworks or policies.
+[00:15:09] Al: or your regulations will come in. So it's really good forward-looking.
+[00:15:13] Al: And there aren't solutions… go ahead.
+[00:15:16] Yuval Mermer: I have a quick question. You are an experienced CISO, and I want to look at the problem from the regulation and compliance perspective.
+[00:15:28] Yuval Mermer: And talk about the GRC side of it, and…
+[00:15:33] Yuval Mermer: And I wanna ask you if… did you see if something changed?
+[00:15:38] Yuval Mermer: in the regulations we know, after the AI became more common.
+[00:15:46] Al: For the most part, no. I mean,
+[00:15:50] Al: There's some good standards out there, but they don't go far enough.
+[00:15:55] Al: Right.
+[00:15:56] Al: And it's not so much… if you look at where these documents are pointing to security requirements, you can project out to where these things will come in the future. So you can build a program now, and then when the future, when these things come into play, it's like, I'm already doing that, or I'm building in that direction.
+[00:16:13] Al: If you don't look at this and be forward-looking, you don't have a strategy. Everything's reactive. And you build, and then you have to tear up and rebuild again, and tear up and rebuild again, or you… or you buy stuff. Like, I've seen things that look like there was no strategy at all in the company. It's like, wait, you bought this tool here, and you bought that? Why did you buy these two tools?
+[00:16:32] Al: So… so that's why I recommend these, too, because if you're looking for your solution, and you align your solution with this.
+[00:16:41] Al: then it's really well aligned with where they're going. And I'll use Microsoft as an example. So, Microsoft does not fulfill all the requirements in here, and they may never fulfill all the requirements in here, because they may not care to. But if you look at what Microsoft's done in the last 3 months and the 3 months before that, they are tracking on that line.
+[00:16:59] Al: So, a lot of the stuff they did in fabric, where now they have Authority Fabric and Runtime Fabric, so they're building up fabric in that area, things they did around EntreID Protect and Agent 365,
+[00:17:11] Al: and Defender, they're adding capabilities into there that are aligned with these requirements. Now, nobody does this top area where we're tracking delegated authority. They're usually all week on runtime.
+[00:17:23] Al: and clueless and delegated authority, right? Those are… those are the two things that… that almost nobody does.
+[00:17:30] Al: But if you look at the purchases, you see how Microsoft's building internal, and that's kind of good if you're Microsoft first, primarily Microsoft shop. It doesn't really work if you're using all over the place.
+[00:17:41] Al: You look Palo Alto, look at their acquisitions they've been making, and how they're trying to plug in. And if you look, one of the areas in here, when we saw this, nobody cared about non-human identities before.
+[00:17:52] Al: I'd go to meetings, I'd talk, nobody knew what they were, they didn't know what the risks were, they were blowing it off. Now, all of a sudden, everybody goes, oh, wait, we need to be able to track identities for AI. So Cisco buys Asterix, and SerialPoint buys EntreID, and CrowdStrike buys…
+[00:18:06] Yuval Mermer: from TCL.
+[00:18:07] Al: No, no fiber.
+[00:18:08] Yuval Mermer: doing from CISOs, you know, talks about, identities only, or they are talking about another attack surface that,
+[00:18:18] Al: So, most of the… most of the time, with CSOs, either they don't know, or they talk, or they say, we need to do something with shadow AI, or they go, oh, I need to do something with DLP.
+[00:18:28] Al: So they have no idea how to, you know, what autonomous AI is, what the risks are, and how to secure it. None.
+[00:18:34] Al: Now, I'm not saying that's all CISOs, but the CISOs that we engage with.
+[00:18:39] Al: No. I haven't… I haven't engaged with a CISO who I could have a deeper conversation with while we're talking at this time. They go, oh, our AI team's doing it. And that's great, but you have to hope your AI team is also a security team.
+[00:18:53] Al: Otherwise, you're going to get one of these, and that's why we're seeing some of these areas, you know, like the Huggy Face, some of the breakouts, because they built a solution, but they didn't think of things, they don't have a security team embedded, because security doesn't know what to do, so they didn't securely implement it.
+[00:19:08] Yuval Mermer: Yeah, and we need to be mindful with your time, and we're respected, so…
+[00:19:13] Yuval Mermer: I will ask a last question.
+[00:19:15] Yuval Mermer: Do you think… do you think things that are already in the standards we know, like PCI DSS and ISO, things that already been there?
+[00:19:30] Yuval Mermer: has changed and need to be… and need to be solved in the new AI era?
+[00:19:36] Al: Okay, I think most people are looking that if they're really concerned with that, they have strict, like, DLP provisions in place, and they're assuming that their DLP provisions will prevent that from going in their AI. That's what I think their hopes are.
+[00:19:49] Al: So, could that come into play? That could come into play. If you had the right solution, and it's a smaller market for those who are really going to care to buy that solution, but those markets also have more money and spend more money on it, so that could… that could work.
+[00:20:06] Al: Yeah, so right now, I don't… right now, we have the technology, and then well behind the technology, we have the security, and below the security, we have policy and regulation.
+[00:20:16] Al: Yeah. So, so at some point.
+[00:20:18] Al: There's gonna be a huge leapfrog.
+[00:20:21] Al: And it's because the security people don't understand it, so the policy people really don't understand it, and it's not getting done. And even, after Mythos, the Cloud Security Alliance, they wrote this, like, 100-page paper, and it was very detailed. And, you know, some of it might have went too far, been challenging, but it was very good.
+[00:20:38] Al: I haven't talked to one person who's read it.
+[00:20:40] Al: And so here's a forward-looking document that came out, like, right when this came out, nobody's read it, so…
+[00:20:46] Yuval Mermer: Well, I want to thank you so much for your time.
+[00:20:51] Yuval Mermer: And it was really interesting and valuable for us.
+[00:20:55] Yuval Mermer: Shovalue of something, in addition to say?
+[00:21:00] Shoval Abudraham: Yeah, I just wanted, like, to…
+[00:21:04] Shoval Abudraham: Like, the fact that you said that nobody reads those documents and those reports about stuff that happened until there are… became, like, a kind of official standard they need to, address to, that's really one of the issues that we are trying to…
+[00:21:24] Shoval Abudraham: dig into. Like, we are basically
+[00:21:28] Shoval Abudraham: Trying… like, we, same as you, understand the risks that are coming, in totally, facing some conversation where we feel that some CISOs don't understand those coming risks, because they're not really, familiar with all the technical details. So first.
+[00:21:46] Shoval Abudraham: Like, you know, to talk with people that are… started their…
+[00:21:51] Shoval Abudraham: career from the technical side, it's always such a good conversation, because I feel like you understand the challenge there, and that's exactly the gap that we're trying to…
+[00:22:04] Shoval Abudraham: To understand, and, like, how to…
+[00:22:07] Shoval Abudraham: present the risk in a better way for those… for those CISOs, so I love that you mentioned it.
+[00:22:14] Shoval Abudraham: And of course, we would love to, you know, share with you more about… right now, we are basically discovering, learning, talking with, leading Cecils at IQ, but I… I know that, soon we will have a more clear direction, and I…
+[00:22:28] Shoval Abudraham: I hope we can, you know, share it with you over email, stuff like that, and, you know, get your feedback in the future.
+[00:22:37] Al: Sure, I'm always happy to jump another call if it's beneficial. If you send me information, say, what's your opinion on this? I will be happy to give you my opinion, feedback, and writing that way. And also, if you just send me some questions.
+[00:22:50] Al: I'm happy to give you feedback that way as well. So the easiest way is, like, a LinkedIn message, because I'll see that. It doesn't get buried in my email, but we can do it a different way if you need to. But I'm always happy to give you feedback, during the phase.
+[00:23:05] Yuval Mermer: so much.
+[00:23:07] Yuval Mermer: And we really appreciate your time.
+[00:23:09] Yuval Mermer: And the… We'll be happy to keep you updated and keep you in the loop.
+[00:23:15] Yuval Mermer: Okay, thank you. Thank you so much.
+[00:23:18] Al: Yeah, best wishes to a successful company launch.
+[00:23:22] Yuval Mermer: Thank you all very much. Thank you.
+[00:23:26] Shoval Abudraham: Have a good day.
+[00:23:27] Yuval Mermer: who they…
+[00:23:27] Al: Thanks, you too.

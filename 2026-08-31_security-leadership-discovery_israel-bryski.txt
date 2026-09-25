@@ -1,0 +1,279 @@
+Date: 2026-08-31
+Topic: Security Leadership Discovery - Israel Bryski
+Meeting UUID: C36748D7-5B2C-468E-930A-AFF82C048FF7
+Source: transcript
+Entries: 273
+
+[00:00:00] Shoval Abudraham: So…
+[00:00:02] Shoval Abudraham: Yes, I mentioned on the message, Yuval and I are building our own company right now, so our goal to this conversation is, of course, to do a short introduction, to share our story with you, and then to, of course, hear about you and your experience, and to share some of the directions that we are exploring right now, and hearing your feedback.
+[00:00:27] Shoval Abudraham: we are basically at the beginning, like, on the ideation stage, you must, saw it by yourself, but there is, like, the market is a bit, in a mess because of all of the AI,
+[00:00:42] Shoval Abudraham: So we are doing the exploration mode and ideation mode, very carefully right now to find a real problem and a pain, that we should address to.
+[00:00:54] Shoval Abudraham: But we'll start with the introduction, and then we will dive into that. How does it sound to you?
+[00:01:00] Israel Bryski: Perfect.
+[00:01:01] Shoval Abudraham: Perfect.
+[00:01:02] Shoval Abudraham: Okay, so I'll start. I'm Shoval. I started in cyber 10 years ago in the Unit 8200, like most of the founders here in Israel. There, I actually met Yuval. We both serve in the department that were responsible for the DevOps and ID infrastructure, kind of did the role of DevOps engineer combined with a security
+[00:01:27] Shoval Abudraham: engineer, so we had to, be responsible to the infrastructure, both
+[00:01:34] Shoval Abudraham: from the operational side, but also from the security perspective. I served for five and a half years, released as a captain.
+[00:01:42] Shoval Abudraham: And then did a bit of a shift into a product management roles. I was always super curious about, like, why products are built in the way they are built, and, like, pains of customers.
+[00:01:57] Shoval Abudraham: Actually, part of our mutual work in the department of Yuval and I was around that and understanding, like, customers' pains. So I became a product manager in multiple cybersecurity companies,
+[00:02:13] Shoval Abudraham: started at a company called Perception Point, was around workspace security,
+[00:02:21] Shoval Abudraham: Led their… all the detection capabilities, did a lot of…
+[00:02:26] Shoval Abudraham: back then, it was innovative, because we worked a lot with AI and agents before people knew what is ChatGPT and agents. So worked there for 3 years. The company, was acquired by Fortinet.
+[00:02:41] Shoval Abudraham: And then I moved to another cybersecurity company called Koi Security, also great company, great customers, a lot of innovative stuff in terms of how we use AI. This company was acquired as well by Palo Alto.
+[00:02:57] Shoval Abudraham: And after that, I realized it's my cue to go to my journey with Yuval. Yuval and I know each other, like, for many years, from the military service, so we always dreamed to go back and work together again, so this was kind of a mutual dream.
+[00:03:18] Shoval Abudraham: And I'll let Yuval share, like, his experience, because, like, we both started on the same place.
+[00:03:27] Shoval Abudraham: But we took, like, different direction. I went to the product manager, more market and customer side, and Yuval dived into the technology, so he's the technical genius here.
+[00:03:41] Yuval Mermer: Actually, Yisrael Shoval, she's a genius product manager.
+[00:03:45] Yuval Mermer: And as a technical and solution guy, I learned a lot, a lot from Shoval about how to find the pain points and things, and Shoval didn't tell you that she was my first commander in the 80-200 unit.
+[00:04:00] Shoval Abudraham: Take your time.
+[00:04:01] Yuval Mermer: For Showtime, yeah, but together we developed, really good, apps.
+[00:04:07] Yuval Mermer: We developed the app that helped all the units to manage and operate the complex network they have there, and it's still working until today and serving what we developed.
+[00:04:24] Yuval Mermer: And after,
+[00:04:26] Yuval Mermer: After a good time with developing together things, when Shoval was the product manager and I was the developer, I promoted to be a team lead, and two years ago, I promoted again to be the head of the DevOps and infrastructure department.
+[00:04:40] Yuval Mermer: And there I led 40 engineers across 5 teams. We managed a large-scale network, multiple networks.
+[00:04:49] Yuval Mermer: In multi-zones, complex networks, with, very, with high security restrictions, and, we were responsible for petabytes of data.
+[00:05:03] Yuval Mermer: storage systems, production environments, and it was a good journey. And after I finished the Army, I started as a director of DevOps and SRE at Paragon. It's a cyber company.
+[00:05:15] Yuval Mermer: Which acquired by a private equity called Red Lattice.
+[00:05:20] Yuval Mermer: And I've been there for 2 years and a half, and then I…
+[00:05:25] Yuval Mermer: There, my teams, they developed tail-made solutions for the products network.
+[00:05:32] Yuval Mermer: So, we took the developing side, and we took the network side, and we developed great solutions for our customers, and then acquitted Paragon and started with Shoval the new journey of building
+[00:05:47] Yuval Mermer: And we would love to hear about you!
+[00:05:49] Israel Bryski: Man, when did this journey start? Like, how long ago?
+[00:05:53] Shoval Abudraham: So basically, we're talking about it, like, for 10 years, I can say, but officially, we started, kind of, 2 months ago, we started ideation. One month ago, you know, started to do
+[00:06:07] Shoval Abudraham: run our tests with, CISOs, so we quite a… we did some quite a.
+[00:06:14] Israel Bryski: And roughly how many CISOs have you talked to already? Ballpark?
+[00:06:19] Shoval Abudraham: Around 30.
+[00:06:21] Israel Bryski: Okay, good.
+[00:06:23] Israel Bryski: Okay, so I've been in security now for 20 years, always financial services, always in New York, but now I took a little bit of a detour.
+[00:06:32] Israel Bryski: I'm with a company called Rogo. OROGO is an AI product company selling to financial services.
+[00:06:38] Israel Bryski: That's where they need me, they need me for the client side, so that's where I'm talking to a lot of their clients to make sure that they're comfortable with our product, that we have product security, and all that good stuff.
+[00:06:48] Israel Bryski: But before then, it was all either hedge funds or big banks. And over the past, I think, 4 or 5 years now, I got involved with a lot of the Israeli
+[00:06:57] Israel Bryski: startup… startup ecosystem, well, starting with YL, and then, you know, Shova, now Swish, and…
+[00:07:04] Israel Bryski: teammate, and Gwilot, and…
+[00:07:08] Israel Bryski: Viola, and then it grew, and then the list grew and grew and grew to the US-based VCs, and…
+[00:07:14] Israel Bryski: And now just people just randomly reach out, so I don't know if you got my name from somebody else, you just found me on LinkedIn, but it's usually… either people find me on LinkedIn, or they hear from somebody in some WhatsApp group that I'll talk to this guy, because…
+[00:07:27] Israel Bryski: I don't know, maybe I give good advice, maybe I don't. You'll be the judge of that when we're done.
+[00:07:33] Shoval Abudraham: Cool. Actually, we found you on LinkedIn, you know, with one of our researchers, like, we are trying to…
+[00:07:40] Shoval Abudraham: find, CISOs and security leaders that went… that had multiple roles already,
+[00:07:51] Shoval Abudraham: In multiple types of organization, because we feel like the problem is…
+[00:07:56] Shoval Abudraham: like, we did a lot of… we did a lot of problems, you know? We are, as I mentioned, we are going through this process, like, a few months already, and we had a few directions, and we always shift a little bit, something like that. I'll share with you what we're working on right now. So basically, as Yuval shared, we both came from infrastructure, from network, it was a big part of our roles.
+[00:08:21] Shoval Abudraham: And we felt like there… there are no… was not a lot of changes there recently, and the word was changed. So recently we're exploring how CISOs managing their risk,
+[00:08:38] Shoval Abudraham: in their networks. Specifically, in hybrid
+[00:08:42] Shoval Abudraham: environments. Like, not only on the cloud, because we know we have… there are… there are few products that help you to manage the risk of your network in the cloud, but on hybrid, environments, and…
+[00:08:58] Shoval Abudraham: I must say that, the signals are mixed at the moment, at the moment, so we don't have a clear view, but we would love to hear your thoughts about this area and how you manage risk around network in the organization you worked for.
+[00:09:20] Israel Bryski: So, there is a company called Nimble Security, I don't know if you've heard of them.
+[00:09:23] Shoval Abudraham: Yeah, sorry.
+[00:09:25] Israel Bryski: There's a company called Nimble Security. I think they're still Stealth.
+[00:09:29] Israel Bryski: The founder is Ross Halaleuk, I think? You can find him on LinkedIn, he's a writer, a blogger, he's an author, he wrote a book.
+[00:09:37] Israel Bryski: But I would say they're, like, in the, let's call it the STAR SPM space, so Network Security Posture Management, as a generic term, not as a category.
+[00:09:47] Israel Bryski: And then what you're trying to solve for is, is,
+[00:09:50] Israel Bryski: You know, misconfigurations across your entire tech stack, or network stack, starting with the firewall.
+[00:09:56] Israel Bryski: His co-founder is an 8-year Palo Alto veteran, so that's where they're starting.
+[00:10:00] Israel Bryski: And I liked what they're… what they're doing, so I don't know if that's the direction you're going. In general, I just… wanted me to just talk about risk in general on a hybrid? I mean, the way to do that is you have to hire a really good security engineer.
+[00:10:13] Israel Bryski: You have to have a network architect and a security network security engineer that understands how to, you know, build the different things. So, for example, at MIO, I needed to build… we wanted to put in a NAC solution. We don't even have a NAC, Network Access Control, so we wanted to put in Cisco ICE, ISE.
+[00:10:27] Israel Bryski: So you need a guy that knows how to do that really well, has done that really well, and doesn't impact the internal network when you set it up, because it could be very impactful.
+[00:10:36] Israel Bryski: In a negative way, if you don't set it up right. We wanted to set up, you know, network segmentation. We use zero networks, you know, Benny's company. You know, even that. So, yeah, you need somebody that has the knowledge
+[00:10:47] Israel Bryski: And that's always expensive and difficult to find the right people.
+[00:10:51] Shoval Abudraham: And this guy is under you, like, under the CISO?
+[00:10:55] Israel Bryski: No, no, so usually… so that's where you're going to find a lot of differences. Every CISO you talk to, and you're probably hearing this already, network typically sits under IT, but the network security component, the policies of the firewall, and which categories on the web proxy you block, the policies set by security.
+[00:11:13] Israel Bryski: And that's where you typically have that handoff.
+[00:11:15] Israel Bryski: A lot of VCs and ideating teams don't like that.
+[00:11:19] Israel Bryski: Yeah. They're sitting… because then you're… you're left… you're getting pointed in different directions. Like, who's your… who are you selling to?
+[00:11:26] Israel Bryski: So that's… that's… you'd have to figure out the solution to that one.
+[00:11:31] Shoval Abudraham: Yeah, that's exactly the reason why I asked, because we're already debating on the question, like, if there is a way to…
+[00:11:40] Shoval Abudraham: there is a specific responsibility there is that is under the CISO, so yeah,
+[00:11:46] Israel Bryski: Yeah, for the most part, it's like the poli, like…
+[00:11:49] Israel Bryski: Security best practices policy setting, so if you're gonna be in that world.
+[00:11:54] Israel Bryski: And, like, using AI, let's say, natively to suggest the right types of policies and right configurations.
+[00:12:00] Israel Bryski: That makes the security life, the CISO life, makes it easier. If you're going on to the implementation side.
+[00:12:08] Israel Bryski: Right, so it could be as broad as changes to network, right, so do that in a safe, secure way using AI, where you can build, you could actually look, suck in all the organizational context, upstream, downstream impacts, and you can make a recommendation where a particular change is good or not.
+[00:12:23] Israel Bryski: and provide the assurance that you're not going to have an impact. That's like the CTO network side, people.
+[00:12:29] Israel Bryski: Or you could find the overlap. You find the overlap, and what you could provide is actually going to be used by both teams.
+[00:12:35] Shoval Abudraham: I want to challenge it a bit more, like, if you are… we're talking about the suggestion part, the thing that's under the CISO,
+[00:12:43] Shoval Abudraham: Do you think, like, that's a problem? It's not… this is not a new problem. Like, they have it for many years, and they want… they… there is a reason there is no product or solution there. Do you think that now CISO will put their effort and resources there?
+[00:13:02] Israel Bryski: That's a good question. Everyone's distracted with AI and security for AI, so I'm very thankful that you're not building security for AI, and governance and visibility for agents, thank you very much. We appreciate that.
+[00:13:13] Shoval Abudraham: We won't go there. Any chance we will go there.
+[00:13:18] Israel Bryski: So, would a CISO pay attention to it? It's hard to tell, I don't know.
+[00:13:23] Israel Bryski: I mean, look, look at, like, I don't even know why Tufin's still around.
+[00:13:27] Israel Bryski: You know, for firewall rule, like, it's like a dumb tool.
+[00:13:30] Shoval Abudraham: Yeah.
+[00:13:30] Israel Bryski: still around. Why? I mean, like, why couldn't somebody build, like, an AI-native version of that?
+[00:13:35] Israel Bryski: Right? Yeah.
+[00:13:37] Israel Bryski: Or maybe there is, maybe there are companies, and maybe there's a reason why people are not building in that space, because it's an old…
+[00:13:43] Israel Bryski: category, but what I find interesting is, as the industry gets disrupted by different things, like, going back 10, 15 years to cloud, and now it's all AI.
+[00:13:53] Shoval Abudraham: Yeah.
+[00:13:53] Israel Bryski: We always circle back to the foundations, the fundamentals of what a security program needs to have.
+[00:13:59] Israel Bryski: And we always tend to forget it with the next new shiny thing.
+[00:14:03] Israel Bryski: But, like, patch management is important. That never goes away.
+[00:14:07] Israel Bryski: Strong network security principles doesn't go away. Training your users doesn't go away, or defensive depth methodology, whatever that is, all your control stack, you know, doesn't go away.
+[00:14:18] Israel Bryski: And sometimes it takes coming back, and the question is, how far are we down this AI rabbit hole, and when are people going to start coming back to focus back on the fundamentals?
+[00:14:26] Israel Bryski: And that's what you'll need for the network.
+[00:14:29] Israel Bryski: Unless, I mean, I see a lot of vendors and startups now doing, you know, they're bringing in
+[00:14:35] Israel Bryski: like, let's call it table stakes stuff. To be relevant in the AI world, they're bringing in, you know, okay, so you have a policy engine that can use plain English. It's basically using an LLM, and
+[00:14:47] Israel Bryski: And I could configure, you know, I could configure policy with plain English language versus, you know, that's AI bolted on, it's not really your…
+[00:14:55] Israel Bryski: But I… or… or providing the visibility into what agents are doing. A lot of vendors, like an insider risk vendor, is doing, like, oh yeah, I could… because I have… in your browser, I could see what people are doing on Shadow AI, so they just bring all these other things in that don't necessarily core to the product.
+[00:15:12] Israel Bryski: But on the policy side, I'm trying to think, where would policy need to be set besides firewall, besides the web proxy?
+[00:15:19] Israel Bryski: Right, so you have network access control systems. I don't know how broad you're going within the network stack. Is it just firewall? Are you going to routers and switches? Are you going to network segmentation? I mean, the network stack is pretty broad itself.
+[00:15:34] Israel Bryski: But all of these technologies, whether it's any vendor, Cisco or any other vendor, comes with a bunch of policy configuration stuff.
+[00:15:41] Israel Bryski: And are… are customers squeezing the full ROI out of them? Probably not.
+[00:15:49] Shoval Abudraham: Yeah, so that's a question we're asking ourselves, like, also, like, how many of them we want to cover, basically because we are still on ideation, like, we are feeling that the… we will go to…
+[00:16:03] Shoval Abudraham: The direction their market will lead us.
+[00:16:06] Shoval Abudraham: basically, again, I said that we are not still convi… we don't have.
+[00:16:10] Israel Bryski: Right.
+[00:16:11] Shoval Abudraham: conviction that this is the right direction, because I feel like every, CISO, we asked those questions recently answers same way as you, and we don't get an answer, oh, yeah, that's super important. We need to… we need this product. We… we have it on the plan for 2027.
+[00:16:32] Shoval Abudraham: So, that's… I feel that those are,
+[00:16:38] Shoval Abudraham: question we need to ask later, yeah. Like, we're still on the basics, but you know what? Let's, let's…
+[00:16:47] Shoval Abudraham: leave this direction for a few minutes, Yuval let me know if you have any question around that.
+[00:16:52] Yuval Mermer: Go ahead.
+[00:16:52] Shoval Abudraham: But, let's talk about 2027 in general.
+[00:16:57] Shoval Abudraham: What do you think is, like, the new budget line, the big project that will be in the CISO plan for 2027?
+[00:17:10] Israel Bryski: Yeah, I don't know, tough one. I think they're gonna have to figure out how to patch and do change management and patch management faster.
+[00:17:19] Israel Bryski: So… Again, like.
+[00:17:22] Shoval Abudraham: Coming back to the basics.
+[00:17:24] Israel Bryski: Yeah. Well, not just the basics. If mythos and fable and all that stuff comes true, and the… the,
+[00:17:30] Israel Bryski: the, vulnerabilities… That these models discover that they're really good at.
+[00:17:37] Israel Bryski: And now you have nation-state actors, the banks are typically… I'll talk financial services, but banks are typically targeted by nation-state actors, people that just don't like America, and then you have the financial fraud and all the Eastern European-type threat actors that just want to steal money and ransomware and so on.
+[00:17:53] Israel Bryski: If they… if they're… the barrier to entry is lower, the use of these models.
+[00:17:58] Israel Bryski: Then, what should happen is we should have an apocalypse of vulnerabilities.
+[00:18:03] Israel Bryski: And, right, it's still, again, a lot of it's marketing fluff for the IPOs of Anthropic and OpenAI, but those models are really good at stringing together informational and low-level vulnerabilities to then do an RCE, or data exfiltration. So if that all comes true, CISOs are going to have to get much faster.
+[00:18:21] Israel Bryski: in being able to remediate vulnerabilities, in a way that they have to trust their vendors to do auto-remediation, no more human in the loop. We have to get really comfortable fast with allowing
+[00:18:32] Israel Bryski: these AI-native startups, or whatever you want to call them, whether they're vulnerability management platforms. Like, the Tenable Rapid7 Qualys, you know, they've been around forever, they're not going anywhere, but there's definitely room for something to come out, and there's a lot of players in the space already.
+[00:18:49] Israel Bryski: But I think whoever… whoever… whoever figures out the… earning the trust of a practitioner or CISO to be able to make changes within, whether it's network, or it's a patch, or it's a change, or a config change.
+[00:19:00] Israel Bryski: And give them the assurance that we can do that in an automated way without breaking anything.
+[00:19:07] Israel Bryski: Without needing you in the loop, that's…
+[00:19:10] Israel Bryski: That's the next big thing in my book.
+[00:19:13] Israel Bryski: But going back to your 27 is, yeah, change management, patch management would be on… top on the list.
+[00:19:20] Israel Bryski: I still think even on security stuff, I think people are still struggling with implementing AI on the business side.
+[00:19:26] Israel Bryski: Right, so even people that buy Rogo on the banks, implement and use it and may get their value out of it, but even on the security side.
+[00:19:33] Israel Bryski: Leveraging AI for the internal, moving faster within security.
+[00:19:38] Israel Bryski: And I think CISOs today that are adopting AI is mostly in stock.
+[00:19:42] Israel Bryski: That's where I see the most of the adoption.
+[00:19:44] Shoval Abudraham: Yeah.
+[00:19:45] Israel Bryski: Operation Center.
+[00:19:46] Shoval Abudraham: Yeah, but there, I assure you saw that there are a lot of startups there as well.
+[00:19:54] Israel Bryski: Yeah, well, well, I'm biased in that one. I'm an investor in Daylight, so I, you know, so I… Daylight is different than Agentic MDR, it's not really an AI stockbox, but there's a difference between the vendors that are coming onto the market versus… they're not all the same.
+[00:20:10] Israel Bryski: But I'm saying, not vendor-wise, but I'm saying even security practitioners are figuring out, meaning that part of their thinking for 27 is, how do I lever… how do I do more with less?
+[00:20:21] Israel Bryski: Alright, everyone's feeling the pressure, budgets are getting pressured, headcount's getting pressured.
+[00:20:25] Israel Bryski: So if I need to do more with less, with less people, let's say.
+[00:20:28] Israel Bryski: I need to adopt AI, and what use cases am I going to adopt it for, and how do I actually get the ROI?
+[00:20:35] Israel Bryski: So I could do more with less, versus just bullshit stuff, you know?
+[00:20:38] Shoval Abudraham: Yeah. And besides, like, all the SOC, roles and people, what are the second place there are, like, too much people, too much waste of time and money?
+[00:20:51] Israel Bryski: That's a good question, good question. GRC, oh shit, GRC. No one likes GRC, everyone hates GRC.
+[00:20:58] Shoval Abudraham: Okay, well, in here.
+[00:20:59] Israel Bryski: Ideating teams don't like… VCs don't like GRC, either.
+[00:21:03] Shoval Abudraham: Anecdotal.
+[00:21:05] Israel Bryski: Just so you know that.
+[00:21:07] Israel Bryski: Governance Risk Compliance.
+[00:21:09] Shoval Abudraham: Yeah, but what exactly there?
+[00:21:13] Israel Bryski: I'm just seeing this… the role that I'm sitting at at Rogo is, like, I'm sitting in front of these big banks, biggest banks in the world, and they're…
+[00:21:18] Shoval Abudraham: Yeah.
+[00:21:19] Israel Bryski: a shit ton of questions. They have due diligence questionnaires.
+[00:21:22] Israel Bryski: And they're constantly asking questions across… like, they want to see all the controls that you're doing better than they're doing themselves, and they know where their skeletons lie, but it doesn't matter. Even if they know they stink at IAM, they're going to force you to do, you know, the best IAM policies, the most least privilege, and so on and so forth.
+[00:21:41] Israel Bryski: And it's a tough job. Even with AI, our use of AI to automatically fill out DDQs.
+[00:21:49] Israel Bryski: that doesn't solve the problem. You still need technical depth, like, and that's where GRCs fall short. Yeah. The GRC analysts are not technically, you know, you need a solutions architect that spent 3 years, 5 years in security.
+[00:22:01] Israel Bryski: to be able to push back on a client's dumb request, because you can't tell them. Client's always right, but you could say.
+[00:22:08] Israel Bryski: You know, what's the threat model of, you ask me this question, what is the threat you're trying to, you know.
+[00:22:14] Israel Bryski: Anyway, it's mostly, I think, a people problem versus a technology, or maybe there's a technology.
+[00:22:20] Shoval Abudraham: So, you're talking mostly about the part that you need to…
+[00:22:24] Shoval Abudraham: Answer a questionnaire, security questionnaire from a customer.
+[00:22:29] Israel Bryski: Yeah, but that's too narrow. There's been companies that came and built stuff already. There's a company called Priva in the US that was bought, I forgot who bought them, but they were auto-filling, but now that was pre-LLMs. Now with LLMs, you don't need…
+[00:22:42] Shoval Abudraham: Yeah, you don't need a company.
+[00:22:45] Israel Bryski: Yeah, well… well, you still need… you still need organizational context. Like we do is we expose our super agents internally to our codebase. Our entire codebase is exposed. So I could actually source answers to the DDQOs from what actually sees infrastructure as code.
+[00:22:59] Israel Bryski: Versus with just an LLM pulling stuff from the training, from their training. Yeah. Anyway…
+[00:23:05] Shoval Abudraham: And you build it internally.
+[00:23:07] Israel Bryski: Well, the agent, yeah, but, yeah. But then we use… we leverage all… yeah, the agent we built internally.
+[00:23:14] Israel Bryski: Yeah.
+[00:23:15] Israel Bryski: So GRC, yeah, that's probably not a good place for you to go,
+[00:23:20] Israel Bryski: But GRC is, or at least in the startup world, even, you know, the truth is, even in the banks, GRC teams, govern… like, governance teams are big.
+[00:23:29] Shoval Abudraham: What do they do there? Like, what exactly their roles there?
+[00:23:33] Israel Bryski: bunch of nonsense. I mean, I said, there were paper pushing.
+[00:23:38] Israel Bryski: You're… you're responding to internal audits, like having… at the big banks, you have three lines of defense. You have your engineers, hands on keyboard, those are the control owners. They build and own the controls. The CISO's usually in that line of one.
+[00:23:51] Israel Bryski: The line two is usually called, like, risk oversight, governance, like, risk oversight. They oversee the CISO's org, and they challenge the CISO's org, and the third line of defense is internal audit. Internal audit…
+[00:24:03] Israel Bryski: Would… they go around, they do these audits, and you have to now respond, so the governance risk compliance team within the security function
+[00:24:10] Israel Bryski: The CISO doesn't want to deal with internal audits, so they use that team, you deal with audit. You just make sure you're closing the findings and dealing with them.
+[00:24:17] Israel Bryski: regulatory, every bank is regulated by 5 to 10 different regulators in the U.S, and then if you're in different jurisdictions, you have Monetary Authority of Singapore, Mass, and Singapore, and then you have the UK,
+[00:24:32] Israel Bryski: And you're dealing with all the legal entities, you have to deal with those exams and questions that you get from those people. Again, governance risk people deal with those.
+[00:24:40] Shoval Abudraham: If I understand correctly, the GRC, position will manage those requests from their, regulatory,
+[00:24:49] Israel Bryski: regulatory… Institutes…
+[00:24:51] Shoval Abudraham: And direct the system.
+[00:24:53] Shoval Abudraham: Like, what you need to do, which security, best practices you need to operate, stuff like that.
+[00:25:00] Israel Bryski: Yeah, there's, like, feedback loop from that team.
+[00:25:02] Shoval Abudraham: And they are not under the CISO?
+[00:25:05] Israel Bryski: No, governance risk compliance? They really are. Like, so, like, when I was at Goldman Sachs, there was a team… there were 4 major teams, one of them was called Tech Risk Governance.
+[00:25:14] Israel Bryski: The name of the department was Technology Risk, and then they had a Technology Risk Governance sub-team.
+[00:25:21] Israel Bryski: And I was on that team, it was, like, maybe 35 people globally, maybe 40.
+[00:25:26] Israel Bryski: And most of them were not technical.
+[00:25:29] Shoval Abudraham: Cool.
+[00:25:30] Shoval Abudraham: Cool, interesting.
+[00:25:34] Shoval Abudraham: Well, I see that we are almost in time, so I want to be mindful of your time and not to take more than it is. As you see, we are totally exploring, like, we don't want to be another AI security company here on the ground.
+[00:25:51] Israel Bryski: I mean, I got…
+[00:25:52] Shoval Abudraham: So…
+[00:25:53] Shoval Abudraham: So we are doing the… we are doing a real research, you know, and we're putting a lot of time and effort in that.
+[00:26:00] Shoval Abudraham: And we would love, like, we're always circling back and, like, rethink about stuff. We would love, you know, to keep you in the loop and share updates and maybe, you know, share more of the directions we have and get your feedback in the future.
+[00:26:15] Shoval Abudraham: Of course, we will want to be inibrate snood nikim, like, you know, push, pushy too hard, but we will love to keep you in our journey and, you know,
+[00:26:28] Shoval Abudraham: share with you.
+[00:26:29] Israel Bryski: Yeah, maybe, you know, go back one last thing to the… you asked about 2027. I think another thing to think about is control drift.
+[00:26:37] Israel Bryski: Right? So, like, you're… you… as a CISO, they operate all these different controls. How do you make sure that the controls are operating as you initially designed? So a lot of the big, mature companies have measurements and technology teams that build and measure those controls to make sure it doesn't deviate.
+[00:26:50] Israel Bryski: But a lot of the immature companies don't have anything in that space.
+[00:26:53] Shoval Abudraham: By control, what do you mean?
+[00:26:55] Yuval Mermer: What is it, control?
+[00:26:56] Israel Bryski: Alright, you could do it as simple as an EDR. You have Sentinel-1, CrowdStrike, and your endpoints. You configure it, you buy it, you configure it. You may have a team that manages it, that team should be going, looking at all the release notes every week, every month, every quarter, and if there's new features, functionality, and enabling, testing those new policies, and enabling it.
+[00:27:12] Israel Bryski: So you may have an idea of how great your EDR is, but if it's… if your idea of how great it is is divorced from the actual… what's actually being implemented.
+[00:27:21] Israel Bryski: The control is not operating as designed. So your policies may determine exactly how the control should be designed.
+[00:27:27] Israel Bryski: But if it's not, you need a way to see control drift, that you're drifting away from your original intent. And that's just one example, I used EDR, but it could be, you know, cloud security, in cloud, you have multiple different, you know, services.
+[00:27:40] Israel Bryski: You know, like, how do I make sure… in cloud it's easier, because you can use the native services within cloud to do that.
+[00:27:45] Israel Bryski: But you could go beyond cloud, you could go data leakage prevention, you could go to every vertical within.
+[00:27:49] Shoval Abudraham: All your security stuck.
+[00:27:52] Israel Bryski: Yeah, I mean, like, I may have a policy that says all my EBS volumes on AWS have to be encrypted.
+[00:27:58] Israel Bryski: That's a statement. Okay, you can use AWS Config, you can use all the native services there to do that, but you need to instrument this all into one place, and have a single pane of glass to look at my entire program to see if I have control drift.
+[00:28:09] Israel Bryski: And if you don't have any control drip, that means, okay, your program's operating tip-top, you're good. You know, chances of a breach is lower, let's say.
+[00:28:17] Yuval Mermer: You mean kind of a posture?
+[00:28:20] Israel Bryski: Yeah, but I don't like… I don't like the star SPM space.
+[00:28:25] Israel Bryski: Anything that ends in security posture management means you're telling me shit that's broken that I have to fix. I don't want vendors to tell me.
+[00:28:31] Yuval Mermer: I think that's fixed.
+[00:28:31] Israel Bryski: If you need to tell me what needs to be fixed, you fix it for me, and tell me that you fixed it, and if you broke something, give me a one-click, undone, unrollback button.
+[00:28:40] Israel Bryski: So I could say, I'm sorry, everybody internally at the company, and it won't happen again.
+[00:28:44] Shoval Abudraham: Well, all this conversation was great just for this, good evening.
+[00:28:49] Yuval Mermer: And I like this approach.
+[00:28:51] Shoval Abudraham: Yeah.
+[00:28:53] Yuval Mermer: It's not a typical approach of CISOs.
+[00:28:54] Israel Bryski: But that's why I said, well, they're gonna have to come around. The CISOs are… the CISOs are deluding themselves if they say, yo, you can't make a config change in my network. Well, you know what? Again, if those fable comes true, you're not gonna have a choice.
+[00:29:06] Israel Bryski: And you're gonna be… you're gonna be, under… underwater. So, whoever comes up with a platform that does the order remediation safely, again, in any single vertical, pick your vertical in cyber, it's gonna be a very big deal. And people are doing that. I'm talking to startups, people are doing… in different areas, they're doing that already.
+[00:29:23] Israel Bryski: Now it's like, again, I have to see the market catch up. That's the part that you're… you want to see. The CISO's actually saying, yes, I need a tool that does this for me.
+[00:29:32] Yuval Mermer: But why does the… sorry if it's, if we're out of the time.
+[00:29:36] Shoval Abudraham: more peanuts?
+[00:29:36] Yuval Mermer: It's.
+[00:29:37] Israel Bryski: Halftime, halftime?
+[00:29:38] Shoval Abudraham: Yeah.
+[00:29:39] Yuval Mermer: is… does the remediation part is not… is… is in the interest of the CISO?
+[00:29:45] Yuval Mermer: It's not like… it's not in the… in the… under the umbrella of the CIO?
+[00:29:50] Israel Bryski: Well, it depends, it depends, yeah. Like, you could talk about, like, a cloud change or a network change, yeah, that would probably be under the CIO.
+[00:29:57] Israel Bryski: Hmm. So, like.
+[00:30:00] Israel Bryski: It's almost like the product would influence, again, you're not going to want to hear this as people are ideating.
+[00:30:06] Israel Bryski: Does the product influence the reorg and the rethinking of an org structure, or does org structures change over time, naturally, and as it changes, vendors build products that work in that space?
+[00:30:19] Israel Bryski: So I think the first option where the product influence is probably a stupid idea, right? To build something that you think you're gonna change how the orgs are gonna… Yeah. Right? That's probably impossible, because, like, I consider it today, and I can argue on a reorg.
+[00:30:34] Israel Bryski: I make my case of why I think something's free, or no one's gonna listen to me. Why would they listen to a vendor or a product? So, I'll put that, I'll put that on the side.
+[00:30:40] Israel Bryski: But to answer your question…
+[00:30:45] Israel Bryski: Yeah, I mean, it's… there are going to be some areas that will be under the CISO, and there'll be some areas under the… under… like, DLP is squarely under the CISO.
+[00:30:55] Israel Bryski: Right, so the deployment of DLP agents, the CIO, and the technology team does that. But the configuration of the policies.
+[00:31:01] Israel Bryski: That's gonna be the CISO. But the CISOs still probably have to run things by the CIO. There's a change management process, right? Because if I'm… if I'm instituting a block, that users are going to be noticed a block.
+[00:31:12] Israel Bryski: and they're going to complain about it, the CIO better have been, you know, forewarned about it. So there'll be a change management process, we'll discuss it in the team, and people give thumbs up, okay, we like that change. Same with the EDR. EDR is gonna be in the CISO world.
+[00:31:27] Israel Bryski: I mean, like, if the CISO's using any of the security-native services within AWS, like Security Hub, and GuardDuty, and Detective, and NACI, that's squarely in the security department. They can do whatever they want with those things. It's not gonna impact, you know, the CIO, but if making a config change, I'm changing a security group or an ECL,
+[00:31:46] Israel Bryski: Alright, probably going through the CM, the CM process, the change management process, right?
+[00:31:50] Israel Bryski: And that's where, typically.
+[00:31:54] Israel Bryski: things split. It's like, anything that can impact the reliability, the stability of the production environment.
+[00:32:01] Israel Bryski: that's usually your indicator that the CIO will need to be involved.
+[00:32:04] Israel Bryski: Anything that I can do, change in my world that doesn't impact
+[00:32:09] Israel Bryski: Any end users, or the config, or the architecture sees something to do on their own.
+[00:32:15] Shoval Abudraham: Cool.
+[00:32:17] Israel Bryski: Alright.
+[00:32:19] Shoval Abudraham: Yisrael, again, thank you so much. It was a super valuable conversation for us, you know, even though.
+[00:32:25] Yuval Mermer: Like…
+[00:32:25] Shoval Abudraham: We don't have a clear direction, we got a lot of, you know, I already marked the sentences as you talked.
+[00:32:34] Shoval Abudraham: guidelines to our research, and as a C… as…
+[00:32:38] Shoval Abudraham: as, like, how CISO sees the world. So thank you so much, and we will, again, we would love to keep in touch and, you know, share with you our journey.
+[00:32:48] Israel Bryski: Sounds good. Take care, nice to meet you both.
+[00:32:50] Yuval Mermer: Thank you, son.
+[00:32:51] Shoval Abudraham: Meet you. Have a great day!
+[00:32:53] Israel Bryski: You too.
+[00:32:54] Yuval Mermer: Bye.

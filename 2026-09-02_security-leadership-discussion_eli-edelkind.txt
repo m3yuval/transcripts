@@ -1,0 +1,205 @@
+Date: 2026-09-02
+Topic: Security Leadership Discussion - Eli Edelkind
+Meeting UUID: C5627903-C334-42F3-8B96-0F7B50527B5B
+Source: transcript
+Entries: 199
+
+[00:00:00] Shoval Abudraham: We'll start… Amazing.
+[00:00:03] Shoval Abudraham: So, a bit about me. I'm Shoval. I met cybersecurity for the past 10 years, started in the Unit 8200, like most of the Israel founders. There I actually met Yuval.
+[00:00:16] Shoval Abudraham: we both served in the department that was responsible for the infrastructure of the, of this unit. Basically hold the role of DevOps
+[00:00:30] Shoval Abudraham: an infrastructure engineer and also a security engineer. We had to operate and manage and build this infrastructure from both perspectives, so that was super, interesting and cool. I served for five and a half years, released as a captain.
+[00:00:46] Shoval Abudraham: And after that, I actually did a bit of a shift, because, you know, when you worked as kind of a… like, as DevOps, you worked a lot with engineers and other people in the…
+[00:01:01] Shoval Abudraham: in the unit, and I always, like, was fascinating about creating more value for them, and how I'm optimizing the value, and all the research around creating value led me to,
+[00:01:15] Shoval Abudraham: became, product manager, because I was always fascinated about those stuff, and about customers, and about problem solving. So I became product manager, started in a company called Perception Point, actually on the… also cybersecurity company, was part of… was on the area's own workspace security endpoint, also.
+[00:01:38] Shoval Abudraham: I led there all the detection capabilities, that was… were based basically on ML, like, machine learning,
+[00:01:47] Shoval Abudraham: and AI, even before people knew what is ChatGPT, and you know, Agent Framework was all over the place, I already built one, some.
+[00:01:59] Shoval Abudraham: That was a great journey, and it… the company was acquired by Fortinet.
+[00:02:04] Shoval Abudraham: After that, I moved to another cybersecurity company as a product manager called Koi Security. Also, great adventure, great product, amazing customers, very innovative in terms of how we use the AI. This company was acquired as well by.
+[00:02:23] Eli Edelkind: We've heard quite a bit.
+[00:02:24] Shoval Abudraham: What?
+[00:02:25] Eli Edelkind: Palo Alto.
+[00:02:26] Shoval Abudraham: Palo Alto? Yeah.
+[00:02:29] Eli Edelkind: I'm sorry.
+[00:02:30] Shoval Abudraham: Yeah, that was basically my sign, you know, to start my own journey, with Yuval. It was, like, an old dream of both of us to… first, to start and work… to work together again.
+[00:02:44] Shoval Abudraham: And then to build something, together. So that's what we're doing now. And, like, as I did the shift that I, told you about, Yuval Dive…
+[00:02:55] Shoval Abudraham: into the technology, like, we started on the same place, but we both did, like, wrote the same story from different perspective. So I'll let, Yuval share about,
+[00:03:06] Yuval Mermer: Shoval didn't tell you, but right after the army, when she started with the perception point.
+[00:03:11] Yuval Mermer: as a product manager there, she… she was the product manager of the core detection engine of Perception Point.
+[00:03:19] Yuval Mermer: It's like the… the… actually the… all the product of Perception Point, which is really, really for talented people, so she's a genius product manager, and I can learn from her a lot, and…
+[00:03:31] Shoval Abudraham: Of course, exaggerating.
+[00:03:33] Yuval Mermer: This is what I think. And I started my career at age 100, also. I was a Shoval soldier, and together we developed
+[00:03:46] Yuval Mermer: two big platforms for the unit. One of them was a platform for managing, mapping, and operating the large and complex networks we have in our unit. Those networks were multiple networks in a very sensitive area.
+[00:04:03] Yuval Mermer: And after this great journey, developing together, when Shoval was the product manager and I was the developer, I promoted to be a team lead, and two years after, I promoted again to be the head of the DevOps and infrastructure department. I led 40 engineers.
+[00:04:22] Yuval Mermer: Across 5 teams, we ran large-scale networks, petabytes of data, production environments, and all the sensitive and…
+[00:04:32] Yuval Mermer: complex networks of the operations rooms in 8200, and then when I finished the Army, 10 years… it was around 10 years in AD-100. I finished the Army and started to work as the director of DevOps and SRE at Paragon, which is an Israeli cyber company.
+[00:04:52] Yuval Mermer: Can you hear me?
+[00:04:54] Eli Edelkind: Yeah, I can hear you.
+[00:04:55] Yuval Mermer: Yeah.
+[00:04:57] Yuval Mermer: So I started the work at Shoval, we can't hear you if you're trying to say something.
+[00:05:06] Shoval Abudraham: I think it's just me.
+[00:05:08] Yuval Mermer: Okay, now we can hear you. So at Paragon, I led 25 people, 3 teams. We developed tailor-made solutions for Paragon's product network.
+[00:05:20] Yuval Mermer: We tailor-made solutions for the specific customers Paragon has.
+[00:05:26] Yuval Mermer: it's, like, governments and agencies, and we had to develop for their specific needs, which was really challenging and interesting for us. And then, after two years and a half, I quitted Paragon and started the journey with Shoval.
+[00:05:43] Yuval Mermer: So, and they said, this is about me.
+[00:05:46] Yuval Mermer: We would love to hear about you.
+[00:05:48] Eli Edelkind: Nice. So I, I did 6 years active duty in the Marine Corps.
+[00:05:54] Eli Edelkind: And, then did,
+[00:05:58] Eli Edelkind: I went to go work for L3 Harris, which is, like, the US's version of Elbit.
+[00:06:05] Eli Edelkind: And then,
+[00:06:07] Eli Edelkind: went to work for Lowe's after the big breach… I'm sorry, the big breach that Home Depot… or that Target had. Worked at Lowe's for about 8 years building their cybersecurity program.
+[00:06:18] Eli Edelkind: And Went to,
+[00:06:25] Eli Edelkind: kava in 2022, about a year before we IPO'd.
+[00:06:31] Eli Edelkind: I've been to Israel twice. One was in 2006, right after the second Lebanon War. And, you know, I've been basically doing lessons learned on all the… all the things that happened. I've probably been to more Israeli military bases than most Israelis, to be honest.
+[00:06:51] Eli Edelkind: And, been, I saw that, Vinna Bahad won, and, and,
+[00:06:56] Shoval Abudraham: Really?
+[00:06:56] Yuval Mermer: Oh.
+[00:06:57] Eli Edelkind: been to the Mossad buildings, been to a bunch of different bases across Israel.
+[00:07:03] Yuval Mermer: Ow.
+[00:07:04] Shoval Abudraham: Like, during your service, or just, wow, cool.
+[00:07:08] Eli Edelkind: And then I went back in 2010 for a couple days of training with, Urban Training, so…
+[00:07:14] Eli Edelkind: I did, been at Cava since 2022, got here about a year before IPO.
+[00:07:23] Eli Edelkind: Started off with 3 of us just doing cybersecurity, and now I run cybersecurity infrastructure and tech ops, so…
+[00:07:30] Eli Edelkind: If you haven't heard of kava, it's kind of like the Mediterranean version of Chipotle. Israelis tend to love us. I've gotten mixed reviews on, you know, some Israelis love our hummus, some hate it, some love our falafels, some hate it.
+[00:07:46] Shoval Abudraham: Hello.
+[00:07:46] Eli Edelkind: I can't please everybody, but…
+[00:07:48] Shoval Abudraham: Yeah.
+[00:07:48] Eli Edelkind: But,
+[00:07:51] Eli Edelkind: Cava's doing really well in Miami, which is, like, West Tel Aviv, so I'm sure that it's, you know, that Israelis overall will like it. And, we're growing, like, 20% year-over-year. We had our 500th restaurant, in a couple weeks, so…
+[00:08:06] Eli Edelkind: It's been a crazy rollercoaster. We are trying to do restaurant differently, than any other company that has come before us.
+[00:08:16] Eli Edelkind: you know, we… we have a very lean team. I think a lot of that is because we take advantage of really good technology, really good people, and we don't let process get in our way.
+[00:08:26] Eli Edelkind: You know, we're working on, we have a really good data foundation, we build our own apps, we're working on building our own POS soon, edge compute, and, we're working, you know,
+[00:08:43] Eli Edelkind: buying our own GPUs and stuff like that, so we're doing a lot of pretty innovative things first team.
+[00:08:48] Shoval Abudraham: Yeah, that was exactly my question, like…
+[00:08:51] Shoval Abudraham: that, like, for restaurants, like, why do you even need, security, like, group and CISO, and that sounds super, like, innovative to do all of this inside a company. Like, but why Kava choose to do those, all those development… development, inside?
+[00:09:13] Eli Edelkind: it just makes sense right now. I think that the business case makes sense for itself, right? Like, with restaurant, margins are very low, and so your restaurant-level profit margin can't get better unless you figure out how to, instead of spending OpEx on things, you gotta spend capex, right? So how do you make investments and build things that
+[00:09:31] Eli Edelkind: That'll allow you to leverage your GNA, and that means you gotta build some shit.
+[00:09:36] Shoval Abudraham: Wow, that's cool. I never thought about restaurants business, like, in that.
+[00:09:41] Eli Edelkind: Restaurant margins are very low. Food margins are very low, right? So, how do you increase your margins? You have to figure out how to leverage your G&A. You can't leverage your G&A, and you can't show leverage if you just keep scaling the same costs out, as you grow. You have to be able to leverage it better.
+[00:09:59] Shoval Abudraham: Super cool. Super cool.
+[00:10:01] Yuval Mermer: Impressive.
+[00:10:03] Shoval Abudraham: Cool, wow, that's nice. I really did not heard about this kind of restaurant business before, and it's super interesting. But we will talk about security, less interesting stuff. Yeah.
+[00:10:20] Shoval Abudraham: Okay, so I'll share a bit about what we are exploring. You know.
+[00:10:25] Shoval Abudraham: AI basically changed the whole market, and…
+[00:10:29] Shoval Abudraham: we can see a lot of new products protecting AI, but we are…
+[00:10:37] Shoval Abudraham: exploring the other way. Like, we're understanding that AI is not used only from the organization side, but also from the attacker side, and it increased the speed and the scale and the sophistication.
+[00:10:50] Shoval Abudraham: Of attack. And we believe, like, as you heard from our experience, basically more of from Yuval experience, that we are infrastructure people.
+[00:11:00] Shoval Abudraham: And we believe that this shift in attacks
+[00:11:05] Shoval Abudraham: will, make your organization go to the basics, to the building blocks, to the infrastructure, and make it, secure. And basically, as we understand, like, the infrastructure that we are exploring is network, our favorite one.
+[00:11:24] Shoval Abudraham: And we know that big companies
+[00:11:27] Shoval Abudraham: have complex network, fragmented, network that,
+[00:11:33] Shoval Abudraham: like, they have multiple sites, cloud environments, different vendors, different security tools, firewalls, and we are exploring how CISO's managing those network risks.
+[00:11:50] Shoval Abudraham: In their current, stack, that we believe that did not change, in the past few years.
+[00:11:57] Shoval Abudraham: with those new attack types, and new types of risks that AI brings into the ecosystem.
+[00:12:06] Shoval Abudraham: And we will super…
+[00:12:08] Shoval Abudraham: Curious to hear your take about, managing your network risk in the AI era.
+[00:12:16] Eli Edelkind: I ran network security at Lowe's, for the last couple years I was at Lowe's.
+[00:12:20] Shoval Abudraham: Yeah.
+[00:12:21] Eli Edelkind: we had…
+[00:12:23] Eli Edelkind: you know, 4 clouds, 5 data centers, and every single store is kind of a data center, too. Yeah. With,
+[00:12:32] Eli Edelkind: So, probably one of the most complex networks in retail. And I can tell you, I think Paolo, Fortinet, and Cisco have been negligent in building their products.
+[00:12:43] Eli Edelkind: They don't provide the ability to manage at scale network security in a way that is…
+[00:12:49] Eli Edelkind: That is business sustainable.
+[00:12:53] Eli Edelkind: And so… Gino, I think that the problem is…
+[00:13:00] Eli Edelkind: with network security, you're damned if you do, and you're damned if you don't, right? As a CISO, because, you know, say what you want, but network security is the largest attack surface across
+[00:13:12] Eli Edelkind: any environment. You know, everybody always says, you know, it's become cliche to say identity is the new perimeter, and that's just bullshit. When you look at, any company's data.
+[00:13:24] Eli Edelkind: and you look at all of the things that are blocked at the network layer, it is still the perimeter, right? And it should always be treated as such.
+[00:13:35] Eli Edelkind: I think,
+[00:13:37] Eli Edelkind: you know, managing network at scale is… for a CISO, it's a damned if you do, damned if you don't situation, because if you don't, then you're being negligent at one of the largest attack surfaces a company can have.
+[00:13:50] Eli Edelkind: If you do, you're gonna deal with the fact that Paolo, Fortinet, Cisco, all these companies can't get their firmware done right, that there's glitches, that you're putting everything through a choke point.
+[00:14:01] Eli Edelkind: That is gonna have issues.
+[00:14:04] Eli Edelkind: You're dealing with… you're dealing with control points that are not updated, that don't have context.
+[00:14:12] Eli Edelkind: Things like that. For instance, you know, one time, you know, our CRM at Lowe's was built on a Microsoft product, Microsoft Dynamics, and
+[00:14:24] Eli Edelkind: you know, one bad threat intel, you know, basically, in a Palo firewall, shut off Microsoft Dynamics for us, right? And so we were down on Dynamics for about 30-something minutes while Paolo tried to fix it.
+[00:14:40] Eli Edelkind: And that cost us millions of dollars in revenue, because, you know, because they,
+[00:14:49] Eli Edelkind: call center can't work without a CRM, right? Or not well, right? So,
+[00:14:57] Eli Edelkind: You know, it's a…
+[00:14:59] Eli Edelkind: it's a damned if you do, damned if you don't situation. I think, you know, we tried to solve it at Lowe's the best we could. We used, you know.
+[00:15:07] Eli Edelkind: a combination of VM firewalls with auto-scaling capabilities in the cloud. Autoscaling was a pain in the ass, it didn't really work that well. And then we used, you know, large, you know, 7K firewalls in our data center and stuff like that, and those things had
+[00:15:24] Eli Edelkind: hardware issues and firmware issues and caused all sorts of problems. And Paolo didn't take accountability for it, ever.
+[00:15:32] Eli Edelkind: And then we used, you know, on the policy management side, we used Audisec to try to tie it all together.
+[00:15:39] Eli Edelkind: And it just… it worked okay enough, but it never was great. It never was excellent. And, you know, we protected the company, but we also caused a lot of problems, and…
+[00:15:50] Eli Edelkind: there's got to be a better way, and I think, you know, Paolo, Cisco, Fortinet, those companies have been negligent in not truly understanding
+[00:15:59] Eli Edelkind: The business case and how they cause problems with companies.
+[00:16:06] Yuval Mermer: And, like…
+[00:16:08] Shoval Abudraham: Sorry, Yuval?
+[00:16:09] Yuval Mermer: Go ahead, Nike.
+[00:16:10] Shoval Abudraham: Like you described,
+[00:16:14] Shoval Abudraham: two issues, if I understand correctly. Like, a lot of them, but I, segment them as two. Like, first is, like, the network tools themselves of this vendor you mentioned, that
+[00:16:27] Shoval Abudraham: does not work… do not work properly, or not do the best, job. And the second one is, the managing, like, the policy management perspective. I understand, like, as I've segmented that correctly, does it make sense?
+[00:16:47] Shoval Abudraham: Cool. What bothered you the most?
+[00:16:51] Shoval Abudraham: There? Like, which one of them?
+[00:16:56] Eli Edelkind: I'm sorry, say that one more time.
+[00:16:59] Shoval Abudraham: Like, the fact that the Apollo firewall did not work well, and did an outage and create,
+[00:17:10] Shoval Abudraham: cash lost for the business? Or you also mentioned the policy management side, that was not ideal. So what from those two was a better pain… a bigger pain for you?
+[00:17:28] Eli Edelkind: They're both a pain. Like, you can't… you can't have business disruption.
+[00:17:33] Eli Edelkind: Ever in a business, right? Like, security doesn't really serve a purpose of security as the one taking down the company, right?
+[00:17:41] Eli Edelkind: And from a policy management side of things, right, like.
+[00:17:45] Eli Edelkind: You can't really have a good network security
+[00:17:48] Eli Edelkind: you know, like, you can have the best firewalls in the world, and if you have any allow, like, you're just fucked, right? So…
+[00:17:55] Eli Edelkind: You know, to try to get more fine-grained policy, and then you get into craziness like, you know, managing north-south versus east-west versus micro-segmentation policy. How do they all tie together? It's just not done well, and there's really no great solution for it.
+[00:18:14] Yuval Mermer: Are you experiencing those pains in the current company you work at, at Kava?
+[00:18:21] Eli Edelkind: I'd rather not talk about our posture, but, I think, overall, I'm…
+[00:18:32] Eli Edelkind: Overall, like, in a cloud environment.
+[00:18:36] Eli Edelkind: I don't think Layer 3 and Layer 4 is good enough, but, you know, we have… we have a lot of mitigating controls, and I would like…
+[00:18:44] Eli Edelkind: I would like, you know, there to be better network security products out there. I can't put Kava through,
+[00:18:51] Eli Edelkind: I can't hold Cavo's growth back, or cause damage to Kava, right? Yeah. So, hope that makes sense.
+[00:18:59] Yuval Mermer: Yeah.
+[00:19:01] Shoval Abudraham: Yeah, totally. Like, when…
+[00:19:04] Shoval Abudraham: Can you elaborate a bit more what you mean by a better network tools out there?
+[00:19:12] Shoval Abudraham: Like, what exactly in an ideal world do you imagine?
+[00:19:18] Eli Edelkind: What?
+[00:19:21] Eli Edelkind: I haven't found anything yet that's better. You know, we're looking at Aviatrix right now. There's a lot of companies,
+[00:19:30] Eli Edelkind: you know.
+[00:19:38] Eli Edelkind: There's a lot of companies,
+[00:19:42] Eli Edelkind: that are coming out with policy management capabilities that, you know, combine AI and try to do, like, you know, look through flow logs and stuff like that to try to make better policy management, and…
+[00:19:54] Eli Edelkind: You know, it's fine, but, like, it's just…
+[00:19:57] Eli Edelkind: It's a tough place, because you've got to…
+[00:20:00] Eli Edelkind: look at… you have to build a ton of integrations and have a ton of visibility. Yeah. I think it's now, finally, the technology's there.
+[00:20:08] Eli Edelkind: with AI to be able to do it well, but it's still hard.
+[00:20:14] Yuval Mermer: You don't think those companies achieved the…
+[00:20:17] Yuval Mermer: The ability to… to do it as you wish.
+[00:20:23] Eli Edelkind: So, so what?
+[00:20:25] Yuval Mermer: I'm saying, do you think that those companies you said that are trying to solve the policy management problem?
+[00:20:34] Yuval Mermer: with all the integrations and the code they need to write, do you think they are proceeding to solution?
+[00:20:45] Yuval Mermer: In this kind, like… to integrate with…
+[00:20:48] Eli Edelkind: I don't think… I've seen… I haven't seen any holistic solution that makes me happy.
+[00:20:53] Yuval Mermer: Cool.
+[00:20:54] Shoval Abudraham: And I want to share a bit about, like, our, perspective about it, because…
+[00:21:01] Shoval Abudraham: Perfectly… basically, we knew that you will understand those problems, because, as you mentioned, we saw your, your experience in the previous company you worked for, and we saw that you, manage complex network, and…
+[00:21:17] Shoval Abudraham: Basically, as we… as I mentioned in the beginning, we are also, came from there, we know the complexity of networks, and
+[00:21:27] Shoval Abudraham: our mind went there, you know? Basically, we think there is a big problem there, and that we… now the technology can solve it, and we want to address it, but…
+[00:21:38] Shoval Abudraham: One thing that we keep hearing
+[00:21:40] Shoval Abudraham: is that this problem, and I think it's related to what you said at the beginning, that you damned if you do, and you damned if not.
+[00:21:50] Shoval Abudraham: that this problem is not urgent enough for the CISO, not really… I won't say care, but, you know, some of them told us, like, this is the network engineering responsibility. That's not my responsibility. So I'm curious to hear your take about that.
+[00:22:10] Eli Edelkind: I think CISOs that say that are retarded.
+[00:22:13] Eli Edelkind: A CISA's responsibility is to protect the company.
+[00:22:18] Eli Edelkind: So, it may be,
+[00:22:24] Eli Edelkind: So, like, that's a lack of taking ownership of a problem, right? Security is the CISO's problem, right?
+[00:22:32] Shoval Abudraham: Yeah.
+[00:22:33] Eli Edelkind: So…
+[00:22:34] Eli Edelkind: Making sure that policy management is done right is a… and making sure that you have the right controls in the right place is a CISO's problem.
+[00:22:42] Eli Edelkind: And if the ways that you do it put the company at risk.
+[00:22:49] Eli Edelkind: then the company's gonna stop doing it. So it is all a CISO's problem, whether they like it or not. And if they say it's not their problem, then they're retarded.
+[00:22:59] Shoval Abudraham: Yeah, I totally understand and agree. And I have another question. It's maybe, will be, I don't know how to say it, chutzpah in English. Yuval, maybe you have the word. Do you know the word?
+[00:23:15] Eli Edelkind: Yeah, I know if that's fine.
+[00:23:16] Shoval Abudraham: Yeah. But, like, sounds like you're looking for this kind of solution.
+[00:23:21] Shoval Abudraham: Like, if we decide to go this road, would you be interested and be part of this?
+[00:23:30] Shoval Abudraham: like, journey.
+[00:23:31] Eli Edelkind: Maybe, maybe, I mean, we're… you guys are pretty… pretty young, yeah. So, you know, I…
+[00:23:38] Eli Edelkind: maybe the team's looking at options right now. We're about to POC Aviatrix, but if there's any… there's any issues with Aviatrix, we're not gonna go with it, right? So…
+[00:23:51] Eli Edelkind: You know, but regardless, I'm happy to continue talking with you guys. You see, I sound very smart.
+[00:23:58] Eli Edelkind: Just don't send me beepers and we'll be okay. And, you know, ultimately, you know, I love to keep, keep up with smart folks, so, you know, I'm happy to, happy to learn more from you guys as you guys, you know, go on this journey, and I'm happy to tell you what I love and hate anytime.
+[00:24:17] Eli Edelkind: So, hope that makes sense.
+[00:24:19] Shoval Abudraham: Yeah, totally, and we are super appreciated. We are…
+[00:24:23] Eli Edelkind: Just do me a favor, don't, like, don't ask for time, just take time, please. Like, don't… I gave you the link to my calendar, I don't… I get poked all the time, by people, you know, and, you know, you have my… you have a link to my calendar, just find free time and take it.
+[00:24:39] Yuval Mermer: We'll do.
+[00:24:40] Shoval Abudraham: As I mentioned.
+[00:24:41] Eli Edelkind: If you guys annoy the shit out of me, if you guys annoy the shit out of me, I'll be like, okay guys, I can't do this anymore, but, you know, I don't think you guys will. You guys sound very smart, and
+[00:24:51] Eli Edelkind: You know, please just take time whenever you need it.
+[00:24:54] Shoval Abudraham: Amazing. Eli, we super appreciate it, thank you, we will definitely will keep you in the loop, and we'll take from your time.
+[00:25:03] Eli Edelkind: Lee's in.
+[00:25:03] Shoval Abudraham: Thanks again, really, that was super meaningful for us, and have a great day!
+[00:25:10] Eli Edelkind: Yep. Great meeting y'all. Take care, be safe.
+[00:25:12] Shoval Abudraham: Thank you.
+[00:25:13] Yuval Mermer: Bye-bye.
+[00:25:13] Shoval Abudraham: Bye.

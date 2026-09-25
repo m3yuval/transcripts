@@ -1,0 +1,187 @@
+Date: 2026-08-28
+Topic: Security Leadership Discovery - Andrey Lovchiy
+Meeting UUID: 8EA9D985-0C69-4935-AC64-C2529C2EF237
+Source: transcript
+
+[00:00:00] Shoval Abudraham: Cool.
+[00:00:01] Shoval Abudraham: So, I'll start,
+[00:00:04] Shoval Abudraham: I'll start with the introduction. I'm Shoval. I started my cyber career 10 years ago in the Unit 8200. I actually met Yuvaldel. We both serve in the department that was responsible for the DevOps and IT infrastructure there. Basically, was responsible both for the operational side, but also the
+[00:00:28] Shoval Abudraham: a security perspective, you know, to maintain those infrastructure in a secure way, and to build them securely. I served for five and a half years, released as a captain, and after my service, I actually did a bit of a shift, because I was super curious about
+[00:00:47] Shoval Abudraham: The more…
+[00:00:49] Shoval Abudraham: of a customer side of products, like, why… what are the pains of the customers, how you understand them, how you, create value for customers, and I became a product manager. I did it in multiple companies, for the past, like, 6 years, started in a company called Perception Point, in the endpoint security field.
+[00:01:12] Shoval Abudraham: Basically was responsible to all detection capabilities, did a lot of work with AI and LLM before people knew what is, ChGPT and agents.
+[00:01:25] Shoval Abudraham: that was a great adventure, and she, and Perception Point was acquired by Fortinet. Then I moved to Koi Security, also in the endpoint security field. Also great company, amazing customers.
+[00:01:41] Shoval Abudraham: great product, very innovative in terms of how we used AI. And this company was acquired as well by, Palo Alto.
+[00:01:51] Shoval Abudraham: And that basically was my sign to move forward and build something on my own. So, as I mentioned, I met Yuval during my military service, and we are very good friends.
+[00:02:03] Shoval Abudraham: since then. So… now we are working on our thing, and I, I let, like, I always… I love…
+[00:02:13] Shoval Abudraham: Telling that we both started on the same place, but…
+[00:02:16] Shoval Abudraham: wrote, the different sides of the story. I did a shift into the business, side, more customer, facing roles, and Yuval went deep into the technology, so his experience is the real thing, so I'll let him, share.
+[00:02:35] Yuval Mermer: Andrei Wate, Shoval didn't tell you.
+[00:02:37] Yuval Mermer: Is that she was my first commander in the unit.
+[00:02:40] Shoval Abudraham: Beautiful.
+[00:02:41] Yuval Mermer: Yeah.
+[00:02:43] Shoval Abudraham: your dime.
+[00:02:45] Yuval Mermer: A short time, yeah, but she was the first. And, as a… as an engineer.
+[00:02:51] Yuval Mermer: and a developer, under Shoval's command, we ran together two big projects.
+[00:02:58] Yuval Mermer: And when… in this project, Shoval was the product manager, and I was the developer, and we did this game a long time ago.
+[00:03:08] Yuval Mermer: And we developed really great systems, one of them still working at the unit, so it's very exciting. Then after I was an engineer, I promoted to be a team lead.
+[00:03:20] Yuval Mermer: And then I promoted again to be the head of the DevOps and Infrastructure Department. I led 40 engineers across 5 teams, and the teams they ran
+[00:03:34] Yuval Mermer: Large-scale networks, very complex networks of operations room, which was very sensitive, with high security restrictions, and we ran a production environment and petabytes of data.
+[00:03:52] Yuval Mermer: And after this long journey on AD200, I finished the army, it was 10 years, I think.
+[00:04:01] Yuval Mermer: And I finished Army and started at Paragon, which is a cyber company.
+[00:04:06] Yuval Mermer: Did you worry about it?
+[00:04:10] Yuval Mermer: Paragon is a cyber company, and there I was the director of DevOps and SRE.
+[00:04:16] Yuval Mermer: led 25 people across 3 teams, we developed automated network solutions for the product, and then…
+[00:04:23] Yuval Mermer: I quitted the job a month ago, and we started our journey together. And now we would love to hear about you a bit.
+[00:04:33] Andrey Lovchy: Hey, I'm working as, Chief Information Security Officer in SoftClub, and,
+[00:04:41] Andrey Lovchy: My supervisor in the… it's,
+[00:04:45] Andrey Lovchy: Aber security operations, security engineering, and, self-class application.
+[00:04:54] Andrey Lovchy: career development company, also vacation security, also, what is my duties, and, I also started, some, part of, little part of, business, for SoftClub, as, also.
+[00:05:15] Andrey Lovchy: Information security, consulting, and,
+[00:05:20] Andrey Lovchy: motion, system, design, and, also focus,
+[00:05:31] Andrey Lovchy: It's not only with clients of the main business of SarkCorp, it's not just our customers for our software.
+[00:05:40] Andrey Lovchy: But, also, different companies, different countries, so…
+[00:05:49] Andrey Lovchy: Also, I really… you said about supervising, and I have also one interesting situation.
+[00:06:00] Andrey Lovchy: when, I walked, national Bank of Republic of Belarus.
+[00:06:09] Andrey Lovchy: Why's a problem.
+[00:06:13] Andrey Lovchy: Oh, shocking.
+[00:06:15] Yuval Mermer: Something has changed with your earbuds.
+[00:06:20] Andrey Lovchy: Maybe I'm… It sends it to…
+[00:06:23] Shoval Abudraham: The same issue.
+[00:06:24] Yuval Mermer: shouted.
+[00:06:24] Shoval Abudraham: AirPods, it's always happened to me.
+[00:06:27] Yuval Mermer: Yeah.
+[00:06:28] Andrey Lovchy: So, when I, worked, in, National Bank of Republic of Belarus, the, super, my supervisor, he still, he was still working in, National Bank when I left National Bank and joined Seth Club. And, after, several years,
+[00:06:52] Andrey Lovchy: Good to work with you. I'm his supervisor.
+[00:06:56] Shoval Abudraham: Well, that was exactly the case in our side, you know?
+[00:07:00] Andrey Lovchy: Because…
+[00:07:01] Shoval Abudraham: Because I also, like, Yuval was my soldier, but then I became his soldier when I did,
+[00:07:07] Andrey Lovchy: Preserve you.
+[00:07:08] Shoval Abudraham: So, we know this, roll flip very closely.
+[00:07:15] Shoval Abudraham: Andrei, how many people do you have in your team?
+[00:07:20] Andrey Lovchy: In, our Info, InfoSec team, we have, almost, 20,
+[00:07:28] Andrey Lovchy: 20 staff. But, when we…
+[00:07:33] Andrey Lovchy: I have, worked with, our…
+[00:07:36] Andrey Lovchy: development department with product teams, and, in the part of, application security, we have some, employers, who are part of, some, project, team, team, but, they work with application security for this product. So, if we talk, about,
+[00:07:59] Andrey Lovchy: some cross-functional teams, maybe, like, 13, I mean.
+[00:08:07] Shoval Abudraham: Cool, amazing. Cool, so I think I'll share with you a bit about our research until now.
+[00:08:14] Shoval Abudraham: So, as a… You can understand from our background, we came from, like.
+[00:08:22] Shoval Abudraham: the basic of our, professional, was, networks, network in, in, was infrastructure and network as well. Therefore, we…
+[00:08:33] Shoval Abudraham: we're passionate about this field, and we're super, curious about it, so we're exploring the network security field. And specifically, we are exploring how CISOs
+[00:08:45] Shoval Abudraham: managing the risk around, network security. How they know what happened in their, environment network, how…
+[00:08:57] Shoval Abudraham: how they know if they're exposed to some network risk? For example, open ports, unnecessary connections, where, lateral movement is, possible inside, their network.
+[00:09:15] Shoval Abudraham: So, we're curious to hear how you do it in your organization.
+[00:09:22] Andrey Lovchy: Really, I'd say that, that this part, changed, in the last years, because,
+[00:09:30] Andrey Lovchy: I'd say, like, 10, maybe 15 years ago, it was, some general trend that, perimeter security is, something that's outdated, we need more to think about, zero trust,
+[00:09:48] Andrey Lovchy: Security in-depths, and so on.
+[00:09:51] Shoval Abudraham: Yeah.
+[00:09:51] Andrey Lovchy: But, what I see, last year after AI, came into…
+[00:10:03] Shoval Abudraham: Thank you.
+[00:10:03] Andrey Lovchy: Yeah, I think that, changed a bit, and, made, perimeter defense, somehow, important, more important again, and,
+[00:10:18] Andrey Lovchy: Mostly because of, it's a question about, how I've seen, in the net.
+[00:10:27] Andrey Lovchy: Because, now, artificial intelligence, can, pretty, fast, investigate,
+[00:10:38] Shoval Abudraham: Yeah.
+[00:10:38] Andrey Lovchy: Internet, find all resources, check for vulnerabilities, find, who are owners of those resources, what's the kind of business, what organizations, estimate what,
+[00:10:56] Andrey Lovchy: Possible, value of the assets, how much, hackers can, get, ransomed, or…
+[00:11:08] Andrey Lovchy: How much cost, can be… the data that is install, how much good price, can have in, dark market, so on, and, really, it's, can be pretty fast, and, can…
+[00:11:27] Andrey Lovchy: with, good research from the… he can wake up in the morning, and, he can have the range list of, potential,
+[00:11:44] Andrey Lovchy: targets, and, you need to don't be in the first, roles of this. Of course, when we think about, targeted attacks, it's something different, but, for this case, it's something like.
+[00:12:03] Andrey Lovchy: For ransomware and, other type of attacks that, is most widely without targeting particular organization, and for this kind, it's important that your perimeter doesn't, look,
+[00:12:23] Andrey Lovchy: That's, vulnerable, so, you have less attention, from potential attackers, nowadays.
+[00:12:31] Shoval Abudraham: Yeah, and can I ask what changes, did you do?
+[00:12:37] Andrey Lovchy: It's mostly to, estimate regularly, attacking the surface, for how, seen, from, the internet,
+[00:12:47] Andrey Lovchy: We took less care of it some years ago, now we came back to this, and even if we have
+[00:12:59] Andrey Lovchy: Some vulnerabilities that are not really vulnerabilities for a structure. They, couldn't be exploited.
+[00:13:06] Andrey Lovchy: But, yet, if it's seen from outside.
+[00:13:11] Andrey Lovchy: And if we have a lot of those, maybe it's full specific in some kind, but let's say.
+[00:13:19] Shoval Abudraham: Yeah.
+[00:13:20] Andrey Lovchy: That, more,
+[00:13:23] Andrey Lovchy: scene, it's more attention to us, and, once you get attention from attackers, then, you start to evaluate,
+[00:13:35] Andrey Lovchy: Your organization finds… if he already spent some, time, then, he will start to spend some more time before he decides, for, to…
+[00:13:50] Andrey Lovchy: Not perspective, good perspective, and you have more risks,
+[00:13:55] Andrey Lovchy: In the result of it, so it's important, to have, pretty, clear, view of your parameters, even, if some, non-realistic, vulnerabilities, get it better, to make it,
+[00:14:14] Andrey Lovchy: Fix it, not visible from outside, so… Contemplate this.
+[00:14:21] Shoval Abudraham: Like, I'll… but…
+[00:14:23] Shoval Abudraham: Can you elaborate a bit more about how did you do it? Like, with which tool do you use, how you create this visibility?
+[00:14:33] Andrey Lovchy: Really, to do it, on my own, staff, and manually, it's not good. It's, already, pretty lot of, platforms, services on the market, that, can…
+[00:14:49] Andrey Lovchy: Provides, service, all the time, monitoring of the perimeter, some services like,
+[00:15:02] Andrey Lovchy: UpGuard, for example, they provide service in addition to vendor risk, and some other vendors have this functionality now. Even if the main business is something else, some other services, many add this as additional service, because
+[00:15:27] Andrey Lovchy: It, becomes,
+[00:15:31] Shoval Abudraham: Those are services or tools?
+[00:15:35] Andrey Lovchy: Could you repeat?
+[00:15:36] Shoval Abudraham: Those are companies that give services of risk assessments, or tools that you can use and see their…
+[00:15:44] Andrey Lovchy: Release, services that,
+[00:15:49] Andrey Lovchy: I think that it's, more official, when, it's outsourced by, to some,
+[00:15:57] Andrey Lovchy: service providers that, can do it, every day, and, we have, full visibility, how it changes, if, some new vulnerabilities, become known, that, we see if we have, seen, if we, fix something, we see next day.
+[00:16:22] Andrey Lovchy: How it changed…
+[00:16:24] Andrey Lovchy: So, it's possible to build ourselves, but I think that it's easy to get someone service.
+[00:16:35] Yuval Mermer: Is it a company that brought people to your office to do the job, or is it the software that they implemented?
+[00:16:45] Andrey Lovchy: It's a cloud service.
+[00:16:48] Yuval Mermer: It's a cloud service.
+[00:16:49] Andrey Lovchy: Our service with, several scanners, and, they scan our perimeter.
+[00:16:55] Andrey Lovchy: Without active, it's not active at basic scanning, they also, if we talk about UpGuard, they, provide also such services to evaluate,
+[00:17:11] Andrey Lovchy: Their customers, vendors, So,
+[00:17:15] Andrey Lovchy: organization can check own perimeter, and they have additional services on monitoring dark web, about, potential evidence of the organization get hacked. But for the partners of their customers, they also provide, the possibility for the customer to
+[00:17:37] Andrey Lovchy: Enter the post of the, of the partners, so they understand how vulnerable their partners, their suppliers, and, how much risk to work with them.
+[00:17:53] Shoval Abudraham: And you get this kind of, output from them, like, all the time, or, one time after you pay them, or…
+[00:18:03] Andrey Lovchy: So, generally, it's, all the time, but of course, it's, in, some period, it's, most, companies, when, investigate it, when,
+[00:18:19] Andrey Lovchy: tried some trials and so on. They did it once a day.
+[00:18:26] Andrey Lovchy: But, some of them, had also a possibility, to force,
+[00:18:36] Andrey Lovchy: scan right now, so don't wait 24 hours until the next scan happens.
+[00:18:45] Shoval Abudraham: Yeah. And how often do you look at this, out… those outputs.
+[00:18:53] Andrey Lovchy: Really, first time… How much is interesting.
+[00:18:58] Andrey Lovchy: We didn't look every day, because we needed some time to fix what we saw.
+[00:19:08] Shoval Abudraham: Yeah.
+[00:19:09] Andrey Lovchy: First, first equation. But, after you fix, initial, and, you have, some, you know, some stable,
+[00:19:22] Andrey Lovchy: situation, when you fix what you've wanted to fix, and on the left something that you think that it's, not that important, and not real vulnerabilities, but you need to take, some…
+[00:19:37] Andrey Lovchy: Normally the actions, spend some, time with, less… advertising, so on.
+[00:19:46] Andrey Lovchy: And, when you have all this situation, it's really useful, to recheck, every day how situation changed, if, some new vulnerabilities,
+[00:20:00] Andrey Lovchy: affected, affected, EU infrastructure.
+[00:20:06] Andrey Lovchy: And then you can react.
+[00:20:09] Andrey Lovchy: pretty fast on it, and, nowadays, not, nowadays, over the, some years ago, before, AI, the…
+[00:20:22] Andrey Lovchy: It was a situation on if some vulnerability, new vulnerability was published.
+[00:20:28] Andrey Lovchy: For some companies, especially… we have a lot of customers, not for information security, but for our software. It's, banks, financial organizations, and, it's, some kind of critical infrastructure.
+[00:20:49] Shoval Abudraham: Yeah.
+[00:20:50] Andrey Lovchy: And of course, they have, oh, of course.
+[00:20:54] Yuval Mermer: laundry?
+[00:20:54] Andrey Lovchy: less time to react, and we know some occasions when a new vulnerability was published, and in a week, they already had
+[00:21:08] Andrey Lovchy: attempt of attack, to the infrastructure using this vulnerability, so… They, of course, took, actions before, it was… was a vulnerability that wasn't yet, parted by, by,
+[00:21:26] Andrey Lovchy: Cisco, but, it's also some recommendations,
+[00:21:34] Andrey Lovchy: How make it, non-exploitable, they used it, and, whenever they…
+[00:21:43] Andrey Lovchy: I got attacked, it was all okay for them, but even those times, it was sometimes one week.
+[00:21:55] Andrey Lovchy: And, nowadays, we don't have, one week. Maybe as a club, if, we don't, not that,
+[00:22:06] Andrey Lovchy: part of critical infrastructure, but we're also a supplier of banks.
+[00:22:13] Shoval Abudraham: Yeah.
+[00:22:13] Andrey Lovchy: And, we might… don't have a lot of time to react for a new vulnerability.
+[00:22:21] Yuval Mermer: Do those things?
+[00:22:22] Andrey Lovchy: Trying to recheck, really, every day, and, fix new.
+[00:22:28] Andrey Lovchy: Vulnerabilities.
+[00:22:29] Yuval Mermer: So, Andrei, do you have any plans for a 2027 strategy to do something with this risk?
+[00:22:40] Yuval Mermer: of the new AI era?
+[00:22:44] Andrey Lovchy: Really, we all took some actions on this, as I said, you know, and, we have,
+[00:22:53] Andrey Lovchy: Vendors that, provide us with the service.
+[00:22:58] Shoval Abudraham: Yeah.
+[00:22:59] Andrey Lovchy: Agreed. And, we think that, we might, also implement it, into, vendor risk assessment also, and,
+[00:23:10] Andrey Lovchy: I use it, also to estimate, our vendors and, look, at our vendors of, our situation on their side,
+[00:23:22] Shoval Abudraham: cooler.
+[00:23:23] Andrey Lovchy: Is that his plan for… Don't sound…
+[00:23:26] Shoval Abudraham: Can I ask, Andrei, how… what is the effort… what is the estimated cost for the tool you just described before? Like, how much it costs?
+[00:23:40] Andrey Lovchy: It's around, 20,000, annual.
+[00:23:47] Shoval Abudraham: Cool.
+[00:23:49] Shoval Abudraham: Cool. Yuval, do you have more questions? Because we are almost in time, and we want to be mindful with, with Andrei time.
+[00:23:58] Shoval Abudraham: Cool. Andrei, it was super,
+[00:24:03] Shoval Abudraham: valuable conversation for us. Like, we learn a lot about how you manage the risk in the network in your organization, which is exactly the field that we are exploring. You know, what you just described about the AI era and the fact that everything's changed right now, that's something that we are,
+[00:24:27] Shoval Abudraham: Seeing also, in the field. And, we… Like, we want to…
+[00:24:35] Shoval Abudraham: to help organizations to protect themselves and understand the risks they have better. So you learned us a lot, about, we learned a lot from you about
+[00:24:47] Shoval Abudraham: How it happens in your company. And we would love to, you know, to stay in touch and share with you more in our progress and, you know, get your feedback as we move forward.
+[00:25:02] Andrey Lovchy: Okay, good advice.
+[00:25:04] Shoval Abudraham: Amazing. Okay, Andrei, so have a great day, or almost weekend, right?
+[00:25:10] Andrey Lovchy: Yeah, that's sick.
+[00:25:11] Shoval Abudraham: Almost weekend. So, have a great day and weekend, and we, of course, will stay in touch. Thank you so much.
+[00:25:19] Yuval Mermer: Thank you so much, Andrei.
+[00:25:21] Andrey Lovchy: Thank you for this conversation, too. Have a good rest of the day, and we…
+[00:25:25] Shoval Abudraham: equal.
+[00:25:26] Andrey Lovchy: Thank you.
+[00:25:27] Shoval Abudraham: Cute.
+[00:25:28] Yuval Mermer: Bye-bye.
+[00:25:29] Shoval Abudraham: Bye.

@@ -1,0 +1,238 @@
+Date: 2026-08-25
+Topic: Security Leadership Discovery (Jacques Lucas)
+Meeting UUID: 74DDC862-5442-4BCA-870A-728C2D78A3AB
+Source: transcript
+
+[00:00:00] Shoval Abudraham: Shoval,
+[00:00:02] Shoval Abudraham: I'm in cyber more than a decade, actually. I started in the unit 8200, did… there I actually met Yuval, which is my co-founder. I served there at the department responsible to the infrastructure of the unit. I don't know if you're familiar with the unit, but basically, it's the cyber operation
+[00:00:26] Shoval Abudraham: Unit, so we were responsible to super sensitive, complex.
+[00:00:32] Shoval Abudraham: DevOps and IT infrastructure. We was responsible for them, both from the operational and security perspective.
+[00:00:42] Shoval Abudraham: So, old, both ads.
+[00:00:45] Shoval Abudraham: I served for five and a half years, released from the service as a captain, and basically, after my service, I realized that, the thing that passionates me the most is actually, to solve customers' pain. You know, as a DevOps engineer, you work with multiple, customers.
+[00:01:09] Shoval Abudraham: And you need to help them, so I was super fascinated about the… to create a value to customers, and how products create a value, and how you understand the real pain of the customer, and what business looks like. So I did a bit of a shift into a product management role.
+[00:01:28] Shoval Abudraham: I was a product manager in, several cybersecurity companies, started at Perception Point with his, security companies in the workstation, endpoint areas. Did there… was responsible there for, all the AI, LLM, machine learning, agents, area, even before we
+[00:01:49] Shoval Abudraham: named it agents, and, you know, people knew, ChGPT and stuff like that. So it was very cool and super innovative back then. And this company was acquired by Fortinet. Then I moved to another cybersecurity company, also in the endpoint,
+[00:02:08] Shoval Abudraham: a space, called Koi Security, did their…
+[00:02:12] Shoval Abudraham: was also a great experience. Great customers, created great, value, again, with AI, of course. This company was acquired by Palo Alto recently.
+[00:02:27] Shoval Abudraham: when I, still, work there. And now, after all those, adventures, I'm building my, our own company together with Yuval, which we actually met during, our, military service in the unit.
+[00:02:44] Shoval Abudraham: I love saying that Yuval and I, we are started on the same place, and built the same story from different perspective. Like, I did the shift into the product business area, and Yuval, you know, went deep
+[00:02:59] Shoval Abudraham: into the technical stuff, so I'll let him introduce himself and, share from his, experience.
+[00:03:07] yuvalmermer: That's what Shoval didn't say.
+[00:03:09] yuvalmermer: that she… that I met her first when… in the team, when she was my commander.
+[00:03:18] Shoval Abudraham: Yeah.
+[00:03:19] yuvalmermer: Yeah, and in this team, I was a DevOps… and developer.
+[00:03:26] yuvalmermer: And we had… we took two projects together, and we developed two… two, big applications.
+[00:03:35] yuvalmermer: And in those projects, Shoval was the… Shoval took the role of a product manager, and I was the developer, and we developed them together, and this is the first time we took those roles together and understood that this is for us, and we like it.
+[00:03:53] yuvalmermer: And, one of those, those, systems, it is still alive, and, And then…
+[00:04:01] yuvalmermer: Giving value to the… to the unit.
+[00:04:05] yuvalmermer: And after… the last position I had in the Army in the 8200 unit, was the head of the DevOps and Infrastructure Department.
+[00:04:18] yuvalmermer: I led 40 engineers across 5 teams.
+[00:04:23] yuvalmermer: And then… can you hear me?
+[00:04:25] Jacques Lucas: Sorry.
+[00:04:26] yuvalmermer: I think the Zoom…
+[00:04:27] Jacques Lucas: Yep.
+[00:04:28] yuvalmermer: Corky.
+[00:04:29] yuvalmermer: Okay, so it was, five teams, and we ran, large-scale networks, very complex networks, and multiple networks.
+[00:04:40] yuvalmermer: It was the production network, and the operations room network, and a lot of… a lot of types of networks, and…
+[00:04:49] yuvalmermer: We ran production environments and large-scale data systems, like petabytes of data, and when I finished my service after 10 years.
+[00:05:01] yuvalmermer: I started as a director of DevOps and SRE at Paragon, which is a cyber company. Did you hear about it?
+[00:05:13] yuvalmermer: Zuck?
+[00:05:19] Jacques Lucas: I'm here.
+[00:05:19] Shoval Abudraham: Earth?
+[00:05:20] yuvalmermer: Yeah.
+[00:05:20] Jacques Lucas: I'm… Yeah, you started out Paragon, yeah.
+[00:05:24] yuvalmermer: Yeah, Paragon, which is acquired by Red Lattice. I was the director of DevOps and SRE there. We developed tailor-made network solutions for
+[00:05:35] yuvalmermer: our, customers?
+[00:05:39] yuvalmermer: Which was the government customers who were a B2G company.
+[00:05:43] yuvalmermer: And then… And after 2 years and a house, I…
+[00:05:49] yuvalmermer: quitted the job and started the journey with the Shoval.
+[00:05:52] yuvalmermer: True.
+[00:05:53] Jacques Lucas: Oh, nice.
+[00:05:56] Shoval Abudraham: Yeah, and now we would love to hear, if you, if you like, of course, about you a bit.
+[00:06:04] Jacques Lucas: My journey started a long time ago. So, I'm originally from, IT and the Caribbean, you know, so…
+[00:06:15] Shoval Abudraham: Nope.
+[00:06:15] Jacques Lucas: So… and I started with IT, so I was, the IT provider for the… bought…
+[00:06:27] Jacques Lucas: dealership, Mitsubishi, Vols, wagon.
+[00:06:32] Jacques Lucas: and Kia…
+[00:06:34] Jacques Lucas: Then I moved to the U.S. after 4 years doing that down there. I moved, to, Miami.
+[00:06:45] Jacques Lucas: And I tried to get… I tried to get a job in IT.
+[00:06:49] Jacques Lucas: And every time I talk to some company, they ask me where did I get my…
+[00:06:56] Jacques Lucas: college degrees from… I didn't get any college degree from the United States. I got my college degree from a third world country, so I… I couldn't get a job in IT, so I decided to go back to school and to get a degree.
+[00:07:13] Jacques Lucas: when I went to school in Miami, one of the professors asked me what… when he realized that I know every, you know.
+[00:07:23] Jacques Lucas: all the answers, and I was acing all the class.
+[00:07:27] Jacques Lucas: the classes, and they asked me what I'm doing here. And I told him, hey, yes, I've been doing IT for the past 4 or 5 years, and this is what I used to do. And… and he said, like, why are you here? It's just like.
+[00:07:42] Jacques Lucas: I'm… I'm trying to get a job in IT, but I need a college degree from here.
+[00:07:47] Jacques Lucas: And he said, like, well, don't waste time learning the same thing that you already know. You should just go to information.
+[00:07:57] Jacques Lucas: System, which, that… that part…
+[00:08:02] Jacques Lucas: You have the business side.
+[00:08:04] Jacques Lucas: plus the IT side together, so… and you'll be able to go higher in the corporate ladder.
+[00:08:13] Jacques Lucas: So I listened to that, professor, and I switched my degree to Computer Information System. So, while I was…
+[00:08:23] Jacques Lucas: And then I went to University of Miami. I met two excellent professors.
+[00:08:29] Jacques Lucas: Down there.
+[00:08:31] Jacques Lucas: Damn, avi and Sa Roshnik, the different… That sounds.
+[00:08:41] Shoval Abudraham: Yay!
+[00:08:42] yuvalmermer: Yeah.
+[00:08:43] Shoval Abudraham: Really name.
+[00:08:44] Jacques Lucas: Yeah, they're from Israel.
+[00:08:46] Shoval Abudraham: Yeah, it doesn't sound like that.
+[00:08:48] Jacques Lucas: Yeah, so,
+[00:08:50] Jacques Lucas: they took out me really well, and I became a research assistant for both of them while I was there. So, I took all the classes that they were teaching, and I helped them prepare for all the classes.
+[00:09:10] Jacques Lucas: And one day, while I was in, Dr. Roshnik,
+[00:09:17] Jacques Lucas: Class, and we had a guest speaker.
+[00:09:21] Jacques Lucas: And the guest speaker was telling me about, telling us about what he does, and, like, working with,
+[00:09:32] Jacques Lucas: All these frameworks, and helping organizations be secure, and provide guidance, and travel.
+[00:09:41] Jacques Lucas: And I… then I realized that's exactly what I wanted to do.
+[00:09:45] Jacques Lucas: So I went on the company website and looked it up and see everything that they're doing.
+[00:09:52] Jacques Lucas: And I was like, okay, this… that's my path, that's what I want to do.
+[00:09:58] Jacques Lucas: So, fast forward… Like, 3 months later, we had a career fair at the University of Miami.
+[00:10:06] Jacques Lucas: And,
+[00:10:09] Jacques Lucas: I, you know, put my suit on, and I got a bunch of resume ready, and we had all the big…
+[00:10:17] Jacques Lucas: Companies there.
+[00:10:20] Jacques Lucas: When I got to…
+[00:10:25] Jacques Lucas: The venue, there's a lot of big line effort of all the big companies, because all the students trying to work for those big firms.
+[00:10:35] Jacques Lucas: And… and the middle, and I noticed…
+[00:10:39] Jacques Lucas: that guy that was speaking at the… that did the speaking engagement, and I saw him and his company. So, I went straight to him, and I told him that I wanted to… to work with him, to work for him.
+[00:10:56] Jacques Lucas: And he asked me, what do I know about his company?
+[00:11:02] Jacques Lucas: But just to tell you that I spend hours on that website looking at everything that they do and learning about these things, and…
+[00:11:11] Jacques Lucas: I start talking to him, and we spent over an hour chatting.
+[00:11:17] Shoval Abudraham: Oh my god.
+[00:11:18] Jacques Lucas: Yeah, because… yes, and at the end of our conversation, he told me,
+[00:11:25] Jacques Lucas: It doesn't have an opening right now, but what it's gonna do is… it's gonna take my resume.
+[00:11:33] Jacques Lucas: And, I'll be the first person who will give a call whenever they have an opening.
+[00:11:40] Jacques Lucas: That's it. Alright, good.
+[00:11:43] Jacques Lucas: Perfect.
+[00:11:44] Jacques Lucas: And 3 months before I graduated from the University of Miami, I got a call from them for an interview. I went there, I interviewed with 2 directors and the CEO of the company.
+[00:11:57] Jacques Lucas: And then, I went home.
+[00:12:02] Jacques Lucas: After that, they call me and they offer me a job before I… I… I graduated. They… I had my job offer. I just… all I had to do is to get a graduate, and…
+[00:12:14] Jacques Lucas: go and get my job in cybersecurity. So I started with them, my journey, and I learned
+[00:12:23] Jacques Lucas: all the framework, I learned how to do everything,
+[00:12:26] Jacques Lucas: a… from a CIS standard, NIST,
+[00:12:34] Jacques Lucas: a PCI, ISO, you know.
+[00:12:41] Jacques Lucas: all of that, and then I've… I spent almost 4 years with them.
+[00:12:48] Jacques Lucas: Then I got, another, off, offer.
+[00:12:54] Jacques Lucas: I took it, then… I got… the company that I'm working with made me an offer.
+[00:13:03] Jacques Lucas: to… to come to Arizona, And…
+[00:13:07] Jacques Lucas: The offer was so good, I couldn't refuse.
+[00:13:11] Jacques Lucas: And I moved to Arizona, and I've been working for that company for the past 12 years. And I did everything from, being the consultant, and manager,
+[00:13:26] Jacques Lucas: I built the entire professional service practice, became a director, and then a CISO, and doing all that. So, my specialty is professional service, even though my company
+[00:13:42] Jacques Lucas: as a MSSP.
+[00:13:46] Jacques Lucas: side, also.
+[00:13:47] Jacques Lucas: I'm the CISO for the entire company, but
+[00:13:51] Jacques Lucas: I oversee everything on the CISO side, but I also oversee some of the professional services.
+[00:14:04] Jacques Lucas: That's team.
+[00:14:07] Shoval Abudraham: Wow, amazing.
+[00:14:08] yuvalmermer: Oh, Paul.
+[00:14:09] Shoval Abudraham: That was super inspiring, I did not, expect that, you know?
+[00:14:15] yuvalmermer: Impressive, oh my god.
+[00:14:16] Shoval Abudraham: Like, the… all, you know, all the…
+[00:14:19] Shoval Abudraham: it's… take, modesty, I think that's the correct word, like, to…
+[00:14:26] Shoval Abudraham: to have a job, to know that you know the job, and still go back to… to the university. And I love it, you know, it's…
+[00:14:36] Shoval Abudraham: And you… the way you found your people there, and you did shifts in your career,
+[00:14:44] Shoval Abudraham: That's really inspiring. I love that. Oh, yeah.
+[00:14:48] Jacques Lucas: And,
+[00:14:49] Shoval Abudraham: story.
+[00:14:49] Jacques Lucas: I'm still, good friends with the Roshniks, and I even went back to the University of Miami as a guest speaker on that same class.
+[00:15:02] Shoval Abudraham: Oh my god, that's so,
+[00:15:04] Jacques Lucas: Yeah, full, full circle. Full circle.
+[00:15:06] Shoval Abudraham: I love it.
+[00:15:08] Shoval Abudraham: That was super nice to hear, I love it.
+[00:15:12] Shoval Abudraham: And you also, started as an IT, same as we, like, like DevOps and AIT together, in our first role, so that's, you know, we have, something in common.
+[00:15:25] Jacques Lucas: Yeah, absolutely. Yeah.
+[00:15:28] Jacques Lucas: That's true.
+[00:15:30] Shoval Abudraham: Cool, so, I think, like, the next step is to share with you the area we're exploring, and I'll give a disclaimer before that. I'll share with you that we are at the beginning of building our company. Our goal is to find the real pain.
+[00:15:50] Shoval Abudraham: So we can solve it, hopefully, for, CISOs and big… and for companies.
+[00:15:58] Shoval Abudraham: And as you heard from our experience, mostly from Yuval experience, it worked a lot around the networks and network security, so that's exactly the area we're exploring. Basically, right now, we are exploring bottlenecks.
+[00:16:15] Shoval Abudraham: around, policy management, security, and network, policy management. Because, you know, we talked with a lot of CISO and
+[00:16:26] Shoval Abudraham: We understand that companies, they have sometimes multiple sites, multiple networks, and they need to manage their network policies,
+[00:16:37] Shoval Abudraham: across different, tools, we can call it. Like, different file… like, firewalls, sassy, more network, tools. Sometimes those tools are of different vendors, and,
+[00:16:53] Shoval Abudraham: As the complexity of the network, when the network gets complex… more complex.
+[00:17:01] Shoval Abudraham: the management of those policies also gets complex… gets complex, and there are challenges around that. So first, we want to
+[00:17:12] Shoval Abudraham: to hear from you, do you relate with this… with those challenges? Do you feel challenges around, network,
+[00:17:23] Shoval Abudraham: Policy management, and the security perspective around that, like, how to create those policies in a way that
+[00:17:31] Shoval Abudraham: Secure the network.
+[00:17:34] Jacques Lucas: Oh, yes, I can relate to that, absolutely. And, the worst part is,
+[00:17:41] Jacques Lucas: there are new threats, and there are updates on the tools. So if you have a configuration, for a tool on your network that you don't revisit.
+[00:17:58] Jacques Lucas: you might not have the most optimal settings on. You might not be as protected as you should be. So, we actually go into that.
+[00:18:12] Jacques Lucas: Right now, to make sure that we… we… we have the latest and greatest and all the best practice recommendation on our toolset, because last time we… we… we deployed those things was over 2 years ago, so…
+[00:18:31] Shoval Abudraham: Wow.
+[00:18:32] Jacques Lucas: Whatever that you put on 2 years ago, that doesn't mean we're not the optimal.
+[00:18:39] yuvalmermer: And did you say that you're going through that right now?
+[00:18:43] Jacques Lucas: Yes, like, we view in all the, those, in the config, those policies, the settings,
+[00:18:51] yuvalmermer: Or can I ask on which firewalls or network tools you're working?
+[00:18:57] Jacques Lucas: So, it's a com- it's, we, we're on…
+[00:19:05] Jacques Lucas: We're on the cloud, okay, so we on both…
+[00:19:09] Jacques Lucas: AWS and, Azure, okay? And then we… we have, a new…
+[00:19:19] Jacques Lucas: We just, shut down our… Or local…
+[00:19:27] Jacques Lucas: a, data center. So, now, we're… we are making sure that, like, what all of the… those security goals set, all the settings are optimal, and then we are using Microsoft,
+[00:19:45] Jacques Lucas: MXDR services from us, from the company, and on what they're monitoring, we want to make sure that
+[00:19:56] Jacques Lucas: The settings and everything that Yeah, monitoring.
+[00:20:02] yuvalmermer: Did you have to shut down your data center?
+[00:20:05] Jacques Lucas: Oh, we… we didn't. We are closing that, facility all, altogether. We didn't need to have, to cost, you know.
+[00:20:17] Jacques Lucas: Hey, to cut costs.
+[00:20:19] yuvalmermer: Got it.
+[00:20:24] Shoval Abudraham: So, sounds like you are doing this,
+[00:20:29] Shoval Abudraham: this, order and, like, optimizing the network policies, like, the shutdown of the data center triggers this, operation of organizing the policies.
+[00:20:44] Jacques Lucas: In addition to that, we will do it regardless.
+[00:20:51] Jacques Lucas: and, but, like, that just happened to be around the same time, because, yeah, because I… we do, like, monthly security reviews and all that, and then that… and… and I was asking about,
+[00:21:09] Jacques Lucas: Like, the settings and all of these things, like our… our…
+[00:21:13] Jacques Lucas: what we are using, and all that, and when was the last time that we reviewed all that, and we find out that we have reviewed those. For firewall, we said, yes, we review those on a regular basis, but the setting about all the other tools, you know.
+[00:21:30] yuvalmermer: How long do you.
+[00:21:31] Jacques Lucas: Yeah, for the monitoring portion, all of these things that we are using, to see all the outlets and all of these things, and protecting the network. So, those ones, we need to make sure that they are reviewed as well.
+[00:21:51] yuvalmermer: How long does this process take?
+[00:21:56] Jacques Lucas: Can you repeat that?
+[00:21:58] yuvalmermer: How long does the process of reorganizing… reorganizing the rules take?
+[00:22:07] Jacques Lucas: I… actually, I don't know, cause, I'm not the one…
+[00:22:12] Jacques Lucas: actually doing the actual work. I just asked them to do it, and then they're gonna do it and give me… and tell me it's done, and review it with me, so… but I don't know.
+[00:22:27] yuvalmermer: Excellent.
+[00:22:28] Jacques Lucas: I think.
+[00:22:29] yuvalmermer: how do you know that, they did a good job? Like, you don't have, ghost rules and, and zombie rules that, can make,
+[00:22:36] yuvalmermer: Holes in your network?
+[00:22:38] Jacques Lucas: We… we… whenever they're… they are done, we've,
+[00:22:45] Jacques Lucas: with Guadero, we… we're going to review
+[00:22:50] Jacques Lucas: They're gonna show what they did, and why they did it, and, based on the recommendation of Microsoft.
+[00:22:57] Jacques Lucas: The best practice, they use best practice to tell us, this is what they recommend right here, and we didn't have that, so… and this is what that, is doing for us.
+[00:23:11] yuvalmermer: Which,
+[00:23:13] Shoval Abudraham: Sorry, Yuval just one question. When you're talking about the people that are doing this project, the actual one that changed the policies, which team is
+[00:23:24] Shoval Abudraham: It is.
+[00:23:26] Jacques Lucas: It is, a team from the MSSP side.
+[00:23:32] Jacques Lucas: The, you know, those engineers, they are the one that, performed that. They're not under me. That's not my team.
+[00:23:41] Shoval Abudraham: They have, like, specific, expertise, like network, cloud, something like that.
+[00:23:46] Jacques Lucas: Yes, yes, yes, those guys.
+[00:23:50] Jacques Lucas: Yes.
+[00:23:52] yuvalmermer: And, and the services you, you, you pay for?
+[00:23:56] yuvalmermer: Or the… or are the employees…
+[00:23:58] Jacques Lucas: So… so the good thing is, since we are…
+[00:24:04] Jacques Lucas: a customer of a company, I don't have to pay for these things. I'm client zero, they try those things on me and provide me the service, then they go out there, provide the services to other clients, and they charge
+[00:24:20] Jacques Lucas: everybody else, so I don't have to pay for it, because it's the same company.
+[00:24:25] yuvalmermer: I want to focus a bit in the process that you do on the security side.
+[00:24:31] yuvalmermer: After the… the engineers, changed the configurations, you said that you… you're doing a review.
+[00:24:40] Jacques Lucas: We'll see.
+[00:24:41] yuvalmermer: policies and rules.
+[00:24:43] yuvalmermer: Yeah, I just wondered how long did it take to review this, this work?
+[00:24:49] Jacques Lucas: So, so, we usually do the review,
+[00:24:56] Jacques Lucas: During, monthly security call. So, last time, the hour session, we, it was not enough.
+[00:25:08] Jacques Lucas: We… so that's… we spend another, meeting on it, so I'd say, like, 2 hours reviewing and showing what they did and why they did see all stuff.
+[00:25:21] Shoval Abudraham: Yeah, and how… how does this, process look like? Like, you're just going policy after policy, and what are… what are you check from your perspective, the security perspective?
+[00:25:36] Jacques Lucas: What's recommended by the vendor and best practices, and what that will do.
+[00:25:46] Jacques Lucas: As far as, as securing… securing the network better.
+[00:25:51] Shoval Abudraham: Cool.
+[00:25:52] yuvalmermer: The vendor, you mean by cloud provider?
+[00:25:55] Jacques Lucas: Oh, we've got Provider and Microsoft, all that, all the tools that we are using, that we are leveraging to, to secure, yeah.
+[00:26:05] yuvalmermer: Got it. Thank you very much. Go ahead.
+[00:26:08] Shoval Abudraham: Yeah, I just want to be mindful with your time, because I see, like, we are almost in time.
+[00:26:14] Shoval Abudraham: And that's,
+[00:26:19] Shoval Abudraham: I actually have more questions, but I just want to check if you have a few more minutes, or we need to, you know…
+[00:26:29] Jacques Lucas: Let me see… give me one minute, give me one minute.
+[00:26:56] Jacques Lucas: Yeah, I gotta jump on that when I have a call now.
+[00:27:00] Jacques Lucas: I gotta get on that one.
+[00:27:03] Shoval Abudraham: Sure, so we will, say thank you. We would love to, you know, stay in touch and maybe share our, questions.
+[00:27:11] Shoval Abudraham: on email or in a follow-up call, because this was super valuable for us, if you would like.
+[00:27:19] Jacques Lucas: Send them to me via email.
+[00:27:23] Shoval Abudraham: amazing, and…
+[00:27:25] yuvalmermer: very much.
+[00:27:26] Shoval Abudraham: Again, thank you. We really appreciate your time and support. That was super, super helpful for us.
+[00:27:32] Jacques Lucas: All right, you're glad I could help. Have a good one, and good luck on your endeavor.
+[00:27:40] Shoval Abudraham: Thank you so much.
+[00:27:42] yuvalmermer: Have a great day.
+[00:27:44] Jacques Lucas: Thank you. You too. Bye.
+[00:27:46] yuvalmermer: Alright.
