@@ -1,6 +1,6 @@
 ---
 name: "discovery-debrief"
-description: "Analyze customer discovery call transcripts in the transcripts repository as a skeptic — separate unprompted evidence from led evidence, test each claim in thesis.md against verbatim quotes, critique the founder's interview technique, and update ledger.md (committed and pushed). Use this whenever the user asks to debrief, review, analyze or process discovery calls, customer interviews, CISO/advisor/investor conversations, or new transcripts, or asks what recent calls prove about their thesis."
+description: "Analyze customer discovery call transcripts in the transcripts repository as a skeptic — separate unprompted evidence from led evidence, test each claim in thesis.md against verbatim quotes, critique the founder's interview technique, and update ledger.md (published to main through a merged PR). Use this whenever the user asks to debrief, review, analyze or process discovery calls, customer interviews, CISO/advisor/investor conversations, or new transcripts, or asks what recent calls prove about their thesis."
 ---
 
 # Discovery Debrief
@@ -28,10 +28,10 @@ up as missing. Identify transcripts by exclusion instead (step 3).
 **Never write to or modify a transcript file.** They are the evidence record. The only
 file this skill writes is `ledger.md`.
 
-**State is in git.** Before step 1, run `scripts/state_pull.sh`: another session may
+**State is in git.** Before step 1, run `scripts/state.sh pull`: another session may
 have added transcripts or updated the ledger since this container was cloned, and a
 stale ledger means re-analyzing calls or double-counting them. If it fails, stop. The
-ledger only counts as updated once it is pushed (step 6).
+ledger only counts as updated once its PR is merged into `main` (step 6).
 
 ## Workflow
 
@@ -157,18 +157,19 @@ Outputs go in the chat. Sections A, B and C every run, in that order.
 On a large run, do not pad: give a full block to every call that carries evidence, and
 collapse the rest into a compact table with one line each saying what they proved.
 
-### 6. Commit and push the ledger
+### 6. Publish the ledger
 
-Once the ledger is written, push it — and only it:
+Once the ledger is written, publish it — and only it — following **Publishing data** in
+`CLAUDE.md` (branch → PR → squash-merge → finish):
 
 ```
-scripts/state_push.sh "debrief: <N> calls (<names>); <claims weakened, or 'no claim changes'>" ledger.md
+scripts/state.sh publish debrief "debrief: <N> calls (<names>); <claims weakened, or 'no claim changes'>" ledger.md
 ```
 
-Never stage transcripts, `thesis.md` or any other file from this skill. If nothing was
-new and the ledger did not change, there is nothing to commit. If the push fails, say so
-at the top of the output: the analysis stands, but the next run will not know these
-files were processed.
+Never include transcripts, `thesis.md` or any other file from this skill. If nothing was
+new and the ledger did not change, `publish` prints `NOTHING`: no PR. If any publishing
+step fails, say so at the top of the output with the PR link: the analysis stands, but
+the next run will not know these files were processed.
 
 ## Evidence standard
 
@@ -326,8 +327,8 @@ filenames exactly as they are on disk, extension or not.
 
 ## Rules
 
-- Never write to or modify transcript files. Only `ledger.md` gets written, committed
-  and pushed.
+- Never write to or modify transcript files. Only `ledger.md` gets written, and it is
+  published through a PR merged into `main`.
 - Never filter transcripts by file extension. Find them by exclusion (step 3).
 - Never invent a quote, a name, a company or a number. If it is not in the transcript,
   it does not exist. An invented quote in a ledger is poison — it will be trusted months

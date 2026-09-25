@@ -13,10 +13,10 @@ skeptical evidence work belongs to `discovery-debrief`; do not repeat it here.
 
 Transcripts live at the root of this repository (see `CLAUDE.md`; older notes call it
 `~/transcripts`). Never fetch, sync or download anything, and never modify a transcript
-file. The only file this skill writes is `.brief-state.json`, which it commits and
-pushes (step 5).
+file. The only file this skill writes is `.brief-state.json`, which it publishes to
+`main` through a merged PR (step 5).
 
-Before step 1, run `scripts/state_pull.sh` so `.brief-state.json` reflects every earlier
+Before step 1, run `scripts/state.sh pull` so `.brief-state.json` reflects every earlier
 run — a stale copy re-briefs calls that already reached a notification. If it fails,
 stop.
 
@@ -112,12 +112,13 @@ Rules:
 
 After the brief is produced, add every briefed filename (exactly as on disk) to
 `briefed` in `.brief-state.json` and set `updated`. Do this last, so a run that fails
-halfway does not hide calls from the next run. Then commit and push it — only it:
+halfway does not hide calls from the next run. Then publish it — only it — following
+**Publishing data** in `CLAUDE.md` (branch → PR → squash-merge → finish):
 
 ```
-scripts/state_push.sh "brief: <N> calls briefed" .brief-state.json
+scripts/state.sh publish brief "brief: <N> calls briefed" .brief-state.json
 ```
 
-The first-run baseline in step 1 is pushed the same way (`"brief: baseline, N marked
-seen"`). If the push fails, say so after the brief: the next run will brief these
-calls again.
+The first-run baseline in step 1 is published the same way (`"brief: baseline, N marked
+seen"`). If any publishing step fails, say so after the brief with the PR link: the next
+run will brief these calls again.

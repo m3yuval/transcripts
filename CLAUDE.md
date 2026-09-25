@@ -20,23 +20,45 @@ SessionStart hook also symlinks `~/transcripts` to the root so older wording sti
 
 ## State lives on `main`
 
-This runs in ephemeral cloud containers: anything not pushed is lost when the session
-ends, and every new session starts from a fresh clone. So the **`main` branch is the
-single source of truth** for transcripts and state files, and each skill pushes its own
-results straight to `main` when it finishes. The repo owner has authorized this for the
-skills' data commits, even when the session was assigned a different working branch.
-(Changes to skills, scripts or this file are ordinary code changes: those go through
-the session's working branch and a PR as usual.)
+This runs in ephemeral cloud containers: anything not on `main` is lost to the next
+session, which starts from a fresh clone. So `main` is the single source of truth for
+transcripts and state files. Every component that writes data saves it the same way —
+its own branch, a PR, and a merge into `main` — so each run leaves a reviewable PR
+behind. The repo owner has authorized the skills to create and merge these PRs
+themselves, without asking, even when the session was assigned a different working
+branch. (Changes to skills, scripts or this file are ordinary code changes on the
+session's working branch.)
 
-Every skill that reads or writes state follows the same two steps:
+### Before reading any state
 
-1. **Before reading any state file:** `scripts/state_pull.sh`. It fetches, switches to
-   `main` if needed and rebases onto the latest `origin/main`. If it fails, stop — reading
-   stale state leads to double-fetching and double-counting.
-2. **After writing:** `scripts/state_push.sh "<message>" <paths…>`, passing only the
-   files that skill owns (see the table). It commits those paths, rebases onto
-   concurrent pushes and pushes with retries. A failed push is a failed run: report it
-   and do not claim the work is saved.
+`scripts/state.sh pull` — switches to `main` and fast-forwards to `origin/main`, since
+another session may have merged since this container was cloned. If it fails, stop:
+stale state means double-fetching and double-counting.
+
+### Publishing data
+
+Run at the end of each writing skill, with only the files that skill owns (table above):
+
+1. `scripts/state.sh publish <skill> "<title>" <paths…>` — commits those paths on a new
+   branch `data/<skill>-<stamp>`, rebased on `origin/main`, and pushes it. It prints
+   `BRANCH=<name>`, or `NOTHING` when nothing changed (then stop: no PR).
+2. Open the PR with `mcp__github__create_pull_request`: owner `m3yuval`, repo
+   `transcripts`, head `<branch>`, base `main`, title `<title>`, body = what changed in
+   2–5 lines (files added, counts, claims touched), ending with
+   `🤖 Generated with [Claude Code](https://claude.com/claude-code)`.
+3. Merge it with `mcp__github__merge_pull_request`, `merge_method: "squash"`,
+   `commit_title: "<title> (#<PR number>)"`.
+4. If the merge is refused because `main` moved, run `scripts/state.sh refresh <branch>`
+   and merge once more. Exit 2 from `refresh` means a real conflict (usually two syncs
+   raced on `index.json`): stop, leave the PR open, and report its link — do not resolve
+   it by hand. Everything the PR holds is re-fetched or re-analyzed by the next run.
+5. `scripts/state.sh finish <branch>` — puts the checkout back on the updated `main` and
+   deletes the branch. It refuses to delete a branch whose content is not on `main`.
+
+The work counts as saved only after step 5. A failure at any step is a failed run:
+report the step, the branch and the PR link if there is one; never claim the data is
+saved. Load the GitHub tools with ToolSearch (`select:mcp__github__create_pull_request,mcp__github__merge_pull_request`)
+if they are not already loaded.
 
 Scratch files (raw tool results, extracted PDF text) go in the session scratchpad or
 `/tmp`, never in the repo.

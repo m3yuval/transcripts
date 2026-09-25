@@ -8,15 +8,15 @@ description: "Run the full transcript pipeline end to end: sync new transcripts 
 One trigger that chains three skills and ends with a phone notification:
 
 ```
-pull main → snapshot index → zoom-transcript-sync (push) → diff index
+pull main → snapshot index → zoom-transcript-sync (PR) → diff index
    ├─ nothing new → notify "No new transcripts" → stop
-   └─ new files   → discovery-debrief (push) → transcript-brief (push) → notify brief
+   └─ new files   → discovery-debrief (PR) → transcript-brief (PR) → notify brief
 ```
 
 It runs in a cloud container on this git repository (see `CLAUDE.md`). Each skill
-commits and pushes its own files to `main` as it finishes, so a failure in a later step
-never loses an earlier step's work, and the next run — in a fresh container — starts
-from what was pushed.
+publishes its own files as it finishes — branch, PR, squash-merge into `main` (see
+**Publishing data** in `CLAUDE.md`) — so a failure in a later step never loses an
+earlier step's work, and the next run — in a fresh container — starts from `main`.
 
 This skill is only the conductor. Each step's real work is done by its own skill,
 following that skill's instructions in full. Do not re-implement or shortcut them.
@@ -27,13 +27,13 @@ following that skill's instructions in full. Do not re-implement or shortcut the
   not to record pipeline state. It belongs to `zoom-transcript-sync`, which is the only
   thing that may change it. This pipeline only reads it.
 - Never modify transcript files.
-- Never commit on behalf of a step. Each skill commits exactly the files it owns;
-  the pipeline itself commits nothing.
+- Never commit or open a PR on behalf of a step. Each skill publishes exactly the files
+  it owns; the pipeline itself publishes nothing.
 - Every run ends with exactly one notification: success, no-news, or failure.
 
 ## Step 0 — Pull the latest state
 
-Run `scripts/state_pull.sh` from the repo root. It puts the checkout on `main` at the
+Run `scripts/state.sh pull` from the repo root. It puts the checkout on `main` at the
 latest `origin/main`. The snapshot in step 1 must be taken after this, or files another
 session already synced would be counted as new. If it fails, go to step 7 with step
 `pull`.
@@ -54,12 +54,13 @@ for the no-news message. If `index.json` is missing or unreadable, fail at `snap
 ## Step 2 — Sync
 
 Invoke the `zoom-transcript-sync` skill and follow it fully. The destination is the
-repo root; do not ask. It ends by committing and pushing `index.json` and the new files.
+repo root; do not ask. It ends by publishing `index.json` and the new files through a
+merged PR.
 
 Permission-blocked (403) and never-transcribed meetings are normal outcomes, not
 failures. A real failure is: a connector that cannot be reached or is not
 authenticated, a Drive listing that errors, the sync stopping before it rewrote the
-index, or its push failing. On a real failure go to step 7 with step `sync`.
+index, or any of its publishing steps failing (PR not merged). On a real failure go to step 7 with step `sync`.
 
 ## Step 3 — Diff (read only)
 
@@ -81,20 +82,20 @@ the session output from the sync.
 ## Step 4 — Debrief
 
 Invoke the `discovery-debrief` skill and follow it fully. Tell it the new files are
-exactly `new_files`. It writes, commits and pushes `ledger.md` and prints its full A/B/C analysis into
+exactly `new_files`. It writes and publishes `ledger.md` (merged PR) and prints its full A/B/C analysis into
 this session — that output is the detailed record the notification leads back to.
 
 From its section B, note every claim it reports as **weakened** or **contradicted**.
-If the debrief fails, or its push fails, go to step 7 with step `debrief`.
+If the debrief fails, or its PR is not merged, go to step 7 with step `debrief`.
 
 ## Step 5 — Brief
 
 Invoke the `transcript-brief` skill and follow it fully. Hand it `new_files` as the
 explicit list, plus the weakened/contradicted claims from step 4 so it can add its
-`Thesis:` line. Print the full brief in the session. It commits and pushes
-`.brief-state.json`.
+`Thesis:` line. Print the full brief in the session. It publishes
+`.brief-state.json` through a merged PR.
 
-If the brief fails, or its push fails, go to step 7 with step `brief`.
+If the brief fails, or its PR is not merged, go to step 7 with step `brief`.
 
 ## Step 6 — Notify
 
@@ -129,12 +130,12 @@ Transcript pipeline failed at <step>: <short reason>.
 ```
 
 If the sync already landed new files before a later step failed, add
-`<N> new files saved.` (only if the sync's push succeeded) so the user knows the sync part worked and the next run's
+`<N> new files saved.` (only if the sync's PR was merged) so the user knows the sync part worked and the next run's
 debrief/brief can pick them up (the debrief finds unprocessed files through the ledger,
 and the brief through `.brief-state.json`). Keep the whole message under 200 characters.
 
 ## Final session summary
 
 End the run in the session with four lines: what was synced, what the debrief
-changed in the ledger, the commits pushed to `main` (short hashes, one per skill that
-committed), and the notification text that was sent (or why it was not).
+changed in the ledger, the PRs merged into `main` (one link per skill that
+published), and the notification text that was sent (or why it was not).

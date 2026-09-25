@@ -1,6 +1,6 @@
 ---
 name: "zoom-transcript-sync"
-description: "Sync meeting transcripts from Zoom and from a shared Google Drive folder of PDFs and text files into the transcripts repository, incrementally, so only items not already saved get fetched, then commit and push them. Use whenever the user wants to download, sync or update meeting transcripts, or wants to analyze a body of past calls."
+description: "Sync meeting transcripts from Zoom and from a shared Google Drive folder of PDFs and text files into the transcripts repository, incrementally, so only items not already saved get fetched, then publish them to main through a merged PR. Use whenever the user wants to download, sync or update meeting transcripts, or wants to analyze a body of past calls."
 ---
 
 # Transcript sync (Zoom + Google Drive)
@@ -9,7 +9,7 @@ Pull meeting transcripts from two sources and land them as plain text files at t
 
 Runs are incremental: the index records what has been fetched and what was attempted and failed, so a second run costs almost nothing.
 
-This runs in a cloud container on a git repository (see `CLAUDE.md`). The destination is always the repo root — never ask. Nothing counts as saved until it is pushed to `main`; the container and everything unpushed are gone when the session ends.
+This runs in a cloud container on a git repository (see `CLAUDE.md`). The destination is always the repo root — never ask. Nothing counts as saved until it is merged into `main` through a PR (step 7); the container and everything not on `main` are gone when the session ends.
 
 - **Source A — Zoom**: fetched through the Zoom MCP tools (steps 2–4).
 - **Source B — Google Drive**: a shared folder holding PDF and plain-text transcripts (step 5).
@@ -26,7 +26,7 @@ Five things here mislead, and each produces a confidently wrong answer rather th
 
 ## Step 1 — Pull the latest state and read the index
 
-Run `scripts/state_pull.sh` from the repo root first. Another session may have synced since this container was cloned; reading a stale index re-fetches files that already exist and can land the same call twice. If it fails, stop and report — do not sync against stale state.
+Run `scripts/state.sh pull` from the repo root first. Another session may have synced since this container was cloned; reading a stale index re-fetches files that already exist and can land the same call twice. If it fails, stop and report — do not sync against stale state.
 
 Confirm the tools are available: the Zoom connector (`mcp__Zoom_for_Claude__*`), the Google Drive connector (`mcp__Google_Drive__*`) and `python3 -c "import pypdf"` (the SessionStart hook installs it; if it is missing, run `pip install -q pypdf cffi`). A connector that is missing or unauthenticated is a real failure: say which one and stop, rather than syncing only half the sources and recording the other half as empty.
 
@@ -171,23 +171,23 @@ When you do fan out, every worker gets the same contract: do the work, write the
 - **Give each worker its own scratch subdirectory.** Parallel workers default to the same paths and overwrite each other's `raw.json` mid-run, producing files with another meeting's content.
 - **Hand out explicit filenames**, or workers name similar meetings inconsistently.
 
-Workers write finished transcript files directly to the repo root. They never commit or push; the orchestrator does that once, in step 7, so a run produces one commit. Tool-result paths are per session, so a worker must make its own tool calls rather than be handed a path from the orchestrator's results.
+Workers write finished transcript files directly to the repo root. They never commit, push or open PRs; the orchestrator publishes once, in step 7, so a run produces one PR. Tool-result paths are per session, so a worker must make its own tool calls rather than be handed a path from the orchestrator's results.
 
-If context gets tight, stop, write the index with everything done so far, commit and push (step 7), and say the run was partial. A partial sync with an accurate index is a good outcome; a run that dies having recorded nothing is the bad one.
+If context gets tight, stop, write the index with everything done so far, publish it (step 7), and say the run was partial. A partial sync with an accurate index is a good outcome; a run that dies having recorded nothing is the bad one.
 
-## Step 7 — Update the index, commit, push, report
+## Step 7 — Update the index, publish (PR → merge), report
 
 Rewrite `index.json` with an entry for every item seen, **including failures**. Recording failures is what lets the next run tell "never tried" apart from "tried, nothing there" — without it, every rerun re-attempts every 403.
 
-Then commit and push exactly what this skill owns — `index.json` and the transcript files it wrote this run, nothing else:
+Then publish exactly what this skill owns — `index.json` and the transcript files it wrote this run, nothing else — following **Publishing data** in `CLAUDE.md` (branch → PR → squash-merge → finish):
 
 ```
-scripts/state_push.sh "sync: +<N> transcripts, <date>" index.json <new files…>
+scripts/state.sh publish sync "sync: +<N> transcripts, <date>" index.json <new files…>
 ```
 
-Commit even when nothing new arrived: the index still records this run's attempts. The message says what changed (`sync: +2 transcripts (jane-doe, a16z), 2026-09-26` or `sync: no new transcripts, 17 retries unchanged, 2026-09-26`). If the push fails, the run failed: say so, name the local commit, and do not report the files as saved.
+Publish even when nothing new arrived: the index still records this run's attempts. The title says what changed (`sync: +2 transcripts (jane-doe, a16z), 2026-09-26` or `sync: no new transcripts, 17 retries unchanged, 2026-09-26`). If any publishing step fails, the run failed: say at which step, give the branch and PR link, and do not report the files as saved.
 
-Report briefly: the commit that was pushed, how many files are in the folder, how many were added, and what couldn't be fetched, grouped by reason rather than one line per item. The distinction the user can act on is "permission-blocked, and the host re-sharing would unblock them" versus "never transcribed, and a later rerun might pick them up."
+Report briefly: the PR that was merged, how many files are in the folder, how many were added, and what couldn't be fetched, grouped by reason rather than one line per item. The distinction the user can act on is "permission-blocked, and the host re-sharing would unblock them" versus "never transcribed, and a later rerun might pick them up."
 
 Flag, but never silently fix, errors that are in the source: a mislabelled speaker, two turns merged under one name. Say which file and which turn, and let the user decide.
 
