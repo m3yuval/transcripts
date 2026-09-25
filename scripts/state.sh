@@ -87,7 +87,10 @@ case "$cmd" in
       fi
     fi
     git branch -q -D "$branch" 2>/dev/null
-    git push -q origin --delete "$branch" 2>/dev/null || echo "state: could not delete origin/$branch (harmless)"
+    # Cloud sessions cannot delete remote branches (the git proxy returns 403). The repo's
+    # "Automatically delete head branches" setting removes merged data branches instead.
+    git push -q origin --delete "$branch" >/dev/null 2>&1 \
+      || echo "state: origin/$branch left for GitHub's auto-delete (harmless)"
     echo "state: $BASE at $(git rev-parse --short HEAD); $branch cleaned up"
     ;;
 
