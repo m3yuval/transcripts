@@ -255,6 +255,14 @@
   .cf-hop{ display:flex; align-items:center; gap:8px; font-size:11.5px; }
   .cf-hop-label{ flex:0 0 auto; width:88px; color:var(--text-muted); font-size:10.5px; letter-spacing:.03em; }
   .cf-hop-conf{ font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text); margin-left:auto; }
+  .cf-downstream-list{ display:flex; flex-direction:column; gap:4px; }
+  .cf-downstream-row{ display:flex; align-items:baseline; gap:8px; font-size:11px; padding:3px 0; border-top:1px solid var(--border); }
+  .cf-downstream-row:first-child{ border-top:none; }
+  .cf-downstream-name{ font-size:10.5px; color:var(--text); flex:1 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .cf-downstream-hop{ flex:0 0 auto; font-size:9px; letter-spacing:.04em; color:var(--text-faint); }
+  .cf-downstream-team{ flex:0 0 auto; font-size:10px; color:var(--text-muted); }
+  .cf-regression{ font-size:10.5px; color:var(--gate-auto); margin-bottom:8px; }
+  .cf-receipt{ font-size:10px; color:var(--text-muted); text-align:center; margin-top:8px; padding-top:8px; border-top:1px solid var(--border); line-height:1.5; }
   .cf-line-sample{ flex:0 0 auto; }
   .cf-gate-box{ display:flex; align-items:center; gap:10px; }
   .cf-gate-name{ font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; font-size:15px; letter-spacing:.03em; text-transform:uppercase; }
@@ -385,12 +393,13 @@
       confidence:.93, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
       rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
       gateReason:"Full predicted radius resolves inside Saturday's maintenance window.",
+      regression:{ passed:47, total:47, flagged:0 },
       blurb:"openssl 3.0.11 carries a heap-overflow fixed in 3.0.14. Reachable through the TLS terminator and the payments gateway service running on this host.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"tls-terminator", state:"degrade", {name:"payments-gateway-svc", state:"degrade" ] },
-        { hop:2, nodes:[ {name:"checkout-api", state:"degrade", {name:"fraud-scoring-svc", state:"contained" ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:false ] }
+        { hop:1, nodes:[ {name:"tls-terminator", state:"degrade", team:"platform-eng"}, {name:"payments-gateway-svc", state:"degrade", team:"payments-team"} ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"degrade", team:"checkout-team"}, {name:"fraud-scoring-svc", state:"contained", team:"fraud-team"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:false, team:"checkout-team"} ] }
       ] },
 
     { id:"auth-log4j", host:"prod-auth-worker-11", image:"auth-worker:5.4.0",
@@ -398,10 +407,11 @@
       confidence:.97, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
       rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
       gateReason:"Vulnerable class ships in the image but never loads — nothing downstream to resolve.",
+      regression:{ passed:22, total:22, flagged:0 },
       blurb:"log4j-core 2.14.1 is present in the auth-worker image but not on the runtime classpath. The vulnerable class never loads, so the radius stays contained at hop 1.",
       quote:"auto", reachable:false,
       rings:[
-        { hop:1, nodes:[ {name:"auth-token-svc", state:"contained" ] }
+        { hop:1, nodes:[ {name:"auth-token-svc", state:"contained", team:"identity-team"} ] }
       ] },
 
     { id:"checkout-lb", host:"prod-checkout-lb-02", image:"edge-proxy:3.3.0",
@@ -412,9 +422,9 @@
       blurb:"nginx 1.24.0 needs a request-smuggling fix. The public checkout endpoint depends on this proxy outside the scheduled window.",
       quote:"review",
       rings:[
-        { hop:1, nodes:[ {name:"edge-proxy-svc", state:"hardfail", {name:"tls-terminator", state:"degrade" ] },
-        { hop:2, nodes:[ {name:"checkout-api", state:"hardfail", {name:"customer-portal-api", state:"degrade" ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"hardfail", sla:"99.95%", outside:true, {name:"partner-webhook-relay", state:"degrade", sla:"99.90%", outside:false ] }
+        { hop:1, nodes:[ {name:"edge-proxy-svc", state:"hardfail", team:"platform-eng"}, {name:"tls-terminator", state:"degrade", team:"platform-eng"} ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"hardfail", team:"checkout-team"}, {name:"customer-portal-api", state:"degrade", team:"portal-team"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"hardfail", sla:"99.95%", outside:true, team:"checkout-team"}, {name:"partner-webhook-relay", state:"degrade", sla:"99.90%", outside:false, team:"integrations-team"} ] }
       ] },
 
     { id:"db-proxy", host:"prod-db-proxy-07", image:"pgbouncer:2.0.4",
@@ -425,21 +435,22 @@
       blurb:"glibc 2.35 needs a buffer-handling fix. This proxy fronts a regulated data store, so no patch ships here without change-board sign-off.",
       quote:"blockedReg", regulatedFlag:true,
       rings:[
-        { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail" ] },
-        { hop:2, nodes:[ {name:"billing-webhook", state:"hardfail", {name:"reporting-service", state:"degrade" ] },
-        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.90%", outside:true, {name:"partner-webhook-relay", state:"hardfail", sla:"99.90%", outside:true ] }
+        { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail", team:"data-platform-team"} ] },
+        { hop:2, nodes:[ {name:"billing-webhook", state:"hardfail", team:"billing-team"}, {name:"reporting-service", state:"degrade", team:"data-platform-team"} ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.90%", outside:true, team:"portal-team"}, {name:"partner-webhook-relay", state:"hardfail", sla:"99.90%", outside:true, team:"integrations-team"} ] }
       ] },
 
     { id:"batch-etl", host:"staging-batch-etl-03", image:"batch-etl:2.2.0",
-      cve:"CVE-2026-14477", pkg:"python", from:"3.9.7", to:"3.9.18",
+      cve:"CVE-2026-15044", pkg:"python", from:"3.9.16", to:"3.9.18",
       confidence:.99, gate:"auto", env:"staging", window:"no production window required",
       rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
       gateReason:"Staging only — no SLA-bound endpoint anywhere in the radius.",
-      blurb:"python 3.9.7 needs a parsing fix. Runs in staging only; nothing customer-facing sits downstream of this host.",
+      regression:{ passed:14, total:14, flagged:0 },
+      blurb:"python 3.9.16's tarfile module allows path traversal on extraction; fixed upstream in 3.9.17. Runs in staging only; nothing customer-facing sits downstream of this host.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"batch-etl-svc", state:"degrade" ] },
-        { hop:2, nodes:[ {name:"reporting-service", state:"contained" ] }
+        { hop:1, nodes:[ {name:"batch-etl-svc", state:"degrade", team:"data-platform-team"} ] },
+        { hop:2, nodes:[ {name:"reporting-service", state:"contained", team:"data-platform-team"} ] }
       ] },
 
     { id:"cache-node", host:"prod-cache-node-05", image:"redis:7.0.4",
@@ -450,9 +461,9 @@
       blurb:"redis 7.0.4 needs a cluster-rebuild fix. The session cache backs checkout — a full rebuild would run past the scheduled window.",
       quote:"review",
       rings:[
-        { hop:1, nodes:[ {name:"session-cache-svc", state:"degrade" ] },
-        { hop:2, nodes:[ {name:"auth-token-svc", state:"degrade", {name:"checkout-api", state:"degrade" ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:true ] }
+        { hop:1, nodes:[ {name:"session-cache-svc", state:"degrade", team:"platform-eng"} ] },
+        { hop:2, nodes:[ {name:"auth-token-svc", state:"degrade", team:"identity-team"}, {name:"checkout-api", state:"degrade", team:"checkout-team"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:true, team:"checkout-team"} ] }
       ] },
 
     { id:"ml-infer", host:"prod-ml-infer-02", image:"ml-inference:0.7.2",
@@ -463,9 +474,9 @@
       blurb:"protobuf 3.19.4 needs a deserialization fix. The recommendation feed and search both call this model service; the 99.99% tier can't absorb the risk at 0.52 confidence.",
       quote:"blockedSla",
       rings:[
-        { hop:1, nodes:[ {name:"ml-inference-svc", state:"hardfail" ] },
-        { hop:2, nodes:[ {name:"recommendation-svc", state:"hardfail", {name:"search-index-svc", state:"degrade" ] },
-        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.99%", outside:true ] }
+        { hop:1, nodes:[ {name:"ml-inference-svc", state:"hardfail", team:"ml-team"} ] },
+        { hop:2, nodes:[ {name:"recommendation-svc", state:"hardfail", team:"ml-team"}, {name:"search-index-svc", state:"degrade", team:"search-team"} ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.99%", outside:true, team:"portal-team"} ] }
       ] },
 
     { id:"log-relay", host:"prod-log-relay-01", image:"fluent-bit:1.4.1",
@@ -473,11 +484,12 @@
       confidence:.95, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
       rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
       gateReason:"Full predicted radius resolves inside Saturday's window.",
-      blurb:"fluent-bit 1.4.1 needs a log-parsing fix. Feeds the audit sink only; nothing customer-facing reads from it directly.",
+      regression:{ passed:9, total:9, flagged:0 },
+      blurb:"fluent-bit 1.4.1's log-parsing path allows a malformed record to trigger a buffer over-read; fixed upstream in 1.9.10. Feeds the audit sink only; nothing customer-facing reads from it directly.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"log-relay-svc", state:"degrade" ] },
-        { hop:2, nodes:[ {name:"audit-log-sink", state:"contained" ] }
+        { hop:1, nodes:[ {name:"log-relay-svc", state:"degrade", team:"observability-team"} ] },
+        { hop:2, nodes:[ {name:"audit-log-sink", state:"contained", team:"observability-team"} ] }
       ] }
   ];
 
@@ -1127,6 +1139,9 @@
   }
   function finishRevert(f){
     state.status[f.id] = "reverted";
+    var receiptTime = nextClockTime();
+    state.revertReceipt = state.revertReceipt || {};
+    state.revertReceipt[f.id] = { time: receiptTime, mech: f.rollback.mech };
     addLedgerEntry(f, "reverted");
     renderField(f, {animate:false});
     renderQueue();
@@ -1163,6 +1178,29 @@
     return '<div class="cf-hop"><span class="cf-hop-label">'+label+'</span>'+sample+'<span class="cf-hop-conf mono">'+conf.toFixed(2)+' · '+ring.nodes.length+' node'+(ring.nodes.length===1?"":"s")+'</span></div>';
   }
 
+  function downstreamListHTML(f){
+    // wow moment 3 (PRD.md §2.6): clicking a finding shows every downstream service
+    // AND the team that owns it, not just a service name with no owner.
+    var rows = [];
+    f.rings.forEach(function(ring){
+      ring.nodes.forEach(function(n){
+        rows.push('<div class="cf-downstream-row"><span class="cf-downstream-name mono">'+n.name+'</span>'+
+          '<span class="cf-downstream-hop">HOP '+ring.hop+'</span>'+
+          '<span class="cf-downstream-team">'+(n.team||"unowned")+'</span></div>');
+      });
+    });
+    return '<div class="cf-section"><div class="cf-h">DOWNSTREAM SERVICES &amp; OWNING TEAM</div>'+
+      '<div class="cf-downstream-list">'+rows.join("")+'</div></div>';
+  }
+
+  function regressionHTML(f){
+    // wow moment 2 (PRD.md §2.6): a specific regression-test pass count and
+    // downstream-services-flagged count, next to a hard-blocked sign-off card.
+    if(!f.regression) return "";
+    var r = f.regression;
+    return '<div class="cf-regression mono">REGRESSION '+r.passed+'/'+r.total+' PASSED · '+r.flagged+' DOWNSTREAM FLAGGED</div>';
+  }
+
   function actionsHTML(f){
     var status = state.status[f.id] || "idle";
     var readOnly = state.mode !== "write";
@@ -1181,14 +1219,20 @@
       return '<div class="cf-actions"><div class="cf-settled">CONFIRMED · TETHER ACTIVE</div><button class="cf-btn revert-btn" id="cfRevertBtn">REVERT — REEL TETHER IN</button></div>';
     }
     if(status==="reverted"){
-      return '<div class="cf-actions"><div class="cf-settled">REVERTED — HOST BACK AT PRE-PATCH BASELINE</div></div>';
+      // wow moment 5 (PRD.md §2.6): a visible, timestamped receipt distinct from
+      // the action button, stating the revert happened before an incident was
+      // filed/escalated.
+      var receipt = (state.revertReceipt && state.revertReceipt[f.id]) || { time:"—", mech:f.rollback.mech };
+      return '<div class="cf-actions"><div class="cf-settled">REVERTED — HOST BACK AT PRE-PATCH BASELINE</div>'+
+        '<div class="cf-receipt mono">ROLLBACK RECEIPT · '+receipt.time+' · '+receipt.mech.toUpperCase()+
+        '<br>reverted before an incident was filed or escalated</div></div>';
     }
     if(readOnly){
       return '<div class="cf-actions"><button class="cf-btn" disabled>READ-ONLY — REQUEST WRITE ACCESS</button>'+
         '<div class="cf-note">'+(state.role==="approver" ? "toggle to write mode in the instrument rail to act on this finding" : "viewer role cannot act — an approver must grant write access")+'</div></div>';
     }
     if(f.gate==="auto"){
-      return '<div class="cf-actions"><button class="cf-btn" id="cfConfirmBtn">PUSH PATCH — '+f.window+'</button><div class="cf-note">no human sign-off required at this confidence</div></div>';
+      return '<div class="cf-actions">'+regressionHTML(f)+'<button class="cf-btn" id="cfConfirmBtn">PUSH PATCH — '+f.window+'</button><div class="cf-note">no human sign-off required at this confidence</div></div>';
     }
     if(f.gate==="review"){
       return '<div class="cf-actions"><button class="cf-btn gate-review-btn" id="cfConfirmBtn">APPROVE FOR PATCH WINDOW</button><div class="cf-note">'+f.gateReason+'</div></div>';
@@ -1207,6 +1251,7 @@
     '<div class="cf-section"><div class="cf-h">BLAST RADIUS · CONFIDENCE PER HOP</div><div class="cf-hop-list">'+
       hopLine(f,1,"HOP 1 · HOST")+hopLine(f,2,"HOP 2 · CALLERS")+hopLine(f,3,"HOP 3 · SLA")+
     '</div></div>'+
+    downstreamListHTML(f)+
     '<div class="cf-section"><div class="cf-h">GATE</div><div class="cf-gate-box">'+gateGlyphSVG(f.gate,26)+'<div><div class="cf-gate-name" style="color:var(--gate-'+f.gate+')">'+GATE_LABEL[f.gate]+'</div></div></div><div class="cf-gate-reason">'+f.gateReason+'</div><div class="cf-window mono">WINDOW: '+f.window+'</div></div>'+
     '<div class="cf-section"><div class="cf-h">REVERSIBILITY</div><div class="cf-tether-row">'+tetherGlyphSVG(f.rollback.weight)+'<div><div class="cf-tether-label">'+f.rollback.mech.toUpperCase()+'</div><div class="cf-tether-cost">'+f.rollback.cost+'</div></div></div></div>'+
     (q ? '<div class="cf-section"><div class="cf-h">WHAT OPERATORS TELL US</div><blockquote class="cf-quote">“'+q.text+'”<cite>'+q.role+'</cite></blockquote></div>' : "")+

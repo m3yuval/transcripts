@@ -19,14 +19,17 @@
   --accent-infra:    #a8621e;
   --accent-code:     #5c7a3a;
 
-  --gate-auto:    #2e8b57;
-  --gate-review:  #d9a400;
-  --gate-blocked: #c4293e;
+  --gate-auto:    #1f6e46;
+  --gate-review:  #7d5c00;
+  --gate-blocked: #b81f35;
 
   --radius-0: #8a94a0;
   --radius-1: #c79a1e;
   --radius-2: #b8621e;
   --radius-3: #a3273a;
+
+  --type-label-sm: 9px;
+  --type-label-md: 10.5px;
 
   --surface:        var(--paper-0);
   --surface-panel:  var(--paper-1);
@@ -58,12 +61,12 @@
 
     --gate-auto:    #3fae76;
     --gate-review:  #e6b93a;
-    --gate-blocked: #e0495c;
+    --gate-blocked: #e35062;
 
     --radius-0: #7c8791;
     --radius-1: #e6b93a;
     --radius-2: #d1893f;
-    --radius-3: #e0495c;
+    --radius-3: #e35062;
   }
 }
 
@@ -84,12 +87,12 @@
 
   --gate-auto:    #3fae76;
   --gate-review:  #e6b93a;
-  --gate-blocked: #e0495c;
+  --gate-blocked: #e35062;
 
   --radius-0: #7c8791;
   --radius-1: #e6b93a;
   --radius-2: #d1893f;
-  --radius-3: #e0495c;
+  --radius-3: #e35062;
 }
 
 /* ============================================================
@@ -125,6 +128,10 @@ h1, h2, h3 { margin: 0; }
 button { font-family: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 a { color: var(--accent); }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap;
+}
 
 /* ============================================================
    App shell — the station: rail / field+casefile / ledger
@@ -137,15 +144,15 @@ a { color: var(--accent); }
   margin: 0 auto;
 }
 
-/* ---- instrument rail ---- */
+/* ---- instrument rail — exactly 52px fixed height, DESIGN.md §5.1 ---- */
 .rail {
-  flex: 0 0 auto;
+  flex: 0 0 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 52px;
-  padding: 8px 4px;
+  gap: 14px;
+  padding: 0 4px;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
   position: sticky;
@@ -162,8 +169,52 @@ a { color: var(--accent); }
   white-space: nowrap;
 }
 .rail-mark svg { width: 22px; height: 22px; flex: 0 0 auto; }
-.rail-mark .disp { font-size: 17px; letter-spacing: 0.06em; color: var(--text); }
+.rail-mark .disp { font-size: 14.5px; letter-spacing: 0.045em; color: var(--text); }
 .rail-mark .disp .pillar { color: var(--accent); }
+.rail-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+/* mode indicator + role chip — DESIGN.md §5 item 5, lives in the rail */
+.mode-indicator { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; white-space: nowrap; }
+.mode-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: var(--type-label-sm);
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.role-chip {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: var(--type-label-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 3px 7px;
+  cursor: pointer;
+}
+.role-chip:hover, .role-chip:focus-visible { color: var(--text); border-color: var(--accent); }
+.role-chip[data-role="approver"] { color: var(--accent); border-color: var(--accent); }
+.mode-toggle {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 4px 9px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.mode-toggle:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.mode-toggle:disabled { opacity: 0.5; cursor: not-allowed; }
+.mode-toggle.is-write { color: var(--paper-0); background: var(--gate-review); border-color: var(--gate-review); }
+
 .rail-readouts {
   display: flex;
   align-items: center;
@@ -181,7 +232,7 @@ a { color: var(--accent); }
 }
 .readout:first-child { border-left: none; padding-left: 0; }
 .readout .label {
-  font-size: 9px;
+  font-size: var(--type-label-sm);
   letter-spacing: 0.08em;
   color: var(--text-faint);
   text-transform: uppercase;
@@ -194,6 +245,7 @@ a { color: var(--accent); }
 .readout .value.gate-auto { color: var(--gate-auto); }
 .readout .value.gate-review { color: var(--gate-review); }
 .readout .value.gate-blocked { color: var(--gate-blocked); }
+.readout .value.queue-pending { font-size: 12.5px; letter-spacing: 0.02em; }
 
 /* ---- main: field + case file ---- */
 .main {
@@ -219,32 +271,105 @@ a { color: var(--accent); }
   left: 20px;
   top: 14px;
   right: 20px;
-  max-width: 480px;
+  max-width: 440px;
   font-size: 11.5px;
   color: var(--text-muted);
   font-style: italic;
   z-index: 2;
   pointer-events: none;
 }
+.field-attribution {
+  position: absolute;
+  left: 20px;
+  top: 58px;
+  max-width: 380px;
+  font-size: 10px;
+  letter-spacing: 0.01em;
+  color: var(--text-faint);
+  z-index: 2;
+  pointer-events: none;
+}
 .field-svg { display: block; width: 100%; height: 100%; }
 .field-svg.collapsed { display: none; }
+
+/* reach counter — wow moment 1: running "assets reachable" count */
+.reach-counter {
+  position: absolute;
+  top: 96px;
+  right: 20px;
+  z-index: 2;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.reach-counter.visible { opacity: 1; }
+.reach-counter .label { font-size: var(--type-label-sm); letter-spacing: 0.07em; color: var(--text-faint); text-transform: uppercase; }
+.reach-counter .value { font-family: "IBM Plex Mono", monospace; font-size: 20px; font-weight: 600; color: var(--accent); }
+
+/* scene triggers — wow moments 2 & 3 */
+.scene-dock {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.scene-btn {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--surface-field) 80%, transparent);
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  cursor: pointer;
+  text-align: right;
+  max-width: 230px;
+}
+.scene-btn:hover, .scene-btn:focus-visible { color: var(--text); border-color: var(--accent); }
 
 .field-legend {
   position: absolute;
   left: 16px;
   bottom: 16px;
+  right: 200px;
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 10.5px;
+  font-size: var(--type-label-md);
   color: var(--text-muted);
-  background: color-mix(in srgb, var(--surface-field) 78%, transparent);
+  background: color-mix(in srgb, var(--surface-field) 80%, transparent);
   padding: 8px 10px;
   border: 1px solid var(--border);
   z-index: 2;
+  max-width: 460px;
 }
 .field-legend .row { display: flex; align-items: center; gap: 6px; }
 .field-legend svg { width: 13px; height: 13px; flex: 0 0 auto; }
+.legend-compact { display: none; }
+.queue-row { border-top: 1px solid var(--border); margin-top: 4px; padding-top: 5px; justify-content: space-between; gap: 10px; }
+.queue-row span:first-child { flex: 1 1 auto; }
+.page-btn {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+  background: none;
+  border: 1px solid var(--border);
+  width: 20px; height: 20px;
+  line-height: 1;
+  cursor: not-allowed;
+  flex: 0 0 auto;
+}
+.page-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
 
 .action-dock {
   position: absolute;
@@ -266,12 +391,20 @@ a { color: var(--accent); }
   border: none;
   padding: 10px 16px;
   cursor: pointer;
-  transition: background 0.15s ease, opacity 0.15s ease;
+  transition: background 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
 }
 .action-btn:disabled { opacity: 0.55; cursor: default; }
+.action-btn:hover:not(:disabled) { filter: brightness(0.92); }
 .action-btn.is-confirm { background: var(--gate-review); color: var(--ink-900); }
 .action-btn.is-revert { background: transparent; color: var(--text); border: 1px solid var(--border); }
-.action-hint { font-size: 10.5px; color: var(--text-faint); text-align: right; max-width: 260px; }
+.action-btn.is-revert:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.action-btn.is-blocked {
+  background: none;
+  border: 1px solid var(--gate-blocked);
+  color: var(--gate-blocked);
+  opacity: 1;
+}
+.action-hint { font-size: var(--type-label-md); color: var(--text-faint); text-align: right; max-width: 260px; }
 
 /* ---- SVG glyph & field element styling ---- */
 .ring {
@@ -291,12 +424,14 @@ a { color: var(--accent); }
 .epicenter-ring { fill: none; stroke: var(--accent); stroke-width: 1.5; }
 .epicenter-label { fill: var(--text); }
 
-.node .glyph { fill: var(--surface-field); stroke: var(--ink-900); stroke-width: 1.5; transition: fill 0.5s ease, stroke 0.5s ease; }
+.node .glyph { fill: var(--surface-field); stroke: var(--ink-900); stroke-width: 1.5; transition: fill 0.5s ease, stroke 0.5s ease, stroke-width 0.15s ease; }
 .node .glyph-inner { fill: var(--ink-900); transition: opacity 0.3s ease; opacity: 0; }
 .node text { fill: var(--text); transition: fill 0.5s ease, opacity 0.4s ease; }
 .node .last-active { fill: var(--text-faint); font-size: 9.5px; }
 .node .tag { fill: var(--text-faint); font-size: 8.5px; letter-spacing: 0.05em; }
 .node { cursor: pointer; }
+.node:hover .glyph { stroke-width: 2.2; }
+.node:hover text.name { fill: var(--text); }
 .node:focus { outline: none; }
 .node:focus-visible { outline: none; }
 .node:focus-visible .glyph { stroke: var(--accent); stroke-width: 2.5; }
@@ -326,10 +461,15 @@ a { color: var(--accent); }
   fill: var(--text-muted);
 }
 
-.gate-arc { fill: none; stroke: var(--gate-review); stroke-width: 2.5; opacity: 0.35; transition: opacity 0.5s ease; }
+/* gate arc — one shared weight, one shared shape, DESIGN.md §6.2 */
+.gate-arc { fill: none; stroke: var(--gate-review); stroke-width: 3; stroke-linecap: round; opacity: 0.35; transition: opacity 0.5s ease; }
+.gate-notch { stroke: var(--gate-review); stroke-width: 1.5; stroke-linecap: round; opacity: 0.35; transition: opacity 0.5s ease; }
 .field-region.hop2-active .gate-arc,
-.field-region.hop2-active .gate-arc-beyond { opacity: 1; }
-.gate-arc-beyond { fill: none; stroke: var(--gate-review); stroke-width: 2.5; opacity: 0.35; transition: opacity 0.5s ease; }
+.field-region.hop2-active .gate-notch,
+.field-region.hop2-active .gate-arc-beyond,
+.field-region.hop2-active .gate-notch-beyond { opacity: 1; }
+.gate-arc-beyond { fill: none; stroke: var(--gate-review); stroke-width: 3; stroke-linecap: round; opacity: 0.35; transition: opacity 0.5s ease; }
+.gate-notch-beyond { stroke: var(--gate-review); stroke-width: 1.5; stroke-linecap: round; opacity: 0.35; transition: opacity 0.5s ease; }
 .gate-label-group { opacity: 0.35; transition: opacity 0.5s ease; }
 .field-region.hop2-active .gate-label-group { opacity: 1; }
 .gate-label-group text.title { fill: var(--gate-review); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
@@ -345,7 +485,6 @@ a { color: var(--accent); }
 .reel-marker { fill: var(--accent); opacity: 0; }
 .reel-marker.visible { opacity: 1; }
 
-/* preview control state text on the epicenter */
 .epi-status { fill: var(--text-faint); font-size: 10px; letter-spacing: 0.04em; }
 
 /* ---- case file ---- */
@@ -358,35 +497,89 @@ a { color: var(--accent); }
   transition: flex-basis 0.28s ease, width 0.28s ease;
 }
 .casefile.open { flex: 0 0 360px; width: 360px; }
-.casefile-inner { width: 360px; height: 100%; overflow-y: auto; padding: 18px 18px 24px; }
+.casefile-inner { width: 360px; height: 100%; overflow-y: auto; padding: 18px 40px 24px 18px; position: relative; }
 .cf-close {
-  display: none;
+  display: inline-flex;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text-muted);
+  z-index: 4;
 }
-.cf-eyebrow { font-size: 10px; letter-spacing: 0.08em; color: var(--text-faint); text-transform: uppercase; margin-bottom: 4px; }
+.cf-close:hover, .cf-close:focus-visible { color: var(--text); border-color: var(--border); }
+.cf-close svg { width: 18px; height: 18px; }
+.cf-eyebrow { font-size: var(--type-label-md); letter-spacing: 0.08em; color: var(--text-faint); text-transform: uppercase; margin-bottom: 4px; }
 .cf-title { font-size: 19px; font-weight: 700; color: var(--text); word-break: break-word; }
 .cf-kind { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 10.5px; letter-spacing: 0.05em; color: var(--accent); border: 1px solid var(--accent); padding: 3px 8px; }
 .cf-kind svg { width: 12px; height: 12px; }
 .cf-section { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-.cf-section h4 { font-size: 10.5px; letter-spacing: 0.07em; color: var(--text-faint); text-transform: uppercase; margin: 0 0 8px; }
+.cf-section h4 { font-size: var(--type-label-md); letter-spacing: 0.07em; color: var(--text-faint); text-transform: uppercase; margin: 0 0 8px; }
 .cf-row { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; padding: 3px 0; }
 .cf-row .k { color: var(--text-muted); }
 .cf-row .v { color: var(--text); text-align: right; }
 .cf-body-text { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
 .cf-tag { display: inline-block; font-size: 9.5px; letter-spacing: 0.04em; color: var(--gate-review); border: 1px solid var(--gate-review); padding: 2px 6px; margin-top: 8px; }
 .cf-quote { margin-top: 8px; font-size: 12px; font-style: italic; color: var(--text-muted); border-left: 2px solid var(--accent); padding-left: 10px; }
-.cf-quote cite { display: block; margin-top: 6px; font-style: normal; font-size: 10.5px; color: var(--text-faint); }
+.cf-quote cite { display: block; margin-top: 6px; font-style: normal; font-size: var(--type-label-md); color: var(--text-faint); }
 .cf-gate-line { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
 .cf-gate-line svg { width: 20px; height: 20px; flex: 0 0 auto; }
 .cf-gate-line .g-label { font-size: 12.5px; font-weight: 600; color: var(--text); }
 .cf-actions { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
 .cf-placeholder { color: var(--text-muted); font-size: 12.5px; line-height: 1.6; }
+.cf-link-btn {
+  margin-top: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  padding: 5px 9px;
+  cursor: pointer;
+}
+.cf-link-btn:hover, .cf-link-btn:focus-visible { background: var(--accent); color: var(--paper-0); }
 
-/* ---- ledger rail ---- */
+.cf-team-row { border-top: 1px solid var(--border); padding: 8px 0; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; font-size: 12.5px; }
+.cf-team-row:first-child { border-top: none; }
+.cf-team-name { color: var(--text); }
+.cf-team-meta { display: block; font-size: 10.5px; color: var(--text-faint); margin-top: 2px; }
+.cf-team-status { font-size: var(--type-label-sm); letter-spacing: 0.05em; text-transform: uppercase; color: var(--text-faint); flex: 0 0 auto; }
+.cf-team-status.pinged { color: var(--gate-review); }
+
+.cf-list-row { border-top: 1px solid var(--border); padding: 9px 0; }
+.cf-list-row:first-child { border-top: none; }
+.cf-list-row .row-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.cf-list-row .row-name { font-size: 12.5px; color: var(--text); font-weight: 600; }
+.cf-list-row .row-status { font-size: var(--type-label-sm); letter-spacing: 0.05em; text-transform: uppercase; flex: 0 0 auto; }
+.cf-list-row .row-status.retired { color: var(--gate-blocked); }
+.cf-list-row .row-status.resolved { color: var(--gate-auto); }
+.cf-list-row .row-meta { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.cf-mini-btn {
+  margin-top: 6px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.cf-mini-btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.cf-mini-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---- ledger rail — exactly 72px fixed height, DESIGN.md §5.4 ---- */
 .ledger {
-  flex: 0 0 auto;
+  flex: 0 0 72px;
+  height: 72px;
   border-top: 1px solid var(--border);
   background: var(--surface);
-  padding: 10px 4px calc(10px + env(safe-area-inset-bottom, 0px));
+  padding: 8px 4px calc(8px + env(safe-area-inset-bottom, 0px));
   position: sticky;
   bottom: 0;
   z-index: 15;
@@ -396,6 +589,7 @@ a { color: var(--accent); }
   gap: 0;
   overflow-x: auto;
   scrollbar-width: thin;
+  height: 100%;
 }
 .ledger-stack { display: none; }
 .ledger-item {
@@ -406,10 +600,13 @@ a { color: var(--accent); }
   display: flex;
   flex-direction: column;
   gap: 3px;
+  justify-content: center;
+  transition: background 0.15s ease;
 }
+.ledger-item:hover { background: var(--surface-panel); }
 .ledger-item:first-child { border-left: none; }
 .ledger-time { font-size: 10px; color: var(--text-faint); }
-.ledger-desc { font-size: 11.5px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px; }
+.ledger-desc { font-size: 11.5px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 220px; }
 .ledger-outcome { display: flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 0.03em; color: var(--text-muted); }
 .ledger-outcome svg { width: 13px; height: 13px; flex: 0 0 auto; }
 .ledger-outcome.safe svg { color: var(--gate-auto); }
@@ -422,13 +619,23 @@ a { color: var(--accent); }
 @media (max-width: 480px) {
   body { padding-left: 16px; padding-right: 16px; }
   .rail { gap: 10px; }
+  .rail-right { gap: 10px; }
   .rail-readouts { gap: 10px; }
   .readout { padding-left: 10px; }
   .main { flex-direction: column; }
   .field-svg.full { display: none; }
   .field-svg.collapsed { display: block; }
   .field-caption { display: none; }
-  .field-legend { display: none; }
+  .field-attribution { display: none; }
+  .scene-dock { top: 10px; right: 10px; }
+  .scene-btn { font-size: 8.5px; max-width: 150px; padding: 5px 8px; }
+  .reach-counter { top: auto; bottom: 78px; right: 12px; }
+
+  /* legend never fully removed at phone width — compresses instead, DESIGN.md §1/§5 */
+  .field-legend { right: 12px; left: 12px; max-width: none; }
+  .legend-full { display: none; }
+  .legend-compact { display: block; font-size: 9.5px; letter-spacing: 0.01em; }
+
   .action-dock { left: 12px; right: 12px; bottom: 12px; align-items: stretch; }
   .action-btn { width: 100%; text-align: center; }
   .action-hint { max-width: none; text-align: center; }
@@ -444,12 +651,11 @@ a { color: var(--accent); }
     box-shadow: 0 -8px 24px rgba(0,0,0,0.18);
     transition: height 0.3s ease;
     z-index: 40;
+    border-radius: 0;
   }
   .casefile.open { flex-basis: auto; height: 60vh; width: auto; }
-  .casefile-inner { width: 100%; height: 100%; padding: 10px 16px calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .casefile-inner { width: 100%; height: 100%; padding: 10px 40px calc(20px + env(safe-area-inset-bottom, 0px)) 16px; }
   .cf-drag { display: block; width: 42px; height: 4px; border-radius: 2px; background: var(--border); margin: 4px auto 10px; }
-  .cf-close { display: inline-flex; position: absolute; top: 10px; right: 12px; background: none; border: none; padding: 6px; cursor: pointer; color: var(--text-muted); }
-  .cf-close svg { width: 18px; height: 18px; }
 
   .ledger-track { display: none; }
   .ledger-stack { display: flex; flex-direction: column; gap: 0; max-height: 220px; overflow-y: auto; }
@@ -477,11 +683,19 @@ a { color: var(--accent); }
       </svg>
       <span class="disp">SKYLAYER <span class="pillar">· IDENTITY</span></span>
     </div>
-    <div class="rail-readouts mono" id="rail-readouts">
-      <div class="readout"><span class="label">Confidence avg</span><span class="value" id="ro-conf">0.71</span></div>
-      <div class="readout"><span class="label">Auto</span><span class="value gate-auto" id="ro-auto">4</span></div>
-      <div class="readout"><span class="label">Review</span><span class="value gate-review" id="ro-review">2</span></div>
-      <div class="readout"><span class="label">Blocked</span><span class="value gate-blocked" id="ro-blocked">1</span></div>
+    <div class="rail-right">
+      <div class="mode-indicator">
+        <span class="mode-label mono" id="mode-label">MODE: READ-ONLY</span>
+        <button class="role-chip" id="role-chip" data-role="viewer" title="Demo control — switches the simulated viewing role">VIEWER</button>
+        <button class="mode-toggle" id="mode-toggle" disabled title="Write mode requires the approver role.">REQUEST WRITE ACCESS</button>
+      </div>
+      <div class="rail-readouts mono" id="rail-readouts">
+        <div class="readout"><span class="label">Confidence avg</span><span class="value" id="ro-conf">0.71</span></div>
+        <div class="readout"><span class="label">Auto</span><span class="value gate-auto" id="ro-auto">4</span></div>
+        <div class="readout"><span class="label">Review</span><span class="value gate-review" id="ro-review">2</span></div>
+        <div class="readout"><span class="label">Blocked</span><span class="value gate-blocked" id="ro-blocked">1</span></div>
+        <div class="readout"><span class="label">Queue</span><span class="value queue-pending" id="ro-pending">PENDING 7 OF 142</span></div>
+      </div>
     </div>
   </header>
 
@@ -489,13 +703,22 @@ a { color: var(--accent); }
   <div class="main">
     <div class="field-region" id="field-region">
       <p class="field-caption">"We don't have a traditional network to defend, so identity — keys, tokens, sessions — is where almost all of our visibility work already lives." <em>— CISO, cloud-native software company</em></p>
+      <p class="field-attribution">Recursive blast-radius model — modeled on incident-response casework across many environments, not yet a Skylayer-observed live capability.</p>
+
+      <div class="scene-dock">
+        <button class="scene-btn" id="btn-console">Containment console — 30 accounts · 100 keys</button>
+        <button class="scene-btn" id="btn-ghost">Ghost accounts — retired but still active (4)</button>
+      </div>
+
+      <div class="reach-counter" id="reach-counter">
+        <span class="label">Assets reachable</span>
+        <span class="value mono" id="reach-value">0</span>
+      </div>
 
       <!-- ===== DESKTOP / FULL FIELD ===== -->
-      <svg class="field-svg full" id="svg-full" viewBox="0 0 1300 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Downstream blast radius map for svc-billing-legacy">
-        <defs>
-          <filter id="blur-med" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="0.6"/></filter>
-          <filter id="blur-lo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.7"/></filter>
-        </defs>
+      <svg class="field-svg full" id="svg-full" viewBox="0 0 1300 620" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Downstream blast radius map for svc-billing-legacy">
+        <desc>Static backdrop: a survey-style field with three concentric hop rings around an epicenter, a confidence gate arc, and a reversibility tether. Interactive nodes inside carry their own labels.</desc>
+        <defs id="defs-full"></defs>
 
         <!-- rings -->
         <g id="rings-full"></g>
@@ -505,7 +728,7 @@ a { color: var(--accent); }
 
         <!-- tether -->
         <g id="tether-full">
-          <path class="tether" id="tether-path-full" d="M420,310 C660,365 900,430 1130,510" />
+          <path class="tether" id="tether-path-full" d="M494,273 C700,360 920,440 1130,510" />
           <circle class="reel-marker" id="reel-marker-full" r="6" cx="1130" cy="510"/>
         </g>
         <g class="tether-anchor" id="anchor-full" transform="translate(1130,510)">
@@ -514,12 +737,12 @@ a { color: var(--accent); }
           <text x="0" y="24" text-anchor="middle" class="mono">RESTORE ANCHOR</text>
         </g>
 
-        <!-- epicenter -->
+        <!-- epicenter — cx=0.38·w, cy=0.44·h, never 0.5 on either axis, see DESIGN.md §5.2 -->
         <g id="epi-full" class="node" data-node="epi" tabindex="0" role="button" aria-label="Epicenter: svc-billing-legacy, retired IAM access key still active">
-          <circle class="epicenter-ring" cx="420" cy="310" r="24"/>
-          <circle class="epicenter-core" cx="420" cy="310" r="14"/>
-          <text x="420" y="346" text-anchor="middle" class="disp-text epicenter-label" font-size="13" font-weight="600">svc-billing-legacy</text>
-          <text x="420" y="360" text-anchor="middle" class="mono epi-status" id="epi-status-full">IAM ACCESS KEY · RETIRED, STILL ACTIVE</text>
+          <circle class="epicenter-ring" cx="494" cy="273" r="24"/>
+          <circle class="epicenter-core" cx="494" cy="273" r="14"/>
+          <text x="494" y="309" text-anchor="middle" class="disp-text epicenter-label" font-size="13" font-weight="600">svc-billing-legacy</text>
+          <text x="494" y="323" text-anchor="middle" class="mono epi-status" id="epi-status-full">IAM ACCESS KEY · RETIRED, STILL ACTIVE</text>
         </g>
 
         <!-- nodes injected here -->
@@ -527,11 +750,13 @@ a { color: var(--accent); }
       </svg>
 
       <!-- ===== PHONE / COLLAPSED FIELD ===== -->
-      <svg class="field-svg collapsed" id="svg-collapsed" viewBox="0 0 380 460" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Downstream blast radius map, simplified for small screens">
+      <svg class="field-svg collapsed" id="svg-collapsed" viewBox="0 0 380 460" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Downstream blast radius map, simplified for small screens">
+        <desc>Simplified backdrop: one hop ring plus an outer "beyond" band aggregating hops 2 and 3, around the same epicenter.</desc>
+        <defs id="defs-collapsed"></defs>
         <g id="rings-collapsed"></g>
         <g id="gate-collapsed"></g>
         <g id="tether-collapsed">
-          <path class="tether" id="tether-path-collapsed" d="M160,190 C230,230 280,260 320,330" />
+          <path class="tether" id="tether-path-collapsed" d="M144,202 C220,240 280,270 320,330" />
           <circle class="reel-marker" id="reel-marker-collapsed" r="7" cx="320" cy="330"/>
         </g>
         <g class="tether-anchor" id="anchor-collapsed" transform="translate(320,330)">
@@ -540,16 +765,22 @@ a { color: var(--accent); }
           <text x="0" y="22" text-anchor="middle" class="mono" font-size="8">ANCHOR</text>
         </g>
         <g id="epi-collapsed" class="node" data-node="epi" tabindex="0" role="button" aria-label="Epicenter: svc-billing-legacy, retired IAM access key still active">
-          <circle class="epicenter-ring" cx="160" cy="190" r="20"/>
-          <circle class="epicenter-core" cx="160" cy="190" r="12"/>
-          <text x="160" y="222" text-anchor="middle" class="disp-text epicenter-label" font-size="11" font-weight="600">svc-billing-legacy</text>
+          <circle class="epicenter-ring" cx="144" cy="202" r="20"/>
+          <circle class="epicenter-core" cx="144" cy="202" r="12"/>
+          <text x="144" y="234" text-anchor="middle" class="disp-text epicenter-label" font-size="11" font-weight="600">svc-billing-legacy</text>
         </g>
         <g id="nodes-collapsed"></g>
       </svg>
 
       <div class="field-legend" id="field-legend">
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="20" x2="16" y2="8"/><circle cx="4" cy="20" r="2.4"/></svg> ring distance = hops from the epicenter</div>
-        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 A8 8 0 0 1 20 12" /></svg> crisp ring = high confidence · blurred = low</div>
+        <div class="legend-full">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/></svg> Epicenter = credential selected for revocation</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="20" x2="16" y2="8"/><circle cx="4" cy="20" r="2.4"/></svg> Ring = 1 hop: keys/services authenticating directly with it</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 A8 8 0 0 1 20 12" /></svg> Line quality = confidence — crisp &amp; solid is high, soft &amp; dashed is low</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15 A9 9 0 0 1 12 6 M15 6 A9 9 0 0 1 20 15"/></svg> Gate = crossing here needs human review</div>
+          <div class="row queue-row"><span class="mono" id="queue-scale-text">Showing 7 of 142 credentials, sorted by confidence ↓</span><button class="page-btn" disabled aria-label="Previous page (only one page in this mock)">‹</button><button class="page-btn" disabled aria-label="Next page (only one page in this mock)">›</button></div>
+        </div>
+        <div class="legend-compact mono">◎ epicenter · ↗ ring=hop · ╱ crisp=confident · ⌒ gate=review</div>
       </div>
 
       <div class="action-dock">
@@ -566,7 +797,7 @@ a { color: var(--accent); }
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
         </button>
         <div id="cf-content">
-          <p class="cf-placeholder">Select the epicenter or any node in the field to open its case file — what it is, why it sits in this blast radius, and the confidence basis behind that.</p>
+          <p class="cf-placeholder">Select the epicenter or any node in the field to open its case file — what it is, why it sits in this blast radius, and the confidence basis behind that. Or open the containment console or ghost-account panel from the top-right of the field.</p>
         </div>
       </div>
     </aside>
@@ -577,6 +808,8 @@ a { color: var(--accent); }
     <div class="ledger-track mono" id="ledger-track"></div>
     <div class="ledger-stack mono" id="ledger-stack"></div>
   </footer>
+
+  <div class="sr-only" id="sr-status" aria-live="polite"></div>
 </div>
 
 <script>
@@ -586,6 +819,7 @@ a { color: var(--accent); }
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var STAGGER = reduceMotion ? 0 : 130;
   var SETTLE_BUFFER = reduceMotion ? 10 : 420;
+  var TOTAL_CREDENTIALS = 142; // matches the "credentials with no owner acknowledgment > 30 days" KPI — rail and legend must agree
 
   /* ---------------------------------------------------------
      Glyph templates (bespoke, single-weight 1.5px line icons)
@@ -598,16 +832,21 @@ a { color: var(--accent); }
         return '<rect class="glyph" x="-9" y="-9" width="18" height="18" transform="rotate(45)"/><rect class="glyph-inner" x="-4.5" y="-4.5" width="9" height="9" transform="rotate(45)"/>';
       case 'session':
         return '<circle class="glyph" r="9"/><circle class="glyph-inner" r="4"/>';
+      case 'vault':
+        return '<rect class="glyph" x="-9" y="-7" width="18" height="14"/><circle class="glyph-inner" r="3" cy="0"/>';
       default:
         return '<circle class="glyph" r="9"/>';
     }
   }
   function typeLabel(type){
-    return { key:'CREDENTIAL / TOKEN', automation:'AUTOMATION · SERVICE ACCOUNT', session:'DEPENDENT SESSION' }[type] || type;
+    return { key:'CREDENTIAL / TOKEN', automation:'AUTOMATION · SERVICE ACCOUNT', session:'DEPENDENT SESSION', vault:'SECRETS STORE' }[type] || type;
   }
 
   /* ---------------------------------------------------------
      Mock data — the downstream graph of svc-billing-legacy
+     Recursive chain: AWS access key → AWS Secrets Manager →
+     GitHub org secrets — one credential's blast radius reaching
+     into another system's credentials entirely (Asaf's account).
      --------------------------------------------------------- */
   var EPICENTER = {
     id:'epi', name:'svc-billing-legacy', kind:'IAM ACCESS KEY',
@@ -616,36 +855,67 @@ a { color: var(--accent); }
     quote:{ text:"Offboarding isn't just one system. People pick up access to a dozen tools over their time here, some outside single sign-on, and nobody remembers to take it all back. If I were an attacker, the accounts I'd go after first are the ones everyone already assumes are dead.", cite:"IT/security leader, large research institution" }
   };
 
+  var IR_QUOTE = { text:"A real incident isn't one stolen key, it's dozens, spread across accounts and tools that don't share a console. Before you can even start revoking, someone has to work out what breaks if you do — and that coordination is the slowest part, not the detection.", cite:"Incident responder, works across many client environments" };
+
   var NODES = [
     { id:'n1', ring:1, angle:206, type:'key', name:'billing-worker-token', lastActive:'2026-09-26 07:10',
-      why:"Authenticates the nightly billing worker directly, using svc-billing-legacy's secret." },
+      why:"Authenticates the nightly billing worker directly, using svc-billing-legacy's secret.",
+      basis:"Authenticates from the nightly batch host's fixed IP every run for the last 94 days; today's calls match that pattern exactly." },
     { id:'n2', ring:1, angle:250, type:'key', name:'reporting-api-key', lastActive:'2026-09-25 22:47',
-      why:"Pulls billing exports on the same key pair — unscoped to any single caller." },
+      why:"Pulls billing exports on the same key pair — unscoped to any single caller.",
+      basis:"Unscoped key — used from three different IP ranges this month, wider than the other ring-1 tokens, which softens this node's confidence line." },
 
-    { id:'n3', ring:2, angle:155, type:'automation', name:'nightly-reconciliation-bot', lastActive:'2026-09-26 03:00',
+    { id:'n3', ring:2, angle:150, type:'automation', name:'nightly-reconciliation-bot', lastActive:'2026-09-26 03:00',
       tag:'FEEDS FINANCE CLOSE',
-      why:"Triggered by billing-worker-token every night; writes straight to the general ledger." },
-    { id:'n4', ring:2, angle:198, type:'automation', name:'ci-deploy-pipeline', lastActive:'2026-09-26 06:55',
+      why:"Triggered by billing-worker-token every night; writes straight to the general ledger.",
+      basis:"Runs on a fixed cron; last invocation matches the expected nightly window to the minute." },
+    { id:'n4', ring:2, angle:189, type:'automation', name:'ci-deploy-pipeline', lastActive:'2026-09-26 06:55',
       tag:'PROD AUTOMATION',
       why:"reporting-api-key unlocks a deploy credential this pipeline uses to ship to production — the reason this crosses into review.",
-      quote:{ text:"A real incident isn't one stolen key, it's dozens, spread across accounts and tools that don't share a console. Before you can even start revoking, someone has to work out what breaks if you do — and that coordination is the slowest part, not the detection.", cite:"Incident responder, works across many client environments" } },
-    { id:'n5', ring:2, angle:243, type:'automation', name:'backup-sync-job', lastActive:'2026-09-24 01:15',
-      why:"Scheduled mirror of billing exports to cold storage." },
+      basis:"Deploy credential drawn from reporting-api-key is used outside business hours more often than baseline — the main reason this hop crosses into review.",
+      quote:IR_QUOTE },
+    { id:'n5', ring:2, angle:228, type:'automation', name:'backup-sync-job', lastActive:'2026-09-24 01:15',
+      why:"Scheduled mirror of billing exports to cold storage.",
+      basis:"Weekly mirror job; last run lands inside its usual Sunday 01:00 window." },
+    { id:'n8', ring:2, angle:267, type:'vault', name:'AWS Secrets Manager · billing-secrets', lastActive:'2026-09-26 06:40', tag:'AWS SECRETS MANAGER',
+      why:"reporting-api-key's role can read this secret store directly — the first hop from a compromised IAM key into AWS's own vault of further secrets.",
+      basis:"Read call pattern matches billing-worker-token's IAM role; no cross-region access observed in the last 30 days." },
 
-    { id:'n6', ring:3, angle:167, type:'session', name:'finance-dashboard-viewers', lastActive:'2026-09-26 08:02',
-      why:"Live SSO sessions reading reconciliation output — would lose data mid-session with no warning." },
-    { id:'n7', ring:3, angle:229, type:'session', name:'partner-webhook-relay', lastActive:'2026-09-26 05:40',
+    { id:'n6', ring:3, angle:160, type:'session', name:'finance-dashboard-viewers', lastActive:'2026-09-26 08:02',
+      why:"Live SSO sessions reading reconciliation output — would lose data mid-session with no warning.",
+      basis:"Confidence here reflects how many concurrent viewers would be interrupted, not a usage anomaly — 6 active sessions right now." },
+    { id:'n7', ring:3, angle:203, type:'session', name:'partner-webhook-relay', lastActive:'2026-09-26 05:40',
       tag:'PARTNER SLA 99.9%',
-      why:"External billing partner integration, chained through the deploy pipeline's webhook relay." }
+      why:"External billing partner integration, chained through the deploy pipeline's webhook relay.",
+      basis:"Chained through ci-deploy-pipeline's webhook relay; visibility past that hop is limited to delivery logs, hence the soft line." },
+    { id:'n9', ring:3, angle:247, type:'key', name:'GitHub org secrets · skylayer-core', lastActive:'2026-09-25 19:12', tag:'GITHUB',
+      why:"billing-secrets holds a GitHub App private key for skylayer-core — one compromised AWS credential now reaches another system's credentials entirely: AWS → Secrets Manager → GitHub → more secrets.",
+      basis:"GitHub App key fetched from this secret twice in the last 90 days, both times from the CI runner's IP range — today's pattern falls outside that." }
   ];
 
   var RING_CONF = { 1:0.94, 2:0.71, 3:0.48 };
-  var GATE = { state:'review', title:'GATE — NEEDS REVIEW', sub:'reaches production automation & a partner SLA boundary' };
+  var GATE = { state:'review', title:'GATE — NEEDS REVIEW', sub:'reaches production automation and a second system’s credentials via GitHub' };
   var REVERT_QUOTE = { text:"We let an outside team automate a narrow slice of identity cleanup — the kind where, worst case, you just turn something back on. That's the only reason it got approved at all.", cite:"CISO, healthcare-adjacent organization" };
 
   var nodesById = {};
   NODES.forEach(function(n){ nodesById[n.id] = n; });
   nodesById.epi = EPICENTER;
+
+  var HOP_NODE_COUNTS = {1:0,2:0,3:0};
+  NODES.forEach(function(n){ HOP_NODE_COUNTS[n.ring] = (HOP_NODE_COUNTS[n.ring] || 0) + 1; });
+
+  var CONSOLE_TEAMS = [
+    { team:'AWS / Platform Engineering', accounts:14, keys:46, status:'pending' },
+    { team:'Source Control (GitHub)', accounts:9, keys:31, status:'pending' },
+    { team:'Database Administration', accounts:7, keys:23, status:'pending' }
+  ];
+
+  var GHOST_ACCOUNTS = [
+    { id:'g1', name:'svc-legacy-reporting (service account)', lastActive:'2 days ago', resolved:false },
+    { id:'g2', name:'j.alvarez (contractor, offboarded)', lastActive:'11 hours ago', resolved:false },
+    { id:'g3', name:'vendor-sso-integration-relay', lastActive:'6 days ago', resolved:false },
+    { id:'g4', name:'stale-ci-bot-2019', lastActive:'19 hours ago', resolved:false }
+  ];
 
   var LEDGER = [
     { time:'YESTERDAY 18:30', desc:'svc-account: backup-relay-03 disabled', outcome:'monitor' },
@@ -668,13 +938,27 @@ a { color: var(--accent); }
     for (var k in attrs) el.setAttribute(k, attrs[k]);
     return el;
   }
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+
+  /* Confidence → line quality — one shared formula, DESIGN.md §6.2 (base 1.5, K=4.5) */
   function ringAttrs(conf){
-    // confidence -> line quality: crisp solid (high) through soft blurred/dashed band (low)
-    var width = 1.5 + (1 - conf) * 5.5;
-    var dashOn = 4 + conf * 34;
-    var dashOff = 1 + (1 - conf) * 8;
-    var filter = conf < 0.55 ? 'url(#blur-lo)' : (conf < 0.8 ? 'url(#blur-med)' : 'none');
-    return { 'stroke-width': width.toFixed(1), 'stroke-dasharray': dashOn.toFixed(0) + ' ' + dashOff.toFixed(0), filter: filter, opacity: (0.55 + conf * 0.35).toFixed(2) };
+    var width = clamp(1.5 + (1 - conf) * 4.5, 1.5, 6.0);
+    var blur = clamp((1 - conf) * 2.5, 0, 2.5);
+    var dashScale = 1 - conf;
+    var dasharray = conf >= 0.92 ? 'none' : (34 - dashScale * 28).toFixed(0) + ' ' + (1 + dashScale * 7).toFixed(0);
+    return { width: width, blur: blur, dasharray: dasharray };
+  }
+  function appendRing(ringsG, defsId, hop, cx, cy, r, conf, idPrefix){
+    var a = ringAttrs(conf);
+    var attrs = { class:'ring', 'data-hop':String(hop), cx:cx, cy:cy, r:r, 'stroke-width':a.width.toFixed(2), 'stroke-dasharray':a.dasharray };
+    if (a.blur > 0.03){
+      var fid = idPrefix + '-blur-' + hop;
+      var filter = svgEl('filter', { id:fid, x:'-50%', y:'-50%', width:'200%', height:'200%' });
+      filter.appendChild(svgEl('feGaussianBlur', { stdDeviation: a.blur.toFixed(2) }));
+      document.getElementById(defsId).appendChild(filter);
+      attrs.filter = 'url(#' + fid + ')';
+    }
+    ringsG.appendChild(svgEl('circle', attrs));
   }
 
   function arcPath(cx, cy, r, startDeg, endDeg){
@@ -686,22 +970,25 @@ a { color: var(--accent); }
   /* ---------------------------------------------------------
      Build the DESKTOP field
      --------------------------------------------------------- */
-  var CX = 420, CY = 310;
-  var RADII = { 1:100, 2:195, 3:290 };
+  var FIELD_W = 1300, FIELD_H = 620;
+  // epicenter position — never 0.5 on either axis — see DESIGN.md §5.2
+  var CX = FIELD_W * 0.38;
+  var CY = FIELD_H * 0.44;
+  var MIN_WH = Math.min(FIELD_W, FIELD_H);
+  var R0 = 0.10 * MIN_WH, DR = 0.12 * MIN_WH; // ring/hop spacing — DESIGN.md §5.2
+  var RADII = { 1: R0, 2: R0 + DR, 3: R0 + 2 * DR };
 
   function buildFull(){
     var ringsG = document.getElementById('rings-full');
     [1,2,3].forEach(function(hop){
-      var attrs = ringAttrs(RING_CONF[hop]);
-      var c = svgEl('circle', Object.assign({ class:'ring', 'data-hop':String(hop), cx:CX, cy:CY, r:RADII[hop] }, attrs));
-      ringsG.appendChild(c);
+      appendRing(ringsG, 'defs-full', hop, CX, CY, RADII[hop], RING_CONF[hop], 'full');
     });
 
     var nodesG = document.getElementById('nodes-full');
     NODES.forEach(function(n){
       var p = polar(CX, CY, RADII[n.ring], n.angle);
       var g = svgEl('g', { class:'node', 'data-node':n.id, 'data-hop':String(n.ring), tabindex:'0', role:'button',
-        'aria-label': n.name + ', ' + typeLabel(n.type) + ', last active ' + n.lastActive,
+        'aria-label': n.name + ', ' + typeLabel(n.type) + ', ring ' + n.ring + ', last active ' + n.lastActive,
         transform:'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')' });
       g.innerHTML = glyphMarkup(n.type) +
         '<text class="name" y="-14" text-anchor="middle" font-size="10.5" font-weight="500">' + n.name + '</text>' +
@@ -710,16 +997,16 @@ a { color: var(--accent); }
       nodesG.appendChild(g);
     });
 
-    buildGate('gate-full', CX, CY, RADII[2], 'gate-arc');
+    buildGate('gate-full', CX, CY, RADII[2], 'gate-arc', 'gate-notch', false);
   }
 
   function buildCollapsed(){
-    var cx=160, cy=190, r1=85, rb=170;
+    var cx = 380 * 0.38, cy = 460 * 0.44; // same formula, collapsed viewBox — never 0.5 either
+    var minWH = Math.min(380, 460);
+    var r1 = 0.10 * minWH, rb = 0.10 * minWH + 2 * (0.12 * minWH);
     var ringsG = document.getElementById('rings-collapsed');
-    var a1 = ringAttrs(RING_CONF[1]);
-    ringsG.appendChild(svgEl('circle', Object.assign({ class:'ring', 'data-hop':'1', cx:cx, cy:cy, r:r1 }, a1)));
-    var ab = ringAttrs((RING_CONF[2]+RING_CONF[3])/2);
-    ringsG.appendChild(svgEl('circle', Object.assign({ class:'ring', 'data-hop':'beyond', cx:cx, cy:cy, r:rb }, ab)));
+    appendRing(ringsG, 'defs-collapsed', '1', cx, cy, r1, RING_CONF[1], 'collapsed');
+    appendRing(ringsG, 'defs-collapsed', 'beyond', cx, cy, rb, (RING_CONF[2]+RING_CONF[3])/2, 'collapsed');
 
     var nodesG = document.getElementById('nodes-collapsed');
     var ring1Nodes = NODES.filter(function(n){ return n.ring===1; });
@@ -728,7 +1015,7 @@ a { color: var(--accent); }
     ring1Nodes.forEach(function(n, i){
       var p = polar(cx, cy, r1, angles1[i]);
       var g = svgEl('g', { class:'node', 'data-node':n.id, 'data-hop':'1', tabindex:'0', role:'button',
-        'aria-label': n.name + ', ' + typeLabel(n.type),
+        'aria-label': n.name + ', ' + typeLabel(n.type) + ', ring 1',
         transform:'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')' });
       g.innerHTML = glyphMarkup(n.type) + '<text class="name" y="-14" text-anchor="middle" font-size="9.5">' + n.name + '</text>';
       nodesG.appendChild(g);
@@ -739,24 +1026,24 @@ a { color: var(--accent); }
     gb.innerHTML = '<circle class="glyph" r="13"/><circle class="glyph-inner" r="6"/><text y="4" text-anchor="middle" class="mono" font-size="10" font-weight="600" fill="var(--text)">+' + beyondCount + '</text><text class="name" y="-18" text-anchor="middle" font-size="9">BEYOND RING 1</text>';
     nodesG.appendChild(gb);
 
-    buildGate('gate-collapsed', cx, cy, rb, 'gate-arc-beyond', true);
+    buildGate('gate-collapsed', cx, cy, rb, 'gate-arc-beyond', 'gate-notch-beyond', true);
   }
 
-  function buildGate(containerId, cx, cy, r, arcClass, compact){
+  function buildGate(containerId, cx, cy, r, arcClass, notchClass, compact){
     var g = document.getElementById(containerId);
-    var gap = 8;
-    var path1 = arcPath(cx, cy, r, -78, -8);
-    var path2 = arcPath(cx, cy, r, -8 + gap, 30);
+    var startDeg = -78, endDeg = 30, notchDeg = -8;
+    var path = arcPath(cx, cy, r, startDeg, endDeg);
+    var notchPt = polar(cx, cy, r, notchDeg);
+    var tickInner = polar(cx, cy, r - 7, notchDeg);
+    var tickOuter = polar(cx, cy, r + 7, notchDeg);
     g.innerHTML =
-      '<path class="' + arcClass + '" d="' + path1 + '" />' +
-      '<path class="' + arcClass + '" d="' + path2 + '" />';
-    // gate glyph + label anchored near the notch, leading out into open field space
-    var notch = polar(cx, cy, r, -8 + gap/2);
+      '<path class="' + arcClass + '" d="' + path + '" />' +
+      '<line class="' + notchClass + '" x1="' + tickInner.x.toFixed(1) + '" y1="' + tickInner.y.toFixed(1) + '" x2="' + tickOuter.x.toFixed(1) + '" y2="' + tickOuter.y.toFixed(1) + '" />';
     var labelOffset = compact ? 34 : 160;
     var maxX = compact ? 308 : 1180;
     var labelX = Math.min(cx + r + labelOffset, maxX);
-    var labelY = notch.y - (compact ? 20 : 34);
-    var leader = svgEl('line', { class:'gate-leader', x1: notch.x.toFixed(1), y1: notch.y.toFixed(1), x2: labelX, y2: labelY });
+    var labelY = notchPt.y - (compact ? 20 : 34);
+    var leader = svgEl('line', { class:'gate-leader', x1: notchPt.x.toFixed(1), y1: notchPt.y.toFixed(1), x2: labelX, y2: labelY });
     g.appendChild(leader);
     var lg = svgEl('g', { class:'gate-label-group', transform:'translate(' + labelX + ',' + labelY + ')' });
     lg.innerHTML = compact
@@ -772,14 +1059,62 @@ a { color: var(--accent); }
   buildCollapsed();
 
   /* ---------------------------------------------------------
+     Read-only / write mode + role chip — DESIGN.md §5 item 5
+     --------------------------------------------------------- */
+  var appRole = 'viewer'; // demo-only simulated role, never real auth
+  var writeMode = false;
+  var roleChip = document.getElementById('role-chip');
+  var modeToggle = document.getElementById('mode-toggle');
+  var modeLabel = document.getElementById('mode-label');
+  var srStatus = document.getElementById('sr-status');
+
+  function srAnnounce(text){ if (srStatus) srStatus.textContent = text; }
+  function nowStamp(){
+    var d = new Date();
+    return ('0'+d.getHours()).slice(-2) + ':' + ('0'+d.getMinutes()).slice(-2);
+  }
+
+  function paintMode(){
+    roleChip.textContent = appRole.toUpperCase();
+    roleChip.setAttribute('data-role', appRole);
+    modeLabel.textContent = 'MODE: ' + (writeMode ? 'WRITE' : 'READ-ONLY');
+    modeToggle.textContent = writeMode ? 'RETURN TO READ-ONLY' : 'REQUEST WRITE ACCESS';
+    modeToggle.disabled = (appRole !== 'approver');
+    modeToggle.title = appRole !== 'approver' ? 'Write mode requires the approver role.' : '';
+    modeToggle.classList.toggle('is-write', writeMode);
+    updateActionButtonLabel();
+    refreshOpenCasefile();
+  }
+
+  roleChip.addEventListener('click', function(){
+    appRole = appRole === 'viewer' ? 'approver' : 'viewer';
+    if (appRole === 'viewer' && writeMode){
+      writeMode = false;
+      LEDGER.push({ time: nowStamp(), desc: 'you returned to read-only (role changed to viewer)', outcome:'safe' });
+      renderLedger();
+    }
+    paintMode();
+  });
+
+  modeToggle.addEventListener('click', function(){
+    if (appRole !== 'approver') return;
+    writeMode = !writeMode;
+    LEDGER.push({ time: nowStamp(), desc: 'you ' + (writeMode ? 'granted write access' : 'returned to read-only'), outcome:'safe' });
+    renderLedger();
+    paintMode();
+  });
+
+  paintMode();
+
+  /* ---------------------------------------------------------
      Case file
      --------------------------------------------------------- */
   var casefile = document.getElementById('casefile');
   var cfContent = document.getElementById('cf-content');
   var currentSelection = null;
+  var lastOpener = null;
 
   function gateGlyphSvg(state){
-    // open / half / shut arc-with-notch, per §7 — always paired with text
     var d = state==='auto' ? 'M4 15 A9 9 0 0 1 20 15' : state==='blocked' ? 'M4 12 A9 9 0 0 1 20 12 M4 12 L4 16 M20 12 L20 16' : 'M4 15 A9 9 0 0 1 12 6 M15 6 A9 9 0 0 1 20 15';
     var color = state==='auto' ? 'var(--gate-auto)' : state==='blocked' ? 'var(--gate-blocked)' : 'var(--gate-review)';
     return '<svg viewBox="0 0 24 24" fill="none" stroke="' + color + '" stroke-width="1.6"><path d="' + d + '"/></svg>';
@@ -805,19 +1140,23 @@ a { color: var(--accent); }
     html += '<p class="cf-body-text" style="margin-top:6px">' + GATE.sub + '.</p></div>';
 
     html += '<div class="cf-section"><h4>Cross-team impact</h4>';
-    html += '<p class="cf-body-text">Touches finance (reconciliation), platform engineering (deploy pipeline) and an external billing partner. Coordinate before confirming.</p></div>';
+    html += '<p class="cf-body-text">Touches AWS/platform engineering, source control (GitHub), finance (reconciliation), and an external billing partner. Coordinate before confirming.</p>';
+    html += '<button class="cf-link-btn" id="cf-open-console">Open containment console →</button></div>';
 
     if (confirmed){
+      var revertBlocked = !writeMode;
       html += '<div class="cf-section"><h4>Reversibility</h4>';
       html += '<p class="cf-body-text">Tether weight: <strong>thick</strong> — the radius reaches a service-account scope, so restoring correctly costs more than a session-only revoke.</p>';
       html += '<div class="cf-quote">' + REVERT_QUOTE.text + '<cite>— ' + REVERT_QUOTE.cite + '</cite></div>';
-      html += '<div class="cf-actions"><button class="action-btn is-revert" id="cf-revert-btn">REEL IN TETHER — REVERT</button></div></div>';
+      html += '<div class="cf-actions"><button class="action-btn is-revert' + (revertBlocked ? ' is-blocked' : '') + '" id="cf-revert-btn"' + (revertBlocked ? ' disabled title="Write mode requires the approver role."' : '') + '>' + (revertBlocked ? 'READ-ONLY — REQUEST WRITE ACCESS' : 'Undo — restore last known-good') + '</button></div></div>';
     } else {
       html += '<div class="cf-quote">' + EPICENTER.quote.text + '<cite>— ' + EPICENTER.quote.cite + '</cite></div>';
     }
     cfContent.innerHTML = html;
     var revertBtn = document.getElementById('cf-revert-btn');
     if (revertBtn) revertBtn.addEventListener('click', revert);
+    var consoleLink = document.getElementById('cf-open-console');
+    if (consoleLink) consoleLink.addEventListener('click', function(){ openCasefile('console', consoleLink); });
   }
 
   function renderNodeCF(n){
@@ -830,8 +1169,7 @@ a { color: var(--accent); }
     html += '<div class="cf-section"><h4>Confidence basis</h4>';
     html += '<div class="cf-row"><span class="k">Ring confidence</span><span class="v mono">' + RING_CONF[n.ring].toFixed(2) + '</span></div>';
     html += '<div class="cf-row"><span class="k">Last active</span><span class="v mono">' + n.lastActive + '</span></div>';
-    var basisText = n.ring===1 ? 'Directly observed: usage matches the key\'s normal IP, user-agent and time-of-day baseline.' : n.ring===2 ? 'Inferred from automation logs one hop removed; baseline match is partial.' : 'Inferred transitively, visibility here is limited, hence the soft ring.';
-    html += '<p class="cf-body-text" style="margin-top:6px">' + basisText + '</p></div>';
+    html += '<p class="cf-body-text" style="margin-top:6px">' + (n.basis || '') + '</p></div>';
     if (n.quote){
       html += '<div class="cf-section"><div class="cf-quote">' + n.quote.text + '<cite>— ' + n.quote.cite + '</cite></div></div>';
     }
@@ -848,24 +1186,113 @@ a { color: var(--accent); }
       html += '<li>' + n.name + ' <span class="mono" style="color:var(--text-faint)">— ' + typeLabel(n.type) + '</span></li>';
     });
     html += '</ul></div>';
-    html += '<p class="cf-body-text" style="margin-top:10px">On a wider screen this splits into ring 2 (automations / service accounts) and ring 3 (dependent sessions), each with its own confidence line.</p>';
+    html += '<p class="cf-body-text" style="margin-top:10px">On a wider screen this splits into ring 2 (automations, secrets stores) and ring 3 (dependent sessions and downstream credentials), each with its own confidence line.</p>';
     cfContent.innerHTML = html;
   }
 
-  function openCasefile(nodeId){
+  function renderConsoleCF(){
+    var totalAccounts = CONSOLE_TEAMS.reduce(function(s,t){ return s+t.accounts; }, 0);
+    var totalKeys = CONSOLE_TEAMS.reduce(function(s,t){ return s+t.keys; }, 0);
+    var pinged = CONSOLE_TEAMS.filter(function(t){ return t.status==='pinged'; }).length;
+    var html = '';
+    html += '<p class="cf-eyebrow">Containment console · cross-team incident</p>';
+    html += '<h3 class="cf-title disp-text">' + totalAccounts + ' accounts · ' + totalKeys + ' keys</h3>';
+    html += '<p class="cf-body-text" style="margin-top:8px">One incident, spread across every console a responder has to touch by hand before the first key can be revoked — the coordination Asaf described as slower than the detection itself.</p>';
+    html += '<div class="cf-section"><h4>Owning teams</h4>';
+    CONSOLE_TEAMS.forEach(function(t){
+      html += '<div class="cf-team-row"><span class="cf-team-name">' + t.team + '<span class="cf-team-meta mono">' + t.accounts + ' accounts · ' + t.keys + ' keys</span></span><span class="cf-team-status ' + t.status + '">' + t.status.toUpperCase() + '</span></div>';
+    });
+    html += '</div>';
+    var allPinged = pinged === CONSOLE_TEAMS.length;
+    var btnDisabled = !writeMode || allPinged;
+    var btnLabel = !writeMode ? 'READ-ONLY — REQUEST WRITE ACCESS' : (allPinged ? 'PINGED: ' + pinged + ' TEAMS' : 'COORDINATE REVOCATION');
+    html += '<div class="cf-actions"><button class="cf-mini-btn" id="cf-console-btn"' + (btnDisabled ? ' disabled' : '') + '>' + btnLabel + '</button></div>';
+    html += '<div class="cf-quote" style="margin-top:14px">' + IR_QUOTE.text + '<cite>— ' + IR_QUOTE.cite + '</cite></div>';
+    cfContent.innerHTML = html;
+    var btn = document.getElementById('cf-console-btn');
+    if (btn) btn.addEventListener('click', coordinateRevocation);
+  }
+
+  function coordinateRevocation(){
+    if (!writeMode) return;
+    CONSOLE_TEAMS.forEach(function(t){ t.status = 'pinged'; });
+    LEDGER.push({ time: nowStamp(), desc: 'coordinate-revocation pinged 3 teams (30 accounts / 100 keys)', outcome:'monitor' });
+    renderLedger();
+    renderConsoleCF();
+  }
+
+  function renderGhostCF(){
+    var active = GHOST_ACCOUNTS.filter(function(g){ return !g.resolved; });
+    var resolved = GHOST_ACCOUNTS.filter(function(g){ return g.resolved; });
+    var html = '';
+    html += '<p class="cf-eyebrow">Ghost accounts · identity hygiene</p>';
+    html += '<h3 class="cf-title disp-text">Retired — but still active</h3>';
+    html += '<p class="cf-body-text" style="margin-top:8px">' + EPICENTER.quote.text + '</p>';
+    html += '<p class="cf-body-text" style="font-size:11px;color:var(--text-faint)">— ' + EPICENTER.quote.cite + '</p>';
+    html += '<div class="cf-section"><h4>Retired, still authenticating (' + active.length + ')</h4>';
+    active.forEach(function(g){
+      var disabled = !writeMode;
+      html += '<div class="cf-list-row"><div class="row-top"><span class="row-name">' + g.name + '</span><span class="row-status retired">RETIRED</span></div><div class="row-meta mono">Last active: ' + g.lastActive + '</div><button class="cf-mini-btn" data-ghost="' + g.id + '"' + (disabled ? ' disabled title="Write mode requires the approver role."' : '') + '>' + (disabled ? 'READ-ONLY — REQUEST WRITE ACCESS' : 'Deactivate for real') + '</button></div>';
+    });
+    html += '</div>';
+    if (resolved.length){
+      html += '<div class="cf-section"><h4>Resolved (' + resolved.length + ')</h4>';
+      resolved.forEach(function(g){
+        html += '<div class="cf-list-row"><div class="row-top"><span class="row-name">' + g.name + '</span><span class="row-status resolved">DEACTIVATED</span></div><div class="row-meta mono">Last active: ' + g.lastActive + '</div></div>';
+      });
+      html += '</div>';
+    }
+    cfContent.innerHTML = html;
+    Array.prototype.forEach.call(cfContent.querySelectorAll('[data-ghost]'), function(btn){
+      btn.addEventListener('click', function(){
+        if (!writeMode) return;
+        var id = btn.getAttribute('data-ghost');
+        var g = GHOST_ACCOUNTS.filter(function(x){ return x.id === id; })[0];
+        if (!g) return;
+        g.resolved = true;
+        LEDGER.push({ time: nowStamp(), desc: g.name + ' deactivated (ghost account resolved)', outcome:'safe' });
+        renderLedger();
+        renderGhostCF();
+      });
+    });
+  }
+
+  function refreshOpenCasefile(){
+    if (!currentSelection) return;
+    if (currentSelection === 'epi') renderEpicenterCF();
+    else if (currentSelection === 'beyond') renderBeyondCF();
+    else if (currentSelection === 'console') renderConsoleCF();
+    else if (currentSelection === 'ghost') renderGhostCF();
+    else if (nodesById[currentSelection]) renderNodeCF(nodesById[currentSelection]);
+  }
+
+  function openCasefile(nodeId, opener){
     currentSelection = nodeId;
+    lastOpener = opener || null;
     if (nodeId === 'epi') renderEpicenterCF();
     else if (nodeId === 'beyond') renderBeyondCF();
+    else if (nodeId === 'console') renderConsoleCF();
+    else if (nodeId === 'ghost') renderGhostCF();
     else renderNodeCF(nodesById[nodeId]);
     casefile.classList.add('open');
     casefile.setAttribute('aria-hidden', 'false');
+    var closeBtn = document.getElementById('cf-close');
+    if (closeBtn) closeBtn.focus();
   }
   function closeCasefile(){
+    if (!casefile.classList.contains('open')) return;
     casefile.classList.remove('open');
     casefile.setAttribute('aria-hidden', 'true');
     currentSelection = null;
+    if (lastOpener && document.contains(lastOpener) && lastOpener.focus) lastOpener.focus();
+    lastOpener = null;
   }
   document.getElementById('cf-close').addEventListener('click', closeCasefile);
+
+  // Escape closes the case file regardless of what has focus — DESIGN.md §5.3
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeCasefile();
+  });
 
   // swipe-down to dismiss the bottom sheet on phone
   (function(){
@@ -880,22 +1307,32 @@ a { color: var(--accent); }
   })();
 
   /* ---------------------------------------------------------
-     Field click / keyboard delegation
+     Field click / keyboard delegation + click-outside dismissal
      --------------------------------------------------------- */
   var fieldRegion = document.getElementById('field-region');
   function nodeIdFromTarget(target){
     var g = target.closest ? target.closest('[data-node]') : null;
-    return g ? g.getAttribute('data-node') : null;
+    return g ? g : null;
   }
   fieldRegion.addEventListener('click', function(e){
-    var id = nodeIdFromTarget(e.target);
-    if (id) openCasefile(id);
+    var g = nodeIdFromTarget(e.target);
+    if (g) { openCasefile(g.getAttribute('data-node'), g); return; }
+    if (e.target.closest && (e.target.closest('.scene-btn') || e.target.closest('.action-dock'))) return;
+    closeCasefile();
   });
   fieldRegion.addEventListener('keydown', function(e){
     if (e.key !== 'Enter' && e.key !== ' ') return;
-    var id = nodeIdFromTarget(e.target);
-    if (id) { e.preventDefault(); openCasefile(id); }
+    var g = nodeIdFromTarget(e.target);
+    if (g) { e.preventDefault(); openCasefile(g.getAttribute('data-node'), g); }
   });
+
+  // click/tap outside the panel (on the field, handled above, or the rail) closes it — DESIGN.md §5.3
+  document.querySelector('.rail').addEventListener('click', function(){
+    closeCasefile();
+  });
+
+  document.getElementById('btn-console').addEventListener('click', function(e){ openCasefile('console', e.currentTarget); });
+  document.getElementById('btn-ghost').addEventListener('click', function(e){ openCasefile('ghost', e.currentTarget); });
 
   /* ---------------------------------------------------------
      Preview → confirm → revert state machine
@@ -904,17 +1341,46 @@ a { color: var(--accent); }
   var actionBtn = document.getElementById('action-btn');
   var actionHint = document.getElementById('action-hint');
   var reached = NODES.length;
+  var reachBox = document.getElementById('reach-counter');
+  var reachValue = document.getElementById('reach-value');
 
   var queue = { auto:4, review:2, blocked:1 };
-  var roAuto = document.getElementById('ro-auto'), roReview = document.getElementById('ro-review'), roBlocked = document.getElementById('ro-blocked'), roConf = document.getElementById('ro-conf');
-  function paintQueue(){ roAuto.textContent = queue.auto; roReview.textContent = queue.review; roBlocked.textContent = queue.blocked; }
+  var roAuto = document.getElementById('ro-auto'), roReview = document.getElementById('ro-review'),
+      roBlocked = document.getElementById('ro-blocked'), roConf = document.getElementById('ro-conf'),
+      roPending = document.getElementById('ro-pending');
+  function paintQueue(){
+    roAuto.textContent = queue.auto; roReview.textContent = queue.review; roBlocked.textContent = queue.blocked;
+    var pending = queue.auto + queue.review + queue.blocked;
+    roPending.textContent = 'PENDING ' + pending + ' OF ' + TOTAL_CREDENTIALS;
+    var qs = document.getElementById('queue-scale-text');
+    if (qs) qs.textContent = 'Showing ' + pending + ' of ' + TOTAL_CREDENTIALS + ' credentials, sorted by confidence ↓';
+  }
   function paintConfidence(active){
     if (!active) { roConf.textContent = '0.71'; return; }
-    roConf.textContent = ((RING_CONF[1]*2 + RING_CONF[2]*3 + RING_CONF[3]*2) / 7).toFixed(2);
+    roConf.textContent = ((RING_CONF[1]*2 + RING_CONF[2]*4 + RING_CONF[3]*3) / 9).toFixed(2);
   }
 
   function setHop(hop, on){
     fieldRegion.classList[on ? 'add' : 'remove']('hop' + hop + '-active');
+  }
+
+  function updateActionButtonLabel(){
+    if (state !== 'armed') return;
+    if (writeMode){
+      actionBtn.disabled = false;
+      actionBtn.textContent = 'CONFIRM REVOCATION — ' + reached + ' ASSETS SECURED';
+      actionBtn.classList.add('is-confirm');
+      actionBtn.classList.remove('is-blocked');
+      actionBtn.title = '';
+      actionHint.textContent = 'Gate: needs review. Nothing is revoked until you confirm.';
+    } else {
+      actionBtn.disabled = true;
+      actionBtn.textContent = 'READ-ONLY — REQUEST WRITE ACCESS';
+      actionBtn.classList.remove('is-confirm');
+      actionBtn.classList.add('is-blocked');
+      actionBtn.title = 'Write mode requires the approver role — see the rail.';
+      actionHint.textContent = 'Preview is available read-only; confirming the revocation needs write access.';
+    }
   }
 
   function arm(){
@@ -922,39 +1388,48 @@ a { color: var(--accent); }
     state = 'previewing';
     actionBtn.disabled = true;
     actionBtn.textContent = 'PREVIEWING…';
+    actionBtn.classList.remove('is-blocked', 'is-confirm');
     actionHint.textContent = 'Watching the blast radius bloom, ring by ring.';
+    reachBox.classList.add('visible');
+    reachValue.textContent = '0';
+    srAnnounce('Previewing blast radius.');
+    var cumulative = 0;
     [1,2,3].forEach(function(hop, i){
-      setTimeout(function(){ setHop(hop, true); }, i * STAGGER);
+      setTimeout(function(){
+        setHop(hop, true);
+        cumulative += HOP_NODE_COUNTS[hop] || 0;
+        reachValue.textContent = String(cumulative);
+      }, i * STAGGER);
     });
     setTimeout(function(){
       state = 'armed';
-      actionBtn.disabled = false;
-      actionBtn.textContent = 'CONFIRM REVOCATION — ' + reached + ' ASSETS GO DARK';
-      actionBtn.classList.add('is-confirm');
-      actionHint.textContent = 'Gate: needs review. Nothing is revoked until you confirm.';
+      updateActionButtonLabel();
       paintConfidence(true);
-      if (currentSelection === 'epi') renderEpicenterCF();
+      srAnnounce('Gate: needs review — blast radius reaches ' + reached + ' assets, including a production automation and a second system’s credentials via GitHub.');
+      refreshOpenCasefile();
     }, 2 * STAGGER + SETTLE_BUFFER);
   }
 
   function confirm_(){
-    if (state !== 'armed') return;
+    if (state !== 'armed' || !writeMode) return;
     state = 'confirmed';
     actionBtn.disabled = true;
     actionBtn.textContent = 'REVOCATION CONFIRMED';
+    actionBtn.classList.remove('is-blocked');
     actionHint.textContent = 'A tether to the last known-good state stays open for one-click undo.';
     ['tether-full','tether-collapsed'].forEach(function(id){ document.getElementById(id).querySelector('.tether').classList.add('visible'); });
     document.getElementById('anchor-full').classList.add('visible');
     document.getElementById('anchor-collapsed').classList.add('visible');
     queue.review = Math.max(0, queue.review - 1);
     paintQueue();
-    LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked → needs monitoring', outcome:'monitor' });
+    LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked by you · needs monitoring', outcome:'monitor' });
     renderLedger();
-    if (currentSelection === 'epi') renderEpicenterCF();
+    srAnnounce('Revocation confirmed. A restore tether stays open.');
+    refreshOpenCasefile();
   }
 
   function revert(){
-    if (state !== 'confirmed') return;
+    if (state !== 'confirmed' || !writeMode) return;
     state = 'reverting';
     var revertBtn = document.getElementById('cf-revert-btn');
     if (revertBtn) { revertBtn.disabled = true; revertBtn.textContent = 'REELING IN…'; }
@@ -988,17 +1463,20 @@ a { color: var(--accent); }
       state = 'resting';
       actionBtn.disabled = false;
       actionBtn.textContent = 'REVOKE CREDENTIAL';
-      actionBtn.classList.remove('is-confirm');
+      actionBtn.classList.remove('is-confirm', 'is-blocked');
+      actionBtn.title = '';
       actionHint.textContent = 'Selecting never applies the action — it previews the blast radius first.';
       ['tether-full','tether-collapsed'].forEach(function(id){ document.getElementById(id).querySelector('.tether').classList.remove('visible'); });
       document.getElementById('anchor-full').classList.remove('visible');
       document.getElementById('anchor-collapsed').classList.remove('visible');
+      reachBox.classList.remove('visible');
       paintConfidence(false);
       queue.review = queue.review + 1;
       paintQueue();
-      LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted', outcome:'reverted' });
+      LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted by you', outcome:'reverted' });
       renderLedger();
-      if (currentSelection === 'epi') renderEpicenterCF();
+      srAnnounce('Revocation reverted. Back to last known-good.');
+      refreshOpenCasefile();
     }, 2 * STAGGER + SETTLE_BUFFER);
   }
 
@@ -1026,6 +1504,7 @@ a { color: var(--accent); }
     track.scrollLeft = track.scrollWidth;
   }
   renderLedger();
+  paintQueue();
 
 })();
 </script>
