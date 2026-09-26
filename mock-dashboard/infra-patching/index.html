@@ -119,6 +119,7 @@
   button{ font-family:inherit; }
   :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
   svg text{ font-family:"IBM Plex Sans", sans-serif; }
+  .sr-status{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 
   .app{ min-height:100%; display:flex; flex-direction:column; }
 
@@ -380,6 +381,8 @@
     <div class="ledger-track" id="ledgerTrack"></div>
   </footer>
 
+  <div class="sr-status" id="a11yStatus" role="status" aria-live="polite"></div>
+
 </div>
 
 <script>
@@ -432,7 +435,7 @@
       confidence:.41, gate:"blocked", env:"prod", regulated:true, window:"requires change-board sign-off",
       rollback:{ mech:"reimage", cost:"full reimage", weight:5.5 },
       gateReason:"Sits in front of a regulated data path — sign-off required regardless of confidence.",
-      blurb:"glibc 2.35 needs a buffer-handling fix. This proxy fronts a regulated data store, so no patch ships here without change-board sign-off.",
+      blurb:"glibc 2.35's dynamic loader mishandles the GLIBC_TUNABLES environment variable, allowing a local buffer overflow; fixed in 2.38. This proxy fronts a regulated data store, so no patch ships here without change-board sign-off.",
       quote:"blockedReg", regulatedFlag:true,
       rings:[
         { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail", team:"data-platform-team"} ] },
@@ -527,6 +530,11 @@
   };
 
   function getFinding(id){ for(var i=0;i<FINDINGS.length;i++){ if(FINDINGS[i].id===id) return FINDINGS[i]; } return null; }
+  // Baseline keyboard/focus contract (DESIGN.md §6.5): a small, dedicated
+  // aria-live="polite" status node — never a container that gets torn down and
+  // rebuilt — carries every dynamic state change that matters to a non-visual
+  // user (preview settling, a confirm, a completed revert).
+  function announce(text){ var n = document.getElementById("a11yStatus"); if(n) n.textContent = text; }
   function reduceMotion(){ try{ return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } }
   function isCompact(){ return window.innerWidth <= 480; }
   function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
@@ -1054,10 +1062,14 @@
     renderCaseFile();
     openCaseFile();
     if(willAnimate){
+      announce("Previewing "+finding.host+" — gate "+GATE_LABEL[finding.gate]+".");
       var rm = reduceMotion();
       var total = (rm ? 3*55+140 : 3*130+320) + 60;
       setTimeout(function(){
-        if(state.status[id]==="previewing"){ state.status[id] = "idle"; }
+        if(state.status[id]==="previewing"){
+          state.status[id] = "idle";
+          if(id === state.activeId){ announce("Preview settled — "+finding.host+" ready to act on."); }
+        }
         renderQueue();
         renderCaseFile();
       }, total);
@@ -1121,6 +1133,7 @@
     renderField(f, {animate:false});
     renderQueue();
     renderCaseFile();
+    announce(f.host+" patched and confirmed safe. Tether active.");
   }
 
   function revertAction(){
@@ -1134,6 +1147,7 @@
     state.status[f.id] = "reverting";
     renderCaseFile(); // swaps the revert button out for a disabled "REVERTING…" state immediately
     renderQueue();
+    announce("Reverting "+f.host+" — tether reeling in.");
     var layout = layoutCache[f.id];
     var rm = reduceMotion();
     if(!layout){ finishRevert(f); return; }
