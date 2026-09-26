@@ -717,6 +717,7 @@
     scrollLedgerEnd();
     renderMode();
     renderCaseFile();
+    announce("Mode: "+(state.mode==="write" ? "write access granted." : "returned to read-only."));
   }
 
   /* ================= QUEUE PANEL ================= */
@@ -1191,6 +1192,7 @@
     if(f.id === state.activeId){ renderField(f, {animate:false}); }
     renderQueue();
     renderCaseFile();
+    announce(f.host+" reverted to last known good.");
   }
 
   /* ================= CASE FILE CONTENT ================= */
