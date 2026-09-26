@@ -871,37 +871,37 @@ a { color: var(--accent); }
   var IR_QUOTE = { text:"A real incident isn't one stolen key, it's dozens, spread across accounts and tools that don't share a console. Before you can even start revoking, someone has to work out what breaks if you do — and that coordination is the slowest part, not the detection.", cite:"Incident responder, works across many client environments" };
 
   var NODES = [
-    { id:'n1', ring:1, angle:206, type:'key', name:'billing-worker-token', lastActive:'2026-09-26 07:10',
+    { id:'n1', ring:1, type:'key', name:'billing-worker-token', lastActive:'2026-09-26 07:10',
       why:"Authenticates the nightly billing worker directly, using svc-billing-legacy's secret.",
       basis:"Authenticates from the nightly batch host's fixed IP every run for the last 94 days; today's calls match that pattern exactly." },
-    { id:'n2', ring:1, angle:250, type:'key', name:'reporting-api-key', lastActive:'2026-09-25 22:47',
+    { id:'n2', ring:1, type:'key', name:'reporting-api-key', lastActive:'2026-09-25 22:47',
       why:"Pulls billing exports on the same key pair — unscoped to any single caller.",
       basis:"Unscoped key — used from three different IP ranges this month, wider than the other ring-1 tokens, which softens this node's confidence line." },
 
-    { id:'n3', ring:2, angle:150, type:'automation', name:'nightly-reconciliation-bot', lastActive:'2026-09-26 03:00',
+    { id:'n3', ring:2, type:'automation', name:'nightly-reconciliation-bot', lastActive:'2026-09-26 03:00',
       tag:'FEEDS FINANCE CLOSE',
       why:"Triggered by billing-worker-token every night; writes straight to the general ledger.",
       basis:"Runs on a fixed cron; last invocation matches the expected nightly window to the minute." },
-    { id:'n4', ring:2, angle:189, type:'automation', name:'ci-deploy-pipeline', lastActive:'2026-09-26 06:55',
+    { id:'n4', ring:2, type:'automation', name:'ci-deploy-pipeline', lastActive:'2026-09-26 06:55',
       tag:'PROD AUTOMATION',
       why:"reporting-api-key unlocks a deploy credential this pipeline uses to ship to production — the reason this crosses into review.",
       basis:"Deploy credential drawn from reporting-api-key is used outside business hours more often than baseline — the main reason this hop crosses into review.",
       quote:IR_QUOTE },
-    { id:'n5', ring:2, angle:228, type:'automation', name:'backup-sync-job', lastActive:'2026-09-24 01:15',
+    { id:'n5', ring:2, type:'automation', name:'backup-sync-job', lastActive:'2026-09-24 01:15',
       why:"Scheduled mirror of billing exports to cold storage.",
       basis:"Weekly mirror job; last run lands inside its usual Sunday 01:00 window." },
-    { id:'n8', ring:2, angle:267, type:'vault', name:'AWS Secrets Manager · billing-secrets', lastActive:'2026-09-26 06:40', tag:'AWS SECRETS MANAGER',
+    { id:'n8', ring:2, type:'vault', name:'AWS Secrets Manager · billing-secrets', lastActive:'2026-09-26 06:40', tag:'AWS SECRETS MANAGER',
       why:"reporting-api-key's role can read this secret store directly — the first hop from a compromised IAM key into AWS's own vault of further secrets.",
       basis:"Read call pattern matches billing-worker-token's IAM role; no cross-region access observed in the last 30 days." },
 
-    { id:'n6', ring:3, angle:160, type:'session', name:'finance-dashboard-viewers', lastActive:'2026-09-26 08:02',
+    { id:'n6', ring:3, type:'session', name:'finance-dashboard-viewers', lastActive:'2026-09-26 08:02',
       why:"Live SSO sessions reading reconciliation output — would lose data mid-session with no warning.",
       basis:"Confidence here reflects how many concurrent viewers would be interrupted, not a usage anomaly — 6 active sessions right now." },
-    { id:'n7', ring:3, angle:203, type:'session', name:'partner-webhook-relay', lastActive:'2026-09-26 05:40',
+    { id:'n7', ring:3, type:'session', name:'partner-webhook-relay', lastActive:'2026-09-26 05:40',
       tag:'PARTNER SLA 99.9%',
       why:"External billing partner integration, chained through the deploy pipeline's webhook relay.",
       basis:"Chained through ci-deploy-pipeline's webhook relay; visibility past that hop is limited to delivery logs, hence the soft line." },
-    { id:'n9', ring:3, angle:247, type:'key', name:'GitHub org secrets · skylayer-core', lastActive:'2026-09-25 19:12', tag:'GITHUB',
+    { id:'n9', ring:3, type:'key', name:'GitHub org secrets · skylayer-core', lastActive:'2026-09-25 19:12', tag:'GITHUB',
       why:"billing-secrets holds a GitHub App private key for skylayer-core — one compromised AWS credential now reaches another system's credentials entirely: AWS → Secrets Manager → GitHub → more secrets.",
       basis:"GitHub App key fetched from this secret twice in the last 90 days, both times from the CI runner's IP range — today's pattern falls outside that." }
   ];
@@ -1457,7 +1457,7 @@ a { color: var(--accent); }
     ['tether-full','tether-collapsed'].forEach(function(id){ document.getElementById(id).querySelector('.tether').classList.add('visible'); });
     document.getElementById('anchor-full').classList.add('visible');
     document.getElementById('anchor-collapsed').classList.add('visible');
-    queue.review = Math.max(0, queue.review - 1);
+    epiQueueItem.actioned = true;
     paintQueue();
     LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked by you · needs monitoring', outcome:'monitor' });
     renderLedger();
@@ -1508,7 +1508,7 @@ a { color: var(--accent); }
       document.getElementById('anchor-collapsed').classList.remove('visible');
       reachBox.classList.remove('visible');
       paintConfidence(false);
-      queue.review = queue.review + 1;
+      epiQueueItem.actioned = false;
       paintQueue();
       LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted by you', outcome:'reverted' });
       renderLedger();

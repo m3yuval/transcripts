@@ -1252,8 +1252,6 @@ function renderMatrix(f){
       td.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+nd.name+'</span>'+td.title); });
       td.addEventListener("mousemove", moveTip);
       td.addEventListener("mouseleave", hideTip);
-      td.addEventListener("focus", function(){ showTip({clientX: window.innerWidth/2, clientY: window.innerHeight/2}, '<span class="tip-title">'+nd.name+'</span>'+td.title); });
-      td.addEventListener("blur", hideTip);
       td.addEventListener("click", function(ev){ ev.stopPropagation(); activateCell(); });
       td.addEventListener("keydown", function(ev){
         if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); activateCell(); }

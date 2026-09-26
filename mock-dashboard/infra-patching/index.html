@@ -796,6 +796,14 @@
   /* ================= FIELD RENDER ================= */
   var layoutCache = {}; // per finding-id angle cache for gate computation reuse
 
+  // Deliberate demo-scale shortcut, not an oversight: renderField tears down and
+  // rebuilds the whole field SVG (defs/patterns/rings/nodes/gate/tether) on every
+  // call, including the debounced resize handler below. With the fixed 8-finding
+  // dataset this never visibly janks, but it does not scale past this demo — a
+  // real build would separate "build once" (defs/patterns) from "update per
+  // render" (positions/opacities) and reuse layoutCache for that. Flagged here per
+  // frontend-engineering critique #4 rather than fixed, since a full DOM-diffing
+  // rewrite of the field is out of scope for this pass.
   function renderField(finding, opts){
     opts = opts || {};
     var svg = document.getElementById("fieldSvg");
@@ -1031,11 +1039,15 @@
   /* ================= SELECTION / ACTIONS ================= */
   function selectFinding(id, opts){
     opts = opts || {};
+    // Re-entrancy guard, same pattern as revertAction below: a rapid repeat click
+    // on the already-active, already-previewing finding must not restart/stack a
+    // second bloom animation and a second settle timeout on top of the first.
+    if(opts.animate && id===state.activeId && (state.status[id]||"idle")==="previewing") return;
     state.activeId = id;
     state.caseView = { mode:"epicenter" };
     var finding = getFinding(id);
     var status = state.status[id] || "idle";
-    var willAnimate = opts.animate && status!=="confirmed" && status!=="reverted";
+    var willAnimate = opts.animate && status!=="confirmed" && status!=="reverted" && status!=="previewing";
     if(willAnimate){ state.status[id] = "previewing"; }
     renderQueue();
     renderField(finding, { animate: willAnimate });
@@ -1113,6 +1125,15 @@
 
   function revertAction(){
     var f = getFinding(state.activeId);
+    // Re-entrancy guard (DESIGN.md §6.3): revert only ever starts from "confirmed".
+    // A second click inside the ~650ms travel window finds status already
+    // "reverting" (set synchronously below, before anything async happens) and is
+    // a no-op — it can never read the tether's live-mutating coordinates twice,
+    // spawn a second traveler, or call finishRevert twice for one user action.
+    if(!f || state.status[f.id] !== "confirmed") return;
+    state.status[f.id] = "reverting";
+    renderCaseFile(); // swaps the revert button out for a disabled "REVERTING…" state immediately
+    renderQueue();
     var layout = layoutCache[f.id];
     var rm = reduceMotion();
     if(!layout){ finishRevert(f); return; }
@@ -1127,6 +1148,11 @@
     var traveler = el("circle", { r:7, style:"fill:var(--accent)" }, svg);
     var start = performance.now(), dur = 650;
     function frame(now){
+      // resize mid-animation rebuilds #fieldSvg from scratch (renderField does a
+      // full innerHTML="" teardown), which detaches both `line` and `traveler`
+      // from the live DOM. Detect that and settle the revert immediately instead
+      // of continuing to mutate orphaned nodes for the rest of the ~650ms window.
+      if(!traveler.isConnected){ finishRevert(f); return; }
       var t = clamp((now-start)/dur, 0, 1);
       var ease = 1 - Math.pow(1-t, 3);
       var cx = x1 + (x2-x1)*ease, cy = y1 + (y2-y1)*ease;
@@ -1143,7 +1169,12 @@
     state.revertReceipt = state.revertReceipt || {};
     state.revertReceipt[f.id] = { time: receiptTime, mech: f.rollback.mech };
     addLedgerEntry(f, "reverted");
-    renderField(f, {animate:false});
+    // Only redraw the field for f if the user is still looking at it — if they
+    // navigated to a different finding while this revert's travel animation was
+    // still in flight, forcing the field back to f here would clobber whatever
+    // they've since selected. The ledger entry and state.status update above still
+    // land unconditionally; only the render is scoped to the still-active finding.
+    if(f.id === state.activeId){ renderField(f, {animate:false}); }
     renderQueue();
     renderCaseFile();
   }
@@ -1210,6 +1241,9 @@
     // out the original label (DESIGN.md §5.5).
     if(status==="previewing"){
       return '<div class="cf-actions"><button class="cf-btn" disabled>PREVIEWING…</button><div class="cf-note">rings are still blooming outward</div></div>';
+    }
+    if(status==="reverting"){
+      return '<div class="cf-actions"><div class="cf-settled">REVERTING…</div><button class="cf-btn" disabled>REVERTING…</button><div class="cf-note">tether is reeling in — this cannot be interrupted</div></div>';
     }
     if(status==="confirmed"){
       if(readOnly){
