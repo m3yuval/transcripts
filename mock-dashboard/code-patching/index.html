@@ -463,7 +463,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
 
   .casefile{
     top:auto; bottom:0; left:0; right:0; width:100%;
-    max-height:68vh; height:auto;
+    max-height:47vh; height:auto;
     border-left:none; border-top:1px solid var(--border);
     border-radius:14px 14px 0 0;
     transform:translateY(100%);
@@ -477,7 +477,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
   .sheet-handle span{width:36px; height:4px; border-radius:3px; background:var(--border);}
 
   .ledger{height:auto; max-height:34vh; overflow-y:auto; overflow-x:hidden;}
-  .ledger-inner{flex-direction:column; width:100%;}
+  .ledger-inner{flex-direction:column-reverse; width:100%;}
   .ledger-item{width:100%; border-right:none; border-bottom:1px solid var(--border); flex-direction:row; align-items:center; justify-content:space-between; height:44px;}
   .led-desc{-webkit-line-clamp:1;}
 }
@@ -845,6 +845,7 @@ function renderPendingSlots(){
     if (f.id === selectedId) return;
     var s = SLOTS[f.id];
     var g = svgEl("g", {class:"slot-g", tabindex:"0", role:"button", "aria-label":"Open finding "+f.pkg+" "+f.from+" to "+f.to+", gate "+f.gate});
+    g.appendChild(svgEl("circle", {class:"hit", cx:s.x, cy:s.y+8, r:28}));
     g.appendChild(svgEl("circle", {class:"slot-ring", cx:s.x, cy:s.y, r:14}));
     g.appendChild(svgEl("circle", {class:"slot-ring", cx:s.x, cy:s.y, r:20, opacity:".5"}));
     g.appendChild(svgEl("circle", {class:"slot-core", cx:s.x, cy:s.y, r:3.5}));
@@ -884,20 +885,26 @@ function renderBeyondBadge(f){
 function renderRings(f){
   var layer = byId("ringsLayer");
   clear(layer);
-  var labels = ["RING 1 · DIRECT CALLERS","RING 2 · TRANSITIVE CALLERS","RING 3 · PUBLIC ENTRY / DEPLOYED"];
+  var hopNames = ["direct callers","transitive callers","public / deployed"];
+  var legendX = 26, legendY0 = 30, legendGap = 20;
   for (var i=0;i<3;i++){
     var r = RING_R[i];
     var c = f.ringConf[i];
     var ringCls = "ring-stroke" + (i >= 1 ? " full-only" : "");
     var circle = svgEl("circle", {class:ringCls, cx:EPI.x, cy:EPI.y, r:r, style:ringConfStyle(c)});
     layer.appendChild(circle);
-    var lp = polar(EPI.x, EPI.y, r, -100 - i*4);
-    var lab = svgEl("text", {class:"ring-label"+(i>=1?" full-only":""), x:lp.x, y:lp.y-4, "text-anchor":"middle"});
-    lab.textContent = "R"+(i+1)+" conf "+c.toFixed(2);
+
+    var ly = legendY0 + i*legendGap;
+    var swatchCls = "ring-stroke" + (i >= 1 ? " full-only" : "");
+    var swatch = svgEl("line", {class:swatchCls, x1:legendX, y1:ly, x2:legendX+26, y2:ly, style:ringConfStyle(c)});
+    layer.appendChild(swatch);
+    var lab = svgEl("text", {class:"ring-label"+(i>=1?" full-only":""), x:legendX+34, y:ly+3.5, "text-anchor":"start"});
+    lab.textContent = "R"+(i+1)+" "+hopNames[i]+" · conf "+c.toFixed(2);
     layer.appendChild(lab);
-    (function(circle, lab, delay){
-      setTimeout(function(){ circle.classList.add("in"); lab.classList.add("in"); }, delay);
-    })(circle, lab, i*STAGGER);
+
+    (function(circle, swatch, lab, delay){
+      setTimeout(function(){ circle.classList.add("in"); swatch.classList.add("in"); lab.classList.add("in"); }, delay);
+    })(circle, swatch, lab, i*STAGGER);
   }
 }
 
@@ -1227,6 +1234,7 @@ function renderCasefile(f){
 
 function showCasefilePanel(){
   caseOpen = true;
+  hideTip();
   byId("casefile").classList.add("open");
   byId("casefile").setAttribute("aria-hidden", "false");
   byId("stage").classList.add("casefile-open");
@@ -1252,7 +1260,7 @@ function setStatus(id, status){
   if (selectedId === id) renderCasefile(f);
   var glyph = status === "confirmed" ? outcomeGlyph("safe") : outcomeGlyph("monitoring");
   var desc = f.pkg+" "+f.from+"→"+f.to+" · "+f.repo;
-  ledger.unshift({t:"now", desc: desc + (status==="confirmed" ? " · confirmed" : " · PR opened"), outcome: status==="confirmed" ? "safe" : "monitoring", isNew:true});
+  ledger.push({t:"now", desc: desc + (status==="confirmed" ? " · confirmed" : " · PR opened"), outcome: status==="confirmed" ? "safe" : "monitoring", isNew:true});
   renderLedger();
   if (status === "confirmed") renderField(f);
 }
@@ -1262,7 +1270,7 @@ function revertFinding(id){
   animateRevert(f, function(){
     f.status = "reverted";
     renderCasefile(f);
-    ledger.unshift({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo, outcome:"reverted", isNew:true});
+    ledger.push({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo, outcome:"reverted", isNew:true});
     renderLedger();
     renderField(f);
   });
@@ -1346,6 +1354,9 @@ byId("evidenceToggle").addEventListener("click", function(){
   this.setAttribute("aria-expanded", open ? "true" : "false");
   this.textContent = "Evidence note for the founders (internal) " + (open ? "▴" : "▾");
 });
+
+document.addEventListener("touchstart", hideTip, {passive:true});
+byId("stageMain").addEventListener("scroll", hideTip, {passive:true});
 
 /* ---------------------------------------------------------------- boot */
 renderRail();
