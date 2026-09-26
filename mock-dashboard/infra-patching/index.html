@@ -144,7 +144,7 @@
   .rail-right::-webkit-scrollbar{ display:none; }
   .mode-block{ display:flex; align-items:center; gap:8px; flex:0 0 auto; }
   .mode-text{ font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.05em; font-weight:600; color:var(--text-muted); white-space:nowrap; }
-  .mode-text.is-write{ color:var(--gate-auto); }
+  .mode-text.is-write{ color:var(--gate-review); }
   .role-chip{
     font-size:9px; letter-spacing:.06em; text-transform:uppercase; padding:2px 6px;
     border:1px solid var(--border); background:none; color:var(--text-muted); white-space:nowrap;
@@ -250,7 +250,7 @@
   .cf-cve{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text); background:var(--surface); padding:2px 6px; border:1px solid var(--border); }
   .cf-pkg{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text-muted); }
   .cf-section{ margin-top:18px; }
-  .cf-h{ font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--text-faint); margin-bottom:7px; }
+  .cf-h{ font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--text-faint); margin-bottom:7px; }
   .cf-body-text{ font-size:12.5px; line-height:1.55; color:var(--text-muted); }
   .cf-hop-list{ display:flex; flex-direction:column; gap:6px; }
   .cf-hop{ display:flex; align-items:center; gap:8px; font-size:11.5px; }
@@ -327,7 +327,7 @@
       padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     .casefile.open{ transform:translateY(0); }
-    .cf-handle{ display:block; width:38px; height:4px; background:var(--border); margin:8px auto 2px; border-radius:2px; touch-action:none; }
+    .cf-handle{ display:block; width:38px; height:4px; background:var(--border); margin:8px auto 2px; border-radius:4px; touch-action:none; }
     .ledger{ height:auto; max-height:42vh; overflow-y:auto; }
     .ledger-track{ flex-direction:column; width:100%; padding:0; height:auto; }
     .ledger-item{ width:100%; border-right:none; border-bottom:1px solid var(--border); flex-direction:row; align-items:center; justify-content:space-between; }
@@ -359,7 +359,7 @@
 
   <main class="stage" id="stage">
     <section class="field-wrap" id="fieldWrap">
-      <svg class="field-svg" id="fieldSvg" role="group" aria-label="Blast radius field"></svg>
+      <svg class="field-svg" id="fieldSvg" role="group" aria-label="Blast radius field"><desc>Static backdrop: a survey-style field with hop rings around a host epicenter, a confidence gate arc, and a reversibility tether. The epicenter and each dependency node are separately focusable.</desc></svg>
 
       <div class="queue-panel" id="queuePanel">
         <div class="queue-head">PENDING <span class="n" id="queueCount"></span></div>
@@ -817,6 +817,11 @@
     opts = opts || {};
     var svg = document.getElementById("fieldSvg");
     svg.innerHTML = "";
+    // re-add the static <desc> the teardown above just removed — role="group" with
+    // focusable children still needs it (DESIGN.md §6.5), it just isn't re-typed each render.
+    var descEl = document.createElementNS("http://www.w3.org/2000/svg", "desc");
+    descEl.textContent = "Static backdrop: a survey-style field with hop rings around a host epicenter, a confidence gate arc, and a reversibility tether. The epicenter and each dependency node are separately focusable.";
+    svg.appendChild(descEl);
     var wrap = document.getElementById("fieldWrap");
     var w = wrap.clientWidth || 900, h = wrap.clientHeight || 560;
     svg.setAttribute("viewBox", "0 0 "+w+" "+h);

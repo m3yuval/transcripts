@@ -16,9 +16,9 @@
   --accent-infra:    #a8621e;
   --accent-code:     #5c7a3a;
 
-  --gate-auto:    #2e8b57;
-  --gate-review:  #d9a400;
-  --gate-blocked: #c4293e;
+  --gate-auto:    #1f6e46;
+  --gate-review:  #7d5c00;
+  --gate-blocked: #b81f35;
 
   --radius-0: #8a94a0;
   --radius-1: #c79a1e;
@@ -55,12 +55,12 @@
 
     --gate-auto:    #3fae76;
     --gate-review:  #e6b93a;
-    --gate-blocked: #e0495c;
+    --gate-blocked: #e35062;
 
     --radius-0: #7c8791;
     --radius-1: #e6b93a;
     --radius-2: #d1893f;
-    --radius-3: #e0495c;
+    --radius-3: #e35062;
   }
 }
 
@@ -80,12 +80,12 @@
 
   --gate-auto:    #3fae76;
   --gate-review:  #e6b93a;
-  --gate-blocked: #e0495c;
+  --gate-blocked: #e35062;
 
   --radius-0: #7c8791;
   --radius-1: #e6b93a;
   --radius-2: #d1893f;
-  --radius-3: #e0495c;
+  --radius-3: #e35062;
 }
 
 /* ============================= base ============================= */
@@ -153,6 +153,11 @@ button:focus-visible, [tabindex]:focus-visible, .hit:focus-visible{
 .rail-mode{
   display:flex; align-items:center; gap:8px; padding-right:16px; border-right:1px solid var(--border);
 }
+.mode-label{
+  font-family:"IBM Plex Mono", monospace; font-size:9px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--text-muted); white-space:nowrap;
+}
+.mode-label.is-write{color:var(--gate-review);}
 .role-chip, .mode-toggle{
   font-family:"IBM Plex Mono", monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase;
   border:1px solid var(--border); border-radius:2px; background:var(--surface); color:var(--text-muted);
@@ -202,6 +207,12 @@ button:focus-visible, [tabindex]:focus-visible, .hit:focus-visible{
   display:flex; gap:10px; flex-wrap:wrap; align-items:baseline;
 }
 .field-caption .mono{color:var(--text-muted); font-size:11px;}
+.field-caption .page-btn{
+  font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text-faint);
+  background:none; border:1px solid var(--border); width:20px; height:20px; line-height:1;
+  cursor:not-allowed; flex:0 0 auto; padding:0;
+}
+.field-caption .page-btn:hover:not(:disabled){ border-color:var(--accent); color:var(--accent); }
 
 .field-wrap{
   position:relative;
@@ -415,7 +426,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
 .cf-body{padding:14px 16px 6px;}
 .cf-section{margin-bottom:18px;}
 .cf-sectitle{
-  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.08em;
+  font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.08em;
   text-transform:uppercase; color:var(--text-faint); margin-bottom:7px;
 }
 .cf-gate{display:flex; align-items:center; gap:8px; margin-top:8px;}
@@ -509,7 +520,9 @@ td.cell.cell-hazard .g-none{background:transparent;}
     top:auto; bottom:0; left:0; right:0; width:100%;
     max-height:47vh; height:auto;
     border-left:none; border-top:1px solid var(--border);
-    border-radius:14px 14px 0 0;
+    /* square-cornered container, DESIGN.md §5.6 — never the rounded iOS-action-sheet
+       14px 14px 0 0 look; only the drag handle itself gets a radius. */
+    border-radius:0;
     transform:translateY(100%);
     padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
   }
@@ -518,7 +531,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
     display:flex; justify-content:center; padding:8px 0 2px; position:sticky; top:0;
     background:var(--surface-panel); z-index:3;
   }
-  .sheet-handle span{width:36px; height:4px; border-radius:3px; background:var(--border);}
+  .sheet-handle span{width:36px; height:4px; border-radius:4px; background:var(--border);}
 
   .ledger{height:auto; max-height:34vh; overflow-y:auto; overflow-x:hidden;}
   .ledger-inner{flex-direction:column-reverse; width:100%;}
@@ -550,6 +563,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
     </div>
     <div class="rail-right">
       <div class="rail-mode" id="railMode">
+        <span class="mode-label mono" id="modeLabel"></span>
         <button class="role-chip" id="roleChip" type="button"></button>
         <button class="mode-toggle mono" id="modeToggle" type="button"></button>
       </div>
@@ -562,7 +576,9 @@ td.cell.cell-hazard .g-none{background:transparent;}
   <div class="stage-main" id="stageMain">
     <div class="field-caption">
       <span class="disp-text" style="text-transform:uppercase; font-weight:700; letter-spacing:.04em; color:var(--text-muted); font-size:12px;">Call Path / Regression Proof Map</span>
-      <span class="mono">312 dependency findings tracked across repos (illustrative) · queue shows 8</span>
+      <span class="mono">Showing 8 of 312 dependency findings, sorted by confidence &darr;</span>
+      <button class="page-btn" disabled aria-label="Previous page (only one page in this mock)">&lsaquo;</button>
+      <button class="page-btn" disabled aria-label="Next page (only one page in this mock)">&rsaquo;</button>
     </div>
 
     <div class="field-wrap" id="fieldWrap">
@@ -855,13 +871,15 @@ function nodeState(node){
   return "hazard";
 }
 
+// every ledger entry carries an attributed actor AND approver — even as illustrative
+// demo data, never action-only text. DESIGN.md §5.4.
 var LEDGER_SEED = [
-  {t:"07:58", desc:"flask 2.0.1→2.2.5 · auth-gateway", outcome:"safe"},
-  {t:"08:14", desc:"protobuf 3.19.4→3.19.6 · billing-api", outcome:"safe"},
-  {t:"08:41", desc:"jinja2 2.11.3→3.1.2 · reporting-worker", outcome:"reverted"},
-  {t:"09:02", desc:"pillow 9.0.0→9.3.0 · media-processor", outcome:"safe"},
-  {t:"09:30", desc:"minimist 1.2.5→1.2.6 · notifications-svc", outcome:"monitoring"},
-  {t:"09:47", desc:"express 4.17.1→4.18.2 · public-api-gateway", outcome:"safe"}
+  {t:"07:58", desc:"flask 2.0.1→2.2.5 · auth-gateway · merged by j.ferrer · approved by platform-eng-oncall", outcome:"safe"},
+  {t:"08:14", desc:"protobuf 3.19.4→3.19.6 · billing-api · merged by s.okafor · approved by platform-eng-oncall", outcome:"safe"},
+  {t:"08:41", desc:"jinja2 2.11.3→3.1.2 · reporting-worker · reverted by j.ferrer · approved by platform-eng-oncall", outcome:"reverted"},
+  {t:"09:02", desc:"pillow 9.0.0→9.3.0 · media-processor · merged by auto-remediation · approved by platform-eng-oncall", outcome:"safe"},
+  {t:"09:30", desc:"minimist 1.2.5→1.2.6 · notifications-svc · PR opened by s.okafor · approved by change-board", outcome:"monitoring"},
+  {t:"09:47", desc:"express 4.17.1→4.18.2 · public-api-gateway · merged by j.ferrer · approved by change-board", outcome:"safe"}
 ];
 var ledger = LEDGER_SEED.slice();
 
@@ -882,17 +900,23 @@ var role = "viewer";      // "viewer" | "approver"
 var mode = "read-only";   // "read-only" | "write"
 
 function renderModeChrome(){
+  var modeLabel = byId("modeLabel");
   var roleBtn = byId("roleChip");
   var modeBtn = byId("modeToggle");
-  roleBtn.textContent = role === "approver" ? "ROLE: APPROVER" : "ROLE: VIEWER";
+  var isWrite = mode === "write";
+
+  modeLabel.textContent = "MODE: " + (isWrite ? "WRITE" : "READ-ONLY");
+  modeLabel.classList.toggle("is-write", isWrite);
+
+  roleBtn.textContent = role === "approver" ? "APPROVER" : "VIEWER";
   roleBtn.classList.toggle("is-approver", role === "approver");
   roleBtn.title = "Demo control — switch between viewer and approver role";
 
-  modeBtn.textContent = mode === "write" ? "MODE: WRITE" : "MODE: READ-ONLY";
-  modeBtn.classList.toggle("is-write", mode === "write");
+  modeBtn.textContent = isWrite ? "RETURN TO READ-ONLY" : "REQUEST WRITE ACCESS";
+  modeBtn.classList.toggle("is-write", isWrite);
   if (role === "approver"){
     modeBtn.disabled = false;
-    modeBtn.title = mode === "write" ? "Return to read-only" : "Request write access";
+    modeBtn.title = isWrite ? "Return to read-only" : "Request write access";
   } else {
     modeBtn.disabled = true;
     modeBtn.title = "Approver role required before write mode can even be requested";
@@ -917,9 +941,11 @@ function toggleMode(){
     // toggling to write mode is itself a logged, visible action — never silent
     ledger.push({t:"now", desc:"j.ferrer granted write access", outcome:"safe", isNew:true});
     renderLedger();
+    announce("Mode: write access granted.");
   } else {
     ledger.push({t:"now", desc:"j.ferrer returned to read-only", outcome:"safe", isNew:true});
     renderLedger();
+    announce("Mode: returned to read-only.");
   }
   renderCasefile(FINDINGS.find(function(x){ return x.id===selectedId; }));
 }
@@ -936,6 +962,7 @@ function clear(el){ while (el.firstChild) el.removeChild(el.firstChild); }
 function byId(id){ return document.getElementById(id); }
 
 /* ---------------------------------------------------------------- render: rail readouts */
+var TOTAL_TRACKED = 312; // must agree with the "312 dependency findings" caption below the field — DESIGN.md §5.6
 function renderRail(){
   var avg = FINDINGS.reduce(function(s,f){return s+f.confidence;},0) / FINDINGS.length;
   var counts = {auto:0, review:0, blocked:0};
@@ -946,7 +973,8 @@ function renderRail(){
     {label:"CONFIDENCE AVG", val: avg.toFixed(2), cls:""},
     {label:"AUTO", val: counts.auto, cls:"g-auto"},
     {label:"REVIEW", val: counts.review, cls:"g-review"},
-    {label:"BLOCKED", val: counts.blocked, cls:"g-blocked"}
+    {label:"BLOCKED", val: counts.blocked, cls:"g-blocked"},
+    {label:"PENDING", val: FINDINGS.length+" OF "+TOTAL_TRACKED, cls:""}
   ];
   items.forEach(function(it){
     var d = document.createElement("div");
@@ -959,11 +987,28 @@ function renderRail(){
 /* ---------------------------------------------------------------- render: field */
 function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
 // DESIGN.md §6.2 — the one shared K: strokeWidth = 1.5 + (1-confidence)*4.5, blur = (1-confidence)*2.5
+// Blur is applied via an SVG feGaussianBlur filter (stdDeviation), matching identity/infra-patching —
+// never a CSS filter:blur(), which blurs the whole rasterized element bounding box instead.
 function ringConfStyle(c){
   var dashLen = 8 + c*40, gapLen = 1 + (1-c)*14;
   var width = clamp(1.5 + (1-c)*4.5, 1.5, 6.0);
-  var blur = clamp((1-c)*2.5, 0, 2.5);
-  return "stroke-dasharray:"+dashLen.toFixed(1)+" "+gapLen.toFixed(1)+"; stroke-width:"+width.toFixed(2)+"px; filter:blur("+blur.toFixed(2)+"px);";
+  return "stroke-dasharray:"+dashLen.toFixed(1)+" "+gapLen.toFixed(1)+"; stroke-width:"+width.toFixed(2)+"px;";
+}
+function ringConfBlur(c){
+  return clamp((1-c)*2.5, 0, 2.5);
+}
+function applyRingBlur(el, idPrefix, hop, c){
+  var blur = ringConfBlur(c);
+  if (blur > 0.03){
+    var fid = idPrefix + "-blur-" + hop;
+    var defs = document.querySelector("#fieldSvg defs");
+    if (defs && !document.getElementById(fid)){
+      var filt = svgEl("filter", { id:fid, x:"-50%", y:"-50%", width:"200%", height:"200%" });
+      filt.appendChild(svgEl("feGaussianBlur", { stdDeviation: blur.toFixed(2) }));
+      defs.appendChild(filt);
+    }
+    el.setAttribute("filter", "url(#" + fid + ")");
+  }
 }
 
 function gateGlyph(gate, size){
@@ -1039,6 +1084,7 @@ function renderRings(f){
     var c = f.ringConf[i];
     var ringCls = "ring-stroke" + (i >= 1 ? " full-only" : "");
     var circle = svgEl("circle", {class:ringCls, cx:EPI.x, cy:EPI.y, r:r, style:ringConfStyle(c)});
+    applyRingBlur(circle, "ring", i+1, c);
     layer.appendChild(circle);
 
     var ly = legendY0 + i*legendGap;
@@ -1269,7 +1315,13 @@ function renderMatrix(f){
   announceMatrixDelta(f);
 }
 // Narrow, purpose-built live region: announces just the change on selection, not the
-// whole regenerated table (frontend-engineering.md code-patching #4).
+// whole regenerated table (frontend-engineering.md code-patching #4). The same node
+// also carries mode/confirm/revert announcements — DESIGN.md §6.5, matching the bar
+// set by infra-patching's aria-live coverage.
+function announce(text){
+  var statusEl = byId("matrixStatus");
+  if (statusEl) statusEl.textContent = text;
+}
 function announceMatrixDelta(f){
   var statusEl = byId("matrixStatus");
   if (!statusEl) return;
@@ -1493,9 +1545,16 @@ function setStatus(id, status){
   if (selectedId === id) renderCasefile(f);
   var glyph = status === "confirmed" ? outcomeGlyph("safe") : outcomeGlyph("monitoring");
   var desc = f.pkg+" "+f.from+"→"+f.to+" · "+f.repo;
-  ledger.push({t:"now", desc: desc + (status==="confirmed" ? " · confirmed" : " · PR opened"), outcome: status==="confirmed" ? "safe" : "monitoring", isNew:true});
+  var attribution = status==="confirmed" ? "merged by j.ferrer" : "PR opened by j.ferrer";
+  var approver = f.gate==="auto" ? "auto-approved" : "approved by platform-eng-oncall";
+  ledger.push({t:"now", desc: desc + " · " + attribution + " · " + approver, outcome: status==="confirmed" ? "safe" : "monitoring", isNew:true});
   renderLedger();
-  if (status === "confirmed") renderField(f);
+  if (status === "confirmed"){
+    renderField(f);
+    announce(desc + " merged and deployed. Tether active.");
+  } else {
+    announce(desc + " — PR opened for review.");
+  }
 }
 function confirmFinding(id){ setStatus(id, "confirmed"); }
 function revertFinding(id){
@@ -1506,13 +1565,15 @@ function revertFinding(id){
   // same failure mode, fixed here too).
   if (f._reverting) return;
   f._reverting = true;
+  announce("Reverting "+f.pkg+" — tether reeling in.");
   animateRevert(f, function(){
     f._reverting = false;
     f.status = "reverted";
     renderCasefile(f);
-    ledger.push({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo, outcome:"reverted", isNew:true});
+    ledger.push({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo+" · reverted by j.ferrer · approved by platform-eng-oncall", outcome:"reverted", isNew:true});
     renderLedger();
     renderField(f);
+    announce(f.pkg+" reverted to last known-good.");
   });
 }
 

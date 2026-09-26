@@ -278,17 +278,34 @@ a { color: var(--accent); }
   z-index: 2;
   pointer-events: none;
 }
-.field-attribution {
+/* evidence-honesty banner — same visual language as code-patching's evidence-note:
+   bordered box, always visible, never a collapsed toggle. */
+.evidence-note {
   position: absolute;
   left: 20px;
   top: 58px;
-  max-width: 380px;
-  font-size: 10px;
-  letter-spacing: 0.01em;
-  color: var(--text-faint);
+  right: 20px;
+  max-width: 440px;
   z-index: 2;
-  pointer-events: none;
+  padding: 8px 10px;
+  border: 1px solid var(--gate-review);
+  background: color-mix(in srgb, var(--surface-panel) 92%, transparent);
+  font-size: 11px;
+  color: var(--text-muted);
 }
+.evidence-note-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.evidence-flag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gate-review);
+  border: 1px solid var(--gate-review);
+  padding: 1px 6px;
+  flex: none;
+}
+.evidence-note-title { font-weight: 600; color: var(--text); }
+.evidence-body { margin-top: 5px; }
 .field-svg { display: block; width: 100%; height: 100%; }
 .field-svg.collapsed { display: none; }
 
@@ -626,8 +643,10 @@ a { color: var(--accent); }
   .field-svg.full { display: none; }
   .field-svg.collapsed { display: block; }
   .field-caption { display: none; }
-  .field-attribution { display: none; }
-  .scene-dock { top: 10px; right: 10px; }
+  /* evidence-honesty banner compresses, never disappears — DESIGN.md §1/§5, PRD.md §1 */
+  .evidence-note { left: 10px; right: 10px; top: 8px; max-width: none; padding: 5px 8px; font-size: 9.5px; }
+  .evidence-note .evidence-body { display: none; }
+  .scene-dock { top: 46px; right: 10px; }
   .scene-btn { font-size: 8.5px; max-width: 150px; padding: 5px 8px; }
   .reach-counter { top: auto; bottom: 78px; right: 12px; }
 
@@ -655,7 +674,7 @@ a { color: var(--accent); }
   }
   .casefile.open { flex-basis: auto; height: 60vh; width: auto; }
   .casefile-inner { width: 100%; height: 100%; padding: 10px 40px calc(20px + env(safe-area-inset-bottom, 0px)) 16px; }
-  .cf-drag { display: block; width: 42px; height: 4px; border-radius: 2px; background: var(--border); margin: 4px auto 10px; }
+  .cf-drag { display: block; width: 42px; height: 4px; border-radius: 4px; background: var(--border); margin: 4px auto 10px; }
 
   .ledger-track { display: none; }
   .ledger-stack { display: flex; flex-direction: column; gap: 0; max-height: 220px; overflow-y: auto; }
@@ -703,7 +722,24 @@ a { color: var(--accent); }
   <div class="main">
     <div class="field-region" id="field-region">
       <p class="field-caption">"We don't have a traditional network to defend, so identity — keys, tokens, sessions — is where almost all of our visibility work already lives." <em>— CISO, cloud-native software company</em></p>
-      <p class="field-attribution">Recursive blast-radius model — modeled on incident-response casework across many environments, not yet a Skylayer-observed live capability.</p>
+
+      <!-- DESIGN.md §1 / PRD.md §1 "Evidence honesty check" — a visible-by-default disclosure,
+           never a collapsed toggle. Same on-screen treatment as code-patching's evidence-note. -->
+      <div class="evidence-note" id="evidence-note">
+        <div class="evidence-note-head">
+          <span class="evidence-flag">NASCENT</span>
+          <span class="evidence-note-title">This is breadth-of-mentions, not depth-of-process — read before trusting this screen</span>
+        </div>
+        <div class="evidence-body">
+          No CISO has walked us through an identity-remediation runbook end to end. What we have
+          instead: an incident-response practitioner describing containment mechanics across many
+          client environments, a CISO who redirected to identity offboarding unprompted, an
+          evaluator who called identity the layer that makes network irrelevant, and one narrow
+          reversible-hygiene design partnership. The recursive blast-radius graph below is modeled
+          on that incident-response casework — not yet a Skylayer-observed live capability. All
+          KPI-style numbers on this screen are illustrative demo data.
+        </div>
+      </div>
 
       <div class="scene-dock">
         <button class="scene-btn" id="btn-console">Containment console — 30 accounts · 100 keys</button>
@@ -930,13 +966,15 @@ a { color: var(--accent); }
     { id:'g4', name:'stale-ci-bot-2019', lastActive:'19 hours ago', resolved:false }
   ];
 
+  // every ledger entry carries an attributed actor AND approver — even as illustrative
+  // demo data, never action-only text. DESIGN.md §5.4.
   var LEDGER = [
-    { time:'YESTERDAY 18:30', desc:'svc-account: backup-relay-03 disabled', outcome:'monitor' },
-    { time:'07:52', desc:'dormant-account-jrichter deactivated', outcome:'safe' },
-    { time:'08:15', desc:'ci-bot-token-central rotated', outcome:'reverted' },
-    { time:'08:41', desc:'batch: 12 AWS keys (finance-legacy) revoked', outcome:'monitor' },
-    { time:'09:02', desc:'stale-vendor-sso-mparker offboarded', outcome:'safe' },
-    { time:'09:14', desc:'svc-reporting-key-04a1 revoked', outcome:'safe' }
+    { time:'YESTERDAY 18:30', desc:'svc-account: backup-relay-03 disabled by j.ferrer · approved by platform-eng-oncall', outcome:'monitor' },
+    { time:'07:52', desc:'dormant-account-jrichter deactivated by s.okafor · approved by identity-oncall', outcome:'safe' },
+    { time:'08:15', desc:'ci-bot-token-central rotated by auto-remediation · approved by identity-oncall', outcome:'reverted' },
+    { time:'08:41', desc:'batch: 12 AWS keys (finance-legacy) revoked by j.ferrer · approved by change-board', outcome:'monitor' },
+    { time:'09:02', desc:'stale-vendor-sso-mparker offboarded by s.okafor · approved by identity-oncall', outcome:'safe' },
+    { time:'09:14', desc:'svc-reporting-key-04a1 revoked by j.ferrer · approved by identity-oncall', outcome:'safe' }
   ];
 
   /* ---------------------------------------------------------
@@ -1129,6 +1167,7 @@ a { color: var(--accent); }
       writeMode = false;
       LEDGER.push({ time: nowStamp(), desc: 'you returned to read-only (role changed to viewer)', outcome:'safe' });
       renderLedger();
+      srAnnounce('Mode: returned to read-only.');
     }
     paintMode();
   });
@@ -1138,6 +1177,7 @@ a { color: var(--accent); }
     writeMode = !writeMode;
     LEDGER.push({ time: nowStamp(), desc: 'you ' + (writeMode ? 'granted write access' : 'returned to read-only'), outcome:'safe' });
     renderLedger();
+    srAnnounce('Mode: ' + (writeMode ? 'write access granted.' : 'returned to read-only.'));
     paintMode();
   });
 
@@ -1253,7 +1293,7 @@ a { color: var(--accent); }
   function coordinateRevocation(){
     if (!writeMode) return;
     CONSOLE_TEAMS.forEach(function(t){ t.status = 'pinged'; });
-    LEDGER.push({ time: nowStamp(), desc: 'coordinate-revocation pinged 3 teams (30 accounts / 100 keys)', outcome:'monitor' });
+    LEDGER.push({ time: nowStamp(), desc: 'coordinate-revocation pinged 3 teams (30 accounts / 100 keys) by you · approved by identity-oncall', outcome:'monitor' });
     renderLedger();
     renderConsoleCF();
   }
@@ -1287,7 +1327,7 @@ a { color: var(--accent); }
         var g = GHOST_ACCOUNTS.filter(function(x){ return x.id === id; })[0];
         if (!g) return;
         g.resolved = true;
-        LEDGER.push({ time: nowStamp(), desc: g.name + ' deactivated (ghost account resolved)', outcome:'safe' });
+        LEDGER.push({ time: nowStamp(), desc: g.name + ' deactivated (ghost account resolved) by you · approved by identity-oncall', outcome:'safe' });
         renderLedger();
         renderGhostCF();
       });
@@ -1483,7 +1523,7 @@ a { color: var(--accent); }
     document.getElementById('anchor-collapsed').classList.add('visible');
     epiQueueItem.actioned = true;
     paintQueue();
-    LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked by you · needs monitoring', outcome:'monitor' });
+    LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked by you · approved by identity-oncall · needs monitoring', outcome:'monitor' });
     renderLedger();
     srAnnounce('Revocation confirmed. A restore tether stays open.');
     refreshOpenCasefile();
@@ -1534,7 +1574,7 @@ a { color: var(--accent); }
       paintConfidence(false);
       epiQueueItem.actioned = false;
       paintQueue();
-      LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted by you', outcome:'reverted' });
+      LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted by you · approved by identity-oncall', outcome:'reverted' });
       renderLedger();
       srAnnounce('Revocation reverted. Back to last known-good.');
       refreshOpenCasefile();
