@@ -991,6 +991,30 @@ a { color: var(--accent); }
   var R0 = 0.10 * MIN_WH, DR = 0.12 * MIN_WH; // ring/hop spacing — DESIGN.md §5.2
   var RADII = { 1: R0, 2: R0 + DR, 3: R0 + 2 * DR };
 
+  // Angular spacing is computed per ring, not authored per node (frontend-engineering
+  // #5): each ring gets a fixed sector and its nodes are spread evenly across it in
+  // array order, so a ring with more findings than today's 2/4/3 split still spaces
+  // labels/glyphs apart instead of overlapping at a hand-tuned literal angle.
+  var RING_SECTORS = { 1:[206,250], 2:[150,267], 3:[160,247] };
+  function sectorAngles(count, ring){
+    var s = RING_SECTORS[ring] || [200,260];
+    if (count <= 0) return [];
+    if (count === 1) return [(s[0] + s[1]) / 2];
+    var step = (s[1] - s[0]) / (count - 1);
+    var out = [];
+    for (var i = 0; i < count; i++) out.push(s[0] + i * step);
+    return out;
+  }
+  function assignNodeAngles(nodes){
+    var byRing = {};
+    nodes.forEach(function(n){ (byRing[n.ring] = byRing[n.ring] || []).push(n); });
+    Object.keys(byRing).forEach(function(ring){
+      var angles = sectorAngles(byRing[ring].length, Number(ring));
+      byRing[ring].forEach(function(n, i){ n.angle = angles[i]; });
+    });
+  }
+  assignNodeAngles(NODES);
+
   function buildFull(){
     var ringsG = document.getElementById('rings-full');
     [1,2,3].forEach(function(hop){
@@ -1024,7 +1048,7 @@ a { color: var(--accent); }
     var nodesG = document.getElementById('nodes-collapsed');
     var ring1Nodes = NODES.filter(function(n){ return n.ring===1; });
     var beyondCount = NODES.filter(function(n){ return n.ring>1; }).length;
-    var angles1 = [200, 260];
+    var angles1 = sectorAngles(ring1Nodes.length, 1);
     ring1Nodes.forEach(function(n, i){
       var p = polar(cx, cy, r1, angles1[i]);
       var g = svgEl('g', { class:'node', 'data-node':n.id, 'data-hop':'1', tabindex:'0', role:'button',
