@@ -1,0 +1,1099 @@
+<title>Downstream Break Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@500;600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  /* ============ ISOLINE — palette (verbatim from DESIGN.md §4) ============ */
+  :root{
+    color-scheme: light;
+
+    --paper-0: #eef1f0;
+    --paper-1: #e3e8e6;
+    --paper-2: #d4dbd8;
+    --ink-900: #10151a;
+    --ink-700: #3c4750;
+    --ink-400: #74838a;
+    --line:    #b7c2be;
+
+    --accent-identity: #1f7a8c;
+    --accent-infra:    #a8621e;
+    --accent-code:     #5c7a3a;
+
+    --gate-auto:    #2e8b57;
+    --gate-review:  #d9a400;
+    --gate-blocked: #c4293e;
+
+    --radius-0: #8a94a0;
+    --radius-1: #c79a1e;
+    --radius-2: #b8621e;
+    --radius-3: #a3273a;
+
+    --surface:        var(--paper-0);
+    --surface-panel:  var(--paper-1);
+    --surface-field:  var(--paper-1);
+    --grid-line:      var(--paper-2);
+    --text:           var(--ink-900);
+    --text-muted:     var(--ink-700);
+    --text-faint:     var(--ink-400);
+    --border:         var(--line);
+
+    /* this dashboard's own accent + page-local helpers */
+    --accent: var(--accent-infra);
+    --panel-veil: rgba(238,241,240,.92);
+    --hatch-line: rgba(16,21,26,.38);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+
+      --paper-0: #0b0f13;
+      --paper-1: #12181d;
+      --paper-2: #232c31;
+      --ink-900: #e8ecec;
+      --ink-700: #aab4b8;
+      --ink-400: #6d7980;
+      --line:    #2b363c;
+
+      --accent-identity: #3fa6bb;
+      --accent-infra:    #d1893f;
+      --accent-code:     #8bab5e;
+
+      --gate-auto:    #3fae76;
+      --gate-review:  #e6b93a;
+      --gate-blocked: #e0495c;
+
+      --radius-0: #7c8791;
+      --radius-1: #e6b93a;
+      --radius-2: #d1893f;
+      --radius-3: #e0495c;
+
+      --panel-veil: rgba(11,15,19,.88);
+      --hatch-line: rgba(232,236,236,.32);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+
+    --paper-0: #0b0f13;
+    --paper-1: #12181d;
+    --paper-2: #232c31;
+    --ink-900: #e8ecec;
+    --ink-700: #aab4b8;
+    --ink-400: #6d7980;
+    --line:    #2b363c;
+
+    --accent-identity: #3fa6bb;
+    --accent-infra:    #d1893f;
+    --accent-code:     #8bab5e;
+
+    --gate-auto:    #3fae76;
+    --gate-review:  #e6b93a;
+    --gate-blocked: #e0495c;
+
+    --radius-0: #7c8791;
+    --radius-1: #e6b93a;
+    --radius-2: #d1893f;
+    --radius-3: #e0495c;
+
+    --panel-veil: rgba(11,15,19,.88);
+    --hatch-line: rgba(232,236,236,.32);
+  }
+
+  /* ============ base ============ */
+  *{ box-sizing: border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    padding-inline: 16px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .mono{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  .caps{ text-transform: uppercase; letter-spacing:.07em; }
+  a{ color: var(--accent); }
+  button{ font-family:inherit; }
+  :focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  svg text{ font-family:"IBM Plex Sans", sans-serif; }
+
+  .app{ min-height:100%; display:flex; flex-direction:column; }
+
+  /* ============ 1. instrument rail ============ */
+  .rail{
+    flex:0 0 auto;
+    height:54px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    border-bottom:1px solid var(--border);
+    background: var(--surface);
+    position: relative; z-index: 6;
+  }
+  .rail-mark{ display:flex; align-items:center; gap:9px; flex:0 0 auto; }
+  .mark-glyph{ width:24px; height:24px; flex:0 0 auto; }
+  .mark-text{
+    font-family:"Big Shoulders", "Arial Narrow", sans-serif;
+    font-weight:700; text-transform:uppercase; letter-spacing:.045em;
+    font-size:14.5px; white-space:nowrap; color:var(--text);
+  }
+  .mark-pillar{ color: var(--accent); }
+  .rail-readouts{
+    display:flex; align-items:stretch; gap:0;
+    overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .rail-readouts::-webkit-scrollbar{ display:none; }
+  .readout{
+    display:flex; flex-direction:column; align-items:flex-end; justify-content:center;
+    padding: 0 13px; border-left:1px solid var(--border); white-space:nowrap;
+  }
+  .readout:first-child{ border-left:none; }
+  .readout-label{ font-size:9px; letter-spacing:.08em; color:var(--text-faint); text-transform:uppercase; }
+  .readout-value{ font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:600; font-size:13.5px; color:var(--text); }
+  .readout-dot{ display:inline-block; width:6px; height:6px; margin-right:4px; vertical-align:middle; }
+  .readout-dot.gate-auto{ background:var(--gate-auto); }
+  .readout-dot.gate-review{ background:var(--gate-review); }
+  .readout-dot.gate-blocked{ background:var(--gate-blocked); }
+
+  /* ============ 2. the field + case file ============ */
+  .stage{ flex:1 1 auto; display:flex; min-height:0; position:relative; }
+  .field-wrap{
+    flex:1 1 auto; min-width:0; position:relative;
+    background: var(--surface-field);
+    min-height: 62vh;
+    overflow:hidden;
+  }
+  .field-svg{ display:block; width:100%; height:100%; }
+  .field-svg .node{ cursor:pointer; }
+  .field-svg .epicenter{ cursor:pointer; }
+
+  .queue-panel{
+    position:absolute; top:12px; left:14px; z-index:3;
+    width:min(236px, 46vw); max-height:48%;
+    background: var(--panel-veil); padding:8px 9px 4px;
+  }
+  .queue-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:6px;
+    font-family:"Big Shoulders Text","Big Shoulders","Arial Narrow",sans-serif;
+    font-weight:700; font-size:11px; letter-spacing:.08em; color:var(--text-faint);
+    text-transform:uppercase; margin-bottom:2px;
+  }
+  .queue-head .n{ font-family:"IBM Plex Mono",monospace; color:var(--text-muted); }
+  .queue-list{ max-height: calc(48vh - 30px); overflow-y:auto; }
+  .queue-row{
+    display:flex; align-items:center; gap:7px; width:100%;
+    padding:6px 3px; border-top:1px solid var(--border);
+    background:none; border-left:none; border-right:none; border-bottom:none;
+    text-align:left; cursor:pointer; color:var(--text);
+  }
+  .queue-row:first-child{ border-top:none; }
+  .queue-row:hover, .queue-row:focus-visible{ background: var(--surface-panel); }
+  .queue-row[aria-current="true"]{ background: var(--surface-panel); box-shadow: inset 3px 0 0 var(--accent); }
+  .queue-dot{ flex:0 0 auto; }
+  .queue-text{ flex:1 1 auto; min-width:0; }
+  .queue-name{ display:block; font-size:11.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .queue-cve{ display:block; font-family:"IBM Plex Mono",monospace; font-size:9.5px; color:var(--text-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .queue-conf{ flex:0 0 auto; font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--text-muted); }
+  .queue-tag{ flex:0 0 auto; font-size:8.5px; letter-spacing:.05em; padding:1px 4px; border:1px solid var(--border); color:var(--text-muted); }
+
+  .field-legend{
+    position:absolute; left:14px; bottom:12px; z-index:2;
+    background: var(--panel-veil); padding:6px 8px;
+    font-size:10px; line-height:1.55; color:var(--text-faint); max-width:260px;
+  }
+  .field-legend b{ color:var(--text-muted); font-weight:600; }
+  .legend-row{ display:flex; align-items:center; gap:6px; margin:1px 0; }
+  .legend-row svg{ flex:0 0 auto; }
+
+  .casefile{
+    width:0; overflow:hidden; flex:0 0 auto;
+    border-left:1px solid var(--border);
+    background: var(--surface-panel);
+    display:flex; flex-direction:column;
+    transition: width .34s ease;
+  }
+  .casefile.open{ width:368px; }
+  .cf-handle{ display:none; }
+  .cf-scroll{ flex:1 1 auto; overflow-y:auto; padding:14px 16px 18px; }
+  .cf-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+  .cf-close{
+    flex:0 0 auto; width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+    background:none; border:1px solid var(--border); color:var(--text-muted); cursor:pointer; padding:0;
+  }
+  .cf-close:hover{ color:var(--text); border-color:var(--text-muted); }
+  .cf-host{ font-family:"Big Shoulders","Arial Narrow",sans-serif; font-weight:700; font-size:22px; letter-spacing:.01em; line-height:1.1; word-break:break-word; }
+  .cf-image{ font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text-muted); margin-top:2px; }
+  .cf-cve-row{ display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap; }
+  .cf-cve{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text); background:var(--surface); padding:2px 6px; border:1px solid var(--border); }
+  .cf-pkg{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--text-muted); }
+  .cf-section{ margin-top:18px; }
+  .cf-h{ font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; font-size:11.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--text-faint); margin-bottom:7px; }
+  .cf-body-text{ font-size:12.5px; line-height:1.55; color:var(--text-muted); }
+  .cf-hop-list{ display:flex; flex-direction:column; gap:6px; }
+  .cf-hop{ display:flex; align-items:center; gap:8px; font-size:11.5px; }
+  .cf-hop-label{ flex:0 0 auto; width:88px; color:var(--text-muted); font-size:10.5px; letter-spacing:.03em; }
+  .cf-hop-conf{ font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text); margin-left:auto; }
+  .cf-line-sample{ flex:0 0 auto; }
+  .cf-gate-box{ display:flex; align-items:center; gap:10px; }
+  .cf-gate-name{ font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; font-size:15px; letter-spacing:.03em; text-transform:uppercase; }
+  .cf-gate-reason{ font-size:11.5px; color:var(--text-muted); margin-top:4px; line-height:1.5; }
+  .cf-window{ font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text-muted); margin-top:6px; }
+  .cf-tether-row{ display:flex; align-items:center; gap:10px; }
+  .cf-tether-label{ font-size:12px; color:var(--text); font-weight:600; }
+  .cf-tether-cost{ font-size:10.5px; color:var(--text-faint); }
+  .cf-quote{ border-left:2px solid var(--border); padding-left:10px; font-size:11.5px; line-height:1.55; color:var(--text-muted); font-style:italic; }
+  .cf-quote cite{ display:block; margin-top:5px; font-style:normal; font-size:10px; letter-spacing:.02em; color:var(--text-faint); }
+  .cf-actions{ position:sticky; bottom:0; margin-top:20px; padding-top:14px; border-top:1px solid var(--border); background:var(--surface-panel); }
+  .cf-btn{
+    width:100%; padding:11px 12px; border:1px solid var(--text); background:var(--text); color:var(--surface);
+    font-family:"Big Shoulders Text","Big Shoulders",sans-serif; font-weight:700; letter-spacing:.05em; font-size:12.5px;
+    text-transform:uppercase; cursor:pointer;
+  }
+  .cf-btn:disabled{ background:none; color:var(--text-faint); border-color:var(--border); cursor:default; }
+  .cf-btn.gate-review-btn{ background:var(--gate-review); border-color:var(--gate-review); color:#1a1400; }
+  .cf-btn.revert-btn{ background:none; color:var(--text); border-color:var(--text); }
+  .cf-note{ font-size:10.5px; color:var(--text-faint); margin-top:8px; text-align:center; }
+  .cf-settled{ font-size:11.5px; color:var(--text-muted); text-align:center; padding:8px 0; }
+  .cf-back{ background:none; border:none; color:var(--accent); font-size:11px; padding:0; margin-bottom:10px; cursor:pointer; text-decoration:underline; }
+  .cf-key{ margin-top:22px; }
+  .cf-key summary{ cursor:pointer; font-size:11px; letter-spacing:.05em; color:var(--text-faint); text-transform:uppercase; }
+
+  /* ============ 4. ledger rail ============ */
+  .ledger{
+    flex:0 0 auto; height:74px; border-top:1px solid var(--border);
+    background: var(--surface); overflow-x:auto; overflow-y:hidden;
+  }
+  .ledger-track{ display:flex; align-items:stretch; height:100%; width:max-content; padding:0 16px; }
+  .ledger-item{ flex:0 0 auto; width:158px; padding:9px 13px; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:center; gap:3px; }
+  .ledger-time{ font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--text-faint); }
+  .ledger-desc{ font-size:11px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ledger-outcome{ display:flex; align-items:center; gap:5px; font-size:9.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }
+
+  /* ============ ring bloom-in (preview animation) ============ */
+  .ring-group{ opacity:1; transform:scale(1); }
+  .ring-group.pre{ opacity:0; transform:scale(.84); }
+
+  /* ============ node motion ============ */
+  @keyframes nodeFlicker{ 0%,100%{opacity:1} 40%{opacity:.5} 55%{opacity:.82} 70%{opacity:.58} 86%{opacity:.95} }
+  .flicker{ animation: nodeFlicker 2.6s ease-in-out infinite; }
+  @media (prefers-reduced-motion: reduce){ .flicker{ animation:none; } }
+
+  /* ============ phone collapse (≤480px) ============ */
+  @media (max-width:480px){
+    .rail{ height:auto; flex-wrap:wrap; padding-block:8px; gap:8px; }
+    .rail-readouts{ width:100%; }
+    .field-legend{ display:none; }
+    .queue-panel{ width:min(210px,62vw); }
+    .stage{ flex-direction:column; }
+    .field-wrap{ min-height: 58vh; }
+    .casefile{
+      position:fixed; left:0; right:0; bottom:0; top:auto; z-index:30;
+      width:auto !important; max-height:68vh; border-left:none; border-top:1px solid var(--border);
+      transform:translateY(100%); transition: transform .32s ease;
+      box-shadow: 0 -6px 18px rgba(0,0,0,.18);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .casefile.open{ transform:translateY(0); }
+    .cf-handle{ display:block; width:38px; height:4px; background:var(--border); margin:8px auto 2px; border-radius:2px; touch-action:none; }
+    .ledger{ height:auto; max-height:42vh; overflow-y:auto; }
+    .ledger-track{ flex-direction:column; width:100%; padding:0; height:auto; }
+    .ledger-item{ width:100%; border-right:none; border-bottom:1px solid var(--border); flex-direction:row; align-items:center; justify-content:space-between; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .casefile{ transition:none; }
+  }
+  @media (min-width:481px) and (max-width:899px){
+    .casefile.open{ width:308px; }
+  }
+</style>
+
+<div class="app" id="app">
+
+  <header class="rail" aria-label="Instrument rail">
+    <div class="rail-mark">
+      <svg class="mark-glyph" viewBox="0 0 28 28" aria-hidden="true">
+        <circle cx="11" cy="17" r="2.3" fill="var(--accent-infra)"></circle>
+        <circle cx="11" cy="17" r="6.2" fill="none" stroke="var(--accent-infra)" stroke-width="1.5" stroke-dasharray="27 6"></circle>
+        <circle cx="11" cy="17" r="10.4" fill="none" stroke="var(--accent-infra)" stroke-width="1.5" stroke-dasharray="42 10" opacity=".6"></circle>
+      </svg>
+      <span class="mark-text">SKYLAYER <span class="mark-pillar">&middot; INFRA PATCHING</span></span>
+    </div>
+    <div class="rail-readouts" id="railReadouts"></div>
+  </header>
+
+  <main class="stage" id="stage">
+    <section class="field-wrap" id="fieldWrap">
+      <svg class="field-svg" id="fieldSvg" role="img"></svg>
+
+      <div class="queue-panel" id="queuePanel">
+        <div class="queue-head">PENDING <span class="n" id="queueCount"></span></div>
+        <div class="queue-list" id="queueList"></div>
+      </div>
+
+      <div class="field-legend" id="fieldLegend"></div>
+    </section>
+
+    <aside class="casefile" id="casefile" aria-hidden="true" aria-label="Case file">
+      <div class="cf-handle" id="cfHandle"></div>
+      <div class="cf-scroll" id="cfScroll"></div>
+    </aside>
+  </main>
+
+  <footer class="ledger" id="ledger" aria-label="Ledger rail">
+    <div class="ledger-track" id="ledgerTrack"></div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ================= DATA — demo data only ================= */
+  var FINDINGS = [
+    { id:"pay-gw", host:"prod-pay-gw-04", image:"payments-gateway:2.11.3",
+      cve:"CVE-2026-31337", pkg:"openssl", from:"3.0.11", to:"3.0.14",
+      confidence:.93, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
+      rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
+      gateReason:"Full predicted radius resolves inside Saturday's maintenance window.",
+      blurb:"openssl 3.0.11 carries a heap-overflow fixed in 3.0.14. Reachable through the TLS terminator and the payments gateway service running on this host.",
+      quote:"auto",
+      rings:[
+        { hop:1, nodes:[ {name:"tls-terminator", state:"degrade"}, {name:"payments-gateway-svc", state:"degrade"} ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"degrade"}, {name:"fraud-scoring-svc", state:"contained"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:false} ] }
+      ] },
+
+    { id:"auth-log4j", host:"prod-auth-worker-11", image:"auth-worker:5.4.0",
+      cve:"CVE-2026-28810", pkg:"log4j-core", from:"2.14.1", to:"2.20.0",
+      confidence:.97, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
+      rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
+      gateReason:"Vulnerable class ships in the image but never loads — nothing downstream to resolve.",
+      blurb:"log4j-core 2.14.1 is present in the auth-worker image but not on the runtime classpath. The vulnerable class never loads, so the radius stays contained at hop 1.",
+      quote:"auto", reachable:false,
+      rings:[
+        { hop:1, nodes:[ {name:"auth-token-svc", state:"contained"} ] }
+      ] },
+
+    { id:"checkout-lb", host:"prod-checkout-lb-02", image:"edge-proxy:3.3.0",
+      cve:"CVE-2025-9142", pkg:"nginx", from:"1.24.0", to:"1.26.2",
+      confidence:.68, gate:"review", env:"prod", window:"SUN 01:00–03:00 UTC",
+      rollback:{ mech:"reimage", cost:"full reimage", weight:5.5 },
+      gateReason:"public-checkout-api sits outside Sunday's window at a 99.95% SLA tier.",
+      blurb:"nginx 1.24.0 needs a request-smuggling fix. The public checkout endpoint depends on this proxy outside the scheduled window.",
+      quote:"review",
+      rings:[
+        { hop:1, nodes:[ {name:"edge-proxy-svc", state:"hardfail"}, {name:"tls-terminator", state:"degrade"} ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"hardfail"}, {name:"customer-portal-api", state:"degrade"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"hardfail", sla:"99.95%", outside:true}, {name:"partner-webhook-relay", state:"degrade", sla:"99.90%", outside:false} ] }
+      ] },
+
+    { id:"db-proxy", host:"prod-db-proxy-07", image:"pgbouncer:2.0.4",
+      cve:"CVE-2026-11029", pkg:"glibc", from:"2.35", to:"2.38",
+      confidence:.41, gate:"blocked", env:"prod", regulated:true, window:"requires change-board sign-off",
+      rollback:{ mech:"reimage", cost:"full reimage", weight:5.5 },
+      gateReason:"Sits in front of a regulated data path — sign-off required regardless of confidence.",
+      blurb:"glibc 2.35 needs a buffer-handling fix. This proxy fronts a regulated data store, so no patch ships here without change-board sign-off.",
+      quote:"blockedReg", regulatedFlag:true,
+      rings:[
+        { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail"} ] },
+        { hop:2, nodes:[ {name:"billing-webhook", state:"hardfail"}, {name:"reporting-service", state:"degrade"} ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.90%", outside:true}, {name:"partner-webhook-relay", state:"hardfail", sla:"99.90%", outside:true} ] }
+      ] },
+
+    { id:"batch-etl", host:"staging-batch-etl-03", image:"batch-etl:2.2.0",
+      cve:"CVE-2026-14477", pkg:"python", from:"3.9.7", to:"3.9.18",
+      confidence:.99, gate:"auto", env:"staging", window:"no production window required",
+      rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
+      gateReason:"Staging only — no SLA-bound endpoint anywhere in the radius.",
+      blurb:"python 3.9.7 needs a parsing fix. Runs in staging only; nothing customer-facing sits downstream of this host.",
+      quote:"auto",
+      rings:[
+        { hop:1, nodes:[ {name:"batch-etl-svc", state:"degrade"} ] },
+        { hop:2, nodes:[ {name:"reporting-service", state:"contained"} ] }
+      ] },
+
+    { id:"cache-node", host:"prod-cache-node-05", image:"redis:7.0.4",
+      cve:"CVE-2026-20033", pkg:"redis", from:"7.0.4", to:"7.2.5",
+      confidence:.74, gate:"review", env:"prod", window:"SAT 02:00–04:00 UTC",
+      rollback:{ mech:"reimage", cost:"cluster rebuild", weight:5.5 },
+      gateReason:"Cluster rebuild runs past the end of Saturday's window; public-checkout-api is SLA-bound.",
+      blurb:"redis 7.0.4 needs a cluster-rebuild fix. The session cache backs checkout — a full rebuild would run past the scheduled window.",
+      quote:"review",
+      rings:[
+        { hop:1, nodes:[ {name:"session-cache-svc", state:"degrade"} ] },
+        { hop:2, nodes:[ {name:"auth-token-svc", state:"degrade"}, {name:"checkout-api", state:"degrade"} ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:true} ] }
+      ] },
+
+    { id:"ml-infer", host:"prod-ml-infer-02", image:"ml-inference:0.7.2",
+      cve:"CVE-2026-33210", pkg:"protobuf", from:"3.19.4", to:"3.20.3",
+      confidence:.52, gate:"blocked", env:"prod", window:"SAT 02:00–04:00 UTC",
+      rollback:{ mech:"reimage", cost:"full reimage", weight:5.5 },
+      gateReason:"customer-portal-api (99.99% SLA) sits outside the window at this confidence.",
+      blurb:"protobuf 3.19.4 needs a deserialization fix. The recommendation feed and search both call this model service; the 99.99% tier can't absorb the risk at 0.52 confidence.",
+      quote:"blockedSla",
+      rings:[
+        { hop:1, nodes:[ {name:"ml-inference-svc", state:"hardfail"} ] },
+        { hop:2, nodes:[ {name:"recommendation-svc", state:"hardfail"}, {name:"search-index-svc", state:"degrade"} ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.99%", outside:true} ] }
+      ] },
+
+    { id:"log-relay", host:"prod-log-relay-01", image:"fluent-bit:1.4.1",
+      cve:"CVE-2025-44210", pkg:"fluent-bit", from:"1.4.1", to:"1.9.10",
+      confidence:.95, gate:"auto", env:"prod", window:"SAT 02:00–04:00 UTC",
+      rollback:{ mech:"snapshot", cost:"instant restore", weight:1.6 },
+      gateReason:"Full predicted radius resolves inside Saturday's window.",
+      blurb:"fluent-bit 1.4.1 needs a log-parsing fix. Feeds the audit sink only; nothing customer-facing reads from it directly.",
+      quote:"auto",
+      rings:[
+        { hop:1, nodes:[ {name:"log-relay-svc", state:"degrade"} ] },
+        { hop:2, nodes:[ {name:"audit-log-sink", state:"contained"} ] }
+      ] }
+  ];
+
+  var QUOTES = {
+    auto:      { role:"Advisor to financial-services vendors", text:"Tell me what’s broken, fix it, and tell me you fixed it. I don’t want another dashboard that just reports the same problem back to me." },
+    review:    { role:"Head of security, mid-size software company", text:"We know which dependency is out of date. The hard part has never been knowing — it’s tracing who owns the affected service, opening the change ticket, running regression tests, and getting a human to sign off." },
+    blockedReg:{ role:"CIO/CISO, health-tech company operating in a regulated space", text:"Patching is our biggest pain point — every change to a regulated system has to be provable, tested, and sometimes reported before it can go live. If I can see exactly what a patch affects downstream, I can approve it in minutes instead of days." },
+    blockedSla:{ role:"Retired CISO, large manufacturer", text:"In a real production environment you cannot afford to be wrong. Legacy systems sit unpatched for years because nobody will risk the outage — the tooling has to earn trust before it gets anywhere near a write action." }
+  };
+
+  var GATE_LABEL = { auto:"AUTO-APPROVED", review:"NEEDS REVIEW", blocked:"BLOCKED" };
+
+  /* ================= STATE ================= */
+  var state = {
+    activeId: "pay-gw",
+    status: { "pay-gw":"confirmed" },
+    caseView: { mode:"epicenter" }, // or {mode:'node', hop, idx}
+    ledger: [
+      { time:"05:10", host:"prod-auth-worker-08", pkg:"glibc", outcome:"monitoring" },
+      { time:"05:40", host:"prod-cache-node-02", pkg:"redis", outcome:"reverted" },
+      { time:"06:22", host:"prod-web-05", pkg:"nginx", outcome:"safe" },
+      { time:"07:58", host:"prod-pay-gw-04", pkg:"openssl", outcome:"safe" }
+    ],
+    clock: { h:8, m:2 }
+  };
+
+  function getFinding(id){ for(var i=0;i<FINDINGS.length;i++){ if(FINDINGS[i].id===id) return FINDINGS[i]; } return null; }
+  function reduceMotion(){ try{ return window.matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){ return false; } }
+  function isCompact(){ return window.innerWidth <= 480; }
+  function clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+  function polar(cx,cy,r,a){ return [cx + r*Math.cos(a), cy + r*Math.sin(a)]; }
+  var DEG = Math.PI/180;
+
+  /* ================= GEOMETRY HELPERS ================= */
+  function ringPoints(cx,cy,r,phase,count){
+    count = count || 30;
+    var pts = [];
+    for(var i=0;i<count;i++){
+      var a = (i/count)*Math.PI*2;
+      var wob = 1 + 0.05*Math.sin(3*a+phase) + 0.032*Math.sin(7*a+phase*1.6);
+      pts.push([cx + r*wob*Math.cos(a), cy + r*wob*Math.sin(a)]);
+    }
+    return pts;
+  }
+  function smoothClosedPath(pts){
+    var n = pts.length;
+    function mid(a,b){ return [(a[0]+b[0])/2, (a[1]+b[1])/2]; }
+    var m0 = mid(pts[n-1], pts[0]);
+    var d = "M " + m0[0].toFixed(1) + " " + m0[1].toFixed(1) + " ";
+    for(var i=0;i<n;i++){
+      var p = pts[i];
+      var nm = mid(p, pts[(i+1)%n]);
+      d += "Q " + p[0].toFixed(1) + " " + p[1].toFixed(1) + " " + nm[0].toFixed(1) + " " + nm[1].toFixed(1) + " ";
+    }
+    return d + "Z";
+  }
+  function arcPath(cx,cy,r,a0,a1){
+    var p0 = polar(cx,cy,r,a0), p1 = polar(cx,cy,r,a1);
+    var large = Math.abs(a1-a0) > Math.PI ? 1 : 0;
+    var sweep = a1 > a0 ? 1 : 0;
+    return "M "+p0[0].toFixed(1)+" "+p0[1].toFixed(1)+" A "+r.toFixed(1)+" "+r.toFixed(1)+" 0 "+large+" "+sweep+" "+p1[0].toFixed(1)+" "+p1[1].toFixed(1);
+  }
+  function sectorAngles(count, ringIdx){
+    var sectors = [ [-108,128], [-92,150], [-76,172] ];
+    var s = sectors[Math.min(ringIdx,2)];
+    var start = s[0]*DEG, end = s[1]*DEG;
+    var out = [];
+    if(count<=0) return out;
+    if(count===1){ out.push((start+end)/2); return out; }
+    var step = (end-start)/(count-1);
+    for(var i=0;i<count;i++) out.push(start + i*step);
+    return out;
+  }
+  function ringConfidence(finding, hopIdx){
+    return clamp(finding.confidence - hopIdx*0.09, 0.05, 0.99);
+  }
+  function lineQuality(c){
+    return {
+      width: 1.5 + (1-c)*4.3,
+      dash: c > 0.62 ? "" : (4 + (1-c)*7).toFixed(1) + " " + (3 + (1-c)*5).toFixed(1),
+      blur: (1-c) * 2.1,
+      opacity: 0.55 + c*0.4
+    };
+  }
+
+  var svgNS = "http://www.w3.org/2000/svg";
+  function el(name, attrs, parent){
+    var e = document.createElementNS(svgNS, name);
+    if(attrs) for(var k in attrs){ e.setAttribute(k, attrs[k]); }
+    if(parent) parent.appendChild(e);
+    return e;
+  }
+
+  /* ================= BESPOKE GLYPHS ================= */
+  function gateGlyphSVG(gate, size){
+    size = size || 20;
+    var r = size/2 - 2.5, c = size/2;
+    var colorVar = gate==="auto" ? "var(--gate-auto)" : gate==="review" ? "var(--gate-review)" : "var(--gate-blocked)";
+    var circ = 2*Math.PI*r;
+    var gapFrac = gate==="auto" ? 0.32 : gate==="review" ? 0.17 : 0.045;
+    var gap = circ*gapFrac, dash = circ-gap;
+    var dot = gate==="blocked" ? '<circle cx="'+c+'" cy="'+(c-r)+'" r="1.5" style="fill:'+colorVar+'"></circle>' : "";
+    return '<svg viewBox="0 0 '+size+' '+size+'" width="'+size+'" height="'+size+'" aria-hidden="true">'+
+      '<g transform="rotate(-90 '+c+' '+c+')"><circle cx="'+c+'" cy="'+c+'" r="'+r+'" fill="none" style="stroke:'+colorVar+'" stroke-width="1.7" stroke-linecap="round" stroke-dasharray="'+dash.toFixed(1)+' '+gap.toFixed(1)+'"></circle></g>'+dot+
+      '</svg>';
+  }
+  function hopGlyphSVG(){
+    return '<svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><line x1="10" y1="17" x2="10" y2="4" style="stroke:var(--text-faint)" stroke-width="1.5"></line><line x1="6.5" y1="4" x2="13.5" y2="4" style="stroke:var(--text-faint)" stroke-width="1.5"></line></svg>';
+  }
+  function tetherGlyphSVG(weight){
+    weight = weight || 1.6;
+    return '<svg viewBox="0 0 30 14" width="30" height="14" aria-hidden="true">'+
+      '<line x1="2" y1="7" x2="19" y2="7" style="stroke:var(--text-muted)" stroke-width="'+weight+'" stroke-dasharray="4 3"></line>'+
+      '<path d="M25 1 L29 8 L21 8 Z" fill="none" style="stroke:var(--text-muted)" stroke-width="1.3"></path>'+
+      '<circle cx="25" cy="6.6" r="1.1" style="fill:var(--text-muted)"></circle>'+
+      '</svg>';
+  }
+  function outcomeGlyphSVG(kind){
+    if(kind==="safe"){
+      return '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M8 2 L13 12 L3 12 Z" fill="none" style="stroke:var(--text-muted)" stroke-width="1.4"></path><circle cx="8" cy="9" r="1" style="fill:var(--text-muted)"></circle></svg>';
+    }
+    if(kind==="reverted"){
+      return '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><line x1="13" y1="8" x2="4" y2="8" style="stroke:var(--text-muted)" stroke-width="1.5"></line><path d="M7 5 L3.4 8 L7 11" fill="none" style="stroke:var(--text-muted)" stroke-width="1.5"></path></svg>';
+    }
+    return gateGlyphSVG("review", 14);
+  }
+
+  /* ================= INSTRUMENT RAIL ================= */
+  function renderRail(){
+    var conf = FINDINGS.reduce(function(s,f){ return s+f.confidence; },0) / FINDINGS.length;
+    var auto = FINDINGS.filter(function(f){ return f.gate==="auto"; }).length;
+    var review = FINDINGS.filter(function(f){ return f.gate==="review"; }).length;
+    var blocked = FINDINGS.filter(function(f){ return f.gate==="blocked"; }).length;
+    var items = [
+      { label:"CONFIDENCE AVG", value: conf.toFixed(2), cls:"" },
+      { label:"AUTO", value: String(auto), cls:"gate-auto" },
+      { label:"REVIEW", value: String(review), cls:"gate-review" },
+      { label:"BLOCKED", value: String(blocked), cls:"gate-blocked" },
+      { label:"MTTR", value: "4.2D", cls:"" }
+    ];
+    document.getElementById("railReadouts").innerHTML = items.map(function(it){
+      var dot = it.cls ? '<span class="readout-dot '+it.cls+'"></span>' : "";
+      return '<div class="readout"><span class="readout-label">'+dot+it.label+'</span><span class="readout-value">'+it.value+'</span></div>';
+    }).join("");
+  }
+
+  /* ================= QUEUE PANEL ================= */
+  function renderQueue(){
+    document.getElementById("queueCount").textContent = FINDINGS.length;
+    var list = document.getElementById("queueList");
+    list.innerHTML = "";
+    FINDINGS.forEach(function(f){
+      var row = document.createElement("button");
+      row.className = "queue-row";
+      row.type = "button";
+      row.setAttribute("aria-current", String(f.id===state.activeId));
+      var status = state.status[f.id] || "idle";
+      var tag = status==="confirmed" ? '<span class="queue-tag">LIVE</span>' : status==="reverted" ? '<span class="queue-tag">UNDONE</span>' : "";
+      row.innerHTML =
+        '<span class="queue-dot">'+gateGlyphSVG(f.gate,14)+'</span>'+
+        '<span class="queue-text"><span class="queue-name">'+f.host+'</span><span class="queue-cve mono">'+f.cve+' · '+f.pkg+'</span></span>'+
+        '<span class="queue-conf mono">'+f.confidence.toFixed(2)+'</span>'+tag;
+      row.addEventListener("click", function(){ selectFinding(f.id, {animate:true}); });
+      list.appendChild(row);
+    });
+  }
+
+  /* ================= LEGEND ================= */
+  function renderLegend(){
+    document.getElementById("fieldLegend").innerHTML =
+      '<div class="legend-row">'+hopGlyphSVG()+'<span><b>HOP 1</b> on host &middot; <b>HOP 2</b> callers &middot; <b>HOP 3</b> SLA-bound</span></div>'+
+      '<div class="legend-row">'+gateGlyphSVG("auto",14)+gateGlyphSVG("review",14)+gateGlyphSVG("blocked",14)+'<span>gate: open&middot;half&middot;shut, never color alone</span></div>'+
+      '<div class="legend-row">'+tetherGlyphSVG(1.6)+'<span>thin = snapshot restore, thick = reimage</span></div>';
+  }
+  function legendHTML(){ return document.getElementById("fieldLegend").innerHTML; }
+
+  /* ================= LEDGER ================= */
+  function renderLedger(){
+    var track = document.getElementById("ledgerTrack");
+    track.innerHTML = state.ledger.map(function(e){
+      var word = e.outcome==="safe" ? "confirmed safe" : e.outcome==="reverted" ? "reverted" : "still monitoring";
+      return '<div class="ledger-item"><span class="ledger-time">'+e.time+'</span><span class="ledger-desc">'+e.host+' &middot; '+e.pkg+'</span><span class="ledger-outcome">'+outcomeGlyphSVG(e.outcome)+word+'</span></div>';
+    }).join("");
+  }
+  function scrollLedgerEnd(){
+    var lg = document.getElementById("ledger");
+    lg.scrollLeft = lg.scrollWidth;
+  }
+  function nextClockTime(){
+    state.clock.m += 4 + Math.floor(Math.random()*8);
+    while(state.clock.m>=60){ state.clock.m-=60; state.clock.h+=1; }
+    if(state.clock.h>23) state.clock.h -= 24;
+    return (state.clock.h<10?"0":"")+state.clock.h+":"+(state.clock.m<10?"0":"")+state.clock.m;
+  }
+  function addLedgerEntry(f, outcome){
+    state.ledger.push({ time: nextClockTime(), host: f.host, pkg: f.pkg, outcome: outcome });
+    renderLedger();
+    scrollLedgerEnd();
+  }
+
+  /* ================= FIELD RENDER ================= */
+  var layoutCache = {}; // per finding-id angle cache for gate computation reuse
+
+  function renderField(finding, opts){
+    opts = opts || {};
+    var svg = document.getElementById("fieldSvg");
+    svg.innerHTML = "";
+    var wrap = document.getElementById("fieldWrap");
+    var w = wrap.clientWidth || 900, h = wrap.clientHeight || 560;
+    svg.setAttribute("viewBox", "0 0 "+w+" "+h);
+    svg.setAttribute("aria-label", finding.host+" — "+finding.cve+" — gate "+finding.gate+" — confidence "+finding.confidence.toFixed(2));
+
+    var compact = isCompact();
+    var rm = reduceMotion();
+
+    var defs = el("defs", null, svg);
+    var hatch = el("pattern", { id:"hatch", width:6, height:6, patternUnits:"userSpaceOnUse", patternTransform:"rotate(45)" }, defs);
+    el("rect", { width:6, height:6, style:"fill:var(--radius-1)" }, hatch);
+    el("line", { x1:0, y1:0, x2:0, y2:6, style:"stroke:var(--hatch-line)", "stroke-width":2 }, hatch);
+
+    // base grid
+    var gpat = el("pattern", { id:"gridpat", width:24, height:24, patternUnits:"userSpaceOnUse" }, defs);
+    el("path", { d:"M0 24 L0 0 L24 0", fill:"none", style:"stroke:var(--grid-line)", "stroke-width":1 }, gpat);
+    el("rect", { x:0, y:0, width:w, height:h, fill:"url(#gridpat)" }, svg);
+
+    var ecx = Math.round(w*(compact?0.42:0.365)), ecy = Math.round(h*0.56);
+    var rMax = Math.min(w,h)*0.5 - (compact?20:44);
+    rMax = Math.max(rMax, 64);
+
+    var hops = finding.rings.map(function(r){ return r.hop; });
+    var maxHop = hops.length ? Math.max.apply(null, hops) : 0;
+
+    var radiusFor = {};
+    if(compact){
+      radiusFor[1] = rMax*0.40; radiusFor[2] = rMax*0.68; radiusFor[3] = rMax*0.86;
+    } else {
+      radiusFor[1] = rMax*0.30; radiusFor[2] = rMax*0.58; radiusFor[3] = rMax*0.90;
+    }
+
+    var groupsRoot = el("g", {}, svg);
+
+    // ring groups (contour + nodes) — hop order for stagger
+    var ringAngles = {}; // hop -> [angles]
+    var ringEls = [];
+
+    finding.rings.forEach(function(ring, idx){
+      if(compact && ring.hop===3 && finding.rings.some(function(r){return r.hop===3;})){
+        // handled separately as "beyond" band below
+        return;
+      }
+      var r = radiusFor[ring.hop];
+      var g = el("g", { class:"ring-group" }, groupsRoot);
+      g.style.transformOrigin = ecx+"px "+ecy+"px";
+      ringEls.push({ g:g, hop:ring.hop });
+
+      var conf = ringConfidence(finding, ring.hop-1);
+      var lq = lineQuality(conf);
+      var filterId = "blur-"+finding.id+"-"+ring.hop;
+      if(lq.blur > 0.15){
+        var filt = el("filter", { id:filterId, x:"-20%", y:"-20%", width:"140%", height:"140%" }, defs);
+        el("feGaussianBlur", { stdDeviation: lq.blur.toFixed(2) }, filt);
+      }
+      var pts = ringPoints(ecx, ecy, r, idx*1.9 + finding.host.length*0.3);
+      var path = el("path", {
+        d: smoothClosedPath(pts), fill:"none",
+        style:"stroke:var(--text-muted)",
+        "stroke-width": lq.width.toFixed(2),
+        opacity: lq.opacity.toFixed(2)
+      }, g);
+      if(lq.dash) path.setAttribute("stroke-dasharray", lq.dash);
+      if(lq.blur > 0.15) path.setAttribute("filter", "url(#"+filterId+")");
+
+      // hop tick label
+      var tickAngle = -100*DEG;
+      var tp = polar(ecx,ecy,r,tickAngle);
+      el("text", { x:tp[0], y:tp[1]-6, "text-anchor":"middle", "font-size":10, style:"fill:var(--text-faint)" , class:"mono"}, g).textContent = "HOP "+ring.hop+" · "+conf.toFixed(2);
+
+      // nodes
+      var angles = sectorAngles(ring.nodes.length, idx);
+      ringAngles[ring.hop] = angles;
+      ring.nodes.forEach(function(node, ni){
+        drawNode(g, ecx, ecy, r, angles[ni], node, ring.hop);
+      });
+    });
+
+    // compact "beyond" band
+    if(compact){
+      var beyondRing = finding.rings.filter(function(r){ return r.hop===3; })[0];
+      if(beyondRing){
+        var rB = radiusFor[3];
+        var g = el("g", { class:"ring-group" }, groupsRoot);
+        g.style.transformOrigin = ecx+"px "+ecy+"px";
+        ringEls.push({ g:g, hop:3 });
+        var conf3 = ringConfidence(finding, 2);
+        var lq3 = lineQuality(conf3);
+        var pts3 = ringPoints(ecx,ecy,rB, 4.1);
+        var pth = el("path", { d: smoothClosedPath(pts3), fill:"none", style:"stroke:var(--text-faint)", "stroke-width":lq3.width.toFixed(2), "stroke-dasharray": lq3.dash || "3 5", opacity:.75 }, g);
+        var lbl = polar(ecx,ecy,rB,-100*DEG);
+        el("text", { x:lbl[0], y:lbl[1]-4, "text-anchor":"middle", "font-size":10.5, style:"fill:var(--text-faint)" }, g).textContent = "BEYOND · "+beyondRing.nodes.length+" SLA";
+        ringAngles[3] = [ -90*DEG ];
+        // fake single node for gate reference
+        ringAngles[3] = beyondRing.nodes.map(function(_,i){ return -90*DEG; });
+      }
+    }
+
+    // epicenter
+    var epi = el("g", { class:"epicenter", tabindex:"0", role:"button" }, svg);
+    var confirmedNow = (state.status[finding.id]==="confirmed");
+    if(confirmedNow){
+      el("circle", { cx:ecx, cy:ecy, r:15, fill:"none", style:"stroke:var(--gate-"+finding.gate+")", "stroke-width":1.4, "stroke-dasharray":"3 3" }, epi);
+    }
+    el("circle", { cx:ecx, cy:ecy, r:9, style:"fill:var(--accent)" }, epi);
+    el("line", { x1:ecx-14, y1:ecy, x2:ecx+14, y2:ecy, style:"stroke:var(--accent)", "stroke-width":1.2, opacity:.6 }, epi);
+    el("line", { x1:ecx, y1:ecy-14, x2:ecx, y2:ecy+14, style:"stroke:var(--accent)", "stroke-width":1.2, opacity:.6 }, epi);
+    el("text", { x:ecx, y:ecy-20, "text-anchor":"middle", "font-size":compact?13:15, "font-weight":700, style:"fill:var(--text)", "font-family":"'Big Shoulders','Arial Narrow',sans-serif" }, epi).textContent = finding.host;
+    el("text", { x:ecx, y:ecy+26, "text-anchor":"middle", "font-size":10.5, class:"mono", style:"fill:var(--text-muted)" }, epi).textContent = finding.cve+" · "+finding.pkg+" "+finding.from+"→"+finding.to;
+    epi.addEventListener("click", function(){ openCaseFileEpicenter(finding); });
+    epi.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileEpicenter(finding); } });
+
+    // gate arc
+    drawGateArc(svg, finding, ecx, ecy, radiusFor, ringAngles);
+
+    // tether + anchor (only when confirmed)
+    if(confirmedNow){
+      drawTether(svg, finding, ecx, ecy, rMax, w, h);
+    }
+
+    // preview animation
+    if(opts.animate){
+      ringEls.forEach(function(re){ re.g.classList.add("pre"); });
+      requestAnimationFrame(function(){
+        requestAnimationFrame(function(){
+          var stagger = rm ? 55 : 130;
+          var dur = rm ? 140 : 300;
+          ringEls.sort(function(a,b){return a.hop-b.hop;}).forEach(function(re, idx){
+            re.g.style.transition = "opacity "+dur+"ms ease-out"+(rm?"":", transform "+dur+"ms ease-out");
+            re.g.style.transitionDelay = (idx*stagger)+"ms";
+            re.g.classList.remove("pre");
+          });
+        });
+      });
+    }
+
+    layoutCache[finding.id] = { ecx:ecx, ecy:ecy, radiusFor:radiusFor, ringAngles:ringAngles, w:w, h:h };
+  }
+
+  function drawNode(parentG, ecx, ecy, r, angle, node, hop){
+    var pos = polar(ecx, ecy, r, angle);
+    var g = el("g", { class:"node", tabindex:"0", role:"button" }, parentG);
+    var size = 8;
+    if(node.state==="hardfail"){
+      // diamond
+      var d = "M "+pos[0]+" "+(pos[1]-size)+" L "+(pos[0]+size)+" "+pos[1]+" L "+pos[0]+" "+(pos[1]+size)+" L "+(pos[0]-size)+" "+pos[1]+" Z";
+      el("path", { d:d, style:"fill:var(--radius-3);stroke:var(--ink-900)", "stroke-width":.75, "stroke-opacity":.35, class:"node-fill" }, g);
+    } else {
+      var c = el("circle", { cx:pos[0], cy:pos[1], r:size*0.82, style:(node.state==="contained"?"fill:var(--radius-0)":"fill:url(#hatch)")+";stroke:var(--ink-900)", "stroke-width":.6, "stroke-opacity":.3, class:"node-fill "+(node.state==="degrade"?"flicker":"") }, g);
+    }
+    var above = Math.sin(angle) < -0.15;
+    var ty = above ? pos[1]-13 : pos[1]+18;
+    el("text", { x:pos[0], y:ty, "text-anchor":"middle", "font-size":10.5, style:"fill:var(--text-muted)" }, g).textContent = node.name;
+    if(node.sla){
+      var tagY = above ? pos[1]+18 : pos[1]-13;
+      var slaColor = node.outside ? "var(--gate-review)" : "var(--text-faint)";
+      el("rect", { x:pos[0]-22, y:tagY-9, width:44, height:13, fill:"var(--surface)", style:"stroke:"+slaColor, "stroke-width":1 }, g);
+      el("text", { x:pos[0], y:tagY, "text-anchor":"middle", "font-size":9.5, class:"mono", style:"fill:var(--text-muted)" }, g).textContent = node.sla;
+    }
+    g.addEventListener("click", function(ev){ ev.stopPropagation(); openCaseFileNode(hop, node); });
+    g.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileNode(hop, node); } });
+  }
+
+  function drawGateArc(svg, finding, ecx, ecy, radiusFor, ringAngles){
+    var hop, angle;
+    if(finding.gate==="auto"){
+      var hops = finding.rings.map(function(r){return r.hop;});
+      hop = hops.length ? Math.max.apply(null,hops) : 1;
+      var angs = ringAngles[hop];
+      angle = (angs && angs.length) ? angs[0] : -90*DEG;
+    } else {
+      outer:
+      for(var ri=finding.rings.length-1; ri>=0; ri--){
+        var ring = finding.rings[ri];
+        for(var ni=0; ni<ring.nodes.length; ni++){
+          if(ring.nodes[ni].outside){
+            hop = ring.hop;
+            var a = ringAngles[hop];
+            angle = (a && a[ni]!==undefined) ? a[ni] : (a && a[0]!==undefined ? a[0] : -90*DEG);
+            break outer;
+          }
+        }
+      }
+      if(hop===undefined){
+        var hops2 = finding.rings.map(function(r){return r.hop;});
+        hop = hops2.length?Math.max.apply(null,hops2):1;
+        angle = -90*DEG;
+      }
+    }
+    var r = radiusFor[hop] || radiusFor[1];
+    var sweep = 26*DEG;
+    var d = arcPath(ecx,ecy,r, angle-sweep/2, angle+sweep/2);
+    var colorVar = "var(--gate-"+finding.gate+")";
+    el("path", { d:d, fill:"none", style:"stroke:"+colorVar, "stroke-width":4, "stroke-linecap":"round" }, svg);
+    var gp = polar(ecx,ecy,r+22,angle);
+    var g = el("g", { transform:"translate("+gp[0]+","+gp[1]+")" }, svg);
+    var glyphWrap = el("foreignObject", { x:-11, y:-11, width:22, height:22 }, g);
+    glyphWrap.innerHTML = gateGlyphSVG(finding.gate,22);
+    var lblAbove = Math.sin(angle) < 0;
+    el("text", { x:0, y: lblAbove? -16 : 26, "text-anchor":"middle", "font-size":10, "font-weight":600, class:"caps", style:"fill:"+colorVar }, g).textContent = GATE_LABEL[finding.gate];
+  }
+
+  function drawTether(svg, finding, ecx, ecy, rMax, w, h){
+    var angle = 42*DEG;
+    var dist = rMax*1.28;
+    var ax = clamp(ecx + dist*Math.cos(angle), 40, w-40);
+    var ay = clamp(ecy + dist*Math.sin(angle), 40, h-40);
+    var g = el("g", { id:"tetherGroup" }, svg);
+    var line = el("line", { id:"tetherLine", x1:ecx, y1:ecy, x2:ax, y2:ay, style:"stroke:var(--text-muted)", "stroke-width":finding.rollback.weight, "stroke-dasharray":"6 5", opacity:0 }, g);
+    var anchor = el("g", { transform:"translate("+ax+","+ay+")" }, g);
+    el("path", { d:"M0,-10 L9,8 L-9,8 Z", fill:"none", style:"stroke:var(--text-muted)", "stroke-width":1.4 }, anchor);
+    el("circle", { r:2.2, style:"fill:var(--text-muted)" }, anchor);
+    el("text", { x:0, y:20, "text-anchor":"middle", "font-size":9, class:"caps", style:"fill:var(--text-faint)" }, anchor).textContent = "LAST KNOWN GOOD";
+    requestAnimationFrame(function(){
+      line.style.transition = reduceMotion() ? "opacity .15s linear" : "opacity .5s ease-out";
+      line.setAttribute("opacity", "1");
+    });
+  }
+
+  /* ================= SELECTION / ACTIONS ================= */
+  function selectFinding(id, opts){
+    opts = opts || {};
+    state.activeId = id;
+    state.caseView = { mode:"epicenter" };
+    var finding = getFinding(id);
+    var status = state.status[id] || "idle";
+    var willAnimate = opts.animate && status!=="confirmed" && status!=="reverted";
+    if(willAnimate){ state.status[id] = "previewing"; }
+    renderQueue();
+    renderField(finding, { animate: willAnimate });
+    renderCaseFile();
+    openCaseFile();
+    if(willAnimate){
+      var rm = reduceMotion();
+      var total = (rm ? 3*55+140 : 3*130+320) + 60;
+      setTimeout(function(){
+        if(state.status[id]==="previewing"){ state.status[id] = "idle"; }
+        renderQueue();
+        renderCaseFile();
+      }, total);
+    }
+  }
+
+  function openCaseFileEpicenter(finding){
+    if(finding.id !== state.activeId){ selectFinding(finding.id, {animate:true}); return; }
+    state.caseView = { mode:"epicenter" };
+    renderCaseFile();
+    openCaseFile();
+  }
+  function openCaseFileNode(hop, node){
+    state.caseView = { mode:"node", hop:hop, node:node };
+    renderCaseFile();
+    openCaseFile();
+  }
+
+  function openCaseFile(){
+    document.getElementById("casefile").classList.add("open");
+    document.getElementById("casefile").setAttribute("aria-hidden","false");
+  }
+  function closeCaseFile(){
+    document.getElementById("casefile").classList.remove("open");
+    document.getElementById("casefile").setAttribute("aria-hidden","true");
+  }
+
+  function confirmAction(){
+    var f = getFinding(state.activeId);
+    state.status[f.id] = "confirmed";
+    addLedgerEntry(f, "safe");
+    renderField(f, {animate:false});
+    renderQueue();
+    renderCaseFile();
+  }
+
+  function revertAction(){
+    var f = getFinding(state.activeId);
+    var layout = layoutCache[f.id];
+    var rm = reduceMotion();
+    if(!layout){ finishRevert(f); return; }
+    var line = document.getElementById("tetherLine");
+    var svg = document.getElementById("fieldSvg");
+    if(!line || rm){
+      finishRevert(f);
+      return;
+    }
+    var x1 = parseFloat(line.getAttribute("x1")), y1 = parseFloat(line.getAttribute("y1"));
+    var x2 = parseFloat(line.getAttribute("x2")), y2 = parseFloat(line.getAttribute("y2"));
+    var traveler = el("circle", { r:7, style:"fill:var(--accent)" }, svg);
+    var start = performance.now(), dur = 650;
+    function frame(now){
+      var t = clamp((now-start)/dur, 0, 1);
+      var ease = 1 - Math.pow(1-t, 3);
+      var cx = x1 + (x2-x1)*ease, cy = y1 + (y2-y1)*ease;
+      traveler.setAttribute("cx", cx); traveler.setAttribute("cy", cy);
+      line.setAttribute("x1", cx); line.setAttribute("y1", cy);
+      if(t<1){ requestAnimationFrame(frame); }
+      else { traveler.remove(); finishRevert(f); }
+    }
+    requestAnimationFrame(frame);
+  }
+  function finishRevert(f){
+    state.status[f.id] = "reverted";
+    addLedgerEntry(f, "reverted");
+    renderField(f, {animate:false});
+    renderQueue();
+    renderCaseFile();
+  }
+
+  /* ================= CASE FILE CONTENT ================= */
+  function renderCaseFile(){
+    var f = getFinding(state.activeId);
+    var scroll = document.getElementById("cfScroll");
+    if(state.caseView.mode==="node"){
+      scroll.innerHTML = caseFileNodeHTML(f, state.caseView.hop, state.caseView.node);
+    } else {
+      scroll.innerHTML = caseFileEpicenterHTML(f);
+    }
+    var closeBtn = document.getElementById("cfCloseBtn");
+    if(closeBtn) closeBtn.addEventListener("click", closeCaseFile);
+    var backBtn = document.getElementById("cfBackBtn");
+    if(backBtn) backBtn.addEventListener("click", function(){ state.caseView={mode:"epicenter"}; renderCaseFile(); });
+    var confirmBtn = document.getElementById("cfConfirmBtn");
+    if(confirmBtn) confirmBtn.addEventListener("click", confirmAction);
+    var revertBtn = document.getElementById("cfRevertBtn");
+    if(revertBtn) revertBtn.addEventListener("click", revertAction);
+  }
+
+  function hopLine(finding, hop, label){
+    var ring = finding.rings.filter(function(r){return r.hop===hop;})[0];
+    if(!ring) return "";
+    var conf = ringConfidence(finding, hop-1);
+    var lq = lineQuality(conf);
+    var sampleLen = 30;
+    var dash = lq.dash ? 'stroke-dasharray="'+lq.dash+'"' : "";
+    var sample = '<svg width="'+sampleLen+'" height="10" class="cf-line-sample"><line x1="1" y1="5" x2="'+(sampleLen-1)+'" y2="5" style="stroke:var(--text-muted)" stroke-width="'+lq.width.toFixed(1)+'" '+dash+' opacity="'+lq.opacity.toFixed(2)+'"></line></svg>';
+    return '<div class="cf-hop"><span class="cf-hop-label">'+label+'</span>'+sample+'<span class="cf-hop-conf mono">'+conf.toFixed(2)+' · '+ring.nodes.length+' node'+(ring.nodes.length===1?"":"s")+'</span></div>';
+  }
+
+  function actionsHTML(f){
+    var status = state.status[f.id] || "idle";
+    if(status==="previewing"){
+      return '<div class="cf-actions"><button class="cf-btn" disabled>PREVIEWING…</button><div class="cf-note">rings are still blooming outward</div></div>';
+    }
+    if(status==="confirmed"){
+      return '<div class="cf-actions"><div class="cf-settled">CONFIRMED · TETHER ACTIVE</div><button class="cf-btn revert-btn" id="cfRevertBtn">REVERT — REEL TETHER IN</button></div>';
+    }
+    if(status==="reverted"){
+      return '<div class="cf-actions"><div class="cf-settled">REVERTED — HOST BACK AT PRE-PATCH BASELINE</div></div>';
+    }
+    if(f.gate==="auto"){
+      return '<div class="cf-actions"><button class="cf-btn" id="cfConfirmBtn">PUSH PATCH — '+f.window+'</button><div class="cf-note">no human sign-off required at this confidence</div></div>';
+    }
+    if(f.gate==="review"){
+      return '<div class="cf-actions"><button class="cf-btn gate-review-btn" id="cfConfirmBtn">APPROVE FOR PATCH WINDOW</button><div class="cf-note">'+f.gateReason+'</div></div>';
+    }
+    return '<div class="cf-actions"><button class="cf-btn" disabled>'+(f.regulatedFlag?"SIGN-OFF REQUIRED":"BLOCKED — SLA BREACH")+'</button><div class="cf-note">'+f.gateReason+'</div></div>';
+  }
+
+  function caseFileEpicenterHTML(f){
+    var q = QUOTES[f.quote];
+    var reachNote = f.reachable===false ? '<div class="cf-section"><div class="cf-h">REACHABILITY</div><div class="cf-body-text">Present in the image, not on the running classpath. Severity label stays "critical"; predicted radius stays contained.</div></div>' : "";
+    return ''+
+    '<div class="cf-top"><div><div class="cf-host">'+f.host+'</div><div class="cf-image mono">'+f.image+' · '+f.env.toUpperCase()+'</div></div><button class="cf-close" id="cfCloseBtn" aria-label="Close case file">'+xGlyph()+'</button></div>'+
+    '<div class="cf-cve-row"><span class="cf-cve">'+f.cve+'</span><span class="cf-pkg mono">'+f.pkg+' '+f.from+' → '+f.to+'</span></div>'+
+    '<div class="cf-section"><div class="cf-h">WHY IT’S HERE</div><div class="cf-body-text">'+f.blurb+'</div></div>'+
+    reachNote+
+    '<div class="cf-section"><div class="cf-h">BLAST RADIUS · CONFIDENCE PER HOP</div><div class="cf-hop-list">'+
+      hopLine(f,1,"HOP 1 · HOST")+hopLine(f,2,"HOP 2 · CALLERS")+hopLine(f,3,"HOP 3 · SLA")+
+    '</div></div>'+
+    '<div class="cf-section"><div class="cf-h">GATE</div><div class="cf-gate-box">'+gateGlyphSVG(f.gate,26)+'<div><div class="cf-gate-name" style="color:var(--gate-'+f.gate+')">'+GATE_LABEL[f.gate]+'</div></div></div><div class="cf-gate-reason">'+f.gateReason+'</div><div class="cf-window mono">WINDOW: '+f.window+'</div></div>'+
+    '<div class="cf-section"><div class="cf-h">REVERSIBILITY</div><div class="cf-tether-row">'+tetherGlyphSVG(f.rollback.weight)+'<div><div class="cf-tether-label">'+f.rollback.mech.toUpperCase()+'</div><div class="cf-tether-cost">'+f.rollback.cost+'</div></div></div></div>'+
+    (q ? '<div class="cf-section"><div class="cf-h">WHAT OPERATORS TELL US</div><blockquote class="cf-quote">“'+q.text+'”<cite>'+q.role+'</cite></blockquote></div>' : "")+
+    '<details class="cf-key"><summary>KEY — rings, gate, tether</summary><div style="margin-top:8px">'+legendHTML()+'</div></details>'+
+    actionsHTML(f);
+  }
+
+  function caseFileNodeHTML(f, hop, node){
+    var stateLabel = node.state==="contained" ? "contained — reachable, no material effect" : node.state==="degrade" ? "predicted degrade — brief retry, no outage" : "predicted hard-fail — outage expected";
+    var conf = ringConfidence(f, hop-1);
+    return ''+
+    '<div class="cf-top"><button class="cf-back" id="cfBackBtn">← back to '+f.host+'</button><button class="cf-close" id="cfCloseBtn" aria-label="Close case file">'+xGlyph()+'</button></div>'+
+    '<div class="cf-host">'+node.name+'</div>'+
+    '<div class="cf-image mono">HOP '+hop+' from '+f.host+'</div>'+
+    '<div class="cf-section"><div class="cf-h">PREDICTED STATE</div><div class="cf-body-text">'+stateLabel+'</div></div>'+
+    '<div class="cf-section"><div class="cf-h">RING CONFIDENCE</div><div class="cf-body-text mono">'+conf.toFixed(2)+' at hop '+hop+'</div></div>'+
+    (node.sla ? '<div class="cf-section"><div class="cf-h">SLA</div><div class="cf-body-text mono">'+node.sla+' — '+(node.outside?"outside the scheduled window":"inside the scheduled window")+'</div></div>' : "")+
+    '<div class="cf-section"><div class="cf-h">SOURCE</div><div class="cf-body-text">'+f.cve+' on '+f.host+' ('+f.image+')</div></div>';
+  }
+
+  function xGlyph(){
+    return '<svg viewBox="0 0 14 14" width="12" height="12" aria-hidden="true"><line x1="2" y1="2" x2="12" y2="12" style="stroke:currentColor" stroke-width="1.6"></line><line x1="12" y1="2" x2="2" y2="12" style="stroke:currentColor" stroke-width="1.6"></line></svg>';
+  }
+
+  /* ================= CASE FILE BOTTOM-SHEET DRAG (phone) ================= */
+  (function(){
+    var handle = document.getElementById("cfHandle");
+    var panel = document.getElementById("casefile");
+    var startY = null, currentDelta = 0;
+    handle.addEventListener("pointerdown", function(ev){
+      if(window.innerWidth>480) return;
+      startY = ev.clientY;
+      panel.style.transition = "none";
+      handle.setPointerCapture(ev.pointerId);
+    });
+    handle.addEventListener("pointermove", function(ev){
+      if(startY===null) return;
+      currentDelta = Math.max(0, ev.clientY-startY);
+      panel.style.transform = "translateY("+currentDelta+"px)";
+    });
+    function endDrag(){
+      if(startY===null) return;
+      panel.style.transition = "";
+      panel.style.transform = "";
+      if(currentDelta > 90){ closeCaseFile(); }
+      startY = null; currentDelta = 0;
+    }
+    handle.addEventListener("pointerup", endDrag);
+    handle.addEventListener("pointercancel", endDrag);
+  })();
+
+  /* ================= RESIZE ================= */
+  var resizeTimer = null;
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      renderField(getFinding(state.activeId), {animate:false});
+    }, 140);
+  });
+
+  /* ================= INIT ================= */
+  function init(){
+    renderRail();
+    renderLegend();
+    renderQueue();
+    renderLedger();
+    renderField(getFinding(state.activeId), {animate:false});
+    renderCaseFile();
+    // case file stays closed on load, per spec — resting state of the page is the field.
+  }
+  if(document.readyState==="loading"){ document.addEventListener("DOMContentLoaded", init); } else { init(); }
+
+})();
+</script>

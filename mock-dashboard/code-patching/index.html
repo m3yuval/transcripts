@@ -1,0 +1,1362 @@
+<title>Regression Proof Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@500;600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============================= ISOLINE TOKENS (DESIGN.md §4, verbatim) ============================= */
+:root{
+  color-scheme: light;
+  --paper-0: #eef1f0;
+  --paper-1: #e3e8e6;
+  --paper-2: #d4dbd8;
+  --ink-900: #10151a;
+  --ink-700: #3c4750;
+  --ink-400: #74838a;
+  --line:    #b7c2be;
+
+  --accent-identity: #1f7a8c;
+  --accent-infra:    #a8621e;
+  --accent-code:     #5c7a3a;
+
+  --gate-auto:    #2e8b57;
+  --gate-review:  #d9a400;
+  --gate-blocked: #c4293e;
+
+  --radius-0: #8a94a0;
+  --radius-1: #c79a1e;
+  --radius-2: #b8621e;
+  --radius-3: #a3273a;
+
+  --surface:        var(--paper-0);
+  --surface-panel:  var(--paper-1);
+  --surface-field:  var(--paper-1);
+  --grid-line:      var(--paper-2);
+  --text:           var(--ink-900);
+  --text-muted:     var(--ink-700);
+  --text-faint:     var(--ink-400);
+  --border:         var(--line);
+
+  /* this dashboard's pillar accent */
+  --accent: var(--accent-code);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper-0: #0b0f13;
+    --paper-1: #12181d;
+    --paper-2: #232c31;
+    --ink-900: #e8ecec;
+    --ink-700: #aab4b8;
+    --ink-400: #6d7980;
+    --line:    #2b363c;
+
+    --accent-identity: #3fa6bb;
+    --accent-infra:    #d1893f;
+    --accent-code:     #8bab5e;
+
+    --gate-auto:    #3fae76;
+    --gate-review:  #e6b93a;
+    --gate-blocked: #e0495c;
+
+    --radius-0: #7c8791;
+    --radius-1: #e6b93a;
+    --radius-2: #d1893f;
+    --radius-3: #e0495c;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper-0: #0b0f13;
+  --paper-1: #12181d;
+  --paper-2: #232c31;
+  --ink-900: #e8ecec;
+  --ink-700: #aab4b8;
+  --ink-400: #6d7980;
+  --line:    #2b363c;
+
+  --accent-identity: #3fa6bb;
+  --accent-infra:    #d1893f;
+  --accent-code:     #8bab5e;
+
+  --gate-auto:    #3fae76;
+  --gate-review:  #e6b93a;
+  --gate-blocked: #e0495c;
+
+  --radius-0: #7c8791;
+  --radius-1: #e6b93a;
+  --radius-2: #d1893f;
+  --radius-3: #e0495c;
+}
+
+/* ============================= base ============================= */
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--surface);
+  color:var(--text);
+  font-family:"IBM Plex Sans", system-ui, sans-serif;
+  font-size:14px;
+  line-height:1.45;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  overflow:hidden;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+h1,h2,h3{margin:0; text-wrap:balance;}
+button{font-family:inherit;}
+.mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums;}
+.disp{font-family:"Big Shoulders", "Arial Narrow", sans-serif;}
+.disp-text{font-family:"Big Shoulders Text", "Arial Narrow", sans-serif;}
+.vis-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+a{color:inherit;}
+::selection{background:var(--accent); color:var(--paper-0);}
+
+/* focus visibility */
+button:focus-visible, [tabindex]:focus-visible, .hit:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+}
+
+/* ============================= instrument rail ============================= */
+.rail{
+  border-bottom:1px solid var(--border);
+  background:var(--surface);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-inline:0;
+  height:56px;
+  min-height:56px;
+}
+.rail-inner{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  width:100%; height:56px; padding:0 4px;
+}
+.rail-mark{display:flex; align-items:center; gap:10px; min-width:0;}
+.rail-mark svg{flex:none;}
+.rail-title{
+  font-family:"Big Shoulders", "Arial Narrow", sans-serif;
+  font-weight:700;
+  letter-spacing:.04em;
+  font-size:16px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  color:var(--text);
+}
+.rail-title b{color:var(--accent); font-weight:800;}
+.rail-readouts{
+  display:flex; align-items:center; gap:0; white-space:nowrap;
+}
+.readout{
+  display:flex; flex-direction:column; align-items:flex-end; gap:1px;
+  padding:0 14px; border-left:1px solid var(--border);
+}
+.readout:first-child{border-left:none;}
+.readout .rlabel{font-size:9px; letter-spacing:.08em; color:var(--text-faint); text-transform:uppercase;}
+.readout .rval{font-family:"IBM Plex Mono", monospace; font-size:15px; font-weight:600; color:var(--text);}
+.readout.g-auto .rval{color:var(--gate-auto);}
+.readout.g-review .rval{color:var(--gate-review);}
+.readout.g-blocked .rval{color:var(--gate-blocked);}
+
+/* ============================= stage (scroll area: field + proof strip) ============================= */
+.stage{
+  display:flex;
+  min-height:0;
+  overflow:hidden;
+}
+.stage-main{
+  flex:1 1 auto;
+  min-width:0;
+  overflow-y:auto;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:margin-right .35s cubic-bezier(.2,.7,.2,1);
+}
+.stage.casefile-open .stage-main{margin-right:360px;}
+
+.field-caption{
+  padding:10px 16px 0;
+  color:var(--text-faint);
+  font-size:11px;
+  letter-spacing:.02em;
+  display:flex; gap:10px; flex-wrap:wrap; align-items:baseline;
+}
+.field-caption .mono{color:var(--text-muted); font-size:11px;}
+
+.field-wrap{
+  position:relative;
+  flex:1 1 auto;
+  min-height:min(60vh, 460px);
+  background:
+    radial-gradient(ellipse at 34% 42%, var(--surface-field) 0%, var(--surface) 78%);
+}
+.field-wrap svg{display:block; width:100%; height:100%;}
+.field-wrap .beyond-group{display:none;}
+
+/* grid backdrop */
+.grid-rect{fill:url(#gridPattern);}
+
+/* rings */
+.ring-stroke{
+  fill:none;
+  stroke:var(--accent);
+  stroke-linecap:round;
+  transition:stroke-dasharray .5s ease, stroke-width .5s ease, opacity .45s ease, filter .5s ease;
+  opacity:0;
+}
+.ring-stroke.in{opacity:.85;}
+.ring-label{
+  font-family:"IBM Plex Mono", monospace;
+  font-size:10px;
+  fill:var(--text-faint);
+  letter-spacing:.04em;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+.ring-label.in{opacity:1;}
+
+/* epicenter */
+.epi-core{fill:var(--accent); stroke:var(--paper-0); stroke-width:3;}
+.epi-pulse{fill:none; stroke:var(--accent); stroke-width:1.5; opacity:.55;}
+.epi-label{
+  font-family:"Big Shoulders Text","Arial Narrow",sans-serif;
+  font-weight:700;
+  fill:var(--text);
+}
+.epi-sub{font-family:"IBM Plex Mono",monospace; fill:var(--text-muted); font-size:11px;}
+
+/* dependency nodes */
+.node-shape{ transition:transform .4s cubic-bezier(.2,.7,.2,1), opacity .35s ease; transform-origin:center; opacity:0; transform:scale(.4);}
+.node-shape.in{opacity:1; transform:scale(1);}
+.node-pass{fill:var(--gate-auto); stroke:var(--paper-0); stroke-width:1.5;}
+.node-fail{fill:var(--gate-blocked); stroke:var(--paper-0); stroke-width:1.5;}
+.node-hazard{fill:url(#hazardHatch); stroke:var(--gate-review); stroke-width:2; stroke-dasharray:3 2;}
+.node-label{font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:var(--text-muted);}
+.node-sla{font-family:"IBM Plex Mono",monospace; font-size:9px; fill:var(--text-faint);}
+.hit{fill:transparent; cursor:pointer;}
+.hit:hover ~ .node-shape, g:hover .node-shape{filter:brightness(1.08);}
+g.node-g{cursor:pointer;}
+g.node-g:hover .node-shape{stroke-width:3;}
+g.node-g.active .node-shape{stroke:var(--text); stroke-width:3;}
+
+/* gate arc */
+.gate-arc{fill:none; stroke-linecap:round; opacity:0; transition:opacity .4s ease;}
+.gate-arc.in{opacity:1;}
+.gate-notch{stroke-linecap:round; opacity:0; transition:opacity .4s ease;}
+.gate-notch.in{opacity:1;}
+.gate-arc.auto,.gate-notch.auto{stroke:var(--gate-auto);}
+.gate-arc.review,.gate-notch.review{stroke:var(--gate-review);}
+.gate-arc.blocked,.gate-notch.blocked{stroke:var(--gate-blocked);}
+
+/* tether */
+.tether-line{fill:none; stroke:var(--text-muted); stroke-dasharray:7 5; opacity:0; transition:opacity .4s ease, stroke-width .3s ease;}
+.tether-line.in{opacity:.8;}
+.tether-anchor-ring{fill:none; stroke:var(--text-muted); stroke-width:1.6;}
+.tether-anchor-dot{fill:var(--text-muted);}
+.tether-label{font-family:"IBM Plex Mono",monospace; font-size:9.5px; fill:var(--text-faint);}
+.traveler{fill:var(--accent); stroke:var(--paper-0); stroke-width:2;}
+
+/* pending epicenters (queue on the field's periphery) */
+.slot-g{cursor:pointer;}
+.slot-ring{fill:none; stroke:var(--text-faint); stroke-width:1.3;}
+.slot-core{fill:var(--text-faint);}
+.slot-g:hover .slot-ring, .slot-g:focus-visible .slot-ring{stroke:var(--accent);}
+.slot-g:hover .slot-core, .slot-g:focus-visible .slot-core{fill:var(--accent);}
+.slot-dot-auto{fill:var(--gate-auto);}
+.slot-dot-review{fill:var(--gate-review);}
+.slot-dot-blocked{fill:var(--gate-blocked);}
+.slot-label{font-family:"IBM Plex Mono",monospace; font-size:9.5px; fill:var(--text-muted);}
+
+/* beyond badge (compact) */
+.beyond-ring{fill:none; stroke-dasharray:4 4;}
+.beyond-text{font-family:"IBM Plex Mono",monospace; font-size:11px; fill:var(--text-muted);}
+
+/* tooltip */
+#tip{
+  position:fixed; z-index:60; pointer-events:none;
+  background:var(--ink-900); color:var(--paper-0);
+  font-family:"IBM Plex Mono",monospace; font-size:11px; line-height:1.4;
+  padding:6px 9px; border-radius:2px; max-width:240px;
+  opacity:0; transform:translate(-9999px,-9999px);
+  transition:opacity .12s ease;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+#tip.show{opacity:1;}
+#tip .tip-title{color:var(--paper-0); font-weight:600; display:block; margin-bottom:2px;}
+
+/* ============================= proof strip ============================= */
+.proof{
+  border-top:1px solid var(--border);
+  padding:14px 16px 20px;
+  background:var(--surface);
+}
+.proof-head{
+  display:flex; align-items:baseline; justify-content:space-between; gap:14px;
+  flex-wrap:wrap; margin-bottom:10px;
+}
+.proof-title{
+  font-family:"Big Shoulders","Arial Narrow",sans-serif;
+  font-weight:700; letter-spacing:.03em; text-transform:uppercase;
+  font-size:14px; color:var(--text);
+}
+.proof-legend{display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--text-muted);}
+.leg-item{display:flex; align-items:center; gap:5px;}
+.leg-swatch{width:14px; height:14px; border-radius:1px; flex:none; display:inline-block;}
+.leg-pass{background:var(--gate-auto);}
+.leg-fail{background:var(--gate-blocked); clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);}
+.leg-none{background:var(--paper-2); border:1px solid var(--border);}
+.leg-hazard{background-image:repeating-linear-gradient(45deg, var(--ink-700) 0 2.5px, var(--paper-1) 2.5px 7px); border:1px solid var(--gate-review);}
+
+.proof-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:2px;}
+table.matrix{border-collapse:collapse; width:100%; min-width:560px;}
+table.matrix caption{position:absolute; width:1px; height:1px; overflow:hidden;}
+table.matrix th, table.matrix td{border:1px solid var(--border); padding:0;}
+table.matrix thead th{
+  background:var(--surface-panel);
+  padding:8px 6px;
+  font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px; font-weight:500; color:var(--text-muted);
+  text-align:left; vertical-align:bottom;
+  white-space:normal; word-break:break-word; max-width:120px;
+}
+table.matrix thead th:first-child{background:var(--surface); border:none;}
+tbody th{
+  text-align:left; padding:7px 10px; white-space:nowrap;
+  font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text);
+  background:var(--surface); position:sticky; left:0;
+}
+tbody th .hop-tag{display:inline-block; color:var(--text-faint); font-size:9.5px; margin-right:6px;}
+tbody tr.row-hazard th{color:var(--gate-review);}
+tbody tr.row-active th{background:var(--surface-panel);}
+tbody tr.row-active td{background:var(--surface-panel);}
+td.cell{ text-align:center; height:34px; cursor:default; position:relative;}
+td.cell .glyph{display:inline-block; width:13px; height:13px;}
+.g-pass{background:var(--gate-auto); border-radius:2px;}
+.g-fail{background:var(--gate-blocked); clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);}
+.g-none{background:var(--paper-2);}
+td.cell.cell-hazard{background-image:repeating-linear-gradient(45deg, var(--ink-700) 0 2.5px, var(--paper-1) 2.5px 7px);}
+td.cell.cell-hazard .g-none{background:transparent;}
+
+.evidence-note{
+  margin-top:14px; padding-top:10px; border-top:1px dashed var(--border);
+  font-size:11px; color:var(--text-faint); max-width:74ch;
+}
+.evidence-note button{
+  background:none; border:none; color:var(--text-muted); text-decoration:underline dotted;
+  cursor:pointer; padding:0; font-size:11px; font-family:inherit;
+}
+.evidence-body{margin-top:6px; display:none;}
+.evidence-body.open{display:block;}
+
+/* ============================= case file ============================= */
+.casefile{
+  position:fixed;
+  top:56px; bottom:73px; right:0; width:360px;
+  background:var(--surface-panel);
+  border-left:1px solid var(--border);
+  transform:translateX(100%);
+  transition:transform .38s cubic-bezier(.2,.7,.2,1);
+  overflow-y:auto;
+  z-index:40;
+  padding-bottom:10px;
+}
+.casefile.open{transform:translateX(0);}
+.cf-head{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+  padding:14px 16px 10px; border-bottom:1px solid var(--border); position:sticky; top:0;
+  background:var(--surface-panel); z-index:2;
+}
+.cf-pkg{font-family:"Big Shoulders","Arial Narrow",sans-serif; font-weight:700; font-size:19px; line-height:1.15;}
+.cf-repo{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--text-muted); margin-top:2px;}
+.cf-close{background:none; border:1px solid var(--border); border-radius:2px; width:28px; height:28px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--text-muted); flex:none;}
+.cf-close:hover{border-color:var(--text-muted); color:var(--text);}
+.cf-body{padding:14px 16px 6px;}
+.cf-section{margin-bottom:18px;}
+.cf-sectitle{
+  font-family:"IBM Plex Mono",monospace; font-size:10px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--text-faint); margin-bottom:7px;
+}
+.cf-gate{display:flex; align-items:center; gap:8px; margin-top:8px;}
+.cf-gate-label{font-family:"Big Shoulders","Arial Narrow",sans-serif; font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.02em;}
+.cf-gate.auto .cf-gate-label{color:var(--gate-auto);}
+.cf-gate.review .cf-gate-label{color:var(--gate-review);}
+.cf-gate.blocked .cf-gate-label{color:var(--gate-blocked);}
+.cf-reason{font-size:12px; color:var(--text-muted); margin-top:6px;}
+.cf-conf-num{font-family:"Big Shoulders","Arial Narrow",sans-serif; font-weight:800; font-size:40px; line-height:1;}
+.cf-conf-row{display:flex; align-items:baseline; gap:10px;}
+.cf-conf-legend{font-size:11px; color:var(--text-faint); max-width:180px;}
+.cf-hops{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+.cf-hop{
+  display:flex; align-items:center; gap:8px; font-family:"IBM Plex Mono",monospace; font-size:11.5px;
+  padding:6px 8px; background:var(--surface); border:1px solid var(--border); border-radius:2px;
+}
+.cf-hop .hop-glyph{flex:none; width:12px; height:12px; border-radius:2px;}
+.cf-hop .hop-name{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; color:var(--text);}
+.cf-hop .hop-ring{color:var(--text-faint); flex:none;}
+.cf-hop.st-pass .hop-glyph{background:var(--gate-auto);}
+.cf-hop.st-fail .hop-glyph{background:var(--gate-blocked); clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);}
+.cf-hop.st-hazard .hop-glyph{background-image:repeating-linear-gradient(45deg, var(--ink-700) 0 2px, var(--paper-1) 2px 5px); outline:1.5px dashed var(--gate-review); outline-offset:1px;}
+.cf-quote{
+  font-size:12.5px; color:var(--text-muted); border-left:2px solid var(--accent);
+  padding-left:10px; font-style:italic;
+}
+.cf-quote cite{display:block; font-style:normal; margin-top:6px; font-size:10.5px; color:var(--text-faint); font-family:"IBM Plex Mono",monospace;}
+.cf-actions{display:flex; flex-direction:column; gap:8px; margin-top:4px;}
+.btn{
+  font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:12.5px;
+  padding:10px 12px; border-radius:2px; border:1px solid var(--border);
+  background:var(--surface); color:var(--text); cursor:pointer; text-align:left;
+  display:flex; align-items:center; justify-content:space-between; gap:8px;
+}
+.btn:disabled{cursor:not-allowed; opacity:.55;}
+.btn.primary{background:var(--accent); color:var(--paper-0); border-color:var(--accent);}
+.btn.primary:disabled{background:var(--paper-2); color:var(--text-faint); border-color:var(--border);}
+.btn.ghost:hover:not(:disabled){border-color:var(--text-muted);}
+.btn.danger{border-color:var(--gate-blocked); color:var(--gate-blocked); background:var(--surface);}
+.cf-tether-row{display:flex; align-items:center; gap:8px; font-size:11.5px; color:var(--text-muted); margin-top:6px;}
+.cf-tether-weight{width:34px; height:3px; background:var(--text-muted); flex:none; border-radius:2px;}
+.cf-note{font-size:11px; color:var(--text-faint); margin-top:6px;}
+.pill{
+  display:inline-flex; align-items:center; gap:4px; font-family:"IBM Plex Mono",monospace;
+  font-size:10px; padding:2px 7px; border-radius:10px; border:1px solid var(--border); color:var(--text-muted);
+}
+
+/* mobile bottom-sheet handle (hidden on desktop) */
+.sheet-handle{display:none;}
+
+/* ============================= ledger rail ============================= */
+.ledger{
+  border-top:1px solid var(--border);
+  background:var(--surface);
+  height:73px;
+  display:flex; align-items:stretch;
+  overflow-x:auto; overflow-y:hidden;
+}
+.ledger-inner{display:flex; align-items:stretch; gap:0; padding:0 2px;}
+.ledger-item{
+  flex:none; width:150px; padding:9px 12px; border-right:1px solid var(--border);
+  display:flex; flex-direction:column; gap:3px; justify-content:center;
+}
+.ledger-item.new{animation:flashIn .9s ease;}
+@keyframes flashIn{ from{background:var(--surface-panel);} to{background:transparent;} }
+.led-time{font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--text-faint);}
+.led-desc{font-size:11px; color:var(--text); line-height:1.25; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+.led-outcome{display:flex; align-items:center; gap:5px; font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--text-muted);}
+.led-outcome svg{flex:none;}
+
+/* ============================= responsive ============================= */
+@media (max-width:900px){
+  .stage.casefile-open .stage-main{margin-right:0;}
+  .casefile{width:min(420px, 92vw);}
+}
+
+@media (max-width:480px){
+  .rail-inner{overflow-x:auto; gap:16px; -webkit-overflow-scrolling:touch;}
+  .rail-readouts{flex:none;}
+  .field-wrap .full-only{display:none;}
+  .field-wrap .beyond-group{display:block;}
+  .field-wrap{min-height:min(56vh, 380px);}
+
+  .casefile{
+    top:auto; bottom:0; left:0; right:0; width:100%;
+    max-height:68vh; height:auto;
+    border-left:none; border-top:1px solid var(--border);
+    border-radius:14px 14px 0 0;
+    transform:translateY(100%);
+    padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));
+  }
+  .casefile.open{transform:translateY(0);}
+  .sheet-handle{
+    display:flex; justify-content:center; padding:8px 0 2px; position:sticky; top:0;
+    background:var(--surface-panel); z-index:3;
+  }
+  .sheet-handle span{width:36px; height:4px; border-radius:3px; background:var(--border);}
+
+  .ledger{height:auto; max-height:34vh; overflow-y:auto; overflow-x:hidden;}
+  .ledger-inner{flex-direction:column; width:100%;}
+  .ledger-item{width:100%; border-right:none; border-bottom:1px solid var(--border); flex-direction:row; align-items:center; justify-content:space-between; height:44px;}
+  .led-desc{-webkit-line-clamp:1;}
+}
+
+/* ============================= reduced motion ============================= */
+@media (prefers-reduced-motion: reduce){
+  .ring-stroke, .ring-label, .node-shape, .gate-arc, .gate-notch, .tether-line,
+  .stage-main, .casefile, .ledger-item.new{
+    transition-duration:.01s !important;
+    animation-duration:.01s !important;
+  }
+  .node-shape{transform:none !important;}
+}
+</style>
+
+<!-- ============================= MARKUP ============================= -->
+<div class="rail">
+  <div class="rail-inner">
+    <div class="rail-mark">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+        <circle cx="13" cy="13" r="4" fill="var(--accent)"/>
+        <circle cx="13" cy="13" r="8.5" fill="none" stroke="var(--accent)" stroke-width="1.4" opacity=".7"/>
+        <circle cx="13" cy="13" r="12" fill="none" stroke="var(--accent)" stroke-width="1.2" opacity=".35"/>
+      </svg>
+      <div class="rail-title">SKYLAYER · <b>CODE PATCHING</b></div>
+    </div>
+    <div class="rail-readouts mono" id="railReadouts"></div>
+  </div>
+</div>
+
+<div class="stage" id="stage">
+  <div class="stage-main" id="stageMain">
+    <div class="field-caption">
+      <span class="disp-text" style="text-transform:uppercase; font-weight:700; letter-spacing:.04em; color:var(--text-muted); font-size:12px;">Call Path / Regression Proof Map</span>
+      <span class="mono">312 dependency findings tracked across repos (illustrative) · queue shows 8</span>
+    </div>
+
+    <div class="field-wrap" id="fieldWrap">
+      <svg id="fieldSvg" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Blast radius field for the selected finding">
+        <defs>
+          <pattern id="gridPattern" width="24" height="24" patternUnits="userSpaceOnUse">
+            <rect width="24" height="24" fill="var(--surface-field)"/>
+            <path d="M0 0H24M0 0V24" stroke="var(--grid-line)" stroke-width="1"/>
+          </pattern>
+          <pattern id="hazardHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="9" height="9" class="hz-bg"/>
+            <line x1="0" y1="0" x2="0" y2="9" class="hz-line" stroke-width="4"/>
+          </pattern>
+        </defs>
+        <style>
+          .hz-bg{fill:var(--paper-1);}
+          .hz-line{stroke:var(--ink-700);}
+        </style>
+
+        <rect class="grid-rect" x="0" y="0" width="1000" height="640"/>
+
+        <g id="pendingLayer" class="full-only"></g>
+        <g id="beyondLayer" class="beyond-group"></g>
+        <g id="tetherLayer"></g>
+        <g id="ringsLayer"></g>
+        <g id="gateArcLayer"></g>
+        <g id="nodesLayer"></g>
+        <g id="epicenterLayer"></g>
+      </svg>
+    </div>
+
+    <div class="proof" id="proofSection" aria-live="polite">
+      <div class="proof-head">
+        <div class="proof-title">Proof strip — call paths × regression tests</div>
+        <div class="proof-legend">
+          <span class="leg-item"><span class="leg-swatch leg-pass"></span>pass</span>
+          <span class="leg-item"><span class="leg-swatch leg-fail"></span>fail</span>
+          <span class="leg-item"><span class="leg-swatch leg-none"></span>no coverage</span>
+          <span class="leg-item"><span class="leg-swatch leg-hazard"></span>reached, untested — vetoes auto-merge</span>
+        </div>
+      </div>
+      <div class="proof-scroll">
+        <table class="matrix" id="matrixTable">
+          <caption>Regression coverage matrix for the selected finding</caption>
+        </table>
+      </div>
+      <div class="evidence-note">
+        <button id="evidenceToggle" aria-expanded="false">Evidence note for the founders (internal) ▾</button>
+        <div class="evidence-body" id="evidenceBody">
+          This pillar is the thinnest in the discovery evidence. What backs this screen: one dependency-patching
+          example scoped to a repo rather than a host, and an investor's structural analogy to a coding-agent
+          company's test-generation approach — not a security buyer's own described remediation workflow. Treat
+          this as a proof-of-concept for the shared mechanism, not validated demand. All KPI-style numbers on
+          this screen are illustrative demo data.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="casefile" id="casefile" aria-hidden="true">
+    <div class="sheet-handle" id="sheetHandle"><span></span></div>
+    <div class="cf-head">
+      <div>
+        <div class="cf-pkg" id="cfPkg">—</div>
+        <div class="cf-repo mono" id="cfRepo">—</div>
+      </div>
+      <button class="cf-close" id="cfClose" aria-label="Close case file">
+        <svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="cf-body" id="cfBody"></div>
+  </aside>
+</div>
+
+<div class="ledger" id="ledger">
+  <div class="ledger-inner" id="ledgerInner"></div>
+</div>
+
+<div id="tip" role="tooltip"></div>
+
+<script>
+(function(){
+"use strict";
+var NS = "http://www.w3.org/2000/svg";
+var reduceMotion = false;
+try{ reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
+var STAGGER = reduceMotion ? 30 : 130;
+
+/* ---------------------------------------------------------------- geometry */
+var VB = {w:1000,h:640};
+var EPI = {x:380,y:300};
+var RING_R = [92,162,226];
+var ANCHOR = {x:150,y:150};
+var SLOTS = {
+  f1:{x:860,y:70}, f2:{x:930,y:260}, f3:{x:860,y:560}, f4:{x:620,y:610},
+  f5:{x:120,y:560}, f6:{x:70,y:130}, f7:{x:600,y:55}, f8:{x:960,y:460}
+};
+
+function deg2rad(d){ return d*Math.PI/180; }
+function polar(cx,cy,r,angleDeg){
+  var a = deg2rad(angleDeg);
+  return {x: cx + r*Math.cos(a), y: cy + r*Math.sin(a)};
+}
+function arcPath(cx,cy,r,a0,a1){
+  var p0 = polar(cx,cy,r,a0), p1 = polar(cx,cy,r,a1);
+  var large = Math.abs(a1-a0) > 180 ? 1 : 0;
+  return "M "+p0.x.toFixed(1)+" "+p0.y.toFixed(1)+" A "+r+" "+r+" 0 "+large+" 1 "+p1.x.toFixed(1)+" "+p1.y.toFixed(1);
+}
+
+/* ---------------------------------------------------------------- data */
+function n(ring, angle, name, tests, extra){
+  var o = {ring:ring, angle:angle, name:name, tests:tests||{}};
+  if (extra) for (var k in extra) o[k] = extra[k];
+  return o;
+}
+
+var FINDINGS = [
+  { id:"f1", pkg:"jackson-databind", from:"2.12.6", to:"2.12.7.1", repo:"billing-api",
+    fn:"deserializeInvoicePayload()", confidence:0.88, ringConf:[0.94,0.89,0.83],
+    nodes:[
+      n(1,-150,"InvoiceParser.parse()",{t1:"pass",t2:"pass"}),
+      n(1,-20,"WebhookIngest.handle()",{}),
+      n(2,-170,"billing-worker::processQueue()",{t4:"pass"}),
+      n(2,35,"partner-sync::syncInvoices()",{}),
+      n(3,-145,"POST /v2/invoices",{t6:"pass"},{sla:"99.9%"}),
+      n(3,65,"partner-webhook-relay",{t3:"pass"})
+    ],
+    tests:[
+      {id:"t1",name:"InvoiceParserTest::testParseValidPayload"},
+      {id:"t2",name:"InvoiceParserTest::testParseMalformedPayload"},
+      {id:"t3",name:"WebhookIngestIT::testDuplicateEventIdempotency"},
+      {id:"t4",name:"BillingWorkerRegressionSuite::testQueueDrain"},
+      {id:"t6",name:"PublicApiV2ContractTest::testCreateInvoiceEndpoint"}
+    ]},
+  { id:"f2", pkg:"requests", from:"2.28.1", to:"2.28.2", repo:"reporting-worker",
+    fn:"HTTPAdapter.send()", confidence:0.97, ringConf:[0.98,0.96,0.95],
+    nodes:[
+      n(1,-90,"ReportFetcher.fetch_source()",{t1:"pass"}),
+      n(2,150,"nightly-report-job::run()",{t2:"pass"}),
+      n(3,20,"reporting-nightly (internal cron)",{t3:"pass"})
+    ],
+    tests:[
+      {id:"t1",name:"ReportFetcherTest::testFetchRetriesOnTimeout"},
+      {id:"t2",name:"NightlyReportJobTest::testFullRun"},
+      {id:"t3",name:"CronSmokeTest::testNightlyReportingJobScheduled"}
+    ]},
+  { id:"f3", pkg:"pyjwt", from:"2.4.0", to:"2.6.0", repo:"auth-gateway",
+    fn:"verify_signature()", confidence:0.41, ringConf:[0.55,0.40,0.30],
+    nodes:[
+      n(1,-100,"TokenValidator.validate()",{t1:"fail",t2:"pass"}),
+      n(2,40,"session-broker::refresh()",{}),
+      n(3,-160,"POST /v2/auth/token",{t3:"pass"},{sla:"99.95%"}),
+      n(3,100,"mobile-sso-relay",{})
+    ],
+    tests:[
+      {id:"t1",name:"AuthRegressionSuite::testExpiredTokenRejected"},
+      {id:"t2",name:"AuthRegressionSuite::testTokenSignatureAlgConfusion"},
+      {id:"t3",name:"PublicApiV2ContractTest::testTokenRefreshFlow"}
+    ]},
+  { id:"f4", pkg:"lodash", from:"4.17.19", to:"4.17.21", repo:"checkout-service",
+    fn:"CartSerializer.merge()", confidence:0.94, ringConf:[0.96,0.93,0.90],
+    nodes:[
+      n(1,-90,"CartSerializer.merge()",{t1:"pass"}),
+      n(2,-160,"checkout-orchestrator::finalize()",{t2:"pass"}),
+      n(2,30,"checkout-orchestrator::retryPayment()",{t3:"pass"}),
+      n(3,130,"POST /v2/checkout/complete",{t4:"pass"},{sla:"99.9%"})
+    ],
+    tests:[
+      {id:"t1",name:"CartSerializerTest::testDeepMergeArrays"},
+      {id:"t2",name:"CheckoutOrchestratorRegressionSuite::testFinalizeIdempotent"},
+      {id:"t3",name:"CheckoutOrchestratorRegressionSuite::testRetryPaymentBackoff"},
+      {id:"t4",name:"PublicApiV2ContractTest::testCheckoutCompleteEndpoint"}
+    ]},
+  { id:"f5", pkg:"urllib3", from:"1.26.5", to:"1.26.18", repo:"payments-connector",
+    fn:"PaymentClient.request()", confidence:0.79, ringConf:[0.88,0.79,0.70],
+    nodes:[
+      n(1,-90,"PaymentClient.request()",{t1:"pass"}),
+      n(2,60,"retry-middleware::withBackoff()",{}),
+      n(3,-150,"POST /v2/payments/capture",{t2:"pass"},{sla:"99.99%"})
+    ],
+    tests:[
+      {id:"t1",name:"PaymentClientTest::testRequestRetryHeaders"},
+      {id:"t2",name:"PublicApiV2ContractTest::testCaptureEndpoint"}
+    ]},
+  { id:"f6", pkg:"axios", from:"0.21.4", to:"0.21.4+cve-3749", repo:"notifications-svc",
+    fn:"NotificationDispatcher.send()", confidence:0.91, ringConf:[0.95,0.90,0.86],
+    nodes:[
+      n(1,-140,"NotificationDispatcher.send()",{t1:"pass"}),
+      n(1,-20,"NotificationDispatcher.batch()",{t2:"pass"}),
+      n(2,120,"digest-scheduler::run()",{t3:"pass"}),
+      n(3,40,"digest-scheduler-svc",{t4:"pass"})
+    ],
+    tests:[
+      {id:"t1",name:"NotificationDispatcherTest::testSendRetriesOnRateLimit"},
+      {id:"t2",name:"NotificationDispatcherTest::testBatchDedup"},
+      {id:"t3",name:"DigestSchedulerRegressionSuite::testDailyDigestRun"},
+      {id:"t4",name:"DeploySmokeTest::testDigestSchedulerHealthcheck"}
+    ]},
+  { id:"f7", pkg:"PyYAML", from:"5.4.1", to:"6.0.1", repo:"data-ingest-pipeline",
+    fn:"ConfigLoader.load_yaml()", confidence:0.35, ringConf:[0.50,0.35,0.22],
+    nodes:[
+      n(1,-90,"ConfigLoader.load_yaml()",{t1:"fail"}),
+      n(2,140,"ingest-pipeline::bootstrap()",{t2:"pass"}),
+      n(3,-160,"POST /v2/ingest/config",{t3:"pass"},{sla:"99.5%"})
+    ],
+    tests:[
+      {id:"t1",name:"ConfigLoaderRegressionSuite::testSafeLoadRejectsArbitraryTags"},
+      {id:"t2",name:"IngestPipelineTest::testBootstrapWithValidConfig"},
+      {id:"t3",name:"PublicApiV2ContractTest::testIngestConfigEndpoint"}
+    ]},
+  { id:"f8", pkg:"commons-text", from:"1.9", to:"1.10.0", repo:"search-indexer",
+    fn:"TextSanitizer.clean()", confidence:0.72, ringConf:[0.85,0.72,0.60],
+    nodes:[
+      n(1,-90,"TextSanitizer.clean()",{t1:"pass"}),
+      n(2,-150,"search-index-writer::normalize()",{t2:"pass"}),
+      n(2,40,"search-index-writer::reindexPartition()",{t3:"pass"}),
+      n(3,130,"POST /v2/search/query",{},{sla:"99.9%"})
+    ],
+    tests:[
+      {id:"t1",name:"TextSanitizerTest::testStripsControlChars"},
+      {id:"t2",name:"SearchIndexWriterRegressionSuite::testNormalizeUnicode"},
+      {id:"t3",name:"SearchIndexWriterRegressionSuite::testReindexPartitionBoundary"}
+    ]}
+];
+
+FINDINGS.forEach(function(f){
+  var count = f.nodes.length;
+  f.tetherWeight = count >= 6 ? "thick" : (count >= 4 ? "medium" : "thin");
+  f.tetherStroke = count >= 6 ? 5 : (count >= 4 ? 3 : 1.6);
+  f.status = "queued"; /* queued | pr-open | confirmed | reverted */
+  var worst = "pass";
+  f.nodes.forEach(function(node){
+    var st = nodeState(node);
+    node._state = st;
+    if (st === "fail") worst = "fail";
+    else if (st === "hazard" && worst !== "fail") worst = "hazard";
+  });
+  f.gate = worst === "fail" ? "blocked" : (worst === "hazard" ? "review" : "auto");
+});
+
+function nodeState(node){
+  var vals = [];
+  for (var k in node.tests) vals.push(node.tests[k]);
+  if (vals.indexOf("fail") > -1) return "fail";
+  if (vals.indexOf("pass") > -1) return "pass";
+  return "hazard";
+}
+
+var LEDGER_SEED = [
+  {t:"07:58", desc:"flask 2.0.1→2.2.5 · auth-gateway", outcome:"safe"},
+  {t:"08:14", desc:"protobuf 3.19.4→3.19.6 · billing-api", outcome:"safe"},
+  {t:"08:41", desc:"jinja2 2.11.3→3.1.2 · reporting-worker", outcome:"reverted"},
+  {t:"09:02", desc:"pillow 9.0.0→9.3.0 · media-processor", outcome:"safe"},
+  {t:"09:30", desc:"minimist 1.2.5→1.2.6 · notifications-svc", outcome:"monitoring"},
+  {t:"09:47", desc:"express 4.17.1→4.18.2 · public-api-gateway", outcome:"safe"}
+];
+var ledger = LEDGER_SEED.slice();
+
+var QUOTES = [
+  {label:"Head of security, mid-size software company", text:"When a dependency needs updating, the fix itself usually isn't the hard part — it's finding which team owns the affected component, getting it staged, and running it through regression testing before anyone will approve pushing it."},
+  {label:"Investor and advisor to security startups", text:"Historically, almost nothing gets patched, because people are afraid to touch production. The way through that isn't a faster scanner — it's being able to prove, with real tests, that a fix won't change behavior before you ask anyone to approve it."}
+];
+
+/* ---------------------------------------------------------------- state */
+var selectedId = "f1";
+var caseOpen = false;
+var activeNodeKey = null;
+
+/* ---------------------------------------------------------------- svg helpers */
+function svgEl(tag, attrs){
+  var el = document.createElementNS(NS, tag);
+  for (var k in attrs) el.setAttribute(k, attrs[k]);
+  return el;
+}
+function clear(el){ while (el.firstChild) el.removeChild(el.firstChild); }
+function byId(id){ return document.getElementById(id); }
+
+/* ---------------------------------------------------------------- render: rail readouts */
+function renderRail(){
+  var avg = FINDINGS.reduce(function(s,f){return s+f.confidence;},0) / FINDINGS.length;
+  var counts = {auto:0, review:0, blocked:0};
+  FINDINGS.forEach(function(f){ counts[f.gate]++; });
+  var wrap = byId("railReadouts");
+  clear(wrap);
+  var items = [
+    {label:"CONFIDENCE AVG", val: avg.toFixed(2), cls:""},
+    {label:"AUTO", val: counts.auto, cls:"g-auto"},
+    {label:"REVIEW", val: counts.review, cls:"g-review"},
+    {label:"BLOCKED", val: counts.blocked, cls:"g-blocked"}
+  ];
+  items.forEach(function(it){
+    var d = document.createElement("div");
+    d.className = "readout " + it.cls;
+    d.innerHTML = '<span class="rlabel">'+it.label+'</span><span class="rval">'+it.val+'</span>';
+    wrap.appendChild(d);
+  });
+}
+
+/* ---------------------------------------------------------------- render: field */
+function ringConfStyle(c){
+  var dashLen = 8 + c*40, gapLen = 1 + (1-c)*14;
+  var width = 1.5 + (1-c)*4;
+  var blur = (1-c)*2.6;
+  return "stroke-dasharray:"+dashLen.toFixed(1)+" "+gapLen.toFixed(1)+"; stroke-width:"+width.toFixed(2)+"px; filter:blur("+blur.toFixed(2)+"px);";
+}
+
+function gateGlyph(gate, size){
+  size = size || 18;
+  var color = "var(--gate-"+gate+")";
+  var openAngle = gate === "auto" ? 130 : (gate === "review" ? 55 : 4);
+  var r = size/2 - 2;
+  var cx = size/2, cy = size/2;
+  var a0 = 90 + openAngle/2, a1 = 90 - openAngle/2 + 360;
+  var d = arcPath(cx,cy,r, a0, a1);
+  var notch = "";
+  if (gate !== "auto"){
+    var mid = 90;
+    var p0 = polar(cx,cy,r-3,mid), p1 = polar(cx,cy,r+3,mid);
+    notch = '<line x1="'+p0.x.toFixed(1)+'" y1="'+p0.y.toFixed(1)+'" x2="'+p1.x.toFixed(1)+'" y2="'+p1.y.toFixed(1)+'" stroke="'+color+'" stroke-width="2"/>';
+  }
+  return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'" aria-hidden="true">'+
+    '<path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="2.4" stroke-linecap="round"/>' + notch +
+    '</svg>';
+}
+
+function renderPendingSlots(){
+  var layer = byId("pendingLayer");
+  clear(layer);
+  FINDINGS.forEach(function(f){
+    if (f.id === selectedId) return;
+    var s = SLOTS[f.id];
+    var g = svgEl("g", {class:"slot-g", tabindex:"0", role:"button", "aria-label":"Open finding "+f.pkg+" "+f.from+" to "+f.to+", gate "+f.gate});
+    g.appendChild(svgEl("circle", {class:"slot-ring", cx:s.x, cy:s.y, r:14}));
+    g.appendChild(svgEl("circle", {class:"slot-ring", cx:s.x, cy:s.y, r:20, opacity:".5"}));
+    g.appendChild(svgEl("circle", {class:"slot-core", cx:s.x, cy:s.y, r:3.5}));
+    var dot = svgEl("circle", {class:"slot-dot-"+f.gate, cx:s.x+15, cy:s.y-15, r:4.5});
+    g.appendChild(dot);
+    var label = svgEl("text", {class:"slot-label", x:s.x, y:s.y+34, "text-anchor":"middle"});
+    label.textContent = f.pkg;
+    g.appendChild(label);
+    g.addEventListener("click", function(){ selectFinding(f.id); showCasefilePanel(); });
+    g.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); selectFinding(f.id); showCasefilePanel(); } });
+    layer.appendChild(g);
+  });
+}
+
+function renderBeyondBadge(f){
+  var layer = byId("beyondLayer");
+  clear(layer);
+  var beyond = f.nodes.filter(function(nd){ return nd.ring >= 2; });
+  var count = beyond.length;
+  var worst = "pass";
+  beyond.forEach(function(nd){ if (nd._state === "fail") worst = "fail"; else if (nd._state === "hazard" && worst !== "fail") worst = "hazard"; });
+  var color = worst === "fail" ? "var(--gate-blocked)" : (worst === "hazard" ? "var(--gate-review)" : "var(--text-muted)");
+  var r = 128;
+  layer.appendChild(svgEl("circle", {class:"beyond-ring", cx:EPI.x, cy:EPI.y, r:r, stroke:color, "stroke-width":2}));
+  var p = polar(EPI.x, EPI.y, r+26, -55);
+  var t = svgEl("text", {class:"beyond-text", x:p.x, y:p.y, "text-anchor":"middle"});
+  t.textContent = "+"+count+" beyond ring 1";
+  layer.appendChild(t);
+  if (worst === "hazard" || worst === "fail"){
+    var p2 = polar(EPI.x, EPI.y, r+26, -30);
+    var t2 = svgEl("text", {class:"beyond-text", x:p2.x, y:p2.y+14, "text-anchor":"middle", fill:color});
+    t2.textContent = worst === "fail" ? "includes a failing test" : "includes an untested path";
+    layer.appendChild(t2);
+  }
+}
+
+function renderRings(f){
+  var layer = byId("ringsLayer");
+  clear(layer);
+  var labels = ["RING 1 · DIRECT CALLERS","RING 2 · TRANSITIVE CALLERS","RING 3 · PUBLIC ENTRY / DEPLOYED"];
+  for (var i=0;i<3;i++){
+    var r = RING_R[i];
+    var c = f.ringConf[i];
+    var ringCls = "ring-stroke" + (i >= 1 ? " full-only" : "");
+    var circle = svgEl("circle", {class:ringCls, cx:EPI.x, cy:EPI.y, r:r, style:ringConfStyle(c)});
+    layer.appendChild(circle);
+    var lp = polar(EPI.x, EPI.y, r, -100 - i*4);
+    var lab = svgEl("text", {class:"ring-label"+(i>=1?" full-only":""), x:lp.x, y:lp.y-4, "text-anchor":"middle"});
+    lab.textContent = "R"+(i+1)+" conf "+c.toFixed(2);
+    layer.appendChild(lab);
+    (function(circle, lab, delay){
+      setTimeout(function(){ circle.classList.add("in"); lab.classList.add("in"); }, delay);
+    })(circle, lab, i*STAGGER);
+  }
+}
+
+function renderGateArc(f){
+  var layer = byId("gateArcLayer");
+  clear(layer);
+  var worstNode = null, worstRank = -1;
+  var rank = {pass:0, hazard:1, fail:2};
+  f.nodes.forEach(function(nd){
+    var r = rank[nd._state];
+    if (r > worstRank){ worstRank = r; worstNode = nd; }
+  });
+  if (!worstNode) return;
+  var ringIdx = worstNode.ring - 1;
+  var r = RING_R[ringIdx];
+  var center = worstNode.angle;
+  var arc = svgEl("path", {class:"gate-arc "+f.gate, d:arcPath(EPI.x,EPI.y,r, center-26, center+26), "stroke-width":5});
+  layer.appendChild(arc);
+  var p0 = polar(EPI.x,EPI.y,r-7,center), p1 = polar(EPI.x,EPI.y,r+7,center);
+  var notch = svgEl("line", {class:"gate-notch "+f.gate, x1:p0.x, y1:p0.y, x2:p1.x, y2:p1.y, "stroke-width":3});
+  layer.appendChild(notch);
+  var delay = 3*STAGGER + 120;
+  setTimeout(function(){ arc.classList.add("in"); notch.classList.add("in"); }, delay);
+}
+
+function renderTether(f){
+  var layer = byId("tetherLayer");
+  clear(layer);
+  if (f.status !== "confirmed") return;
+  var line = svgEl("path", {
+    class:"tether-line", "stroke-width": f.tetherStroke,
+    d:"M "+EPI.x+" "+EPI.y+" Q "+((EPI.x+ANCHOR.x)/2+40)+" "+((EPI.y+ANCHOR.y)/2+40)+" "+ANCHOR.x+" "+ANCHOR.y
+  });
+  layer.appendChild(line);
+  layer.appendChild(svgEl("circle", {class:"tether-anchor-ring", cx:ANCHOR.x, cy:ANCHOR.y, r:11}));
+  layer.appendChild(svgEl("circle", {class:"tether-anchor-dot", cx:ANCHOR.x, cy:ANCHOR.y, r:3}));
+  var lab = svgEl("text", {class:"tether-label", x:ANCHOR.x, y:ANCHOR.y-16, "text-anchor":"middle"});
+  lab.textContent = "last known-good";
+  layer.appendChild(lab);
+  setTimeout(function(){ line.classList.add("in"); }, 60);
+}
+
+function renderNodes(f){
+  var layer = byId("nodesLayer");
+  clear(layer);
+  f.nodes.forEach(function(nd, idx){
+    var p = polar(EPI.x, EPI.y, RING_R[nd.ring-1], nd.angle);
+    var g = svgEl("g", {class:"node-g"+(nd.ring>=2?" full-only":""), tabindex:"0", role:"button",
+      "aria-label": nd.name + ", " + nd._state + (nd.sla ? ", SLA "+nd.sla : "")});
+    g.dataset.key = f.id+"::"+idx;
+
+    var hit = svgEl("circle", {class:"hit", cx:p.x, cy:p.y, r:22});
+    g.appendChild(hit);
+
+    var shape;
+    if (nd._state === "fail"){
+      var sz = 11;
+      shape = svgEl("rect", {class:"node-shape node-fail", x:p.x-sz, y:p.y-sz, width:sz*2, height:sz*2,
+        transform:"rotate(45 "+p.x+" "+p.y+")"});
+    } else if (nd._state === "hazard"){
+      shape = svgEl("circle", {class:"node-shape node-hazard", cx:p.x, cy:p.y, r:10});
+    } else {
+      shape = svgEl("circle", {class:"node-shape node-pass", cx:p.x, cy:p.y, r:9});
+    }
+    g.appendChild(shape);
+
+    var lp = polar(EPI.x, EPI.y, RING_R[nd.ring-1] + 22, nd.angle);
+    var label = svgEl("text", {class:"node-label", x:lp.x, y:lp.y, "text-anchor":"middle"});
+    label.textContent = nd.name.length > 26 ? nd.name.slice(0,24)+"…" : nd.name;
+    g.appendChild(label);
+
+    if (nd.sla){
+      var slp = polar(EPI.x, EPI.y, RING_R[nd.ring-1] + 34, nd.angle);
+      var slab = svgEl("text", {class:"node-sla", x:slp.x, y:slp.y, "text-anchor":"middle"});
+      slab.textContent = "SLA "+nd.sla;
+      g.appendChild(slab);
+    }
+
+    g.addEventListener("mouseenter", function(ev){ showTip(ev, nodeTip(f, nd)); });
+    g.addEventListener("mousemove", moveTip);
+    g.addEventListener("mouseleave", hideTip);
+    g.addEventListener("click", function(){ focusNode(f, idx, g); });
+    g.addEventListener("keydown", function(ev){ if (ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); focusNode(f, idx, g); } });
+
+    layer.appendChild(g);
+    var delay = nd.ring*STAGGER;
+    setTimeout(function(){ shape.classList.add("in"); }, delay);
+  });
+}
+
+function nodeTip(f, nd){
+  var testList = f.tests.filter(function(t){ return nd.tests[t.id]; })
+    .map(function(t){ return t.name+": "+nd.tests[t.id].toUpperCase(); }).join("<br>");
+  var head = nd.name + (nd.sla ? " · SLA "+nd.sla : "");
+  var body = testList || "No test in the suite reaches this path.";
+  var flag = nd._state === "hazard" ? "<br><b style=\"color:#e6b93a\">reached, untested — vetoes auto-merge</b>" : "";
+  return '<span class="tip-title">'+head+'</span>'+body+flag;
+}
+
+function renderEpicenter(f){
+  var layer = byId("epicenterLayer");
+  clear(layer);
+  layer.appendChild(svgEl("circle", {class:"epi-pulse", cx:EPI.x, cy:EPI.y, r:20}));
+  layer.appendChild(svgEl("circle", {class:"epi-core", cx:EPI.x, cy:EPI.y, r:9}));
+  var t1 = svgEl("text", {class:"epi-label", x:EPI.x, y:EPI.y-26, "text-anchor":"middle", "font-size":"16"});
+  t1.textContent = f.pkg+" "+f.from+" → "+f.to;
+  layer.appendChild(t1);
+  var t2 = svgEl("text", {class:"epi-sub", x:EPI.x, y:EPI.y+38, "text-anchor":"middle"});
+  t2.textContent = f.repo+" · "+f.fn;
+  layer.appendChild(t2);
+  layer.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+f.pkg+' '+f.from+' → '+f.to+'</span>Epicenter · '+f.repo); });
+  layer.addEventListener("mousemove", moveTip);
+  layer.addEventListener("mouseleave", hideTip);
+  layer.style.cursor = "pointer";
+  layer.addEventListener("click", function(){ openCasefile(f.id); });
+}
+
+function focusNode(f, idx, g){
+  activeNodeKey = f.id+"::"+idx;
+  document.querySelectorAll(".node-g.active").forEach(function(el){ el.classList.remove("active"); });
+  g.classList.add("active");
+  if (f.id === selectedId){
+    showCasefilePanel();
+    renderCasefile(f);
+  } else {
+    openCasefile(f.id);
+  }
+  highlightMatrixRow(idx);
+}
+
+/* ---------------------------------------------------------------- render: proof strip */
+function renderMatrix(f){
+  var table = byId("matrixTable");
+  clear(table);
+  var thead = svgFreeEl("thead");
+  var htr = svgFreeEl("tr");
+  htr.appendChild(svgFreeEl("th", {text:"Call path (reached)"}));
+  f.tests.forEach(function(t){ htr.appendChild(svgFreeEl("th", {text:t.name})); });
+  thead.appendChild(htr);
+  table.appendChild(thead);
+
+  var tbody = svgFreeEl("tbody");
+  var hopNames = ["R1 direct","R2 transitive","R3 public/deployed"];
+  f.nodes.forEach(function(nd, idx){
+    var isHazardRow = nd._state === "hazard";
+    var tr = svgFreeEl("tr");
+    tr.dataset.idx = idx;
+    if (isHazardRow) tr.classList.add("row-hazard");
+    var th = document.createElement("th");
+    th.innerHTML = '<span class="hop-tag">'+hopNames[nd.ring-1]+'</span>'+nd.name;
+    tr.appendChild(th);
+    f.tests.forEach(function(t){
+      var val = nd.tests[t.id];
+      var td = document.createElement("td");
+      td.className = "cell";
+      if (isHazardRow){
+        td.classList.add("cell-hazard");
+        td.title = t.name + ": no coverage (path reached, untested)";
+        td.innerHTML = '<span class="glyph g-none"></span>';
+      } else if (val === "pass"){
+        td.innerHTML = '<span class="glyph g-pass"></span>';
+        td.title = t.name+": PASS";
+      } else if (val === "fail"){
+        td.innerHTML = '<span class="glyph g-fail"></span>';
+        td.title = t.name+": FAIL";
+      } else {
+        td.innerHTML = '<span class="glyph g-none"></span>';
+        td.title = t.name+": not exercised on this path";
+      }
+      td.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+nd.name+'</span>'+td.title); });
+      td.addEventListener("mousemove", moveTip);
+      td.addEventListener("mouseleave", hideTip);
+      tr.appendChild(td);
+    });
+    tr.addEventListener("click", function(){
+      var i = +this.dataset.idx;
+      var nodeEl = document.querySelector('.node-g[data-key="'+f.id+'::'+i+'"]');
+      if (nodeEl) focusNode(f, i, nodeEl);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody);
+}
+function svgFreeEl(tag, opts){
+  var el = document.createElement(tag);
+  if (opts && opts.text !== undefined) el.textContent = opts.text;
+  return el;
+}
+function highlightMatrixRow(idx){
+  document.querySelectorAll("#matrixTable tbody tr").forEach(function(tr){
+    tr.classList.toggle("row-active", +tr.dataset.idx === idx);
+  });
+}
+
+/* ---------------------------------------------------------------- tooltip */
+var tipEl;
+function showTip(ev, html){
+  tipEl = byId("tip");
+  tipEl.innerHTML = html;
+  tipEl.classList.add("show");
+  moveTip(ev);
+}
+function moveTip(ev){
+  if (!tipEl) tipEl = byId("tip");
+  var x = ev.clientX + 14, y = ev.clientY + 14;
+  var vw = window.innerWidth, vh = window.innerHeight;
+  var rect = tipEl.getBoundingClientRect();
+  if (x + rect.width > vw - 8) x = vw - rect.width - 8;
+  if (y + rect.height > vh - 8) y = vh - rect.height - 8;
+  tipEl.style.transform = "translate("+x+"px,"+y+"px)";
+}
+function hideTip(){ if (tipEl) tipEl.classList.remove("show"); }
+
+/* ---------------------------------------------------------------- case file */
+function reasonText(f){
+  var fails = f.nodes.filter(function(nd){ return nd._state === "fail"; }).length;
+  var hazards = f.nodes.filter(function(nd){ return nd._state === "hazard"; }).length;
+  if (fails > 0) return fails + " reached path" + (fails>1?"s":"") + " with a failing regression test. The matrix blocks this outright — nothing merges until it passes.";
+  if (hazards > 0) return hazards + " reached path" + (hazards>1?"s":"") + " with zero test coverage. A single untested path forces review, regardless of the confidence number above.";
+  return "Every reached path has at least one passing test. Clear to auto-merge.";
+}
+
+function actionBlock(f){
+  var wrap = document.createElement("div");
+  wrap.className = "cf-actions";
+  if (f.status === "confirmed"){
+    var b1 = mkBtn("Confirmed — merged & deployed", "primary", true);
+    wrap.appendChild(b1);
+    var b2 = mkBtn("Revert this commit", "danger", false);
+    b2.addEventListener("click", function(){ revertFinding(f.id); });
+    wrap.appendChild(b2);
+    var tr = document.createElement("div");
+    tr.className = "cf-tether-row";
+    tr.innerHTML = '<span class="cf-tether-weight" style="width:'+(f.tetherStroke*7)+'px"></span> tether weight: '+f.tetherWeight+' — fixed at merge from a '+f.nodes.length+'-node blast radius';
+    wrap.appendChild(tr);
+  } else if (f.status === "reverted"){
+    var b3 = mkBtn("Reverted — restored to last known-good", "ghost", true);
+    wrap.appendChild(b3);
+  } else if (f.status === "pr-open"){
+    var b4 = mkBtn("PR opened — awaiting human review", "primary", true);
+    wrap.appendChild(b4);
+    var note = document.createElement("div");
+    note.className = "cf-note";
+    note.textContent = "Generated regression tests are attached to the PR. Nothing merges until a reviewer approves.";
+    wrap.appendChild(note);
+  } else if (f.gate === "blocked"){
+    var b5 = mkBtn("Blocked — fix the failing regression first", "primary", true);
+    wrap.appendChild(b5);
+  } else if (f.gate === "review"){
+    var b6 = mkBtn(previewing ? "previewing…" : "Open PR for review", "primary", previewing);
+    b6.id = "primaryActionBtn";
+    if (!previewing) b6.addEventListener("click", function(){ setStatus(f.id, "pr-open"); });
+    wrap.appendChild(b6);
+  } else {
+    var b7 = mkBtn(previewing ? "previewing…" : "Confirm — merge & deploy", "primary", previewing);
+    b7.id = "primaryActionBtn";
+    if (!previewing) b7.addEventListener("click", function(){ confirmFinding(f.id); });
+    wrap.appendChild(b7);
+  }
+  return wrap;
+}
+function mkBtn(label, kind, disabled){
+  var b = document.createElement("button");
+  b.className = "btn " + kind;
+  b.textContent = label;
+  b.disabled = !!disabled;
+  return b;
+}
+
+var previewing = false;
+
+function renderCasefile(f){
+  byId("cfPkg").textContent = f.pkg+" "+f.from+" → "+f.to;
+  byId("cfRepo").textContent = f.repo+" · "+f.fn;
+
+  var body = byId("cfBody");
+  clear(body);
+
+  var gateSec = document.createElement("div");
+  gateSec.className = "cf-section";
+  gateSec.innerHTML = '<div class="cf-sectitle">Confidence gate</div>'+
+    '<div class="cf-gate '+f.gate+'">'+gateGlyph(f.gate,22)+'<span class="cf-gate-label">'+f.gate+'</span></div>'+
+    '<div class="cf-reason">'+reasonText(f)+'</div>';
+  body.appendChild(gateSec);
+
+  var confSec = document.createElement("div");
+  confSec.className = "cf-section";
+  confSec.innerHTML = '<div class="cf-sectitle">Confidence basis</div>'+
+    '<div class="cf-conf-row"><span class="cf-conf-num mono">'+f.confidence.toFixed(2)+'</span>'+
+    '<span class="cf-conf-legend">Ring stroke reads confidence directly — crisp and solid is high, soft and dashed is low. The gate can still override this number.</span></div>';
+  body.appendChild(confSec);
+
+  var hopSec = document.createElement("div");
+  hopSec.className = "cf-section";
+  var hopsHtml = '<div class="cf-sectitle">Why it\'s in the blast radius</div><ul class="cf-hops">';
+  var hopNames = ["Ring 1 · direct caller","Ring 2 · transitive caller","Ring 3 · public entry / deployed"];
+  f.nodes.forEach(function(nd, idx){
+    hopsHtml += '<li class="cf-hop st-'+nd._state+'" data-idx="'+idx+'"><span class="hop-glyph"></span>'+
+      '<span class="hop-name">'+nd.name+(nd.sla?' · SLA '+nd.sla:'')+'</span>'+
+      '<span class="hop-ring">'+hopNames[nd.ring-1].split(" · ")[0]+'</span></li>';
+  });
+  hopsHtml += '</ul>';
+  hopSec.innerHTML = hopsHtml;
+  hopSec.querySelectorAll(".cf-hop").forEach(function(li){
+    li.style.cursor = "pointer";
+    li.addEventListener("click", function(){
+      var i = +this.dataset.idx;
+      var nodeEl = document.querySelector('.node-g[data-key="'+f.id+'::'+i+'"]');
+      if (nodeEl) focusNode(f, i, nodeEl);
+    });
+  });
+  body.appendChild(hopSec);
+
+  var actSec = document.createElement("div");
+  actSec.className = "cf-section";
+  actSec.innerHTML = '<div class="cf-sectitle">Remediation / action</div>';
+  actSec.appendChild(actionBlock(f));
+  body.appendChild(actSec);
+
+  var q = QUOTES[FINDINGS.indexOf(f) % QUOTES.length];
+  var qSec = document.createElement("div");
+  qSec.className = "cf-section";
+  qSec.innerHTML = '<div class="cf-sectitle">Why this matters</div>'+
+    '<div class="cf-quote">“'+q.text+'”<cite>— '+q.label+'</cite></div>';
+  body.appendChild(qSec);
+}
+
+function showCasefilePanel(){
+  caseOpen = true;
+  byId("casefile").classList.add("open");
+  byId("casefile").setAttribute("aria-hidden", "false");
+  byId("stage").classList.add("casefile-open");
+}
+function openCasefile(id){
+  if (id !== selectedId){ selectFinding(id); }
+  else { renderCasefile(FINDINGS.find(function(x){ return x.id===id; })); }
+  showCasefilePanel();
+}
+function closeCasefile(){
+  caseOpen = false;
+  byId("casefile").classList.remove("open");
+  byId("casefile").setAttribute("aria-hidden", "true");
+  byId("stage").classList.remove("casefile-open");
+}
+byId("cfClose").addEventListener("click", closeCasefile);
+byId("sheetHandle").addEventListener("click", closeCasefile);
+
+/* ---------------------------------------------------------------- actions */
+function setStatus(id, status){
+  var f = FINDINGS.find(function(x){ return x.id === id; });
+  f.status = status;
+  if (selectedId === id) renderCasefile(f);
+  var glyph = status === "confirmed" ? outcomeGlyph("safe") : outcomeGlyph("monitoring");
+  var desc = f.pkg+" "+f.from+"→"+f.to+" · "+f.repo;
+  ledger.unshift({t:"now", desc: desc + (status==="confirmed" ? " · confirmed" : " · PR opened"), outcome: status==="confirmed" ? "safe" : "monitoring", isNew:true});
+  renderLedger();
+  if (status === "confirmed") renderField(f);
+}
+function confirmFinding(id){ setStatus(id, "confirmed"); }
+function revertFinding(id){
+  var f = FINDINGS.find(function(x){ return x.id === id; });
+  animateRevert(f, function(){
+    f.status = "reverted";
+    renderCasefile(f);
+    ledger.unshift({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo, outcome:"reverted", isNew:true});
+    renderLedger();
+    renderField(f);
+  });
+}
+
+function animateRevert(f, done){
+  var layer = byId("tetherLayer");
+  var traveler = svgEl("circle", {class:"traveler", cx:EPI.x, cy:EPI.y, r:9});
+  layer.appendChild(traveler);
+  document.querySelectorAll(".node-shape, .epi-core, .epi-pulse").forEach(function(el){ el.style.opacity = "0.15"; });
+  if (reduceMotion){
+    traveler.setAttribute("cx", ANCHOR.x); traveler.setAttribute("cy", ANCHOR.y);
+    setTimeout(done, 30);
+    return;
+  }
+  var start = null, dur = 650;
+  function step(ts){
+    if (!start) start = ts;
+    var p = Math.min(1, (ts-start)/dur);
+    var ease = 1 - Math.pow(1-p, 3);
+    traveler.setAttribute("cx", EPI.x + (ANCHOR.x-EPI.x)*ease);
+    traveler.setAttribute("cy", EPI.y + (ANCHOR.y-EPI.y)*ease);
+    traveler.setAttribute("r", 9 - 6*ease);
+    if (p < 1) requestAnimationFrame(step); else done();
+  }
+  requestAnimationFrame(step);
+}
+
+/* ---------------------------------------------------------------- ledger */
+function outcomeGlyph(kind){
+  if (kind === "safe") return '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="6" fill="none" stroke="var(--gate-auto)" stroke-width="1.6"/><path d="M4 7.2L6.2 9.4L10 5" fill="none" stroke="var(--gate-auto)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  if (kind === "reverted") return '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M11 7A4 4 0 1 1 7 3" fill="none" stroke="var(--text-muted)" stroke-width="1.6"/><path d="M7 1L7 4L4 3.2" fill="none" stroke="var(--text-muted)" stroke-width="1.6" stroke-linejoin="round"/></svg>';
+  return '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M7 1A6 6 0 0 1 13 7" fill="none" stroke="var(--gate-review)" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="7" r="1.6" fill="var(--gate-review)"/></svg>';
+}
+function outcomeLabel(kind){
+  return kind === "safe" ? "confirmed safe" : (kind === "reverted" ? "reverted" : "still monitoring");
+}
+function renderLedger(){
+  var wrap = byId("ledgerInner");
+  clear(wrap);
+  ledger.forEach(function(item){
+    var d = document.createElement("div");
+    d.className = "ledger-item" + (item.isNew ? " new" : "");
+    d.innerHTML = '<span class="led-time mono">'+item.t+'</span>'+
+      '<span class="led-desc">'+item.desc+'</span>'+
+      '<span class="led-outcome">'+outcomeGlyph(item.outcome)+outcomeLabel(item.outcome)+'</span>';
+    wrap.appendChild(d);
+    item.isNew = false;
+  });
+}
+
+/* ---------------------------------------------------------------- selection / preview */
+function selectFinding(id){
+  selectedId = id;
+  var f = FINDINGS.find(function(x){ return x.id === id; });
+  previewing = true;
+  renderField(f, true);
+  renderMatrix(f);
+  renderCasefile(f);
+  var settleAt = 3*STAGGER + 420;
+  setTimeout(function(){
+    previewing = false;
+    renderCasefile(f);
+  }, settleAt);
+}
+
+function renderField(f, isPreview){
+  document.querySelectorAll(".node-g.active").forEach(function(el){ el.classList.remove("active"); });
+  renderPendingSlots();
+  renderBeyondBadge(f);
+  renderRings(f);
+  renderGateArc(f);
+  renderTether(f);
+  renderNodes(f);
+  renderEpicenter(f);
+}
+
+/* ---------------------------------------------------------------- evidence note toggle */
+byId("evidenceToggle").addEventListener("click", function(){
+  var open = byId("evidenceBody").classList.toggle("open");
+  this.setAttribute("aria-expanded", open ? "true" : "false");
+  this.textContent = "Evidence note for the founders (internal) " + (open ? "▴" : "▾");
+});
+
+/* ---------------------------------------------------------------- boot */
+renderRail();
+renderLedger();
+selectFinding("f1");
+
+/* keep hot-reload friendly for the artifact viewer, no persisted state needed */
+try{
+  if (window.claude && window.claude.hot){
+    window.claude.hot.ready ? window.claude.hot.ready(function(){}) : null;
+  }
+}catch(e){}
+})();
+</script>

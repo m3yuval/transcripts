@@ -1,0 +1,1034 @@
+<title>Downstream Dark Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@500;600;700;800&family=Big+Shoulders+Text:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============================================================
+   ISOLINE — token system (DESIGN.md §4, pasted verbatim)
+   ============================================================ */
+:root {
+  color-scheme: light;
+
+  --paper-0: #eef1f0;
+  --paper-1: #e3e8e6;
+  --paper-2: #d4dbd8;
+  --ink-900: #10151a;
+  --ink-700: #3c4750;
+  --ink-400: #74838a;
+  --line:    #b7c2be;
+
+  --accent-identity: #1f7a8c;
+  --accent-infra:    #a8621e;
+  --accent-code:     #5c7a3a;
+
+  --gate-auto:    #2e8b57;
+  --gate-review:  #d9a400;
+  --gate-blocked: #c4293e;
+
+  --radius-0: #8a94a0;
+  --radius-1: #c79a1e;
+  --radius-2: #b8621e;
+  --radius-3: #a3273a;
+
+  --surface:        var(--paper-0);
+  --surface-panel:  var(--paper-1);
+  --surface-field:  var(--paper-1);
+  --grid-line:      var(--paper-2);
+  --text:           var(--ink-900);
+  --text-muted:     var(--ink-700);
+  --text-faint:     var(--ink-400);
+  --border:         var(--line);
+
+  --accent: var(--accent-identity);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --paper-0: #0b0f13;
+    --paper-1: #12181d;
+    --paper-2: #232c31;
+    --ink-900: #e8ecec;
+    --ink-700: #aab4b8;
+    --ink-400: #6d7980;
+    --line:    #2b363c;
+
+    --accent-identity: #3fa6bb;
+    --accent-infra:    #d1893f;
+    --accent-code:     #8bab5e;
+
+    --gate-auto:    #3fae76;
+    --gate-review:  #e6b93a;
+    --gate-blocked: #e0495c;
+
+    --radius-0: #7c8791;
+    --radius-1: #e6b93a;
+    --radius-2: #d1893f;
+    --radius-3: #e0495c;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --paper-0: #0b0f13;
+  --paper-1: #12181d;
+  --paper-2: #232c31;
+  --ink-900: #e8ecec;
+  --ink-700: #aab4b8;
+  --ink-400: #6d7980;
+  --line:    #2b363c;
+
+  --accent-identity: #3fa6bb;
+  --accent-infra:    #d1893f;
+  --accent-code:     #8bab5e;
+
+  --gate-auto:    #3fae76;
+  --gate-review:  #e6b93a;
+  --gate-blocked: #e0495c;
+
+  --radius-0: #7c8791;
+  --radius-1: #e6b93a;
+  --radius-2: #d1893f;
+  --radius-3: #e0495c;
+}
+
+/* ============================================================
+   Base / type
+   ============================================================ */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+}
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { margin: 0; }
+.disp {
+  font-family: "Big Shoulders", "Arial Narrow", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.disp-text { font-family: "Big Shoulders Text", "Arial Narrow", sans-serif; }
+.mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+button { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+a { color: var(--accent); }
+
+/* ============================================================
+   App shell — the station: rail / field+casefile / ledger
+   ============================================================ */
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ---- instrument rail ---- */
+.rail {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.rail-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.rail-mark svg { width: 22px; height: 22px; flex: 0 0 auto; }
+.rail-mark .disp { font-size: 17px; letter-spacing: 0.06em; color: var(--text); }
+.rail-mark .disp .pillar { color: var(--accent); }
+.rail-readouts {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.readout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 14px;
+  border-left: 1px solid var(--border);
+  line-height: 1.15;
+}
+.readout:first-child { border-left: none; padding-left: 0; }
+.readout .label {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+.readout .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.readout .value.gate-auto { color: var(--gate-auto); }
+.readout .value.gate-review { color: var(--gate-review); }
+.readout .value.gate-blocked { color: var(--gate-blocked); }
+
+/* ---- main: field + case file ---- */
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 60vh;
+  position: relative;
+  align-items: stretch;
+}
+.field-region {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  background:
+    repeating-linear-gradient(to right, var(--grid-line) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(to bottom, var(--grid-line) 0 1px, transparent 1px 24px),
+    var(--surface-field);
+  overflow: hidden;
+}
+.field-caption {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  right: 20px;
+  max-width: 480px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  z-index: 2;
+  pointer-events: none;
+}
+.field-svg { display: block; width: 100%; height: 100%; }
+.field-svg.collapsed { display: none; }
+
+.field-legend {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  background: color-mix(in srgb, var(--surface-field) 78%, transparent);
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  z-index: 2;
+}
+.field-legend .row { display: flex; align-items: center; gap: 6px; }
+.field-legend svg { width: 13px; height: 13px; flex: 0 0 auto; }
+
+.action-dock {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.action-btn {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  color: var(--paper-0);
+  background: var(--accent);
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+.action-btn:disabled { opacity: 0.55; cursor: default; }
+.action-btn.is-confirm { background: var(--gate-review); color: var(--ink-900); }
+.action-btn.is-revert { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.action-hint { font-size: 10.5px; color: var(--text-faint); text-align: right; max-width: 260px; }
+
+/* ---- SVG glyph & field element styling ---- */
+.ring {
+  fill: none;
+  stroke: var(--border);
+  transition: stroke 0.5s ease, opacity 0.4s ease;
+}
+.field-region.hop1-active .ring[data-hop="1"],
+.field-region.hop2-active .ring[data-hop="2"],
+.field-region.hop3-active .ring[data-hop="3"],
+.field-region.hop2-active .ring[data-hop="beyond"],
+.field-region.hop3-active .ring[data-hop="beyond"] {
+  stroke: var(--accent);
+}
+
+.epicenter-core { fill: var(--surface-field); stroke: var(--accent); stroke-width: 2.5; }
+.epicenter-ring { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.epicenter-label { fill: var(--text); }
+
+.node .glyph { fill: var(--surface-field); stroke: var(--ink-900); stroke-width: 1.5; transition: fill 0.5s ease, stroke 0.5s ease; }
+.node .glyph-inner { fill: var(--ink-900); transition: opacity 0.3s ease; opacity: 0; }
+.node text { fill: var(--text); transition: fill 0.5s ease, opacity 0.4s ease; }
+.node .last-active { fill: var(--text-faint); font-size: 9.5px; }
+.node .tag { fill: var(--text-faint); font-size: 8.5px; letter-spacing: 0.05em; }
+.node { cursor: pointer; }
+.node:focus { outline: none; }
+.node:focus-visible { outline: none; }
+.node:focus-visible .glyph { stroke: var(--accent); stroke-width: 2.5; }
+.node:focus-visible .epicenter-ring { stroke-width: 3; stroke-dasharray: none; }
+.node:focus-visible .epicenter-core { stroke-width: 4; }
+
+.field-region.hop1-active .node[data-hop="1"] .glyph,
+.field-region.hop2-active .node[data-hop="2"] .glyph,
+.field-region.hop3-active .node[data-hop="3"] .glyph,
+.field-region.hop2-active .node[data-hop="beyond"] .glyph,
+.field-region.hop3-active .node[data-hop="beyond"] .glyph {
+  fill: var(--ink-900);
+  stroke: var(--ink-900);
+}
+.field-region.hop1-active .node[data-hop="1"] .glyph-inner,
+.field-region.hop2-active .node[data-hop="2"] .glyph-inner,
+.field-region.hop3-active .node[data-hop="3"] .glyph-inner,
+.field-region.hop2-active .node[data-hop="beyond"] .glyph-inner,
+.field-region.hop3-active .node[data-hop="beyond"] .glyph-inner {
+  opacity: 1;
+}
+.field-region.hop1-active .node[data-hop="1"] .name,
+.field-region.hop2-active .node[data-hop="2"] .name,
+.field-region.hop3-active .node[data-hop="3"] .name,
+.field-region.hop2-active .node[data-hop="beyond"] .name,
+.field-region.hop3-active .node[data-hop="beyond"] .name {
+  fill: var(--text-muted);
+}
+
+.gate-arc { fill: none; stroke: var(--gate-review); stroke-width: 2.5; opacity: 0.35; transition: opacity 0.5s ease; }
+.field-region.hop2-active .gate-arc,
+.field-region.hop2-active .gate-arc-beyond { opacity: 1; }
+.gate-arc-beyond { fill: none; stroke: var(--gate-review); stroke-width: 2.5; opacity: 0.35; transition: opacity 0.5s ease; }
+.gate-label-group { opacity: 0.35; transition: opacity 0.5s ease; }
+.field-region.hop2-active .gate-label-group { opacity: 1; }
+.gate-label-group text.title { fill: var(--gate-review); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
+.gate-label-group text.sub { fill: var(--text-muted); font-size: 9.5px; }
+.gate-leader { stroke: var(--gate-review); stroke-width: 1; stroke-dasharray: 2 3; opacity: 0.6; }
+
+.tether { fill: none; stroke: var(--text-muted); stroke-dasharray: 6 5; opacity: 0; transition: opacity 0.4s ease; }
+.tether.visible { opacity: 1; }
+.tether-anchor { opacity: 0; transition: opacity 0.4s ease; }
+.tether-anchor.visible { opacity: 1; }
+.tether-anchor .glyph { stroke: var(--text); fill: var(--surface-field); stroke-width: 1.5; }
+.tether-anchor text { fill: var(--text-muted); font-size: 9.5px; }
+.reel-marker { fill: var(--accent); opacity: 0; }
+.reel-marker.visible { opacity: 1; }
+
+/* preview control state text on the epicenter */
+.epi-status { fill: var(--text-faint); font-size: 10px; letter-spacing: 0.04em; }
+
+/* ---- case file ---- */
+.casefile {
+  flex: 0 0 0px;
+  width: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+  background: var(--surface-panel);
+  transition: flex-basis 0.28s ease, width 0.28s ease;
+}
+.casefile.open { flex: 0 0 360px; width: 360px; }
+.casefile-inner { width: 360px; height: 100%; overflow-y: auto; padding: 18px 18px 24px; }
+.cf-close {
+  display: none;
+}
+.cf-eyebrow { font-size: 10px; letter-spacing: 0.08em; color: var(--text-faint); text-transform: uppercase; margin-bottom: 4px; }
+.cf-title { font-size: 19px; font-weight: 700; color: var(--text); word-break: break-word; }
+.cf-kind { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 10.5px; letter-spacing: 0.05em; color: var(--accent); border: 1px solid var(--accent); padding: 3px 8px; }
+.cf-kind svg { width: 12px; height: 12px; }
+.cf-section { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.cf-section h4 { font-size: 10.5px; letter-spacing: 0.07em; color: var(--text-faint); text-transform: uppercase; margin: 0 0 8px; }
+.cf-row { display: flex; justify-content: space-between; gap: 10px; font-size: 12.5px; padding: 3px 0; }
+.cf-row .k { color: var(--text-muted); }
+.cf-row .v { color: var(--text); text-align: right; }
+.cf-body-text { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+.cf-tag { display: inline-block; font-size: 9.5px; letter-spacing: 0.04em; color: var(--gate-review); border: 1px solid var(--gate-review); padding: 2px 6px; margin-top: 8px; }
+.cf-quote { margin-top: 8px; font-size: 12px; font-style: italic; color: var(--text-muted); border-left: 2px solid var(--accent); padding-left: 10px; }
+.cf-quote cite { display: block; margin-top: 6px; font-style: normal; font-size: 10.5px; color: var(--text-faint); }
+.cf-gate-line { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.cf-gate-line svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.cf-gate-line .g-label { font-size: 12.5px; font-weight: 600; color: var(--text); }
+.cf-actions { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.cf-placeholder { color: var(--text-muted); font-size: 12.5px; line-height: 1.6; }
+
+/* ---- ledger rail ---- */
+.ledger {
+  flex: 0 0 auto;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  padding: 10px 4px calc(10px + env(safe-area-inset-bottom, 0px));
+  position: sticky;
+  bottom: 0;
+  z-index: 15;
+}
+.ledger-track {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+.ledger-stack { display: none; }
+.ledger-item {
+  flex: 0 0 auto;
+  min-width: 168px;
+  padding: 6px 14px;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.ledger-item:first-child { border-left: none; }
+.ledger-time { font-size: 10px; color: var(--text-faint); }
+.ledger-desc { font-size: 11.5px; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 190px; }
+.ledger-outcome { display: flex; align-items: center; gap: 5px; font-size: 10px; letter-spacing: 0.03em; color: var(--text-muted); }
+.ledger-outcome svg { width: 13px; height: 13px; flex: 0 0 auto; }
+.ledger-outcome.safe svg { color: var(--gate-auto); }
+.ledger-outcome.reverted svg { color: var(--text-muted); }
+.ledger-outcome.monitor svg { color: var(--gate-review); }
+
+/* ============================================================
+   Phone collapse (≤480px)
+   ============================================================ */
+@media (max-width: 480px) {
+  body { padding-left: 16px; padding-right: 16px; }
+  .rail { gap: 10px; }
+  .rail-readouts { gap: 10px; }
+  .readout { padding-left: 10px; }
+  .main { flex-direction: column; }
+  .field-svg.full { display: none; }
+  .field-svg.collapsed { display: block; }
+  .field-caption { display: none; }
+  .field-legend { display: none; }
+  .action-dock { left: 12px; right: 12px; bottom: 12px; align-items: stretch; }
+  .action-btn { width: 100%; text-align: center; }
+  .action-hint { max-width: none; text-align: center; }
+
+  .casefile {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    width: auto;
+    height: 0;
+    max-height: 68vh;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.18);
+    transition: height 0.3s ease;
+    z-index: 40;
+  }
+  .casefile.open { flex-basis: auto; height: 60vh; width: auto; }
+  .casefile-inner { width: 100%; height: 100%; padding: 10px 16px calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .cf-drag { display: block; width: 42px; height: 4px; border-radius: 2px; background: var(--border); margin: 4px auto 10px; }
+  .cf-close { display: inline-flex; position: absolute; top: 10px; right: 12px; background: none; border: none; padding: 6px; cursor: pointer; color: var(--text-muted); }
+  .cf-close svg { width: 18px; height: 18px; }
+
+  .ledger-track { display: none; }
+  .ledger-stack { display: flex; flex-direction: column; gap: 0; max-height: 220px; overflow-y: auto; }
+  .ledger-stack .ledger-item { border-left: none; border-top: 1px solid var(--border); flex-direction: row; align-items: center; justify-content: space-between; min-width: 0; padding: 8px 4px; }
+  .ledger-stack .ledger-item:first-child { border-top: none; }
+  .ledger-stack .ledger-desc { max-width: 55vw; }
+}
+.cf-drag { display: none; }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+</style>
+
+<div class="app" id="app">
+
+  <!-- ============ INSTRUMENT RAIL ============ -->
+  <header class="rail">
+    <div class="rail-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--accent)">
+        <circle cx="12" cy="12" r="3.2"/>
+        <circle cx="12" cy="12" r="7.2" opacity="0.75"/>
+        <circle cx="12" cy="12" r="11" opacity="0.45"/>
+      </svg>
+      <span class="disp">SKYLAYER <span class="pillar">· IDENTITY</span></span>
+    </div>
+    <div class="rail-readouts mono" id="rail-readouts">
+      <div class="readout"><span class="label">Confidence avg</span><span class="value" id="ro-conf">0.71</span></div>
+      <div class="readout"><span class="label">Auto</span><span class="value gate-auto" id="ro-auto">4</span></div>
+      <div class="readout"><span class="label">Review</span><span class="value gate-review" id="ro-review">2</span></div>
+      <div class="readout"><span class="label">Blocked</span><span class="value gate-blocked" id="ro-blocked">1</span></div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN: FIELD + CASE FILE ============ -->
+  <div class="main">
+    <div class="field-region" id="field-region">
+      <p class="field-caption">"We don't have a traditional network to defend, so identity — keys, tokens, sessions — is where almost all of our visibility work already lives." <em>— CISO, cloud-native software company</em></p>
+
+      <!-- ===== DESKTOP / FULL FIELD ===== -->
+      <svg class="field-svg full" id="svg-full" viewBox="0 0 1300 620" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Downstream blast radius map for svc-billing-legacy">
+        <defs>
+          <filter id="blur-med" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="0.6"/></filter>
+          <filter id="blur-lo" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.7"/></filter>
+        </defs>
+
+        <!-- rings -->
+        <g id="rings-full"></g>
+
+        <!-- gate arc (computed) -->
+        <g id="gate-full"></g>
+
+        <!-- tether -->
+        <g id="tether-full">
+          <path class="tether" id="tether-path-full" d="M420,310 C660,365 900,430 1130,510" />
+          <circle class="reel-marker" id="reel-marker-full" r="6" cx="1130" cy="510"/>
+        </g>
+        <g class="tether-anchor" id="anchor-full" transform="translate(1130,510)">
+          <rect class="glyph" x="-11" y="-11" width="22" height="22" />
+          <circle cx="0" cy="0" r="3" fill="var(--text)"/>
+          <text x="0" y="24" text-anchor="middle" class="mono">RESTORE ANCHOR</text>
+        </g>
+
+        <!-- epicenter -->
+        <g id="epi-full" class="node" data-node="epi" tabindex="0" role="button" aria-label="Epicenter: svc-billing-legacy, retired IAM access key still active">
+          <circle class="epicenter-ring" cx="420" cy="310" r="24"/>
+          <circle class="epicenter-core" cx="420" cy="310" r="14"/>
+          <text x="420" y="346" text-anchor="middle" class="disp-text epicenter-label" font-size="13" font-weight="600">svc-billing-legacy</text>
+          <text x="420" y="360" text-anchor="middle" class="mono epi-status" id="epi-status-full">IAM ACCESS KEY · RETIRED, STILL ACTIVE</text>
+        </g>
+
+        <!-- nodes injected here -->
+        <g id="nodes-full"></g>
+      </svg>
+
+      <!-- ===== PHONE / COLLAPSED FIELD ===== -->
+      <svg class="field-svg collapsed" id="svg-collapsed" viewBox="0 0 380 460" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Downstream blast radius map, simplified for small screens">
+        <g id="rings-collapsed"></g>
+        <g id="gate-collapsed"></g>
+        <g id="tether-collapsed">
+          <path class="tether" id="tether-path-collapsed" d="M160,190 C230,230 280,260 320,330" />
+          <circle class="reel-marker" id="reel-marker-collapsed" r="7" cx="320" cy="330"/>
+        </g>
+        <g class="tether-anchor" id="anchor-collapsed" transform="translate(320,330)">
+          <rect class="glyph" x="-10" y="-10" width="20" height="20" />
+          <circle cx="0" cy="0" r="3" fill="var(--text)"/>
+          <text x="0" y="22" text-anchor="middle" class="mono" font-size="8">ANCHOR</text>
+        </g>
+        <g id="epi-collapsed" class="node" data-node="epi" tabindex="0" role="button" aria-label="Epicenter: svc-billing-legacy, retired IAM access key still active">
+          <circle class="epicenter-ring" cx="160" cy="190" r="20"/>
+          <circle class="epicenter-core" cx="160" cy="190" r="12"/>
+          <text x="160" y="222" text-anchor="middle" class="disp-text epicenter-label" font-size="11" font-weight="600">svc-billing-legacy</text>
+        </g>
+        <g id="nodes-collapsed"></g>
+      </svg>
+
+      <div class="field-legend" id="field-legend">
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="20" x2="16" y2="8"/><circle cx="4" cy="20" r="2.4"/></svg> ring distance = hops from the epicenter</div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12 A8 8 0 0 1 20 12" /></svg> crisp ring = high confidence · blurred = low</div>
+      </div>
+
+      <div class="action-dock">
+        <button class="action-btn" id="action-btn">REVOKE CREDENTIAL</button>
+        <div class="action-hint" id="action-hint">Selecting never applies the action — it previews the blast radius first.</div>
+      </div>
+    </div>
+
+    <!-- ============ CASE FILE ============ -->
+    <aside class="casefile" id="casefile" aria-hidden="true">
+      <div class="casefile-inner">
+        <div class="cf-drag"></div>
+        <button class="cf-close" id="cf-close" aria-label="Close case file">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+        </button>
+        <div id="cf-content">
+          <p class="cf-placeholder">Select the epicenter or any node in the field to open its case file — what it is, why it sits in this blast radius, and the confidence basis behind that.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ============ LEDGER RAIL ============ -->
+  <footer class="ledger">
+    <div class="ledger-track mono" id="ledger-track"></div>
+    <div class="ledger-stack mono" id="ledger-stack"></div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var STAGGER = reduceMotion ? 0 : 130;
+  var SETTLE_BUFFER = reduceMotion ? 10 : 420;
+
+  /* ---------------------------------------------------------
+     Glyph templates (bespoke, single-weight 1.5px line icons)
+     --------------------------------------------------------- */
+  function glyphMarkup(type){
+    switch(type){
+      case 'key':
+        return '<polygon class="glyph" points="0,-11 9,0 0,11 -9,0"/><polygon class="glyph-inner" points="0,-6 5,0 0,6 -5,0"/>';
+      case 'automation':
+        return '<rect class="glyph" x="-9" y="-9" width="18" height="18" transform="rotate(45)"/><rect class="glyph-inner" x="-4.5" y="-4.5" width="9" height="9" transform="rotate(45)"/>';
+      case 'session':
+        return '<circle class="glyph" r="9"/><circle class="glyph-inner" r="4"/>';
+      default:
+        return '<circle class="glyph" r="9"/>';
+    }
+  }
+  function typeLabel(type){
+    return { key:'CREDENTIAL / TOKEN', automation:'AUTOMATION · SERVICE ACCOUNT', session:'DEPENDENT SESSION' }[type] || type;
+  }
+
+  /* ---------------------------------------------------------
+     Mock data — the downstream graph of svc-billing-legacy
+     --------------------------------------------------------- */
+  var EPICENTER = {
+    id:'epi', name:'svc-billing-legacy', kind:'IAM ACCESS KEY',
+    created:'2021-03-04', retired:'2026-06-14 (94 days ago)', lastActive:'2026-09-26 07:12',
+    why:"Retired when the legacy billing service was decommissioned. It is still authenticating — from a build server nobody has restarted since the migration.",
+    quote:{ text:"Offboarding isn't just one system. People pick up access to a dozen tools over their time here, some outside single sign-on, and nobody remembers to take it all back. If I were an attacker, the accounts I'd go after first are the ones everyone already assumes are dead.", cite:"IT/security leader, large research institution" }
+  };
+
+  var NODES = [
+    { id:'n1', ring:1, angle:206, type:'key', name:'billing-worker-token', lastActive:'2026-09-26 07:10',
+      why:"Authenticates the nightly billing worker directly, using svc-billing-legacy's secret." },
+    { id:'n2', ring:1, angle:250, type:'key', name:'reporting-api-key', lastActive:'2026-09-25 22:47',
+      why:"Pulls billing exports on the same key pair — unscoped to any single caller." },
+
+    { id:'n3', ring:2, angle:155, type:'automation', name:'nightly-reconciliation-bot', lastActive:'2026-09-26 03:00',
+      tag:'FEEDS FINANCE CLOSE',
+      why:"Triggered by billing-worker-token every night; writes straight to the general ledger." },
+    { id:'n4', ring:2, angle:198, type:'automation', name:'ci-deploy-pipeline', lastActive:'2026-09-26 06:55',
+      tag:'PROD AUTOMATION',
+      why:"reporting-api-key unlocks a deploy credential this pipeline uses to ship to production — the reason this crosses into review.",
+      quote:{ text:"A real incident isn't one stolen key, it's dozens, spread across accounts and tools that don't share a console. Before you can even start revoking, someone has to work out what breaks if you do — and that coordination is the slowest part, not the detection.", cite:"Incident responder, works across many client environments" } },
+    { id:'n5', ring:2, angle:243, type:'automation', name:'backup-sync-job', lastActive:'2026-09-24 01:15',
+      why:"Scheduled mirror of billing exports to cold storage." },
+
+    { id:'n6', ring:3, angle:167, type:'session', name:'finance-dashboard-viewers', lastActive:'2026-09-26 08:02',
+      why:"Live SSO sessions reading reconciliation output — would lose data mid-session with no warning." },
+    { id:'n7', ring:3, angle:229, type:'session', name:'partner-webhook-relay', lastActive:'2026-09-26 05:40',
+      tag:'PARTNER SLA 99.9%',
+      why:"External billing partner integration, chained through the deploy pipeline's webhook relay." }
+  ];
+
+  var RING_CONF = { 1:0.94, 2:0.71, 3:0.48 };
+  var RING_LABEL = { 1:'RING 1 · DIRECT AUTH', 2:'RING 2 · AUTOMATIONS / SERVICE ACCOUNTS', 3:'RING 3 · DEPENDENT SESSIONS' };
+  var GATE = { state:'review', title:'GATE — NEEDS REVIEW', sub:'reaches production automation & a partner SLA boundary' };
+  var REVERT_QUOTE = { text:"We let an outside team automate a narrow slice of identity cleanup — the kind where, worst case, you just turn something back on. That's the only reason it got approved at all.", cite:"CISO, healthcare-adjacent organization" };
+
+  var nodesById = {};
+  NODES.forEach(function(n){ nodesById[n.id] = n; });
+  nodesById.epi = EPICENTER;
+
+  var LEDGER = [
+    { time:'YESTERDAY 18:30', desc:'svc-account: backup-relay-03 disabled', outcome:'monitor' },
+    { time:'07:52', desc:'dormant-account-jrichter deactivated', outcome:'safe' },
+    { time:'08:15', desc:'ci-bot-token-central rotated', outcome:'reverted' },
+    { time:'08:41', desc:'batch: 12 AWS keys (finance-legacy) revoked', outcome:'monitor' },
+    { time:'09:02', desc:'stale-vendor-sso-mparker offboarded', outcome:'safe' },
+    { time:'09:14', desc:'svc-reporting-key-04a1 revoked', outcome:'safe' }
+  ];
+
+  /* ---------------------------------------------------------
+     Geometry helpers
+     --------------------------------------------------------- */
+  function polar(cx, cy, r, deg){
+    var rad = deg * Math.PI / 180;
+    return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+  }
+  function svgEl(tag, attrs){
+    var el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (var k in attrs) el.setAttribute(k, attrs[k]);
+    return el;
+  }
+  function ringAttrs(conf){
+    // confidence -> line quality: crisp solid (high) through soft blurred/dashed band (low)
+    var width = 1.5 + (1 - conf) * 5.5;
+    var dashOn = 4 + conf * 34;
+    var dashOff = 1 + (1 - conf) * 8;
+    var filter = conf < 0.55 ? 'url(#blur-lo)' : (conf < 0.8 ? 'url(#blur-med)' : 'none');
+    return { 'stroke-width': width.toFixed(1), 'stroke-dasharray': dashOn.toFixed(0) + ' ' + dashOff.toFixed(0), filter: filter, opacity: (0.55 + conf * 0.35).toFixed(2) };
+  }
+
+  function arcPath(cx, cy, r, startDeg, endDeg){
+    var s = polar(cx, cy, r, startDeg), e = polar(cx, cy, r, endDeg);
+    var large = ((endDeg - startDeg + 360) % 360) > 180 ? 1 : 0;
+    return 'M ' + s.x.toFixed(1) + ',' + s.y.toFixed(1) + ' A ' + r + ' ' + r + ' 0 ' + large + ' 1 ' + e.x.toFixed(1) + ',' + e.y.toFixed(1);
+  }
+
+  /* ---------------------------------------------------------
+     Build the DESKTOP field
+     --------------------------------------------------------- */
+  var CX = 420, CY = 310;
+  var RADII = { 1:100, 2:195, 3:290 };
+
+  function buildFull(){
+    var ringsG = document.getElementById('rings-full');
+    [1,2,3].forEach(function(hop){
+      var attrs = ringAttrs(RING_CONF[hop]);
+      var c = svgEl('circle', Object.assign({ class:'ring', 'data-hop':String(hop), cx:CX, cy:CY, r:RADII[hop] }, attrs));
+      ringsG.appendChild(c);
+    });
+
+    var nodesG = document.getElementById('nodes-full');
+    NODES.forEach(function(n){
+      var p = polar(CX, CY, RADII[n.ring], n.angle);
+      var g = svgEl('g', { class:'node', 'data-node':n.id, 'data-hop':String(n.ring), tabindex:'0', role:'button',
+        'aria-label': n.name + ', ' + typeLabel(n.type) + ', last active ' + n.lastActive,
+        transform:'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')' });
+      g.innerHTML = glyphMarkup(n.type) +
+        '<text class="name" y="-14" text-anchor="middle" font-size="10.5" font-weight="500">' + n.name + '</text>' +
+        '<text class="last-active mono" y="20" text-anchor="middle">' + n.lastActive.split(' ')[1] + '</text>' +
+        (n.tag ? '<text class="tag mono" y="32" text-anchor="middle">' + n.tag + '</text>' : '');
+      nodesG.appendChild(g);
+    });
+
+    buildGate('gate-full', CX, CY, RADII[2], 'gate-arc');
+  }
+
+  function buildCollapsed(){
+    var cx=160, cy=190, r1=85, rb=170;
+    var ringsG = document.getElementById('rings-collapsed');
+    var a1 = ringAttrs(RING_CONF[1]);
+    ringsG.appendChild(svgEl('circle', Object.assign({ class:'ring', 'data-hop':'1', cx:cx, cy:cy, r:r1 }, a1)));
+    var ab = ringAttrs((RING_CONF[2]+RING_CONF[3])/2);
+    ringsG.appendChild(svgEl('circle', Object.assign({ class:'ring', 'data-hop':'beyond', cx:cx, cy:cy, r:rb }, ab)));
+
+    var nodesG = document.getElementById('nodes-collapsed');
+    var ring1Nodes = NODES.filter(function(n){ return n.ring===1; });
+    var beyondCount = NODES.filter(function(n){ return n.ring>1; }).length;
+    var angles1 = [200, 260];
+    ring1Nodes.forEach(function(n, i){
+      var p = polar(cx, cy, r1, angles1[i]);
+      var g = svgEl('g', { class:'node', 'data-node':n.id, 'data-hop':'1', tabindex:'0', role:'button',
+        'aria-label': n.name + ', ' + typeLabel(n.type),
+        transform:'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')' });
+      g.innerHTML = glyphMarkup(n.type) + '<text class="name" y="-14" text-anchor="middle" font-size="9.5">' + n.name + '</text>';
+      nodesG.appendChild(g);
+    });
+    var pb = polar(cx, cy, rb, 225);
+    var gb = svgEl('g', { class:'node node-aggregate', 'data-node':'beyond', 'data-hop':'beyond', tabindex:'0', role:'button',
+      'aria-label': beyondCount + ' more assets beyond ring 1', transform:'translate(' + pb.x.toFixed(1) + ',' + pb.y.toFixed(1) + ')' });
+    gb.innerHTML = '<circle class="glyph" r="13"/><circle class="glyph-inner" r="6"/><text y="4" text-anchor="middle" class="mono" font-size="10" font-weight="600" fill="var(--text)">+' + beyondCount + '</text><text class="name" y="-18" text-anchor="middle" font-size="9">BEYOND RING 1</text>';
+    nodesG.appendChild(gb);
+
+    buildGate('gate-collapsed', cx, cy, rb, 'gate-arc-beyond', true);
+  }
+
+  function buildGate(containerId, cx, cy, r, arcClass, compact){
+    var g = document.getElementById(containerId);
+    var gap = 8;
+    var path1 = arcPath(cx, cy, r, -78, -8);
+    var path2 = arcPath(cx, cy, r, -8 + gap, 30);
+    g.innerHTML =
+      '<path class="' + arcClass + '" d="' + path1 + '" />' +
+      '<path class="' + arcClass + '" d="' + path2 + '" />';
+    // gate glyph + label anchored near the notch, leading out into open field space
+    var notch = polar(cx, cy, r, -8 + gap/2);
+    var labelOffset = compact ? 34 : 160;
+    var maxX = compact ? 308 : 1180;
+    var labelX = Math.min(cx + r + labelOffset, maxX);
+    var labelY = notch.y - (compact ? 20 : 34);
+    var leader = svgEl('line', { class:'gate-leader', x1: notch.x.toFixed(1), y1: notch.y.toFixed(1), x2: labelX, y2: labelY });
+    g.appendChild(leader);
+    var lg = svgEl('g', { class:'gate-label-group', transform:'translate(' + labelX + ',' + labelY + ')' });
+    lg.innerHTML = compact
+      ? '<path d="M -8,3 A 9 9 0 0 1 6,-6" fill="none" stroke="var(--gate-review)" stroke-width="1.4" transform="translate(-2,2) scale(0.8)"/>' +
+        '<text class="title" x="10" y="1" font-size="9">REVIEW</text>'
+      : '<path d="M -10,4 A 12 12 0 0 1 8,-8" fill="none" stroke="var(--gate-review)" stroke-width="1.6" transform="translate(-2,2) scale(0.9)"/>' +
+        '<text class="title" x="14" y="1">' + GATE.title + '</text>' +
+        '<text class="sub" x="14" y="15">' + GATE.sub + '</text>';
+    g.appendChild(lg);
+  }
+
+  buildFull();
+  buildCollapsed();
+
+  /* ---------------------------------------------------------
+     Case file
+     --------------------------------------------------------- */
+  var casefile = document.getElementById('casefile');
+  var cfContent = document.getElementById('cf-content');
+  var currentSelection = null;
+
+  function gateGlyphSvg(state){
+    // open / half / shut arc-with-notch, per §7 — always paired with text
+    var d = state==='auto' ? 'M4 15 A9 9 0 0 1 20 15' : state==='blocked' ? 'M4 12 A9 9 0 0 1 20 12 M4 12 L4 16 M20 12 L20 16' : 'M4 15 A9 9 0 0 1 12 6 M15 6 A9 9 0 0 1 20 15';
+    var color = state==='auto' ? 'var(--gate-auto)' : state==='blocked' ? 'var(--gate-blocked)' : 'var(--gate-review)';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="' + color + '" stroke-width="1.6"><path d="' + d + '"/></svg>';
+  }
+
+  function renderEpicenterCF(){
+    var reached = NODES.length;
+    var armed = fieldRegion.classList.contains('hop3-active');
+    var confirmed = state === 'confirmed';
+    var html = '';
+    html += '<p class="cf-eyebrow">Epicenter · selected for revocation</p>';
+    html += '<h3 class="cf-title disp-text">' + EPICENTER.name + '</h3>';
+    html += '<span class="cf-kind">' + EPICENTER.kind + '</span>';
+    html += '<div class="cf-section"><h4>Status</h4>';
+    html += '<div class="cf-row"><span class="k">Created</span><span class="v mono">' + EPICENTER.created + '</span></div>';
+    html += '<div class="cf-row"><span class="k">Retired</span><span class="v mono">' + EPICENTER.retired + '</span></div>';
+    html += '<div class="cf-row"><span class="k">Last active</span><span class="v mono">' + EPICENTER.lastActive + '</span></div>';
+    html += '<p class="cf-body-text" style="margin-top:8px">' + EPICENTER.why + '</p></div>';
+
+    html += '<div class="cf-section"><h4>Blast radius</h4>';
+    html += '<div class="cf-row"><span class="k">Reachable assets</span><span class="v mono">' + (armed || confirmed ? reached : '—') + '</span></div>';
+    html += '<div class="cf-gate-line">' + gateGlyphSvg(GATE.state) + '<span class="g-label review">' + GATE.title + '</span></div>';
+    html += '<p class="cf-body-text" style="margin-top:6px">' + GATE.sub + '.</p></div>';
+
+    html += '<div class="cf-section"><h4>Cross-team impact</h4>';
+    html += '<p class="cf-body-text">Touches finance (reconciliation), platform engineering (deploy pipeline) and an external billing partner. Coordinate before confirming.</p></div>';
+
+    if (confirmed){
+      html += '<div class="cf-section"><h4>Reversibility</h4>';
+      html += '<p class="cf-body-text">Tether weight: <strong>thick</strong> — the radius reaches a service-account scope, so restoring correctly costs more than a session-only revoke.</p>';
+      html += '<div class="cf-quote">' + REVERT_QUOTE.text + '<cite>— ' + REVERT_QUOTE.cite + '</cite></div>';
+      html += '<div class="cf-actions"><button class="action-btn is-revert" id="cf-revert-btn">REEL IN TETHER — REVERT</button></div></div>';
+    } else {
+      html += '<div class="cf-quote">' + EPICENTER.quote.text + '<cite>— ' + EPICENTER.quote.cite + '</cite></div>';
+    }
+    cfContent.innerHTML = html;
+    var revertBtn = document.getElementById('cf-revert-btn');
+    if (revertBtn) revertBtn.addEventListener('click', revert);
+  }
+
+  function renderNodeCF(n){
+    var html = '';
+    html += '<p class="cf-eyebrow">Ring ' + n.ring + ' · hop ' + n.ring + ' from epicenter</p>';
+    html += '<h3 class="cf-title disp-text">' + n.name + '</h3>';
+    html += '<span class="cf-kind">' + typeLabel(n.type) + '</span>';
+    if (n.tag) html += '<div><span class="cf-tag">' + n.tag + '</span></div>';
+    html += '<div class="cf-section"><h4>Why it is in this radius</h4><p class="cf-body-text">' + n.why + '</p></div>';
+    html += '<div class="cf-section"><h4>Confidence basis</h4>';
+    html += '<div class="cf-row"><span class="k">Ring confidence</span><span class="v mono">' + RING_CONF[n.ring].toFixed(2) + '</span></div>';
+    html += '<div class="cf-row"><span class="k">Last active</span><span class="v mono">' + n.lastActive + '</span></div>';
+    var basisText = n.ring===1 ? 'Directly observed: usage matches the key\'s normal IP, user-agent and time-of-day baseline.' : n.ring===2 ? 'Inferred from automation logs one hop removed; baseline match is partial.' : 'Inferred transitively, visibility here is limited, hence the soft ring.';
+    html += '<p class="cf-body-text" style="margin-top:6px">' + basisText + '</p></div>';
+    if (n.quote){
+      html += '<div class="cf-section"><div class="cf-quote">' + n.quote.text + '<cite>— ' + n.quote.cite + '</cite></div></div>';
+    }
+    cfContent.innerHTML = html;
+  }
+
+  function renderBeyondCF(){
+    var count = NODES.filter(function(n){ return n.ring>1; }).length;
+    var html = '';
+    html += '<p class="cf-eyebrow">Ring 2 + ring 3 · merged for small screens</p>';
+    html += '<h3 class="cf-title disp-text">' + count + ' assets beyond ring 1</h3>';
+    html += '<div class="cf-section"><h4>What is folded in here</h4><ul style="margin:0;padding-left:18px;color:var(--text-muted);font-size:12.5px;line-height:1.7">';
+    NODES.filter(function(n){ return n.ring>1; }).forEach(function(n){
+      html += '<li>' + n.name + ' <span class="mono" style="color:var(--text-faint)">— ' + typeLabel(n.type) + '</span></li>';
+    });
+    html += '</ul></div>';
+    html += '<p class="cf-body-text" style="margin-top:10px">On a wider screen this splits into ring 2 (automations / service accounts) and ring 3 (dependent sessions), each with its own confidence line.</p>';
+    cfContent.innerHTML = html;
+  }
+
+  function openCasefile(nodeId){
+    currentSelection = nodeId;
+    if (nodeId === 'epi') renderEpicenterCF();
+    else if (nodeId === 'beyond') renderBeyondCF();
+    else renderNodeCF(nodesById[nodeId]);
+    casefile.classList.add('open');
+    casefile.setAttribute('aria-hidden', 'false');
+  }
+  function closeCasefile(){
+    casefile.classList.remove('open');
+    casefile.setAttribute('aria-hidden', 'true');
+    currentSelection = null;
+  }
+  document.getElementById('cf-close').addEventListener('click', closeCasefile);
+
+  // swipe-down to dismiss the bottom sheet on phone
+  (function(){
+    var startY = null;
+    casefile.addEventListener('touchstart', function(e){ startY = e.touches[0].clientY; }, {passive:true});
+    casefile.addEventListener('touchmove', function(e){
+      if (startY === null) return;
+      var dy = e.touches[0].clientY - startY;
+      if (dy > 70) { closeCasefile(); startY = null; }
+    }, {passive:true});
+    casefile.addEventListener('touchend', function(){ startY = null; });
+  })();
+
+  /* ---------------------------------------------------------
+     Field click / keyboard delegation
+     --------------------------------------------------------- */
+  var fieldRegion = document.getElementById('field-region');
+  function nodeIdFromTarget(target){
+    var g = target.closest ? target.closest('[data-node]') : null;
+    return g ? g.getAttribute('data-node') : null;
+  }
+  fieldRegion.addEventListener('click', function(e){
+    var id = nodeIdFromTarget(e.target);
+    if (id) openCasefile(id);
+  });
+  fieldRegion.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var id = nodeIdFromTarget(e.target);
+    if (id) { e.preventDefault(); openCasefile(id); }
+  });
+
+  /* ---------------------------------------------------------
+     Preview → confirm → revert state machine
+     --------------------------------------------------------- */
+  var state = 'resting'; // resting | previewing | armed | confirmed | reverting
+  var actionBtn = document.getElementById('action-btn');
+  var actionHint = document.getElementById('action-hint');
+  var reached = NODES.length;
+
+  var queue = { auto:4, review:2, blocked:1 };
+  var roAuto = document.getElementById('ro-auto'), roReview = document.getElementById('ro-review'), roBlocked = document.getElementById('ro-blocked'), roConf = document.getElementById('ro-conf');
+  function paintQueue(){ roAuto.textContent = queue.auto; roReview.textContent = queue.review; roBlocked.textContent = queue.blocked; }
+  function paintConfidence(active){
+    if (!active) { roConf.textContent = '0.71'; return; }
+    roConf.textContent = ((RING_CONF[1]*2 + RING_CONF[2]*3 + RING_CONF[3]*2) / 7).toFixed(2);
+  }
+
+  function setHop(hop, on){
+    fieldRegion.classList[on ? 'add' : 'remove']('hop' + hop + '-active');
+  }
+
+  function arm(){
+    if (state !== 'resting') return;
+    state = 'previewing';
+    actionBtn.disabled = true;
+    actionBtn.textContent = 'PREVIEWING…';
+    actionHint.textContent = 'Watching the blast radius bloom, ring by ring.';
+    [1,2,3].forEach(function(hop, i){
+      setTimeout(function(){ setHop(hop, true); }, i * STAGGER);
+    });
+    setTimeout(function(){
+      state = 'armed';
+      actionBtn.disabled = false;
+      actionBtn.textContent = 'CONFIRM REVOCATION — ' + reached + ' ASSETS GO DARK';
+      actionBtn.classList.add('is-confirm');
+      actionHint.textContent = 'Gate: needs review. Nothing is revoked until you confirm.';
+      paintConfidence(true);
+      if (currentSelection === 'epi') renderEpicenterCF();
+    }, 2 * STAGGER + SETTLE_BUFFER);
+  }
+
+  function confirm_(){
+    if (state !== 'armed') return;
+    state = 'confirmed';
+    actionBtn.disabled = true;
+    actionBtn.textContent = 'REVOCATION CONFIRMED';
+    actionHint.textContent = 'A tether to the last known-good state stays open for one-click undo.';
+    ['tether-full','tether-collapsed'].forEach(function(id){ document.getElementById(id).querySelector('.tether').classList.add('visible'); });
+    document.getElementById('anchor-full').classList.add('visible');
+    document.getElementById('anchor-collapsed').classList.add('visible');
+    queue.review = Math.max(0, queue.review - 1);
+    paintQueue();
+    LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revoked → needs monitoring', outcome:'monitor' });
+    renderLedger();
+    if (currentSelection === 'epi') renderEpicenterCF();
+  }
+
+  function revert(){
+    if (state !== 'confirmed') return;
+    state = 'reverting';
+    var revertBtn = document.getElementById('cf-revert-btn');
+    if (revertBtn) { revertBtn.disabled = true; revertBtn.textContent = 'REELING IN…'; }
+
+    ['full','collapsed'].forEach(function(kind){
+      var path = document.getElementById('tether-path-' + kind);
+      var marker = document.getElementById('reel-marker-' + kind);
+      var anchor = document.getElementById('anchor-' + kind);
+      var epi = document.getElementById('epi-' + kind);
+      marker.classList.add('visible');
+      if (reduceMotion || !path.getPointAtLength){
+        marker.classList.remove('visible');
+      } else {
+        var len = path.getTotalLength();
+        var start = performance.now();
+        var dur = 650;
+        function step(now){
+          var t = Math.min(1, (now - start) / dur);
+          var pt = path.getPointAtLength(len * (1 - t));
+          marker.setAttribute('cx', pt.x); marker.setAttribute('cy', pt.y);
+          if (t < 1) requestAnimationFrame(step);
+          else marker.classList.remove('visible');
+        }
+        requestAnimationFrame(step);
+      }
+    });
+
+    [3,2,1].forEach(function(hop, i){
+      setTimeout(function(){ setHop(hop, false); }, i * STAGGER);
+    });
+
+    setTimeout(function(){
+      state = 'resting';
+      actionBtn.disabled = false;
+      actionBtn.textContent = 'REVOKE CREDENTIAL';
+      actionBtn.classList.remove('is-confirm');
+      actionHint.textContent = 'Selecting never applies the action — it previews the blast radius first.';
+      ['tether-full','tether-collapsed'].forEach(function(id){ document.getElementById(id).querySelector('.tether').classList.remove('visible'); });
+      document.getElementById('anchor-full').classList.remove('visible');
+      document.getElementById('anchor-collapsed').classList.remove('visible');
+      paintConfidence(false);
+      queue.review = queue.review + 1;
+      paintQueue();
+      LEDGER.push({ time:'JUST NOW', desc: EPICENTER.name + ' revocation reverted', outcome:'reverted' });
+      renderLedger();
+      if (currentSelection === 'epi') renderEpicenterCF();
+    }, 2 * STAGGER + SETTLE_BUFFER);
+  }
+
+  actionBtn.addEventListener('click', function(){
+    if (state === 'resting') arm();
+    else if (state === 'armed') confirm_();
+  });
+
+  /* ---------------------------------------------------------
+     Ledger rail
+     --------------------------------------------------------- */
+  function outcomeGlyph(outcome){
+    if (outcome === 'safe') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg>SETTLED';
+    if (outcome === 'reverted') return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="5" y1="19" x2="17" y2="7"/><circle cx="18.5" cy="5.5" r="2.2"/></svg>REVERTED';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12 A8 8 0 0 1 16 5"/></svg>MONITORING';
+  }
+  function ledgerItemHtml(item){
+    return '<div class="ledger-item"><span class="ledger-time">' + item.time + '</span><span class="ledger-desc" title="' + item.desc + '">' + item.desc + '</span><span class="ledger-outcome ' + item.outcome + '">' + outcomeGlyph(item.outcome) + '</span></div>';
+  }
+  function renderLedger(){
+    var track = document.getElementById('ledger-track');
+    var stack = document.getElementById('ledger-stack');
+    track.innerHTML = LEDGER.map(ledgerItemHtml).join('');
+    stack.innerHTML = LEDGER.slice().reverse().map(ledgerItemHtml).join('');
+    track.scrollLeft = track.scrollWidth;
+  }
+  renderLedger();
+
+})();
+</script>
