@@ -640,7 +640,6 @@ a { color: var(--accent); }
   ];
 
   var RING_CONF = { 1:0.94, 2:0.71, 3:0.48 };
-  var RING_LABEL = { 1:'RING 1 · DIRECT AUTH', 2:'RING 2 · AUTOMATIONS / SERVICE ACCOUNTS', 3:'RING 3 · DEPENDENT SESSIONS' };
   var GATE = { state:'review', title:'GATE — NEEDS REVIEW', sub:'reaches production automation & a partner SLA boundary' };
   var REVERT_QUOTE = { text:"We let an outside team automate a narrow slice of identity cleanup — the kind where, worst case, you just turn something back on. That's the only reason it got approved at all.", cite:"CISO, healthcare-adjacent organization" };
 
@@ -963,8 +962,6 @@ a { color: var(--accent); }
     ['full','collapsed'].forEach(function(kind){
       var path = document.getElementById('tether-path-' + kind);
       var marker = document.getElementById('reel-marker-' + kind);
-      var anchor = document.getElementById('anchor-' + kind);
-      var epi = document.getElementById('epi-' + kind);
       marker.classList.add('visible');
       if (reduceMotion || !path.getPointAtLength){
         marker.classList.remove('visible');

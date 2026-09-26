@@ -603,8 +603,8 @@ var STAGGER = reduceMotion ? 30 : 130;
 
 /* ---------------------------------------------------------------- geometry */
 var VB = {w:1000,h:640};
-var EPI = {x:380,y:300};
-var RING_R = [92,162,226];
+var EPI = {x:380,y:320};
+var RING_R = [112,172,232];
 var ANCHOR = {x:150,y:150};
 var SLOTS = {
   f1:{x:860,y:70}, f2:{x:930,y:260}, f3:{x:860,y:560}, f4:{x:620,y:610},
@@ -634,7 +634,7 @@ var FINDINGS = [
     fn:"deserializeInvoicePayload()", confidence:0.88, ringConf:[0.94,0.89,0.83],
     nodes:[
       n(1,-150,"InvoiceParser.parse()",{t1:"pass",t2:"pass"}),
-      n(1,-20,"WebhookIngest.handle()",{}),
+      n(1,-58,"WebhookIngest.handle()",{}),
       n(2,-170,"billing-worker::processQueue()",{t4:"pass"}),
       n(2,35,"partner-sync::syncInvoices()",{}),
       n(3,-145,"POST /v2/invoices",{t6:"pass"},{sla:"99.9%"}),
@@ -701,7 +701,7 @@ var FINDINGS = [
     fn:"NotificationDispatcher.send()", confidence:0.91, ringConf:[0.95,0.90,0.86],
     nodes:[
       n(1,-140,"NotificationDispatcher.send()",{t1:"pass"}),
-      n(1,-20,"NotificationDispatcher.batch()",{t2:"pass"}),
+      n(1,-58,"NotificationDispatcher.batch()",{t2:"pass"}),
       n(2,120,"digest-scheduler::run()",{t3:"pass"}),
       n(3,40,"digest-scheduler-svc",{t4:"pass"})
     ],
@@ -1002,10 +1002,10 @@ function renderEpicenter(f){
   clear(layer);
   layer.appendChild(svgEl("circle", {class:"epi-pulse", cx:EPI.x, cy:EPI.y, r:20}));
   layer.appendChild(svgEl("circle", {class:"epi-core", cx:EPI.x, cy:EPI.y, r:9}));
-  var t1 = svgEl("text", {class:"epi-label", x:EPI.x, y:EPI.y-26, "text-anchor":"middle", "font-size":"16"});
+  var t1 = svgEl("text", {class:"epi-label", x:EPI.x, y:EPI.y-46, "text-anchor":"middle", "font-size":"15"});
   t1.textContent = f.pkg+" "+f.from+" → "+f.to;
   layer.appendChild(t1);
-  var t2 = svgEl("text", {class:"epi-sub", x:EPI.x, y:EPI.y+38, "text-anchor":"middle"});
+  var t2 = svgEl("text", {class:"epi-sub", x:EPI.x, y:EPI.y+48, "text-anchor":"middle"});
   t2.textContent = f.repo+" · "+f.fn;
   layer.appendChild(t2);
   layer.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+f.pkg+' '+f.from+' → '+f.to+'</span>Epicenter · '+f.repo); });
