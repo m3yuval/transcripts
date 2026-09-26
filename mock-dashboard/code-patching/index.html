@@ -615,7 +615,7 @@ td.cell.cell-hazard .g-none{background:transparent;}
       </div>
     </div>
 
-    <div class="proof" id="proofSection" aria-live="polite">
+    <div class="proof" id="proofSection">
       <div class="proof-head">
         <div class="proof-title">Proof strip — call paths × regression tests</div>
         <div class="proof-legend">
@@ -625,6 +625,9 @@ td.cell.cell-hazard .g-none{background:transparent;}
           <span class="leg-item"><span class="leg-swatch leg-hazard"></span>reached, untested — vetoes auto-merge</span>
         </div>
       </div>
+      <!-- Narrow live region: announces only the delta on selection (DESIGN.md a11y contract),
+           never the whole regenerated table — see frontend-engineering.md code-patching #4. -->
+      <div id="matrixStatus" class="vis-hidden" role="status" aria-live="polite"></div>
       <div class="proof-scroll">
         <table class="matrix" id="matrixTable">
           <caption>Regression coverage matrix for the selected finding</caption>
@@ -672,8 +675,20 @@ td.cell.cell-hazard .g-none{background:transparent;}
 "use strict";
 var NS = "http://www.w3.org/2000/svg";
 var reduceMotion = false;
-try{ reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches; }catch(e){}
-var STAGGER = reduceMotion ? 30 : 130;
+var STAGGER = 130;
+try{
+  var reduceMotionQuery = matchMedia("(prefers-reduced-motion: reduce)");
+  reduceMotion = reduceMotionQuery.matches;
+  STAGGER = reduceMotion ? 30 : 130;
+  // Re-check live rather than snapshotting once at load — the CSS-side media query already
+  // reacts immediately, so the JS-side flag (STAGGER, animateRevert's branch) must too.
+  var onReduceMotionChange = function(ev){
+    reduceMotion = ev.matches;
+    STAGGER = reduceMotion ? 30 : 130;
+  };
+  if (reduceMotionQuery.addEventListener) reduceMotionQuery.addEventListener("change", onReduceMotionChange);
+  else if (reduceMotionQuery.addListener) reduceMotionQuery.addListener(onReduceMotionChange);
+}catch(e){}
 
 /* ---------------------------------------------------------------- geometry */
 var VB = {w:1000,h:640};
@@ -1192,6 +1207,18 @@ function renderMatrix(f){
     if (isHazardRow) tr.classList.add("row-hazard");
     var th = document.createElement("th");
     th.innerHTML = '<span class="hop-tag">'+hopNames[nd.ring-1]+'</span>'+nd.name;
+    // Row header is also independently reachable/operable — same row-activation as a cell.
+    th.setAttribute("tabindex", "0");
+    th.setAttribute("role", "button");
+    th.setAttribute("aria-label", "Focus call path: "+nd.name+(nd.sla?", SLA "+nd.sla:""));
+    th.addEventListener("keydown", function(ev){
+      if (ev.key === "Enter" || ev.key === " "){
+        ev.preventDefault();
+        var i = +tr.dataset.idx;
+        var nodeEl = document.querySelector('.node-g[data-key="'+f.id+'::'+i+'"]');
+        if (nodeEl) focusNode(f, i, nodeEl);
+      }
+    });
     tr.appendChild(th);
     f.tests.forEach(function(t){
       var val = nd.tests[t.id];
@@ -1211,9 +1238,26 @@ function renderMatrix(f){
         td.innerHTML = '<span class="glyph g-none"></span>';
         td.title = t.name+": not exercised on this path";
       }
+      // Every cell is independently reachable and operable by keyboard, with the same
+      // accessible name a mouse hover gets from `title` — see frontend-engineering.md
+      // code-patching #3. Activating a cell mirrors clicking its row (focusNode).
+      td.setAttribute("tabindex", "0");
+      td.setAttribute("role", "button");
+      td.setAttribute("aria-label", nd.name + " — " + td.title);
+      var activateCell = function(){
+        var i = +tr.dataset.idx;
+        var nodeEl = document.querySelector('.node-g[data-key="'+f.id+'::'+i+'"]');
+        if (nodeEl) focusNode(f, i, nodeEl);
+      };
       td.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+nd.name+'</span>'+td.title); });
       td.addEventListener("mousemove", moveTip);
       td.addEventListener("mouseleave", hideTip);
+      td.addEventListener("focus", function(){ showTip({clientX: window.innerWidth/2, clientY: window.innerHeight/2}, '<span class="tip-title">'+nd.name+'</span>'+td.title); });
+      td.addEventListener("blur", hideTip);
+      td.addEventListener("click", function(ev){ ev.stopPropagation(); activateCell(); });
+      td.addEventListener("keydown", function(ev){
+        if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); activateCell(); }
+      });
       tr.appendChild(td);
     });
     tr.addEventListener("click", function(){
@@ -1224,6 +1268,20 @@ function renderMatrix(f){
     tbody.appendChild(tr);
   });
   table.appendChild(tbody);
+  announceMatrixDelta(f);
+}
+// Narrow, purpose-built live region: announces just the change on selection, not the
+// whole regenerated table (frontend-engineering.md code-patching #4).
+function announceMatrixDelta(f){
+  var statusEl = byId("matrixStatus");
+  if (!statusEl) return;
+  var fails = f.nodes.filter(function(nd){ return nd._state === "fail"; }).length;
+  var hazards = f.nodes.filter(function(nd){ return nd._state === "hazard"; }).length;
+  var msg;
+  if (fails > 0) msg = fails + " call path" + (fails>1?"s":"") + " now failing a regression test — gate blocked.";
+  else if (hazards > 0) msg = hazards + " call path" + (hazards>1?"s":"") + " reached with no test coverage — gate needs review.";
+  else msg = "All reached call paths pass — gate auto-approved.";
+  statusEl.textContent = msg;
 }
 function svgFreeEl(tag, opts){
   var el = document.createElement(tag);
@@ -1444,7 +1502,14 @@ function setStatus(id, status){
 function confirmFinding(id){ setStatus(id, "confirmed"); }
 function revertFinding(id){
   var f = FINDINGS.find(function(x){ return x.id === id; });
+  // Guard re-entrancy: the revert button is not re-rendered/disabled until the ~650ms travel
+  // animation finishes, so a fast second click on the same still-enabled button would otherwise
+  // start a second traveler and double-log the ledger entry (see infra-patching's revert race —
+  // same failure mode, fixed here too).
+  if (f._reverting) return;
+  f._reverting = true;
   animateRevert(f, function(){
+    f._reverting = false;
     f.status = "reverted";
     renderCasefile(f);
     ledger.push({t:"now", desc: f.pkg+" "+f.to+"→"+f.from+" · "+f.repo, outcome:"reverted", isNew:true});
@@ -1500,15 +1565,21 @@ function renderLedger(){
 }
 
 /* ---------------------------------------------------------------- selection / preview */
+var selectionToken = 0;
 function selectFinding(id){
   selectedId = id;
   var f = FINDINGS.find(function(x){ return x.id === id; });
   previewing = true;
+  // capture this call's own token; a later selectFinding() call bumps selectionToken,
+  // which invalidates this call's pending settle timeout below instead of letting it
+  // fire against a finding the user has since moved away from.
+  var token = ++selectionToken;
   renderField(f, true);
   renderMatrix(f);
   renderCasefile(f);
   var settleAt = 3*STAGGER + 420;
   setTimeout(function(){
+    if (token !== selectionToken) return; // superseded by a later selection — no-op
     previewing = false;
     renderCasefile(f);
   }, settleAt);

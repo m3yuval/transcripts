@@ -816,9 +816,22 @@ a { color: var(--accent); }
 (function(){
   "use strict";
 
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var STAGGER = reduceMotion ? 0 : 130;
-  var SETTLE_BUFFER = reduceMotion ? 10 : 420;
+  // Re-checked live (DESIGN.md §6.4): a change listener keeps STAGGER/SETTLE_BUFFER and
+  // the `reduceMotion` flag itself in sync if the OS setting flips mid-session, matching
+  // the CSS side's @media rule instead of freezing the value read at load.
+  var motionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var reduceMotion = motionQuery ? motionQuery.matches : false;
+  var STAGGER, SETTLE_BUFFER;
+  function applyMotionPref(){
+    STAGGER = reduceMotion ? 0 : 130;
+    SETTLE_BUFFER = reduceMotion ? 10 : 420;
+  }
+  applyMotionPref();
+  if (motionQuery){
+    var onMotionChange = function(e){ reduceMotion = e.matches; applyMotionPref(); };
+    if (motionQuery.addEventListener) motionQuery.addEventListener('change', onMotionChange);
+    else if (motionQuery.addListener) motionQuery.addListener(onMotionChange);
+  }
   var TOTAL_CREDENTIALS = 142; // matches the "credentials with no owner acknowledgment > 30 days" KPI — rail and legend must agree
 
   /* ---------------------------------------------------------
@@ -1344,11 +1357,35 @@ a { color: var(--accent); }
   var reachBox = document.getElementById('reach-counter');
   var reachValue = document.getElementById('reach-value');
 
-  var queue = { auto:4, review:2, blocked:1 };
+  // Queue counts are derived from real data, not typed in — same contract as infra/
+  // code-patching's live FINDINGS.filter(...).length rail math (domain-authenticity #3/#4).
+  // QUEUE_ITEMS is the credential queue this session is working; 'epi' is
+  // svc-billing-legacy, the one scenario actually rendered in the field below, so its
+  // gate here always matches GATE.state and its status flips with confirm/revert —
+  // there is exactly one underlying source of truth for both the header and the field.
+  var QUEUE_ITEMS = [
+    { id:'epi', gate: GATE.state },
+    { id:'q2', gate:'auto' },
+    { id:'q3', gate:'auto' },
+    { id:'q4', gate:'auto' },
+    { id:'q5', gate:'auto' },
+    { id:'q6', gate:'review' },
+    { id:'q7', gate:'blocked' }
+  ];
+  var epiQueueItem = QUEUE_ITEMS[0];
+  function computeQueue(){
+    var counts = { auto:0, review:0, blocked:0 };
+    QUEUE_ITEMS.forEach(function(q){
+      if (q.actioned) return; // confirmed items leave the pending queue
+      counts[q.gate] = (counts[q.gate] || 0) + 1;
+    });
+    return counts;
+  }
   var roAuto = document.getElementById('ro-auto'), roReview = document.getElementById('ro-review'),
       roBlocked = document.getElementById('ro-blocked'), roConf = document.getElementById('ro-conf'),
       roPending = document.getElementById('ro-pending');
   function paintQueue(){
+    var queue = computeQueue();
     roAuto.textContent = queue.auto; roReview.textContent = queue.review; roBlocked.textContent = queue.blocked;
     var pending = queue.auto + queue.review + queue.blocked;
     roPending.textContent = 'PENDING ' + pending + ' OF ' + TOTAL_CREDENTIALS;
