@@ -139,9 +139,27 @@
     font-size:14.5px; white-space:nowrap; color:var(--text);
   }
   .mark-pillar{ color: var(--accent); }
+  .rail-right{ display:flex; align-items:center; gap:14px; min-width:0; overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none; }
+  .rail-right::-webkit-scrollbar{ display:none; }
+  .mode-block{ display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+  .mode-text{ font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.05em; font-weight:600; color:var(--text-muted); white-space:nowrap; }
+  .mode-text.is-write{ color:var(--gate-auto); }
+  .role-chip{
+    font-size:9px; letter-spacing:.06em; text-transform:uppercase; padding:2px 6px;
+    border:1px solid var(--border); background:none; color:var(--text-muted); white-space:nowrap;
+    cursor:pointer;
+  }
+  .role-chip:hover{ color:var(--text); border-color:var(--text-muted); }
+  .mode-toggle{
+    font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.04em;
+    padding:3px 8px; border:1px solid var(--border); background:none; color:var(--text-muted);
+    cursor:pointer; white-space:nowrap;
+  }
+  .mode-toggle:hover:not(:disabled){ color:var(--text); border-color:var(--text-muted); }
+  .mode-toggle:disabled{ cursor:not-allowed; opacity:.55; }
   .rail-readouts{
     display:flex; align-items:stretch; gap:0;
-    overflow-x:auto; scrollbar-width:none; -ms-overflow-style:none;
+    flex:0 0 auto;
   }
   .rail-readouts::-webkit-scrollbar{ display:none; }
   .readout{
@@ -151,6 +169,7 @@
   .readout:first-child{ border-left:none; }
   .readout-label{ font-size:9px; letter-spacing:.08em; color:var(--text-faint); text-transform:uppercase; }
   .readout-value{ font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-weight:600; font-size:13.5px; color:var(--text); }
+  .readout-spark{ display:inline-flex; align-items:center; margin-right:5px; vertical-align:middle; }
   .readout-dot{ display:inline-block; width:6px; height:6px; margin-right:4px; vertical-align:middle; }
   .readout-dot.gate-auto{ background:var(--gate-auto); }
   .readout-dot.gate-review{ background:var(--gate-review); }
@@ -180,6 +199,8 @@
     text-transform:uppercase; margin-bottom:2px;
   }
   .queue-head .n{ font-family:"IBM Plex Mono",monospace; color:var(--text-muted); }
+  .queue-sub{ font-size:9px; color:var(--text-faint); margin:2px 0 4px; letter-spacing:.02em; }
+  .queue-more{ font-family:"IBM Plex Mono",monospace; font-size:9.5px; color:var(--text-faint); padding:6px 3px 2px; border-top:1px solid var(--border); }
   .queue-list{ max-height: calc(48vh - 30px); overflow-y:auto; }
   .queue-row{
     display:flex; align-items:center; gap:7px; width:100%;
@@ -265,9 +286,10 @@
     background: var(--surface); overflow-x:auto; overflow-y:hidden;
   }
   .ledger-track{ display:flex; align-items:stretch; height:100%; width:max-content; padding:0 16px; }
-  .ledger-item{ flex:0 0 auto; width:158px; padding:9px 13px; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:center; gap:3px; }
+  .ledger-item{ flex:0 0 auto; width:198px; padding:8px 13px; border-right:1px solid var(--border); display:flex; flex-direction:column; justify-content:center; gap:2px; }
   .ledger-time{ font-family:"IBM Plex Mono",monospace; font-size:10px; color:var(--text-faint); }
   .ledger-desc{ font-size:11px; color:var(--text); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .ledger-actor{ font-size:9.5px; color:var(--text-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .ledger-outcome{ display:flex; align-items:center; gap:5px; font-size:9.5px; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }
 
   /* ============ ring bloom-in (preview animation) ============ */
@@ -282,10 +304,9 @@
   /* ============ phone collapse (≤480px) ============ */
   @media (max-width:480px){
     .rail{ height:auto; flex-wrap:wrap; padding-block:8px; gap:8px; }
-    .rail-readouts{ width:100%; }
+    .rail-right{ width:100%; }
     .field-legend{ max-width:calc(100% - 28px); padding:4px 7px; font-size:9px; line-height:1.3; }
-    .field-legend .legend-row{ margin:0; }
-    .field-legend .legend-row:not(:first-child){ display:none; }
+    .field-legend .legend-row{ margin:0; flex-wrap:wrap; }
     .queue-panel{ width:min(210px,62vw); }
     .stage{ flex-direction:column; }
     .field-wrap{ min-height: 58vh; }
@@ -321,16 +342,21 @@
       </svg>
       <span class="mark-text">SKYLAYER <span class="mark-pillar">&middot; INFRA PATCHING</span></span>
     </div>
-    <div class="rail-readouts" id="railReadouts"></div>
+    <div class="rail-right">
+      <div class="mode-block" id="modeBlock"></div>
+      <div class="rail-readouts" id="railReadouts"></div>
+    </div>
   </header>
 
   <main class="stage" id="stage">
     <section class="field-wrap" id="fieldWrap">
-      <svg class="field-svg" id="fieldSvg" role="img"></svg>
+      <svg class="field-svg" id="fieldSvg" role="group" aria-label="Blast radius field"></svg>
 
       <div class="queue-panel" id="queuePanel">
         <div class="queue-head">PENDING <span class="n" id="queueCount"></span></div>
+        <div class="queue-sub" id="queueSub"></div>
         <div class="queue-list" id="queueList"></div>
+        <div class="queue-more" id="queueMore"></div>
       </div>
 
       <div class="field-legend" id="fieldLegend"></div>
@@ -362,9 +388,9 @@
       blurb:"openssl 3.0.11 carries a heap-overflow fixed in 3.0.14. Reachable through the TLS terminator and the payments gateway service running on this host.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"tls-terminator", state:"degrade"}, {name:"payments-gateway-svc", state:"degrade"} ] },
-        { hop:2, nodes:[ {name:"checkout-api", state:"degrade"}, {name:"fraud-scoring-svc", state:"contained"} ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:false} ] }
+        { hop:1, nodes:[ {name:"tls-terminator", state:"degrade", {name:"payments-gateway-svc", state:"degrade" ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"degrade", {name:"fraud-scoring-svc", state:"contained" ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:false ] }
       ] },
 
     { id:"auth-log4j", host:"prod-auth-worker-11", image:"auth-worker:5.4.0",
@@ -375,7 +401,7 @@
       blurb:"log4j-core 2.14.1 is present in the auth-worker image but not on the runtime classpath. The vulnerable class never loads, so the radius stays contained at hop 1.",
       quote:"auto", reachable:false,
       rings:[
-        { hop:1, nodes:[ {name:"auth-token-svc", state:"contained"} ] }
+        { hop:1, nodes:[ {name:"auth-token-svc", state:"contained" ] }
       ] },
 
     { id:"checkout-lb", host:"prod-checkout-lb-02", image:"edge-proxy:3.3.0",
@@ -386,9 +412,9 @@
       blurb:"nginx 1.24.0 needs a request-smuggling fix. The public checkout endpoint depends on this proxy outside the scheduled window.",
       quote:"review",
       rings:[
-        { hop:1, nodes:[ {name:"edge-proxy-svc", state:"hardfail"}, {name:"tls-terminator", state:"degrade"} ] },
-        { hop:2, nodes:[ {name:"checkout-api", state:"hardfail"}, {name:"customer-portal-api", state:"degrade"} ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"hardfail", sla:"99.95%", outside:true}, {name:"partner-webhook-relay", state:"degrade", sla:"99.90%", outside:false} ] }
+        { hop:1, nodes:[ {name:"edge-proxy-svc", state:"hardfail", {name:"tls-terminator", state:"degrade" ] },
+        { hop:2, nodes:[ {name:"checkout-api", state:"hardfail", {name:"customer-portal-api", state:"degrade" ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"hardfail", sla:"99.95%", outside:true, {name:"partner-webhook-relay", state:"degrade", sla:"99.90%", outside:false ] }
       ] },
 
     { id:"db-proxy", host:"prod-db-proxy-07", image:"pgbouncer:2.0.4",
@@ -399,9 +425,9 @@
       blurb:"glibc 2.35 needs a buffer-handling fix. This proxy fronts a regulated data store, so no patch ships here without change-board sign-off.",
       quote:"blockedReg", regulatedFlag:true,
       rings:[
-        { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail"} ] },
-        { hop:2, nodes:[ {name:"billing-webhook", state:"hardfail"}, {name:"reporting-service", state:"degrade"} ] },
-        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.90%", outside:true}, {name:"partner-webhook-relay", state:"hardfail", sla:"99.90%", outside:true} ] }
+        { hop:1, nodes:[ {name:"db-proxy-svc", state:"hardfail" ] },
+        { hop:2, nodes:[ {name:"billing-webhook", state:"hardfail", {name:"reporting-service", state:"degrade" ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.90%", outside:true, {name:"partner-webhook-relay", state:"hardfail", sla:"99.90%", outside:true ] }
       ] },
 
     { id:"batch-etl", host:"staging-batch-etl-03", image:"batch-etl:2.2.0",
@@ -412,8 +438,8 @@
       blurb:"python 3.9.7 needs a parsing fix. Runs in staging only; nothing customer-facing sits downstream of this host.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"batch-etl-svc", state:"degrade"} ] },
-        { hop:2, nodes:[ {name:"reporting-service", state:"contained"} ] }
+        { hop:1, nodes:[ {name:"batch-etl-svc", state:"degrade" ] },
+        { hop:2, nodes:[ {name:"reporting-service", state:"contained" ] }
       ] },
 
     { id:"cache-node", host:"prod-cache-node-05", image:"redis:7.0.4",
@@ -424,9 +450,9 @@
       blurb:"redis 7.0.4 needs a cluster-rebuild fix. The session cache backs checkout — a full rebuild would run past the scheduled window.",
       quote:"review",
       rings:[
-        { hop:1, nodes:[ {name:"session-cache-svc", state:"degrade"} ] },
-        { hop:2, nodes:[ {name:"auth-token-svc", state:"degrade"}, {name:"checkout-api", state:"degrade"} ] },
-        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:true} ] }
+        { hop:1, nodes:[ {name:"session-cache-svc", state:"degrade" ] },
+        { hop:2, nodes:[ {name:"auth-token-svc", state:"degrade", {name:"checkout-api", state:"degrade" ] },
+        { hop:3, nodes:[ {name:"public-checkout-api", state:"degrade", sla:"99.95%", outside:true ] }
       ] },
 
     { id:"ml-infer", host:"prod-ml-infer-02", image:"ml-inference:0.7.2",
@@ -437,9 +463,9 @@
       blurb:"protobuf 3.19.4 needs a deserialization fix. The recommendation feed and search both call this model service; the 99.99% tier can't absorb the risk at 0.52 confidence.",
       quote:"blockedSla",
       rings:[
-        { hop:1, nodes:[ {name:"ml-inference-svc", state:"hardfail"} ] },
-        { hop:2, nodes:[ {name:"recommendation-svc", state:"hardfail"}, {name:"search-index-svc", state:"degrade"} ] },
-        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.99%", outside:true} ] }
+        { hop:1, nodes:[ {name:"ml-inference-svc", state:"hardfail" ] },
+        { hop:2, nodes:[ {name:"recommendation-svc", state:"hardfail", {name:"search-index-svc", state:"degrade" ] },
+        { hop:3, nodes:[ {name:"customer-portal-api", state:"hardfail", sla:"99.99%", outside:true ] }
       ] },
 
     { id:"log-relay", host:"prod-log-relay-01", image:"fluent-bit:1.4.1",
@@ -450,8 +476,8 @@
       blurb:"fluent-bit 1.4.1 needs a log-parsing fix. Feeds the audit sink only; nothing customer-facing reads from it directly.",
       quote:"auto",
       rings:[
-        { hop:1, nodes:[ {name:"log-relay-svc", state:"degrade"} ] },
-        { hop:2, nodes:[ {name:"audit-log-sink", state:"contained"} ] }
+        { hop:1, nodes:[ {name:"log-relay-svc", state:"degrade" ] },
+        { hop:2, nodes:[ {name:"audit-log-sink", state:"contained" ] }
       ] }
   ];
 
@@ -464,18 +490,28 @@
 
   var GATE_LABEL = { auto:"AUTO-APPROVED", review:"NEEDS REVIEW", blocked:"BLOCKED" };
 
+  // Scale/queue-depth (DESIGN.md §5.6): the field only ever renders a handful of
+  // nodes by design, but the rail's PENDING n OF total must agree with whatever
+  // backlog number the page claims elsewhere — here, the same quarter-to-date
+  // backlog figure (illustrative demo data, PRD.md §2.5).
+  var BACKLOG_START = 1204;
+  var BACKLOG_NOW = 340;
+
   /* ================= STATE ================= */
   var state = {
     activeId: "pay-gw",
     status: { "pay-gw":"confirmed" },
     caseView: { mode:"epicenter" }, // or {mode:'node', hop, idx}
     ledger: [
-      { time:"05:10", host:"prod-auth-worker-08", pkg:"glibc", outcome:"monitoring" },
-      { time:"05:40", host:"prod-cache-node-02", pkg:"redis", outcome:"reverted" },
-      { time:"06:22", host:"prod-web-05", pkg:"nginx", outcome:"safe" },
-      { time:"07:58", host:"prod-pay-gw-04", pkg:"openssl", outcome:"safe" }
+      { time:"05:10", host:"prod-auth-worker-08", pkg:"glibc", outcome:"monitoring", actor:"revoked by s.okafor", approver:"approved by platform-eng-oncall" },
+      { time:"05:40", host:"prod-cache-node-02", pkg:"redis", outcome:"reverted", actor:"reverted by j.ferrer", approver:"approved by platform-eng-oncall" },
+      { time:"06:22", host:"prod-web-05", pkg:"nginx", outcome:"safe", actor:"patched by j.ferrer", approver:"approved by change-board" },
+      { time:"07:58", host:"prod-pay-gw-04", pkg:"openssl", outcome:"safe", actor:"patched by auto-remediation", approver:"approved by platform-eng-oncall" }
     ],
-    clock: { h:8, m:2 }
+    clock: { h:8, m:2 },
+    mode: "read-only", // "read-only" | "write" — boots read-only by default, DESIGN.md §5.5
+    role: "viewer",    // "viewer" | "approver" — an approver role is required to request write mode
+    lastOpener: null
   };
 
   function getFinding(id){ for(var i=0;i<FINDINGS.length;i++){ if(FINDINGS[i].id===id) return FINDINGS[i]; } return null; }
@@ -581,6 +617,23 @@
     return gateGlyphSVG("review", 14);
   }
 
+  function burndownSparkSVG(){
+    // wow moment 4 (PRD.md §2.6): a trend, not a bare count — four points across
+    // the quarter, start to now.
+    var vals = [1204, 890, 560, 340];
+    var w = 46, h = 16, pad = 2;
+    var max = Math.max.apply(null, vals), min = Math.min.apply(null, vals);
+    var pts = vals.map(function(v, i){
+      var x = pad + (i/(vals.length-1))*(w-pad*2);
+      var y = h-pad - ((v-min)/(max-min||1))*(h-pad*2);
+      return x.toFixed(1)+","+y.toFixed(1);
+    });
+    return '<svg width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" aria-hidden="true">'+
+      '<polyline points="'+pts.join(" ")+'" fill="none" style="stroke:var(--gate-review)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline>'+
+      '<circle cx="'+pts[pts.length-1].split(",")[0]+'" cy="'+pts[pts.length-1].split(",")[1]+'" r="1.6" style="fill:var(--gate-review)"></circle>'+
+      '</svg>';
+  }
+
   /* ================= INSTRUMENT RAIL ================= */
   function renderRail(){
     var conf = FINDINGS.reduce(function(s,f){ return s+f.confidence; },0) / FINDINGS.length;
@@ -592,17 +645,71 @@
       { label:"AUTO", value: String(auto), cls:"gate-auto" },
       { label:"REVIEW", value: String(review), cls:"gate-review" },
       { label:"BLOCKED", value: String(blocked), cls:"gate-blocked" },
-      { label:"MTTR", value: "4.2D", cls:"" }
+      { label:"MTTR", value: "4.2D", cls:"" },
+      // queue-depth pair — must agree with the backlog number claimed on this same
+      // page (the queue panel's "showing N of total") rather than silently implying
+      // the field's ~8 nodes are the whole environment (DESIGN.md §5.6).
+      { label:"PENDING", value: FINDINGS.length+" OF "+BACKLOG_NOW.toLocaleString(), cls:"" },
+      { label:"BACKLOG (QTR)", value: BACKLOG_START.toLocaleString()+"→"+BACKLOG_NOW.toLocaleString(), cls:"", spark:true }
     ];
     document.getElementById("railReadouts").innerHTML = items.map(function(it){
       var dot = it.cls ? '<span class="readout-dot '+it.cls+'"></span>' : "";
-      return '<div class="readout"><span class="readout-label">'+dot+it.label+'</span><span class="readout-value">'+it.value+'</span></div>';
+      var spark = it.spark ? '<span class="readout-spark">'+burndownSparkSVG()+'</span>' : "";
+      return '<div class="readout"><span class="readout-label">'+dot+it.label+'</span><span class="readout-value">'+spark+it.value+'</span></div>';
     }).join("");
+  }
+
+  /* ================= MODE (read-only / write) ================= */
+  function renderMode(){
+    var writeAllowed = state.role === "approver";
+    var isWrite = state.mode === "write";
+    var html =
+      '<span class="mode-text'+(isWrite?" is-write":"")+'">MODE: '+(isWrite?"WRITE":"READ-ONLY")+'</span>'+
+      '<button type="button" class="role-chip" id="roleChip" title="Demo control — switch role">'+state.role.toUpperCase()+'</button>'+
+      '<button type="button" class="mode-toggle" id="modeToggle"'+(!writeAllowed?" disabled":"")+
+        (!writeAllowed ? ' title="Viewer role cannot request write access — an approver must grant it"' : "")+
+        ' aria-label="'+(isWrite?"Return to read-only mode":(writeAllowed?"Request write access":"Write access requires the approver role"))+'">'+
+        (isWrite ? "RETURN TO READ-ONLY" : "REQUEST WRITE ACCESS")+
+      '</button>';
+    document.getElementById("modeBlock").innerHTML = html;
+    var btn = document.getElementById("modeToggle");
+    if(btn) btn.addEventListener("click", toggleMode);
+    var roleBtn = document.getElementById("roleChip");
+    if(roleBtn) roleBtn.addEventListener("click", function(){
+      state.role = (state.role==="viewer") ? "approver" : "viewer";
+      if(state.role==="viewer" && state.mode==="write"){ state.mode="read-only"; }
+      renderMode(); renderCaseFile();
+    });
+  }
+  function toggleMode(){
+    if(state.mode === "write"){
+      state.mode = "read-only";
+      state.ledger.push({ time: nextClockTime(), host:"session", pkg:"access",
+        outcome:"monitoring", actor:"j.ferrer returned to read-only", approver:"" });
+    } else {
+      if(state.role !== "approver") return; // viewer: toggle stays disabled, never silently allowed
+      state.mode = "write";
+      // toggling to write is itself a logged, visible action — DESIGN.md §5.5, never silent.
+      state.ledger.push({ time: nextClockTime(), host:"session", pkg:"access",
+        outcome:"monitoring", actor:"j.ferrer granted write access", approver:"" });
+    }
+    renderLedger();
+    scrollLedgerEnd();
+    renderMode();
+    renderCaseFile();
   }
 
   /* ================= QUEUE PANEL ================= */
   function renderQueue(){
     document.getElementById("queueCount").textContent = FINDINGS.length;
+    document.getElementById("queueSub").textContent =
+      "showing "+FINDINGS.length+" of "+BACKLOG_NOW.toLocaleString()+", sorted by confidence ↓";
+    // acknowledges the field/queue's own scale rather than silently contradicting
+    // the rail's backlog claim (DESIGN.md §5.6) — the rest of the queue isn't
+    // rendered here, but its existence isn't hidden either.
+    var moreCount = BACKLOG_NOW - FINDINGS.length;
+    document.getElementById("queueMore").textContent =
+      moreCount > 0 ? "+ "+moreCount.toLocaleString()+" more, lower confidence — outside this demo scene" : "";
     var list = document.getElementById("queueList");
     list.innerHTML = "";
     FINDINGS.forEach(function(f){
@@ -623,10 +730,21 @@
 
   /* ================= LEGEND ================= */
   function renderLegend(){
+    // always-visible on-canvas key — DESIGN.md §1 "legibility without the spec":
+    // epicenter, ring/hop meaning, line-quality=confidence, gate — never behind a
+    // tooltip/expander, compressed (not removed) at phone width.
+    if(isCompact()){
+      document.getElementById("fieldLegend").innerHTML =
+        '<div class="legend-row"><b>&#9678;</b><span><b>Epicenter</b>=host &middot; <b>ring</b>=1 hop &middot; <b>line</b>=confidence &middot; </span>'+
+        gateGlyphSVG("review",12)+'<span><b>gate</b>=needs review</span></div>';
+      return;
+    }
     document.getElementById("fieldLegend").innerHTML =
-      '<div class="legend-row">'+hopGlyphSVG()+'<span><b>HOP 1</b> on host &middot; <b>HOP 2</b> callers &middot; <b>HOP 3</b> SLA-bound</span></div>'+
-      '<div class="legend-row">'+gateGlyphSVG("auto",14)+gateGlyphSVG("review",14)+gateGlyphSVG("blocked",14)+'<span>gate: open&middot;half&middot;shut, never color alone</span></div>'+
-      '<div class="legend-row">'+tetherGlyphSVG(1.6)+'<span>thin = snapshot restore, thick = reimage</span></div>';
+      '<div class="legend-row"><b>&#9678;</b><span><b>Epicenter</b> = host queued for patch/reboot</span></div>'+
+      '<div class="legend-row">'+hopGlyphSVG()+'<span><b>Ring</b> = 1 hop &middot; HOP1 on host &middot; HOP2 callers &middot; HOP3 SLA-bound</span></div>'+
+      '<div class="legend-row"><b>&#9478;</b><span><b>Line quality</b> = confidence &middot; crisp = certain, soft/dashed = uncertain</span></div>'+
+      '<div class="legend-row">'+gateGlyphSVG("auto",14)+gateGlyphSVG("review",14)+gateGlyphSVG("blocked",14)+'<span><b>Gate</b>: crossing here needs human review — open&middot;half&middot;shut, never color alone</span></div>'+
+      '<div class="legend-row">'+tetherGlyphSVG(1.6)+'<span><b>Tether</b>: thin = snapshot restore, thick = reimage</span></div>';
   }
   function legendHTML(){ return document.getElementById("fieldLegend").innerHTML; }
 
@@ -635,7 +753,11 @@
     var track = document.getElementById("ledgerTrack");
     track.innerHTML = state.ledger.map(function(e){
       var word = e.outcome==="safe" ? "confirmed safe" : e.outcome==="reverted" ? "reverted" : "still monitoring";
-      return '<div class="ledger-item"><span class="ledger-time">'+e.time+'</span><span class="ledger-desc">'+e.host+' &middot; '+e.pkg+'</span><span class="ledger-outcome">'+outcomeGlyphSVG(e.outcome)+word+'</span></div>';
+      var attribution = (e.actor||"")+(e.approver?" &middot; "+e.approver:"");
+      return '<div class="ledger-item"><span class="ledger-time">'+e.time+'</span>'+
+        '<span class="ledger-desc">'+e.host+' &middot; '+e.pkg+'</span>'+
+        '<span class="ledger-actor">'+attribution+'</span>'+
+        '<span class="ledger-outcome">'+outcomeGlyphSVG(e.outcome)+word+'</span></div>';
     }).join("");
   }
   function scrollLedgerEnd(){
@@ -648,8 +770,13 @@
     if(state.clock.h>23) state.clock.h -= 24;
     return (state.clock.h<10?"0":"")+state.clock.h+":"+(state.clock.m<10?"0":"")+state.clock.m;
   }
-  function addLedgerEntry(f, outcome){
-    state.ledger.push({ time: nextClockTime(), host: f.host, pkg: f.pkg, outcome: outcome });
+  function addLedgerEntry(f, outcome, actorOverride){
+    var verb = outcome==="reverted" ? "reverted" : "patched";
+    state.ledger.push({
+      time: nextClockTime(), host: f.host, pkg: f.pkg, outcome: outcome,
+      actor: actorOverride || (verb+" by j.ferrer"),
+      approver: f.gate==="auto" ? "auto-approved" : "approved by "+(f.regulatedFlag ? "change-board" : "platform-eng-oncall")
+    });
     renderLedger();
     scrollLedgerEnd();
   }
@@ -761,7 +888,8 @@
     }
 
     // epicenter
-    var epi = el("g", { class:"epicenter", tabindex:"0", role:"button" }, svg);
+    var epi = el("g", { class:"epicenter", tabindex:"0", role:"button",
+      "aria-label": finding.host+", epicenter, "+finding.pkg+" "+finding.cve+", gate "+finding.gate }, svg);
     var confirmedNow = (state.status[finding.id]==="confirmed");
     if(confirmedNow){
       el("circle", { cx:ecx, cy:ecy, r:15, fill:"none", style:"stroke:var(--gate-"+finding.gate+")", "stroke-width":1.4, "stroke-dasharray":"3 3" }, epi);
@@ -771,8 +899,8 @@
     el("line", { x1:ecx, y1:ecy-14, x2:ecx, y2:ecy+14, style:"stroke:var(--accent)", "stroke-width":1.2, opacity:.6 }, epi);
     el("text", { x:ecx, y:ecy-20, "text-anchor":"middle", "font-size":compact?13:15, "font-weight":700, style:"fill:var(--text)", "font-family":"'Big Shoulders','Arial Narrow',sans-serif" }, epi).textContent = finding.host;
     el("text", { x:ecx, y:ecy+26, "text-anchor":"middle", "font-size":10.5, class:"mono", style:"fill:var(--text-muted)" }, epi).textContent = finding.cve+" · "+finding.pkg+" "+finding.from+"→"+finding.to;
-    epi.addEventListener("click", function(){ openCaseFileEpicenter(finding); });
-    epi.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileEpicenter(finding); } });
+    epi.addEventListener("click", function(){ openCaseFileEpicenter(finding, epi); });
+    epi.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileEpicenter(finding, epi); } });
 
     // gate arc
     drawGateArc(svg, finding, ecx, ecy, radiusFor, ringAngles);
@@ -803,7 +931,8 @@
 
   function drawNode(parentG, ecx, ecy, r, angle, node, hop){
     var pos = polar(ecx, ecy, r, angle);
-    var g = el("g", { class:"node", tabindex:"0", role:"button" }, parentG);
+    var g = el("g", { class:"node", tabindex:"0", role:"button",
+      "aria-label": node.name+", downstream service, ring "+hop+", "+node.state }, parentG);
     var size = 8;
     if(node.state==="hardfail"){
       // diamond
@@ -821,8 +950,8 @@
       el("rect", { x:pos[0]-22, y:tagY-9, width:44, height:13, fill:"var(--surface)", style:"stroke:"+slaColor, "stroke-width":1 }, g);
       el("text", { x:pos[0], y:tagY, "text-anchor":"middle", "font-size":9.5, class:"mono", style:"fill:var(--text-muted)" }, g).textContent = node.sla;
     }
-    g.addEventListener("click", function(ev){ ev.stopPropagation(); openCaseFileNode(hop, node); });
-    g.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileNode(hop, node); } });
+    g.addEventListener("click", function(ev){ ev.stopPropagation(); openCaseFileNode(hop, node, g); });
+    g.addEventListener("keydown", function(ev){ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); openCaseFileNode(hop, node, g); } });
   }
 
   function drawGateArc(svg, finding, ecx, ecy, radiusFor, ringAngles){
@@ -911,26 +1040,55 @@
     }
   }
 
-  function openCaseFileEpicenter(finding){
+  function openCaseFileEpicenter(finding, openerEl){
+    state.lastOpener = openerEl || state.lastOpener;
     if(finding.id !== state.activeId){ selectFinding(finding.id, {animate:true}); return; }
     state.caseView = { mode:"epicenter" };
     renderCaseFile();
     openCaseFile();
   }
-  function openCaseFileNode(hop, node){
+  function openCaseFileNode(hop, node, openerEl){
+    state.lastOpener = openerEl || state.lastOpener;
     state.caseView = { mode:"node", hop:hop, node:node };
     renderCaseFile();
     openCaseFile();
   }
 
   function openCaseFile(){
-    document.getElementById("casefile").classList.add("open");
-    document.getElementById("casefile").setAttribute("aria-hidden","false");
+    var panel = document.getElementById("casefile");
+    panel.classList.add("open");
+    panel.setAttribute("aria-hidden","false");
+    // focus contract (DESIGN.md §5.3/§6.5): opening moves focus into the panel.
+    requestAnimationFrame(function(){
+      var target = document.getElementById("cfCloseBtn") || panel;
+      if(target && target.focus) target.focus();
+    });
   }
   function closeCaseFile(){
-    document.getElementById("casefile").classList.remove("open");
-    document.getElementById("casefile").setAttribute("aria-hidden","true");
+    var panel = document.getElementById("casefile");
+    if(!panel.classList.contains("open")) return;
+    panel.classList.remove("open");
+    panel.setAttribute("aria-hidden","true");
+    // dismissal contract (DESIGN.md §5.3): closing returns focus to whatever opened it.
+    var opener = state.lastOpener;
+    if(opener && document.contains(opener) && opener.focus){ opener.focus(); }
+    state.lastOpener = null;
   }
+
+  /* dismissal contract — Escape and click/tap outside close the case file, at every
+     breakpoint, in addition to the always-visible close control (DESIGN.md §5.3). */
+  document.addEventListener("keydown", function(ev){
+    if(ev.key==="Escape"){
+      var panel = document.getElementById("casefile");
+      if(panel.classList.contains("open")) closeCaseFile();
+    }
+  });
+  document.addEventListener("pointerdown", function(ev){
+    var panel = document.getElementById("casefile");
+    if(!panel.classList.contains("open")) return;
+    if(panel.contains(ev.target)) return; // click inside the panel — not a dismissal
+    closeCaseFile();
+  });
 
   function confirmAction(){
     var f = getFinding(state.activeId);
@@ -1007,14 +1165,27 @@
 
   function actionsHTML(f){
     var status = state.status[f.id] || "idle";
+    var readOnly = state.mode !== "write";
+    // Preview/arm/bloom (the animation above) still runs fully in read-only mode —
+    // previewing is inspection. Only the final confirm/apply/revert step is gated,
+    // and the blocked control names the blocker directly rather than just graying
+    // out the original label (DESIGN.md §5.5).
     if(status==="previewing"){
       return '<div class="cf-actions"><button class="cf-btn" disabled>PREVIEWING…</button><div class="cf-note">rings are still blooming outward</div></div>';
     }
     if(status==="confirmed"){
+      if(readOnly){
+        return '<div class="cf-actions"><div class="cf-settled">CONFIRMED · TETHER ACTIVE</div>'+
+          '<button class="cf-btn" disabled>READ-ONLY — REQUEST WRITE ACCESS</button></div>';
+      }
       return '<div class="cf-actions"><div class="cf-settled">CONFIRMED · TETHER ACTIVE</div><button class="cf-btn revert-btn" id="cfRevertBtn">REVERT — REEL TETHER IN</button></div>';
     }
     if(status==="reverted"){
       return '<div class="cf-actions"><div class="cf-settled">REVERTED — HOST BACK AT PRE-PATCH BASELINE</div></div>';
+    }
+    if(readOnly){
+      return '<div class="cf-actions"><button class="cf-btn" disabled>READ-ONLY — REQUEST WRITE ACCESS</button>'+
+        '<div class="cf-note">'+(state.role==="approver" ? "toggle to write mode in the instrument rail to act on this finding" : "viewer role cannot act — an approver must grant write access")+'</div></div>';
     }
     if(f.gate==="auto"){
       return '<div class="cf-actions"><button class="cf-btn" id="cfConfirmBtn">PUSH PATCH — '+f.window+'</button><div class="cf-note">no human sign-off required at this confidence</div></div>';
@@ -1093,12 +1264,14 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function(){
       renderField(getFinding(state.activeId), {animate:false});
+      renderLegend();
     }, 140);
   });
 
   /* ================= INIT ================= */
   function init(){
     renderRail();
+    renderMode();
     renderLegend();
     renderQueue();
     renderLedger();

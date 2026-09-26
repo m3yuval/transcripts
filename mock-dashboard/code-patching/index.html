@@ -147,6 +147,22 @@ button:focus-visible, [tabindex]:focus-visible, .hit:focus-visible{
   color:var(--text);
 }
 .rail-title b{color:var(--accent); font-weight:800;}
+.rail-right{
+  display:flex; align-items:center; gap:18px; white-space:nowrap; flex:none;
+}
+.rail-mode{
+  display:flex; align-items:center; gap:8px; padding-right:16px; border-right:1px solid var(--border);
+}
+.role-chip, .mode-toggle{
+  font-family:"IBM Plex Mono", monospace; font-size:9.5px; letter-spacing:.05em; text-transform:uppercase;
+  border:1px solid var(--border); border-radius:2px; background:var(--surface); color:var(--text-muted);
+  padding:4px 8px; cursor:pointer;
+}
+.role-chip:hover{border-color:var(--text-muted); color:var(--text);}
+.role-chip.is-approver{color:var(--accent); border-color:var(--accent);}
+.mode-toggle{font-weight:600; color:var(--text);}
+.mode-toggle.is-write{color:var(--gate-review); border-color:var(--gate-review);}
+.mode-toggle:disabled{cursor:not-allowed; opacity:.6;}
 .rail-readouts{
   display:flex; align-items:center; gap:0; white-space:nowrap;
 }
@@ -196,6 +212,23 @@ button:focus-visible, [tabindex]:focus-visible, .hit:focus-visible{
 }
 .field-wrap svg{display:block; width:100%; height:100%;}
 .field-wrap .beyond-group{display:none;}
+
+/* always-visible field legend — DESIGN.md §1/§5.2, anchored bottom-left on desktop, never hidden */
+.field-legend{
+  position:absolute; left:14px; bottom:14px; z-index:5;
+  display:flex; flex-direction:column; gap:4px;
+  background:var(--surface); border:1px solid var(--border); border-radius:2px;
+  padding:8px 10px; max-width:280px;
+  font-family:"IBM Plex Sans", system-ui, sans-serif; font-size:10.5px; color:var(--text-muted);
+  pointer-events:none;
+}
+.fl-item{display:flex; align-items:baseline; gap:6px;}
+.fl-swatch{width:9px; height:9px; flex:none; border-radius:1px; margin-top:1px;}
+.fl-epi{background:var(--accent);}
+.fl-ring{background:none; border:1.5px solid var(--accent);}
+.fl-line{background:none; border-top:1.5px dashed var(--text-muted); height:0; align-self:center;}
+.fl-gate{background:var(--gate-review);}
+.fl-compact{display:none;}
 
 /* grid backdrop */
 .grid-rect{fill:url(#gridPattern);}
@@ -341,16 +374,21 @@ td.cell .glyph{display:inline-block; width:13px; height:13px;}
 td.cell.cell-hazard{background-image:repeating-linear-gradient(45deg, var(--ink-700) 0 2.5px, var(--paper-1) 2.5px 7px);}
 td.cell.cell-hazard .g-none{background:transparent;}
 
+/* DESIGN.md/PRD.md wow-moment 4 — a visible-by-default "this is early" disclosure, never a
+   collapsed toggle. Renders on page load; nothing needs to be clicked to see it. */
 .evidence-note{
-  margin-top:14px; padding-top:10px; border-top:1px dashed var(--border);
-  font-size:11px; color:var(--text-faint); max-width:74ch;
+  margin-top:14px; padding:10px 12px; border:1px solid var(--gate-review);
+  border-radius:2px; background:var(--surface-panel);
+  font-size:11.5px; color:var(--text-muted); max-width:74ch;
 }
-.evidence-note button{
-  background:none; border:none; color:var(--text-muted); text-decoration:underline dotted;
-  cursor:pointer; padding:0; font-size:11px; font-family:inherit;
+.evidence-note-head{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+.evidence-flag{
+  font-family:"IBM Plex Mono",monospace; font-size:9.5px; font-weight:600; letter-spacing:.06em;
+  color:var(--gate-review); border:1px solid var(--gate-review); border-radius:2px; padding:1px 6px;
+  flex:none;
 }
-.evidence-body{margin-top:6px; display:none;}
-.evidence-body.open{display:block;}
+.evidence-note-title{font-weight:600; color:var(--text);}
+.evidence-body{margin-top:6px;}
 
 /* ============================= case file ============================= */
 .casefile{
@@ -457,6 +495,16 @@ td.cell.cell-hazard .g-none{background:transparent;}
   .field-wrap .beyond-group{display:block;}
   .field-wrap{min-height:min(56vh, 380px);}
 
+  /* legend compresses to a single abbreviated row — never removed via display:none */
+  .field-legend{
+    left:8px; right:8px; bottom:8px; max-width:none;
+    flex-direction:row; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    gap:12px; padding:6px 8px; white-space:nowrap;
+  }
+  .fl-item{flex:none;}
+  .fl-full{display:none;}
+  .fl-compact{display:inline;}
+
   .casefile{
     top:auto; bottom:0; left:0; right:0; width:100%;
     max-height:47vh; height:auto;
@@ -500,7 +548,13 @@ td.cell.cell-hazard .g-none{background:transparent;}
       </svg>
       <div class="rail-title">SKYLAYER · <b>CODE PATCHING</b></div>
     </div>
-    <div class="rail-readouts mono" id="railReadouts"></div>
+    <div class="rail-right">
+      <div class="rail-mode" id="railMode">
+        <button class="role-chip" id="roleChip" type="button"></button>
+        <button class="mode-toggle mono" id="modeToggle" type="button"></button>
+      </div>
+      <div class="rail-readouts mono" id="railReadouts"></div>
+    </div>
   </div>
 </div>
 
@@ -512,7 +566,8 @@ td.cell.cell-hazard .g-none{background:transparent;}
     </div>
 
     <div class="field-wrap" id="fieldWrap">
-      <svg id="fieldSvg" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Blast radius field for the selected finding">
+      <svg id="fieldSvg" viewBox="0 0 1000 640" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Blast radius field for the selected finding">
+        <desc>Static backdrop: hop rings, survey grid, and the confidence-gate arc. The epicenter and each dependency node are separately focusable.</desc>
         <defs>
           <pattern id="gridPattern" width="24" height="24" patternUnits="userSpaceOnUse">
             <rect width="24" height="24" fill="var(--surface-field)"/>
@@ -538,6 +593,26 @@ td.cell.cell-hazard .g-none{background:transparent;}
         <g id="nodesLayer"></g>
         <g id="epicenterLayer"></g>
       </svg>
+      <!-- DESIGN.md §1 "Legibility without the spec" — an always-visible key, never a tooltip,
+           expander, or a breakpoint that drops it entirely. -->
+      <div class="field-legend" id="fieldLegend">
+        <div class="fl-item"><span class="fl-swatch fl-epi"></span>
+          <span class="fl-full">Epicenter: dependency version bump under review</span>
+          <span class="fl-compact">Epicenter = version bump</span>
+        </div>
+        <div class="fl-item"><span class="fl-swatch fl-ring"></span>
+          <span class="fl-full">Ring = 1 hop: direct → transitive callers → public entry points</span>
+          <span class="fl-compact">Ring = 1 hop (caller distance)</span>
+        </div>
+        <div class="fl-item"><span class="fl-swatch fl-line"></span>
+          <span class="fl-full">Line quality = confidence — crisp is high, soft/dashed is low</span>
+          <span class="fl-compact">Line quality = confidence</span>
+        </div>
+        <div class="fl-item"><span class="fl-swatch fl-gate"></span>
+          <span class="fl-full">Gate: crossing here needs human review</span>
+          <span class="fl-compact">Gate = needs review</span>
+        </div>
+      </div>
     </div>
 
     <div class="proof" id="proofSection" aria-live="polite">
@@ -556,13 +631,16 @@ td.cell.cell-hazard .g-none{background:transparent;}
         </table>
       </div>
       <div class="evidence-note">
-        <button id="evidenceToggle" aria-expanded="false">Evidence note for the founders (internal) ▾</button>
-        <div class="evidence-body" id="evidenceBody">
-          This pillar is the thinnest in the discovery evidence. What backs this screen: one dependency-patching
-          example scoped to a repo rather than a host, and an investor's structural analogy to a coding-agent
-          company's test-generation approach — not a security buyer's own described remediation workflow. Treat
-          this as a proof-of-concept for the shared mechanism, not validated demand. All KPI-style numbers on
-          this screen are illustrative demo data.
+        <div class="evidence-note-head">
+          <span class="evidence-flag">EARLY</span>
+          <span class="evidence-note-title">This pillar's evidence is the thinnest of the three — read before trusting this screen</span>
+        </div>
+        <div class="evidence-body">
+          Early: this workflow is our best guess, built from one practitioner's dependency-patching example
+          scoped to a repo rather than a host, and an investor's structural analogy to a coding-agent company's
+          test-generation approach — no security buyer has described this exact process to us yet. Treat this
+          as a proof-of-concept for the shared mechanism, not validated demand. All KPI-style numbers on this
+          screen are illustrative demo data.
         </div>
       </div>
     </div>
@@ -641,11 +719,11 @@ var FINDINGS = [
       n(3,65,"partner-webhook-relay",{t3:"pass"})
     ],
     tests:[
-      {id:"t1",name:"InvoiceParserTest::testParseValidPayload"},
-      {id:"t2",name:"InvoiceParserTest::testParseMalformedPayload"},
-      {id:"t3",name:"WebhookIngestIT::testDuplicateEventIdempotency"},
-      {id:"t4",name:"BillingWorkerRegressionSuite::testQueueDrain"},
-      {id:"t6",name:"PublicApiV2ContractTest::testCreateInvoiceEndpoint"}
+      {id:"t1",name:"InvoiceParserTest.testParseValidPayload"},
+      {id:"t2",name:"InvoiceParserTest.testParseMalformedPayload"},
+      {id:"t3",name:"WebhookIngestIT.testDuplicateEventIdempotency"},
+      {id:"t4",name:"BillingWorkerRegressionSuite.testQueueDrain"},
+      {id:"t6",name:"PublicApiV2ContractTest.testCreateInvoiceEndpoint"}
     ]},
   { id:"f2", pkg:"requests", from:"2.28.1", to:"2.28.2", repo:"reporting-worker",
     fn:"HTTPAdapter.send()", confidence:0.97, ringConf:[0.98,0.96,0.95],
@@ -670,7 +748,7 @@ var FINDINGS = [
     tests:[
       {id:"t1",name:"AuthRegressionSuite::testExpiredTokenRejected"},
       {id:"t2",name:"AuthRegressionSuite::testTokenSignatureAlgConfusion"},
-      {id:"t3",name:"PublicApiV2ContractTest::testTokenRefreshFlow"}
+      {id:"t3",name:"PublicApiV2ContractTest.testTokenRefreshFlow"}
     ]},
   { id:"f4", pkg:"lodash", from:"4.17.19", to:"4.17.21", repo:"checkout-service",
     fn:"CartSerializer.merge()", confidence:0.94, ringConf:[0.96,0.93,0.90],
@@ -681,10 +759,10 @@ var FINDINGS = [
       n(3,130,"POST /v2/checkout/complete",{t4:"pass"},{sla:"99.9%"})
     ],
     tests:[
-      {id:"t1",name:"CartSerializerTest::testDeepMergeArrays"},
-      {id:"t2",name:"CheckoutOrchestratorRegressionSuite::testFinalizeIdempotent"},
-      {id:"t3",name:"CheckoutOrchestratorRegressionSuite::testRetryPaymentBackoff"},
-      {id:"t4",name:"PublicApiV2ContractTest::testCheckoutCompleteEndpoint"}
+      {id:"t1",name:"CartSerializerTest > deep merges arrays"},
+      {id:"t2",name:"CheckoutOrchestratorRegressionSuite > finalize is idempotent"},
+      {id:"t3",name:"CheckoutOrchestratorRegressionSuite > retry payment backs off"},
+      {id:"t4",name:"PublicApiV2ContractTest.testCheckoutCompleteEndpoint"}
     ]},
   { id:"f5", pkg:"urllib3", from:"1.26.5", to:"1.26.18", repo:"payments-connector",
     fn:"PaymentClient.request()", confidence:0.79, ringConf:[0.88,0.79,0.70],
@@ -695,7 +773,7 @@ var FINDINGS = [
     ],
     tests:[
       {id:"t1",name:"PaymentClientTest::testRequestRetryHeaders"},
-      {id:"t2",name:"PublicApiV2ContractTest::testCaptureEndpoint"}
+      {id:"t2",name:"PublicApiV2ContractTest.testCaptureEndpoint"}
     ]},
   { id:"f6", pkg:"axios", from:"0.21.4", to:"1.6.0", cve:"CVE-2023-45857", repo:"notifications-svc",
     fn:"NotificationDispatcher.send()", confidence:0.91, ringConf:[0.95,0.90,0.86],
@@ -706,13 +784,14 @@ var FINDINGS = [
       n(3,40,"digest-scheduler-svc",{t4:"pass"})
     ],
     tests:[
-      {id:"t1",name:"NotificationDispatcherTest::testSendRetriesOnRateLimit"},
-      {id:"t2",name:"NotificationDispatcherTest::testBatchDedup"},
-      {id:"t3",name:"DigestSchedulerRegressionSuite::testDailyDigestRun"},
-      {id:"t4",name:"DeploySmokeTest::testDigestSchedulerHealthcheck"}
+      {id:"t1",name:"NotificationDispatcherTest > sends retries on rate limit"},
+      {id:"t2",name:"NotificationDispatcherTest > batch dedups"},
+      {id:"t3",name:"DigestSchedulerRegressionSuite > daily digest run"},
+      {id:"t4",name:"DeploySmokeTest > digest scheduler healthcheck"}
     ]},
   { id:"f7", pkg:"PyYAML", from:"5.4.1", to:"6.0.1", repo:"data-ingest-pipeline",
     fn:"ConfigLoader.load_yaml()", confidence:0.35, ringConf:[0.50,0.35,0.22],
+    blurb:"PyYAML's default loader (yaml.load()) can construct arbitrary Python objects from tags embedded in YAML input, which can lead to arbitrary code execution. safe_load() is the only safe path on 5.4.1; 6.0.1 makes FullLoader the enforced default and closes the gap for callers that never opted into safe_load explicitly.",
     nodes:[
       n(1,-90,"ConfigLoader.load_yaml()",{t1:"fail"}),
       n(2,140,"ingest-pipeline::bootstrap()",{t2:"pass"}),
@@ -721,7 +800,7 @@ var FINDINGS = [
     tests:[
       {id:"t1",name:"ConfigLoaderRegressionSuite::testSafeLoadRejectsArbitraryTags"},
       {id:"t2",name:"IngestPipelineTest::testBootstrapWithValidConfig"},
-      {id:"t3",name:"PublicApiV2ContractTest::testIngestConfigEndpoint"}
+      {id:"t3",name:"PublicApiV2ContractTest.testIngestConfigEndpoint"}
     ]},
   { id:"f8", pkg:"commons-text", from:"1.9", to:"1.10.0", repo:"search-indexer",
     fn:"TextSanitizer.clean()", confidence:0.72, ringConf:[0.85,0.72,0.60],
@@ -732,9 +811,9 @@ var FINDINGS = [
       n(3,130,"POST /v2/search/query",{},{sla:"99.9%"})
     ],
     tests:[
-      {id:"t1",name:"TextSanitizerTest::testStripsControlChars"},
-      {id:"t2",name:"SearchIndexWriterRegressionSuite::testNormalizeUnicode"},
-      {id:"t3",name:"SearchIndexWriterRegressionSuite::testReindexPartitionBoundary"}
+      {id:"t1",name:"TextSanitizerTest.testStripsControlChars"},
+      {id:"t2",name:"SearchIndexWriterRegressionSuite.testNormalizeUnicode"},
+      {id:"t3",name:"SearchIndexWriterRegressionSuite.testReindexPartitionBoundary"}
     ]}
 ];
 
@@ -780,6 +859,57 @@ var QUOTES = [
 var selectedId = "f1";
 var caseOpen = false;
 var activeNodeKey = null;
+
+/* ---------------------------------------------------------------- read-only / write mode (DESIGN.md §5.5) */
+// Boots read-only by default. An approver role is required before write mode can even be requested;
+// a viewer sees the toggle but it stays disabled with a label explaining why.
+var role = "viewer";      // "viewer" | "approver"
+var mode = "read-only";   // "read-only" | "write"
+
+function renderModeChrome(){
+  var roleBtn = byId("roleChip");
+  var modeBtn = byId("modeToggle");
+  roleBtn.textContent = role === "approver" ? "ROLE: APPROVER" : "ROLE: VIEWER";
+  roleBtn.classList.toggle("is-approver", role === "approver");
+  roleBtn.title = "Demo control — switch between viewer and approver role";
+
+  modeBtn.textContent = mode === "write" ? "MODE: WRITE" : "MODE: READ-ONLY";
+  modeBtn.classList.toggle("is-write", mode === "write");
+  if (role === "approver"){
+    modeBtn.disabled = false;
+    modeBtn.title = mode === "write" ? "Return to read-only" : "Request write access";
+  } else {
+    modeBtn.disabled = true;
+    modeBtn.title = "Approver role required before write mode can even be requested";
+  }
+}
+
+function toggleRole(){
+  role = role === "approver" ? "viewer" : "approver";
+  if (role === "viewer" && mode === "write"){
+    // losing approver status also drops write access
+    mode = "read-only";
+  }
+  renderModeChrome();
+  renderCasefile(FINDINGS.find(function(x){ return x.id===selectedId; }));
+}
+
+function toggleMode(){
+  if (role !== "approver") return; // guarded — button is disabled, but guard the handler too
+  mode = mode === "write" ? "read-only" : "write";
+  renderModeChrome();
+  if (mode === "write"){
+    // toggling to write mode is itself a logged, visible action — never silent
+    ledger.push({t:"now", desc:"j.ferrer granted write access", outcome:"safe", isNew:true});
+    renderLedger();
+  } else {
+    ledger.push({t:"now", desc:"j.ferrer returned to read-only", outcome:"safe", isNew:true});
+    renderLedger();
+  }
+  renderCasefile(FINDINGS.find(function(x){ return x.id===selectedId; }));
+}
+byId("roleChip").addEventListener("click", toggleRole);
+byId("modeToggle").addEventListener("click", toggleMode);
 
 /* ---------------------------------------------------------------- svg helpers */
 function svgEl(tag, attrs){
@@ -856,8 +986,8 @@ function renderPendingSlots(){
     var label = svgEl("text", {class:"slot-label", x:s.x, y:s.y+34, "text-anchor":"middle"});
     label.textContent = f.pkg;
     g.appendChild(label);
-    g.addEventListener("click", function(){ selectFinding(f.id); showCasefilePanel(); });
-    g.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); selectFinding(f.id); showCasefilePanel(); } });
+    g.addEventListener("click", function(){ selectFinding(f.id); showCasefilePanel(g); });
+    g.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); selectFinding(f.id); showCasefilePanel(g); } });
     layer.appendChild(g);
   });
 }
@@ -1018,11 +1148,15 @@ function renderEpicenter(f){
   var t2 = svgEl("text", {class:"epi-sub", x:EPI.x, y:EPI.y+48, "text-anchor":"middle"});
   t2.textContent = f.repo+" · "+f.fn;
   layer.appendChild(t2);
+  layer.setAttribute("tabindex", "0");
+  layer.setAttribute("role", "button");
+  layer.setAttribute("aria-label", "Epicenter: "+f.pkg+" "+f.from+" to "+f.to+", "+f.repo);
   layer.addEventListener("mouseenter", function(ev){ showTip(ev, '<span class="tip-title">'+f.pkg+' '+f.from+' → '+f.to+'</span>Epicenter · '+f.repo); });
   layer.addEventListener("mousemove", moveTip);
   layer.addEventListener("mouseleave", hideTip);
   layer.style.cursor = "pointer";
-  layer.addEventListener("click", function(){ openCasefile(f.id); });
+  layer.addEventListener("click", function(){ openCasefile(f.id, layer); });
+  layer.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); openCasefile(f.id, layer); } });
 }
 
 function focusNode(f, idx, g){
@@ -1030,10 +1164,10 @@ function focusNode(f, idx, g){
   document.querySelectorAll(".node-g.active").forEach(function(el){ el.classList.remove("active"); });
   g.classList.add("active");
   if (f.id === selectedId){
-    showCasefilePanel();
+    showCasefilePanel(g);
     renderCasefile(f);
   } else {
-    openCasefile(f.id);
+    openCasefile(f.id, g);
   }
   highlightMatrixRow(idx);
 }
@@ -1130,14 +1264,22 @@ function reasonText(f){
   return "Every reached path has at least one passing test. Clear to auto-merge.";
 }
 
+var READ_ONLY_LABEL = "READ-ONLY — REQUEST WRITE ACCESS";
+// DESIGN.md §5.5 — the preview/arm/bloom interaction works fully in read-only mode (inspection
+// only); only the final confirm/apply step is gated, and a gated control is relabeled to name the
+// blocker directly, never just grayed out with its original write-action label still showing.
+function writeGated(){ return mode !== "write"; }
+
 function actionBlock(f){
   var wrap = document.createElement("div");
   wrap.className = "cf-actions";
+  var gated = writeGated();
   if (f.status === "confirmed"){
     var b1 = mkBtn("Confirmed — merged & deployed", "primary", true);
     wrap.appendChild(b1);
-    var b2 = mkBtn("Revert this commit", "danger", false);
-    b2.addEventListener("click", function(){ revertFinding(f.id); });
+    var b2 = mkBtn(gated ? READ_ONLY_LABEL : "Revert this commit", "danger", gated);
+    if (gated) b2.title = "Approver must grant write access before a revert can be applied";
+    else b2.addEventListener("click", function(){ revertFinding(f.id); });
     wrap.appendChild(b2);
     var tr = document.createElement("div");
     tr.className = "cf-tether-row";
@@ -1157,14 +1299,18 @@ function actionBlock(f){
     var b5 = mkBtn("Blocked — fix the failing regression first", "primary", true);
     wrap.appendChild(b5);
   } else if (f.gate === "review"){
-    var b6 = mkBtn(previewing ? "previewing…" : "Open PR for review", "primary", previewing);
+    var label6 = gated ? READ_ONLY_LABEL : (previewing ? "previewing…" : "Open PR for review");
+    var b6 = mkBtn(label6, "primary", gated || previewing);
     b6.id = "primaryActionBtn";
-    if (!previewing) b6.addEventListener("click", function(){ setStatus(f.id, "pr-open"); });
+    if (gated) b6.title = "Approver must grant write access before a PR can be opened";
+    else if (!previewing) b6.addEventListener("click", function(){ setStatus(f.id, "pr-open"); });
     wrap.appendChild(b6);
   } else {
-    var b7 = mkBtn(previewing ? "previewing…" : "Confirm — merge & deploy", "primary", previewing);
+    var label7 = gated ? READ_ONLY_LABEL : (previewing ? "previewing…" : "Confirm — merge & deploy");
+    var b7 = mkBtn(label7, "primary", gated || previewing);
     b7.id = "primaryActionBtn";
-    if (!previewing) b7.addEventListener("click", function(){ confirmFinding(f.id); });
+    if (gated) b7.title = "Approver must grant write access before this can be merged";
+    else if (!previewing) b7.addEventListener("click", function(){ confirmFinding(f.id); });
     wrap.appendChild(b7);
   }
   return wrap;
@@ -1181,7 +1327,7 @@ var previewing = false;
 
 function renderCasefile(f){
   byId("cfPkg").textContent = f.pkg+" "+f.from+" → "+f.to;
-  byId("cfRepo").textContent = f.repo+" · "+f.fn;
+  byId("cfRepo").textContent = f.repo+" · "+f.fn+(f.cve ? " · "+f.cve : "");
 
   var body = byId("cfBody");
   clear(body);
@@ -1199,6 +1345,14 @@ function renderCasefile(f){
     '<div class="cf-conf-row"><span class="cf-conf-num mono">'+f.confidence.toFixed(2)+'</span>'+
     '<span class="cf-conf-legend">Ring stroke reads confidence directly — crisp and solid is high, soft and dashed is low. The gate can still override this number.</span></div>';
   body.appendChild(confSec);
+
+  if (f.blurb){
+    var techSec = document.createElement("div");
+    techSec.className = "cf-section";
+    techSec.innerHTML = '<div class="cf-sectitle">Why this matters (technical)</div>'+
+      '<div class="cf-reason">'+f.blurb+'</div>';
+    body.appendChild(techSec);
+  }
 
   var hopSec = document.createElement("div");
   hopSec.className = "cf-section";
@@ -1235,26 +1389,46 @@ function renderCasefile(f){
   body.appendChild(qSec);
 }
 
-function showCasefilePanel(){
+var casefileOpener = null; // node/epicenter element that opened the panel — focus returns here on close
+function showCasefilePanel(openerEl){
   caseOpen = true;
   hideTip();
+  if (openerEl) casefileOpener = openerEl;
   byId("casefile").classList.add("open");
   byId("casefile").setAttribute("aria-hidden", "false");
   byId("stage").classList.add("casefile-open");
+  // DESIGN.md §5.3/§6.5 — opening the case file moves focus into it
+  setTimeout(function(){ byId("cfClose").focus(); }, 0);
 }
-function openCasefile(id){
+function openCasefile(id, openerEl){
   if (id !== selectedId){ selectFinding(id); }
   else { renderCasefile(FINDINGS.find(function(x){ return x.id===id; })); }
-  showCasefilePanel();
+  showCasefilePanel(openerEl);
 }
 function closeCasefile(){
+  if (!caseOpen) return;
   caseOpen = false;
   byId("casefile").classList.remove("open");
   byId("casefile").setAttribute("aria-hidden", "true");
   byId("stage").classList.remove("casefile-open");
+  // DESIGN.md §5.3 — on close, focus returns to whatever opened the panel
+  if (casefileOpener && typeof casefileOpener.focus === "function") casefileOpener.focus();
+  casefileOpener = null;
 }
 byId("cfClose").addEventListener("click", closeCasefile);
 byId("sheetHandle").addEventListener("click", closeCasefile);
+
+// DESIGN.md §5.3 — dismissal contract: Escape always closes, regardless of focus
+document.addEventListener("keydown", function(ev){
+  if (ev.key === "Escape" && caseOpen) closeCasefile();
+});
+// DESIGN.md §5.3 — dismissal contract: click/tap outside the panel (field or rail) closes it
+document.addEventListener("pointerdown", function(ev){
+  if (!caseOpen) return;
+  var cf = byId("casefile");
+  if (cf.contains(ev.target)) return;
+  closeCasefile();
+});
 
 /* ---------------------------------------------------------------- actions */
 function setStatus(id, status){
@@ -1351,18 +1525,12 @@ function renderField(f, isPreview){
   renderEpicenter(f);
 }
 
-/* ---------------------------------------------------------------- evidence note toggle */
-byId("evidenceToggle").addEventListener("click", function(){
-  var open = byId("evidenceBody").classList.toggle("open");
-  this.setAttribute("aria-expanded", open ? "true" : "false");
-  this.textContent = "Evidence note for the founders (internal) " + (open ? "▴" : "▾");
-});
-
 document.addEventListener("touchstart", hideTip, {passive:true});
 byId("stageMain").addEventListener("scroll", hideTip, {passive:true});
 
 /* ---------------------------------------------------------------- boot */
 renderRail();
+renderModeChrome();
 renderLedger();
 selectFinding("f1");
 
