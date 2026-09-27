@@ -1,5 +1,5 @@
 # Discovery ledger
-Last updated: 2026-09-25
+Last updated: 2026-09-27
 
 Claims derived from thesis.md (2026-09-25). Labels stable across runs.
 UNPROMPTED = interviewee raised it before any founder named it. LED = only after a founder named it.
@@ -31,6 +31,7 @@ CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-18 | Yoni | FICO | advisor | UNPROMPTED | "there are two things that make it difficult. One is the sense of urgency, and the other is priorities."
 2026-08-31 | Israel Bryski | Rogo | advisor | UNPROMPTED | "CESA's are going to have to get much faster. in being able to remediate vulnerabilities"
 2026-09-08 | Al | (not stated) | advisor | UNPROMPTED | "And they don't know what the problems are, and they don't understand it." (contradicts "they know what to fix")
+2026-09-27 | Eliya Elon | Generalize.vc | investor | LED | "אני יכול להאמין שסיסואים יענו לכם שכן, יש בעיה" (I can believe CISOs will tell you yes, there is a problem; said after the founders pitched impact as the pain)
 
 ## C2 — Detection is covered; action is not, and buyers expect vendors to take the action
 
@@ -67,6 +68,7 @@ CONTRA — see the seven CONTRA lines under C1 plus:
 2026-09-22 | Nelson | NS Advisory | vendor-side | UNPROMPTED | "I have too many tools. I don't have enough people to even, I have zero clue. don't even ask me about my environment."
 2026-09-10 | (unnamed advisor/vCISO) | — | advisor | UNPROMPTED | "Lack of resources lack of tools lack of skills lack of training. It's always a short change."
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "we tend to document that stuff in email and Slack... And for us specifically, it's small enough that it's like, well, that's good enough."
+2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "הטענה היסודית לווליו היא כאילו... אני חוסך שעות אדם" (the basic value claim is... I save man-hours; he names labor, not impact uncertainty, as what the category sells)
 
 ## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list
 
@@ -80,6 +82,9 @@ CONTRA — proof is table stakes, not a moat:
 2026-09-15 | Andrew (ex-Nestle, veterinary) | ~1000 hospitals | CISO | UNPROMPTED | "There's no mode anymore for cybersecurity companies."
 2026-08-28 | ABasu | shipping fleet | practitioner | UNPROMPTED | "I've told my director of operations... that put a tool, I don't care if it works or not." / "If what's or not, it's very difficult to prove, to be very frank with you."
 2026-09-22 | Shawn Anderson | — | advisor | UNPROMPTED | (Wiz won on usability, not capability) "it wasn't necessarily their capability, it was the fact that it was so... in their mind, easy to use."
+2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "שכל השחקנים האמריקאים יגידו אנחנו גם מבינים את האימפקט, וגם עושים איזה שהוא Downstream Impact Analysis" (every American player will say they also understand the impact and do downstream impact analysis)
+2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "תכלס גם זה מה שרוב כל שחקני ה- CTEM כאילו נכנסו אליו" (this is also where most CTEM players have gone)
+2026-09-27 | Eliya Elon | Generalize.vc | investor | note | "הטענה הזאת מונדור היא מאוד מאוד קשה לבנייה" (this claim from a vendor is very, very hard to build): proof is hard, which cuts both ways
 
 ## C5 — Trust is earned with reversibility; start where being wrong is cheap
 
@@ -89,6 +94,7 @@ CONTRA — proof is table stakes, not a moat:
 2026-09-16 | Harris Schwartz | fractional CISO | fractional | UNPROMPTED | "why don't you start off with read-only access, let's see how that goes, and then maybe you could move into write access."
 2026-09-09 | Andrew Dutton | Sumitomo Chemical America | evaluator | UNPROMPTED | "even when I deploy something, it's only gonna be read-only. I'm not gonna trust to shoot a gun."
 2026-08-31 | Israel Bryski | Rogo | advisor | UNPROMPTED | (map of where being wrong is cheap) "if the CISO's using any of the security-native services within AWS, like Security Hub, and GuardDuty, and Detective... that's squarely in the security department. They can do whatever they want with those things." vs "anything that can impact the reliability, the stability of the production environment... that's usually your indicator that the CIO will need to be involved."
+2026-09-27 | Eliya Elon | Generalize.vc | investor | UNPROMPTED (investor) | "האם יש מספיק Trust מהארגון שה- Agent יעשה פעולה ב- Prod , לעומת פעולה במקום אחר" (is there enough trust from the org for the agent to act in prod, versus elsewhere); he frames trust-by-blast-radius as the axis, before the founders used the word trust
 
 ## C6 — Wedge A: network / firewall config is the right first wedge
 
@@ -179,6 +185,9 @@ SUPPORT:
 - 2026-09-15_skylayer-product-strategy-advisory.txt, 2026-09-22_a16z-intro-call.txt, 2026-09-22_eliya-elon-generalize-vc.txt are advisor/investor calls. No environments.
 - "200 patches after a pen test": checked all 44 files. The phrase appears ONLY in founder speech (a16z line 40; NS Advisory 41:43; Shawn Anderson 13:53; Eliya call). No interviewee ever said it. thesis.md is correct to disown it.
 
+- 2026-09-27_eliya-elon-generalize-vc-followup.txt (Hebrew PDF, no timestamps): speaker labels are unreliable. Several turns tagged "שובל" are Eliya by content (L47, L61 tagged יובל, L64 Rapid7/market numbers, L66 San Francisco advice, second half of L67), and L60 tagged "איליה" is Shoval (feminine verbs). Only quote Eliya from turns that are both labeled and read as his.
+- PITCH vs EVIDENCE (09-27 Eliya call): Yuval told Eli Edelkind's Lowe's outage as "a firewall version upgrade done because of a CVE ... firewall A and B ... everything crashed" with CRM/call-center downtime. Eli's transcript (09-02) says "one bad threat intel ... in a Palo firewall" — a vendor threat-intel update, not a CVE-driven upgrade, and no A/B pair. Shoval also said they met "more than 50 CISOs"; the corpus holds 41 distinct calls, many not CISOs. Correct both before telling them to investors again.
+
 ## Processed transcripts
 
 - 2026-08-25_security-leadership-discovery_jacques-lucas.txt
@@ -225,3 +234,4 @@ SUPPORT:
 - 2026-09-22_eliya-elon-generalize-vc.txt
 - 2026-09-22_security-leadership-discovery_shawn-anderson.txt
 - 2026-09-24_vulnerability-remediation-process-discussion.txt
+- 2026-09-27_eliya-elon-generalize-vc-followup.txt
