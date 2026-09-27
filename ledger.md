@@ -187,6 +187,7 @@ SUPPORT:
 
 - 2026-09-27_eliya-elon-generalize-vc-followup.txt (Hebrew PDF, no timestamps): speaker labels are unreliable. Several turns tagged "שובל" are Eliya by content (L47, L61 tagged יובל, L64 Rapid7/market numbers, L66 San Francisco advice, second half of L67), and L60 tagged "איליה" is Shoval (feminine verbs). Only quote Eliya from turns that are both labeled and read as his.
 - PITCH vs EVIDENCE (09-27 Eliya call): Yuval told Eli Edelkind's Lowe's outage as "a firewall version upgrade done because of a CVE ... firewall A and B ... everything crashed" with CRM/call-center downtime. Eli's transcript (09-02) says "one bad threat intel ... in a Palo firewall" — a vendor threat-intel update, not a CVE-driven upgrade, and no A/B pair. Shoval also said they met "more than 50 CISOs"; the corpus holds 41 distinct calls, many not CISOs. Correct both before telling them to investors again.
+- CORRECTION 2026-09-27 to the note above: the "more than 50 CISOs" claim (Shoval) is NOT contradicted. The repo holds only recorded calls (41 distinct); about 8 more external meetings sit in Zoom as 403/untranscribed, and at least 6 more contacts on the founders' list have no recording. Roughly 55 conversations with security leaders, not all of them CISOs. Only the Eli Edelkind retelling is contradicted by a transcript.
 
 ## Processed transcripts
 
