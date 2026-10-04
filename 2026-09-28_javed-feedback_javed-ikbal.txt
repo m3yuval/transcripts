@@ -1,0 +1,43 @@
+Date: 2026-09-28
+Topic: Javed feedback
+Drive File ID: 1QpyIYWUd-6TeA1SeRRz_pvadIHTjf1iukM-vPeZsNgY
+Source: google-drive-doc
+Note: written LinkedIn message thread between Shoval Abudraham and Javed Ikbal, not a call. Timestamps are message clock times; the date is inferred from the Google Doc creation time (2026-09-28T21:22Z).
+Note: lines where Shoval's message begins "Javed: ..." are LinkedIn quote-replies of Javed's earlier message, kept as they appear. A final thumbs-up emoji (9:31 PM, Javed) was dropped.
+Extraction: Google Doc exported as text; LinkedIn chrome ("View profile", "sent the following message", reactions) removed; 35 messages
+
+[11:16 AM] Shoval Abudraham: Hi! Just wanted to follow up with a bit more context, as I thought this specific angle might be interesting to you. We’re currently exploring what happens after a security signal is detected: how teams assess impact, remediate, and verify that the fix actually worked. A big part of our thesis is around whether these workflows can become much more agentic and autonomous, especially as attacks themselves are becoming faster and more automated. Would really love to hear how you see this from your side, and happy to share some of the patterns we’re hearing from other security leaders as well.
+[4:06 PM] Javed Ikbal: Hi Shoval, Sorry, I do not have the time. But I do have a question: Your thesis is valid, but isn't this a crowded field with all the SOAR/workflow automation/AI incident response/AI SOC solutions out there? Your "validate fix" may be somewhat unique (not fully), but how are you different from what's out there now?
+[4:10 PM] Shoval Abudraham: Thats a great question! That exactly what I asked Cisos but realized that even though they have those solution they often don't fill the all the recommendations cause don't solution build generic remediation plans and leave the impact assessments, QA & regression and the fix verification to the teams themself. As a result many attack paths & Vulnerabilities left open.
+[4:12 PM] Shoval Abudraham: We don't want to be another investigation + workflow solution, we want to be your agentic employee who build the safest remediation plan, do all the fix impact assessment, and verify the fix at the end. Making sure the loop is closed, without creating endless, never ended backlog
+[4:28 PM] Javed Ikbal: I think you will have a really tough time displacing Palo Alto and CrowdStrike... Best wishes.
+[4:31 PM] Shoval Abudraham: Thanks! I’m curious what made you think we’d be looking to replace Palo Alto or CrowdStrike. I actually see what we’re exploring as another layer on top of the existing stack, rather than a replacement, so I’d really love to hear your perspective.
+[4:35 PM] Javed Ikbal: I mentioned the big boys becasue small companies won't spend money on a product like this--they simply do not have the budget. Your target companies already have CS or PA. They do the attack path analysis, fix validation through vuln scanning, etc. Only thing they don't do (yet) is powershell, ansible or terraform scripts for patch deployment, but there are other companies that do that.
+[4:37 PM] Javed Ikbal: On top of the existing stack might work, but not many CISOs have that kind of budget. I don't. Regulated industries might be different.
+[4:38 PM] Shoval Abudraham: That makes sense. What’s interesting is that I’m actually hearing from both smaller and larger organizations that this workflow still doesn’t work well end to end today. Not necessarily the scanning or attack path analysis itself, but the part between identifying something and actually deciding what can be safely changed, executing the remediation, and validating the outcome.
+[4:38 PM] Shoval Abudraham: Do you think the existing platforms already solve it well enough, or that it’s simply not a big enough gap for a separate product?
+[4:40 PM] Javed Ikbal: "what can be safely changed,"--this is the biggest challenge that no software can solve. Talk to people who run change control boards. Taking down a production application for patching is always a struggle.
+[4:40 PM] Shoval Abudraham: Javed: On top of the existing stack might work, but not many CISOs have that kind of budget. I don't. Regulated industries might be different.
+[4:40 PM] Shoval Abudraham: Yes I agree about the budget. Our assumption it will help teams do the same work with less people. And will save money on the long run. Is it resonate?
+[4:40 PM] Shoval Abudraham: Javed: "what can be safely changed,"--this is the biggest challenge that no software can solve. Talk to people who run change control boards. Taking down a production application for patching is always a struggle.
+[4:40 PM] Shoval Abudraham: Yee thats exactly the gap we want to solve. I agree its a big one
+[4:40 PM] Shoval Abudraham: I think there is no product that started from there - its always part of the full workflow and vendors never get to a stage when they do it good enough
+[4:41 PM] Javed Ikbal: From my perspective,  it’s not a big enough gap for a separate product. If you can demonstrate the ROI, that's great.
+[4:43 PM] Shoval Abudraham: Thats a great feedback thank you! Do you think that a product that stat from fix impact assessment but the vision for it is all the remediation process can work?
+[4:43 PM] Shoval Abudraham: We want to start from the most painful part in the process - and than expend
+[4:43 PM] Shoval Abudraham: And another question - for big enterprises, this can be enough? Or event for big operations to hols people doing it is cheaper and better?
+[6:08 PM] Javed Ikbal: If your solution can solve something (1) Faster, (2) Cheaper, (3) Better, it will be attractive, I ordered them specifically. With AI-attacks, speed of remediation is becoming critical. That would be the first priority. Make it cheap if you can. If you can do the first 2, then it becomes Better automatically
+[6:11 PM] Shoval Abudraham: Thats exactly the point we started from! The fact that AI attacks force us to be faster on remediation
+[6:12 PM] Shoval Abudraham: Faster and cheaper that’s exactly the plan Just want to realize if it is a real pain before
+[6:13 PM] Javed Ikbal: It is not a real pain now, but in 6-12 months when threat actors start using Mythos-like AI to exploit vulns, "faster" is going to be a major requirement.
+[6:15 PM] Javed Ikbal: A global top-10 bank has asked us to patch CISA KEV issues within 24 hours. I asked them what is their own internal timeline, and they admitted that they are struggling. It is the reality for everyone.
+[6:15 PM] Javed Ikbal: I don't have the budget, but for those that do like the big banks and defense contractors, this will be a selling point
+[6:16 PM] Shoval Abudraham: And do you agree that the fix impact assessment is the worst part in the remediation chain?
+[6:16 PM] Shoval Abudraham: Or do you think we should start with a different part?
+[6:21 PM] Javed Ikbal: No one talks about the cyber kill chain anymore, but I still use it. Using that framework, I think you will address Delivery and Exploitation, or shift Left of that. Fix impact assessmnet: what will you do that my vuln scanner or patching tool can't do?
+[6:29 PM] Shoval Abudraham: That’s exactly the question I’m trying to validate. The hypothesis is that the gap isn’t finding the vulnerability or deploying the patch. It’s understanding whether the proposed remediation is actually safe in the specific environment: what it depends on, what it could break, what the blast radius is, and whether there’s a safer alternative. So the value wouldn’t be “another vuln scanner” or “another patching tool,” but the reasoning layer between detection and execution, and then verifying the change actually solved the issue without creating a new one.
+[6:54 PM] Javed Ikbal: For verification, will you actually create an exploit to test the issue?
+[6:56 PM] Shoval Abudraham: So I didn't start to define the solution, but if the market will say it require so yes
+[6:56 PM] Shoval Abudraham: I think the technology is in the stage where a lot of things we did manually can be fast and cheap now
+[7:05 PM] Javed Ikbal: Well now you have all my feedback
+[9:29 PM] Shoval Abudraham: And I super appreciate it!! Thanks Javel! That was a great and valuable conversation
