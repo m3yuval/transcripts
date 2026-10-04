@@ -1,5 +1,5 @@
 # Discovery ledger
-Last updated: 2026-09-27
+Last updated: 2026-10-04
 
 Claims derived from thesis.md (2026-09-25). Labels stable across runs.
 UNPROMPTED = interviewee raised it before any founder named it. LED = only after a founder named it.
@@ -32,6 +32,10 @@ CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-08-31 | Israel Bryski | Rogo | advisor | UNPROMPTED | "CESA's are going to have to get much faster. in being able to remediate vulnerabilities"
 2026-09-08 | Al | (not stated) | advisor | UNPROMPTED | "And they don't know what the problems are, and they don't understand it." (contradicts "they know what to fix")
 2026-09-27 | Eliya Elon | Generalize.vc | investor | LED | "אני יכול להאמין שסיסואים יענו לכם שכן, יש בעיה" (I can believe CISOs will tell you yes, there is a problem; said after the founders pitched impact as the pain)
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (own incident; framing may come from the founders' slide, which the transcript does not capture) | "there are certain things in the environment like network and storage specifically that can bring down the entire enterprise and I've actually done it. I brought down the speedier network for six hours."
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (same caveat) | "that's why people are cautious to mess with the network because it's complex. You don't know where the remnants are and then you think you know where things are and then also you make a change and something downstream kicks in and brings down your entire network."
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (same caveat) | "it's not a lack of urgency it's more only pivoting on the protection and not causing outages" (reframes the "no urgency on network" finding as outage fear)
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | LED (Shoval wrote "what can be safely changed" first) | "\"what can be safely changed,\"--this is the biggest challenge that no software can solve. Talk to people who run change control boards. Taking down a production application for patching is always a struggle."
 
 ## C2 — Detection is covered; action is not, and buyers expect vendors to take the action
 
@@ -56,6 +60,7 @@ CONTRA — detection is NOT covered:
 2026-09-01 | Igor Spektor | ex-Verizon | advisor | UNPROMPTED | "And you guys know, in security, it's all about what do you know and visibility, right?"
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "if you can't see it, you can't quantify it or secure it."
 2026-09-18 | John Murphy | (not stated) | IR practitioner, role undated | UNPROMPTED | "we're not even looking in the right areas in a lot of places"
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "Your target companies already have CS or PA." / "They do the attack path analysis, fix validation through vuln scanning, etc." (says the big platforms already cover detection-to-validation)
 
 ## C3 — The blocker is impact uncertainty specifically, NOT speed, prioritization, or absence of tooling
 
@@ -69,6 +74,10 @@ CONTRA — see the seven CONTRA lines under C1 plus:
 2026-09-10 | (unnamed advisor/vCISO) | — | advisor | UNPROMPTED | "Lack of resources lack of tools lack of skills lack of training. It's always a short change."
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "we tend to document that stuff in email and Slack... And for us specifically, it's small enough that it's like, well, that's good enough."
 2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "הטענה היסודית לווליו היא כאילו... אני חוסך שעות אדם" (the basic value claim is... I save man-hours; he names labor, not impact uncertainty, as what the category sells)
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "It is not a real pain now, but in 6-12 months when threat actors start using Mythos-like AI to exploit vulns, \"faster\" is going to be a major requirement." (names speed, and not yet)
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA (client environment, secondhand) | "A global top-10 bank has asked us to patch CISA KEV issues within 24 hours. I asked them what is their own internal timeline, and they admitted that they are struggling." (symptom confirmed; cause not given)
+2026-09-28 | Scott (Speaker 5) | ex-Global CIO Wells Fargo | advisor (NS Advisory circle) | CONTRA | "Networks are stuck 15 years ago from a visibility perspective." (names visibility as the problem); also "I'm worried about the thesis"
+2026-09-28 | Nicole (Speaker 4) | ex-Microsoft, "five times CISO" | advisor | CONTRA | "I know that it's more futuristic and not like, let's talk about today. It's my problem today." (AI-speed remediation is a future concern, not today's)
 
 ## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list
 
@@ -85,6 +94,7 @@ CONTRA — proof is table stakes, not a moat:
 2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "שכל השחקנים האמריקאים יגידו אנחנו גם מבינים את האימפקט, וגם עושים איזה שהוא Downstream Impact Analysis" (every American player will say they also understand the impact and do downstream impact analysis)
 2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "תכלס גם זה מה שרוב כל שחקני ה- CTEM כאילו נכנסו אליו" (this is also where most CTEM players have gone)
 2026-09-27 | Eliya Elon | Generalize.vc | investor | note | "הטענה הזאת מונדור היא מאוד מאוד קשה לבנייה" (this claim from a vendor is very, very hard to build): proof is hard, which cuts both ways
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "Fix impact assessmnet: what will you do that my vuln scanner or patching tool can't do?" / "it’s not a big enough gap for a separate product" / on safe-change: "no software can solve"
 
 ## C5 — Trust is earned with reversibility; start where being wrong is cheap
 
@@ -110,6 +120,8 @@ CONTRA (no supporting evidence found in 40 calls):
 2026-09-09 | Adam | ex-bank (left 1.5 weeks prior) | practitioner | UNPROMPTED | "doesn't matter what it does on the network side, the identity can go hit all these resources"
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "it needs to be an agent or a script running on an endpoint... because I can see what's happening on our servers, but I can't see what's happening anywhere else."
 2026-09-22 | FOUNDERS' OWN SUMMARY (Shoval, to NS Advisory) | — | — | — | "that was our first direction... And basically, I'll be honest and say that we got no sense of urgency from CISO around this area. So we took a step back"
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | SUPPORT (as a pain) / CONTRA (as a CISO buy) | "The infrastructure team owns the network." and "when it comes to the network spend seat source [CISOs] don't know the budget" — the fear of network change is real, but the owner and budget are the CIO/infra side
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | note | "What is it going to do to my network downstream?" (his own example of what he would want simulated)
 
 ## C7 — Wedge B: OS / package / container patching is the right first wedge
 
@@ -125,6 +137,7 @@ CONTRA (no supporting evidence found in 40 calls):
 CONTRA:
 2026-09-04 | Ariel Litvin | ex-First Quality | retired CISO | UNPROMPTED | "take the basic example of Microsoft's Patch Tuesday... No, it doesn't happen. There are SMBv1 and TLSv1 servers and such nonsense running in organizations for years."
 2026-09-18 | Yoni | FICO | advisor | UNPROMPTED | (virtual patching is the community's existing answer) "the way of the community to support it needs to be a kind of a direction that is called virtual patching"
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED | "the infrastructure vulnerability is a huge pocket"
 
 ## C8 — Willingness to pay: budget line, approval chain, or design-partner intent exists
 
@@ -139,6 +152,8 @@ CONTRA:
 2026-09-16 | Matthew Matturro | Trinetics | practitioner | UNPROMPTED (pre-emptive, before any pitch) | "right now, my dance card's full when it comes to design partnerships"
 2026-09-01 | Andrew Dutton | Sumitomo Chemical America | evaluator | LED | "right now, that's not a priority for me to do anything else in that area."
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "We'll go out to companies like you to solve these problems, you know?" — BUT the only concrete offer is "Happy to provide product feedback once you get to that point." No budget, no pilot, no timeline discussed. Also pre-flagged: "I just don't have enough hours in the day to do it."
+2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "not many CISOs have that kind of budget. I don't." (also: small companies "simply do not have the budget")
+2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | CONTRA (budget owner) | "when it comes to the network spend seat source [CISOs] don't know the budget"
 
 ## C9 — Mike Hiltz is typical, not an outlier
 
@@ -189,6 +204,9 @@ SUPPORT:
 - PITCH vs EVIDENCE (09-27 Eliya call): Yuval told Eli Edelkind's Lowe's outage as "a firewall version upgrade done because of a CVE ... firewall A and B ... everything crashed" with CRM/call-center downtime. Eli's transcript (09-02) says "one bad threat intel ... in a Palo firewall" — a vendor threat-intel update, not a CVE-driven upgrade, and no A/B pair. Shoval also said they met "more than 50 CISOs"; the corpus holds 41 distinct calls, many not CISOs. Correct both before telling them to investors again.
 - CORRECTION 2026-09-27 to the note above: the "more than 50 CISOs" claim (Shoval) is NOT contradicted. The repo holds only recorded calls (41 distinct); about 8 more external meetings sit in Zoom as 403/untranscribed, and at least 6 more contacts on the founders' list have no recording. Roughly 55 conversations with security leaders, not all of them CISOs. Only the Eli Edelkind retelling is contradicted by a transcript.
 
+- 2026-09-28_ns-advisory.txt (Google Doc, Google Meet call, second NS Advisory session): generic Speaker 1-5 labels. By self-introduction: Speaker 1 = Nelson (host), 2 = Rajiv (sitting CIO, insurance broker, "I actually do have the accountability"), 3 = Shoval, 4 = Nicole ("five times CISO", ex-Microsoft), 5 = Scott (ex-Global CIO Wells Fargo). Lines 35-36 (Paragon background) are Yuval despite the Speaker 2/1 tags. The transcript has gaps of minutes between several turns and does not capture the slides shown, so first-mention calls are uncertain: everything Rajiv said is marked LED.
+- 2026-09-28_javed-feedback_javed-ikbal.txt is a written LinkedIn exchange, not a call. Shoval's opening message states the thesis ("how teams assess impact, remediate, and verify"), so nothing in it is unprompted.
+
 ## Processed transcripts
 
 - 2026-08-25_security-leadership-discovery_jacques-lucas.txt
@@ -236,3 +254,5 @@ SUPPORT:
 - 2026-09-22_security-leadership-discovery_shawn-anderson.txt
 - 2026-09-24_vulnerability-remediation-process-discussion.txt
 - 2026-09-27_eliya-elon-generalize-vc-followup.txt
+- 2026-09-28_javed-feedback_javed-ikbal.txt
+- 2026-09-28_ns-advisory.txt
