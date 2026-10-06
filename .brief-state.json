@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-04T07:17:13Z",
+  "updated": "2026-10-06T08:31:57Z",
   "briefed": [
     "2026-08-25_security-leadership-discovery_jacques-lucas.txt",
     "2026-08-28_rajesh-shoval-yuval.txt",
@@ -47,6 +47,10 @@
     "2026-09-24_vulnerability-remediation-process-discussion.txt",
     "2026-09-27_eliya-elon-generalize-vc-followup.txt",
     "2026-09-28_javed-feedback_javed-ikbal.txt",
-    "2026-09-28_ns-advisory.txt"
+    "2026-09-28_ns-advisory.txt",
+    "2026-09-29_security-remediation-strategy-discussion.txt",
+    "2026-10-05_cybersecurity-remediation-product-validation.txt",
+    "2026-10-05_davon-booking.txt",
+    "2026-10-05_yuval-shoval.txt"
   ]
 }
