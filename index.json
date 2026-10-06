@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T08:27:40Z",
+  "updated": "2026-10-06T17:38:02Z",
   "sources": {
     "zoom": {
       "type": "zoom-mcp",
@@ -27,8 +27,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "A7FA97CC-EC97-48FF-BFF3-7346BB1638BC": {
@@ -42,8 +42,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "8A5C264B-05F0-429E-A925-651021EC4940": {
@@ -57,8 +57,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "25272505-F3DE-4409-9030-6575CB9BD64B": {
@@ -71,8 +71,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "048E1287-EB0A-4571-8395-74C41A102010": {
@@ -85,8 +85,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "74DDC862-5442-4BCA-870A-728C2D78A3AB": {
@@ -113,8 +113,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "8EA9D985-0C69-4935-AC64-C2529C2EF237": {
@@ -226,9 +226,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom",
       "covered_by": "1s4TXyTamYvG1yEuFp7Te8mXr6P3OAPHO"
     },
@@ -271,9 +271,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom",
       "covered_by": "1-s8Tmy0SMqh2_2aom8sk0KjofTe5XSbq"
     },
@@ -288,9 +288,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Zoom produced no transcript; text obtained from Drive instead (see covered_by)",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom",
       "covered_by": "1isvwyDnE2YtnDg5MpdI07R8FfF4DHXuG"
     },
@@ -375,8 +375,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "CEAB7717-FE5C-4348-A851-69E82C665D6C": {
@@ -389,9 +389,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Zoom search reports topic 'Yuval Mermer's Zoom Meeting'; recordings_list for 2026-09-14 shows a 124-min recording titled 'Personal stories - Zoom Meeting'. Identity unconfirmed; no file written. Flagged for the user, not corrected.",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom"
     },
     "F00E3CC2-2FB3-49A3-943E-84DC68B8B1AF": {
@@ -419,8 +419,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "E21772E4-FB74-41A9-B0E6-31F7373DBCFA": {
@@ -433,9 +433,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom"
     },
     "4634E4FF-C998-4F28-BCAF-26603A5052DD": {
@@ -517,9 +517,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom"
     },
     "AEA63C3C-69CC-4AD5-8C5B-C06DBECA2EEF": {
@@ -532,9 +532,9 @@
       ],
       "status": "no_transcript",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
       "note": "Retried; Zoom has no audio_transcript file (closed captions only, not retrievable via API).",
-      "attempts": 10,
+      "attempts": 11,
       "source": "zoom"
     },
     "AAB6646A-16D7-4741-9ABD-46A4B4C43455": {
@@ -548,8 +548,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "3A9EF4F7-7C55-46AF-8A66-C29E17D5A722": {
@@ -562,8 +562,8 @@
       ],
       "status": "no_permission",
       "fetched_at": "2026-09-24T00:41:24Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 10,
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 11,
       "source": "zoom"
     },
     "B38FCFAC-66E3-413D-94CC-107B803FFC82": {
@@ -896,12 +896,13 @@
         "Yuval Mermer",
         "Fernando Medrano"
       ],
-      "status": "no_permission",
-      "file": null,
-      "source": "zoom",
-      "fetched_at": "2026-10-04T07:15:25Z",
-      "last_attempt": "2026-10-06T08:27:40Z",
-      "attempts": 2
+      "status": "ok",
+      "file": "2026-09-30_security-leadership-discovery_fernando-medrano.txt",
+      "source": "transcript",
+      "fetched_at": "2026-10-06T17:38:02Z",
+      "last_attempt": "2026-10-06T17:38:02Z",
+      "attempts": 3,
+      "note": "Was 403 on 10-04 and 10-06 morning; host re-shared. 253 entries. Not the same call as the 09-29 Drive PDF (that one is Hebrew)."
     },
     "1LGYQcm229pnIW_n1Fp6ZVDbSc722zajzieYBfpJXrqc": {
       "date": "2026-09-28",
@@ -972,14 +973,14 @@
     }
   },
   "last_run": {
-    "at": "2026-10-06T08:27:40Z",
-    "added": 4,
+    "at": "2026-10-06T17:38:02Z",
+    "added": 1,
     "zoom_enumerated": 40,
     "drive_files_listed": 32,
     "retried_no_transcript": 7,
     "retried_no_permission": 11,
     "summary_fallback_tried": 4,
-    "newly_fetched": 4,
-    "note": "New: Zoom internal 10-05 (Yuval/Shoval); Drive PDFs 09-29 and 10-05; Drive Google Doc 'Davon booking'. All 18 retries unchanged (7 empty, 11 x 403); summary fallback empty. Jason Manar 09-07 still not returned by Zoom search."
+    "newly_fetched": 1,
+    "note": "No new Zoom meetings or Drive files. Fernando Medrano 09-30 (previously 403) now fetched. Other 17 retries unchanged (7 empty, 10 x 403); summary fallback empty."
   }
 }
