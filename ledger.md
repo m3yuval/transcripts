@@ -1,5 +1,5 @@
 # Discovery ledger
-Last updated: 2026-10-04
+Last updated: 2026-10-06
 
 Claims derived from thesis.md (2026-09-25). Labels stable across runs.
 UNPROMPTED = interviewee raised it before any founder named it. LED = only after a founder named it.
@@ -22,6 +22,9 @@ UNPROMPTED = interviewee raised it before any founder named it. LED = only after
 2026-09-04 | Ariel Litvin | ex-First Quality | retired CISO / would-be competitor | UNPROMPTED | "In production organizations it's very very very very different. That is, you can't make mistakes." (used to argue auto-remediation is impossible)
 2026-09-22 | Shawn Anderson | (new role) | advisor | UNPROMPTED | "that's what everybody has a fear of, too. You're pen testing my environment. Is the AI going to go rogue?" (fear of the VENDOR's automation, not own change)
 2026-09-15 | Andrew (ex-Nestle, veterinary) | ~1000 hospitals | CISO (practitioner) | UNPROMPTED | "If you think about those kind of hygiene things that will not break stuff, but only do some cleanup, in worst case scenario, you just have to turn something back on that you've turned off." (INVERSE: reversibility is why agents were ALREADY let in)
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | LED (Speaker 3 asked "Do you think that this is the point that makes the latency in the remediation process?") | "The patch is always where the hesitation is because you always like, you know, is this really going to work, right?" / "what's my level of trust and confidence that this patch is not going to break my business?"
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED (the mechanism, not the pain) | "you would have a digital twin, you would have virtual patching to where you can evaluate, verify that that patch is going to work on the digital twin before you push a production" / "especially the digital twin concept is expensive"
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | LED (Shoval stated the dependency/impact gap first; the detail is his, second-hand from a KPMG client) | "they patched a system and then that brought down a production line for an entire car." / "And then they stop and then they let it be unpatched or unremediated instead. Because no one wants to bring down production, right?" (frequency: "I can't give you a figure how often")
 
 CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "So I think that's probably our biggest pain point right now, is being able to patch quickly enough, especially with the, the, the volume of vulnerabilities"
@@ -36,6 +39,7 @@ CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (same caveat) | "that's why people are cautious to mess with the network because it's complex. You don't know where the remnants are and then you think you know where things are and then also you make a change and something downstream kicks in and brings down your entire network."
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (same caveat) | "it's not a lack of urgency it's more only pivoting on the protection and not causing outages" (reframes the "no urgency on network" finding as outage fear)
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | LED (Shoval wrote "what can be safely changed" first) | "\"what can be safely changed,\"--this is the biggest challenge that no software can solve. Talk to people who run change control boards. Taking down a production application for patching is always a struggle."
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "they're probably too small for that. They just don't know what to do to remediate." (his mid-market clients: not knowing what to fix IS the blocker)
 
 ## C2 — Detection is covered; action is not, and buyers expect vendors to take the action
 
@@ -61,6 +65,8 @@ CONTRA — detection is NOT covered:
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "if you can't see it, you can't quantify it or secure it."
 2026-09-18 | John Murphy | (not stated) | IR practitioner, role undated | UNPROMPTED | "we're not even looking in the right areas in a lot of places"
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "Your target companies already have CS or PA." / "They do the attack path analysis, fix validation through vuln scanning, etc." (says the big platforms already cover detection-to-validation)
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED (detection is NOT covered) | "But even upstream of that, be able to detect machine speed attacks. How do we know it's an agent?"
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED (C2b, vendor should not take the action yet) | "Helping them prioritize what they need to do first, I think is where the real value is." (after advising against building execution)
 
 ## C3 — The blocker is impact uncertainty specifically, NOT speed, prioritization, or absence of tooling
 
@@ -78,6 +84,8 @@ CONTRA — see the seven CONTRA lines under C1 plus:
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA (client environment, secondhand) | "A global top-10 bank has asked us to patch CISA KEV issues within 24 hours. I asked them what is their own internal timeline, and they admitted that they are struggling." (symptom confirmed; cause not given)
 2026-09-28 | Scott (Speaker 5) | ex-Global CIO Wells Fargo | advisor (NS Advisory circle) | CONTRA | "Networks are stuck 15 years ago from a visibility perspective." (names visibility as the problem); also "I'm worried about the thesis"
 2026-09-28 | Nicole (Speaker 4) | ex-Microsoft, "five times CISO" | advisor | CONTRA | "I know that it's more futuristic and not like, let's talk about today. It's my problem today." (AI-speed remediation is a future concern, not today's)
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "Helping them prioritize what they need to do first, I think is where the real value is." (names prioritization, which C3 rules out)
+2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "The second problem is who is actually on the power. Do you take it to IT or security?" / "security is doing vulnerability scanning, but you feel the difficulty of patching IT and IT needs to do it." (ownership, not impact)
 
 ## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list
 
@@ -95,6 +103,9 @@ CONTRA — proof is table stakes, not a moat:
 2026-09-27 | Eliya Elon | Generalize.vc | investor | CONTRA | "תכלס גם זה מה שרוב כל שחקני ה- CTEM כאילו נכנסו אליו" (this is also where most CTEM players have gone)
 2026-09-27 | Eliya Elon | Generalize.vc | investor | note | "הטענה הזאת מונדור היא מאוד מאוד קשה לבנייה" (this claim from a vendor is very, very hard to build): proof is hard, which cuts both ways
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "Fix impact assessmnet: what will you do that my vuln scanner or patching tool can't do?" / "it’s not a big enough gap for a separate product" / on safe-change: "no software can solve"
+2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "Astellia is one of the companies that has the ability to do the network analysis and the impact analysis of change." / "There are other groups, Zafran, who know how to do it very well"
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "very few wanted to pay for it because it cost so much because of the manual work." (his own Check Point attempt at impact mapping, abandoned)
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED | "I think what you have here are additional tools that could benefit the team in taking steps to protect the assets."
 
 ## C5 — Trust is earned with reversibility; start where being wrong is cheap
 
@@ -122,6 +133,8 @@ CONTRA (no supporting evidence found in 40 calls):
 2026-09-22 | FOUNDERS' OWN SUMMARY (Shoval, to NS Advisory) | — | — | — | "that was our first direction... And basically, I'll be honest and say that we got no sense of urgency from CISO around this area. So we took a step back"
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | SUPPORT (as a pain) / CONTRA (as a CISO buy) | "The infrastructure team owns the network." and "when it comes to the network spend seat source [CISOs] don't know the budget" — the fear of network change is real, but the owner and budget are the CIO/infra side
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | note | "What is it going to do to my network downstream?" (his own example of what he would want simulated)
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED | "certainly protecting what's in our virtual firewalls is a priority and that is a lot easier to solve for." / "But the dependencies from third-party, fifth-party applications upon which we also rely, that's a much bigger problem."
+2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "you are talking about legacy networks, not AWS or public clouds." / "Right, because it's really a very dangerous area." (he also says "the network is a priority" at 00:18:11 in a garbled passage; his position is unclear)
 
 ## C7 — Wedge B: OS / package / container patching is the right first wedge
 
@@ -133,6 +146,7 @@ CONTRA (no supporting evidence found in 40 calls):
 2026-09-10 | (unnamed CISO, ReliaQuest customer) | — | practitioner | UNPROMPTED | "you're never going to be able to patch all the vulnerabilities faster. You've got to really focus on what needs to be patch faster."
 2026-09-16 | Matthew Matturro | Trinetics | practitioner | UNPROMPTED | "good patch management... patch management hygiene. You're gonna cut down on so much"
 2026-09-14 | Daniel Silverman | Stanford | practitioner | UNPROMPTED | "all they can do is say, hey, we're chasing CVEs, we're patching when we can, and that's all they've got. And it's very painful."
+2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED (dependency patching as the bigger problem; OS/container never named) | "But the dependencies from third-party, fifth-party applications upon which we also rely, that's a much bigger problem."
 
 CONTRA:
 2026-09-04 | Ariel Litvin | ex-First Quality | retired CISO | UNPROMPTED | "take the basic example of Microsoft's Patch Tuesday... No, it doesn't happen. There are SMBv1 and TLSv1 servers and such nonsense running in organizations for years."
@@ -154,6 +168,8 @@ CONTRA:
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "We'll go out to companies like you to solve these problems, you know?" — BUT the only concrete offer is "Happy to provide product feedback once you get to that point." No budget, no pilot, no timeline discussed. Also pre-flagged: "I just don't have enough hours in the day to do it."
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "not many CISOs have that kind of budget. I don't." (also: small companies "simply do not have the budget")
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | CONTRA (budget owner) | "when it comes to the network spend seat source [CISOs] don't know the budget"
+2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | CONTRA | "very few wanted to pay for it because it cost so much because of the manual work." Soft interest only: "Absolutely, it would be fun to be a part of your journey." (no budget, no owner)
+2026-10-05 / 2026-09-29 | Davon call, Frederick, 09-29 interviewee | — | — | none | No budget, approval chain or design-partner question was asked in any of the three calls.
 
 ## C9 — Mike Hiltz is typical, not an outlier
 
@@ -207,6 +223,11 @@ SUPPORT:
 - 2026-09-28_ns-advisory.txt (Google Doc, Google Meet call, second NS Advisory session): generic Speaker 1-5 labels. By self-introduction: Speaker 1 = Nelson (host), 2 = Rajiv (sitting CIO, insurance broker, "I actually do have the accountability"), 3 = Shoval, 4 = Nicole ("five times CISO", ex-Microsoft), 5 = Scott (ex-Global CIO Wells Fargo). Lines 35-36 (Paragon background) are Yuval despite the Speaker 2/1 tags. The transcript has gaps of minutes between several turns and does not capture the slides shown, so first-mention calls are uncertain: everything Rajiv said is marked LED.
 - 2026-09-28_javed-feedback_javed-ikbal.txt is a written LinkedIn exchange, not a call. Shoval's opening message states the thesis ("how teams assess impact, remediate, and verify"), so nothing in it is unprompted.
 
+- 2026-10-05_yuval-shoval.txt is an internal 5-minute founders' prep call (Hebrew) before a CISO call that day. No interviewee. It shows the pitch going in: lead with code/infra patching, "שלא שוברת את הפרודקשן" (doesn't break production), and close with "היית קונה דבר כזה? ... רוצה להיות עידן פרטנר?" Any 10-05 call that echoes C1/C3/C7 was led.
+- 2026-10-05_davon-booking.txt (Google Doc, date inferred): starts mid-call, Speaker 1-3 only. Speaker 1 is the interviewee; the founders are 2 and 3 (which is which unknown). Turn merges at 04:41 ("Absolutely."), 09:59 ("Yes, absolutely.") and 17:32/18:02 (his question split under Speaker 3). The name "Davon" is only in the filename; the transcript has "Devon" once. Company never named.
+- 2026-10-05_cybersecurity-remediation-product-validation.txt: Speaker 1 = Yuval (Paragon), Speaker 2 = Frederick. Shoval stated C1, C2, C3 and C10 in one 3-minute monologue (07:50-10:52) before any problem question, so all agreement on those is LED.
+- 2026-09-29_security-remediation-strategy-discussion.txt: machine-translated from Hebrew, heavily garbled. 00:00-03:25 is the founders alone. Several one-line "Shoval:" turns inside Speaker 2's sentences are his words split off. Interviewee never named or placed at a company.
+
 ## Processed transcripts
 
 - 2026-08-25_security-leadership-discovery_jacques-lucas.txt
@@ -256,3 +277,7 @@ SUPPORT:
 - 2026-09-27_eliya-elon-generalize-vc-followup.txt
 - 2026-09-28_javed-feedback_javed-ikbal.txt
 - 2026-09-28_ns-advisory.txt
+- 2026-09-29_security-remediation-strategy-discussion.txt
+- 2026-10-05_cybersecurity-remediation-product-validation.txt
+- 2026-10-05_davon-booking.txt
+- 2026-10-05_yuval-shoval.txt (internal, no evidence)
