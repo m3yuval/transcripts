@@ -1,0 +1,258 @@
+Date: 2026-09-30
+Topic: Security leadership - Discovery
+Meeting UUID: 9F6F35BA-B92A-4F75-ABEC-90E1F3A7A4B8
+Source: transcript
+
+[00:00:00] Shoval Abudraham: California.
+[00:00:01] Shoval Abudraham: Luisa.
+[00:00:02] Fernando Medrano: And, YouTube?
+[00:00:04] Yuval Mermer: We're gonna be…
+[00:00:05] Fernando Medrano: Tell you.
+[00:00:06] Shoval Abudraham: Yeah.
+[00:00:08] Shoval Abudraham: Cool.
+[00:00:09] Fernando Medrano: I figured Tel Aviv, given all the tech, tech companies there. Yeah.
+[00:00:14] Yuval Mermer: Yeah, yeah.
+[00:00:15] Yuval Mermer: You know that's fine.
+[00:00:16] Shoval Abudraham: We are talking with people from the US and sometimes often on LinkedIn, they just like understand all the unit we have, everything, because there are so many of us.
+[00:00:26] Yuval Mermer: laugh.
+[00:00:28] Shoval Abudraham: Yeah, so…
+[00:00:30] Fernando Medrano: I have I have friends from former unit. So.
+[00:00:33] Yuval Mermer: Oh, nice.
+[00:00:34] Shoval Abudraham: and.
+[00:00:35] Yuval Mermer: Nice.
+[00:00:36] Shoval Abudraham: Like from Israel?
+[00:00:39] Shoval Abudraham: Did you visit here?
+[00:00:40] Fernando Medrano: No, I've gotten the opportunity. Unfortunately, I haven't been able to make it work, but I've had…
+[00:00:46] Fernando Medrano: I often get invited by, like, a delegate from Israel to, like, come visit the tech companies there that I haven't been able to take advantage of yet, but I plan to do so at some point.
+[00:00:57] Shoval Abudraham: Super cool. Well, I hope you will visit here because Tel Aviv and the rest of Israel is very nice.
+[00:01:03] Fernando Medrano: I've heard it's gorgeous, yes.
+[00:01:06] Shoval Abudraham: Yeah, so I start about myself, as I mentioned, I'm started at the 8,200 unit, in one of the centers that's responsible for the cyber operations there.
+[00:01:20] Shoval Abudraham: Basically, there are actually Mathieu Val, and we both serve there at the infrastructure department. Basically, all the role of
+[00:01:29] Shoval Abudraham: DevOps and infrastructure engineer together with a security engineer, because we had to build and maintain those infrastructure, but in a very secure way, because of the sensitivity of the networks and information there.
+[00:01:42] Shoval Abudraham: I did it for 5 and a half years.
+[00:01:45] Shoval Abudraham: And, and my service as a captain. And after that, I actually.
+[00:01:52] Shoval Abudraham: like, I realized during my service that I'm super curious about understanding customers' pain and creating impact, so as I finished my service, I started.
+[00:02:04] Shoval Abudraham: as a product manager in a commercial cybersecurity companies. I started in a company called Perception Point.
+[00:02:13] Shoval Abudraham: And led there all the detection capabilities that were based mostly on machine learning, AI. We built agent before, you know, all the industry did it. So it was very cool. And this company was acquired by Fortinet.
+[00:02:29] Shoval Abudraham: Later on, I moved to another cybersecurity company called Koi Security.
+[00:02:35] Shoval Abudraham: also worked a lot with Agentica.
+[00:02:40] Shoval Abudraham: security detection, build Agentic Security Detection, worked with amazing customers, and, like, this was also a great company, and…
+[00:02:50] Shoval Abudraham: This company was acquired by Palo Alto also. And basically that was my sign to call my old friend Yuval and to start our mutual journey.
+[00:03:04] Yuval Mermer: I answered the call, and I told her, yeah, I will quit my job, let's start.
+[00:03:08] Fernando Medrano: Ha ha ha ha.
+[00:03:09] Yuval Mermer: Always worked.
+[00:03:11] Fernando Medrano: That takes a lot of faith to to make that move.
+[00:03:16] Yuval Mermer: Actually.
+[00:03:16] Fernando Medrano: You must have.
+[00:03:17] Yuval Mermer: That's an old dream we had.
+[00:03:19] Yuval Mermer: That's great.
+[00:03:23] Yuval Mermer: Yeah, I'll tell you about myself. I started also at the 8200 unit as a Soval soldier, and there I started as a developer, and we developed together great platforms for the Unit 1 for operating and mapping and securing the networks we have in place.
+[00:03:39] Yuval Mermer: and the other one for the remediating incident in the infrastructure at the production environments.
+[00:03:46] Yuval Mermer: And after a few years in developing, I promoted and became a team lead, and a few years later, I promoted and became the head of DevOps and infrastructure department of the unit, led 40 engineers.
+[00:04:03] Yuval Mermer: Across 5 teams, we ran all the large, complex, secured networks of the unit.
+[00:04:08] Yuval Mermer: Production environments, petabytes of data.
+[00:04:11] Yuval Mermer: Really good challenge. I liked what I did there. It was, really.
+[00:04:17] Yuval Mermer: thoughtful for me, and after the military service, I searched for the next challenge.
+[00:04:22] Yuval Mermer: in my career, which was, for me, how to manage the same scale of organization, but outside with employees with more experience and competitive area and more resources. So, I joined Paragon as a Director of DevOps and SRE.
+[00:04:39] Yuval Mermer: And there I led 25 engineers, we developed security solutions for the infrastructure.
+[00:04:47] Yuval Mermer: On the side… in the side of the customers, for the product itself, and we did a lot of in-house infrastructure and security stuff.
+[00:04:56] Yuval Mermer: It was great. And then Shoval called me to tell me it's our time to our dream. So I quit at Paragon and here we are with you at the Semitic Conversation.
+[00:05:07] Shoval Abudraham: too.
+[00:05:07] Yuval Mermer: Yeah.
+[00:05:08] Fernando Medrano: Big, big leap of faith.
+[00:05:09] Yuval Mermer: Yeah, big name of fame. And we would love to hear about you.
+[00:05:13] Fernando Medrano: Yeah, sure. So, I've been in security my whole career. I started off with a master's in security at Georgia Tech about.
+[00:05:22] Fernando Medrano: Well, I don't know, over 20 years ago now, I can't remember, a long time ago.
+[00:05:26] Fernando Medrano: I spent, a few years in startups, and then I spent about 10 years in the utility industry.
+[00:05:35] Fernando Medrano: where, it was a good time because it was about the time that utilities realized that a cyber attack could affect grid operations, and so the utilities spent billions in the industry in the U.S. to
+[00:05:47] Fernando Medrano: uplift their cyber programs and cyber capabilities, so built some fairly advanced programs there while I was in the utilities.
+[00:05:55] Fernando Medrano: That's ultimately why I came to California after living in the state of Georgia in the U.S.
+[00:06:03] Fernando Medrano: To do… to run, like, a bigger program, for the California-based utility.
+[00:06:09] Fernando Medrano: But after about 10 years of utilities, I'd had about enough of that sector. So I moved into tech.
+[00:06:16] Fernando Medrano: And been helping build the security program at Fastly for the past 7 years. So I've been sort of various different industries, but for the past 7 years, it's all been tech. In this case, Fastly, that is a CDN provider and security services provider.
+[00:06:34] Yuval Mermer: Amazing.
+[00:06:35] Fernando Medrano: So, I've been in a leadership capacity of some kind for…
+[00:06:39] Fernando Medrano: 15, 16 years, so it's been a long time since I've been, like, hands-on keyboard, but I've been part of… I stay technical in terms of helping set the direction for the security team that I have for many years, as particularly needed here at Fastly.
+[00:06:55] Shoval Abudraham: Amazing. Actually, you know, there are a lot of, we're talking with a lot of people that are, leaders in this space and not an ends on people. And we think, like, we get, like, the best.
+[00:07:09] Shoval Abudraham: perspective and insights about what the organization care about because sometimes the organization don't care specifically about security but business can you continuous continuous.
+[00:07:23] Yuval Mermer: community.
+[00:07:23] Shoval Abudraham: Yeah, that's one.
+[00:07:25] Fernando Medrano: I.
+[00:07:26] Shoval Abudraham: Always a word I had difficulty to pronounce.
+[00:07:29] Yuval Mermer: Only short words in your book.
+[00:07:32] Yuval Mermer: And what's.
+[00:07:33] Fernando Medrano: Must be pretty late for you, I imagine, right now.
+[00:07:36] Shoval Abudraham: No, we're okay, 7pm, that's…
+[00:07:39] Yuval Mermer: 7 is what?
+[00:07:39] Fernando Medrano: Okay.
+[00:07:41] Yuval Mermer: Resistant. Today, it's American time, so… Yeah. That's okay.
+[00:07:45] Fernando Medrano: Yeah.
+[00:07:46] Shoval Abudraham: Anyway, so we love to hear the perspective of the leaders.
+[00:07:51] Fernando Medrano: Yeah, happy to share.
+[00:07:53] Shoval Abudraham: Amazing. So I'll give a short disclaimer before we'll start. Basically, we are on the discovery stage, kind of discover validation. We have a direction and I'll share a few slides just to help us like set the conversation.
+[00:08:13] Yuval Mermer: Frame it and to focus the conversation when we need it.
+[00:08:16] Shoval Abudraham: Exactly. But we are not locking on…
+[00:08:21] Shoval Abudraham: this that specific direction that's we you know what we will start and i'll share like the thing we'll learn.
+[00:08:28] Fernando Medrano: You have some ideas that you're still exploring, you're sort of just looking for feedback.
+[00:08:31] Yuval Mermer: Yeah, here we just want to validate this specific direction.
+[00:08:35] Shoval Abudraham: And we want like the most brutal feedback you can give us.
+[00:08:39] Fernando Medrano: you.
+[00:08:40] Shoval Abudraham: Don't be nice. We don't, we're Israelis. We don't care about.
+[00:08:44] Fernando Medrano: laugh.
+[00:08:45] Yuval Mermer: I appreciate it more when you tell the brutal truth.
+[00:08:47] Fernando Medrano: Yeah, got it.
+[00:08:50] Yuval Mermer: Yeah.
+[00:08:50] Shoval Abudraham: Okay, so as you can see, we are focusing on the network, layer. Basically, we started from understanding that AI changed the whole ecosystem, and it changed how attacks worked. As we shared, we are both infrastructure people in our core.
+[00:09:09] Shoval Abudraham: Knowledge, and we realized that organization
+[00:09:14] Shoval Abudraham: We think, we assume, that organizations need to secure their fundamental layers.
+[00:09:21] Shoval Abudraham: very strong to make sure that attacks won't come in, or even if they are coming in, they won't be able to move inside the organization. And as we talked with, many
+[00:09:35] Shoval Abudraham: security leaders from the… from big organizations, we realized that the network is a layer that is super complex, fragmented, and there is a difficulty to understand what's happening there.
+[00:09:48] Shoval Abudraham: And from there.
+[00:09:51] Shoval Abudraham: We learned the O.
+[00:09:53] Shoval Abudraham: workflow of network, and we learned that usually the network not sit on the CISO side. It's on the CIO, network engineer side, and the CISO is just the one that give, in the security, department, and,
+[00:10:12] Shoval Abudraham: give the high-level recommendation, and all the CIO, area need to do it, and operate those, recommendations and set those policies.
+[00:10:24] Shoval Abudraham: And… That made us realize.
+[00:10:28] Shoval Abudraham: That.
+[00:10:30] Shoval Abudraham: And we learned that this does not move fast enough. Like, this is super,
+[00:10:36] Shoval Abudraham: there are a high friction, because the change of teams and stuff like that. And we are starting to ask ourselves.
+[00:10:43] Shoval Abudraham: Does network remediation
+[00:10:47] Shoval Abudraham: her… bother the CISO at all, that, like, those, all workflow of, okay, I'm giving them the recommendation about, security recommendation I give, I need to do changes because of security-related issues, and what happened afterwards, does it bother the CISO at all?
+[00:11:08] Fernando Medrano: That's a good question.
+[00:11:12] Fernando Medrano: It's… it's a little bit yes and no, Because…
+[00:11:18] Fernando Medrano: The network, depending on the particular company, the network can change all the time for many different reasons.
+[00:11:26] Fernando Medrano: Particularly if you're talking, like, a cloud environment, we have dynamic allocation of resources that change frequently, a new container being spun up, a new service being spun up.
+[00:11:37] Fernando Medrano: And it's really hard for security teams to keep up with whether or not a particular change was…
+[00:11:44] Fernando Medrano: Let's say both,
+[00:11:46] Fernando Medrano: Intended, or approved, and whether or not it creates security risk in… with that particular network change.
+[00:11:56] Fernando Medrano: Just because the changes are happening often enough that it's very hard for security teams. Like security teams, I don't think by and large are in the position anymore to approve network changes.
+[00:12:09] Fernando Medrano: And so… and it's very hard for security teams to know whether or not a particular change
+[00:12:15] Fernando Medrano: is introducing risk or not, because it could say, I have a… I'm deploying a new service, it's open on this new port that has never been used before, and so, like, sometimes you have an opportunity to dig in and review and understand what that is, and other times you don't. So it's hard
+[00:12:32] Fernando Medrano: it… it…
+[00:12:33] Fernando Medrano: It's hard to keep up with all the things that are happening on the network, and to know whether or not they are risky or not.
+[00:12:41] Shoval Abudraham: Cool.
+[00:12:41] Yuval Mermer: Like you're talking mostly about the visibility of the network and what are the changes that have been made there, right?
+[00:12:48] Fernando Medrano: Yeah, so let's… if… let's say… take a large network, and you have a good understanding of the baseline of the network. Changes that happen there.
+[00:12:58] Fernando Medrano: I guess the changes that I'm interested in are ones where I can more easily validate the risk that is being introduced by that change. Simply opening a new port may not necessarily introduce new risk, or deploying a new service may not necessarily introduce risk.
+[00:13:15] Fernando Medrano: But how… like, but there are, let's say, certain kinds of network changes that I might be a little bit more, like, careful and interested in. Because still… because even with policies in place about what engineers should or shouldn't do in terms of exposing things to the internet, mistakes still happen, or people…
+[00:13:32] Fernando Medrano: intentionally expose something that really shouldn't be exposed, and so it depends on the nature of the network change as to whether or not I'm interested.
+[00:13:42] Shoval Abudraham: Cool. And… Sounds like, the… Network engineer side can do some changes that create risk.
+[00:13:52] Shoval Abudraham: But I'm wondering if there are cases where you want as a CISO, as a security leader, to ask for a change.
+[00:14:04] Shoval Abudraham: And… The old,
+[00:14:08] Shoval Abudraham: operation process takes time, and does not happen, or you don't know what happened with it. Those are…
+[00:14:17] Shoval Abudraham: Issues that you're dealing with?
+[00:14:21] Fernando Medrano: So, is this a situation where I ask for a change in the network, for instance, and I maybe don't have a means of validating whether or not the change was made? Is that what you're referring to?
+[00:14:35] Shoval Abudraham: Kind of, yeah.
+[00:14:38] Fernando Medrano: May maybe so that that one really depends on the nature of the trust and relationship between, let's say, security and engineering. Like I'm in a situation where if I discuss the need for a particular kind of network change, I have
+[00:14:50] Fernando Medrano: A good, I have, a lot of confidence that that change will, will happen. Yeah. But that may not necessarily always be the case.
+[00:15:02] Shoval Abudraham: Do you have an, sorry, Eva.
+[00:15:05] Yuval Mermer: I have a specific use case that I want to ask you about.
+[00:15:08] Fernando Medrano: Sure.
+[00:15:08] Yuval Mermer: Did you… did you have any pen test… pen testing in your… in the company you work for?
+[00:15:13] Fernando Medrano: Yes.
+[00:15:14] Yuval Mermer: existing team.
+[00:15:15] Fernando Medrano: Yes.
+[00:15:16] Yuval Mermer: What were their results?
+[00:15:18] Fernando Medrano: So, we… for… for PCI certification, we do a yearly what's called PCI pen test, and it starts off with basically a port scan of our IP space to validate that all the open ports are ports that we have
+[00:15:35] Fernando Medrano: A registry for that should… that should be open and have a purpose for being open.
+[00:15:40] Fernando Medrano: It's… that's a pretty basic scan, it's really just validating that it has the right ports, but we also do, let's say, specialized pen tests for certain kinds of services.
+[00:15:52] Yuval Mermer: And what is the usual amount of tasks that coming out of the pen test?
+[00:15:59] Fernando Medrano: The usual amount of what, I'm sorry?
+[00:16:01] Yuval Mermer: Of tasks, of things that you need to remediate and change.
+[00:16:06] Fernando Medrano: For us, not too many.
+[00:16:08] Yuval Mermer: That's your good security team.
+[00:16:12] Fernando Medrano: We've been building the program for a while, but usually for the findings for that, like, that start with the IP space scan, and then dig into certain classes of services.
+[00:16:25] Fernando Medrano: There's usually… there's some… there's always something to fix, but it's usually not too much.
+[00:16:30] Yuval Mermer: Got it. Shiva, you can continue.
+[00:16:33] Shoval Abudraham: Do you have a clue what is the average time for this kind of fix?
+[00:16:41] Fernando Medrano: No, but they're not too… they're not too big, so within… within a month usually gets fixed. If it's lower priority, if it's particularly high priority, you do it within, I'd say, a week.
+[00:16:55] Yuval Mermer: Is that something that you measure?
+[00:16:57] Yuval Mermer: Take care.
+[00:16:57] Fernando Medrano: Not act… not something that we, actively record. I'm just thinking about, like, the kinds of remediations that we've had to do in the past, and they haven't been particularly big. But don't… I don't, like, keep metrics on that.
+[00:17:10] Yuval Mermer: Got it. Thanks.
+[00:17:13] Shoval Abudraham: Cool. So, can you maybe share with us a case where, when you,
+[00:17:22] Shoval Abudraham: Okay, usually, we're going to, cases where
+[00:17:27] Shoval Abudraham: You wanted to do a change in the network from a security reason for pen testing, for example, and trying to figure out, like, what are the gaps.
+[00:17:37] Shoval Abudraham: on those processes… on this process.
+[00:17:42] Shoval Abudraham: Like, do you have an example for one of them? Even though sounds like you have a pretty good workflow, and you're passing, like, the information good between the two, like, branches.
+[00:17:55] Shoval Abudraham: Of security and, IT.
+[00:17:58] Fernando Medrano: Yeah, so I… you know, it doesn't happen necessarily in all companies, but one of the things that I've worked very hard to establish is a very good relationship with our engineering partners, and so…
+[00:18:10] Fernando Medrano: It's… there's not a lot of friction, there's not a lot of…
+[00:18:14] Fernando Medrano: difficulty in asking for changes or help or resourcing from one side to the other. And so that when…
+[00:18:24] Fernando Medrano: And we…
+[00:18:25] Fernando Medrano: there are certain kinds of changes that, let's say, have been difficult in the past. So, for instance, and this was on the other side of the network, we wanted to create a lot more outbound control, so outbound network filtering, so…
+[00:18:45] Fernando Medrano: creating rules for what traffic was allowed to leave the network. And that used to be a very contentious thing, and it's still a very difficult thing, because the number of services that we provide… that we run.
+[00:19:00] Fernando Medrano: But if we want to do it today, you know, this is a thing where we work together with engineering to figure out how do we implement a network policy that would be the right point of enforcement, let's say, between
+[00:19:12] Fernando Medrano: our on-prem workloads, our Kubernetes workloads, our cloud workloads, like, what is the way that we can implement a… not necessarily uniform, but some degree of network enforcement policy that works
+[00:19:24] Fernando Medrano: Across the various different kinds of deployment methodologies that engineering might have. So, it is something that it is… we think about, but when it's something, let's say.
+[00:19:34] Fernando Medrano: brand new, or that has a significant impact, like, let's say, implementing an outbound network policy for the first time. That's usually something we partner with the engineering team to design a solution for.
+[00:19:47] Shoval Abudraham: Cool. And who is responsible, during this, process of understanding the impact of this change on the… Totally.
+[00:19:58] Fernando Medrano: not
+[00:19:59] Fernando Medrano: That would be the engineering team, in this case. So, from the security side, we're focused on the particular threat scenario that we are interested in mitigating, and we rely on the engineering team to define what the operational impact might be of a particular change that we are suggesting.
+[00:20:21] Shoval Abudraham: Cool. So… I want, actually…
+[00:20:26] Shoval Abudraham: want to make sure I understand, and then to share with you about what we are hearing. So…
+[00:20:34] Shoval Abudraham: Sounds like you have very good processes.
+[00:20:36] Shoval Abudraham: in your, in the company you work for. And the thing that
+[00:20:42] Shoval Abudraham: It might be hard to discover, it's the…
+[00:20:47] Shoval Abudraham: the network state in a specific moment and the risk it brings with it, but I don't hear from you that it's super bother you or the organization. Like, sounds like you… that's the situation, and you're fine with that at the moment.
+[00:21:06] Fernando Medrano: Maybe not quite, let's say, fine, per se. I think what… well, also, what makes it a little bit difficult is we are an internet company, and so, like, we operate 600 terabit per second of network capacity.
+[00:21:22] Shoval Abudraham: Wow.
+[00:21:22] Fernando Medrano: Yeah.
+[00:21:26] Yuval Mermer: That's a lot.
+[00:21:27] Fernando Medrano: 600 terabit per second, it's a lot. And most of that…
+[00:21:32] Fernando Medrano: you know, 99.99% of that is our customer traffic that's using our CDN service.
+[00:21:39] Fernando Medrano: So, when it comes to that traffic. that's the intent of the product. I don't… I don't really care about that traffic. That is, well, in terms of, like, that is serving a customer need, and we have products that monitor and, like, our internally built systems that monitor and keep track of all that.
+[00:21:56] Fernando Medrano: But then when it comes to the internal back-end services, like I said, we have a combination of services that are deployed
+[00:22:04] Fernando Medrano: On our bare metal infrastructure.
+[00:22:08] Fernando Medrano: And then we have services that are deployed in
+[00:22:12] Fernando Medrano: a Kubernetes cluster that could live in one of multiple clouds. We have virtual machines that could deploy services that could be in one of multiple clouds as well.
+[00:22:23] Fernando Medrano: And in the cloud side, it gets a little bit easier because of the organizational policies that you can apply, like in AWS or GCP, and we have… and we utilize Terraform, for deploying all services, and we can employ Sentinel policies.
+[00:22:39] Fernando Medrano: That can, create enforcement points on
+[00:22:44] Fernando Medrano: how network services are deployed in AWS or GCP, where you have a lot more control because of the platform that AWS and GCP have built.
+[00:22:55] Fernando Medrano: So, actually, in that sense, have a pretty good sense of visibility and an enforcement point about what network parameters must be instilled for resources that are deployed in the cloud.
+[00:23:07] Fernando Medrano: On the bare metal side, that's where it gets a lot more difficult, because you don't have that underlying platform that can inform you or create an enforcement point.
+[00:23:15] Fernando Medrano: And for a distributed network like ours, that can be a little difficult to, let's say, have the degree of visibility and control that we might otherwise need.
+[00:23:26] Shoval Abudraham: Cool.
+[00:23:26] Fernando Medrano: So, which is to say that there's a good part of the network where I feel like there is good control in place, and there's some part of the network where it would be good to have better degree of understanding when a…
+[00:23:42] Fernando Medrano: when a change that introduces risk is made. Not any change, not every change, but one in particular that we think is… could be
+[00:23:51] Fernando Medrano: Could result in a, let's say, exposure that we didn't want.
+[00:23:57] Yuval Mermer: Would you pay for something that will solve this problem?
+[00:24:01] Fernando Medrano: Maybe. There's a lot of network discovery tools out there, or network management tools out there, if you think about, like, a SolarWinds that, like, gives you perspective on performance and whatnot, and a lot of scanning tools that can lead you to, let's say, identify open ports.
+[00:24:19] Fernando Medrano: It depends on the amount of… intelligence… That was…
+[00:24:28] Fernando Medrano: That came with it.
+[00:24:32] Fernando Medrano: Which is to say that, like, could it…
+[00:24:36] Fernando Medrano: could it tie, for instance, into our CI pipeline, and let me know whether or not the change followed standard procedures, for instance? Like, was this a change that was intended and approved by engineering? Was… is this exposing a service
+[00:24:56] Fernando Medrano: to the internet without authentication.
+[00:24:58] Fernando Medrano: Is the service exposing a service that has a known vulnerability and now has an exploit path from the internet? Like, it needs to be more intelligent than simply
+[00:25:11] Fernando Medrano: A change happened in the network, at least from my perspective.
+[00:25:16] Shoval Abudraham: Cool. I love those examples.
+[00:25:19] Shoval Abudraham: And.
+[00:25:21] Shoval Abudraham: Cool. I'll share a bit about what we're hearing.
+[00:25:25] Shoval Abudraham: from the CISOs and CIO we are talking with. I do say that the conversation is very different when we're talking with a CISO and when we're talking with CIO.
+[00:25:39] Fernando Medrano: I bet, yeah.
+[00:25:40] Shoval Abudraham: Yeah, like the pains are very like similar, but very different.
+[00:25:45] Shoval Abudraham: But the main thing that we, heard, and we're trying to realize, like, if it's pain enough, and I do it quick because I see we're almost in time, it's basically that the network is complex, fragmented, that the wrong change can bring out
+[00:26:03] Shoval Abudraham: The entire enterprise, the IT teams are usually working slowly because of the fear of breaking something.
+[00:26:13] Shoval Abudraham: And in the era of new type of attack, Agentic attack that operates very fast in a very high scale, this.
+[00:26:22] Shoval Abudraham: And create a gap between the… the how fast we need to adapt and change our network to how fast we can do those changes.
+[00:26:33] Shoval Abudraham: on production. We heard that the network, from a visibility perspective, is stuck 15 years ago. There are not a lot of innovation around that. I actually… that's the reason I said I love your example about how we can make it more intelligent.
+[00:26:52] Shoval Abudraham: And basically, we heard that
+[00:26:55] Shoval Abudraham: CISOs and CIO both have difficulty to make decisions, because they usually don't really know what, and don't understand the specific config, and which asset connected to what, and with which configuration, and…
+[00:27:12] Shoval Abudraham: that's the reason they can't do a smart decision and fast decisions around the network. Does it resonate with you?
+[00:27:23] Fernando Medrano: I think it… this probably applies maybe a little bit more to, let's say, more legacy companies that actually operate on-prem infrastructure, which… of which there's you know, millions of such companies. Companies that are fully deployed in something like AWS.
+[00:27:40] Fernando Medrano: There's built-in tooling to get, like, a better sense of both visibility and apply organizational policies to gain amount of control on the network, on the, like, software-defined network that lives there.
+[00:27:55] Fernando Medrano: But in a more traditional deployment for on-premise systems, yeah, this continues to be a challenge. And AI is certainly making it worse, because the second something gets exposed that you didn't intend, it's…
+[00:28:09] Fernando Medrano: It used to be that you could live, that could live for months being exposed before somebody on the internet noticed and maybe tried to take advantage. Now that's gonna happen a lot quicker in the world of AI. And so… but again, from the CISO perspective, it's not just about
+[00:28:24] Fernando Medrano: Did, did something change in the network? Did something change in the network that has introduced risk that needs to be actioned? Because ultimately that's the difficult part for, for the CISOs that we're getting tons, we have a potential, tons of information that's being fed. And ultimately the tough part is which of the things that are happening in the organization are, are increasing our risk or, or things that are happening that, that are unintended, that are increasing risk or.
+[00:28:49] Fernando Medrano: intended or unintended. And so… The more intelligent.
+[00:28:53] Fernando Medrano: something is in terms of identifying areas of risk, the better it is for me, because, like, if it's simply a platform that is informing me of changes, I'm… it's gonna be too much. It's not gonna be valuable in terms of decision-making for me.
+[00:29:10] Shoval Abudraham: Yeah.
+[00:29:11] Shoval Abudraham: Cool. Fernando, thank you so much for the time and the insights. That was super, helpful.
+[00:29:20] Shoval Abudraham: yeah, I would love, you know, to keep… to stay in touch and keep you, part of our journey and update you as we evolve and our research evolve.
+[00:29:30] Fernando Medrano: Sure, yeah, I'm happy… Happy to,
+[00:29:34] Fernando Medrano: Engage with y'all for as you further develop your ideas and further hone in on like a product strategy. Happy to be a sounding board.
+[00:29:42] Shoval Abudraham: Amazing, amazing.
+[00:29:44] Yuval Mermer: Thank you so much. We really appreciate your time.
+[00:29:46] Fernando Medrano: Yeah, of course. Pleasure to meet you all, and good luck.
+[00:29:49] Yuval Mermer: Thanks.
+[00:29:50] Shoval Abudraham: Thank you so much. Have a great day.
+[00:29:52] Fernando Medrano: You too. Take care. Bye.
