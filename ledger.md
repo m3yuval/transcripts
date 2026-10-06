@@ -40,6 +40,8 @@ CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | LED (same caveat) | "it's not a lack of urgency it's more only pivoting on the protection and not causing outages" (reframes the "no urgency on network" finding as outage fear)
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | LED (Shoval wrote "what can be safely changed" first) | "\"what can be safely changed,\"--this is the biggest challenge that no software can solve. Talk to people who run change control boards. Taking down a production application for patching is always a struggle."
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "they're probably too small for that. They just don't know what to do to remediate." (his mid-market clients: not knowing what to fix IS the blocker)
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED | "we rely on the engineering team to define what the operational impact might be of a particular change that we are suggesting." / "there's not a lot of friction, there's not a lot of…" (impact is owned by engineering and is not his blocker)
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (own environment, not measured) | "within a month usually gets fixed. If it's lower priority, if it's particularly high priority, you do it within, I'd say, a week." (pen-test findings: "For us, not too many.")
 
 ## C2 — Detection is covered; action is not, and buyers expect vendors to take the action
 
@@ -67,6 +69,7 @@ CONTRA — detection is NOT covered:
 2026-09-28 | Javed Ikbal | (company not stated; supplies a global top-10 bank) | CISO, written LinkedIn thread | CONTRA | "Your target companies already have CS or PA." / "They do the attack path analysis, fix validation through vuln scanning, etc." (says the big platforms already cover detection-to-validation)
 2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED (detection is NOT covered) | "But even upstream of that, be able to detect machine speed attacks. How do we know it's an agent?"
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED (C2b, vendor should not take the action yet) | "Helping them prioritize what they need to do first, I think is where the real value is." (after advising against building execution)
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (his pain is detecting risky changes engineers make, the reverse direction) | "it's very hard for security teams to know whether or not a particular change" … "is introducing risk or not" / "security teams, I don't think by and large are in the position anymore to approve network changes."
 
 ## C3 — The blocker is impact uncertainty specifically, NOT speed, prioritization, or absence of tooling
 
@@ -86,6 +89,7 @@ CONTRA — see the seven CONTRA lines under C1 plus:
 2026-09-28 | Nicole (Speaker 4) | ex-Microsoft, "five times CISO" | advisor | CONTRA | "I know that it's more futuristic and not like, let's talk about today. It's my problem today." (AI-speed remediation is a future concern, not today's)
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "Helping them prioritize what they need to do first, I think is where the real value is." (names prioritization, which C3 rules out)
 2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "The second problem is who is actually on the power. Do you take it to IT or security?" / "security is doing vulnerability scanning, but you feel the difficulty of patching IT and IT needs to do it." (ownership, not impact)
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED | "ultimately the tough part is which of the things that are happening in the organization are, are increasing our risk" / "if it's simply a platform that is informing me of changes, I'm… it's gonna be too much." (prioritization of risk, not impact of the fix)
 
 ## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list
 
@@ -118,6 +122,7 @@ CONTRA — proof is table stakes, not a moat:
 2026-09-27 | Eliya Elon | Generalize.vc | investor | UNPROMPTED (investor) | "האם יש מספיק Trust מהארגון שה- Agent יעשה פעולה ב- Prod , לעומת פעולה במקום אחר" (is there enough trust from the org for the agent to act in prod, versus elsewhere); he frames trust-by-blast-radius as the axis, before the founders used the word trust
 
 ## C6 — Wedge A: network / firewall config is the right first wedge
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (one hard network remediation; cause is scale, impact owned by engineering) | "And that used to be a very contentious thing, and it's still a very difficult thing, because the number of services that we provide… that we run." (outbound network filtering)
 
 CONTRA (no supporting evidence found in 40 calls):
 2026-09-15 | Andrew (ex-Nestle, veterinary) | ~1000 hospitals | CISO | UNPROMPTED | "For me, in my specific CISO role, network is not a big pain... I have a very uncomplex network. And it doesn't present a risk."
@@ -135,6 +140,7 @@ CONTRA (no supporting evidence found in 40 calls):
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | note | "What is it going to do to my network downstream?" (his own example of what he would want simulated)
 2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED | "certainly protecting what's in our virtual firewalls is a priority and that is a lot easier to solve for." / "But the dependencies from third-party, fifth-party applications upon which we also rely, that's a much bigger problem."
 2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "you are talking about legacy networks, not AWS or public clouds." / "Right, because it's really a very dangerous area." (he also says "the network is a priority" at 00:18:11 in a garbled passage; his position is unclear)
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (answer to Shoval's "Does it resonate with you?") | "I think it… this probably applies maybe a little bit more to, let's say, more legacy companies that actually operate on-prem infrastructure" (cloud is controlled via org policies, Terraform, Sentinel; only "On the bare metal side, that's where it gets a lot more difficult")
 
 ## C7 — Wedge B: OS / package / container patching is the right first wedge
 
@@ -170,6 +176,7 @@ CONTRA:
 2026-09-28 | Rajiv (Speaker 2) | insurance broker, 200+ offices | sitting CIO with cyber accountability | CONTRA (budget owner) | "when it comes to the network spend seat source [CISOs] don't know the budget"
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | CONTRA | "very few wanted to pay for it because it cost so much because of the manual work." Soft interest only: "Absolutely, it would be fun to be a part of your journey." (no budget, no owner)
 2026-10-05 / 2026-09-29 | Davon call, Frederick, 09-29 interviewee | — | — | none | No budget, approval chain or design-partner question was asked in any of the three calls.
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (Yuval: "Would you pay for something that will solve this problem?") | "Maybe. There's a lot of network discovery tools out there" … "it needs to be more intelligent than simply" … "A change happened in the network". Next step offered: "Happy to be a sounding board." (no pilot)
 
 ## C9 — Mike Hiltz is typical, not an outlier
 
@@ -200,6 +207,7 @@ SUPPORT:
 2026-09-07 | Jason Manar | (not stated) | CISO | UNPROMPTED | "to leverage and find, zero-day vulnerabilities... bugs, that can be pieced together for zero-day type vulnerabilities"
 
 ---
+2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (after Shoval named agentic attacks) | "And AI is certainly making it worse, because the second something gets exposed that you didn't intend"
 
 ## Notes carried forward
 
@@ -227,6 +235,8 @@ SUPPORT:
 - 2026-10-05_davon-booking.txt (Google Doc, date inferred): starts mid-call, Speaker 1-3 only. Speaker 1 is the interviewee; the founders are 2 and 3 (which is which unknown). Turn merges at 04:41 ("Absolutely."), 09:59 ("Yes, absolutely.") and 17:32/18:02 (his question split under Speaker 3). The name "Davon" is only in the filename; the transcript has "Devon" once. Company never named.
 - 2026-10-05_cybersecurity-remediation-product-validation.txt: Speaker 1 = Yuval (Paragon), Speaker 2 = Frederick. Shoval stated C1, C2, C3 and C10 in one 3-minute monologue (07:50-10:52) before any problem question, so all agreement on those is LED.
 - 2026-09-29_security-remediation-strategy-discussion.txt: machine-translated from Hebrew, heavily garbled. 00:00-03:25 is the founders alone. Several one-line "Shoval:" turns inside Speaker 2's sentences are his words split off. Interviewee never named or placed at a company.
+
+- 2026-09-30_security-leadership-discovery_fernando-medrano.txt: Zoom 403 until 2026-10-06. Clean English transcript, speakers named. Shoval opened with the network-wedge slide ("we are focusing on the network, layer") at 08:50, so everything network-related he said after is in answer to that frame.
 
 ## Processed transcripts
 
@@ -281,3 +291,4 @@ SUPPORT:
 - 2026-10-05_cybersecurity-remediation-product-validation.txt
 - 2026-10-05_davon-booking.txt
 - 2026-10-05_yuval-shoval.txt (internal, no evidence)
+- 2026-09-30_security-leadership-discovery_fernando-medrano.txt
