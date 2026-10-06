@@ -1,0 +1,126 @@
+Date: 2026-09-29
+Topic: Security Remediation Strategy Discussion
+Drive File ID: 1Guq4Xv_cIDxbGbgwxAO8crsduGffs6n4
+Source: google-drive-pdf
+
+[00:00:00] Shoval: Yes, I think I should not make a scene with him.
+[00:00:03] Speaker 1: I don't need to.
+[00:00:04] Shoval: Yes.
+[00:00:06] Speaker 1: I didn't know about it, but it's just that...
+[00:00:08] Shoval: Yes, I did a dump in the middle of the night.
+[00:00:12] Speaker 1: Yes, or I lost the game.
+[00:00:14] Shoval: Yes, I did it now, it was just... There were some families who were like this.
+[00:00:19] Speaker 1: Right, right. I also lost the game, and I lost the game. And I said to myself, "I'll be back with another video."
+[00:00:25] Shoval: that is what we are going to do. I have a lot.
+[00:00:31] Speaker 1: The the engineering is amazing, let me know.
+[00:00:35] Shoval: wrong change can bring out the entire enterprise. The changes are... The network was stuck 15 years ago from a visibility perspective. And they cut me in half, so I had to keep going. And there was also something he said. He really gave us the examples of him.
+[00:01:12] Speaker 1: Yeah I don't know if you can hear me
+[00:01:19] Shoval: Yes, it's all a coincidence.
+[00:01:20] Speaker 1: I'm not sure if you can hear me I'm not sure if you can hear me
+[00:01:25] Shoval: He said, I think I heard it again, he said he's trying to make a whole line of Expedia.
+[00:01:32] Speaker 1: Yeah I don't know if you can hear me on
+[00:01:36] Expedia Shoval: It seems to me, right?
+[00:01:38] Speaker 1: I'm sorry
+[00:01:38] Shoval: But it's a big company. I'm like, "Oh, you're so smart!"
+[00:01:42] Speaker 1: The old guy is not sure if he can hear me Expedia, meaning all in one online travel marketplace, yeah, booking
+[00:01:50] Shoval: It's a coincidence. It seems to me, he's trying to make a whole line of Expedia.
+[00:01:52] Speaker 1: Ah, rock booking, it's flights, hotels, vacation rentals, car rentals, local activities, golf What? What's the deal?
+[00:02:00] Shoval: What do you think? I'm curious. Yes, but I think it's a company, like, a company.
+[00:02:07] Speaker 1: I don't know if you can hear me I don't know if you can hear me
+[00:02:11] Shoval: The Americans don't work here. Yes, I think, in the US, the most important thing here is the European company.
+[00:02:17] Speaker 1: Europe is the I don't know what I should have said in the previous video. Really? We're in the middle of a big mess.
+[00:02:17] Shoval: Yes, they're the most important companies.
+[00:02:22] Speaker 1: There are European markets of the markets.
+[00:02:26] Shoval: a company that works here for two years.
+[00:02:28] Speaker 1: No, that the markets are the most expensive in Europe.
+[00:02:33] Shoval: G -nP, YAR, etc. -
+[00:02:34] Speaker 1: I don't care if it's a product, only when the data is in our hands.
+[00:02:34] Shoval: Don't worry about them. No, it's important. We're honest. Wow, what do you mean by "paragon"?
+[00:02:40] Speaker 1: That's important. Listen, first of all, Iran is about to be the capital.
+[00:02:48] Shoval: Yes, Iran. I remember.
+[00:02:50] Speaker 1: It's so disgusting that I'm not there.
+[00:02:53] Shoval: He's got a lot of money.
+[00:02:56] Speaker 1: You don't understand, I don't understand, I don't care about it. Oops, I just got a rock. And what does it say? It says that a lot of recruiters are now in LinkedIn. Yes, and people in the audience are talking to me. Hey, Yoni.
+[00:03:25] Shoval: in foreign language
+[00:03:25] Speaker 2: What's up?
+[00:03:27] Speaker 1: It's fine, what's your name?
+[00:03:29] Speaker 2: It's fine, it's
+[00:03:31] Speaker 1: fine.
+[00:03:32] Speaker 2: We're all in the same class.
+[00:03:34] Speaker 1: The class is your only class. What's up?
+[00:03:43] Shoval: I'm still in the
+[00:03:44] Speaker 2: Audio paradise.
+[00:03:46] Shoval: Okay, yeah. Here too, here too.
+[00:04:23] Speaker 1: about American servers, that have some complex libraries that are also on-prem, also on-an, Data Center, branch offices and everything. And we said, "Okay, we have problems, we see problems with the systems, but two things are fine, problems are not urgent, and there is also the dilemma of the system as a CIO, because we are talking about the areas that are operating, So it's very interesting to see how the CISO is working with the CISO. We had some issues with the system, but it's not enough to get the agents to come and talk to us. From there, we went back to the back side, and asked ourselves and our agents why we were asking this question, and we started asking our agents the question, how do you expect to make changes in the system, that in the future, I-Driven will be able to create more and more, and we want to understand how systems are expected to be. Is it a matter of being around? We also talked to very interesting conversations about detection in the beginning, Shashankar. The problem was with the particles. The detection was still there for the human being, so it was clear that the problem was there. The detection was still there for the reason. It brought me to the point that I understand that I have a threat. I understand that I have some finding that needs to be solved later. But my problem, and that's something we heard about in all the conversations, my problem is what I do after finding it. What I do after I understand that I have a threat. How own tool to deal with the detection and finding problems. It's a short break, in the first word we talked about remediation, and I'll be back in a minute. We will talk about this later, after a few more talks, when we tried to find more specific use cases, where to do the remediation, and what do the big guys like to do with the remediation itself? We saw that there are three areas that were the most important. The first is the network, the second is the patch management, We will do a lot of patching first, and the third one will be patching in infra. We saw these three areas really in the top three and we started to give each one of them and we realized that patching is very important, there are a lot of things that are very important, and we are really looking forward to it. We saw that in the network, things start to get worse, but I'm still not in the place where I am, and we are... Now, there are two interesting things here. The first thing we started with was the network, and complex, and the size of the original, and it's hard to connect with this one, and to CIOs to the file. That's a problem that we are dealing with, and another problem is that now that we want to do a more immediate remediation, the complexity that is in the network is not even possible without
+[00:07:51] Speaker: the production.
+[00:07:52] Speaker 1: So there is some kind of network problem to make an impact that will be a more immediate remediation.
+[00:08:13] Shoval: We came to a correct example,
+[00:08:23] Speaker 2: with X-Poid, between this application and between this application, the change will be done in the network. Between this there will be a firewall rule, or between this there will be a different wave, wave-chalk, that's actually what you said in the last video.
+[00:08:44] Speaker 1: Why did you take it to the point where it's a little more simple than that? There is firewall-chalk, which is a very wide-ranging-ranging-ranging-ranging. It was on me in Tufin, or on me in Algosa, when the firewall is open, it's a mess. I have some, maybe Redis from behind this firewall, that I have in Cluster, and this Redis in a ring that is open on the CV. I know that if there is no personal contact, and I will delete this firewall, only for those who really need to contact, they will do this, there is no such thing. Now, I will delete this firewall, CIOs will tell me that... They are willing to do this work is enough for them. They need to understand what these procedures are going to be. Will this go to the production? What will happen to this as a result of this change?
+[00:09:36] Speaker 2: And if you think that with the help of AI, you can create the technology that can do the analysis of network flows, application flows, implications on changing the rule, and you can come with recommendations on how to change the rule,
+[00:09:59] Speaker 1: we don't want to call recommendations, we would like to say remediation, but as the first years, we want to say impact assessment. If you change, what will be the result?
+[00:10:14] Speaker 2: Yes, but it is also possible to receive with a kind of a tool like a tool or something like that. So
+[00:10:23] Speaker 1: when we asked the question today, why do the Slavs and Algos do not understand this question, they said "let's go and give me a map, it's not enough for me, I also have a map that I created myself that will help me when I have the right, so they will give me rewards and things will not work out".
+[00:10:43] Shoval: That it's not obvious And in the end, they talked about it, that the network is a bit... In the face of the visibility, years later, we're not... The situation there is not... like in other areas.
+[00:11:06] Speaker 2: Yes, I understand and it can be very important that it is enough. What I mean is that the concern I have is that you are, for example, fighting for some specific ICP, that it is small companies with large companies and companies with large companies, but it's not groups that have hybrid methods, because in the form you are asking about, you are talking about legacy networks, not AWS or public clouds. in the uh... The second problem is who is actually on the power. Do you take it to IT or security? And this is to me the main point of your process. Because in my form, when you created the TESA and the development, your IT is the key, right? It's all security, it's all security is in value, But who usually does network... network management, and you can do the network rules optimization, it's IT.
+[00:12:53] Shoval: Yes.
+[00:12:55] Speaker 2: Now,
+[00:12:56] Shoval: I'm sorry.
+[00:12:57] Speaker 2: no, I mean, it's like a vulnerability scanning, security is doing vulnerability scanning, but you feel the difficulty of patching IT and IT needs to do it. Az... There's security that actually makes it difficult for security, but in some cases they have security to see the value of this ring, and you have to think about how they continue to create value, because you gave some kind of a moment to security, on the rights that they need to do. optimization. What are the vital sides?
+[00:13:45] Shoval: What did you do?
+[00:13:48] Speaker 2: Masha Baba.
+[00:13:48] Shoval: What did you do next? So we
+[00:13:52] Speaker 1: Baba.
+[00:13:52] Shoval: do believe that this thing in the end can save your life, save your reputation, security, and is something that will be critical as long as the pandemic is more important. But we are very close to what you are saying. I will say that in our conversations, we started talking a little bit with CIO. Because we really understood that all this process is related to us wanting to create a whole process that does not matter if it is in vulnerability or in network. In addition to remediation, the entire area of   the pandemic is happening in groups that do not have security. And there is some process, some kind of an ownership decision that we have to understand. And we started talking with CIO and there, as soon as we got out of remediation, network was more important than the vulnerability patching.
+[00:15:04] Speaker 2: Right, because it's really a very dangerous area. Let me tell you two things. Let's say I meet three startups. One startup that actually offers a huge development, but gives me a chance to see the possibilities of success. Another startup that gives me a chance to see the possibilities of applications. Vesta out at the sheesh. She won't be talking. that gives a return to the ability to detect detection prevention in the network. The same problem for all three cases. It will look like with the test and with the application and less with the network. Now, in our environment, 70% of the environment is AWS, 30% of the environment is a private data center that goes and uses it. If we were in the same hospital, this hospital was five years ago, it would have been in the same hospital. Because I would say that your area of expertise is very specific. And most of the people you talked about really have a very important role in the network world and in the field of overhaul firewall management. The issues that they have in some kind of transformation process, there is a point where it is less relevant to them.
+[00:17:07] Speaker 1: I'm gonna choose a video game that I'm gonna watch, watch, watch the video.
+[00:17:09] Shoval: So you say that...
+[00:17:10] Speaker 1: Good.
+[00:17:13] Shoval: to your mind, the double down needs to be on vulnerabilities in the infrastructure worlds. Because the process, what is is, it will listen to your make sense and listen to your understanding. Just, I would have shifted to a domain that is a little bit more and I'm going to be very, very, very, very proud of myself.
+[00:17:32] Speaker 2: Right, I think that the main points of the transformation are the work. Your transformation may be relevant when the work is in the Egypt. In a world where many workers work from home, your network is much more appropriate. It has a data center network. And it is still
+[00:18:07] Shoval: And also, that
+[00:18:11] Speaker 2: one day vulnerabilities. and will be in the next video. Thank you. Shared, more important, at the moment. Right, I still agree with the statement of the services. If you have a network service, you can interact with services, but that's only after they have already found you in the middle of the night. The entry point always has to be the entry point that needs to be. That's why I feel more comfortable with what I can give feedback. and they are here on the line before something that actually makes me optimization to the rest. Now there are platforms that are coming and are looking at the issue of East-West Traffic Microsegmentation and all the maintenance of the network. Yes, it can be something that is needed, because there are many... There are some issues with Microsegmentation that can be solved, but... This world of the Vove... and there are many issues in the rest of the world, I think that in the network itself, and to create, if we look at the three layers of the application, I think that the network is a priority.
+[00:20:11] Shoval: And then, if I just go there, what is important to remember at the beginning, that we are involved in, that we understood that the difficult part of this process is really the remediation, understanding how this affects, how this patch affects the way, to make sure course, it really happens, of course, how much we really wanted with these patterns you are satisfied with. that is really interesting that if we try to do it in a good way,
+[00:20:44] Speaker 1: Okay.
+[00:20:47] Shoval: in a good way, then there is some kind of change here, because I think we are not in the same situation. I mean, there is a change, there is a change, and
+[00:20:52] Speaker 2: I'm sure there's a new one. There is one. Astellia is one of the companies that has the ability to do the network analysis and the impact analysis of change. There were a few companies that I met that in their company, they were really... they take all the information of vulnerabilities, of CVs from ScanEntity, you have it. And they do a validation of really, specific. So if it's relevant to you, and you can come and say, "What is the remediation way that it's passed, the best remediation way?" Is it the process of patch, is it the process of firewall, or is it everything else? What is it? The goal is to achieve this in the past, but even if it doesn't have an LST startup to do it in the past, so they come and create the platform as a tool that they have the opportunity to do an execution for the tool, but it needs to be understood how to explain it, because it gives you the opportunity to do it in the past. for an early stage startup, you can come and see the different rights and conditions around that can be a product. It's hard for me to believe that there were many organizations that took this deal.
+[00:22:58] Shoval: I'm sorry that I'm outside the company, I'm sitting and asking. So what's the most important thing? What do you mean?
+[00:23:07] Speaker 2: Yes, but we do it in a much more complicated way, not only specifically for the market. The idea that these things need was mentioned in what Jovay said at the beginning, and I also agree with the things. I think that this is
+[00:23:24] Shoval: only a company,
+[00:23:24] Speaker 2: only a market, it's somewhere problematic. If you come and say, "We are known to look at all the economic image of your environment,
+[00:23:39] Shoval: of your company."
+[00:23:42] Speaker 2: and some of our principles can be that they are today's principles, that they
+[00:23:46] Shoval: network-specific
+[00:23:46] Speaker 2: are specific networks. Some of them are principles that you need to change, processes that you need to change, the idea of   a configuration that is designed in your IDR. a clinic in. the analysis, and the best way to do remediation with minimal impact.
+[00:24:35] Shoval: I understood. If I understood correctly, you talked about the tools that already do vulnerability management, which help you understand if vulnerability is really exploitable and give you... What -? -
+[00:24:51] Speaker 2: Great.
+[00:24:52] Shoval: And if you can patch it, but they don't give you the basic of the solution.
+[00:24:59] Speaker 2: So today, some of you are not giving us the clear understanding of the results, some of you are saying that they have the abilities, like the sphere, to a certain extent. But the result, the result that I see, is that you take
+[00:25:17] Shoval: to find
+[00:25:19] Speaker 2: every aspect of the ability are in the album, to take it from QALIS or from all the different scanners. There is a kind of a person who comes and knows how to say A "isen and vulnerabilities already been exploitable?" You dare to vote with a guide, come on, and explain. Exploid that was valid for you, for a moment, he knew how to come and say, The " Shabbat with this vulnerability is behind Firewall, but there is a law in Firewall that allows you to contact it." That's a moment. And he knew how to come and say, "I also know, I want you to do Aleph in Gimel and Darlin." Alev, remember this law in Firewall, in order to erase this process that you saw on the screen. Whatevn. Or Darlin is to take the page. And as you can see, there is some progress that is happening, that takes all the inputs that are needed and knows how to do it. to come and create for you what is the best way for you to remediate that specific vulnerability.
+[00:26:37] Speaker 1: It's very aesthetic even, no?
+[00:26:41] Shoval: Like, what is the aesthetic?
+[00:26:41] Speaker 1: It's really what the stylists do.
+[00:26:43] Speaker 2: Right, but to hear other things. The idea of Stelia, what he says is... Stelia's idea is that we are very good at networking, so we know how to do it. There are other groups, Zafran, who know how to do it very well, and the processes they want to do. There are groups that do it.
+[00:27:17] Shoval: You can hear them being excited about something that is a very specific signal. That's right. And the image of what is a little... If I understand correctly what you're saying, it will know what it is. Super, interesting. Yes. That's it. Let's try the... Sorry, do you want to say something?
+[00:27:42] Speaker: Bye.
+[00:27:42] Shoval: No, I'll try it later.
+[00:27:42] Speaker 1: No, I have to send it away.
+[00:27:44] Shoval: No, but I'll say that it's really... We talked with many people and we feel that now it's the end of the world, so we need to take the feedback as a responsibility and do the nuts in the right way. Because the development... So the flow needs to be stable and we really need to create it as a whole. and that there are some people who are rich and can do other things. They are very proud of us, but they can also be a part of the domain. So let's, I feel that we are a little bit more ashamed to do this, because here there is more energy, here there are more people, there is more energy than in the world. You have to
+[00:28:34] Speaker 2: I the quality, it needs to be very, very focused. And I'll tell you what I talked about, it's more about today. In the whole world of post-mitos, the forces are divided into two directions. One direction is to create a technology that is capable of doing the remediation. and the technology is second, it is to know how to do the remediation. And what is the reason? I think one of the favorites is going to build an agent that wants to do it, who actually came and knows about it. how to do all this by virtual patching to prevent the exploit. And the second kind that seems to me less than the direction you are taking, which is to go and implement the best remediation. that can be used by a patch or by a firewall or
+[00:29:50] Shoval: any other activity.
+[00:29:50] Speaker 2: any other operation. I think that this is the separation between the two different directions. I think that in terms of the situation, the agents have created both things, the agent who knows how to do detection and they have also created a method that is known to come and to give them specifically to the type of vulnerabilities that are relevant to the agent. in the future.
+[00:30:47] Speaker 1: If we need someone to listen to all these statements that we have, give us a little bit of information about specific statements, then I will tell you that I am very happy about it, and it was really interesting. Because we have a house tour, so we will do it together.
+[00:31:01] Speaker 2: I understand your direction to the network. I really don't know if you would like to say how relevant and relevant I was to the statements that were from the Ibrides, and I don't understand,
+[00:31:27] Shoval: and how important it was
+[00:31:27] Speaker 2: and I think that I am very happy about it. I am very happy with the issues that are being discussed today, that need to be discussed in a more
+[00:31:41] Shoval: a much more, much more advantage.
+[00:31:41] Speaker 2: important way. I hope it helped.
+[00:31:49] Shoval: much.
+[00:31:49] Speaker 1: You're very welcome.
+[00:31:51] Speaker 2: I'm very happy that you've found the opportunity to talk to me.
+[00:31:55] Speaker 1: Thank you very much.
+[00:31:57] Speaker 2: Thank you.
+[00:31:58] Speaker: Bye.
+[00:31:58] Shoval: I'm a little tired.
+[00:31:59] Speaker 2: Have a nice day. Bye.
