@@ -1,12 +1,12 @@
 # Discovery ledger
-Last updated: 2026-10-06
+Last updated: 2026-10-08
 
 Claims derived from thesis.md (2026-09-25). Labels stable across runs.
 UNPROMPTED = interviewee raised it before any founder named it. LED = only after a founder named it.
 
 ---
 
-## C1 — The blocker on remediation is inability to prove a change is safe (fear of breaking production), not knowing what to fix
+## C1 — The blocker on remediation is inability to prove a change is safe (fear of breaking production), not knowing what to fix (kept 2026-10-08: maps to thesis #4, disruption)
 
 2026-09-24 | Mike Hiltz | nference / Anumana | CIO+CISO (practitioner) | UNPROMPTED | "Obviously there's concern that, especially for vulnerabilities, right? When we remediate, what could potentially break. So being able to test, I have a way to roll back"
 2026-09-24 | Mike Hiltz | nference / Anumana | CIO+CISO (practitioner) | UNPROMPTED | "The worry that you're going to break something downstream. So that's why they want human, like engineers involved."
@@ -25,6 +25,7 @@ UNPROMPTED = interviewee raised it before any founder named it. LED = only after
 2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | LED (Speaker 3 asked "Do you think that this is the point that makes the latency in the remediation process?") | "The patch is always where the hesitation is because you always like, you know, is this really going to work, right?" / "what's my level of trust and confidence that this patch is not going to break my business?"
 2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED (the mechanism, not the pain) | "you would have a digital twin, you would have virtual patching to where you can evaluate, verify that that patch is going to work on the digital twin before you push a production" / "especially the digital twin concept is expensive"
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | LED (Shoval stated the dependency/impact gap first; the detail is his, second-hand from a KPMG client) | "they patched a system and then that brought down a production line for an entire car." / "And then they stop and then they let it be unpatched or unremediated instead. Because no one wants to bring down production, right?" (frequency: "I can't give you a figure how often")
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | LED (Yuval had read "the unknown impact of a change" from the slide at 13:39) | "they get all nervous, and they don't know the impact, and they don't want to bring down their application for a few minutes to see if it breaks it or not." / OT: "if you did an active scan and blocked a port, then that could kill a service."
 
 CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "So I think that's probably our biggest pain point right now, is being able to patch quickly enough, especially with the, the, the volume of vulnerabilities"
@@ -43,7 +44,7 @@ CONTRA — same witnesses naming speed/volume/tooling as the blocker instead:
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED | "we rely on the engineering team to define what the operational impact might be of a particular change that we are suggesting." / "there's not a lot of friction, there's not a lot of…" (impact is owned by engineering and is not his blocker)
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (own environment, not measured) | "within a month usually gets fixed. If it's lower priority, if it's particularly high priority, you do it within, I'd say, a week." (pen-test findings: "For us, not too many.")
 
-## C2 — Detection is covered; action is not, and buyers expect vendors to take the action
+## C2 — Detection is covered; action is not, and buyers expect vendors to take the action (retired 2026-10-08: thesis no longer says detection is covered)
 
 2026-09-24 | Mike Hiltz | nference | CIO+CISO (practitioner) | UNPROMPTED | "So we have solutions that identify vulnerabilities, but none that actually take action in most cases, right? Because it is a more convoluted process."
 2026-09-24 | Mike Hiltz | nference | CIO+CISO (practitioner) | UNPROMPTED | "we're using Prisma Cloud for instance, right? They do a great job at detection and kind of telling you what's going on. But then what do you do with that telemetry? And I think that's where the gap is"
@@ -71,7 +72,7 @@ CONTRA — detection is NOT covered:
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED (C2b, vendor should not take the action yet) | "Helping them prioritize what they need to do first, I think is where the real value is." (after advising against building execution)
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (his pain is detecting risky changes engineers make, the reverse direction) | "it's very hard for security teams to know whether or not a particular change" … "is introducing risk or not" / "security teams, I don't think by and large are in the position anymore to approve network changes."
 
-## C3 — The blocker is impact uncertainty specifically, NOT speed, prioritization, or absence of tooling
+## C3 — The blocker is impact uncertainty specifically, NOT speed, prioritization, or absence of tooling (retired 2026-10-08: superseded by C12)
 
 (no evidence for)
 
@@ -91,7 +92,7 @@ CONTRA — see the seven CONTRA lines under C1 plus:
 2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "The second problem is who is actually on the power. Do you take it to IT or security?" / "security is doing vulnerability scanning, but you feel the difficulty of patching IT and IT needs to do it." (ownership, not impact)
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED | "ultimately the tough part is which of the things that are happening in the organization are, are increasing our risk" / "if it's simply a platform that is informing me of changes, I'm… it's gonna be too much." (prioritization of risk, not impact of the fix)
 
-## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list
+## C4 — Proof is the moat; an impact assessment nobody acts on is just a smarter findings list (retired 2026-10-08)
 
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "I have a consensus, I can do this without breaking anything. So go ahead and patch it... This is fine to patch, no human intervention, go ahead and push it."
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "If you can see that blast radius, now you know the overall Impact."
@@ -111,7 +112,7 @@ CONTRA — proof is table stakes, not a moat:
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | UNPROMPTED | "very few wanted to pay for it because it cost so much because of the manual work." (his own Check Point attempt at impact mapping, abandoned)
 2026-10-05 | interviewee, name not given ("Devon" once, in a founder line) | company not named ("world's largest travel company") | head of security, cyber physical and fraud (sitting exec; spoke only in general terms) | UNPROMPTED | "I think what you have here are additional tools that could benefit the team in taking steps to protect the assets."
 
-## C5 — Trust is earned with reversibility; start where being wrong is cheap
+## C5 — Trust is earned with reversibility; start where being wrong is cheap (retired 2026-10-08)
 
 2026-09-15 | Andrew (ex-Nestle, veterinary) | ~1000 hospitals | CISO (practitioner) | UNPROMPTED | "we did a design partnership with a company that was building AI agents for the security team, and we were able to use them on the identity side to do some kind If you think about those kind of hygiene things that will not break stuff, but only do some cleanup, in worst case scenario, you just have to turn something back on that you've turned off."
 2026-08-31 | Israel Bryski | Rogo | advisor | UNPROMPTED | "if you broke something, give me a one click undone on rollback button."
@@ -121,8 +122,9 @@ CONTRA — proof is table stakes, not a moat:
 2026-08-31 | Israel Bryski | Rogo | advisor | UNPROMPTED | (map of where being wrong is cheap) "if the CISO's using any of the security-native services within AWS, like Security Hub, and GuardDuty, and Detective... that's squarely in the security department. They can do whatever they want with those things." vs "anything that can impact the reliability, the stability of the production environment... that's usually your indicator that the CIO will need to be involved."
 2026-09-27 | Eliya Elon | Generalize.vc | investor | UNPROMPTED (investor) | "האם יש מספיק Trust מהארגון שה- Agent יעשה פעולה ב- Prod , לעומת פעולה במקום אחר" (is there enough trust from the org for the agent to act in prod, versus elsewhere); he frames trust-by-blast-radius as the axis, before the founders used the word trust
 
-## C6 — Wedge A: network / firewall config is the right first wedge
+## C6 — Wedge A: network / firewall config is the right first wedge (2026-10-08: thesis now commits to this wedge)
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | UNPROMPTED (one hard network remediation; cause is scale, impact owned by engineering) | "And that used to be a very contentious thing, and it's still a very difficult thing, because the number of services that we provide… that we run." (outbound network filtering)
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | UNPROMPTED (his own live project) | "I'm actually working with the, the network security team to help them with a network segmentation kind of roadmap and vision and kind of, and it's, it's such a big thing."
 
 CONTRA (no supporting evidence found in 40 calls):
 2026-09-15 | Andrew (ex-Nestle, veterinary) | ~1000 hospitals | CISO | UNPROMPTED | "For me, in my specific CISO role, network is not a big pain... I have a very uncomplex network. And it doesn't present a risk."
@@ -142,7 +144,7 @@ CONTRA (no supporting evidence found in 40 calls):
 2026-09-29 | interviewee, not named (possibly "Yoni"; unconfirmed) | company not named | security leader, own environment "70% AWS" (no workflow described) | UNPROMPTED | "you are talking about legacy networks, not AWS or public clouds." / "Right, because it's really a very dangerous area." (he also says "the network is a priority" at 00:18:11 in a garbled passage; his position is unclear)
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (answer to Shoval's "Does it resonate with you?") | "I think it… this probably applies maybe a little bit more to, let's say, more legacy companies that actually operate on-prem infrastructure" (cloud is controlled via org policies, Terraform, Sentinel; only "On the bare metal side, that's where it gets a lot more difficult")
 
-## C7 — Wedge B: OS / package / container patching is the right first wedge
+## C7 — Wedge B: OS / package / container patching is the right first wedge (retired 2026-10-08: wedge B dropped)
 
 2026-09-24 | Mike Hiltz | nference | CIO+CISO (practitioner) | UNPROMPTED | "I think vulnerability patch is probably one of the top ones." / "For misconfigurations in cloud, I think we're in a better spot there."
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | (full pipeline) "it really is defining which groups are responsible We go through the process of opening change management or change control tickets. There's testing involved there are Package dependencies that we have to consider"
@@ -177,15 +179,16 @@ CONTRA:
 2026-10-05 | Frederick (first name only) | independent advisor, ex-KPMG / Check Point consultant | advisor | CONTRA | "very few wanted to pay for it because it cost so much because of the manual work." Soft interest only: "Absolutely, it would be fun to be a part of your journey." (no budget, no owner)
 2026-10-05 / 2026-09-29 | Davon call, Frederick, 09-29 interviewee | — | — | none | No budget, approval chain or design-partner question was asked in any of the three calls.
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (Yuval: "Would you pay for something that will solve this problem?") | "Maybe. There's a lot of network discovery tools out there" … "it needs to be more intelligent than simply" … "A change happened in the network". Next step offered: "Happy to be a sounding board." (no pilot)
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | LED (Yuval asked him to be a design partner) | "I'll think about it and get back to you guys." / "I'll reach back out to you about the design partner stuff." First person who did not decline; no commitment, budget or approver yet.
 
-## C9 — Mike Hiltz is typical, not an outlier
+## C9 — Mike Hiltz is typical, not an outlier (retired 2026-10-08)
 
 CONTRA (both directions):
 2026-09-24 | Mike Hiltz | Anumana (FDA medical device) | practitioner | UNPROMPTED | "anytime we make a change like this, even for patching, right, for an FDA approved medical device, it has to go back to the FDA."
 2026-09-24 | Mike Hiltz | nference | practitioner | UNPROMPTED | "I'm fortunate, I should say, if I deploy something, it's a research environment. I don't have SLAs with my downstream." (LESS uptime-constrained than typical)
 2026-09-15 | Bryan Brown | BioChrist (research pharma) | CISO | — | NEVER mentioned FDA, validation, or regulated change control in 31 minutes. The only other regulated-pharma CISO in the corpus did not volunteer regulatory change friction at all.
 
-## C10 — "AI changed the economics of attacks" (thesis does NOT claim this; tracking only)
+## C10 — "AI changed the economics of attacks" (thesis does NOT claim this; tracking only) (superseded 2026-10-08 by C13, which the thesis now claims)
 
 PUSHBACK (all UNPROMPTED, all after founders asserted it first):
 2026-09-01 | Asaf | IR / threat research | responder | UNPROMPTED | "AI-driven attacks don't necessarily change the attackers' playbook, but they change the tempo."
@@ -208,6 +211,25 @@ SUPPORT:
 
 ---
 2026-09-30 | Fernando Medrano | Fastly (CDN, "600 terabit per second") | security program leader, 7 years (sitting practitioner, live environment) | LED (after Shoval named agentic attacks) | "And AI is certainly making it worse, because the second something gets exposed that you didn't intend"
+
+## C11 — Fragmented visibility: no unified view of connectivity, configurations and critical assets across the hybrid network (thesis #1, added 2026-10-08)
+
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | LED (Shoval pitched fragmentation at 10:53, then asked what he thought) | "from your number one, I think that's probably the biggest impact, fragmented visibility" / "we have Versa, we have Palo, we have NSGs, we have ASGs, we have, Windows Firewall, VPN." / "it becomes a nightmare to manage."
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | UNPROMPTED (extension) | "I would also think about fragmented controls." / OT: "We have very little visibility because they don't want us doing active scans."
+(Earlier evidence on visibility sits under C2 "CONTRA — detection is NOT covered" and C6; not re-sorted.)
+
+## C12 — Unknown impact: security teams cannot confidently assess the risk of network changes (thesis #2, added 2026-10-08; replaces C3)
+
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | LED (the slide named it; the mechanism is his) | "how do we take the recommendations and operationalize them?" / "You know, we've never seen this traffic, we've never seen this behavior, so the impact could be low." / "Again, we don't know the impact of that change." (recommendations from "Wiz, Tenable, CIS, Defender"; examples: "kill the print service spooler", TLS 1.0)
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | UNPROMPTED (after Shoval pitched blocking risky changes) | "They just don't help you enforce it, you know, and maybe something for you guys to think about, too, maybe the impact of that enforce."
+NOTE: Cory's impact problem is security's OWN changes stalling with dev teams (the old C1/C3 shape). Fernando Medrano (09-30, see C2 CONTRA) is the only voice for guarding OTHER teams' changes.
+(Earlier impact evidence sits under C1 and C3; not re-sorted.)
+
+## C13 — AI-speed threats demand faster segmentation and containment decisions (thesis #3, added 2026-10-08; replaces C10)
+
+CONTRA:
+2026-10-08 | Cory Z | company not named (manufacturer with OT plants; "our CISO reports to our CIO") | security practitioner, working on the network segmentation roadmap (live environment) | UNPROMPTED reaction to the slide | "I don't know about number 3, AI speed threats, doesn't make any sense to me." After Shoval explained machine-speed lateral movement: "No, it makes sense now, thanks." (accepted only once tied to blast radius and segmentation)
+(Earlier pushback on the AI framing sits under C10.)
 
 ## Notes carried forward
 
@@ -237,6 +259,9 @@ SUPPORT:
 - 2026-09-29_security-remediation-strategy-discussion.txt: machine-translated from Hebrew, heavily garbled. 00:00-03:25 is the founders alone. Several one-line "Shoval:" turns inside Speaker 2's sentences are his words split off. Interviewee never named or placed at a company.
 
 - 2026-09-30_security-leadership-discovery_fernando-medrano.txt: Zoom 403 until 2026-10-06. Clean English transcript, speakers named. Shoval opened with the network-wedge slide ("we are focusing on the network, layer") at 08:50, so everything network-related he said after is in answer to that frame.
+
+- 2026-10-08_security-leadership-discussion_cory-z.txt: recording starts mid-call; Cory's own intro (company, title) is missing. The first slide-based pitch is the 2026-10-08 thesis. Shoval and Yuval twice answered his suggestions with "that's the next slide" instead of asking more.
+- THESIS REWRITE 2026-10-08: C2, C3, C4, C5, C7, C9 retired; C10 superseded by C13; C11-C13 added; C1 now maps to thesis #4, C6 is the chosen wedge, C8 unchanged.
 
 ## Processed transcripts
 
@@ -292,3 +317,4 @@ SUPPORT:
 - 2026-10-05_davon-booking.txt
 - 2026-10-05_yuval-shoval.txt (internal, no evidence)
 - 2026-09-30_security-leadership-discovery_fernando-medrano.txt
+- 2026-10-08_security-leadership-discussion_cory-z.txt
