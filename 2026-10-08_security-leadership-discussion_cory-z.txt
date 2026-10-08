@@ -1,0 +1,280 @@
+Date: 2026-10-08
+Topic: Security leadership discussion
+Meeting UUID: 2F49C91E-1149-4728-AAB0-EAA5EF122C97
+Source: transcript
+
+[00:00:00] Shoval Abudraham: Well, I think…
+[00:00:02] Shoval Abudraham: Amazing. Wow, I… first, your… your environment is super interesting, sounds like super, like,
+[00:00:13] Shoval Abudraham: complex, you need to.
+[00:00:15] Cory Z: Yeah.
+[00:00:16] Shoval Abudraham: be on the top of many things, and I'm wondering, like, what is the role of, security engineer?
+[00:00:23] Shoval Abudraham: With those all, like… Like what a specific thing you need to think about and you need to lead.
+[00:00:34] Cory Z: I think it's a really good question, and I'll say it depends on which.
+[00:00:39] Cory Z: which area you are in our infrastructure, if you are in the, like I said, the OT environment.
+[00:00:46] Cory Z: It's more about uptime, it's more about reliability, and, you know, safety first. That's probably the biggest thing. But if you're on the business network, then we have the same concerns as any other
+[00:00:59] Cory Z: Any other company.
+[00:01:03] Cory Z: They are different teams, yeah, yeah, yeah, so we have… so… yeah, so for our team… our team… our team structure at the… so this is under… so we… we… we have, I think, four… three or four directors, one that runs manu… man… manufacturing.
+[00:01:19] Cory Z: The other one runs, security infrastructure.
+[00:01:23] Shoval Abudraham: Yeah.
+[00:01:24] Cory Z: applications, and then there's, I think there's a data, data and AI.
+[00:01:30] Cory Z: team. So yeah, so there is a separation of duties, but we all report up to the
+[00:01:36] Cory Z: the CIO, which is our VP.
+[00:01:40] Shoval Abudraham: to the CIO, not to the CISO.
+[00:01:43] Cory Z: Right, to the CIO. So our CISO reports to our CIO.
+[00:01:48] Shoval Abudraham: Oh, okay, got it. Nice. Cool! Wow, that's super interesting. I think you will have, like, a super, broad perspective to share with us, so I can't wait to share with you our thoughts. Sure. I start, maybe…
+[00:02:05] Shoval Abudraham: about saying something, like, tell you about me, and of course Yuval after… afterwards. So, I'm Shoval, I'm in cybersecurity for the past 10 years, started in a unit called 8200, which is the.
+[00:02:22] Shoval Abudraham: intelligent cyber operation, unit of the Israeli army. Basically, I served there, with Yuval, there we met, on the part of the
+[00:02:32] Shoval Abudraham: infrastructure department. So basically, all the role of both DevOps, engineer together with a security engineer, because we had to build and maintain those DevOps and ID infrastructure, but in a very secure way, because they hold
+[00:02:47] Shoval Abudraham: like very sensitive cyber operations.
+[00:02:53] Shoval Abudraham: And basically, I did it for five and a half years, loved that, but during my service, you know, as a DevOps and IT, worked with a lot of, kind of customers, other, other, stakeholders in the organization, and I was eager to
+[00:03:12] Shoval Abudraham: to create more impact and affect their work in a good way, and solve their problem. So basically, that's, that took me into a product management, roles afterwards.
+[00:03:27] Shoval Abudraham: Yeah, so basically after I end my service after five and a half years, I released as a captain. I went to a cybersecurity company called Perception Point. I was their product manager, led all the detection capabilities.
+[00:03:43] Shoval Abudraham: that it was an email security company, and basically all the detection capabilities were based on machine learning, AI, agents, before people knew, you know, before everyone did the agents. So it was very cool. This company was acquired by Fortinet.
+[00:04:01] Shoval Abudraham: Afterwards, I moved to another cybersecurity company, because security, it's, you know, it's in my heart, and basically…
+[00:04:12] Shoval Abudraham: It was also, like, also, it was an endpoint security company.
+[00:04:19] Shoval Abudraham: very cool one, also very… did very cool things with AI and how we assessed risk with AI.
+[00:04:30] Shoval Abudraham: amazing customers, you know, and a great team, and this company called Coy Security, she was acquired by Palo Alto Networks.
+[00:04:40] Cory Z: Oh, wow, that's good. Yeah.
+[00:04:41] Shoval Abudraham: Yeah, yeah. You know, basically, after those two adventures and acquisitions, I, I called Yuval, which is… was a very, very good friend from the military service, and then, you know, told him that, like.
+[00:04:55] Shoval Abudraham: We have enough knowledge, we need to do it, ourselves. So, yeah, basically that.
+[00:05:02] Cory Z: Nice.
+[00:05:02] Shoval Abudraham: That's cool.
+[00:05:03] Cory Z: I actually I actually see that trend. A lot of I I talked to I don't wanna say a lot of startups, but talked to several, and they're all they seem like they're all prior prior is Israeli and cyber command or or or kinda intel. And that that's that's what I did in the the the the air force as well.
+[00:05:21] Shoval Abudraham: Cool.
+[00:05:22] Cory Z: Cyber, and it just… I don't know if we were that cutting edges as Israel, but we'll see.
+[00:05:29] Shoval Abudraham: Well.
+[00:05:30] Yuval Mermer: So I.
+[00:05:31] Shoval Abudraham: Yeah, I just want to say that I feel like when I'm talking with people that did or had military service, I feel they feel the urgency. Like sometimes cyber can be not so important because it's not.
+[00:05:46] Cory Z: I agree.
+[00:05:47] Shoval Abudraham: thing in the business, but when you understand it, like, from a military perspective, you understand that you think it's not important for the business, but it's the basic of the business. Like, when everything is secure, you can do…
+[00:06:05] Shoval Abudraham: they keep the business running, or the con… or the security of the state. So, yeah. That's right.
+[00:06:13] Cory Z: Agreed.
+[00:06:15] Yuval Mermer: Yeah, so I'll tell you about myself. I started at 8200 also as Shoval's soldier. I was a developer and developed platforms for operating, mapping, and securing networks in place for the unit itself.
+[00:06:30] Yuval Mermer: And another platform for auto-remediating in the production environments we had. A few years later, I promoted and became a team lead.
+[00:06:39] Yuval Mermer: And then I became the head of the DevOps and infrastructure department, led the four engineers across five teams.
+[00:06:46] Yuval Mermer: We built, secure, and ran large-scale, complex networks, multiple zones and sites, and we were responsible for petabytes of data and all the production… the sensitive production environments.
+[00:07:00] Yuval Mermer: And after this long journey, the military service, they just told you about it in 30 seconds.
+[00:07:08] Cory Z: Yeah, no, I get it.
+[00:07:09] Yuval Mermer: I finished the military service and I started as a director of DevOps and SRE at Paragon, which is an Israeli cyber company.
+[00:07:17] Yuval Mermer: There I was responsible for the security and the infrastructure of the product itself.
+[00:07:22] Yuval Mermer: We… in Paragon, they sell their product to governments, so we had a really… really high security demands from them.
+[00:07:32] Yuval Mermer: So, we had to be, like, to tailor-made solutions for the specific customer.
+[00:07:39] Yuval Mermer: And it always around… was around the infrastructure and the networks. And now, after all those years in cyber, I started the journey with Cheval. Actually, I answered her phone call, and I told her, yeah, I'll quit my job, let's start.
+[00:07:53] Cory Z: Oh, okay. There you go.
+[00:07:55] Yuval Mermer: Yeah.
+[00:07:56] Shoval Abudraham: Super easy.
+[00:07:57] Yuval Mermer: Absolutely, yeah.
+[00:07:58] Cory Z: Just, just quit. Just quit and go, huh?
+[00:08:01] Yuval Mermer: Yeah, great.
+[00:08:02] Cory Z: All right.
+[00:08:02] Yuval Mermer: Actually, we both believed in the direction we have, so we started, and let's jump in!
+[00:08:09] Yuval Mermer: Okay, so…
+[00:08:10] Cory Z: Is it… is it just… is it just you two at the company?
+[00:08:15] Shoval Abudraham: Currently, yes. Like, we will grow, obviously, but right now, we are kind of building the idea and building the space we wanna play it in. And after we will have validation, we will raise money, and, of course, we'll bring all the people that just can't wait to join.
+[00:08:31] Cory Z: There you go, that's good, that's… that's… that's…
+[00:08:34] Shoval Abudraham: Yeah.
+[00:08:35] Cory Z: That's really neat. Thanks. Thanks for the intro.
+[00:08:38] Shoval Abudraham: Sure.
+[00:08:39] Yuval Mermer: We're talking with you in very early stage, which is exciting.
+[00:08:42] Cory Z: No, it is good, yeah.
+[00:08:44] Shoval Abudraham: Okay, so I want to share my screen. I said that this is a very, very, very work in progress, okay? We're just doing to make the conversation more, easy to follow.
+[00:08:59] Shoval Abudraham: So, I'll share my screen real quick…
+[00:09:03] Shoval Abudraham: And actually, the title will give you, a clue about what we're exploring. Okay.
+[00:09:10] Cory Z: Good.
+[00:09:10] Shoval Abudraham: about network, risk assessment. Basically, we… we… when we started our journey, what we did is talking with.
+[00:09:21] Shoval Abudraham: many security leaders, CISO, understanding their gaps, and not just what's urgent right now, like for AI security, for example, but what are… what will be the next problem as AI evolving and more and more people adopt it, and not only from the organization side, but also from the attacker side.
+[00:09:46] Shoval Abudraham: So, we start talking with them, and, you know, we are infrastructure people, we shared it with you, in our base.
+[00:09:55] Shoval Abudraham: So, we immediately wanted to understand where there is lack of visibility and control in the fundamental layers. And one of the layers, we thought about is network. Like, we did this market research and see… saw.
+[00:10:14] Shoval Abudraham: that there are visibility products, but maybe not… they did not give the best solution from this era. So we talked with the CISOs and security leaders, and what we heard from them is that
+[00:10:31] Shoval Abudraham: Basically, the networks, especially in big companies, big environments, like when they have on-prem environments, cloud environments, they have the handpoints in many sites, they have
+[00:10:48] Shoval Abudraham: The network is basically so fragmented, they have.
+[00:10:53] Shoval Abudraham: lack of visibility about what's going on, what's connected to what, which asset connected to what, and with which network configuration. And because of that, they don't know what is the risk inside their network.
+[00:11:10] Shoval Abudraham: So, first.
+[00:11:12] Shoval Abudraham: So, I want to stop for a second, because I said a lot of things, and I want to.
+[00:11:18] Shoval Abudraham: ask you, like, what do you think about those things we heard from CISOs?
+[00:11:24] Cory Z: I would… I would agree.
+[00:11:28] Cory Z: And I'd be kind of curious on how you guys are looking at solving it, because there's spam ports, and they're scanning the networks, and there's invasive scanning. So…
+[00:11:38] Cory Z: So, like, like I was talking about in our OT environment, that's where
+[00:11:42] Cory Z: We have very little visibility because they don't want us doing active scans. But no, you're right. And the fact that.
+[00:11:53] Cory Z: you have a different presence on-prem and cloud and firewalls, I think… no, I think it's… I think… I think it's a valid concern.
+[00:12:00] Shoval Abudraham: Yeah. I have a question about what you shared about, sorry, about the OT. Like, what do you mean the team does not want to scan?
+[00:12:11] Cory Z: So it's a good question. And I think if you guys are going to get into the space and target any critical infrastructure, you really should think about it. So think about. So whenever you drive by a huge manufacturing facility, it was got the smoke coming out of the towers and all the lights. It looks like a little mini, little mini city.
+[00:12:30] Cory Z: In there, they have what they call process control systems. Think Honeywell, everything else, and those are actually keeping those products safe, and they're very… they're very controlled, so you just can't change it. Very similar, we work with
+[00:12:44] Cory Z: for our military, but very similar to, like, aircraft systems or missile systems, where it's like, we're not gonna touch it. Can't patch it, we can't bring it down, we can't reboot it. Very, very, very similar.
+[00:12:56] Cory Z: So when, when, whenever you go in there, they use all these custom protocols. So that's how companies like Dragos and Clarity and everything else got there. That, that's how they made their fortunes by going into these environments that no one understands those protocols because it's, it's, it's just, it's just very different.
+[00:13:15] Cory Z: So yeah, so anyways, if you did an active scan and blocked a port, then that could kill a service.
+[00:13:23] Cory Z: That could essentially bring… bring down operations.
+[00:13:28] Cory Z: Does that help?
+[00:13:30] Yuval Mermer: Do you agree with the three statements we have on the screen?
+[00:13:34] Yuval Mermer: The fragmented visibility, the unknown impact of a change.
+[00:13:39] Yuval Mermer: the threats that the AI bring with its speed.
+[00:13:47] Cory Z: I don't know about number 3, AI speed threats, doesn't make any sense to me. The first two, yeah, AI speed threat, I don't know… are you… are… so basically, are you saying how… if…
+[00:13:58] Cory Z: if the intruder came into the network and used AI, how fast they would spread? Is that kind of what you guys are saying?
+[00:14:03] Yuval Mermer: So…
+[00:14:04] Shoval Abudraham: Basically, yeah, what we are saying that
+[00:14:07] Shoval Abudraham: We are seeing, like, we talked as part of our research, we talked with a lot of, incident response people, and, you know, read articles about new types of attack, machine speed attacks, and basically, realized that the main.
+[00:14:25] Shoval Abudraham: difference in those new type of attack is the speed and the scale, and the way they are navigating through the network super, super fast, and, you know, finding every small window open and going through it. So.
+[00:14:42] Cory Z: So yeah, the, basically the blast radius we have, we're actually, 'cause I'm actually working with the, the network security team to help them with a network segmentation kind of roadmap and vision and kind of, and it's, it's such a big thing. So.
+[00:14:57] Cory Z: you know, my… my thing is, hey, let's start at the WAN, let's start site to site, then work our way into the LAN.
+[00:15:04] Cory Z: So… No, it makes sense now, thanks.
+[00:15:09] Shoval Abudraham: Cool. You talked about segmentation that you were doing across environments.
+[00:15:16] Cory Z: Yes, yeah, that's right, yeah. So, we… the thing is, is that we have a lot of…
+[00:15:23] Cory Z: from your number one, I think that's probably the biggest impact, fragmented visibility, because we actually… I actually have a slide that shows all the different technologies that we have to meet segmentation, because at first, you go into seg… to segmentation, and the team wants one
+[00:15:41] Cory Z: one tool, and that's just not ideal, right? They have, like, for us, we have Versa, we have Palo, we have NSGs, we have ASGs, we have, Windows Firewall, VPN. So, the advice that I gave them is to say, hey, let's… let's identify the app.
+[00:15:59] Cory Z: the use case, the ports and the URLs, and then line up all of our tech technology with that.
+[00:16:06] Cory Z: And then when it comes to a lifecycle, hey, for network segmentation, we're doing this, we have all these tools, and each tool's doing this, yeah, it becomes a nightmare to manage.
+[00:16:15] Cory Z: So yeah, frag fragmented visibility. I would also think about fragmented controls.
+[00:16:20] Cory Z: Too, so if you…
+[00:16:22] Cory Z: I think that might be where you guys are kind of going. If you have one control plane.
+[00:16:29] Cory Z: I want to block this.
+[00:16:32] Cory Z: go, right?
+[00:16:34] Shoval Abudraham: So basically, yeah, like, this is the next.
+[00:16:37] Yuval Mermer: That's it.
+[00:16:38] Cory Z: There you go. You're welcome.
+[00:16:39] Yuval Mermer: In Israel, in the military, we say that if you say something that it's in the next slide, it's an excellent thing that you said.
+[00:16:48] Cory Z: Really? We call that a softball.
+[00:16:53] Shoval Abudraham: Exactly, yeah.
+[00:16:54] Cory Z: Yeah, yeah.
+[00:16:56] Shoval Abudraham: part of the work for us. Amazing. So, basically, that's what we're thinking. We are thinking about one control plane that will take the data from all your network control tools, if it's, like, different clouds, different firewall vendors, if you have a data center, even the endpoint, and actually, it does not.
+[00:17:20] Shoval Abudraham: We did not write it here, but maybe also OT.
+[00:17:24] Shoval Abudraham: network environmental.
+[00:17:26] Cory Z: I would really… I would encourage you guys, and if you want to have another call, but I would really encourage you guys to do a little bit of research on it. It's really critical infrastructure, think water plants, and with all the wars going on and everything else, that's… think about electrical grids.
+[00:17:43] Cory Z: All that stuff is so old, it's so not maintained very well at all. So to give them visibility and show them their risk in those networks, that's a…
+[00:17:52] Cory Z: I think it's a great opportunity.
+[00:17:56] Shoval Abudraham: Amazing. So we will definitely, we'll dive into that and we'll explore that. As I mentioned, it's not.
+[00:18:01] Cory Z: And if, if you make a, if, if you get a lot of customers, you make a lot of money on my idea, then we gotta, you gotta take them out to lunch or something.
+[00:18:09] Yuval Mermer: Maybe you can be our design partner, and we will…
+[00:18:12] Cory Z: That's even better.
+[00:18:13] Yuval Mermer: Together, developing.
+[00:18:15] Cory Z: Yeah, there you go, I like that.
+[00:18:18] Shoval Abudraham: Amazing. So basically, yeah, that's… that's… the idea is that one control plane that help you understand the connectivity between, like, your different tools and how your network look like across all environments.
+[00:18:32] Shoval Abudraham: help you to reduce the risk by understanding where there are the small windows that AI can use, leverage to attack you in a lateral move inside your environment. And also.
+[00:18:45] Shoval Abudraham: we don't want you to do, like, one scan, recommendation, and that's it. We want to help you enforce and make sure that changes that, expose you to new risk in your network will be blocked before, they.
+[00:19:03] Shoval Abudraham: before the change. So we are still, like, thinking the idea, but this is basically the…
+[00:19:10] Yuval Mermer: Yeah.
+[00:19:11] Shoval Abudraham: Yeah.
+[00:19:13] Cory Z: So you want to assess… okay, yeah. And the enforce, a lot of vendors miss… miss the mark on that, because they want to tell you all these problems you have, and it's like, well.
+[00:19:23] Cory Z: I could do that. They just don't help you enforce it, you know, and maybe something for you guys to think about, too, maybe the impact of that enforce.
+[00:19:31] Shoval Abudraham: Gove, oh my God.
+[00:19:33] Yuval Mermer: Well.
+[00:19:33] Cory Z: Yep.
+[00:19:33] Yuval Mermer: that's… Well…
+[00:19:36] Cory Z: Yeah, no.
+[00:19:37] Shoval Abudraham: That's another.
+[00:19:38] Cory Z: your.
+[00:19:39] Shoval Abudraham: Softball. There you go.
+[00:19:41] Yuval Mermer: It's not.
+[00:19:42] Cory Z: There you go.
+[00:19:43] Yuval Mermer: Next slide, but…
+[00:19:44] Cory Z: big.
+[00:19:44] Yuval Mermer: That's, that's also.
+[00:19:47] Cory Z: That's, that's the challenge that we have in a large organization is how do we take the recommendations and operationalize them?
+[00:19:55] Shoval Abudraham: Yeah.
+[00:19:55] Cory Z: And so basically, oh, I'm gonna enforce this, you do a change ticket, you talk to the dev team, and they get all nervous, and they don't know the impact, and they don't want to bring down their application for a few minutes to see if it breaks it or not. And what I'm saying, there's no system to say, hey, well.
+[00:20:12] Cory Z: You know, we've never seen this traffic, we've never seen this behavior, so the impact could be low.
+[00:20:18] Cory Z: So that's always a huge, huge struggle for us.
+[00:20:22] Cory Z: The recommendations, yeah, every, everything and their mom is going to give you a recommendation.
+[00:20:27] Cory Z: So…
+[00:20:28] Yuval Mermer: Have you tried to work with one of those platforms who gives you recommendations?
+[00:20:33] Cory Z: Yes, Wiz, Tenable, CIS, Defender, you name it. They give a ton of, but…
+[00:20:39] Cory Z: Again, we don't know the impact of that change.
+[00:20:43] Yuval Mermer: Mmm.
+[00:20:44] Yuval Mermer: I got it.
+[00:20:45] Cory Z: Yeah, I mean, how many times have we said, hey, kill the print service spooler, or, you know, turn off HTTP 1.0, or TLS 1.0, and it's like, oh.
+[00:20:57] Cory Z: Okay, well, and then you go to the dev team, like, I don't know about that.
+[00:21:02] Cory Z: They don't know how their app works, but that might be a different system. But yeah, I mean, if you guys can see it on the wire, then you could see if it's… if this is a new…
+[00:21:12] Cory Z: A new traffic pattern, right?
+[00:21:15] Shoval Abudraham: Yeah.
+[00:21:16] Yuval Mermer: Exactly.
+[00:21:17] Shoval Abudraham: Actually, this kind of example is our favorite one.
+[00:21:20] Cory Z: Yeah.
+[00:21:21] Shoval Abudraham: Of TCP and stuff like that. Yeah.
+[00:21:23] Cory Z: Yeah, yeah. I'm, I'm, I've, I'm a, a network person too, you know, grew, grew up with the, the OSI model and.
+[00:21:32] Cory Z: I think it's important for people to understand the packet flow before they move up, but that's just me.
+[00:21:39] Yuval Mermer: Okay.
+[00:21:40] Yuval Mermer: Shaval, do we have another slide?
+[00:21:43] Shoval Abudraham: No, that's it. Like, the problem in our…
+[00:21:46] Yuval Mermer: I.
+[00:21:46] Shoval Abudraham: Idea for solution. So you guys.
+[00:21:48] Cory Z: just.
+[00:21:49] Yuval Mermer: the scheduling?
+[00:21:52] Shoval Abudraham: What?
+[00:21:53] Yuval Mermer: Can you remove the screen sharing?
+[00:21:54] Shoval Abudraham: Sure, sure, yeah, sorry. So we can…
+[00:21:57] Cory Z: So, so you guys are just in the idea stage.
+[00:22:00] Yuval Mermer: We're in actually we're in the validation stage. We know the direction we want to go, we know what we want to do, you could see it. Now just validating that it's a valid way to go.
+[00:22:12] Cory Z: So where'd you get the name from?
+[00:22:15] Yuval Mermer: is.
+[00:22:15] Cory Z: Is it Skylair?
+[00:22:17] Shoval Abudraham: I.
+[00:22:17] Yuval Mermer: Yeah.
+[00:22:18] Shoval Abudraham: That's a funny story, actually.
+[00:22:20] Cory Z: Yeah.
+[00:22:22] Shoval Abudraham: You know, we are still, like, we looked for domains. We had brainstorm. We did not know what the direction back then, but… Yeah.
+[00:22:32] Yuval Mermer: You have another another name that you can.
+[00:22:36] Shoval Abudraham: You're not locking up.
+[00:22:37] Yuval Mermer: Commanders.
+[00:22:38] Cory Z: Oh.
+[00:22:38] Yuval Mermer: Robin, do we have…
+[00:22:39] Cory Z: I mean, I mean, I mean, that…
+[00:22:40] Yuval Mermer: Haha.
+[00:22:41] Cory Z: Net… Net Slayer would be cooler, but…
+[00:22:44] Shoval Abudraham: Yeah.
+[00:22:45] Yuval Mermer: Yeah.
+[00:22:46] Cory Z: Priority taken by a heavy metal band or something. It just sounded like a band.
+[00:22:52] Shoval Abudraham: Yeah.
+[00:22:53] Cory Z: Tyler, you're on stage. Check out the drummer. No, no, I think it's.
+[00:22:55] Yuval Mermer: Good idea.
+[00:22:57] Cory Z: I'm just kidding.
+[00:22:59] Shoval Abudraham: I recommend it. It's a good one.
+[00:23:01] Yuval Mermer: Funny because I'm not there also.
+[00:23:03] Cory Z: Oh, are you really? That's neat. Whenever we onboarded Wiz, because we were one of the first customers, and I was like, Wiz, it's like, sounds like you're going to the bathroom, right? But.
+[00:23:15] Yuval Mermer: haha.
+[00:23:16] Cory Z: So it's like, that's kind of a dumb name, but…
+[00:23:20] Cory Z: I'm not saying your name's dumb, it's just… I just… I always like to find out where names… because if… if I started a business, that's where I would always struggle, is the name.
+[00:23:28] Yuval Mermer: Yeah, that's dead.
+[00:23:29] Shoval Abudraham: Yeah, I think it was. It was the hardest task.
+[00:23:33] Yuval Mermer: It's harder than aviation. We're better at cyber than choosing names. Yeah, that's good. In the three minutes we left, I want to ask you seriously to think about being a design partner. You don't want to answer now. I want to ask you.
+[00:23:49] Cory Z: What is…
+[00:23:50] Yuval Mermer: about it.
+[00:23:51] Cory Z: What does that look like? When… I've never been asked that question, so I don't know what you…
+[00:23:56] Yuval Mermer: Yeah, so, actually, because we're going to build the product from the beginning, from scratch, and we're gonna… we wanna design it with the…
+[00:24:07] Yuval Mermer: With the people who really.
+[00:24:09] Shoval Abudraham: We're urine experts.
+[00:24:10] Yuval Mermer: Yeah, with the real experts who really knows how large networks looks in their lives and internal organizations.
+[00:24:18] Cory Z: So.
+[00:24:19] Yuval Mermer: We want the expert with us to help us build it correctly.
+[00:24:26] Cory Z: Yeah, I'll… I'll… I'll think about how many… how many hours and how many… how long do you think that usually takes?
+[00:24:33] Yuval Mermer: And so…
+[00:24:34] Cory Z: Is it a monthly call, or is it a… I don't know.
+[00:24:38] Yuval Mermer: It's more like a weekly, but we can talk about everything. If you really wanna talk about it, we can talk about the details, and we will make it comfortable to you.
+[00:24:50] Cory Z: Okay, so it's… okay.
+[00:24:51] Yuval Mermer: Except…
+[00:24:52] Cory Z: That makes sense. Yeah, because you guys are evening time now, so…
+[00:24:56] Shoval Abudraham: Yeah.
+[00:24:57] Cory Z: Okay. Yeah, I'll be… I'll be…
+[00:24:59] Yuval Mermer: No, that's okay. We live in Israel, but we work at the US times, so.
+[00:25:04] Shoval Abudraham: Yeah.
+[00:25:05] Cory Z: I'm sorry. Pretty good.
+[00:25:06] Yuval Mermer: We're good with that.
+[00:25:07] Cory Z: Yeah, because a lot, a lot of the business, a lot of the business is here, I can imagine.
+[00:25:13] Shoval Abudraham: Yeah, totally.
+[00:25:15] Cory Z: Okay. Yeah, I'll think about it and get back to you guys. It sounds like a great opportunity. I do like the pitch, and I think you guys have definitely found something. And, you know, something else to think about. You're looking at connecting all those tools.
+[00:25:28] Cory Z: I'm assuming. Yeah. So that… there is a space out there called CTEM, I don't know if you guys have heard of it, but that's where they're connecting all the vulnerability management tools and showing you your risks. You guys are almost doing the…
+[00:25:42] Cory Z: that… For… for networking.
+[00:25:45] Cory Z: But no, look at… look it up, it's called CTM. There's a couple vendors, I don't remember. Yeah, yeah, it's… basically, it's taken all of the customers' applications, and it's correlating all… for vulnerabilities.
+[00:25:57] Cory Z: So, if you guys can do that for the network…
+[00:26:02] Cory Z: Seems like… seems like a nice… a nice play, right?
+[00:26:06] Shoval Abudraham: Totally. That's totally interesting. We will explore it.
+[00:26:10] Cory Z: There you go.
+[00:26:10] Yuval Mermer: Definitely take a look at it.
+[00:26:12] Cory Z: Yeah, and you have my LinkedIn, you have my email, we can definitely stay in touch. I'll reach back out to you about the design partner stuff.
+[00:26:20] Yuval Mermer: Thank you so much and it was a pleasure meeting with you and getting to know you more.
+[00:26:25] Shoval Abudraham: Help us a lot. Yeah.
+[00:26:27] Cory Z: Of course, guys, always, always… I'm a dad and a grandpa, so I'll always give my opinion.
+[00:26:34] Shoval Abudraham: All.
+[00:26:34] Cory Z: Alright, guys. Well, you guys have a nice evening.
+[00:26:37] Yuval Mermer: Thank you so much. Have a nice day.
+[00:26:39] Shoval Abudraham: You have a great day.
+[00:26:40] Yuval Mermer: Bye-bye.
+[00:26:41] Cory Z: You too, thank you, bye-bye.
